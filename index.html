@@ -673,6 +673,7 @@
     text-transform: uppercase;
     letter-spacing: 1px;
   }
+  .calc-section-title.sem-campos-visiveis { display: none !important; }
   .calc-field-note {
     margin-top: 6px;
     color: var(--text-muted);
@@ -3915,6 +3916,7 @@ function mudarInstituicao(novaInstituicao) {
   carregarConcursos();
   carregarAcoes();
   carregarAssociacoes();
+  atualizarTitulosCalculadora();
   salvarFormulario();
 }
 
@@ -4054,6 +4056,37 @@ function atualizarModoCalculadora(modo = 'avancado') {
   localStorage.setItem('usegpub_calc_modo', modo);
   const temOcultoAtivo = simples && Array.from(page.querySelectorAll('.calc-advanced input, .calc-advanced select')).some(campoTemValorAtivo);
   document.getElementById('calc_modo_aviso')?.classList.toggle('show', temOcultoAtivo);
+  atualizarTitulosCalculadora();
+}
+
+function campoVisualmenteDisponivelNaInstituicao(el) {
+  if (!el || el.hidden) return false;
+  const estilo = window.getComputedStyle(el);
+  return estilo.display !== 'none' && estilo.visibility !== 'hidden';
+}
+
+function atualizarTitulosCalculadora() {
+  document.querySelectorAll('#page-calculadora .calc-advanced .form-grid').forEach(grid => {
+    const itens = Array.from(grid.children);
+
+    itens.forEach((item, indice) => {
+      if (!item.classList?.contains('calc-section-title')) return;
+
+      let possuiCampoVisivel = false;
+      for (let i = indice + 1; i < itens.length; i++) {
+        const proximo = itens[i];
+        if (proximo.classList?.contains('calc-section-title')) break;
+
+        if (proximo.classList?.contains('field') && campoVisualmenteDisponivelNaInstituicao(proximo)) {
+          possuiCampoVisivel = true;
+          break;
+        }
+      }
+
+      item.classList.toggle('sem-campos-visiveis', !possuiCampoVisivel);
+      item.setAttribute('aria-hidden', possuiCampoVisivel ? 'false' : 'true');
+    });
+  });
 }
 
 function classificarCamposCalculadora() {
@@ -5252,6 +5285,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event listeners
   classificarCamposCalculadora();
   atualizarModoCalculadora(localStorage.getItem('usegpub_calc_modo') || 'avancado');
+  atualizarTitulosCalculadora();
 
   document.querySelectorAll('#page-calculadora input, #page-calculadora select').forEach(el => {
     el.addEventListener('input', e => { validarCampoCalculadora(e.target); recalcDebounced(); });

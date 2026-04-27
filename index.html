@@ -2764,6 +2764,50 @@
       -webkit-backdrop-filter: none !important;
     }
   }
+
+
+  /* BLOCO 14.14 — Correção visual dos seletores nativos de instituição
+     Objetivo: evitar lista branca com texto invisível ao abrir o <select> no tema escuro.
+     Apenas aparência. Não altera IDs, classes, opções, valores, JavaScript ou funcionalidade. */
+  .header-inst-selector select,
+  .inst-selector select {
+    color-scheme: dark;
+  }
+
+  .header-inst-selector select option,
+  .header-inst-selector select optgroup,
+  .inst-selector select option,
+  .inst-selector select optgroup,
+  select option,
+  select optgroup {
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    font-weight: 700;
+  }
+
+  [data-theme="dark"] .header-inst-selector select option,
+  [data-theme="dark"] .header-inst-selector select optgroup,
+  [data-theme="dark"] .inst-selector select option,
+  [data-theme="dark"] .inst-selector select optgroup,
+  [data-theme="dark"] select option,
+  [data-theme="dark"] select optgroup {
+    background-color: #111827 !important;
+    color: #f9fafb !important;
+  }
+
+  .header-inst-selector select option:checked,
+  .inst-selector select option:checked,
+  select option:checked {
+    background-color: var(--vermelho) !important;
+    color: #ffffff !important;
+  }
+
+  .header-inst-selector select option:hover,
+  .inst-selector select option:hover,
+  select option:hover {
+    background-color: var(--vermelho-escuro) !important;
+    color: #ffffff !important;
+  }
 </style>
 <script>
 /* =======================================================

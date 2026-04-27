@@ -228,15 +228,16 @@
   /* BLOCO 02.7 — Controle de páginas/abas */
   .page-section { display: none; animation: fadeIn 0.4s ease; flex-grow: 1; }
   .page-section.active { display: grid; }
-  #page-principal.active, #page-direitos.active, #page-concursos.active, #page-cursos.active, #page-livros.active, #page-acoes.active, #page-associacoes.active, #page-parceiros.active { display: block; }
+  #page-principal.active, #page-remuneracao.active, #page-direitos.active, #page-concursos.active, #page-cursos.active, #page-livros.active, #page-acoes.active, #page-associacoes.active, #page-parceiros.active { display: block; }
 
   @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
   #page-principal, #page-calculadora { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
   #page-calculadora { grid-template-columns: 1fr 420px; gap: 30px; }
   #page-direitos, #page-concursos, #page-cursos, #page-livros, #page-acoes, #page-associacoes, #page-parceiros { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+  #page-remuneracao { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
 
-  @media (max-width: 968px) { #page-principal, #page-calculadora { margin: 20px auto; } #page-calculadora { grid-template-columns: 1fr; } .resumo { position: static !important; } }
+  @media (max-width: 968px) { #page-principal, #page-calculadora, #page-remuneracao { margin: 20px auto; } #page-calculadora { grid-template-columns: 1fr; } .resumo { position: static !important; } }
 
   /* BLOCO 02.8 — Página Principal: hero, botões e cards */
   .principal-hero {
@@ -408,6 +409,124 @@
   .curso-detalhes summary { cursor: pointer; font-family: 'Oswald', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--vermelho); }
   .curso-cta { display: inline-flex; align-items: center; justify-content: center; margin-top: 18px; padding: 13px 18px; background: var(--vermelho); color: #ffffff; border-radius: 4px; text-decoration: none; font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; transition: 0.2s ease; }
   .curso-cta:hover { background: var(--vermelho-escuro); transform: translateY(-2px); }
+
+
+  /* BLOCO 02.9.1 — Remuneração tabelada */
+  .remuneracao-intro {
+    background: var(--item-bg);
+    border-left: 4px solid var(--vermelho);
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+  .remuneracao-resumo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .remuneracao-stat {
+    background: var(--item-bg);
+    border: 1px solid var(--border-card);
+    border-left: 4px solid var(--vermelho);
+    padding: 14px;
+    border-radius: 6px;
+  }
+  .remuneracao-stat span {
+    display: block;
+    color: var(--text-muted);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+  .remuneracao-stat strong {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: var(--text-main);
+  }
+  .remuneracao-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border-card);
+    border-radius: 8px;
+    background: var(--bg-card);
+  }
+  .remuneracao-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 840px;
+  }
+  .remuneracao-table th,
+  .remuneracao-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border-card);
+    text-align: left;
+    vertical-align: top;
+    font-size: 13px;
+  }
+  .remuneracao-table th {
+    background: var(--item-bg);
+    color: var(--text-main);
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  .remuneracao-table tbody tr:hover { background: var(--item-hover); }
+  .remuneracao-table td.valor {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .remuneracao-table td.total {
+    color: var(--vermelho);
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+  .remuneracao-fonte {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.45;
+  }
+  .remuneracao-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 8px;
+    margin-top: 4px;
+    border-radius: 999px;
+    border: 1px solid var(--border-input);
+    color: var(--text-muted);
+    background: var(--item-bg);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+  }
+  .remuneracao-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--vermelho);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .remuneracao-link:hover { text-decoration: underline; }
+  @media (max-width: 700px) {
+    .remuneracao-resumo-grid { grid-template-columns: 1fr; }
+    .remuneracao-table th,
+    .remuneracao-table td { padding: 10px; }
+  }
 
   @media (max-width: 900px) { .principal-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 640px) { .principal-hero { padding: 28px 22px; } .principal-grid { grid-template-columns: 1fr; } .header-inst-selector { grid-template-columns: 1fr; max-width: 100%; } }
@@ -620,7 +739,7 @@
   /* CSS Print - Holerite */
   @media print {
     header, .stripe-container, .menu-overlay, .sidebar, .menu-btn, footer,
-    #page-principal, #page-direitos, #page-concursos, #page-cursos, #page-livros, #page-acoes, #page-associacoes, #page-parceiros,
+    #page-principal, #page-remuneracao, #page-direitos, #page-concursos, #page-cursos, #page-livros, #page-acoes, #page-associacoes, #page-parceiros,
     .actions-row, .sidebar-ad, .alerta, h2 { display: none !important; }
     body { background: white !important; color: black !important; }
     #page-calculadora { display: block !important; max-width: 100%; margin: 0; padding: 20px; }
@@ -803,6 +922,7 @@
     <a href="#acoes" onclick="switchPage('acoes'); return false;" id="menu-acoes" tabindex="0" role="link">Ações Judiciais</a>
     <a href="#associacoes" onclick="switchPage('associacoes'); return false;" id="menu-associacoes" tabindex="0" role="link">Associações e Sindicatos</a>
     <a href="#calculadora" onclick="switchPage('calculadora'); return false;" id="menu-calculadora" tabindex="0" role="link">Calculadora de Vencimentos</a>
+    <a href="#remuneracao" onclick="switchPage('remuneracao'); return false;" id="menu-remuneracao" tabindex="0" role="link">Remuneração Tabelada</a>
     <a href="#concursos" onclick="switchPage('concursos'); return false;" id="menu-concursos" tabindex="0" role="link">Concursos</a>
     <a href="#cursos" onclick="switchPage('cursos'); return false;" id="menu-cursos" tabindex="0" role="link">Cursos</a>
     <a href="#direitos" onclick="switchPage('direitos'); return false;" id="menu-direitos" tabindex="0" role="link">Direitos e Vantagens</a>
@@ -841,10 +961,11 @@
       </div>
     </div>
     <p class="principal-subtitle">
-      Escolha sua instituição no topo do site e navegue por simulador de vencimentos, direitos, concursos, ações judiciais, associações, cursos preparatórios e parceiros. O objetivo é simples: entregar informação útil, organizada e rápida para quem vive a rotina da segurança pública.
+      Escolha sua instituição no topo do site e navegue por remuneração tabelada, simulador de vencimentos, direitos, concursos, ações judiciais, associações, cursos preparatórios e parceiros. O objetivo é simples: entregar informação útil, organizada e rápida para quem vive a rotina da segurança pública.
     </p>
     <div class="principal-actions">
-      <button class="principal-btn" type="button" onclick="switchPage('calculadora')">Abrir Simulador</button>
+      <button class="principal-btn" type="button" onclick="switchPage('remuneracao')">Ver Remuneração Grátis</button>
+      <button class="principal-btn secundario" type="button" onclick="switchPage('calculadora')">Abrir Simulador</button>
       <button class="principal-btn secundario" type="button" onclick="switchPage('concursos')">Ver Concursos</button>
       <button class="principal-btn secundario" type="button" onclick="switchPage('cursos')">Ver Cursos</button>
     </div>
@@ -852,6 +973,11 @@
 
   <!-- BLOCO 04.2 — Cards de resumo das áreas -->
   <section class="principal-grid" aria-label="Resumo das áreas do site">
+    <article class="principal-card" onclick="switchPage('remuneracao')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('remuneracao')">
+      <h3>Remuneração Tabelada</h3>
+      <p>Consulte, de forma simples e gratuita, os valores brutos estimados de remuneração e benefícios por cargo da instituição selecionada.</p>
+      <span class="principal-tag">Ver tabela grátis</span>
+    </article>
     <article class="principal-card" onclick="switchPage('calculadora')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('calculadora')">
       <h3>Calculadora de Vencimentos</h3>
       <p>Simule salário bruto, descontos, adicionais, benefícios, extras e valor líquido estimado da instituição selecionada.</p>
@@ -893,6 +1019,55 @@
       <span class="principal-tag">Anunciar aqui</span>
     </article>
   </section>
+</main>
+
+
+<!-- BLOCO 04.3 — PÁGINA REMUNERAÇÃO TABELADA -->
+<main id="page-remuneracao" class="page-section" role="main">
+  <div class="card">
+    <h2>Remuneração Tabelada (<span id="txt-inst-remuneracao">PMESP</span>)</h2>
+    <div class="remuneracao-intro">
+      Consulta simples e gratuita com valores brutos por cargo da instituição selecionada, levantados em fontes oficiais sempre que disponíveis. A tabela mostra remuneração bruta mensal, benefícios brutos de referência quando houver valor geral identificável, total bruto estimado e link da fonte usada, sem descontos, sem adicionais individuais e sem alterar a Calculadora de Vencimentos.
+    </div>
+
+    <div class="remuneracao-resumo-grid" aria-label="Resumo da remuneração tabelada">
+      <div class="remuneracao-stat">
+        <span>Cargos listados</span>
+        <strong id="remu-total-cargos">0</strong>
+      </div>
+      <div class="remuneracao-stat">
+        <span>Menor total bruto</span>
+        <strong id="remu-menor-total">R$ 0,00</strong>
+      </div>
+      <div class="remuneracao-stat">
+        <span>Maior total bruto</span>
+        <strong id="remu-maior-total">R$ 0,00</strong>
+      </div>
+    </div>
+
+    <div class="remuneracao-table-wrap">
+      <table class="remuneracao-table" aria-label="Tabela de remuneração bruta por cargo">
+        <thead>
+          <tr>
+            <th>Cargo / Classe</th>
+            <th>Remuneração bruta</th>
+            <th>Benefícios brutos</th>
+            <th>Total bruto estimado</th>
+            <th>Critério / fonte</th>
+          </tr>
+        </thead>
+        <tbody id="lista-remuneracao">
+          <tr>
+            <td colspan="5">Selecione uma instituição para carregar a tabela.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alerta legal">
+      <strong>Observação:</strong> Os valores são uma consulta rápida de remuneração bruta. Benefícios condicionados, indenizações variáveis ou verbas que dependem de escala, local, classificação, habilitação, tempo de serviço ou situação individual não são somados automaticamente para não inflar o total. Não inclui IRRF, previdência, pensão, empréstimos, plantões, extras, férias, 13º ou verbas eventuais. Para cálculo individual detalhado, use a Calculadora de Vencimentos.
+    </div>
+  </div>
 </main>
 
 <!-- BLOCO 05 — PÁGINA CALCULADORA DE VENCIMENTOS -->
@@ -3775,6 +3950,7 @@ function switchPage(page) {
   else if (page === 'concursos') carregarConcursos();
   else if (page === 'acoes') carregarAcoes();
   else if (page === 'associacoes') carregarAssociacoes();
+  else if (page === 'remuneracao') carregarRemuneracaoTabelada();
 }
 
 function getNomeAbaAtual() {
@@ -3785,6 +3961,7 @@ function getNomeAbaAtual() {
     acoes: 'Ações Judiciais',
     associacoes: 'Associações e Sindicatos',
     calculadora: 'Calculadora de Vencimentos',
+    remuneracao: 'Remuneração Tabelada',
     concursos: 'Concursos',
     cursos: 'Cursos',
     direitos: 'Direitos e Vantagens',
@@ -3856,7 +4033,299 @@ function popularCargos(inst) {
     if (c.selected) o2.selected = true;
     sCargoDir.appendChild(o2);
   });
+
+
+
 }
+
+
+/* ============================================================ */
+/* === REMUNERAÇÃO TABELADA =================================== */
+/* ============================================================ */
+/* BLOCO 15.8.1 — Tabela simples gratuita de remuneração bruta com fontes oficiais */
+const REMUNERACAO_FONTES_OFICIAIS = {
+  pmesp: {
+    nome: 'SGGD/SP — Área Policial — Polícia Militar — mês de referência julho/2025',
+    url: 'https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/policial'
+  },
+  pcsp: {
+    nome: 'SGGD/SP — Área Policial — Polícia Civil — mês de referência julho/2025',
+    url: 'https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/policial'
+  },
+  pmerj: {
+    nome: 'GESPERJ/RJ — Caderno de Remuneração — janeiro/2026 — SEPM',
+    url: 'https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf'
+  },
+  pcerj: {
+    nome: 'GESPERJ/RJ — Caderno de Remuneração — janeiro/2026 — SEPOL',
+    url: 'https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf'
+  },
+  pmmg: {
+    nome: 'MG/SEPLAG — Grupo XI — Atividades da Defesa Social — Lei nº 25.804/2026',
+    url: 'https://www.mg.gov.br/system/files/media/planejamento/documento_detalhado/2026/grupo_11_atualizacao-54-2026.pdf'
+  },
+  pcmg: {
+    nome: 'MG/SEPLAG — Grupo XI — Atividades da Defesa Social — Lei nº 25.804/2026',
+    url: 'https://www.mg.gov.br/system/files/media/planejamento/documento_detalhado/2026/grupo_11_atualizacao-54-2026.pdf'
+  },
+  pmba: {
+    nome: 'Casa Civil/BA — Lei nº 14.890/2025 — soldo, GAP e auxílio fardamento',
+    url: 'https://www.legislabahia.ba.gov.br/documentos/lei-no-14890-de-05-de-maio-de-2025'
+  },
+  pcba: {
+    nome: 'Casa Civil/BA — Lei nº 14.891/2025 — vencimento, GAJ e GAPJ',
+    url: 'https://www.legislabahia.ba.gov.br/documentos/lei-no-14891-de-05-de-maio-de-2025'
+  },
+  pmpr: {
+    nome: 'Legislação/PR — Lei nº 22.187/2024 e Lei nº 22.208/2024',
+    url: 'https://www.legislacao.pr.gov.br/legislacao/exibirAto.do?action=iniciarProcesso&codAto=344946&codItemAto=2177446'
+  },
+  pcpr: {
+    nome: 'Legislação/PR — Lei Complementar nº 259/2023 e Lei nº 22.208/2024',
+    url: 'https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=300584&dt=27.1.2024.16.42.52.571&indice=1&totalRegistros=1'
+  },
+  pr_auxilio: {
+    nome: 'Legislação/PR — auxílio-alimentação de R$ 834,74',
+    url: 'https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=257965&indice=1'
+  },
+  mg_auxilio: {
+    nome: 'ALMG — Decreto nº 49.006/2025 — ajuda de custo para alimentação',
+    url: 'https://www.almg.gov.br/legislacao-mineira/texto/DEC/49006/2025/'
+  }
+};
+
+function linhaRemuneracaoOficial(cargo, remuneracao, beneficios, criterio, benefDesc, fonteKey, badge = 'Fonte oficial') {
+  return { cargo, remuneracao: Number(remuneracao || 0), beneficios: Number(beneficios || 0), total: Number(remuneracao || 0) + Number(beneficios || 0), criterio, benefDesc, fonteKey, badge };
+}
+
+const REMUNERACAO_SP_OFICIAL = {
+  pmesp: [
+    linhaRemuneracaoOficial('CMT G — Comandante Geral PM', 22587.35, 0, 'Salário inicial oficial: salário-base + RETP + gratificação de representação. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
+    linhaRemuneracaoOficial('CEL — Coronel PM', 18082.57, 0, 'Salário inicial oficial: salário-base + RETP + gratificação de representação. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
+    linhaRemuneracaoOficial('TEN CEL — Tenente Coronel PM', 16604.78, 0, 'Salário inicial oficial: salário-base + RETP + gratificação de representação. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
+    linhaRemuneracaoOficial('MAJ — Major PM', 15219.78, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
+    linhaRemuneracaoOficial('CAP — Capitão PM', 14384.64, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
+    linhaRemuneracaoOficial('1º TEN — 1º Tenente PM', 13332.24, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
+    linhaRemuneracaoOficial('2º TEN — 2º Tenente PM', 9046.74, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
+    linhaRemuneracaoOficial('ASP OF — Aspirante a Oficial PM', 8666.50, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
+    linhaRemuneracaoOficial('SUBTEN — Subtenente PM', 7363.88, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
+    linhaRemuneracaoOficial('1º SGT — 1º Sargento PM', 6377.26, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
+    linhaRemuneracaoOficial('2º SGT — 2º Sargento PM', 5743.24, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
+    linhaRemuneracaoOficial('3º SGT — 3º Sargento PM', 5040.34, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
+    linhaRemuneracaoOficial('CABO PM', 4884.18, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
+    linhaRemuneracaoOficial('SD 1ª CL — Soldado PM 1ª Classe', 4520.20, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
+    linhaRemuneracaoOficial('SD 2ª CL — Soldado PM 2ª Classe', 4269.86, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
+    linhaRemuneracaoOficial('AL OF 4º CFO', 5013.58, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
+    linhaRemuneracaoOficial('AL OF 3º CFO', 4840.38, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
+    linhaRemuneracaoOficial('AL OF 2º CFO', 4458.80, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp'),
+    linhaRemuneracaoOficial('AL OF 1º CFO', 4249.98, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pmesp')
+  ],
+  pcsp: [
+    linhaRemuneracaoOficial('Delegado Geral de Polícia', 24832.04, 0, 'Salário inicial oficial: salário-base + RETP + gratificação de representação + ADPJ. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp'),
+    linhaRemuneracaoOficial('Delegado de Polícia — Classe Especial', 18998.25, 0, 'Salário inicial oficial: salário-base + RETP + ADPJ. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp'),
+    linhaRemuneracaoOficial('Delegado de Polícia — 1ª Classe', 17935.65, 0, 'Salário inicial oficial: salário-base + RETP + ADPJ. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp'),
+    linhaRemuneracaoOficial('Delegado de Polícia — 2ª Classe', 16824.27, 0, 'Salário inicial oficial: salário-base + RETP + ADPJ. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp'),
+    linhaRemuneracaoOficial('Delegado de Polícia — 3ª Classe', 15789.88, 0, 'Salário inicial oficial: salário-base + RETP + ADPJ. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp'),
+    ...['Médico Legista', 'Perito Criminal'].flatMap(nome => [
+      linhaRemuneracaoOficial(`${nome} — Classe Especial`, 16357.24, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp'),
+      linhaRemuneracaoOficial(`${nome} — 1ª Classe`, 15445.98, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp'),
+      linhaRemuneracaoOficial(`${nome} — 2ª Classe`, 14491.16, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp'),
+      linhaRemuneracaoOficial(`${nome} — 3ª Classe`, 13602.12, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp')
+    ]),
+    ...['Escrivão de Polícia', 'Investigador de Polícia'].flatMap(nome => [
+      linhaRemuneracaoOficial(`${nome} — Classe Especial`, 7804.58, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp'),
+      linhaRemuneracaoOficial(`${nome} — 1ª Classe`, 7086.34, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp'),
+      linhaRemuneracaoOficial(`${nome} — 2ª Classe`, 6613.20, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp'),
+      linhaRemuneracaoOficial(`${nome} — 3ª Classe`, 6173.66, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp')
+    ]),
+    ...['Fotógrafo Técnico-Pericial', 'Agente de Telecomunicações Policial', 'Auxiliar de Necropsia', 'Desenhista Técnico-Pericial', 'Papiloscopista Policial'].flatMap(nome => [
+      linhaRemuneracaoOficial(`${nome} — Classe Especial`, 6852.94, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp'),
+      linhaRemuneracaoOficial(`${nome} — 1ª Classe`, 6505.76, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp'),
+      linhaRemuneracaoOficial(`${nome} — 2ª Classe`, 6141.88, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp'),
+      linhaRemuneracaoOficial(`${nome} — 3ª Classe`, 5803.06, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp')
+    ]),
+    ...['Atendente Necrotério Policial', 'Auxiliar Papiloscopista Policial'].flatMap(nome => [
+      linhaRemuneracaoOficial(`${nome} — Classe Especial`, 5685.64, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp'),
+      linhaRemuneracaoOficial(`${nome} — 1ª Classe`, 5371.36, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp'),
+      linhaRemuneracaoOficial(`${nome} — 2ª Classe`, 5037.22, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp'),
+      linhaRemuneracaoOficial(`${nome} — 3ª Classe`, 4725.36, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial.', 'pcsp')
+    ])
+  ]
+};
+
+const REMUNERACAO_MG_OFICIAL = {
+  pmmg: [
+    ['CORONEL PMMG', 21635.64], ['TENENTE CORONEL PMMG', 19515.61], ['MAJOR PMMG', 17394.91], ['CAPITÃO PMMG', 16101.58],
+    ['1º TENENTE PMMG', 14324.95], ['2º TENENTE PMMG', 12170.60], ['ASPIRANTE A OFICIAL PMMG', 10932.55],
+    ['CADETE — Último ano PMMG', 9743.51], ['CADETE — Demais anos PMMG', 7912.19], ['SUBTENENTE PMMG', 10932.55],
+    ['1º SARGENTO PMMG', 9743.51], ['2º SARGENTO PMMG', 8505.46], ['3º SARGENTO PMMG', 7505.19],
+    ['CABO PMMG', 6505.00], ['SOLDADO 1ª CLASSE PMMG', 5620.57], ['SOLDADO 2ª CLASSE (ALUNO) PMMG', 4808.66],
+    ['ALUNO 1º SARGENTO PMMG', 9743.56], ['ALUNO SUBTENENTE PMMG', 10932.55]
+  ].map(([cargo, valor]) => linhaRemuneracaoOficial(cargo, valor, 0, 'Subsídio/vencimento básico oficial da tabela Grupo XI — Defesa Social. Vigência: 01/01/2026.', 'Ajuda de custo para alimentação regulamentada pelo Decreto MG nº 49.006/2025; não somada por depender de regra, valor e dias efetivamente trabalhados.', 'pmmg')),
+  pcmg: [
+    ['Delegado de Polícia — Geral — A', 21635.64], ['Delegado de Polícia — Geral — B', 23799.18],
+    ['Delegado de Polícia — Especial — A', 17402.29], ['Delegado de Polícia — Especial — B', 17529.88], ['Delegado de Polícia — Especial — C', 17665.93], ['Delegado de Polícia — Especial — D', 17803.03], ['Delegado de Polícia — Especial — E', 17941.20],
+    ['Delegado de Polícia — Superior II — A', 16117.11], ['Delegado de Polícia — Superior II — B', 16407.51], ['Delegado de Polícia — Superior II — C', 16719.25], ['Delegado de Polícia — Superior II — D', 17036.93], ['Delegado de Polícia — Superior II — E', 17394.91],
+    ['Delegado de Polícia — Superior I — A', 15737.60], ['Delegado de Polícia — Superior I — B', 15816.29], ['Delegado de Polícia — Superior I — C', 15895.36], ['Delegado de Polícia — Superior I — D', 15974.85], ['Delegado de Polícia — Superior I — E', 16101.58],
+    ['Médico Legista — Especial — A', 15175.57], ['Médico Legista — Especial — B', 16693.11], ['Perito Criminal — Especial — A', 15175.57], ['Perito Criminal — Especial — B', 16693.11],
+    ['Médico Legista — Superior III — A', 14947.06], ['Médico Legista — Superior III — B', 15003.86], ['Médico Legista — Superior III — C', 15060.88], ['Médico Legista — Superior III — D', 15118.10], ['Médico Legista — Superior III — E', 15175.56],
+    ['Perito Criminal — Superior III — A', 14947.06], ['Perito Criminal — Superior III — B', 15003.85], ['Perito Criminal — Superior III — C', 15060.88], ['Perito Criminal — Superior III — D', 15118.10], ['Perito Criminal — Superior III — E', 15175.56],
+    ['Médico Legista — Superior II — A', 14324.96], ['Médico Legista — Superior II — B', 14468.21], ['Médico Legista — Superior II — C', 14612.88], ['Médico Legista — Superior II — D', 14759.01], ['Médico Legista — Superior II — E', 14906.61],
+    ['Perito Criminal — Superior II — A', 14324.96], ['Perito Criminal — Superior II — B', 14468.21], ['Perito Criminal — Superior II — C', 14612.88], ['Perito Criminal — Superior II — D', 14759.01], ['Perito Criminal — Superior II — E', 14906.61],
+    ['Médico Legista — Superior I — A', 12170.61], ['Médico Legista — Superior I — B', 12535.72], ['Médico Legista — Superior I — C', 12911.81], ['Médico Legista — Superior I — D', 13299.15], ['Médico Legista — Superior I — E', 13698.13],
+    ['Perito Criminal — Superior I — A', 12170.61], ['Perito Criminal — Superior I — B', 12535.72], ['Perito Criminal — Superior I — C', 12911.81], ['Perito Criminal — Superior I — D', 13299.15], ['Perito Criminal — Superior I — E', 13698.13],
+    ['Escrivão de Polícia — Médio Especial — A', 9743.51], ['Escrivão de Polícia — Médio Especial — B', 10717.86],
+    ['Investigador de Polícia — Médio/Superior Especial — A', 9743.51], ['Investigador de Polícia — Médio/Superior Especial — B', 10717.86],
+    ['Escrivão de Polícia — Médio III — A', 7505.30], ['Escrivão de Polícia — Médio III — B', 7525.94], ['Escrivão de Polícia — Médio III — C', 7751.73], ['Escrivão de Polícia — Médio III — D', 7984.27], ['Escrivão de Polícia — Médio III — E', 8505.47],
+    ['Investigador de Polícia — Médio/Superior III — A', 7505.30], ['Investigador de Polícia — Médio/Superior III — B', 7525.94], ['Investigador de Polícia — Médio/Superior III — C', 7751.73], ['Investigador de Polícia — Médio/Superior III — D', 7984.27], ['Investigador de Polícia — Médio/Superior III — E', 8505.47],
+    ['Escrivão de Polícia — Médio II — A', 6504.99], ['Escrivão de Polícia — Médio II — B', 6667.59], ['Escrivão de Polícia — Médio II — C', 6834.29], ['Escrivão de Polícia — Médio II — D', 7005.15], ['Escrivão de Polícia — Médio II — E', 7505.19],
+    ['Investigador de Polícia — Médio/Superior II — A', 6504.99], ['Investigador de Polícia — Médio/Superior II — B', 6667.59], ['Investigador de Polícia — Médio/Superior II — C', 6834.29], ['Investigador de Polícia — Médio/Superior II — D', 7005.15], ['Investigador de Polícia — Médio/Superior II — E', 7505.19],
+    ['Escrivão de Polícia — Médio I — A', 5620.58], ['Escrivão de Polícia — Médio I — B', 5789.19], ['Escrivão de Polícia — Médio I — C', 5962.87], ['Escrivão de Polícia — Médio I — D', 6141.75], ['Escrivão de Polícia — Médio I — E', 6504.99],
+    ['Investigador de Polícia — Médio/Superior I — A', 5620.58], ['Investigador de Polícia — Médio/Superior I — B', 5789.19], ['Investigador de Polícia — Médio/Superior I — C', 5962.86], ['Investigador de Polícia — Médio/Superior I — D', 6141.75], ['Investigador de Polícia — Médio/Superior I — E', 6504.99],
+    ['Investigador de Polícia — Fundamental T — A', 5058.50], ['Investigador de Polícia — Fundamental T — B', 5353.43], ['Investigador de Polícia — Fundamental T — C', 5451.93], ['Investigador de Polícia — Fundamental T — D', 5481.34], ['Investigador de Polícia — Fundamental T — E', 5620.58]
+  ].map(([cargo, valor]) => linhaRemuneracaoOficial(cargo, valor, 0, 'Vencimento básico oficial da tabela Grupo XI — Defesa Social. Vigência: 01/01/2026.', 'Ajuda de custo para alimentação regulamentada pelo Decreto MG nº 49.006/2025; não somada por depender de regra, valor e dias efetivamente trabalhados.', 'pcmg'))
+};
+
+function getTabelaCargosRemuneracao(inst) {
+  const map = {
+    pmesp: CARGOS_PM,    pcsp: CARGOS_PC,
+    pmerj: CARGOS_PMERJ, pcerj: CARGOS_PCERJ,
+    pmmg: CARGOS_PMMG,   pcmg: CARGOS_PCMG,
+    pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA,
+    pmpr: CARGOS_PMPR,   pcpr: CARGOS_PCPR
+  };
+  return map[normalizarInstituicao(inst)] || CARGOS_PM;
+}
+
+function calcularRemuneracaoTabelada(inst, cargo) {
+  inst = normalizarInstituicao(inst);
+  const padrao = Number(cargo.padrao || 0);
+  const gratif = Number(cargo.gratif || 0);
+  let remuneracao = padrao + gratif;
+  let beneficios = 0;
+  let criterio = 'Vencimento/subsídio bruto mensal do cargo.';
+  let benefDesc = 'Benefício fixo geral não somado.';
+  let fonteKey = inst;
+  let badge = cargo.oficial ? 'Fonte oficial' : 'Carreira operacional';
+
+  if (inst === 'pmerj') {
+    const gret = padrao * Number(cargo.gretPct || 0);
+    const ghp = padrao * Number(cargo.ghpPct || 0);
+    const gram = (padrao + gret + ghp) * 0.625;
+    remuneracao = padrao + gret + ghp + gram;
+    beneficios = 0;
+    criterio = 'Soldo + GRET + GHP + GRAM, conforme tabela remuneratória SEPM/RJ.';
+    benefDesc = 'Benefícios gerais não somados nesta linha; a tabela oficial da SEPM apresenta remuneração por parcelas.';
+  } else if (inst === 'pcerj') {
+    const aapOuRepresentacao = cargo.delegado
+      ? padrao * Number(cargo.representacaoPct || 2.12)
+      : padrao * Number(cargo.aapPct || 2.30);
+    const ghp = padrao * Number(cargo.ghpPct || 0);
+    const gatc = padrao * Number(cargo.gatcPct || 0);
+    remuneracao = padrao + aapOuRepresentacao + ghp + gatc;
+    beneficios = 804;
+    criterio = cargo.delegado
+      ? 'VB + verba de representação + GHP máxima, conforme tabela SEPOL/RJ.'
+      : 'VB + AAP + GHP máxima + GATC quando aplicável, conforme tabela SEPOL/RJ.';
+    benefDesc = 'Auxílio alimentação R$ 704,00/mês + auxílio transporte R$ 100,00.';
+  } else if (inst === 'pmpr' || inst === 'pcpr') {
+    remuneracao = padrao;
+    beneficios = AUX_ALIM_PR_PADRAO;
+    criterio = 'Subsídio bruto mensal por cargo/classe.';
+    benefDesc = `Auxílio-alimentação oficial PR: ${fmt(AUX_ALIM_PR_PADRAO)}.`;
+  }
+
+  return { remuneracao, beneficios, total: remuneracao + beneficios, criterio, benefDesc, fonteKey, badge };
+}
+
+function gerarRemuneracaoTabelada(inst) {
+  inst = normalizarInstituicao(inst);
+  if (REMUNERACAO_SP_OFICIAL[inst]) return REMUNERACAO_SP_OFICIAL[inst];
+  if (REMUNERACAO_MG_OFICIAL[inst]) return REMUNERACAO_MG_OFICIAL[inst];
+
+  if (inst === 'pmba') {
+    const refs = ['I', 'II', 'III', 'IV', 'V'];
+    return CARGOS_PMBA.flatMap(cargo => (cargo.gapBa || [0]).map((gap, idx) => {
+      const remuneracao = Number(cargo.padrao || 0) + Number(gap || 0);
+      return linhaRemuneracaoOficial(
+        `${cargo.text} — GAP Ref. ${refs[idx] || (idx + 1)}`,
+        remuneracao,
+        256.18,
+        `Soldo oficial + GAP Referência ${refs[idx] || (idx + 1)}. Valores de soldo com efeito em 01/05/2026 e GAP com efeito em 01/06/2026.`,
+        'Auxílio fardamento oficial mensal: R$ 256,18. Auxílio-alimentação não somado por falta de valor geral oficial nesta fonte.',
+        'pmba',
+        cargo.oficial ? 'Fonte oficial' : 'Carreira operacional'
+      );
+    }));
+  }
+
+  if (inst === 'pcba') {
+    const refs = ['I', 'II', 'III', 'IV', 'V'];
+    return CARGOS_PCBA.flatMap(cargo => (cargo.gratBa || [0]).map((grat, idx) => {
+      const remuneracao = Number(cargo.padrao || 0) + Number(grat || 0);
+      return linhaRemuneracaoOficial(
+        `${cargo.text} — ${cargo.gratBaLabel || 'GAJ/GAPJ'} Ref. ${refs[idx] || (idx + 1)}`,
+        remuneracao,
+        0,
+        `${cargo.gratBaLabel || 'GAJ/GAPJ'} Referência ${refs[idx] || (idx + 1)}. Valores com efeito em 01/06/2026.`,
+        'Benefício fixo geral não somado nesta fonte oficial.',
+        'pcba',
+        cargo.oficial ? 'Fonte oficial' : 'Carreira operacional'
+      );
+    }));
+  }
+
+  return getTabelaCargosRemuneracao(inst).map(cargo => {
+    const calc = calcularRemuneracaoTabelada(inst, cargo);
+    return linhaRemuneracaoOficial(cargo.text, calc.remuneracao, calc.beneficios, calc.criterio, calc.benefDesc, calc.fonteKey, calc.badge);
+  });
+}
+
+function carregarRemuneracaoTabelada() {
+  const inst = normalizarInstituicao(currInst);
+  const tbody = document.getElementById('lista-remuneracao');
+  if (!tbody) return;
+
+  const linhas = gerarRemuneracaoTabelada(inst);
+
+  if (!linhas.length) {
+    tbody.innerHTML = '<tr><td colspan="5">Não há dados cadastrados para esta instituição.</td></tr>';
+    return;
+  }
+
+  const totais = linhas.map(l => l.total);
+  const menor = Math.min(...totais);
+  const maior = Math.max(...totais);
+
+  const elTotal = document.getElementById('remu-total-cargos');
+  const elMenor = document.getElementById('remu-menor-total');
+  const elMaior = document.getElementById('remu-maior-total');
+  if (elTotal) elTotal.textContent = String(linhas.length);
+  if (elMenor) elMenor.textContent = fmt(menor);
+  if (elMaior) elMaior.textContent = fmt(maior);
+
+  tbody.innerHTML = linhas.map(l => {
+    const fonte = REMUNERACAO_FONTES_OFICIAIS[l.fonteKey] || REMUNERACAO_FONTES_OFICIAIS[inst] || { nome: 'Fonte oficial da carreira', url: '#' };
+    const beneficioTexto = l.beneficios > 0 ? fmt(l.beneficios) : 'Não somado';
+    return `
+      <tr>
+        <td>
+          <strong>${escapeHtml(l.cargo)}</strong>
+          <br><span class="remuneracao-badge">${escapeHtml(l.badge || 'Fonte oficial')}</span>
+        </td>
+        <td class="valor">${fmt(l.remuneracao)}</td>
+        <td class="valor">${beneficioTexto}<br><span class="remuneracao-fonte">${escapeHtml(l.benefDesc || '')}</span></td>
+        <td class="total">${fmt(l.total)}</td>
+        <td>
+          ${escapeHtml(l.criterio || '')}<br>
+          <span class="remuneracao-fonte">${escapeHtml(fonte.nome)}</span><br>
+          <a class="remuneracao-link" href="${escapeHtml(fonte.url)}" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+        </td>
+      </tr>
+    `;
+  }).join('');
+}
+
 
 /* ============================================================ */
 /* === TROCA INSTITUIÇÃO ====================================== */
@@ -3908,6 +4377,7 @@ function mudarInstituicao(novaInstituicao) {
   atualizarTexto('txt-inst-dir', config.titulo);
   atualizarTexto('txt-inst-concursos', config.titulo);
   atualizarTexto('txt-inst-cursos', config.titulo);
+  atualizarTexto('txt-inst-remuneracao', config.titulo);
   atualizarTexto('txt-inst-acoes', config.titulo);
   atualizarTexto('txt-inst-assoc', config.titulo);
   atualizarTexto('alerta-prev', config.alertaPrev);
@@ -3922,6 +4392,7 @@ function mudarInstituicao(novaInstituicao) {
   carregarConcursos();
   carregarAcoes();
   carregarAssociacoes();
+  carregarRemuneracaoTabelada();
   atualizarTitulosCalculadora();
   salvarFormulario();
 }

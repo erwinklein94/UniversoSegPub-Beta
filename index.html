@@ -6819,7 +6819,11 @@ function atualizarHeaderDesc(descInstituicao) {
     ppes: 'Polícia Penal do Espírito Santo',
     pmms: 'Polícia Militar de Mato Grosso do Sul',
     pcms: 'Polícia Civil de Mato Grosso do Sul',
-    ppms: 'Polícia Penal de Mato Grosso do Sul',};
+    ppms: 'Polícia Penal de Mato Grosso do Sul',
+    pmmt: 'Polícia Militar de Mato Grosso',
+    pcmt: 'Polícia Judiciária Civil de Mato Grosso',
+    ppmt: 'Polícia Penal de Mato Grosso'
+  };
   const textoAba = getNomeAbaAtual();
   const desc = descInstituicao || descs[currInst] || descs.pmesp;
   const el = document.getElementById('header-desc');

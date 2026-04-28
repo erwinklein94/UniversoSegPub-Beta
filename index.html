@@ -39,7 +39,7 @@
 <!-- BLOCO 01.4 — Metadados, título e fontes externas -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Simulador de vencimentos e direitos para policiais militares, civis e penais de SP, RJ, MG, BA, PR, RS, SC e ES - Atualizado 2026 com tabelas BA/MG/PR revisadas e auxílio-alimentação por instituição">
+<meta name="description" content="Simulador de vencimentos e direitos para policiais militares, civis e penais de SP, RJ, MG, BA, PR, RS, SC, ES e MS - Atualizado 2026 com tabelas BA/MG/PR revisadas e auxílio-alimentação por instituição">
 <title>Universo Segurança Pública - Simulador e Direitos 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,6 +110,8 @@
   body[data-inst="pcsc"] { --vermelho: #4b5563; --vermelho-escuro: #1f2937; }
   body[data-inst="pmes"] { --vermelho: #0b5c9e; --vermelho-escuro: #063a63; }
   body[data-inst="pces"] { --vermelho: #4b3f72; --vermelho-escuro: #2c2545; }
+  body[data-inst="pmms"] { --vermelho: #2f5f8f; --vermelho-escuro: #1a3858; }
+  body[data-inst="pcms"] { --vermelho: #4b5563; --vermelho-escuro: #1f2937; }
 
   body[data-inst="ppsp"] { --vermelho: #6f4e37; --vermelho-escuro: #3f2d21; }
   body[data-inst="pprj"] { --vermelho: #5a4b81; --vermelho-escuro: #332a50; }
@@ -119,6 +121,7 @@
   body[data-inst="pprs"] { --vermelho: #315d7c; --vermelho-escuro: #1d374b; }
   body[data-inst="ppsc"] { --vermelho: #38598b; --vermelho-escuro: #203553; }
   body[data-inst="ppes"] { --vermelho: #5e548e; --vermelho-escuro: #342f5a; }
+  body[data-inst="ppms"] { --vermelho: #516b3b; --vermelho-escuro: #2f3f23; }
 
   /* BLOCO 02.4 — Reset básico e estrutura geral */
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -656,8 +659,8 @@
   .field.span-2 { grid-column: span 2; }
 
   /* BLOCO 02.12 — Exibição condicional por instituição/estado */
-  .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only, .pmba-only, .pcba-only, .pmpr-only, .pcpr-only, .pmrs-only, .pcrs-only, .pmsc-only, .pcsc-only, .pmes-only, .pces-only,
-  .sp-only, .mg-only, .ba-only, .pr-only, .rs-only, .sc-only, .es-only {
+  .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only, .pmba-only, .pcba-only, .pmpr-only, .pcpr-only, .pmrs-only, .pcrs-only, .pmsc-only, .pcsc-only, .pmes-only, .pces-only, .pmms-only, .pcms-only,
+  .sp-only, .mg-only, .ba-only, .pr-only, .rs-only, .sc-only, .es-only, .ms-only {
     display: none !important;
   }
 
@@ -677,6 +680,8 @@
   body[data-inst="pcsc"] .field.pcsc-only, body[data-inst="pcsc"] h2.pcsc-only { display: flex !important; }
   body[data-inst="pmes"] .field.pmes-only, body[data-inst="pmes"] h2.pmes-only { display: flex !important; }
   body[data-inst="pces"] .field.pces-only, body[data-inst="pces"] h2.pces-only { display: flex !important; }
+  body[data-inst="pmms"] .field.pmms-only, body[data-inst="pmms"] h2.pmms-only { display: flex !important; }
+  body[data-inst="pcms"] .field.pcms-only, body[data-inst="pcms"] h2.pcms-only { display: flex !important; }
 
   body[data-inst="pmesp"] .field.sp-only,
   body[data-inst="pcsp"] .field.sp-only,
@@ -691,7 +696,9 @@
   body[data-inst="pmsc"] .field.sc-only,
   body[data-inst="pcsc"] .field.sc-only,
   body[data-inst="pmes"] .field.es-only,
-  body[data-inst="pces"] .field.es-only { display: flex !important; }
+  body[data-inst="pces"] .field.es-only,
+  body[data-inst="pmms"] .field.ms-only,
+  body[data-inst="pcms"] .field.ms-only { display: flex !important; }
 
   body[data-inst="pmesp"] div.alerta.pm-only { display: block !important; }
   body[data-inst="pcsp"] div.alerta.pc-only { display: block !important; }
@@ -709,6 +716,8 @@
   body[data-inst="pcsc"] div.alerta.pcsc-only { display: block !important; }
   body[data-inst="pmes"] div.alerta.pmes-only { display: block !important; }
   body[data-inst="pces"] div.alerta.pces-only { display: block !important; }
+  body[data-inst="pmms"] div.alerta.pmms-only { display: block !important; }
+  body[data-inst="pcms"] div.alerta.pcms-only { display: block !important; }
 
   /* BLOCO 02.13 — Labels, tooltips e campos */
   label { font-family: 'Roboto', sans-serif; font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 4px; }
@@ -1010,6 +1019,11 @@
                 <option value="pces">PCES - Polícia Civil</option>
                 <option value="ppes">PPES - Polícia Penal</option>
               </optgroup>
+              <optgroup label="Mato Grosso do Sul">
+                <option value="pmms">PMMS - Polícia Militar</option>
+                <option value="pcms">PCMS - Polícia Civil</option>
+                <option value="ppms">PPMS - Polícia Penal</option>
+              </optgroup>
             </select>
           </div>
 
@@ -1074,6 +1088,11 @@
         <button class="state-flag" type="button" data-estado="es" title="Espírito Santo" onclick="selecionarEstado('es')" aria-label="Selecionar Espírito Santo" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Esp%C3%ADrito_Santo.svg" alt="Bandeira do Espírito Santo">
           <span>ES</span>
+        </button>
+
+        <button class="state-flag" type="button" data-estado="ms" title="Mato Grosso do Sul" onclick="selecionarEstado('ms')" aria-label="Selecionar Mato Grosso do Sul" aria-pressed="false">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Mato_Grosso_do_Sul.svg" alt="Bandeira de Mato Grosso do Sul">
+          <span>MS</span>
         </button>
       </div>
     </div>
@@ -1142,6 +1161,11 @@
         <option value="pmes">PMES - Polícia Militar</option>
         <option value="pces">PCES - Polícia Civil</option>
         <option value="ppes">PPES - Polícia Penal</option>
+      </optgroup>
+      <optgroup label="Mato Grosso do Sul">
+        <option value="pmms">PMMS - Polícia Militar</option>
+        <option value="pcms">PCMS - Polícia Civil</option>
+        <option value="ppms">PPMS - Polícia Penal</option>
       </optgroup>
     </select>
     <p class="sidebar-selector-hint">Os dados das abas serão ajustados conforme a instituição escolhida.</p>
@@ -1260,11 +1284,11 @@
   <!-- BLOCO 04.2 — Indicadores de autoridade e cobertura do portal -->
   <section class="principal-stats" aria-label="Resumo de cobertura do site">
     <div class="principal-stat">
-      <strong>8 estados</strong>
+      <strong>9 estados</strong>
       <span>Campos disponíveis</span>
     </div>
     <div class="principal-stat">
-      <strong>24</strong>
+      <strong>27</strong>
       <span>Instituições cadastradas</span>
     </div>
     <div class="principal-stat">
@@ -1683,6 +1707,20 @@
           <span>Produto físico</span>
           <span>TAF</span>
           <span>Treino em casa</span>
+        </div>
+        <span class="curso-cta">Comprar aqui</span>
+      </a>
+
+      <a class="curso-card produto-card" href="https://s.shopee.com.br/1qYSZj5bki" target="_blank" rel="noopener noreferrer" aria-label="Abrir BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP">
+        <div class="produto-imagem" aria-hidden="true">
+          <img src="botaacero" data-img-base="botaacero" alt="BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" loading="lazy" onerror="carregarImagemProduto(this)">
+        </div>
+        <h3>BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP</h3>
+        <p>No trabalho policial, uma boa bota ajuda na estabilidade, proteção dos pés e tornozelos, aderência em deslocamentos e conforto em longas jornadas. Isso favorece mobilidade, postura e segurança durante patrulhamento, plantões, abordagens e ocorrências.</p>
+        <div class="curso-meta" aria-label="Destaques do produto">
+          <span>Produto físico</span>
+          <span>Uso operacional</span>
+          <span>Conforto e proteção</span>
         </div>
         <span class="curso-cta">Comprar aqui</span>
       </a>
@@ -4878,6 +4916,36 @@ const CARGOS_PCES = [
 
 
 
+const CARGOS_PMMS = [
+  // PMMS — Mato Grosso do Sul. Valores numéricos mantidos apenas quando havia referência de edital/concursos já cadastrável; demais postos ficam como "A confirmar" para não inventar tabela vigente.
+  { val: "sd_aluno_ms", text: "AL SD PM — Aluno-Soldado PMMS — referência último concurso", padrao: 2252.25, oficial: true, selected: true, retpFator: 0 },
+  { val: "sd_ms", text: "SD PM — Soldado PMMS — referência pós-formação/último edital", padrao: 4826.75, oficial: true, retpFator: 0 },
+  { val: "cabo_ms", text: "CABO PM — Cabo PMMS — tabela vigente a confirmar", padrao: 0, oficial: true, valorPendente: true, retpFator: 0 },
+  { val: "sgt3_ms", text: "3º SGT PM — 3º Sargento PMMS — tabela vigente a confirmar", padrao: 0, oficial: true, valorPendente: true, retpFator: 0 },
+  { val: "sgt2_ms", text: "2º SGT PM — 2º Sargento PMMS — tabela vigente a confirmar", padrao: 0, oficial: true, valorPendente: true, retpFator: 0 },
+  { val: "sgt1_ms", text: "1º SGT PM — 1º Sargento PMMS — tabela vigente a confirmar", padrao: 0, oficial: true, valorPendente: true, retpFator: 0 },
+  { val: "subten_ms", text: "SUBTEN PM — Subtenente PMMS — tabela vigente a confirmar", padrao: 0, oficial: true, valorPendente: true, retpFator: 0 },
+  { val: "asp_ms", text: "ASP OF PM — Aspirante a Oficial PMMS — tabela vigente a confirmar", padrao: 0, oficial: true, valorPendente: true, retpFator: 0 },
+  { val: "ten2_ms", text: "2º TEN PM — 2º Tenente PMMS — tabela vigente a confirmar", padrao: 0, oficial: true, valorPendente: true, retpFator: 0 },
+  { val: "ten1_ms", text: "1º TEN PM — 1º Tenente PMMS — tabela vigente a confirmar", padrao: 0, oficial: true, valorPendente: true, retpFator: 0 },
+  { val: "cap_ms", text: "CAP PM — Capitão PMMS — tabela vigente a confirmar", padrao: 0, oficial: true, valorPendente: true, retpFator: 0 },
+  { val: "maj_ms", text: "MAJ PM — Major PMMS — tabela vigente a confirmar", padrao: 0, oficial: true, valorPendente: true, retpFator: 0 },
+  { val: "tencel_ms", text: "TEN CEL PM — Tenente-Coronel PMMS — tabela vigente a confirmar", padrao: 0, oficial: true, valorPendente: true, retpFator: 0 },
+  { val: "cel_ms", text: "CEL PM — Coronel PMMS — tabela vigente a confirmar", padrao: 0, oficial: true, valorPendente: true, retpFator: 0 }
+];
+
+const CARGOS_PCMS = [
+  // PCMS — Edital SAD/SEJUSP/PCMS/APJ/2025 divulgou 400 vagas para APJ, com remuneração de R$ 6.569,53 para Investigador e Escrivão.
+  { val: "investigador_ms", text: "Investigador de Polícia Judiciária PCMS — APJ — edital 2025", padrao: 6569.53, oficial: true, selected: true, retpFator: 0 },
+  { val: "escrivao_ms", text: "Escrivão de Polícia Judiciária PCMS — APJ — edital 2025", padrao: 6569.53, oficial: true, retpFator: 0 },
+  { val: "delegado_ms", text: "Delegado de Polícia PCMS — classe/referência a confirmar", padrao: 0, oficial: true, delegado: true, valorPendente: true, retpFator: 0 },
+  { val: "perito_criminal_ms", text: "Perito Oficial Forense / Criminal MS — classe/referência a confirmar", padrao: 0, oficial: true, perito: true, valorPendente: true, retpFator: 0 },
+  { val: "medico_legista_ms", text: "Médico-Legista MS — classe/referência a confirmar", padrao: 0, oficial: true, perito: true, valorPendente: true, retpFator: 0 },
+  { val: "papiloscopista_ms", text: "Papiloscopista MS — classe/referência a confirmar", padrao: 0, oficial: true, valorPendente: true, retpFator: 0 },
+  { val: "agente_cientifica_ms", text: "Agente de Polícia Científica MS — classe/referência a confirmar", padrao: 0, oficial: true, valorPendente: true, retpFator: 0 }
+];
+
+
 /* BLOCO 15.3.1 — Cargos-base e dossiê informativo da Polícia Penal por Estado
    Observação: a Polícia Penal foi inserida no art. 144 da Constituição pela EC 104/2019.
    Como a implantação, nomenclatura, carreira, adicionais, previdência e tabelas remuneratórias variam por UF,
@@ -5147,6 +5215,40 @@ const POLICIAS_PENAIS_INFO = {
     fonte: 'SEJUS/PPES — LC ES 1.059/2023, LC ES 1.061/2023, portarias e concurso',
     url: 'https://sejus.es.gov.br/',
     atualizado: 'Atualizado em 28/04/2026'
+  },
+
+  ppms: {
+    sigla: 'PPMS',
+    nome: 'Polícia Penal de Mato Grosso do Sul',
+    uf: 'Mato Grosso do Sul',
+    criacao: 'EC 104/2019 · Diretoria-Geral da Polícia Penal/AGEPEN-MS',
+    marco: 'Mato Grosso do Sul possui Diretoria-Geral da Polícia Penal vinculada à estrutura da AGEPEN/MS, com atuação voltada à segurança, custódia, escolta, inteligência e gestão operacional do sistema prisional.',
+    orgao: 'AGEPEN/MS — Agência Estadual de Administração do Sistema Penitenciário',
+    direcao: 'Creone da Conceição Batista — Diretor-Geral da Polícia Penal; Rodrigo Rossi Maiorchini — Diretor-Presidente da AGEPEN/MS',
+    subordinacao: 'Sistema penitenciário estadual de Mato Grosso do Sul, com coordenação administrativa pela AGEPEN/MS e integração com a SEJUSP/MS.',
+    efetivoAtivoLabel: 'Conferir AGEPEN/MS',
+    reservaLabel: 'Inativos: conferir AGEPREV/MS',
+    totalLabel: 'Conferir AGEPEN/MS',
+    relacaoLabel: 'Não calcular sem efetivo oficial consolidado',
+    quadro: 'Carreira penal estadual em consolidação constitucional após a EC 104/2019; conferir leis estaduais, atos da AGEPEN/MS e publicações no Diário Oficial/MS.',
+    ingresso: 'Concurso público, curso de formação, investigação social, exames e demais fases previstas no edital vigente.',
+    escolaridade: 'Conferir edital vigente da AGEPEN/MS; requisitos podem variar conforme cargo, carreira e legislação local.',
+    formacao: 'Curso de formação e capacitações operacionais do sistema penitenciário estadual, com foco em custódia, segurança, escolta, disciplina, inteligência e rotinas prisionais.',
+    atribuicoes: 'Segurança interna e externa de unidades prisionais, custódia, escolta, controle disciplinar, prevenção de ilícitos, inteligência prisional e proteção das instalações.',
+    remuneracao: 'Conferir tabela oficial, edital e contracheque da AGEPEN/MS; não somar adicionais, indenizações ou auxílios sem rubrica específica.',
+    vantagens: 'Podem existir adicionais, indenizações, gratificações, auxílio-alimentação e verbas condicionadas por lei, escala, lotação e situação funcional.',
+    saude: 'Assistência conforme regras estaduais, AGEPEN/MS, AGEPREV/MS e normas administrativas aplicáveis ao servidor.',
+    previdencia: 'AGEPREV/MS/regime próprio estadual; aposentadoria e transições exigem análise individual do histórico funcional.',
+    concurso: {
+      vagas: 'Conferir autorização, edital e publicações no Diário Oficial de Mato Grosso do Sul.',
+      salario: 'A confirmar em edital/tabela oficial da AGEPEN/MS.',
+      banca: 'A definir conforme edital vigente.',
+      escolaridade: 'Conferir edital e legislação local da carreira.'
+    },
+    associacaoBusca: 'associação ou sindicato dos policiais penais de Mato Grosso do Sul',
+    fonte: 'AGEPEN/MS — Diretoria-Geral da Polícia Penal e atos oficiais do DOE/MS',
+    url: 'https://www.agepen.ms.gov.br/',
+    atualizado: 'Atualizado em 28/04/2026'
   }
 };
 
@@ -5413,6 +5515,16 @@ const CARGOS_PPES = mapearTabelaPoliciaPenal('ppes', [
 );
 
 
+
+const CARGOS_PPMS = mapearTabelaPoliciaPenal('ppms', [
+  { id: 'policial_penal_ms', text: 'PPMS — Policial Penal / carreira penitenciária estadual — tabela vigente a confirmar', valor: 0, badge: 'A confirmar' }
+],
+  'Remuneração da Polícia Penal/MS deve ser conferida em tabela oficial da AGEPEN/MS, edital vigente, Diário Oficial/MS ou contracheque do servidor. Esta linha mantém a instituição cadastrada sem inventar valor não confirmado.',
+  'Adicionais, gratificações, indenizações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente.',
+  'ppms',
+  { badge: 'A confirmar' }
+);
+
 /* ============================================================ */
 /* === AÇÕES JUDICIAIS (com tipo, ano, prazo, base legal) ===== */
 /* ============================================================ */
@@ -5547,6 +5659,17 @@ const ACOES_JUDICIAIS = {
     { titulo: "Delegado PCES — categoria, referência e subsídio", status: "Conferência individual", ano: "Tabelas 2025", tipo: "individual", desc: "A análise deve comparar categoria, referência, data de progressão/promoção e tabela vigente com o contracheque e a ficha funcional.", base: "Tabelas de subsídio dos Delegados de Polícia do ES, legislação estadual e ficha funcional.", fonte: "ALEES/ES — legislação", fonteUrl: "https://www.al.es.gov.br/", atualizado: "Abril/2026" },
     { titulo: "Serviço extraordinário do OIP", status: "Depende de escala", ano: "LC ES 1.093/2024", tipo: "individual", desc: "A LC ES 1.093/2024 prevê prestação de serviço extraordinário conforme interesse público, disponibilidade, candidatura prévia e escala, com regra própria de cálculo e sem incorporação à inatividade.", base: "LC ES 1.093/2024, escala, autorização administrativa e contracheque.", fonte: "LC ES 1.093/2024", fonteUrl: "https://pc.es.gov.br/Media/PCES/Legisla%C3%A7%C3%A3o/LC_%20n_%201093_cria_OIP.pdf", atualizado: "Abril/2026" },
     { titulo: "Aposentadoria policial, abono e paridade/integralidade", status: "Tema sensível", ano: "EC 103/2019", tipo: "individual", desc: "A análise depende de cargo, data de ingresso, tempo em atividade policial, regra de transição, norma estadual aplicada, abono de permanência e situação funcional.", base: "Lei Federal 14.735/2023, EC 103/2019, legislação previdenciária estadual e ficha funcional.", fonte: "PCES/IPAJM/ES", fonteUrl: "https://pc.es.gov.br/", atualizado: "Abril/2026" }
+  ],
+
+  pmms: [
+    { titulo: "Promoção, preterição e enquadramento militar", status: "Conferência individual", ano: "Regime MS", tipo: "individual", desc: "Discussões podem envolver quadro de acesso, antiguidade/merecimento, interstícios, publicações, promoções retroativas e reflexos financeiros.", base: "Estatuto e legislação dos militares estaduais de MS, boletins, ficha funcional e Diário Oficial/MS.", fonte: "PMMS/DOE-MS", fonteUrl: "https://www.pm.ms.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Escalas, adicionais e diferenças remuneratórias", status: "Depende de rubrica", ano: "Caso concreto", tipo: "individual", desc: "Pode envolver adicional, verba eventual, indenização, serviço extraordinário, ajuda de custo ou diferença por escala/lotação, sempre comparando lei, ordem de serviço e contracheque.", base: "Legislação estadual, escala, ordem de serviço, ficha financeira e holerite.", fonte: "PMMS/Portal MS", fonteUrl: "https://www.pm.ms.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Reserva remunerada, reforma e abono de permanência", status: "Análise previdenciária", ano: "Tema recorrente", tipo: "individual", desc: "A análise depende de tempo de serviço, data de ingresso, regras do sistema de proteção social, averbações, idade, situação funcional e cálculo aplicado.", base: "Sistema de proteção social dos militares estaduais, AGEPREV/MS e ficha funcional.", fonte: "AGEPREV/MS", fonteUrl: "https://www.ageprev.ms.gov.br/", atualizado: "Abril/2026" }
+  ],
+  pcms: [
+    { titulo: "APJ PCMS — concurso, nomeação e ordem de classificação", status: "Acompanhar edital", ano: "Edital APJ/2025", tipo: "individual", desc: "Candidatos podem acompanhar convocações, cotas, nomeações, curso de formação e eventual preterição conforme edital e publicações oficiais.", base: "Edital SAD/SEJUSP/PCMS/APJ/2025, atos da banca, PCMS, Acadepol e Diário Oficial/MS.", fonte: "PCMS — concurso APJ 2025", fonteUrl: "https://www.pc.ms.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Classe, referência e progressão na Polícia Civil", status: "Conferência individual", ano: "LC MS 114/2005 e alterações", tipo: "individual", desc: "Diferenças podem envolver enquadramento, promoção, classe, referência, tempo na carreira, ficha funcional e tabela legal vigente.", base: "LC MS 114/2005, LC MS 343/2024, ficha funcional e contracheque.", fonte: "PCMS/DOE-MS", fonteUrl: "https://www.pc.ms.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Aposentadoria policial e abono de permanência", status: "Tema sensível", ano: "EC 103/2019", tipo: "individual", desc: "A análise depende de cargo, data de ingresso, tempo de atividade policial, regra de transição, abono implantado ou não e situação funcional.", base: "Lei Federal 14.735/2023, EC 103/2019, legislação estadual e AGEPREV/MS.", fonte: "PCMS/AGEPREV-MS", fonteUrl: "https://www.ageprev.ms.gov.br/", atualizado: "Abril/2026" }
   ]
 
 };
@@ -5639,6 +5762,17 @@ const ASSOCIACOES = {
     { nome: "SINDIPOL/ES — Sindicato dos Policiais Civis do Espírito Santo", foco: "Policiais civis do Espírito Santo", acao: "Representação sindical em pautas de carreira, remuneração, condições de trabalho, direitos, aposentadoria e valorização da Polícia Civil.", site: "Consultar site/canal oficial da entidade", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Atendimento sindical, notícias, mobilização, assembleias, orientação e eventual apoio jurídico conforme regras internas." },
     { nome: "ADEPOL-ES — Associação dos Delegados de Polícia do Espírito Santo", foco: "Delegados de Polícia Civil do Espírito Santo", acao: "Representação associativa da carreira de Delegado, defesa de prerrogativas, acompanhamento legislativo e valorização institucional.", site: "Consultar site/canal oficial da entidade", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação institucional, comunicação, eventos, apoio associativo e defesa de prerrogativas." },
     { nome: "Entidades por carreira da PCES/PCIES", foco: "Oficial Investigador, Delegados, Perícia Oficial e demais carreiras ligadas à segurança pública estadual", acao: "Atuação por carreira em pautas de subsídio, enquadramento, progressão, saúde, aposentadoria, escalas e condições de trabalho.", site: "Consultar canais oficiais da entidade de cada carreira", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Informativos, orientação, acompanhamento legislativo, pautas remuneratórias e eventual suporte jurídico conforme contrato." }
+  ],
+
+  pmms: [
+    { nome: "ACS-PM/BM-MS — Associação de Cabos e Soldados de MS", foco: "Praças da Polícia Militar e do Corpo de Bombeiros Militar de Mato Grosso do Sul", acao: "Representação associativa em pautas de remuneração, carreira, previdência, condições de trabalho e valorização dos militares estaduais.", site: "Consultar site/canal oficial da entidade", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente na entidade", servicos: "Comunicação de classe, acompanhamento legislativo, orientação associativa, convênios e eventual apoio jurídico conforme regras internas." },
+    { nome: "Entidades da oficialidade militar estadual de MS", foco: "Oficiais da PMMS e do CBMMS", acao: "Atuação institucional e associativa em temas de carreira, prerrogativas, promoções, sistema de proteção social e valorização da oficialidade.", site: "Consultar canais oficiais da entidade", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Representação associativa, acompanhamento de pautas, eventos, comunicação e orientação aos associados." },
+    { nome: "Entidades locais da PMMS", foco: "Militares estaduais ativos, veteranos e pensionistas", acao: "Apoio associativo em pautas de escala, promoção, remuneração, saúde, previdência e condições de serviço.", site: "Consultar canais oficiais e redes institucionais", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Informativos, orientação, representação e eventual suporte jurídico/administrativo conforme contrato." }
+  ],
+  pcms: [
+    { nome: "SINPOL-MS — Sindicato dos Policiais Civis de Mato Grosso do Sul", foco: "Policiais civis de Mato Grosso do Sul", acao: "Representação sindical em pautas de carreira, remuneração, concurso, condições de trabalho, aposentadoria e valorização da Polícia Civil.", site: "Consultar site/canal oficial da entidade", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Atendimento sindical, notícias, assembleias, mobilização, orientação e eventual apoio jurídico conforme regras internas." },
+    { nome: "ADEPOL-MS — Associação dos Delegados de Polícia de Mato Grosso do Sul", foco: "Delegados de Polícia Civil de Mato Grosso do Sul", acao: "Representação associativa da carreira de Delegado, defesa de prerrogativas, acompanhamento legislativo e valorização institucional.", site: "Consultar site/canal oficial da entidade", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação institucional, comunicação, eventos, apoio associativo e defesa de prerrogativas." },
+    { nome: "Entidades por carreira da PCMS", foco: "Investigadores, Escrivães, Delegados, Perícia Oficial e demais carreiras ligadas à Polícia Civil", acao: "Atuação por carreira em pautas de subsídio, enquadramento, progressão, saúde, aposentadoria, plantões e condições de trabalho.", site: "Consultar canais oficiais da entidade de cada carreira", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Informativos, orientação, acompanhamento legislativo, pautas remuneratórias e eventual suporte jurídico conforme contrato." }
   ]
 
 };
@@ -5917,6 +6051,41 @@ const CONCURSOS = {
     validade: "Conferir edital e atos posteriores.",
     previsao: "Concurso OIP 2025 em andamento; acompanhar publicações da PCES e IBADE para cronograma, convocações e resultados.",
     site: "https://pc.es.gov.br/"
+  },
+
+  pmms: {
+    edital: "PMMS — Soldado e Oficial — último ciclo SAD/SEJUSP/PMMS 2022 e acompanhamento de atos posteriores",
+    salario: "Referências do último concurso cadastradas como triagem: Aluno-Soldado e Soldado pós-formação. Conferir tabela vigente no DOE/MS e página de concursos antes de decisão financeira.",
+    vagas: "Último ciclo PMMS/2022: vagas para Soldado e Oficial; acompanhar novos editais, convocações e prorrogações no portal Concursos MS e PMMS.",
+    cotas: "Reserva de vagas conforme edital e legislação estadual vigente.",
+    idade: "Conferir edital; requisitos podem envolver idade, altura, CNH, aptidão física, escolaridade e investigação social.",
+    escolaridade: "Conferir edital vigente; requisitos variam para Soldado, Oficial e demais quadros.",
+    banca: "IDECAN no último ciclo PMMS/2022.",
+    inscritos: "Sem edital novo aberto cadastrado nesta versão; acompanhar Concursos MS, PMMS e Diário Oficial/MS.",
+    materias: "Conforme edital: Língua Portuguesa, Raciocínio Lógico, Noções de Direito, legislação/institucional, atualidades, conhecimentos específicos e demais disciplinas previstas.",
+    etapas: "Prova objetiva, TAF, avaliação psicológica, exame de saúde, investigação social, entrega de documentos, curso de formação e demais fases do edital.",
+    cfsd: "Curso de Formação de Soldados ou Curso de Formação de Oficiais, conforme cargo.",
+    estagio: "Estágio/probatório e regras da carreira militar estadual conforme legislação e atos da corporação.",
+    validade: "Conferir edital, atos de homologação, prorrogação e publicações no DOE/MS.",
+    previsao: "Acompanhar PMMS, Concursos MS, SEJUSP/MS e Diário Oficial/MS para novos editais e convocações.",
+    site: "https://www.pm.ms.gov.br/"
+  },
+  pcms: {
+    edital: "PCMS — Agente de Polícia Judiciária — Edital SAD/SEJUSP/PCMS/APJ/2025",
+    salario: "R$ 6.569,53 para Investigador de Polícia Judiciária e Escrivão de Polícia Judiciária, jornada de 40h, conforme divulgação oficial do concurso APJ/2025.",
+    vagas: "400 vagas imediatas: 300 para Investigador de Polícia Judiciária e 100 para Escrivão de Polícia Judiciária.",
+    cotas: "Vagas em ampla concorrência e reservas conforme edital, incluindo negros, indígenas e pessoas com deficiência.",
+    idade: "Requisitos divulgados: 21 a 45 anos, nível superior, CNH categoria B ou superior e demais exigências do edital.",
+    escolaridade: "Nível superior completo em qualquer área para APJ, com CNH B ou superior; demais carreiras exigem requisitos próprios.",
+    banca: "Instituto Avalia.",
+    inscritos: "Inscrições divulgadas de 16/07/2025 a 07/08/2025; prova objetiva prevista para 14/09/2025 em Campo Grande.",
+    materias: "Conforme edital APJ/2025: conteúdos gerais, jurídicos, legislação, raciocínio lógico/informática quando previstos, conhecimentos institucionais e específicos.",
+    etapas: "Prova objetiva, avaliação de títulos, investigação social, exames de saúde, avaliação psicológica, TAF e curso de formação, conforme edital.",
+    cfsd: "Curso de Formação Profissional pela Acadepol/PCMS.",
+    estagio: "Estágio probatório conforme LC MS 114/2005, alterações e regras estaduais aplicáveis.",
+    validade: "Conferir edital, homologação, convocações e atos posteriores no DOE/MS e nos canais oficiais.",
+    previsao: "Concurso APJ/2025 em andamento/convocações; acompanhar PCMS, Instituto Avalia, Acadepol e Diário Oficial/MS.",
+    site: "https://www.pc.ms.gov.br/"
   }
 
 };
@@ -5927,7 +6096,7 @@ const CONCURSOS = {
 /* ============================================================ */
 let currTabela = CARGOS_PM;
 let currInst = 'pmesp';
-const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes'];
+const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms'];
 function normalizarInstituicao(inst) {
   return INSTITUICOES_VALIDAS.includes(inst) ? inst : 'pmesp';
 }
@@ -6071,7 +6240,10 @@ function atualizarHeaderDesc(descInstituicao) {
     pppr: 'Polícia Penal do Paraná',
     pprs: 'Polícia Penal do Rio Grande do Sul',
     ppsc: 'Polícia Penal de Santa Catarina',
-    ppes: 'Polícia Penal do Espírito Santo',};
+    ppes: 'Polícia Penal do Espírito Santo',
+    pmms: 'Polícia Militar de Mato Grosso do Sul',
+    pcms: 'Polícia Civil de Mato Grosso do Sul',
+    ppms: 'Polícia Penal de Mato Grosso do Sul',};
   const textoAba = getNomeAbaAtual();
   const desc = descInstituicao || descs[currInst] || descs.pmesp;
   const el = document.getElementById('header-desc');
@@ -6112,7 +6284,8 @@ function popularCargos(inst) {
     pmpr: CARGOS_PMPR,   pcpr: CARGOS_PCPR,   pppr: CARGOS_PPPR,
     pmrs: CARGOS_PMRS,   pcrs: CARGOS_PCRS,   pprs: CARGOS_PPRS,
     pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC,   ppsc: CARGOS_PPSC,
-    pmes: CARGOS_PMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,};
+    pmes: CARGOS_PMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,
+    pmms: CARGOS_PMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,};
   currTabela = map[inst] || CARGOS_PM;
 
   const sCargo = document.getElementById('cargo');
@@ -6211,6 +6384,18 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     nome: 'PCES/ES — LC 1.093/2024, concurso OIP 2025, tabelas de Delegado e PCIES/Perícia Oficial',
     url: 'https://pc.es.gov.br/Media/PCES/Legisla%C3%A7%C3%A3o/LC_%20n_%201093_cria_OIP.pdf'
   },
+  pmms: {
+    nome: 'PMMS — Concursos MS / PMMS / DOE-MS',
+    url: 'https://www.pm.ms.gov.br/'
+  },
+  pcms: {
+    nome: 'PCMS — Edital APJ/2025 e legislação estadual',
+    url: 'https://www.pc.ms.gov.br/'
+  },
+  ppms: {
+    nome: 'AGEPEN/MS — Polícia Penal / DOE-MS',
+    url: 'https://www.agepen.ms.gov.br/'
+  },
   ppsp: {
     nome: 'PPSP — SAP/SP e ALESP — LC SP 1.416/2024, LC SP 1.425/2025 e concurso SAP 2025',
     url: 'https://www.sap.sp.gov.br/sec_adm_penitenciaria/Noticias/policia-penal-paulista-abre-inscricoes-para-concurso'
@@ -6272,6 +6457,13 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
     return `${detalhesLinha}${info.sigla}: ${info.atribuicoes} ${info.vantagens} Fonte principal: ${info.fonte}.`;
   }
 
+  if (inst === 'pmms') {
+    return 'PMMS: adicionais, indenizações, auxílio, escala, fardamento ou verbas específicas dependem da legislação estadual, lotação, ordem de serviço, escala e contracheque; não foram somados automaticamente.';
+  }
+  if (inst === 'pcms') {
+    return 'PCMS: o edital APJ/2025 informou remuneração inicial de R$ 6.569,53 para 40h; abonos, adicionais, plantões e demais rubricas dependem da legislação estadual, lotação, escala e contracheque.';
+  }
+
   if (inst === 'pmesp') {
     const representacao = /(cmt g|coronel|cel|ten cel)/i.test(linha.cargo || '')
       ? ' Gratificação de representação: pode existir para postos/funções específicas e já aparece incorporada quando constar na fonte oficial.'
@@ -6291,6 +6483,24 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
     benefDesc = cargo.benefDesc || 'Auxílios, adicionais, plantões e parcelas indenizatórias dependem de lei, escala, lotação e situação funcional; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || inst;
     badge = cargo.badge || 'Fonte oficial';
+  } else if (inst === 'pmms') {
+    remuneracao = padrao;
+    beneficios = 0;
+    criterio = cargo.valorPendente || padrao <= 0
+      ? 'Cargo cadastrado para a PMMS; valor vigente deve ser confirmado em tabela oficial, Diário Oficial/MS, edital ou contracheque.'
+      : 'Referência de remuneração do último concurso/edital PMMS; confirmar tabela vigente antes de decisão financeira.';
+    benefDesc = 'Auxílios, adicionais, fardamento, indenizações e verbas por escala/lotação dependem da legislação estadual, ato administrativo e contracheque; não foram somados automaticamente.';
+    fonteKey = 'pmms';
+    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : 'Edital/triagem';
+  } else if (inst === 'pcms') {
+    remuneracao = padrao;
+    beneficios = 0;
+    criterio = cargo.valorPendente || padrao <= 0
+      ? 'Cargo/carreira da PCMS cadastrado para seleção; remuneração deve ser confirmada em tabela legal, DOE/MS, edital ou contracheque.'
+      : 'Remuneração inicial divulgada no Edital SAD/SEJUSP/PCMS/APJ/2025 para jornada de 40h.';
+    benefDesc = 'Abonos, adicionais, plantões, indenizações e outras rubricas dependem da legislação estadual, lotação, escala e contracheque; não foram somados automaticamente.';
+    fonteKey = 'pcms';
+    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : 'Edital APJ/2025';
   } else if (inst === 'pmerj') {
     let gret = '150%';
     let ghp = '110%';
@@ -6444,7 +6654,8 @@ function getTabelaCargosRemuneracao(inst) {
     pmpr: CARGOS_PMPR,   pcpr: CARGOS_PCPR,   pppr: CARGOS_PPPR,
     pmrs: CARGOS_PMRS,   pcrs: CARGOS_PCRS,   pprs: CARGOS_PPRS,
     pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC,   ppsc: CARGOS_PPSC,
-    pmes: CARGOS_PMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,};
+    pmes: CARGOS_PMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,
+    pmms: CARGOS_PMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,};
   return map[normalizarInstituicao(inst)] || CARGOS_PM;
 }
 
@@ -6704,6 +6915,14 @@ const HEADER_ESTADOS = {
     pc: 'pces',
     pp: 'ppes',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Esp%C3%ADrito_Santo.svg'
+  },
+  ms: {
+    nome: 'Mato Grosso do Sul',
+    sigla: 'MS',
+    pm: 'pmms',
+    pc: 'pcms',
+    pp: 'ppms',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Mato_Grosso_do_Sul.svg'
   }
 };
 
@@ -6731,7 +6950,10 @@ const HEADER_INSTITUICOES_INFO = {
   pppr: { titulo: 'PPPR', desc: 'Polícia Penal do Paraná' },
   pprs: { titulo: 'PPRS', desc: 'Polícia Penal do Rio Grande do Sul' },
   ppsc: { titulo: 'PPSC', desc: 'Polícia Penal de Santa Catarina' },
-  ppes: { titulo: 'PPES', desc: 'Polícia Penal do Espírito Santo' }
+  ppes: { titulo: 'PPES', desc: 'Polícia Penal do Espírito Santo' },
+  pmms: { titulo: 'PMMS', desc: 'Polícia Militar de Mato Grosso do Sul' },
+  pcms: { titulo: 'PCMS', desc: 'Polícia Civil de Mato Grosso do Sul' },
+  ppms: { titulo: 'PPMS', desc: 'Polícia Penal de Mato Grosso do Sul' }
 };
 
 const HEADER_INSTITUICOES_RESUMO = {
@@ -6758,7 +6980,10 @@ const HEADER_INSTITUICOES_RESUMO = {
   pppr: { criacao: POLICIAS_PENAIS_INFO.pppr.criacao, ativaLabel: POLICIAS_PENAIS_INFO.pppr.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.pppr.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.pppr.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.pppr.relacaoLabel, populacao: 11890517, governador: 'Carlos Massa Ratinho Junior', comando: POLICIAS_PENAIS_INFO.pppr.direcao, atualizado: POLICIAS_PENAIS_INFO.pppr.atualizado },
   pprs: { criacao: POLICIAS_PENAIS_INFO.pprs.criacao, ativaLabel: POLICIAS_PENAIS_INFO.pprs.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.pprs.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.pprs.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.pprs.relacaoLabel, populacao: 11233263, governador: 'Eduardo Leite', comando: POLICIAS_PENAIS_INFO.pprs.direcao, atualizado: POLICIAS_PENAIS_INFO.pprs.atualizado },
   ppsc: { criacao: POLICIAS_PENAIS_INFO.ppsc.criacao, ativa: POLICIAS_PENAIS_INFO.ppsc.efetivoAtivo, reservaLabel: POLICIAS_PENAIS_INFO.ppsc.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppsc.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.ppsc.relacaoLabel, populacao: 8187029, governador: 'Jorginho Mello', comando: POLICIAS_PENAIS_INFO.ppsc.direcao, atualizado: POLICIAS_PENAIS_INFO.ppsc.atualizado },
-  ppes: { criacao: POLICIAS_PENAIS_INFO.ppes.criacao, ativaLabel: POLICIAS_PENAIS_INFO.ppes.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.ppes.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppes.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.ppes.relacaoLabel, populacao: 4126854, governador: 'Ricardo Ferraço', comando: POLICIAS_PENAIS_INFO.ppes.direcao, atualizado: POLICIAS_PENAIS_INFO.ppes.atualizado }
+  ppes: { criacao: POLICIAS_PENAIS_INFO.ppes.criacao, ativaLabel: POLICIAS_PENAIS_INFO.ppes.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.ppes.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppes.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.ppes.relacaoLabel, populacao: 4126854, governador: 'Ricardo Ferraço', comando: POLICIAS_PENAIS_INFO.ppes.direcao, atualizado: POLICIAS_PENAIS_INFO.ppes.atualizado },
+  pmms: { criacao: 'Instalação estadual: 1979', ativaLabel: 'Conferir PMMS/Portal da Transparência', reservaLabel: 'Conferir AGEPREV/MS', totalLabel: 'Conferir PMMS', relacaoLabel: 'Não calcular sem efetivo oficial consolidado', populacao: 2924631, governador: 'Eduardo Riedel', comando: 'Cel QOPM Renato dos Anjos Garnes — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
+  pcms: { criacao: 'Origem estadual: 1979', ativaLabel: 'Conferir PCMS/Portal da Transparência', reservaLabel: 'Conferir AGEPREV/MS', totalLabel: 'Conferir PCMS', relacaoLabel: 'Não calcular sem efetivo oficial consolidado', populacao: 2924631, governador: 'Eduardo Riedel', comando: 'Delegado Lupérsio Degerone Lúcio — Delegado-Geral', atualizado: 'Atualizado em 28/04/2026' },
+  ppms: { criacao: POLICIAS_PENAIS_INFO.ppms.criacao, ativaLabel: POLICIAS_PENAIS_INFO.ppms.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.ppms.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppms.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.ppms.relacaoLabel, populacao: 2924631, governador: 'Eduardo Riedel', comando: POLICIAS_PENAIS_INFO.ppms.direcao, atualizado: POLICIAS_PENAIS_INFO.ppms.atualizado }
 };
 
 function formatarNumeroHeader(valor) {
@@ -6923,7 +7148,10 @@ function mudarInstituicao(novaInstituicao) {
     pppr: { titulo: "PPPR", desc: POLICIAS_PENAIS_INFO.pppr.nome, cor: "#41644a", alertaPrev: `${POLICIAS_PENAIS_INFO.pppr.sigla}: ${POLICIAS_PENAIS_INFO.pppr.previdencia} ${POLICIAS_PENAIS_INFO.pppr.vantagens}` },
     pprs: { titulo: "PPRS", desc: POLICIAS_PENAIS_INFO.pprs.nome, cor: "#315d7c", alertaPrev: `${POLICIAS_PENAIS_INFO.pprs.sigla}: ${POLICIAS_PENAIS_INFO.pprs.previdencia} ${POLICIAS_PENAIS_INFO.pprs.vantagens}` },
     ppsc: { titulo: "PPSC", desc: POLICIAS_PENAIS_INFO.ppsc.nome, cor: "#38598b", alertaPrev: `${POLICIAS_PENAIS_INFO.ppsc.sigla}: ${POLICIAS_PENAIS_INFO.ppsc.previdencia} ${POLICIAS_PENAIS_INFO.ppsc.vantagens}` },
-    ppes: { titulo: "PPES", desc: POLICIAS_PENAIS_INFO.ppes.nome, cor: "#5e548e", alertaPrev: `${POLICIAS_PENAIS_INFO.ppes.sigla}: ${POLICIAS_PENAIS_INFO.ppes.previdencia} ${POLICIAS_PENAIS_INFO.ppes.vantagens}` }
+    ppes: { titulo: "PPES", desc: POLICIAS_PENAIS_INFO.ppes.nome, cor: "#5e548e", alertaPrev: `${POLICIAS_PENAIS_INFO.ppes.sigla}: ${POLICIAS_PENAIS_INFO.ppes.previdencia} ${POLICIAS_PENAIS_INFO.ppes.vantagens}` },
+    pmms: { titulo: "PMMS", desc: "Polícia Militar de Mato Grosso do Sul", cor: "#2f5f8f", alertaPrev: "PMMS: conferir sistema de proteção social dos militares estaduais, AGEPREV/MS, regra de ingresso, averbações, reserva remunerada e reforma conforme legislação estadual." },
+    pcms: { titulo: "PCMS", desc: "Polícia Civil de Mato Grosso do Sul", cor: "#4b5563", alertaPrev: "PCMS: conferir LC MS 114/2005, LC MS 343/2024, AGEPREV/MS, cargo, classe, referência, tempo em atividade policial e regra de aposentadoria aplicada." },
+    ppms: { titulo: "PPMS", desc: POLICIAS_PENAIS_INFO.ppms.nome, cor: "#516b3b", alertaPrev: `${POLICIAS_PENAIS_INFO.ppms.sigla}: ${POLICIAS_PENAIS_INFO.ppms.previdencia} ${POLICIAS_PENAIS_INFO.ppms.vantagens}` }
   };
 
   const solicitada = novaInstituicao || document.getElementById('instituicao')?.value || currInst || 'pmesp';
@@ -7002,9 +7230,10 @@ function analisarDireitos() {
     pmesp: 'PMESP', pcsp: 'PCSP', ppsp: 'PPSP', pmerj: 'PMERJ', pcerj: 'PCERJ', pprj: 'PPRJ',
     pmmg: 'PMMG', pcmg: 'PCMG', ppmg: 'PPMG', pmba: 'PMBA', pcba: 'PCBA', ppba: 'PPBA', pmpr: 'PMPR', pcpr: 'PCPR', pppr: 'PPPR',
     pmrs: 'PMRS', pcrs: 'PCRS', pprs: 'PPRS', pmsc: 'PMSC', pcsc: 'PCSC', ppsc: 'PPSC',
-    pmes: 'PMES', pces: 'PCES', ppes: 'PPES'
+    pmes: 'PMES', pces: 'PCES', ppes: 'PPES',
+    pmms: 'PMMS', pcms: 'PCMS', ppms: 'PPMS'
   };
-  const isPM = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs', 'pmsc', 'pmes'].includes(inst);
+  const isPM = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs', 'pmsc', 'pmes', 'pmms'].includes(inst);
   const isPC = ['pcsp', 'pcerj', 'pcmg', 'pcba', 'pcpr', 'pcrs', 'pcsc', 'pces'].includes(inst);
   const isPP = isPoliciaPenal(inst);
   const uf = inst.includes('sp') ? 'SP' : inst.includes('rj') ? 'RJ' : inst.includes('mg') ? 'MG' : inst.includes('ba') ? 'BA' : inst.includes('pr') ? 'PR' : inst.includes('rs') ? 'RS' : inst.includes('sc') ? 'SC' :

@@ -1612,8 +1612,14 @@
     <div class="comparador-selecao" aria-label="Seleção de instituições para comparação">
       <div class="comparador-select-panel">
         <label class="comparador-select-label" for="comparador-selecao">Instituições para comparar</label>
-        <select id="comparador-selecao" class="comparador-select" multiple size="6" onchange="carregarComparadorCarreiras()" aria-label="Selecione duas ou mais instituições para comparar"></select>
-        <small class="comparador-select-help">Selecione duas ou mais carreiras. No computador, use Ctrl ou Cmd para marcar várias opções; no celular, use o seletor nativo do aparelho.</small>
+        <div class="comparador-multiselect" aria-label="Selecione duas ou mais instituições para comparar">
+          <button class="comparador-toggle-lista" id="comparador-toggle-lista" type="button" onclick="toggleComparadorLista()" aria-expanded="false" aria-controls="comparador-selecao">
+            <span>Escolher instituições</span>
+            <small id="comparador-contador-selecao">0 selecionadas</small>
+          </button>
+          <div id="comparador-selecao" class="comparador-check-list" role="group" aria-label="Instituições disponíveis para comparação"></div>
+        </div>
+        <small class="comparador-select-help">Marque ou desmarque as carreiras pelos botões de seleção abaixo. Não precisa usar Ctrl.</small>
         <div id="comparador-selecionadas" class="comparador-selecionadas" aria-live="polite"></div>
       </div>
     </div>
@@ -4480,42 +4486,132 @@
     text-transform: uppercase;
   }
 
-  .comparador-select {
+  .comparador-multiselect {
     width: 100%;
-    min-height: 160px;
-    padding: 8px;
+  }
+
+  .comparador-toggle-lista {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 11px 12px;
     border: 1px solid var(--border-input);
     border-radius: 10px;
     background: var(--bg-input);
     color: var(--text-main);
-    font-family: 'Roboto Condensed', sans-serif;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
     font-size: 13px;
     font-weight: 700;
-    line-height: 1.35;
-    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.2s ease;
   }
 
-  .comparador-select optgroup {
-    color: var(--vermelho);
+  .comparador-toggle-lista:hover,
+  .comparador-toggle-lista:focus-visible {
+    border-color: var(--vermelho);
+    outline: none;
+  }
+
+  .comparador-toggle-lista small {
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: var(--vermelho);
+    color: #ffffff;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+  }
+
+  .comparador-check-list {
+    display: none;
+    max-height: 230px;
+    overflow-y: auto;
+    margin-top: 8px;
+    padding: 8px;
+    border: 1px solid var(--border-input);
+    border-radius: 10px;
     background: var(--bg-input);
+  }
+
+  .comparador-check-list.aberta {
+    display: grid;
+    gap: 8px;
+  }
+
+  .comparador-check-grupo {
+    display: grid;
+    gap: 6px;
+  }
+
+  .comparador-check-grupo + .comparador-check-grupo {
+    padding-top: 8px;
+    border-top: 1px solid var(--border-card);
+  }
+
+  .comparador-check-titulo {
+    color: var(--vermelho);
     font-family: 'Oswald', sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
     text-transform: uppercase;
   }
 
-  .comparador-select option {
-    padding: 8px 10px;
-    color: var(--text-main);
+  .comparador-check-option {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 9px;
+    align-items: start;
+    padding: 9px 10px;
+    border: 1px solid var(--border-card);
+    border-radius: 9px;
     background: var(--bg-card);
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 13px;
-    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
   }
 
-  .comparador-select option:checked {
-    background: linear-gradient(90deg, var(--vermelho), var(--vermelho-escuro));
-    color: #ffffff;
+  .comparador-check-option:hover {
+    border-color: var(--vermelho);
+    background: var(--item-hover);
+  }
+
+  .comparador-check-option input {
+    width: 14px;
+    height: 14px;
+    margin-top: 2px;
+    accent-color: var(--vermelho);
+    cursor: pointer;
+  }
+
+  .comparador-check-option strong {
+    display: block;
+    color: var(--text-main);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .comparador-check-option small {
+    display: block;
+    margin-top: 2px;
+    color: var(--text-muted);
+    font-size: 11px;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .comparador-check-option:has(input:checked) {
+    border-color: var(--vermelho);
+    box-shadow: inset 3px 0 0 var(--vermelho);
   }
 
   .comparador-select-help {
@@ -7919,17 +8015,24 @@ function inicializarComparadorCarreiras() {
       const itens = instituicoes.filter(item => item.estado === estado);
       if (!itens.length) return '';
       return `
-        <optgroup label="${escapeHtml(dadosEstado.nome || estado.toUpperCase())}">
+        <div class="comparador-check-grupo" role="group" aria-label="${escapeHtml(dadosEstado.nome || estado.toUpperCase())}">
+          <div class="comparador-check-titulo">${escapeHtml(dadosEstado.nome || estado.toUpperCase())}</div>
           ${itens.map(item => `
-            <option value="${escapeHtml(item.inst)}">${escapeHtml(item.sigla)} — ${escapeHtml(item.nome)} (${escapeHtml(item.uf)} · ${escapeHtml(item.ramo)})</option>
+            <label class="comparador-check-option">
+              <input type="checkbox" value="${escapeHtml(item.inst)}" data-sigla="${escapeHtml(item.sigla)}" onchange="carregarComparadorCarreiras()">
+              <span>
+                <strong>${escapeHtml(item.sigla)}</strong>
+                <small>${escapeHtml(item.nome)} · ${escapeHtml(item.uf)} · ${escapeHtml(item.ramo)}</small>
+              </span>
+            </label>
           `).join('')}
-        </optgroup>
+        </div>
       `;
     }).join('');
     selecao.dataset.renderizado = 'true';
   }
 
-  if (!Array.from(selecao.selectedOptions).length) comparadorSelecionarEstadoAtual(false);
+  if (!selecao.querySelector('input[type="checkbox"]:checked')) comparadorSelecionarEstadoAtual(false);
   carregarComparadorCarreiras();
 }
 
@@ -7937,21 +8040,37 @@ function getComparadorSelect() {
   return document.getElementById('comparador-selecao');
 }
 
-function setSelecionadasComparador(valores) {
+function getComparadorCheckboxes() {
   const selecao = getComparadorSelect();
-  if (!selecao) return;
+  return selecao ? Array.from(selecao.querySelectorAll('input[type="checkbox"]')) : [];
+}
+
+function toggleComparadorLista() {
+  const lista = getComparadorSelect();
+  const botao = document.getElementById('comparador-toggle-lista');
+  if (!lista || !botao) return;
+  const aberta = !lista.classList.contains('aberta');
+  lista.classList.toggle('aberta', aberta);
+  botao.setAttribute('aria-expanded', aberta ? 'true' : 'false');
+}
+
+function setSelecionadasComparador(valores) {
+  const checkboxes = getComparadorCheckboxes();
   const setValores = new Set((valores || []).filter(Boolean));
-  Array.from(selecao.options).forEach(opt => { opt.selected = setValores.has(opt.value); });
+  checkboxes.forEach(check => { check.checked = setValores.has(check.value); });
 }
 
 function atualizarResumoSelecaoComparador() {
-  const selecao = getComparadorSelect();
   const resumoSelecao = document.getElementById('comparador-selecionadas');
-  if (!selecao || !resumoSelecao) return;
+  const contador = document.getElementById('comparador-contador-selecao');
+  if (!resumoSelecao) return;
 
-  const selecionadas = Array.from(selecao.selectedOptions)
-    .map(opt => opt.textContent.split('—')[0].trim())
+  const selecionadas = getComparadorCheckboxes()
+    .filter(check => check.checked)
+    .map(check => check.dataset.sigla || check.value.toUpperCase())
     .filter(Boolean);
+
+  if (contador) contador.textContent = `${selecionadas.length} selecionada${selecionadas.length === 1 ? '' : 's'}`;
 
   if (!selecionadas.length) {
     resumoSelecao.innerHTML = 'Nenhuma instituição selecionada.';
@@ -7971,17 +8090,15 @@ function comparadorSelecionarEstadoAtual(exibirToast = true) {
 }
 
 function comparadorSelecionarTodas() {
-  const selecao = getComparadorSelect();
-  if (!selecao) return;
-  Array.from(selecao.options).forEach(opt => { opt.selected = true; });
+  const checkboxes = getComparadorCheckboxes();
+  checkboxes.forEach(check => { check.checked = true; });
   carregarComparadorCarreiras();
   mostrarToast('Todas as instituições foram selecionadas para comparação.');
 }
 
 function comparadorLimparSelecao() {
-  const selecao = getComparadorSelect();
-  if (!selecao) return;
-  Array.from(selecao.options).forEach(opt => { opt.selected = false; });
+  const checkboxes = getComparadorCheckboxes();
+  checkboxes.forEach(check => { check.checked = false; });
   carregarComparadorCarreiras();
 }
 
@@ -8045,10 +8162,9 @@ function getDadosComparador(inst) {
 }
 
 function getSelecionadasComparador() {
-  const selecao = getComparadorSelect();
-  if (!selecao) return [];
-  return Array.from(selecao.selectedOptions)
-    .map(opt => opt.value)
+  return getComparadorCheckboxes()
+    .filter(check => check.checked)
+    .map(check => check.value)
     .filter(inst => INSTITUICOES_VALIDAS.includes(inst));
 }
 

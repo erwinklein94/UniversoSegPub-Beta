@@ -883,7 +883,7 @@ const HEADER_ESTADOS = {
 };
 
 const HEADER_INSTITUICOES_INFO = {
-  pmesp: { titulo: 'PMESP', desc: 'Polícia Militar de São Paulo' },
+  pmesp: { titulo: 'PMESP', desc: 'Polícia Militar do Estado de São Paulo' },
   pcsp:  { titulo: 'PCSP',  desc: 'Polícia Civil de São Paulo' },
   pmerj: { titulo: 'PMERJ', desc: 'Polícia Militar do Rio de Janeiro' },
   pcerj: { titulo: 'PCERJ', desc: 'Polícia Civil do Rio de Janeiro' },
@@ -960,7 +960,7 @@ function montarCaminhoImagemInstituicao(inst) {
 }
 
 const HEADER_INSTITUICOES_RESUMO = {
-  pmesp: { criacao: '15/12/1831', ativa: 82000, reserva: 90000, populacao: 46081801, governador: 'Tarcísio de Freitas', comando: 'Cel PM José Augusto Coutinho — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
+  pmesp: { criacao: '1831', ativa: 78000, ativaLabel: '~ 78 mil', reserva: 110000, reservaLabel: '~ 110 mil', populacao: 46600000, populacaoLabel: '46,6 mi', governador: 'Tarcísio de Freitas', comando: 'Cmt-Geral PMESP', atualizado: 'São Paulo - Polícia Militar' },
   pcsp:  { criacao: 'Origem histórica: 1841', ativa: 28000, reserva: 35000, populacao: 46081801, governador: 'Tarcísio de Freitas', comando: 'Delegado Artur José Dian — Delegado-Geral de Polícia', atualizado: 'Atualizado em 28/04/2026' },
   pmerj: { criacao: '13/05/1809', ativa: 43000, reserva: 40000, populacao: 17223547, governador: 'Douglas Ruas — Governador em exercício', comando: 'Cel PM Sylvio Ricardo Ciuffo Guerra — Secretário de Estado e Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
   pcerj: { criacao: 'Origem histórica: 1808', ativa: 9000, reserva: 10000, populacao: 17223547, governador: 'Douglas Ruas — Governador em exercício', comando: 'Delegado Delmir Gouveia — Secretário de Estado de Polícia Civil', atualizado: 'Atualizado em 28/04/2026' },
@@ -1154,7 +1154,7 @@ function atualizarHeaderResumo(inst) {
   setTexto('header-resumo-ativa', ativaTexto);
   setTexto('header-resumo-reserva', reservaTexto);
   setTexto('header-resumo-total', totalTexto);
-  setTexto('header-resumo-populacao', dados.populacao ? formatarNumeroHeader(dados.populacao) : 'Não informado');
+  setTexto('header-resumo-populacao', dados.populacaoLabel || (dados.populacao ? formatarNumeroHeader(dados.populacao) : 'Não informado'));
   setTexto('header-resumo-relacao', relacaoTexto);
   setTexto('header-resumo-governador', dados.governador || 'Não informado');
   setTexto('header-resumo-comando', dados.comando || 'Não informado');
@@ -1270,7 +1270,7 @@ function mudarInstituicao(novaInstituicao) {
   if (novaInstituicao === '') return;
 
   const configs = {
-    pmesp: { titulo: "PMESP", desc: "Polícia Militar de São Paulo", cor: "#e60000", alertaPrev: "SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte." },
+    pmesp: { titulo: "PMESP", desc: "Polícia Militar do Estado de São Paulo", cor: "#e60000", alertaPrev: "SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte." },
     pcsp:  { titulo: "PCSP",  desc: "Polícia Civil de São Paulo",   cor: "#4f4f4f", alertaPrev: "SPPREV (previdência) — 14% sobre vencimentos, GAT, quinquênios e sexta-parte." },
     pmerj: { titulo: "PMERJ", desc: "Polícia Militar do Rio de Janeiro", cor: "#1E3084", alertaPrev: "RioPrevidência — 14% sobre soldo, GRET, GHP, GRAM e triênios." },
     pcerj: { titulo: "PCERJ", desc: "Polícia Civil do Rio de Janeiro",    cor: "#6B7280", alertaPrev: "RioPrevidência — 14% sobre vencimento-base, AAP/representação, GHP, GATC e adicionais remuneratórios." },
@@ -2417,8 +2417,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Popula cargos usados na aba Direitos e Vantagens.
   popularCargos('pmesp');
 
-  // Aplica o cabeçalho inicial do portal; a instituição específica só entra após escolha do usuário.
-  aplicarHeaderInicialPortal();
+  // Abre o site já na visualização institucional do print de referência.
+  mudarInstituicao('pmesp');
 
   // Direitos: atualizar quando muda cargo/situação/tempo.
   ['cargo_dir', 'situacao_dir', 'tempo_dir'].forEach(id => {

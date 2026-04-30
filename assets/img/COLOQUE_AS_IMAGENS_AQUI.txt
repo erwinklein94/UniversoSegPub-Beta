@@ -1,0 +1,45 @@
+Coloque nesta pasta as imagens do portal com estes nomes exatos:
+
+Produtos e marca:
+- barrafixa01.jpg
+- barrafixa02.jpg
+- botaacero.jpeg
+- logoleao.jpeg
+
+Imagens institucionais do cabeçalho:
+- pcba.jpeg
+- pces.jpeg
+- pcmg.jpeg
+- pcms.jpeg
+- pcmt.jpeg
+- pcpr.jpeg
+- pcrj.jpeg
+- pcrs.jpeg
+- pcsc.jpeg
+- pcsp.jpeg
+- pmba.jpeg
+- pmerj.jpeg
+- pmes.jpeg
+- pmesp.jpeg
+- pmmg.jpeg
+- pmms.jpeg
+- pmmt.jpeg
+- pmpr.jpeg
+- pmrs.jpeg
+- pmsc.jpeg
+- ppba.jpeg
+- ppes.jpeg
+- ppmg.jpeg
+- ppms.jpeg
+- ppmt.jpeg
+- pppr.jpeg
+- pprj.jpeg
+- pprs.jpeg
+- ppsc.jpeg
+- ppsp.jpeg
+
+Importante:
+- Use letras minúsculas exatamente como acima.
+- No GitHub Pages, pcsp.jpeg é diferente de PCSP.jpeg.
+- A Polícia Civil do RJ usa o arquivo pcrj.jpeg, conforme a lista informada.
+- Se alguma imagem institucional não existir, o cabeçalho usa a bandeira do estado como fallback.

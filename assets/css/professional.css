@@ -1733,3 +1733,75 @@ body[data-inst="portal"] .current-flag-frame.brand-logo-frame img,
     height: 150px !important;
   }
 }
+
+
+/* =======================================================
+   AJUSTE 2026-04-30 — Fundo preto atrás dos símbolos institucionais
+   Objetivo: criar uma faixa/região preta atrás do brasão/logo para que
+   a imagem fique integrada ao cabeçalho e não pareça “solta”.
+   ======================================================= */
+.header-current-identity {
+  position: relative !important;
+}
+
+.header-current-identity::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: min(58%, 520px) !important;
+  border-radius: 0 24px 24px 0 !important;
+  background:
+    linear-gradient(90deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.18) 10%,
+      rgba(0, 0, 0, 0.62) 24%,
+      rgba(0, 0, 0, 0.88) 42%,
+      rgba(0, 0, 0, 0.98) 60%,
+      #000000 100%) !important;
+  box-shadow: inset 24px 0 46px rgba(0,0,0,0.20) !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+.header-current-copy {
+  z-index: 3 !important;
+}
+
+.current-flag-frame.institution-logo-frame,
+body[data-inst="portal"] .current-flag-frame.brand-logo-frame,
+.current-flag-frame.state-flag-fallback-frame {
+  z-index: 1 !important;
+}
+
+@media (max-width: 900px) {
+  .header-current-identity::after {
+    width: min(60%, 440px) !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .header-current-identity::after {
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: clamp(180px, 52vw, 240px) !important;
+    border-radius: 20px 20px 18px 18px !important;
+    background:
+      radial-gradient(circle at 50% 42%, rgba(0,0,0,0.98) 0%, rgba(0,0,0,0.94) 42%, rgba(0,0,0,0.84) 62%, rgba(0,0,0,0.42) 82%, rgba(0,0,0,0) 100%) !important;
+    box-shadow: none !important;
+  }
+
+  .current-flag-frame.institution-logo-frame,
+  body[data-inst="portal"] .current-flag-frame.brand-logo-frame,
+  .current-flag-frame.state-flag-fallback-frame {
+    z-index: 1 !important;
+  }
+
+  .header-current-copy {
+    z-index: 3 !important;
+  }
+}

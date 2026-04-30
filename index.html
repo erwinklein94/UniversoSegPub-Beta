@@ -39,7 +39,7 @@
 <!-- BLOCO 01.4 — Metadados, título e fontes externas -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Simulador de vencimentos e direitos para policiais militares, civis e penais de SP, RJ, MG, BA, PR, RS, SC, ES, MS e MT - Atualizado 2026 com tabelas BA/MG/PR revisadas e auxílio-alimentação por instituição">
+<meta name="description" content="Simulador de vencimentos e direitos para policiais militares, civis e penais de SP, RJ, MG, BA, PR, RS, SC, ES, MS, MT e GO - Atualizado 2026 com tabelas BA/MG/PR revisadas e auxílio-alimentação por instituição">
 <title>Universo Segurança Pública - Simulador e Direitos 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -114,6 +114,8 @@
   body[data-inst="pcms"] { --vermelho: #4b5563; --vermelho-escuro: #1f2937; }
   body[data-inst="pmmt"] { --vermelho: #1f7a4d; --vermelho-escuro: #124a2f; }
   body[data-inst="pcmt"] { --vermelho: #5b6472; --vermelho-escuro: #323946; }
+  body[data-inst="pmgo"] { --vermelho: #1f7a4d; --vermelho-escuro: #124a2f; }
+  body[data-inst="pcgo"] { --vermelho: #4b5563; --vermelho-escuro: #1f2937; }
 
   body[data-inst="ppsp"] { --vermelho: #6f4e37; --vermelho-escuro: #3f2d21; }
   body[data-inst="pprj"] { --vermelho: #5a4b81; --vermelho-escuro: #332a50; }
@@ -125,6 +127,7 @@
   body[data-inst="ppes"] { --vermelho: #5e548e; --vermelho-escuro: #342f5a; }
   body[data-inst="ppms"] { --vermelho: #516b3b; --vermelho-escuro: #2f3f23; }
   body[data-inst="ppmt"] { --vermelho: #6b5f2f; --vermelho-escuro: #3d361b; }
+  body[data-inst="ppgo"] { --vermelho: #596b2d; --vermelho-escuro: #33401b; }
   body[data-inst="portal"] { --vermelho: #DFB63E; --vermelho-escuro: #8f6a16; }
 
   /* BLOCO 02.4 — Reset básico e estrutura geral */
@@ -663,8 +666,8 @@
   .field.span-2 { grid-column: span 2; }
 
   /* BLOCO 02.12 — Exibição condicional por instituição/estado */
-  .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only, .pmba-only, .pcba-only, .pmpr-only, .pcpr-only, .pmrs-only, .pcrs-only, .pmsc-only, .pcsc-only, .pmes-only, .pces-only, .pmms-only, .pcms-only, .pmmt-only, .pcmt-only,
-  .sp-only, .mg-only, .ba-only, .pr-only, .rs-only, .sc-only, .es-only, .ms-only, .mt-only {
+  .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only, .pmba-only, .pcba-only, .pmpr-only, .pcpr-only, .pmrs-only, .pcrs-only, .pmsc-only, .pcsc-only, .pmes-only, .pces-only, .pmms-only, .pcms-only, .pmmt-only, .pcmt-only, .pmgo-only, .pcgo-only, .ppgo-only,
+  .sp-only, .mg-only, .ba-only, .pr-only, .rs-only, .sc-only, .es-only, .ms-only, .mt-only, .go-only {
     display: none !important;
   }
 
@@ -688,6 +691,9 @@
   body[data-inst="pcms"] .field.pcms-only, body[data-inst="pcms"] h2.pcms-only { display: flex !important; }
   body[data-inst="pmmt"] .field.pmmt-only, body[data-inst="pmmt"] h2.pmmt-only { display: flex !important; }
   body[data-inst="pcmt"] .field.pcmt-only, body[data-inst="pcmt"] h2.pcmt-only { display: flex !important; }
+  body[data-inst="pmgo"] .field.pmgo-only, body[data-inst="pmgo"] h2.pmgo-only { display: flex !important; }
+  body[data-inst="pcgo"] .field.pcgo-only, body[data-inst="pcgo"] h2.pcgo-only { display: flex !important; }
+  body[data-inst="ppgo"] .field.ppgo-only, body[data-inst="ppgo"] h2.ppgo-only { display: flex !important; }
 
   body[data-inst="pmesp"] .field.sp-only,
   body[data-inst="pcsp"] .field.sp-only,
@@ -706,7 +712,11 @@
   body[data-inst="pmms"] .field.ms-only,
   body[data-inst="pcms"] .field.ms-only,
   body[data-inst="pmmt"] .field.mt-only,
-  body[data-inst="pcmt"] .field.mt-only { display: flex !important; }
+  body[data-inst="pcmt"] .field.mt-only,
+  body[data-inst="ppmt"] .field.mt-only,
+  body[data-inst="pmgo"] .field.go-only,
+  body[data-inst="pcgo"] .field.go-only,
+  body[data-inst="ppgo"] .field.go-only { display: flex !important; }
 
   body[data-inst="pmesp"] div.alerta.pm-only { display: block !important; }
   body[data-inst="pcsp"] div.alerta.pc-only { display: block !important; }
@@ -728,6 +738,9 @@
   body[data-inst="pcms"] div.alerta.pcms-only { display: block !important; }
   body[data-inst="pmmt"] div.alerta.pmmt-only { display: block !important; }
   body[data-inst="pcmt"] div.alerta.pcmt-only { display: block !important; }
+  body[data-inst="pmgo"] div.alerta.pmgo-only { display: block !important; }
+  body[data-inst="pcgo"] div.alerta.pcgo-only { display: block !important; }
+  body[data-inst="ppgo"] div.alerta.ppgo-only { display: block !important; }
 
   /* BLOCO 02.13 — Labels, tooltips e campos */
   label { font-family: 'Roboto', sans-serif; font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 4px; }
@@ -947,11 +960,11 @@
             <div class="header-facts-grid">
               <div class="header-fact">
                 <span id="header-label-criacao">Instituições</span>
-                <strong id="header-resumo-criacao">30</strong>
+                <strong id="header-resumo-criacao">33</strong>
               </div>
               <div class="header-fact">
                 <span id="header-label-ativa">Ativos estimados</span>
-                <strong id="header-resumo-ativa">≈ 323,8 mil+</strong>
+                <strong id="header-resumo-ativa">≈ 327,5 mil+</strong>
               </div>
               <div class="header-fact">
                 <span id="header-label-reserva">Reserva/inativos</span>
@@ -959,15 +972,15 @@
               </div>
               <div class="header-fact">
                 <span id="header-label-total">Total abrangido</span>
-                <strong id="header-resumo-total">≈ 671,8 mil+</strong>
+                <strong id="header-resumo-total">≈ 675,5 mil+</strong>
               </div>
               <div class="header-fact">
                 <span id="header-label-populacao">População abrangida</span>
-                <strong id="header-resumo-populacao">141.825.649</strong>
+                <strong id="header-resumo-populacao">149.249.278</strong>
               </div>
               <div class="header-fact">
                 <span id="header-label-relacao">Estados</span>
-                <strong id="header-resumo-relacao">10 estados</strong>
+                <strong id="header-resumo-relacao">11 estados</strong>
               </div>
             </div>
 
@@ -1039,6 +1052,11 @@
                 <option value="pmmt">PMMT - Polícia Militar</option>
                 <option value="pcmt">PCMT - Polícia Civil</option>
                 <option value="ppmt">PPMT - Polícia Penal</option>
+              </optgroup>
+              <optgroup label="Goiás">
+                <option value="pmgo">PMGO - Polícia Militar</option>
+                <option value="pcgo">PCGO - Polícia Civil</option>
+                <option value="ppgo">PPGO - Polícia Penal</option>
               </optgroup>
             </select>
           </div>
@@ -1114,6 +1132,11 @@
         <button class="state-flag" type="button" data-estado="mt" title="Mato Grosso" onclick="selecionarEstado('mt')" aria-label="Selecionar Mato Grosso" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Mato_Grosso.svg" alt="Bandeira de Mato Grosso">
           <span>MT</span>
+        </button>
+
+        <button class="state-flag" type="button" data-estado="go" title="Goiás" onclick="selecionarEstado('go')" aria-label="Selecionar Goiás" aria-pressed="false">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Goi%C3%A1s.svg" alt="Bandeira de Goiás">
+          <span>GO</span>
         </button>
       </div>
     </div>
@@ -1193,6 +1216,11 @@
         <option value="pmmt">PMMT - Polícia Militar</option>
         <option value="pcmt">PCMT - Polícia Civil</option>
         <option value="ppmt">PPMT - Polícia Penal</option>
+      </optgroup>
+      <optgroup label="Goiás">
+        <option value="pmgo">PMGO - Polícia Militar</option>
+        <option value="pcgo">PCGO - Polícia Civil</option>
+        <option value="ppgo">PPGO - Polícia Penal</option>
       </optgroup>
     </select>
     <p class="sidebar-selector-hint">Os dados das abas serão ajustados conforme a instituição escolhida.</p>
@@ -1311,11 +1339,11 @@
   <!-- BLOCO 04.2 — Indicadores de autoridade e cobertura do portal -->
   <section class="principal-stats" aria-label="Resumo de cobertura do site">
     <div class="principal-stat">
-      <strong>10 estados</strong>
+      <strong>11 estados</strong>
       <span>Campos disponíveis</span>
     </div>
     <div class="principal-stat">
-      <strong>30</strong>
+      <strong>33</strong>
       <span>Instituições cadastradas</span>
     </div>
     <div class="principal-stat">
@@ -5305,6 +5333,51 @@ const CARGOS_PCMT = [
 ];
 
 
+
+/* BLOCO 15.3.0 — Goiás — PMGO e PCGO: cargos-base com fontes oficiais */
+const CRITERIO_PMGO_2025 = 'Tabela de subsídios da Polícia Militar e Corpo de Bombeiros Militar do Estado de Goiás — Lei GO nº 23.235/2025, Anexo I, com efeitos a partir de 01/01/2025. Conferir contracheque, Portal da Transparência/GO, Diário Oficial/GO e eventual aplicação da RGA 2026 antes de decisão financeira.';
+const BENEF_PMGO_2025 = 'Não inclui auxílio-alimentação, indenizações, serviço extraordinário, diárias, gratificações de função, diferenças de promoção, fardamento ou outras rubricas pessoais; parcelas dependem de lei, lotação, escala, ato administrativo e contracheque.';
+
+const CARGOS_PMGO = [
+  { val: "sd2_go", text: "Soldado de 2ª Classe PMGO — Lei GO nº 23.235/2025", padrao: 7452.68, oficial: true, selected: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PMGO_2025, benefDesc: BENEF_PMGO_2025, fonteKey: "pmgo" },
+  { val: "sd1_go", text: "Soldado de 1ª Classe PMGO — Lei GO nº 23.235/2025", padrao: 8216.59, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PMGO_2025, benefDesc: BENEF_PMGO_2025, fonteKey: "pmgo" },
+  { val: "cb_go", text: "Cabo PMGO — Lei GO nº 23.235/2025", padrao: 9022.75, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PMGO_2025, benefDesc: BENEF_PMGO_2025, fonteKey: "pmgo" },
+  { val: "sgt3_go", text: "3º Sargento PMGO — Lei GO nº 23.235/2025", padrao: 9893.35, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PMGO_2025, benefDesc: BENEF_PMGO_2025, fonteKey: "pmgo" },
+  { val: "sgt2_go", text: "2º Sargento PMGO — Lei GO nº 23.235/2025", padrao: 10717.82, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PMGO_2025, benefDesc: BENEF_PMGO_2025, fonteKey: "pmgo" },
+  { val: "sgt1_go", text: "1º Sargento PMGO — Lei GO nº 23.235/2025", padrao: 12366.71, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PMGO_2025, benefDesc: BENEF_PMGO_2025, fonteKey: "pmgo" },
+  { val: "subten_go", text: "Subtenente PMGO — Lei GO nº 23.235/2025", padrao: 14139.02, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PMGO_2025, benefDesc: BENEF_PMGO_2025, fonteKey: "pmgo" },
+  { val: "asp_go", text: "Aspirante-a-Oficial PMGO — Lei GO nº 23.235/2025", padrao: 14139.02, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PMGO_2025, benefDesc: BENEF_PMGO_2025, fonteKey: "pmgo" },
+  { val: "cad1_go", text: "Cadete PMGO — 1º ano — Lei GO nº 23.235/2025", padrao: 9893.35, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PMGO_2025, benefDesc: BENEF_PMGO_2025, fonteKey: "pmgo" },
+  { val: "cad2_go", text: "Cadete PMGO — 2º ano — Lei GO nº 23.235/2025", padrao: 10717.82, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PMGO_2025, benefDesc: BENEF_PMGO_2025, fonteKey: "pmgo" },
+  { val: "cad3_go", text: "Cadete PMGO — 3º ano — Lei GO nº 23.235/2025", padrao: 12366.71, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PMGO_2025, benefDesc: BENEF_PMGO_2025, fonteKey: "pmgo" },
+  { val: "ten2_go", text: "2º Tenente PMGO — Lei GO nº 23.235/2025", padrao: 16307.58, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PMGO_2025, benefDesc: BENEF_PMGO_2025, fonteKey: "pmgo" },
+  { val: "ten1_go", text: "1º Tenente PMGO — Lei GO nº 23.235/2025", padrao: 18962.29, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PMGO_2025, benefDesc: BENEF_PMGO_2025, fonteKey: "pmgo" },
+  { val: "cap_go", text: "Capitão PMGO — Lei GO nº 23.235/2025", padrao: 26119.05, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PMGO_2025, benefDesc: BENEF_PMGO_2025, fonteKey: "pmgo" },
+  { val: "maj_go", text: "Major PMGO — Lei GO nº 23.235/2025", padrao: 29857.17, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PMGO_2025, benefDesc: BENEF_PMGO_2025, fonteKey: "pmgo" },
+  { val: "tc_go", text: "Tenente-Coronel PMGO — Lei GO nº 23.235/2025", padrao: 33232.32, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PMGO_2025, benefDesc: BENEF_PMGO_2025, fonteKey: "pmgo" },
+  { val: "cel_go", text: "Coronel PMGO — Lei GO nº 23.235/2025", padrao: 36867.10, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PMGO_2025, benefDesc: BENEF_PMGO_2025, fonteKey: "pmgo" }
+];
+
+const CRITERIO_PCGO_2025 = 'Tabela de subsídios da Polícia Civil de Goiás conforme Lei GO nº 23.235/2025, com valores-base de Agente, Escrivão, Papiloscopista/Identificação e Comissário; Delegado de Polícia Substituto usa remuneração inicial informada pelo Governo de Goiás no Edital 008/2022 e deve ser conferido com a Lei GO nº 15.397/2005, revisões gerais e contracheque.';
+const BENEF_PCGO_2025 = 'Não inclui auxílio-alimentação, plantões, indenizações, diárias, gratificações de função, bônus, diferenças de progressão/promoção ou outras rubricas pessoais; parcelas dependem de lei, lotação, escala, ato administrativo e contracheque.';
+
+const CARGOS_PCGO = [
+  { val: "agente_pcgo_3_i", text: "Agente de Polícia PCGO — 3ª Classe / Padrão I — Lei GO nº 23.235/2025", padrao: 7863.15, oficial: true, selected: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PCGO_2025, benefDesc: BENEF_PCGO_2025, fonteKey: "pcgo" },
+  { val: "agente_pcgo_3_ii", text: "Agente de Polícia PCGO — 3ª Classe / Padrão II — Lei GO nº 23.235/2025", padrao: 8256.30, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PCGO_2025, benefDesc: BENEF_PCGO_2025, fonteKey: "pcgo" },
+  { val: "agente_pcgo_3_iii", text: "Agente de Polícia PCGO — 3ª Classe / Padrão III — Lei GO nº 23.235/2025", padrao: 8669.14, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PCGO_2025, benefDesc: BENEF_PCGO_2025, fonteKey: "pcgo" },
+  { val: "agente_pcgo_2_i", text: "Agente de Polícia PCGO — 2ª Classe / Padrão I — Lei GO nº 23.235/2025", padrao: 9536.02, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PCGO_2025, benefDesc: BENEF_PCGO_2025, fonteKey: "pcgo" },
+  { val: "agente_pcgo_2_ii", text: "Agente de Polícia PCGO — 2ª Classe / Padrão II — Lei GO nº 23.235/2025", padrao: 10012.84, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PCGO_2025, benefDesc: BENEF_PCGO_2025, fonteKey: "pcgo" },
+  { val: "agente_pcgo_2_iii", text: "Agente de Polícia PCGO — 2ª Classe / Padrão III — Lei GO nº 23.235/2025", padrao: 10513.48, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PCGO_2025, benefDesc: BENEF_PCGO_2025, fonteKey: "pcgo" },
+  { val: "agente_pcgo_1_i", text: "Agente de Polícia PCGO — 1ª Classe / Padrão I — Lei GO nº 23.235/2025", padrao: 11564.82, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PCGO_2025, benefDesc: BENEF_PCGO_2025, fonteKey: "pcgo" },
+  { val: "agente_pcgo_1_ii", text: "Agente de Polícia PCGO — 1ª Classe / Padrão II — Lei GO nº 23.235/2025", padrao: 12143.08, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PCGO_2025, benefDesc: BENEF_PCGO_2025, fonteKey: "pcgo" },
+  { val: "agente_pcgo_1_iii", text: "Agente de Polícia PCGO — 1ª Classe / Padrão III — Lei GO nº 23.235/2025", padrao: 12750.23, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PCGO_2025, benefDesc: BENEF_PCGO_2025, fonteKey: "pcgo" },
+  { val: "agente_pcgo_esp", text: "Agente/Escrivão/Papiloscopista PCGO — Classe Especial I — Lei GO nº 23.235/2025", padrao: 16409.53, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PCGO_2025, benefDesc: BENEF_PCGO_2025, fonteKey: "pcgo" },
+  { val: "escrivao_pcgo_3_i", text: "Escrivão de Polícia PCGO — 3ª Classe / Padrão I — Lei GO nº 23.235/2025", padrao: 7863.15, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PCGO_2025, benefDesc: BENEF_PCGO_2025, fonteKey: "pcgo" },
+  { val: "papiloscopista_pcgo_3_i", text: "Papiloscopista Policial PCGO — 3ª Classe / Padrão I — Lei GO nº 23.235/2025", padrao: 7863.15, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PCGO_2025, benefDesc: BENEF_PCGO_2025, fonteKey: "pcgo" },
+  { val: "comissario_pcgo", text: "Comissário de Polícia PCGO — Lei GO nº 23.235/2025", padrao: 16409.53, oficial: true, retpFator: 0, badge: "Lei 23.235/2025", criterio: CRITERIO_PCGO_2025, benefDesc: BENEF_PCGO_2025, fonteKey: "pcgo" },
+  { val: "delegado_subst_pcgo", text: "Delegado de Polícia Substituto PCGO — edital oficial 008/2022 / Lei GO nº 15.397/2005", padrao: 23811.22, oficial: true, delegado: true, retpFator: 0, badge: "Edital oficial 2022", criterio: CRITERIO_PCGO_2025, benefDesc: BENEF_PCGO_2025, fonteKey: "pcgo" }
+];
+
 /* BLOCO 15.3.1 — Cargos-base e dossiê informativo da Polícia Penal por Estado
    Observação: a Polícia Penal foi inserida no art. 144 da Constituição pela EC 104/2019.
    Como a implantação, nomenclatura, carreira, adicionais, previdência e tabelas remuneratórias variam por UF,
@@ -5641,6 +5714,39 @@ const POLICIAS_PENAIS_INFO = {
     fonte: 'SEJUS/MT, Portal do Servidor/SEPLAG-MT e SINDSPPEN-MT — tabela 40h Policial Penal',
     url: 'https://sindspenmt.com.br/tabela-salarial-do-sistema-penitenciario/',
     atualizado: 'Atualizado em 28/04/2026'
+  },
+  ppgo: {
+    sigla: 'PPGO',
+    nome: 'Polícia Penal do Estado de Goiás',
+    uf: 'Goiás',
+    criacao: 'EC 104/2019 · DGPP/GO · Lei GO nº 23.235/2025',
+    marco: 'A Polícia Penal de Goiás atua por meio da Diretoria-Geral de Polícia Penal, com atribuições de segurança e gestão operacional do sistema prisional estadual.',
+    orgao: 'Diretoria-Geral de Polícia Penal do Estado de Goiás (DGPP/GO)',
+    direcao: 'Josimar Pires Nicolau do Nascimento — Diretor-Geral de Polícia Penal',
+    subordinacao: 'Sistema de execução penal do Estado de Goiás, integrado à administração estadual e às políticas de segurança pública e execução penal.',
+    efetivoAtivoLabel: 'Quadro legal de Policial Penal: 3.693 cargos',
+    reservaLabel: 'Inativos: conferir GOIASPREV, folha estadual e Portal da Transparência/GO',
+    totalLabel: '3.693 cargos de Policial Penal na Lei GO nº 23.235/2025; ativos dependem de provimento e lotação',
+    relacaoLabel: 'Relação calculável com quadro legal; efetivo ativo real deve ser conferido na transparência',
+    quadro: 'Lei GO nº 23.235/2025 informa quadro legal de 3.693 cargos de Policial Penal, além de cargos de Assistente/Assistente de Gestão Prisional e Analista Prisional.',
+    ingresso: 'Concurso público, investigação social, exames, avaliação psicológica, TAF, curso de formação e posse conforme edital SEAD/GO, DGPP/GO e atos oficiais.',
+    escolaridade: 'Conferir edital vigente da SEAD/GO e DGPP/GO; requisitos podem envolver escolaridade, CNH, aptidão física, investigação social, idoneidade e demais condições legais.',
+    formacao: 'Curso de formação e capacitação continuada em segurança prisional, escolta, custódia, inteligência, disciplina e procedimentos de unidades penais.',
+    atribuicoes: 'Custódia, vigilância interna e externa, escolta, recaptura, disciplina, controle de acesso, prevenção de ilícitos, proteção das unidades penais e apoio à execução penal.',
+    remuneracao: 'Tabela de subsídios do Policial Penal/GO na Lei GO nº 23.235/2025: de R$ 6.668,88 na 3ª Classe/Padrão I até R$ 16.393,90 na Classe Especial; conferir RGA 2026 e contracheque.',
+    vantagens: 'Eventuais adicionais, indenizações, plantões, diárias, auxílio-alimentação, gratificações e verbas por escala/lotação dependem de lei, ato administrativo, rubrica e contracheque.',
+    saude: 'Conferir regras estaduais de assistência à saúde, GOIASPREV e normas administrativas aplicáveis aos servidores policiais penais.',
+    previdencia: 'Regime próprio estadual/GOIASPREV; aposentadoria, abono de permanência, integralidade/paridade e transições exigem análise individual da data de ingresso, cargo e histórico funcional.',
+    concurso: {
+      vagas: 'Quadro legal: 3.693 cargos de Policial Penal; novos editais, nomeações e convocações dependem de autorização, orçamento, SEAD/GO, DGPP/GO e Diário Oficial/GO.',
+      salario: 'Policial Penal/GO: R$ 6.668,88 a R$ 16.393,90 conforme Lei GO nº 23.235/2025; conferir aplicação da RGA 2026.',
+      banca: 'A definir conforme edital vigente; acompanhar SEAD/GO, DGPP/GO e Diário Oficial/GO.',
+      escolaridade: 'Conferir edital vigente e legislação da carreira.'
+    },
+    associacaoBusca: 'Sindicato e associações dos policiais penais de Goiás',
+    fonte: 'DGPP/GO, Legisla Goiás — Lei nº 23.235/2025 e Portal da Transparência/GO',
+    url: 'https://www.policiapenal.go.gov.br/',
+    atualizado: 'Atualizado em 30/04/2026'
   }
 };
 
@@ -6036,6 +6142,21 @@ const CARGOS_PPMT = mapearTabelaPoliciaPenal('ppmt', [
   { badge: 'Tabela 2026' }
 );
 
+
+const CARGOS_PPGO = mapearTabelaPoliciaPenal('ppgo', [
+  { id: "3_i", text: "PPGO — Policial Penal — 3ª Classe / Padrão I", valor: 6668.88, badge: "Lei 23.235/2025", criterio: "Tabela de subsídios do Policial Penal/GO — Lei GO nº 23.235/2025, Anexo das carreiras do Sistema de Execução Penal.", benefDesc: "Adicionais, plantões, indenizações, diárias, auxílio-alimentação e parcelas por escala/lotação dependem de lei, ato administrativo, rubrica e situação funcional; não foram somados automaticamente." },
+  { id: "3_ii", text: "PPGO — Policial Penal — 3ª Classe / Padrão II", valor: 8437.58, badge: "Lei 23.235/2025", criterio: "Tabela de subsídios do Policial Penal/GO — Lei GO nº 23.235/2025, Anexo das carreiras do Sistema de Execução Penal.", benefDesc: "Adicionais, plantões, indenizações, diárias, auxílio-alimentação e parcelas por escala/lotação dependem de lei, ato administrativo, rubrica e situação funcional; não foram somados automaticamente." },
+  { id: "3_iii", text: "PPGO — Policial Penal — 3ª Classe / Padrão III", valor: 8843.56, badge: "Lei 23.235/2025", criterio: "Tabela de subsídios do Policial Penal/GO — Lei GO nº 23.235/2025, Anexo das carreiras do Sistema de Execução Penal.", benefDesc: "Adicionais, plantões, indenizações, diárias, auxílio-alimentação e parcelas por escala/lotação dependem de lei, ato administrativo, rubrica e situação funcional; não foram somados automaticamente." },
+  { id: "2_i", text: "PPGO — Policial Penal — 2ª Classe / Padrão I", valor: 9255.23, badge: "Lei 23.235/2025", criterio: "Tabela de subsídios do Policial Penal/GO — Lei GO nº 23.235/2025, Anexo das carreiras do Sistema de Execução Penal.", benefDesc: "Adicionais, plantões, indenizações, diárias, auxílio-alimentação e parcelas por escala/lotação dependem de lei, ato administrativo, rubrica e situação funcional; não foram somados automaticamente." },
+  { id: "2_ii", text: "PPGO — Policial Penal — 2ª Classe / Padrão II", valor: 10081.62, badge: "Lei 23.235/2025", criterio: "Tabela de subsídios do Policial Penal/GO — Lei GO nº 23.235/2025, Anexo das carreiras do Sistema de Execução Penal.", benefDesc: "Adicionais, plantões, indenizações, diárias, auxílio-alimentação e parcelas por escala/lotação dependem de lei, ato administrativo, rubrica e situação funcional; não foram somados automaticamente." },
+  { id: "2_iii", text: "PPGO — Policial Penal — 2ª Classe / Padrão III", valor: 11192.16, badge: "Lei 23.235/2025", criterio: "Tabela de subsídios do Policial Penal/GO — Lei GO nº 23.235/2025, Anexo das carreiras do Sistema de Execução Penal.", benefDesc: "Adicionais, plantões, indenizações, diárias, auxílio-alimentação e parcelas por escala/lotação dependem de lei, ato administrativo, rubrica e situação funcional; não foram somados automaticamente." },
+  { id: "1_i", text: "PPGO — Policial Penal — 1ª Classe / Padrão I", valor: 12601.29, badge: "Lei 23.235/2025", criterio: "Tabela de subsídios do Policial Penal/GO — Lei GO nº 23.235/2025, Anexo das carreiras do Sistema de Execução Penal.", benefDesc: "Adicionais, plantões, indenizações, diárias, auxílio-alimentação e parcelas por escala/lotação dependem de lei, ato administrativo, rubrica e situação funcional; não foram somados automaticamente." },
+  { id: "1_ii", text: "PPGO — Policial Penal — 1ª Classe / Padrão II", valor: 13598.74, badge: "Lei 23.235/2025", criterio: "Tabela de subsídios do Policial Penal/GO — Lei GO nº 23.235/2025, Anexo das carreiras do Sistema de Execução Penal.", benefDesc: "Adicionais, plantões, indenizações, diárias, auxílio-alimentação e parcelas por escala/lotação dependem de lei, ato administrativo, rubrica e situação funcional; não foram somados automaticamente." },
+  { id: "1_iii", text: "PPGO — Policial Penal — 1ª Classe / Padrão III", valor: 14903.54, badge: "Lei 23.235/2025", criterio: "Tabela de subsídios do Policial Penal/GO — Lei GO nº 23.235/2025, Anexo das carreiras do Sistema de Execução Penal.", benefDesc: "Adicionais, plantões, indenizações, diárias, auxílio-alimentação e parcelas por escala/lotação dependem de lei, ato administrativo, rubrica e situação funcional; não foram somados automaticamente." },
+  { id: "especial", text: "PPGO — Policial Penal — Classe Especial", valor: 16393.90, badge: "Lei 23.235/2025", criterio: "Tabela de subsídios do Policial Penal/GO — Lei GO nº 23.235/2025, Anexo das carreiras do Sistema de Execução Penal.", benefDesc: "Adicionais, plantões, indenizações, diárias, auxílio-alimentação e parcelas por escala/lotação dependem de lei, ato administrativo, rubrica e situação funcional; não foram somados automaticamente." }
+]);
+
+
 /* ============================================================ */
 /* === AÇÕES JUDICIAIS (com tipo, ano, prazo, base legal) ===== */
 /* ============================================================ */
@@ -6193,6 +6314,22 @@ const ACOES_JUDICIAIS = {
     { titulo: "Aposentadoria policial e abono de permanência", status: "Tema sensível", ano: "EC 103/2019", tipo: "individual", desc: "A análise depende de cargo, data de ingresso, tempo de atividade policial, regra de transição, abono implantado ou não e situação funcional.", base: "Lei Federal 14.735/2023, EC 103/2019, legislação estadual e MTPREV/MT.", fonte: "PJC-MT/MTPREV", fonteUrl: "https://www.mtprev.mt.gov.br/", atualizado: "Abril/2026" }
   ]
 
+,
+  pmgo: [
+    { titulo: "PMGO — subsídio, promoção e enquadramento funcional", status: "Conferência individual", ano: "Lei GO nº 23.235/2025", tipo: "individual", desc: "Diferenças podem envolver classe, posto/graduação, promoção, data de implantação, efeitos financeiros da tabela, ficha funcional, contracheque e atos publicados.", base: "Lei GO nº 23.235/2025, legislação militar estadual, Diário Oficial/GO, boletins e ficha financeira.", fonte: "Legisla Goiás e PMGO", fonteUrl: "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/110397/pdf", atualizado: "Abril/2026" },
+    { titulo: "Reserva remunerada, reforma e abono de permanência — PMGO", status: "Tema previdenciário sensível", ano: "EC 103/2019 e legislação estadual", tipo: "individual", desc: "A análise depende da data de ingresso, tempo de serviço, averbações, regra de transição, ato de passagem para a reserva ou reforma e descontos previdenciários.", base: "Sistema de proteção social dos militares estaduais, GOIASPREV, legislação estadual e documentação funcional.", fonte: "GOIASPREV/PMGO", fonteUrl: "https://www.goiasprev.go.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Indenizações, escala extra, diárias e auxílio — PMGO", status: "Somente com prova da rubrica", ano: "Caso a caso", tipo: "individual", desc: "Cobrança só deve ser avaliada quando houver escala, ordem de serviço, previsão legal, execução comprovada e pagamento ausente, parcial ou em base incorreta.", base: "Atos administrativos, escalas, legislação estadual, boletins e contracheques do período.", fonte: "PMGO/Diário Oficial/GO", fonteUrl: "https://goias.gov.br/policiamilitar/", atualizado: "Abril/2026" }
+  ],
+  pcgo: [
+    { titulo: "PCGO — subsídio, classe, padrão e progressão", status: "Conferência individual", ano: "Lei GO nº 23.235/2025", tipo: "individual", desc: "Diferenças podem envolver cargo, classe, padrão, progressão, promoção, reestruturação de vagas, data de implantação e fichas financeiras.", base: "Lei GO nº 16.901/2010, Lei GO nº 23.235/2025, atos da DGPC e contracheques.", fonte: "Legisla Goiás e PCGO", fonteUrl: "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/110397/pdf", atualizado: "Abril/2026" },
+    { titulo: "Delegado PCGO — subsídio e revisões", status: "Conferir legislação própria", ano: "Lei GO nº 15.397/2005", tipo: "individual", desc: "Delegados têm lei própria de subsídio; eventual cobrança deve conferir classe, percentual, revisões gerais, excesso constitucional, edição vigente e demonstrativos individuais.", base: "Lei GO nº 15.397/2005, revisões gerais, Lei Orgânica da PCGO e ficha financeira.", fonte: "Legisla Goiás — Lei 15.397/2005", fonteUrl: "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/80486/pdf", atualizado: "Abril/2026" },
+    { titulo: "Aposentadoria policial, paridade, integralidade e abono", status: "Tema sensível", ano: "EC 103/2019", tipo: "individual", desc: "A análise depende da data de ingresso, tempo de atividade policial, cargo, regra utilizada, ato de aposentadoria, abono implantado ou não e orientação previdenciária estadual.", base: "Lei Federal 14.735/2023, EC 103/2019, legislação estadual, GOIASPREV e documentos funcionais.", fonte: "PCGO/GOIASPREV", fonteUrl: "https://www.goiasprev.go.gov.br/", atualizado: "Abril/2026" }
+  ],
+  ppgo: [
+    { titulo: "PPGO — subsídio do Policial Penal e enquadramento", status: "Conferência individual", ano: "Lei GO nº 23.235/2025", tipo: "individual", desc: "Diferenças podem envolver classe, padrão, progressão, data de implantação, RGA, provimento, lotação e contracheque.", base: "Lei GO nº 23.235/2025, atos da DGPP/GO, Diário Oficial/GO e demonstrativos de pagamento.", fonte: "Legisla Goiás e DGPP/GO", fonteUrl: "https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/110397/pdf", atualizado: "Abril/2026" },
+    { titulo: "Plantões, indenizações, escoltas e verbas de escala — PPGO", status: "Somente com documentação", ano: "Caso a caso", tipo: "individual", desc: "Tese depende de previsão legal, escala, ordem de serviço, efetivo cumprimento, rubrica em folha e prova de pagamento ausente ou parcial.", base: "Escalas, atos da DGPP/GO, legislação estadual e contracheques.", fonte: "DGPP/GO", fonteUrl: "https://www.policiapenal.go.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Aposentadoria, abono e regras da atividade policial penal", status: "Tema previdenciário", ano: "EC 103/2019", tipo: "individual", desc: "A análise exige data de ingresso, cargo, tempo em atividade penal, contribuições, regra aplicada, abono e ato de aposentadoria.", base: "GOIASPREV, legislação estadual, Constituição Federal e documentos funcionais.", fonte: "GOIASPREV/DGPP", fonteUrl: "https://www.goiasprev.go.gov.br/", atualizado: "Abril/2026" }
+  ]
 };
 
 /* BLOCO 15.5 — Base de dados das associações e sindicatos */
@@ -6310,6 +6447,19 @@ const ASSOCIACOES = {
     { nome: "Entidades locais da Polícia Penal/SEJUS-MT", foco: "Servidores policiais penais, ativos, veteranos e pensionistas", acao: "Apoio associativo e sindical em temas de segurança prisional, escala, remuneração, saúde, previdência e condições de serviço.", site: "Consultar canais oficiais e redes institucionais", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Informativos, orientação, representação e eventual suporte jurídico/administrativo conforme contrato." }
   ]
 
+,
+  pmgo: [
+    { nome: "ASPMGO — Associação dos Subtenentes, Sargentos, Cabos e Soldados da PM e BM de Goiás", foco: "Policiais militares e bombeiros militares de Goiás", acao: "Representação associativa, defesa de interesses da carreira, pautas remuneratórias, previdenciárias e apoio institucional.", site: "Consultar site/canais oficiais da ASPMGO", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente na entidade", servicos: "Informativos, orientação administrativa, benefícios associativos e eventual suporte jurídico conforme contrato." },
+    { nome: "Entidades representativas de oficiais e praças da PMGO", foco: "Militares estaduais ativos, reserva, reforma e pensionistas", acao: "Acompanhamento de legislação, promoções, subsídio, previdência, saúde e condições de trabalho.", site: "Consultar canais oficiais e redes institucionais", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Representação institucional, orientação, notícias, convênios e suporte conforme regras internas." }
+  ],
+  pcgo: [
+    { nome: "SINPOL-GO — Sindicato dos Policiais Civis do Estado de Goiás", foco: "Policiais civis de Goiás", acao: "Representação sindical em temas de carreira, subsídio, progressão, aposentadoria, concursos, condições de trabalho e defesa institucional.", site: "https://sinpolgo.org.br/", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente na entidade", servicos: "Notícias, representação, orientação administrativa e eventual suporte jurídico conforme regulamento." },
+    { nome: "Entidades da Polícia Civil de Goiás por carreira", foco: "Delegados, agentes, escrivães, papiloscopistas e demais carreiras", acao: "Acompanhamento de pautas específicas de cada cargo, legislação, concursos, promoções e previdência.", site: "Consultar associação/sindicato específico da carreira", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Informativos, orientação, mobilização e suporte conforme contrato." }
+  ],
+  ppgo: [
+    { nome: "SINPP-GO — Sindicato dos Policiais Penais de Goiás", foco: "Policiais penais de Goiás", acao: "Representação sindical em pautas do sistema prisional, segurança, remuneração, carreira, convocações, condições de trabalho e previdência.", site: "Consultar site/canais oficiais do SINPP-GO", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente na entidade", servicos: "Notícias, representação sindical, mobilização, orientação e eventual apoio jurídico conforme regras internas." },
+    { nome: "Entidades locais da Polícia Penal/DGPP-GO", foco: "Policiais penais ativos, inativos e pensionistas", acao: "Apoio associativo e sindical em temas de subsídio, escala, lotação, saúde, previdência e segurança prisional.", site: "Consultar canais oficiais e redes institucionais", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Informativos, orientação, representação e eventual suporte jurídico/administrativo conforme contrato." }
+  ]
 };
 
 
@@ -6657,6 +6807,55 @@ const CONCURSOS = {
     site: "https://www.pjc.mt.gov.br/"
   }
 
+,
+  pmgo: {
+    edital: "PMGO — Soldado, Cadete/Oficial e demais carreiras: acompanhar PMGO, SEAD/GO, Diário Oficial/GO e banca organizadora.",
+    salario: "Tabela cadastrada conforme Lei GO nº 23.235/2025: Soldado 2ª Classe R$ 7.452,68; Soldado 1ª Classe R$ 8.216,59; Cabo R$ 9.022,75; Coronel R$ 36.867,10; valores sem adicionais e sujeitos à conferência de RGA/contracheque.",
+    vagas: "Sem edital novo aberto cadastrado nesta versão; acompanhar autorizações, convocações e editais oficiais da PMGO e SEAD/GO.",
+    requisitos: "Normalmente ensino superior conforme edital, idade/altura/CNH quando exigidos, aptidão física, avaliação psicológica, exames, investigação social e demais condições legais.",
+    escolaridade: "Conferir edital vigente da PMGO/SEAD-GO para cargo de Soldado, Cadete ou Oficial.",
+    banca: "A definir conforme edital; concursos anteriores em Goiás utilizaram banca oficial contratada pela Administração.",
+    inscritos: "Depende do edital vigente; conferir relatório da banca organizadora e publicações oficiais.",
+    materias: "Conforme edital: Língua Portuguesa, Realidade Étnica/Social/Histórica/Geográfica/Cultural/Política/Econômica de Goiás, Direito, legislação institucional, conhecimentos específicos, redação e demais disciplinas.",
+    etapas: "Prova objetiva, redação/discursiva quando prevista, TAF, avaliação médica, avaliação psicológica, investigação social, curso de formação e demais fases do edital.",
+    cfsd: "Curso de Formação na estrutura de ensino da PMGO, conforme edital e atos internos.",
+    estagio: "Estágio probatório, curso de formação e evolução funcional conforme legislação militar estadual.",
+    validade: "Conferir prazo de validade, homologação, prorrogação e convocações no Diário Oficial/GO.",
+    previsao: "Acompanhar PMGO, SEAD/GO, Secretaria de Segurança Pública/GO e Diário Oficial/GO para novo edital.",
+    site: "https://goias.gov.br/policiamilitar/"
+  },
+  pcgo: {
+    edital: "PCGO — Agente, Escrivão, Papiloscopista, Delegado e demais carreiras: acompanhar PCGO, SEAD/GO, Diário Oficial/GO e banca organizadora.",
+    salario: "Tabela cadastrada conforme Lei GO nº 23.235/2025: Agente/Escrivão/Papiloscopista de R$ 7.863,15 a R$ 16.409,53; Delegado Substituto: R$ 23.811,22 no edital oficial 008/2022, com conferência na Lei GO nº 15.397/2005, revisões e contracheque.",
+    vagas: "Sem edital novo aberto cadastrado nesta versão; acompanhar autorizações, nomeações e editais oficiais da PCGO e SEAD/GO.",
+    requisitos: "Nível superior conforme cargo; Delegado exige Bacharelado em Direito e demais requisitos do edital. Todos exigem investigação social, aptidão, exames e condições legais.",
+    escolaridade: "Agente, Escrivão e Papiloscopista: nível superior conforme edital; Delegado: Bacharelado em Direito e requisitos específicos.",
+    banca: "A definir conforme edital vigente; último ciclo PCGO foi organizado pelo Instituto AOCP.",
+    inscritos: "Depende do edital vigente; conferir relatório da banca e publicações oficiais.",
+    materias: "Conforme edital: Língua Portuguesa, Informática, Realidade de Goiás, Direito Constitucional, Administrativo, Penal, Processual Penal, legislação especial e conhecimentos específicos.",
+    etapas: "Prova objetiva, discursiva quando prevista, TAF quando previsto, avaliação psicológica, exames médicos, investigação social, curso de formação e demais fases do edital.",
+    cfsd: "Curso de Formação na Escola Superior da Polícia Civil/PCGO, conforme edital e atos oficiais.",
+    estagio: "Estágio probatório e evolução funcional conforme Lei Orgânica da PCGO e legislação estadual.",
+    validade: "Conferir homologação, validade, prorrogação, nomeações e convocações no Diário Oficial/GO.",
+    previsao: "Acompanhar PCGO, SEAD/GO, SSP/GO, Instituto AOCP quando aplicável e Diário Oficial/GO para novo edital.",
+    site: "https://goias.gov.br/policiacivil/"
+  },
+  ppgo: {
+    edital: "PPGO — Policial Penal: acompanhar DGPP/GO, SEAD/GO, Diário Oficial/GO e banca organizadora.",
+    salario: "Policial Penal/GO conforme Lei GO nº 23.235/2025: R$ 6.668,88 a R$ 16.393,90 por classe/padrão; valores sem adicionais e sujeitos à conferência de RGA/contracheque.",
+    vagas: "Quadro legal de 3.693 cargos de Policial Penal na Lei GO nº 23.235/2025; editais, nomeações e convocações dependem de autorização e atos oficiais.",
+    requisitos: "Conforme edital: escolaridade exigida, CNH quando prevista, aptidão física, avaliação psicológica, exames, investigação social, curso de formação e demais condições legais.",
+    escolaridade: "Conferir edital vigente da SEAD/GO e DGPP/GO.",
+    banca: "A definir conforme edital vigente.",
+    inscritos: "Depende do edital vigente; conferir relatório da banca organizadora.",
+    materias: "Conforme edital: Língua Portuguesa, Raciocínio Lógico, Realidade de Goiás, Direito, legislação penal/prisional, execução penal e conhecimentos específicos.",
+    etapas: "Prova objetiva, discursiva quando prevista, TAF, avaliação psicológica, exames, investigação social, curso de formação e demais fases do edital.",
+    cfsd: "Curso de Formação da Polícia Penal/DGPP-GO conforme edital e atos oficiais.",
+    estagio: "Estágio probatório e evolução funcional conforme legislação estadual da carreira.",
+    validade: "Conferir homologação, validade, prorrogação, nomeações e convocações no Diário Oficial/GO.",
+    previsao: "Acompanhar DGPP/GO, SEAD/GO, SSP/GO e Diário Oficial/GO para novo edital e convocações.",
+    site: "https://www.policiapenal.go.gov.br/"
+  }
 };
 
 
@@ -6666,7 +6865,7 @@ const CONCURSOS = {
 let currTabela = CARGOS_PM;
 let currInst = 'pmesp';
 let headerModoInicialPortal = true;
-const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
+const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt','pmgo','pcgo','ppgo'];
 function normalizarInstituicao(inst) {
   return INSTITUICOES_VALIDAS.includes(inst) ? inst : 'pmesp';
 }
@@ -6822,7 +7021,10 @@ function atualizarHeaderDesc(descInstituicao) {
     ppms: 'Polícia Penal de Mato Grosso do Sul',
     pmmt: 'Polícia Militar de Mato Grosso',
     pcmt: 'Polícia Judiciária Civil de Mato Grosso',
-    ppmt: 'Polícia Penal de Mato Grosso'
+    ppmt: 'Polícia Penal de Mato Grosso',
+    pmgo: 'Polícia Militar de Goiás',
+    pcgo: 'Polícia Civil de Goiás',
+    ppgo: 'Polícia Penal de Goiás'
   };
   const textoAba = getNomeAbaAtual();
   const desc = descInstituicao || descs[currInst] || descs.pmesp;
@@ -6866,7 +7068,8 @@ function popularCargos(inst) {
     pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC,   ppsc: CARGOS_PPSC,
     pmes: CARGOS_PMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,
     pmms: CARGOS_PMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
-    pmmt: CARGOS_PMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,};
+    pmmt: CARGOS_PMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,
+    pmgo: CARGOS_PMGO,   pcgo: CARGOS_PCGO,   ppgo: CARGOS_PPGO,};
   currTabela = map[inst] || CARGOS_PM;
 
   const sCargo = document.getElementById('cargo');
@@ -7033,6 +7236,18 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     nome: 'PPES — SEGER/ES e PPES — Edital nº 001/2025, LC ES 1.059/2023 e tabela da carreira',
     url: 'https://seger.es.gov.br/concurso-ppes-edital-no-01-2025-policial-penal'
   },
+  pmgo: {
+    nome: 'Legisla Goiás — Lei GO nº 23.235/2025 — subsídios PMGO/CBMGO; PMGO — Estrutura Organizacional 2026',
+    url: 'https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/110397/pdf'
+  },
+  pcgo: {
+    nome: 'Legisla Goiás — Lei GO nº 23.235/2025 e Lei GO nº 15.397/2005; PCGO — Estrutura Organizacional',
+    url: 'https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/110397/pdf'
+  },
+  ppgo: {
+    nome: 'Legisla Goiás — Lei GO nº 23.235/2025; DGPP/GO — cargos, ocupantes e portal oficial',
+    url: 'https://legisla.casacivil.go.gov.br/api/v2/pesquisa/legislacoes/110397/pdf'
+  },
   sc_auxilio: {
     nome: 'ALESC/SC — Lei 18.796/2023, redação da Lei 19.059/2024 — auxílio-alimentação',
     url: 'https://leis.alesc.sc.gov.br/ato-normativo/22251'
@@ -7073,6 +7288,12 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
   }
   if (inst === 'pcmt') {
     return linha.benefDesc || 'PCMT: a tabela salarial cadastrada usa referências do Portal do Servidor/SEPLAG-MT para Escrivão e Delegado; abonos, adicionais, plantões e demais rubricas dependem da legislação estadual, lotação, escala e contracheque.';
+  }
+  if (inst === 'pmgo') {
+    return linha.benefDesc || 'PMGO: subsídio cadastrado conforme Lei GO nº 23.235/2025; auxílio, indenizações, escalas, diárias, fardamento, funções e demais rubricas dependem de lei, ato administrativo e contracheque; não foram somados automaticamente.';
+  }
+  if (inst === 'pcgo') {
+    return linha.benefDesc || 'PCGO: subsídio cadastrado conforme Lei GO nº 23.235/2025; Delegado Substituto usa referência do edital oficial 008/2022 e exige conferência na Lei GO nº 15.397/2005, revisões e contracheque. Plantões, auxílios e indenizações não foram somados automaticamente.';
   }
 
   if (inst === 'pmesp') {
@@ -7267,7 +7488,8 @@ function getTabelaCargosRemuneracao(inst) {
     pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC,   ppsc: CARGOS_PPSC,
     pmes: CARGOS_PMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,
     pmms: CARGOS_PMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
-    pmmt: CARGOS_PMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,};
+    pmmt: CARGOS_PMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,
+    pmgo: CARGOS_PMGO,   pcgo: CARGOS_PCGO,   ppgo: CARGOS_PPGO,};
   return map[normalizarInstituicao(inst)] || CARGOS_PM;
 }
 
@@ -7317,6 +7539,20 @@ function calcularRemuneracaoTabelada(inst, cargo) {
     benefDesc = cargo.benefDesc || 'Adicionais, plantões, indenizações, verbas de escala e demais rubricas dependem da legislação estadual, lotação, escala e contracheque; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || 'pcmt';
     badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : (cargo.badge || 'Tabela 2025');
+  } else if (inst === 'pmgo') {
+    remuneracao = padrao;
+    beneficios = 0;
+    criterio = cargo.criterio || 'Tabela de subsídios da PMGO conforme Lei GO nº 23.235/2025; conferir Portal da Transparência/GO, Diário Oficial/GO e contracheque individual.';
+    benefDesc = cargo.benefDesc || 'Auxílios, adicionais, indenizações, escalas, fardamento, diárias e gratificações dependem de lei, ato administrativo e contracheque; não foram somados automaticamente.';
+    fonteKey = cargo.fonteKey || 'pmgo';
+    badge = cargo.badge || 'Lei 23.235/2025';
+  } else if (inst === 'pcgo') {
+    remuneracao = padrao;
+    beneficios = 0;
+    criterio = cargo.criterio || 'Tabela de subsídios da PCGO conforme Lei GO nº 23.235/2025; Delegado deve ser conferido também na Lei GO nº 15.397/2005, revisões gerais e contracheque.';
+    benefDesc = cargo.benefDesc || 'Plantões, auxílios, indenizações, diárias, gratificações e diferenças individuais dependem de lei, ato administrativo e contracheque; não foram somados automaticamente.';
+    fonteKey = cargo.fonteKey || 'pcgo';
+    badge = cargo.badge || 'Lei 23.235/2025';
   } else if (inst === 'pmerj') {
     const gret = padrao * Number(cargo.gretPct || 0);
     const ghp = padrao * Number(cargo.ghpPct || 0);
@@ -7571,6 +7807,14 @@ const HEADER_ESTADOS = {
     pc: 'pcmt',
     pp: 'ppmt',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Mato_Grosso.svg'
+  },
+  go: {
+    nome: 'Goiás',
+    sigla: 'GO',
+    pm: 'pmgo',
+    pc: 'pcgo',
+    pp: 'ppgo',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Goi%C3%A1s.svg'
   }
 };
 
@@ -7604,7 +7848,10 @@ const HEADER_INSTITUICOES_INFO = {
   ppms: { titulo: 'PPMS', desc: 'Polícia Penal de Mato Grosso do Sul' },
   pmmt: { titulo: 'PMMT', desc: 'Polícia Militar de Mato Grosso' },
   pcmt: { titulo: 'PCMT', desc: 'Polícia Judiciária Civil de Mato Grosso' },
-  ppmt: { titulo: 'PPMT', desc: 'Polícia Penal de Mato Grosso' }
+  ppmt: { titulo: 'PPMT', desc: 'Polícia Penal de Mato Grosso' },
+  pmgo: { titulo: 'PMGO', desc: 'Polícia Militar de Goiás' },
+  pcgo: { titulo: 'PCGO', desc: 'Polícia Civil de Goiás' },
+  ppgo: { titulo: 'PPGO', desc: 'Polícia Penal de Goiás' }
 };
 
 const HEADER_INSTITUICOES_RESUMO = {
@@ -7637,7 +7884,10 @@ const HEADER_INSTITUICOES_RESUMO = {
   ppms: { criacao: 'EC 104/2019 · EC MS 88/2021 · Lei MS 5.846/2022', ativa: 1903, ativaLabel: '≈ 1.903 servidores ativos AGEPEN/PP', reservaLabel: 'Inativos: AGEPREV/MS', totalLabel: 'Ativo informado ≈ 1.903 · inativos à parte', populacao: 2924631, governador: 'Eduardo Riedel', comando: POLICIAS_PENAIS_INFO.ppms.direcao, atualizado: POLICIAS_PENAIS_INFO.ppms.atualizado },
   pmmt: { criacao: '05/09/1835 · LC MT 529/2014', ativa: 7275, ativaLabel: 'Ativo informado: 7.275 PMs', reservaLabel: 'Reserva/inativos: MTPREV/MT', totalLabel: 'Efetivo legal previsto: 12.495 PMs', populacao: 3893659, governador: 'Mauro Mendes', comando: 'Cel PM Claudio Fernando Carneiro Tinoco — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
   pcmt: { criacao: 'Lei MT 7.935/2003 · LC MT 407/2010', ativa: 2983, ativaLabel: 'Ativo informado: 2.983 policiais civis', reservaLabel: 'Inativos: MTPREV/MT', totalLabel: 'Efetivo legal: 5.600 cargos PJC', populacao: 3893659, governador: 'Mauro Mendes', comando: 'Delegada Daniela Silveira Maidel — Delegada-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  ppmt: { criacao: 'EC 104/2019 · SEJUS/MT · Polícia Penal MT', ativa: 2620, ativaLabel: 'Ativo informado: 2.620 policiais penais', reservaLabel: 'Inativos: MTPREV/MT', totalLabel: '2.620 ativos · inativos à parte', populacao: 3893659, governador: 'Mauro Mendes', comando: POLICIAS_PENAIS_INFO.ppmt.direcao, atualizado: POLICIAS_PENAIS_INFO.ppmt.atualizado }
+  ppmt: { criacao: 'EC 104/2019 · SEJUS/MT · Polícia Penal MT', ativa: 2620, ativaLabel: 'Ativo informado: 2.620 policiais penais', reservaLabel: 'Inativos: MTPREV/MT', totalLabel: '2.620 ativos · inativos à parte', populacao: 3893659, governador: 'Mauro Mendes', comando: POLICIAS_PENAIS_INFO.ppmt.direcao, atualizado: POLICIAS_PENAIS_INFO.ppmt.atualizado },
+  pmgo: { criacao: 'Lei GO nº 8.033/1975 · Lei GO nº 15.668/2006 · Lei GO nº 23.235/2025', ativaLabel: 'Efetivo ativo: conferir PMGO/Portal da Transparência · tabela de subsídios cadastrada', reservaLabel: 'Reserva/inativos: GOIASPREV e folha estadual', totalLabel: 'Quadro e efetivo: conferir PMGO, Diário Oficial/GO e Portal da Transparência', relacaoLabel: 'Relação depende de efetivo ativo consolidado', populacao: 7423629, governador: 'Daniel Vilela', comando: 'Coronel PM Marcelo Granja — Comandante-Geral', atualizado: 'Atualizado em 30/04/2026' },
+  pcgo: { criacao: 'Lei Estadual nº 185/1898 · Lei GO nº 16.901/2010 · Lei GO nº 23.235/2025', ativaLabel: 'Quadro legal: Agente 3.299, Escrivão 2.309, Papiloscopista 298; efetivo ativo deve ser conferido', reservaLabel: 'Inativos: GOIASPREV e folha estadual', totalLabel: 'Quadro de cargos PCGO estruturado pela Lei GO nº 16.901/2010 e alterações', relacaoLabel: 'Relação depende de efetivo ativo consolidado', populacao: 7423629, governador: 'Daniel Vilela', comando: 'Delegado André Gustavo Corteze Ganga — Delegado-Geral', atualizado: 'Atualizado em 30/04/2026' },
+  ppgo: { criacao: POLICIAS_PENAIS_INFO.ppgo.criacao, ativa: 3693, ativaLabel: POLICIAS_PENAIS_INFO.ppgo.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.ppgo.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppgo.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.ppgo.relacaoLabel, populacao: 7423629, governador: 'Daniel Vilela', comando: POLICIAS_PENAIS_INFO.ppgo.direcao, atualizado: POLICIAS_PENAIS_INFO.ppgo.atualizado }
 };
 
 function formatarNumeroHeader(valor) {
@@ -7928,7 +8178,10 @@ function mudarInstituicao(novaInstituicao) {
     ppms: { titulo: "PPMS", desc: POLICIAS_PENAIS_INFO.ppms.nome, cor: "#516b3b", alertaPrev: `${POLICIAS_PENAIS_INFO.ppms.sigla}: ${POLICIAS_PENAIS_INFO.ppms.previdencia} ${POLICIAS_PENAIS_INFO.ppms.vantagens}` },
     pmmt: { titulo: "PMMT", desc: "Polícia Militar de Mato Grosso", cor: "#1f7a4d", alertaPrev: "PMMT: conferir sistema de proteção social dos militares estaduais, MTPREV/MT, regra de ingresso, averbações, reserva remunerada e reforma conforme legislação estadual." },
     pcmt: { titulo: "PCMT", desc: "Polícia Judiciária Civil de Mato Grosso", cor: "#5b6472", alertaPrev: "PCMT: conferir tabela salarial do Portal do Servidor/SEPLAG-MT, cargo, classe, nível, tempo em atividade policial, MTPREV/MT e regra de aposentadoria aplicada." },
-    ppmt: { titulo: "PPMT", desc: POLICIAS_PENAIS_INFO.ppmt.nome, cor: "#6b5f2f", alertaPrev: `${POLICIAS_PENAIS_INFO.ppmt.sigla}: ${POLICIAS_PENAIS_INFO.ppmt.previdencia} ${POLICIAS_PENAIS_INFO.ppmt.vantagens}` }
+    ppmt: { titulo: "PPMT", desc: POLICIAS_PENAIS_INFO.ppmt.nome, cor: "#6b5f2f", alertaPrev: `${POLICIAS_PENAIS_INFO.ppmt.sigla}: ${POLICIAS_PENAIS_INFO.ppmt.previdencia} ${POLICIAS_PENAIS_INFO.ppmt.vantagens}` },
+    pmgo: { titulo: "PMGO", desc: "Polícia Militar de Goiás", cor: "#1f7a4d", alertaPrev: "PMGO: conferir sistema de proteção social dos militares estaduais, GOIASPREV, Lei GO nº 8.033/1975, Lei GO nº 15.668/2006, Lei GO nº 23.235/2025, regra de ingresso, reserva remunerada, reforma e contracheque." },
+    pcgo: { titulo: "PCGO", desc: "Polícia Civil de Goiás", cor: "#4b5563", alertaPrev: "PCGO: conferir Lei Orgânica GO nº 16.901/2010, Lei GO nº 23.235/2025, Lei GO nº 15.397/2005 para Delegado, GOIASPREV, cargo, classe, padrão, tempo em atividade policial e regra de aposentadoria aplicada." },
+    ppgo: { titulo: "PPGO", desc: POLICIAS_PENAIS_INFO.ppgo.nome, cor: "#596b2d", alertaPrev: `${POLICIAS_PENAIS_INFO.ppgo.sigla}: ${POLICIAS_PENAIS_INFO.ppgo.previdencia} ${POLICIAS_PENAIS_INFO.ppgo.vantagens}` }
   };
 
   const solicitada = novaInstituicao || document.getElementById('instituicao')?.value || currInst || 'pmesp';
@@ -8010,13 +8263,14 @@ function analisarDireitos() {
     pmrs: 'PMRS', pcrs: 'PCRS', pprs: 'PPRS', pmsc: 'PMSC', pcsc: 'PCSC', ppsc: 'PPSC',
     pmes: 'PMES', pces: 'PCES', ppes: 'PPES',
     pmms: 'PMMS', pcms: 'PCMS', ppms: 'PPMS',
-    pmmt: 'PMMT', pcmt: 'PCMT', ppmt: 'PPMT'
+    pmmt: 'PMMT', pcmt: 'PCMT', ppmt: 'PPMT',
+    pmgo: 'PMGO', pcgo: 'PCGO', ppgo: 'PPGO'
   };
-  const isPM = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs', 'pmsc', 'pmes', 'pmms', 'pmmt'].includes(inst);
-  const isPC = ['pcsp', 'pcerj', 'pcmg', 'pcba', 'pcpr', 'pcrs', 'pcsc', 'pces', 'pcms', 'pcmt'].includes(inst);
+  const isPM = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs', 'pmsc', 'pmes', 'pmms', 'pmmt', 'pmgo'].includes(inst);
+  const isPC = ['pcsp', 'pcerj', 'pcmg', 'pcba', 'pcpr', 'pcrs', 'pcsc', 'pces', 'pcms', 'pcmt', 'pcgo'].includes(inst);
   const isPP = isPoliciaPenal(inst);
   const uf = inst.includes('sp') ? 'SP' : inst.includes('rj') ? 'RJ' : inst.includes('mg') ? 'MG' : inst.includes('ba') ? 'BA' : inst.includes('pr') ? 'PR' : inst.includes('rs') ? 'RS' : inst.includes('sc') ? 'SC' :
-             inst.includes('es') ? 'ES' : inst.includes('ms') ? 'MS' : inst.includes('mt') ? 'MT' : '';
+             inst.includes('es') ? 'ES' : inst.includes('ms') ? 'MS' : inst.includes('mt') ? 'MT' : inst.includes('go') ? 'GO' : '';
   const ingressoAntesEC103 = ingresso ? new Date(ingresso + 'T00:00:00') < new Date('2019-11-13T00:00:00') : false;
 
   let html = '';

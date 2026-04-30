@@ -1,0 +1,23 @@
+Coloque aqui as imagens locais usadas pelo site.
+
+O index.html já aponta para assets/img/.
+Preferência: envie versões .webp com estes nomes:
+
+logoleao.webp
+barrafixa01.webp
+barrafixa02.webp
+botaacero.webp
+curso-informatica-pcsp.webp
+curso-pmesp-completo.webp
+curso-psicotecnico-carreiras-policiais.webp
+curso-raciocinio-logico-pcsp.webp
+curso-sargento-pmesp.webp
+alem-da-farda-codigo-travessia.webp
+metodo-dma-procrastinacao.webp
+otimizando-cerebro-concursos.webp
+pacote-viva-sem-procrastinar.webp
+taticas-lideranca-militar.webp
+IMG_0865.jpeg
+IMG_0868.jpeg
+
+Se você usar PNG/JPG/JPEG para os produtos, o fallback do site tenta carregar automaticamente .png, .jpg, .jpeg e .webp com o mesmo nome-base.

@@ -3753,7 +3753,7 @@ function aplicarHeaderInicialPortal() {
     flagAtual.dataset.retry = '';
     flagAtual.src = 'logoleao';
     flagAtual.alt = 'Logo Universo Segurança Pública';
-    setHeaderHeroImage(HEADER_BRASIL_FLAG);
+    setHeaderHeroImage('logoleao.jpeg');
     const moldura = flagAtual.closest('.current-flag-frame');
     if (moldura) {
       moldura.classList.remove('institution-logo-frame');

@@ -367,6 +367,39 @@ const POLICIAS_PENAIS_INFO = {
     fonte: 'DGPP/GO, IBFC e Legisla Goiás — Lei GO nº 23.235/2025',
     url: 'https://www.policiapenal.go.gov.br/',
     atualizado: 'Atualizado em 30/04/2026'
+  },
+  ppto: {
+    sigla: 'PPTO',
+    nome: 'Polícia Penal do Tocantins',
+    uf: 'Tocantins',
+    criacao: 'EC 104/2019 · Lei TO nº 3.879/2022',
+    marco: 'A Polícia Penal do Tocantins possui Plano de Cargos, Carreira e Subsídio próprio previsto na Lei TO nº 3.879/2022, com atualizações remuneratórias pela MP TO nº 18/2026.',
+    orgao: 'Secretaria da Cidadania e Justiça do Estado do Tocantins (SECIJU/TO)',
+    direcao: 'SECIJU/TO — Superintendência de Administração dos Sistemas Penitenciário e Prisional',
+    subordinacao: 'Sistema penitenciário e prisional estadual, com atuação em segurança prisional, custódia, escolta, vigilância, disciplina e apoio à execução penal.',
+    efetivoAtivoLabel: 'Conferir SECIJU/TO',
+    reservaLabel: 'Inativos: conferir IGEPREV/TO',
+    totalLabel: 'Quadro legal: 1.365 vagas de Policial Penal',
+    relacaoLabel: 'Não calcular sem efetivo oficial consolidado',
+    quadro: 'Lei TO nº 3.879/2022 e MP TO nº 18/2026 estruturam a carreira e a tabela de subsídios do Policial Penal.',
+    ingresso: 'Concurso público, investigação social, TAF, exames, avaliação psicológica, curso de formação e posse conforme edital.',
+    escolaridade: 'MP TO nº 15/2026 indica diploma de curso superior reconhecido pelo MEC para investidura no cargo de Policial Penal; conferir lei vigente e edital.',
+    formacao: 'Curso de formação com execução penal, segurança prisional, direitos humanos, armamento, procedimentos operacionais e normas internas.',
+    atribuicoes: 'Segurança interna e externa das unidades penais, custódia, escolta, vigilância, recambiamento, controle de disciplina e apoio às políticas penais.',
+    remuneracao: 'Tabela de subsídios da Lei TO nº 3.879/2022, atualizada pela MP TO nº 18/2026; conferir Diário Oficial, RGA posterior, portal oficial e contracheque.',
+    vantagens: 'Indenização, plantões, diárias, serviço extraordinário, adicionais e auxílios dependem de lei, escala, lotação, ato administrativo e contracheque.',
+    saude: 'Assistência e perícias conforme regras estaduais, SECIJU/TO e IGEPREV/TO.',
+    previdencia: 'Regime próprio estadual/IGEPREV-TO; aposentadoria policial e regras de transição dependem da trajetória funcional individual.',
+    concurso: {
+      vagas: 'Quadro legal com 1.365 vagas; acompanhar autorização, edital e Diário Oficial para novo concurso.',
+      salario: 'MP TO nº 18/2026: subsídio de Policial Penal de R$ 5.734,75 a R$ 11.587,73 conforme classe/referência.',
+      banca: 'A definir conforme edital vigente.',
+      escolaridade: 'Nível superior, conforme MP TO nº 15/2026 e edital vigente.'
+    },
+    associacaoBusca: 'associação ou sindicato dos policiais penais do Tocantins',
+    fonte: 'SECIJU/TO, Diário Oficial/TO — Lei TO nº 3.879/2022 e MP TO nº 18/2026',
+    url: 'https://www.to.gov.br/cidadaniaejustica/',
+    atualizado: 'Atualizado em 30/04/2026'
   }
 };
 
@@ -778,6 +811,32 @@ const CARGOS_PPGO = mapearTabelaPoliciaPenal('ppgo', [
   'Não inclui plantões, serviço extraordinário, indenizações, auxílios, adicionais, gratificações, diárias ou vantagens pessoais. Conferir edital, rubricas, escala, lotação e contracheque.',
   'ppgo',
   { badge: 'Lei GO 23.235/2025' }
+);
+
+const CARGOS_PPTO = mapearTabelaPoliciaPenal('ppto', [
+  { id: 'terceira_a', text: 'PPTO — Policial Penal — 3ª Classe / Referência A', valor: 5734.75 },
+  { id: 'terceira_b', text: 'PPTO — Policial Penal — 3ª Classe / Referência B', valor: 6021.49 },
+  { id: 'terceira_c', text: 'PPTO — Policial Penal — 3ª Classe / Referência C', valor: 6322.57 },
+  { id: 'terceira_d', text: 'PPTO — Policial Penal — 3ª Classe / Referência D', valor: 6638.69 },
+  { id: 'terceira_e', text: 'PPTO — Policial Penal — 3ª Classe / Referência E', valor: 6970.63 },
+  { id: 'terceira_f', text: 'PPTO — Policial Penal — 3ª Classe / Referência F', valor: 7319.15 },
+  { id: 'terceira_g', text: 'PPTO — Policial Penal — 3ª Classe / Referência G', valor: 7685.13 },
+  { id: 'terceira_h', text: 'PPTO — Policial Penal — 3ª Classe / Referência H', valor: 8069.39 },
+  { id: 'terceira_i', text: 'PPTO — Policial Penal — 3ª Classe / Referência I', valor: 8472.85 },
+  { id: 'segunda_a', text: 'PPTO — Policial Penal — 2ª Classe / Referência A', valor: 6365.57 },
+  { id: 'segunda_e', text: 'PPTO — Policial Penal — 2ª Classe / Referência E', valor: 7737.39 },
+  { id: 'segunda_i', text: 'PPTO — Policial Penal — 2ª Classe / Referência I', valor: 9404.86 },
+  { id: 'primeira_a', text: 'PPTO — Policial Penal — 1ª Classe / Referência A', valor: 7065.80 },
+  { id: 'primeira_e', text: 'PPTO — Policial Penal — 1ª Classe / Referência E', valor: 8588.52 },
+  { id: 'primeira_i', text: 'PPTO — Policial Penal — 1ª Classe / Referência I', valor: 10439.39 },
+  { id: 'classe_especial_a', text: 'PPTO — Policial Penal — Classe Especial / Referência A', valor: 7843.04 },
+  { id: 'classe_especial_e', text: 'PPTO — Policial Penal — Classe Especial / Referência E', valor: 9533.26 },
+  { id: 'classe_especial_i', text: 'PPTO — Policial Penal — Classe Especial / Referência I', valor: 11587.73 }
+],
+  'Tabela de subsídios do Quadro da Polícia Penal conforme MP TO nº 18/2026, Anexo XX, que atualiza o Anexo I da Lei TO nº 3.879/2022.',
+  'Não inclui plantões, diárias, serviço extraordinário, indenizações, auxílios, adicionais, gratificações ou vantagens pessoais. Conferir escala, lotação, rubrica e contracheque.',
+  'ppto',
+  { badge: 'MP TO 18/2026' }
 );
 
 /* ============================================================ */

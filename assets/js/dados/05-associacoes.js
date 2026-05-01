@@ -123,6 +123,18 @@ const ASSOCIACOES = {
   ppgo: [
     { nome: 'Entidades representativas da Polícia Penal de Goiás', foco: 'Policiais penais ativos, veteranos e pensionistas', acao: 'Representação em pautas de carreira, sistema prisional, subsídio, escala, segurança, aposentadoria e condições de trabalho.', site: 'policiapenal.go.gov.br', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação, notícias, acompanhamento legislativo e eventual apoio jurídico conforme regras da entidade.' },
     { nome: 'Canal institucional DGPP/GO', foco: 'Informações oficiais da Diretoria-Geral de Polícia Penal de Goiás', acao: 'Consulta de estrutura, contatos, agenda de autoridades, notícias e publicações institucionais.', site: 'policiapenal.go.gov.br', telefone: 'Consultar portal oficial', mensalidade: 'Não se aplica', servicos: 'Informações públicas e contatos oficiais.' }
+  ],
+  pmto: [
+    { nome: 'Entidades representativas dos militares estaduais do Tocantins', foco: 'Policiais militares ativos, veteranos e pensionistas da PMTO', acao: 'Apoio associativo em pautas de subsídio, promoções, sistema de proteção social, saúde, escalas e valorização profissional.', site: 'www.to.gov.br/pm', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação associativa, acompanhamento legislativo, comunicação de classe e eventual suporte jurídico conforme regras da entidade.' },
+    { nome: 'Canal institucional PMTO', foco: 'Informações oficiais da Polícia Militar do Tocantins', acao: 'Consulta de notícias, estrutura, concursos, contatos, organograma e publicações institucionais.', site: 'www.to.gov.br/pm', telefone: 'Consultar portal oficial', mensalidade: 'Não se aplica', servicos: 'Informações públicas e contatos oficiais.' }
+  ],
+  pcto: [
+    { nome: 'Entidades representativas da Polícia Civil do Tocantins', foco: 'Delegados, oficiais investigadores, papiloscopistas, agentes de necrotomia, peritos e demais carreiras da PCTO', acao: 'Representação em pautas de carreira, subsídio, aposentadoria, concurso, condições de trabalho e prerrogativas.', site: 'www.to.gov.br/ssp/policia-civil/4ntkb8t97be8', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação, comunicação de classe, acompanhamento legislativo e eventual apoio jurídico conforme regras internas.' },
+    { nome: 'Canal institucional PCTO', foco: 'Informações oficiais da Polícia Civil do Tocantins', acao: 'Consulta de estrutura, cargos, concursos, delegacias, contatos e publicações institucionais.', site: 'www.to.gov.br/ssp/policia-civil/4ntkb8t97be8', telefone: 'Consultar portal oficial', mensalidade: 'Não se aplica', servicos: 'Informações públicas e contatos oficiais.' }
+  ],
+  ppto: [
+    { nome: 'Entidades representativas da Polícia Penal do Tocantins', foco: 'Policiais penais ativos, veteranos e pensionistas', acao: 'Representação em pautas de carreira, sistema prisional, subsídio, escala, segurança, aposentadoria e condições de trabalho.', site: 'www.to.gov.br/cidadaniaejustica/', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação, notícias, acompanhamento legislativo e eventual apoio jurídico conforme regras da entidade.' },
+    { nome: 'Canal institucional SECIJU/TO', foco: 'Informações oficiais do sistema penitenciário e prisional do Tocantins', acao: 'Consulta de estrutura, contatos, unidades penais, notícias e publicações institucionais.', site: 'www.to.gov.br/cidadaniaejustica/', telefone: 'Consultar portal oficial', mensalidade: 'Não se aplica', servicos: 'Informações públicas e contatos oficiais.' }
   ]
 
 };

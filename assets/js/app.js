@@ -133,7 +133,10 @@ function atualizarHeaderDesc(descInstituicao) {
     ppmt: 'Polícia Penal de Mato Grosso',
     pmgo: 'Polícia Militar de Goiás',
     pcgo: 'Polícia Civil de Goiás',
-    ppgo: 'Polícia Penal de Goiás'
+    ppgo: 'Polícia Penal de Goiás',
+    pmto: 'Polícia Militar do Tocantins',
+    pcto: 'Polícia Civil do Tocantins',
+    ppto: 'Polícia Penal do Tocantins'
   };
   const textoAba = getNomeAbaAtual();
   const desc = descInstituicao || descs[currInst] || descs.pmesp;
@@ -178,7 +181,8 @@ function popularCargos(inst) {
     pmes: CARGOS_PMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,
     pmms: CARGOS_PMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
     pmmt: CARGOS_PMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,
-    pmgo: CARGOS_PMGO,   pcgo: CARGOS_PCGO,   ppgo: CARGOS_PPGO,};
+    pmgo: CARGOS_PMGO,   pcgo: CARGOS_PCGO,   ppgo: CARGOS_PPGO,
+    pmto: CARGOS_PMTO,   pcto: CARGOS_PCTO,   ppto: CARGOS_PPTO,};
   currTabela = map[inst] || CARGOS_PM;
 
   const sCargo = document.getElementById('cargo');
@@ -313,6 +317,18 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     nome: 'PPMT — Portal do Servidor/SEPLAG-MT — tabela 40h Policial Penal 2026',
     url: 'https://sites.diretasistemas.com.br/sites/1377/wp-content/uploads/2026/02/10103833/Portal-do-Servidor.pdf'
   },
+  pmto: {
+    nome: 'PMTO — MP TO nº 18/2026 — tabela de subsídios da Polícia Militar',
+    url: 'https://www.al.to.leg.br/arquivos/diario-oficial_4234_79883.PDF'
+  },
+  pcto: {
+    nome: 'PCTO — MP TO nº 18/2026 — tabelas da Polícia Civil, Delegado e Perícia Oficial',
+    url: 'https://doe.to.gov.br/diario/5656/download'
+  },
+  ppto: {
+    nome: 'PPTO — Lei TO nº 3.879/2022 e MP TO nº 18/2026 — subsídios da Polícia Penal',
+    url: 'https://doe.to.gov.br/diario/5656/download'
+  },
   ppsp: {
     nome: 'PPSP — SAP/SP e ALESP — LC SP 1.416/2024, LC SP 1.425/2025 e concurso SAP 2025',
     url: 'https://www.sap.sp.gov.br/sec_adm_penitenciaria/Noticias/policia-penal-paulista-abre-inscricoes-para-concurso'
@@ -385,6 +401,13 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
   }
   if (inst === 'pcmt') {
     return linha.benefDesc || 'PCMT: a tabela salarial cadastrada usa referências do Portal do Servidor/SEPLAG-MT para Escrivão e Delegado; abonos, adicionais, plantões e demais rubricas dependem da legislação estadual, lotação, escala e contracheque.';
+  }
+
+  if (inst === 'pmto') {
+    return linha.benefDesc || 'PMTO: subsídio cadastrado por referência da MP TO nº 18/2026. Diárias, indenizações, serviço extraordinário, auxílios, etapas, fardamento, função e demais verbas dependem de lei, escala, lotação, ato administrativo e contracheque; não foram somados automaticamente.';
+  }
+  if (inst === 'pcto') {
+    return linha.benefDesc || 'PCTO: subsídio cadastrado por classe/referência da MP TO nº 18/2026. Plantões, indenizações, auxílios, gratificações, perícia, função e demais rubricas dependem de lei, cargo, lotação, escala e contracheque; não foram somados automaticamente.';
   }
 
   if (inst === 'pmesp') {
@@ -580,7 +603,8 @@ function getTabelaCargosRemuneracao(inst) {
     pmes: CARGOS_PMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,
     pmms: CARGOS_PMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
     pmmt: CARGOS_PMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,
-    pmgo: CARGOS_PMGO,   pcgo: CARGOS_PCGO,   ppgo: CARGOS_PPGO,};
+    pmgo: CARGOS_PMGO,   pcgo: CARGOS_PCGO,   ppgo: CARGOS_PPGO,
+    pmto: CARGOS_PMTO,   pcto: CARGOS_PCTO,   ppto: CARGOS_PPTO,};
   return map[normalizarInstituicao(inst)] || CARGOS_PM;
 }
 
@@ -899,6 +923,14 @@ const HEADER_ESTADOS = {
     pc: 'pcgo',
     pp: 'ppgo',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Goi%C3%A1s.svg'
+  },
+  to: {
+    nome: 'Tocantins',
+    sigla: 'TO',
+    pm: 'pmto',
+    pc: 'pcto',
+    pp: 'ppto',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Tocantins.svg'
   }
 };
 
@@ -935,7 +967,10 @@ const HEADER_INSTITUICOES_INFO = {
   ppmt: { titulo: 'PPMT', desc: 'Polícia Penal de Mato Grosso' },
   pmgo: { titulo: 'PMGO', desc: 'Polícia Militar de Goiás' },
   pcgo: { titulo: 'PCGO', desc: 'Polícia Civil de Goiás' },
-  ppgo: { titulo: 'PPGO', desc: 'Polícia Penal de Goiás' }
+  ppgo: { titulo: 'PPGO', desc: 'Polícia Penal de Goiás' },
+  pmto: { titulo: 'PMTO', desc: 'Polícia Militar do Tocantins' },
+  pcto: { titulo: 'PCTO', desc: 'Polícia Civil do Tocantins' },
+  ppto: { titulo: 'PPTO', desc: 'Polícia Penal do Tocantins' }
 };
 
 /*
@@ -1015,7 +1050,10 @@ const HEADER_INSTITUICOES_RESUMO = {
   ppmt: { criacao: 'EC 104/2019 · SEJUS/MT · Polícia Penal MT', ativa: 2620, ativaLabel: 'Ativo informado: 2.620 policiais penais', reservaLabel: 'Inativos: MTPREV/MT', totalLabel: '2.620 ativos · inativos à parte', populacao: 3893659, governador: 'Mauro Mendes', comando: POLICIAS_PENAIS_INFO.ppmt.direcao, atualizado: POLICIAS_PENAIS_INFO.ppmt.atualizado },
   pmgo:  { criacao: '28/07/1858', ativaLabel: 'Efetivo: conferir PMGO/SSP-GO', reservaLabel: 'Inativos: GOIASPREV/GO', totalLabel: 'Conferir PMGO/SSP-GO', populacao: 7423629, governador: 'Daniel Vilela', comando: 'Cel PM Marcelo Granja — Comandante-Geral', atualizado: 'Atualizado em 30/04/2026' },
   pcgo:  { criacao: 'Lei GO 16.901/2010 · organização PCGO', ativaLabel: 'Efetivo: conferir PCGO/SSP-GO', reservaLabel: 'Inativos: GOIASPREV/GO', totalLabel: 'Conferir PCGO/SSP-GO', populacao: 7423629, governador: 'Daniel Vilela', comando: 'Delegado André Gustavo Corteze Ganga — Delegado-Geral', atualizado: 'Atualizado em 30/04/2026' },
-  ppgo: { criacao: POLICIAS_PENAIS_INFO.ppgo.criacao, ativaLabel: POLICIAS_PENAIS_INFO.ppgo.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.ppgo.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppgo.totalLabel, populacao: 7423629, governador: 'Daniel Vilela', comando: POLICIAS_PENAIS_INFO.ppgo.direcao, atualizado: POLICIAS_PENAIS_INFO.ppgo.atualizado }
+  ppgo: { criacao: POLICIAS_PENAIS_INFO.ppgo.criacao, ativaLabel: POLICIAS_PENAIS_INFO.ppgo.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.ppgo.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppgo.totalLabel, populacao: 7423629, governador: 'Daniel Vilela', comando: POLICIAS_PENAIS_INFO.ppgo.direcao, atualizado: POLICIAS_PENAIS_INFO.ppgo.atualizado },
+  pmto: { criacao: '01/01/1989', ativaLabel: 'Efetivo: conferir PMTO/SSP-TO', reservaLabel: 'Inativos: IGEPREV/TO', totalLabel: 'Conferir PMTO/SSP-TO', populacao: 1586859, governador: 'Wanderlei Barbosa', comando: 'Cel PM Márcio Antônio Barbosa — Comandante-Geral', atualizado: 'Atualizado em 30/04/2026' },
+  pcto: { criacao: 'Lei TO nº 1.545/2004 · Lei TO nº 3.461/2019 · Lei TO nº 4.653/2025', ativaLabel: 'Efetivo: conferir SSP/TO', reservaLabel: 'Inativos: IGEPREV/TO', totalLabel: 'Conferir SSP/TO', populacao: 1586859, governador: 'Wanderlei Barbosa', comando: 'DPC Claudemir Luiz Ferreira — Delegado-Geral', atualizado: 'Atualizado em 30/04/2026' },
+  ppto: { criacao: POLICIAS_PENAIS_INFO.ppto.criacao, ativaLabel: POLICIAS_PENAIS_INFO.ppto.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.ppto.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppto.totalLabel, populacao: 1586859, governador: 'Wanderlei Barbosa', comando: POLICIAS_PENAIS_INFO.ppto.direcao, atualizado: POLICIAS_PENAIS_INFO.ppto.atualizado }
 };
 
 function formatarNumeroHeader(valor) {
@@ -1411,13 +1449,13 @@ function analisarDireitos() {
     pmes: 'PMES', pces: 'PCES', ppes: 'PPES',
     pmms: 'PMMS', pcms: 'PCMS', ppms: 'PPMS',
     pmmt: 'PMMT', pcmt: 'PCMT', ppmt: 'PPMT',
-    pmgo: 'PMGO', pcgo: 'PCGO', ppgo: 'PPGO'
+    pmgo: 'PMGO', pcgo: 'PCGO', ppgo: 'PPGO',
+    pmto: 'PMTO', pcto: 'PCTO', ppto: 'PPTO'
   };
-  const isPM = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs', 'pmsc', 'pmes', 'pmms', 'pmmt', 'pmgo'].includes(inst);
-  const isPC = ['pcsp', 'pcerj', 'pcmg', 'pcba', 'pcpr', 'pcrs', 'pcsc', 'pces', 'pcms', 'pcmt', 'pcgo'].includes(inst);
+  const isPM = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs', 'pmsc', 'pmes', 'pmms', 'pmmt', 'pmgo', 'pmto'].includes(inst);
+  const isPC = ['pcsp', 'pcerj', 'pcmg', 'pcba', 'pcpr', 'pcrs', 'pcsc', 'pces', 'pcms', 'pcmt', 'pcgo', 'pcto'].includes(inst);
   const isPP = isPoliciaPenal(inst);
-  const uf = inst.includes('sp') ? 'SP' : inst.includes('rj') ? 'RJ' : inst.includes('mg') ? 'MG' : inst.includes('ba') ? 'BA' : inst.includes('pr') ? 'PR' : inst.includes('rs') ? 'RS' : inst.includes('sc') ? 'SC' :
-             inst.includes('es') ? 'ES' : inst.includes('ms') ? 'MS' : inst.includes('mt') ? 'MT' : inst.includes('go') ? 'GO' : '';
+  const uf = getEstadoDaInstituicao(inst).toUpperCase();
   const ingressoAntesEC103 = ingresso ? new Date(ingresso + 'T00:00:00') < new Date('2019-11-13T00:00:00') : false;
 
   let html = '';
@@ -1913,7 +1951,7 @@ function getStatusAposentadoria(tempo, idade, requisitosApos) {
 }
 
 function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingressoAntesEC103) {
-  const tipo = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs', 'pmsc', 'pmes', 'pmgo'].includes(inst) ? 'reserva remunerada/reforma' : 'aposentadoria policial';
+  const tipo = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs', 'pmsc', 'pmes', 'pmgo', 'pmto'].includes(inst) ? 'reserva remunerada/reforma' : 'aposentadoria policial';
   if (requisitosApos === 'sim') {
     return `Você informou que os requisitos de ${tipo} já foram cumpridos. O próximo passo é confirmar a regra usada, cálculo, paridade/integralidade quando cabível e eventual abono de permanência.`;
   }

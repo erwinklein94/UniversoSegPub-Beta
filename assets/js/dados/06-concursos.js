@@ -391,6 +391,57 @@ const CONCURSOS = {
     validade: "Conforme edital e atos de homologação/prorrogação.",
     previsao: "Acompanhar IBFC, DGPP/GO, SEAD-GO e Diário Oficial.",
     site: "https://concursos.ibfc.org.br/informacoes/465/"
+  },
+  pmto: {
+    edital: "PMTO — Concurso Público 2025 CFP/QPPM — Soldado; acompanhar FGV/PMTO para retificações e convocações",
+    salario: "Edital CFP/QPPM 2025: Aluno-Praça R$ 2.881,53 e Soldado R$ 5.763,07 à época do edital. Tabela atual cadastrada: Soldado Ref. A R$ 7.497,33 conforme MP TO nº 18/2026.",
+    vagas: "600 vagas para Soldado no concurso PMTO 2025, conforme edital; acompanhar retificações, resultados e convocações.",
+    cotas: "Conforme legislação estadual e regras do edital vigente.",
+    idade: "Conferir edital vigente; requisitos de idade, CNH, altura, aptidão e demais condições variam conforme cargo.",
+    escolaridade: "Conferir edital vigente para Soldado/Aluno-Praça e CFO/Oficialato quando houver.",
+    materias: "Conferir edital FGV/PMTO e conteúdo programático atualizado.",
+    banca: "FGV no concurso CFP/QPPM 2025.",
+    inscritos: "Conferir status na FGV/PMTO; concurso 2025 em acompanhamento conforme publicações.",
+    etapas: "Prova objetiva, TAF, avaliação psicológica, exame médico/odontológico, investigação social, curso de formação e demais fases do edital.",
+    cfsd: "Curso de Formação de Praças pela PMTO conforme edital e convocações.",
+    estagio: "Conforme legislação militar estadual e edital.",
+    validade: "Conferir edital, homologação, prorrogação, convocações e atos posteriores.",
+    previsao: "Acompanhar FGV, PMTO, Diário Oficial/TO e retificações oficiais; não tratar previsão como edital aberto se não houver publicação.",
+    site: "https://conhecimento.fgv.br/concursos/pmto25"
+  },
+  pcto: {
+    edital: "PCTO — Oficial Investigador, Delegado, Perito, Papiloscopista e Agente de Necrotomia; acompanhar SSP/TO para novo edital",
+    salario: "MP TO nº 18/2026: Oficial Investigador/Papiloscopista/Agente de Necrotomia Substituto Ref. A R$ 7.917,97; Delegado Substituto R$ 21.901,70; Perito Oficial Substituto R$ 17.694,68.",
+    vagas: "Novo ciclo depende de autorização e edital oficial; acompanhar SSP/TO, Governo do Tocantins, Diário Oficial e banca contratada.",
+    cotas: "Conforme legislação estadual e regras do edital.",
+    idade: "Conferir edital vigente; normalmente exige idade mínima legal e demais requisitos por cargo.",
+    escolaridade: "Nível superior para cargos policiais civis, conforme edital vigente e cargo.",
+    materias: "A definir no edital; acompanhar Língua Portuguesa, Informática, Direito e conhecimentos específicos por cargo.",
+    banca: "A definir conforme contratação oficial.",
+    inscritos: "Sem inscrições abertas no cadastro atual do portal.",
+    etapas: "Provas, avaliação médica/psicológica, TAF quando previsto, investigação social, curso de formação e fases específicas por cargo.",
+    cfsd: "Curso de formação na estrutura da Polícia Civil/TO conforme convocação.",
+    estagio: "Conforme legislação da PCTO.",
+    validade: "Conforme edital vigente.",
+    previsao: "Acompanhar Polícia Civil/SSP-TO, Diário Oficial/TO e banca contratada.",
+    site: "https://www.to.gov.br/ssp/policia-civil/4ntkb8t97be8"
+  },
+  ppto: {
+    edital: "Polícia Penal TO — acompanhar SECIJU/TO e Diário Oficial para novo concurso",
+    salario: "MP TO nº 18/2026: Policial Penal de R$ 5.734,75 a R$ 11.587,73 conforme classe/referência.",
+    vagas: "Quadro legal de 1.365 vagas de Policial Penal; novo concurso depende de autorização e edital.",
+    cotas: "Conforme legislação estadual e regras do edital.",
+    idade: "Conferir edital vigente e atos posteriores.",
+    escolaridade: "Nível superior, conforme MP TO nº 15/2026 e edital vigente.",
+    materias: "A definir no edital; acompanhar conteúdo programático da banca e SECIJU/TO.",
+    banca: "A definir conforme edital/contrato oficial.",
+    inscritos: "Sem inscrições abertas no cadastro atual do portal.",
+    etapas: "Prova objetiva, prova discursiva quando prevista, TAF, avaliação psicológica, exames, investigação social, curso de formação e demais fases do edital.",
+    cfsd: "Curso de formação da Polícia Penal/TO conforme edital e convocações.",
+    estagio: "Conforme legislação estadual e edital.",
+    validade: "Conforme edital e atos de homologação/prorrogação.",
+    previsao: "Acompanhar SECIJU/TO, Diário Oficial/TO e banca contratada.",
+    site: "https://www.to.gov.br/cidadaniaejustica/"
   }
 
 };
@@ -402,7 +453,7 @@ const CONCURSOS = {
 let currTabela = CARGOS_PM;
 let currInst = 'pmesp';
 let headerModoInicialPortal = true;
-const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt','pmgo','pcgo','ppgo'];
+const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt','pmgo','pcgo','ppgo','pmto','pcto','ppto'];
 function normalizarInstituicao(inst) {
   return INSTITUICOES_VALIDAS.includes(inst) ? inst : 'pmesp';
 }

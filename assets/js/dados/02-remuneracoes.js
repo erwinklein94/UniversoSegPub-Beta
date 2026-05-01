@@ -760,3 +760,45 @@ const CARGOS_PCGO = [
   { val: "identificador_i_go", text: "Identificador PCGO — Nível I", padrao: 7863.15, gratif: 0, oficial: true, retpFator: 0, badge: "Lei GO 23.235/2025", criterio: GO_CRITERIO_GERAL, benefDesc: GO_BENEFICIOS_GERAIS, fonteKey: "pcgo" },
   { val: "dactiloscopista_v_go", text: "Dactiloscopista PCGO — Nível V", padrao: 16409.53, gratif: 0, oficial: true, retpFator: 0, badge: "Lei GO 23.235/2025", criterio: GO_CRITERIO_GERAL, benefDesc: GO_BENEFICIOS_GERAIS, fonteKey: "pcgo" }
 ];
+
+/* Tocantins — tabelas de referência acrescentadas em analogia às demais UFs do portal. */
+const TO_CRITERIO_PM = 'Subsídio bruto mensal de referência conforme Medida Provisória TO nº 18/2026, Anexo XXIII, que atualiza o Anexo I da Lei TO nº 2.823/2013. Valores da referência A; conferir Diário Oficial/Assembleia, RGA posterior, edital vigente e contracheque individual.';
+const TO_CRITERIO_PC = 'Subsídio bruto mensal de referência conforme Medida Provisória TO nº 18/2026, Anexos XVII a XIX, vinculados às Leis TO nº 2.314/2010, nº 1.545/2004 e nº 2.887/2014. Conferir Diário Oficial, classe/referência, RGA posterior e contracheque individual.';
+const TO_BENEFICIOS_GERAIS = 'Não inclui diárias, indenizações, serviço extraordinário, plantões, auxílios, adicional por função, vantagens pessoais ou parcelas por escala/lotação; rubricas individuais dependem da legislação, do ato administrativo e do contracheque.';
+
+const CARGOS_PMTO = [
+  { val: "cel_to", text: "CEL PM — Coronel PMTO — Ref. A", padrao: 27313.86, gratif: 0, oficial: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PM, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pmto" },
+  { val: "tencel_to", text: "TEN CEL PM — Tenente-Coronel PMTO — Ref. A", padrao: 24582.48, gratif: 0, oficial: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PM, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pmto" },
+  { val: "maj_to", text: "MAJ PM — Major PMTO — Ref. A", padrao: 22124.23, gratif: 0, oficial: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PM, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pmto" },
+  { val: "cap_to", text: "CAP PM — Capitão PMTO — Ref. A", padrao: 19911.80, gratif: 0, oficial: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PM, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pmto" },
+  { val: "1ten_to", text: "1º TEN PM — Primeiro-Tenente PMTO — Ref. A", padrao: 15918.00, gratif: 0, oficial: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PM, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pmto" },
+  { val: "2ten_to", text: "2º TEN PM — Segundo-Tenente PMTO — Ref. A", padrao: 14800.05, gratif: 0, oficial: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PM, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pmto" },
+  { val: "asp_to", text: "ASP OF PM — Aspirante a Oficial PMTO", padrao: 12790.85, gratif: 0, oficial: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PM, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pmto" },
+  { val: "cad3_to", text: "CADETE III PMTO", padrao: 8745.68, gratif: 0, oficial: false, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PM, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pmto" },
+  { val: "cad2_to", text: "CADETE II PMTO", padrao: 7894.61, gratif: 0, oficial: false, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PM, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pmto" },
+  { val: "cad1_to", text: "CADETE I PMTO", padrao: 6992.12, gratif: 0, oficial: false, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PM, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pmto" },
+  { val: "subten_to", text: "SUBTEN PM — Subtenente PMTO — Ref. A", padrao: 12790.85, gratif: 0, oficial: false, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PM, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pmto" },
+  { val: "1sgt_to", text: "1º SGT PM — Primeiro-Sargento PMTO — Ref. A", padrao: 11108.04, gratif: 0, oficial: false, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PM, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pmto" },
+  { val: "2sgt_to", text: "2º SGT PM — Segundo-Sargento PMTO — Ref. A", padrao: 9993.19, gratif: 0, oficial: false, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PM, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pmto" },
+  { val: "3sgt_to", text: "3º SGT PM — Terceiro-Sargento PMTO — Ref. A", padrao: 8850.78, gratif: 0, oficial: false, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PM, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pmto" },
+  { val: "cabo_to", text: "CB PM — Cabo PMTO — Ref. A", padrao: 8556.07, gratif: 0, oficial: false, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PM, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pmto" },
+  { val: "soldado_to", text: "SD PM — Soldado PMTO — Ref. A", padrao: 7497.33, gratif: 0, oficial: false, selected: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PM, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pmto" },
+  { val: "aluno_praca_to", text: "Aluno-Praça PMTO", padrao: 3748.67, gratif: 0, oficial: false, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PM, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pmto" }
+];
+
+const CARGOS_PCTO = [
+  { val: "del_sub_to", text: "Delegado de Polícia PCTO — Substituto — Ref. A", padrao: 21901.70, gratif: 0, oficial: true, delegado: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PC, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pcto" },
+  { val: "del_1_to", text: "Delegado de Polícia PCTO — 1ª Classe — Ref. A", padrao: 24310.90, gratif: 0, oficial: true, delegado: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PC, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pcto" },
+  { val: "del_2_to", text: "Delegado de Polícia PCTO — 2ª Classe — Ref. A", padrao: 25526.45, gratif: 0, oficial: true, delegado: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PC, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pcto" },
+  { val: "del_3_to", text: "Delegado de Polícia PCTO — 3ª Classe — Ref. A", padrao: 26869.94, gratif: 0, oficial: true, delegado: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PC, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pcto" },
+  { val: "del_ce_to", text: "Delegado de Polícia PCTO — Classe Especial — Ref. A", padrao: 28284.16, gratif: 0, oficial: true, delegado: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PC, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pcto" },
+  { val: "perito_sub_to", text: "Perito Oficial PCTO — Substituto — Ref. A", padrao: 17694.68, gratif: 0, oficial: true, perito: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PC, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pcto" },
+  { val: "perito_1_to", text: "Perito Oficial PCTO — 1ª Classe — Ref. A", padrao: 19641.09, gratif: 0, oficial: true, perito: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PC, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pcto" },
+  { val: "perito_ce_to", text: "Perito Oficial PCTO — Classe Especial — Ref. A", padrao: 22737.02, gratif: 0, oficial: true, perito: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PC, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pcto" },
+  { val: "oficial_inv_sub_to", text: "Oficial Investigador / Papiloscopista / Agente de Necrotomia PCTO — Substituto — Ref. A", padrao: 7917.97, gratif: 0, oficial: true, selected: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PC, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pcto" },
+  { val: "oficial_inv_1_to", text: "Oficial Investigador / Papiloscopista / Agente de Necrotomia PCTO — 1ª Classe — Ref. A", padrao: 8788.94, gratif: 0, oficial: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PC, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pcto" },
+  { val: "oficial_inv_2_to", text: "Oficial Investigador / Papiloscopista / Agente de Necrotomia PCTO — 2ª Classe — Ref. A", padrao: 9667.84, gratif: 0, oficial: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PC, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pcto" },
+  { val: "oficial_inv_3_to", text: "Oficial Investigador / Papiloscopista / Agente de Necrotomia PCTO — 3ª Classe — Ref. A", padrao: 10634.62, gratif: 0, oficial: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PC, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pcto" },
+  { val: "oficial_inv_ce_to", text: "Oficial Investigador / Papiloscopista / Agente de Necrotomia PCTO — Classe Especial — Ref. A", padrao: 11698.09, gratif: 0, oficial: true, retpFator: 0, badge: "MP TO 18/2026", criterio: TO_CRITERIO_PC, benefDesc: TO_BENEFICIOS_GERAIS, fonteKey: "pcto" }
+];
+

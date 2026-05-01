@@ -1618,6 +1618,8 @@ function mudarInstituicao(novaInstituicao) {
   carregarAssociacoes();
   carregarRemuneracaoTabelada();
   atualizarDossieInstitucional();
+  atualizarPainelInstitucional();
+  atualizarMapaCoberturaPortal();
   atualizarUrlCompartilhavel(getPaginaAtual());
   if (document.getElementById('page-comparar')?.classList.contains('active')) carregarComparadorCarreiras();
 }
@@ -1679,6 +1681,196 @@ function atualizarDossieInstitucional() {
       <p>${fonte.url && fonte.url !== '#' ? `<a href="${escapeHtml(fonte.url)}" target="_blank" rel="noopener noreferrer">Abrir fonte</a>` : 'Sem link direto cadastrado. Conferir portal oficial do órgão.'}</p>
     </article>
   `;
+}
+
+
+function getResumoRemuneracaoPainel(inst) {
+  const linhas = gerarRemuneracaoTabelada(inst) || [];
+  const valores = linhas.map(l => Number(l.remuneracao || 0)).filter(v => v > 0);
+  const menor = valores.length ? Math.min(...valores) : 0;
+  const maior = valores.length ? Math.max(...valores) : 0;
+  const fonte = REMUNERACAO_FONTES_OFICIAIS[inst] || { nome: 'Fonte oficial da carreira', url: '#' };
+  return { totalCargos: linhas.length, menor, maior, fonte };
+}
+
+function montarLinkPainel(url, texto = 'Abrir fonte') {
+  const href = String(url || '').trim();
+  if (!href || href === '#') return '<span class="painel-chip">Fonte a conferir</span>';
+  return `<a class="painel-chip" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(texto)}</a>`;
+}
+
+function montarListaPainel(itens = [], vazio = 'Sem itens cadastrados para esta área.') {
+  const lista = (itens || []).filter(Boolean).slice(0, 3);
+  if (!lista.length) return `<ul class="painel-mini-lista"><li>${escapeHtml(vazio)}</li></ul>`;
+  return `<ul class="painel-mini-lista">${lista.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
+}
+
+function atualizarPainelInstitucional() {
+  const cont = document.getElementById('painel-institucional');
+  if (!cont) return;
+
+  if (headerModoInicialPortal || !INSTITUICOES_VALIDAS.includes(currInst)) {
+    const resumoPortal = calcularResumoPortalHeader();
+    cont.innerHTML = `
+      <article class="painel-info-card destaque">
+        <span>Portal pronto para consulta</span>
+        <strong>${resumoPortal.instituicoes} instituições em ${resumoPortal.estados} estados</strong>
+        <p>Selecione uma instituição para transformar a página inicial em um painel com efetivo, remuneração, concursos, entidades, ações e alertas práticos.</p>
+        <div class="painel-atalhos">
+          <button class="principal-btn" type="button" onclick="document.getElementById('instituicao_header')?.focus()">Escolher instituição</button>
+          <button class="principal-btn secundario" type="button" onclick="switchPage('comparar')">Comparar carreiras</button>
+        </div>
+      </article>
+      <article class="painel-info-card">
+        <span>Volume de dados</span>
+        <strong>${formatarEfetivoHeader(resumoPortal.ativa)} ativos mapeados</strong>
+        <p>Somatório aproximado apenas dos efetivos ativos numéricos cadastrados no portal; onde o dado não é oficial/consolidado, aparece como conferência necessária.</p>
+      </article>
+      <article class="painel-info-card">
+        <span>Áreas disponíveis</span>
+        <strong>6 frentes de consulta</strong>
+        <p>Remuneração tabelada, direitos, concursos, comparador, ações judiciais, associações e materiais de apoio.</p>
+      </article>
+      <article class="painel-info-card largo">
+        <span>Como usar sem erro</span>
+        <strong>Informação organizada, não decisão automática</strong>
+        ${montarListaPainel([
+          'Confira remuneração na tabela e depois valide no contracheque ou portal oficial.',
+          'Em concursos, use edital, banca e Diário Oficial como referência final.',
+          'Em direitos e ações, leve ficha funcional, holerites e histórico a um profissional habilitado.'
+        ])}
+      </article>
+      <article class="painel-info-card largo">
+        <span>Atalhos úteis</span>
+        <strong>Vá direto ao que resolve</strong>
+        <div class="painel-atalhos">
+          <button class="principal-btn secundario" type="button" onclick="switchPage('remuneracao')">Remuneração</button>
+          <button class="principal-btn secundario" type="button" onclick="switchPage('concursos')">Concursos</button>
+          <button class="principal-btn secundario" type="button" onclick="switchPage('direitos')">Direitos</button>
+          <button class="principal-btn secundario" type="button" onclick="switchPage('acoes')">Ações</button>
+        </div>
+      </article>
+    `;
+    return;
+  }
+
+  const inst = normalizarInstituicao(currInst);
+  const info = HEADER_INSTITUICOES_INFO[inst] || {};
+  const estadoKey = getEstadoDaInstituicao(inst);
+  const estado = HEADER_ESTADOS[estadoKey] || {};
+  const resumo = HEADER_INSTITUICOES_RESUMO[inst] || {};
+  const rem = getResumoRemuneracaoPainel(inst);
+  const concurso = CONCURSOS[inst] || getConcursoPoliciaPenal(inst) || {};
+  const acoes = ACOES_JUDICIAIS[inst] || getAcoesPoliciaPenal(inst) || [];
+  const associacoes = ASSOCIACOES[inst] || getAssociacoesPoliciaPenal(inst) || [];
+  const relacao = resumo.relacaoLabel || calcularRelacaoHeader(resumo.populacao, resumo.ativa);
+  const menorMaior = rem.menor && rem.maior ? `${fmt(rem.menor)} a ${fmt(rem.maior)}` : 'Valores a confirmar';
+  const acoesLista = acoes.map(a => `${a.titulo} — ${a.status || 'verificar'}`);
+  const assocLista = associacoes.map(a => `${a.nome} — ${a.foco || a.publico || 'representação da categoria'}`);
+  const checklist = [
+    ['Remuneração', rem.totalCargos > 0],
+    ['Concurso', Boolean(concurso.edital)],
+    ['Ações', acoes.length > 0],
+    ['Associações', associacoes.length > 0]
+  ];
+
+  cont.innerHTML = `
+    <article class="painel-info-card destaque">
+      <span>Instituição selecionada</span>
+      <strong>${escapeHtml(info.titulo || inst.toUpperCase())}</strong>
+      <p>${escapeHtml(info.desc || 'Instituição cadastrada')} · ${escapeHtml(estado.nome || estadoKey.toUpperCase())}. ${escapeHtml(resumo.atualizado || 'Atualização a conferir')}.</p>
+      <div class="painel-metricas">
+        <span class="painel-metrica">${escapeHtml(checklist.map(([nome, ok]) => `${ok ? '✓' : '!'} ${nome}`).join(' · '))}</span>
+        <span class="painel-metrica">${escapeHtml(resumo.ativaLabel || formatarEfetivoHeader(resumo.ativa))}</span>
+        <span class="painel-metrica">${escapeHtml(relacao || 'Relação a conferir')}</span>
+      </div>
+    </article>
+
+    <article class="painel-info-card">
+      <span>Gestão e estrutura</span>
+      <strong>${escapeHtml(resumo.governador || 'Chefe do Executivo a conferir')}</strong>
+      <p>${escapeHtml(resumo.comando || 'Comando, direção ou secretaria responsável a conferir.')}</p>
+      ${montarListaPainel([
+        resumo.criacao ? `Criação/base: ${resumo.criacao}` : '',
+        resumo.totalLabel ? `Total/quadro: ${resumo.totalLabel}` : '',
+        resumo.reservaLabel ? `Reserva/inativos: ${resumo.reservaLabel}` : ''
+      ].filter(Boolean), 'Sem resumo institucional cadastrado.')}
+    </article>
+
+    <article class="painel-info-card">
+      <span>Remuneração</span>
+      <strong>${escapeHtml(menorMaior)}</strong>
+      <p>${rem.totalCargos} linhas/cargos cadastrados. Benefícios condicionados não são somados automaticamente para evitar distorção.</p>
+      <div class="painel-atalhos">
+        <button class="principal-btn secundario" type="button" onclick="switchPage('remuneracao')">Ver tabela</button>
+        ${montarLinkPainel(rem.fonte.url, rem.fonte.nome || 'Fonte')}
+      </div>
+    </article>
+
+    <article class="painel-info-card largo">
+      <span>Concurso e ingresso</span>
+      <strong>${escapeHtml(concurso.edital || 'Concurso a conferir')}</strong>
+      ${montarListaPainel([
+        concurso.vagas ? `Vagas: ${concurso.vagas}` : '',
+        concurso.banca ? `Banca: ${concurso.banca}` : '',
+        concurso.escolaridade ? `Escolaridade: ${concurso.escolaridade}` : '',
+        concurso.previsao ? `Situação: ${concurso.previsao}` : ''
+      ].filter(Boolean), 'Sem dados de concurso cadastrados para esta instituição.')}
+      <div class="painel-atalhos">
+        <button class="principal-btn secundario" type="button" onclick="switchPage('concursos')">Ver detalhes</button>
+        ${montarLinkPainel(concurso.site, 'Site oficial')}
+      </div>
+    </article>
+
+    <article class="painel-info-card largo">
+      <span>Direitos, riscos e validação</span>
+      <strong>Análise guiada por situação funcional</strong>
+      ${montarListaPainel([
+        'Licenças, adicionais, gratificações e auxílios dependem de cargo, lotação, escala, tempo, requerimento e regra local.',
+        'Reserva/aposentadoria exige data de ingresso, tempo de contribuição, idade, sexo, regra de transição e ficha funcional.',
+        'Use a aba Direitos para simular cenários, mas confirme tudo com setor competente ou profissional habilitado.'
+      ])}
+      <div class="painel-atalhos"><button class="principal-btn secundario" type="button" onclick="switchPage('direitos')">Abrir análise</button></div>
+    </article>
+
+    <article class="painel-info-card">
+      <span>Ações judiciais</span>
+      <strong>${acoes.length} temas cadastrados</strong>
+      ${montarListaPainel(acoesLista, 'Nenhum tema jurídico específico cadastrado ainda.')}
+      <div class="painel-atalhos"><button class="principal-btn secundario" type="button" onclick="switchPage('acoes')">Ver ações</button></div>
+    </article>
+
+    <article class="painel-info-card">
+      <span>Associações e sindicatos</span>
+      <strong>${associacoes.length} entidades/referências</strong>
+      ${montarListaPainel(assocLista, 'Nenhuma entidade específica cadastrada ainda.')}
+      <div class="painel-atalhos"><button class="principal-btn secundario" type="button" onclick="switchPage('associacoes')">Ver entidades</button></div>
+    </article>
+  `;
+}
+
+function atualizarMapaCoberturaPortal() {
+  const cont = document.getElementById('portal-cobertura-estados');
+  if (!cont) return;
+  const estadoAtual = INSTITUICOES_VALIDAS.includes(currInst) ? getEstadoDaInstituicao(currInst) : '';
+
+  cont.innerHTML = Object.entries(HEADER_ESTADOS).map(([key, estado]) => {
+    const instituicoes = [estado.pm, estado.pc, estado.pp].filter(inst => INSTITUICOES_VALIDAS.includes(inst));
+    const totalCargos = instituicoes.reduce((acc, inst) => acc + (gerarRemuneracaoTabelada(inst) || []).length, 0);
+    const totalConcursos = instituicoes.filter(inst => CONCURSOS[inst] || getConcursoPoliciaPenal(inst)).length;
+    return `
+      <article class="portal-cobertura-card ${key === estadoAtual ? 'ativo' : ''}">
+        <span>${escapeHtml(estado.sigla || key.toUpperCase())}</span>
+        <strong>${escapeHtml(estado.nome || key.toUpperCase())}</strong>
+        <p>${instituicoes.length} instituições · ${totalCargos} linhas de remuneração · ${totalConcursos} blocos de concurso.</p>
+        <div class="cobertura-atalhos">
+          ${estado.pm ? `<button type="button" onclick="mudarInstituicao('${escapeHtml(estado.pm)}')">${escapeHtml(getSiglaInstituicao(estado.pm))}</button>` : ''}
+          ${estado.pc ? `<button type="button" onclick="mudarInstituicao('${escapeHtml(estado.pc)}')">${escapeHtml(getSiglaInstituicao(estado.pc))}</button>` : ''}
+          ${estado.pp ? `<button type="button" onclick="mudarInstituicao('${escapeHtml(estado.pp)}')">${escapeHtml(getSiglaInstituicao(estado.pp))}</button>` : ''}
+        </div>
+      </article>
+    `;
+  }).join('');
 }
 
 
@@ -2763,6 +2955,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Abre o site na identidade do portal, com o logoleão e o resumo geral.
   aplicarHeaderInicialPortal();
   atualizarDossieInstitucional();
+  atualizarPainelInstitucional();
+  atualizarMapaCoberturaPortal();
 
   const params = new URLSearchParams(window.location.search);
   const instUrl = params.get('inst');

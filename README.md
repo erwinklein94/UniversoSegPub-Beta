@@ -212,3 +212,22 @@ Arquivo de referência visual incluído:
 - `assets/img/tema-anexo-interface.jpeg`
 
 As camadas CSS anteriores foram removidas do pacote final para evitar conflitos: o `index.html` carrega somente o novo tema visual.
+
+## Atualização — conteúdo enriquecido a partir do Alpha
+
+Esta versão do `UniSegPub-Teste` foi enriquecida para aproveitar a base informacional do `UniSegPub-Alpha` sem perder a interface nova do Teste.
+
+Principais melhorias adicionadas:
+
+- Painel completo da instituição na página inicial, alimentado automaticamente pelos dados já cadastrados de remuneração, concursos, efetivo, ações judiciais e associações.
+- Mapa rápido de cobertura por estado, com botões para alternar entre Polícia Militar, Polícia Civil e Polícia Penal.
+- Resumos institucionais mais úteis ao usuário após a seleção da instituição.
+- Atalhos contextuais para remuneração, concursos, direitos, ações e associações.
+- Tema claro reforçado com contraste real, mantendo o tema escuro técnico como padrão visual.
+- CSS complementar no próprio `assets/css/tema-anexo-zero.css`, sem criar dependências externas novas.
+
+Arquivos principais alterados nesta atualização:
+
+- `index.html`
+- `assets/css/tema-anexo-zero.css`
+- `assets/js/app.js`

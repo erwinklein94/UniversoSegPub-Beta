@@ -25,8 +25,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-<!-- BLOCO 01.5 — Aplicação antecipada do tema salvo -->
-<link rel="stylesheet" href="css/style.css">
+<!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
+<link rel="stylesheet" href="css/chunks/01-base.css">
+<link rel="stylesheet" href="css/chunks/02-glass-layout.css">
+<link rel="stylesheet" href="css/chunks/03-componentes.css">
+<link rel="stylesheet" href="css/chunks/04-comparador-produtos.css">
+<link rel="stylesheet" href="css/chunks/05-anuncios-header-avisos.css">
 
 </head>
 <body data-inst="portal">
@@ -676,11 +680,11 @@
       <span>Itens úteis para a rotina operacional</span>
     </div>
     <a class="sidebar-product" href="https://s.shopee.com.br/AKWuxuRbwP" target="_blank" rel="noopener noreferrer">
-      <img src="IMG_0868.jpeg" alt="Produto parceiro selecionado" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('img-indisponivel');">
+      <img decoding="async" src="IMG_0868.jpeg" alt="Produto parceiro selecionado" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('img-indisponivel');">
       <span>Ver produto</span>
     </a>
     <a class="sidebar-product" href="https://s.shopee.com.br/8fOgxANigm" target="_blank" rel="noopener noreferrer">
-      <img src="IMG_0865.jpeg" alt="Produto parceiro selecionado" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('img-indisponivel');">
+      <img decoding="async" src="IMG_0865.jpeg" alt="Produto parceiro selecionado" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('img-indisponivel');">
       <span>Ver produto</span>
     </a>
     <small class="sidebar-affiliate-note">Links podem ser comerciais ou afiliados. Confira sempre a página do produto antes de comprar.</small>
@@ -1139,7 +1143,7 @@
     <div class="curso-grid" aria-label="Produtos físicos com link de compra">
       <a class="curso-card produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="noopener noreferrer" aria-label="Abrir barra fixa para porta">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="barrafixa01" data-img-base="barrafixa01" alt="Barra fixa para porta" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img decoding="async" src="barrafixa01" data-img-base="barrafixa01" alt="Barra fixa para porta" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Barra fixa para porta</h3>
         <p>Equipamento simples para treinar barra fixa em casa, fortalecer costas, braços e pegada, ajudando na preparação para o TAF.</p>
@@ -1153,7 +1157,7 @@
 
       <a class="curso-card produto-card" href="https://s.shopee.com.br/1qYSZj5bki" target="_blank" rel="noopener noreferrer" aria-label="Abrir BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="botaacero" data-img-base="botaacero" alt="BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img decoding="async" src="botaacero" data-img-base="botaacero" alt="BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP</h3>
         <p>No trabalho policial, uma boa bota ajuda na estabilidade, proteção dos pés e tornozelos, aderência em deslocamentos e conforto em longas jornadas. Isso favorece mobilidade, postura e segurança durante patrulhamento, plantões, abordagens e ocorrências.</p>
@@ -1167,7 +1171,7 @@
 
       <a class="curso-card produto-card" href="https://s.shopee.com.br/9fHJ0X4HVl" target="_blank" rel="noopener noreferrer" aria-label="Abrir Power Rack Funcional">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="barrafixa02" data-img-base="barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img decoding="async" src="barrafixa02" data-img-base="barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Power Rack Funcional com paralelas</h3>
         <p>Estrutura mais completa para treinar barra fixa, paralelas, agachamento e supino, criando uma rotina física mais forte para concursos policiais.</p>
@@ -1188,7 +1192,7 @@
     <div class="curso-grid curso-pmesp-only">
       <a class="curso-card produto-card" href="https://go.hotmart.com/Q105560013F?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Curso Preparatório Sargento PMESP">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="curso-sargento-pmesp" data-img-base="curso-sargento-pmesp" alt="Curso Preparatório Sargento PMESP" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img decoding="async" src="curso-sargento-pmesp" data-img-base="curso-sargento-pmesp" alt="Curso Preparatório Sargento PMESP" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Curso Preparatório - SARGENTO PMESP</h3>
         <p>Curso online do CABEP voltado aos concursos internos da PMESP, com conteúdo direcionado para Soldado, Cabo, Sargento e CHQAOPM.</p>
@@ -1203,7 +1207,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/A105560326I?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Curso Preparatório PMESP Completo">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="curso-pmesp-completo" data-img-base="curso-pmesp-completo" alt="Curso Preparatório PMESP Completo" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img decoding="async" src="curso-pmesp-completo" data-img-base="curso-pmesp-completo" alt="Curso Preparatório PMESP Completo" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Curso Preparatório PMESP Completo</h3>
         <p>Preparatório para o concurso de Soldado PMESP 2ª Classe, com foco em prova, exercícios, fases do concurso e preparação objetiva para a banca VUNESP.</p>
@@ -1218,7 +1222,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/J105560541A?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Preparatório para o Psicotécnico das Carreiras Policiais">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="curso-psicotecnico-carreiras-policiais" data-img-base="curso-psicotecnico-carreiras-policiais" alt="Preparatório para o psicotécnico das carreiras policiais" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img decoding="async" src="curso-psicotecnico-carreiras-policiais" data-img-base="curso-psicotecnico-carreiras-policiais" alt="Preparatório para o psicotécnico das carreiras policiais" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Preparatório para o psicotécnico das carreiras policiais</h3>
         <p>Material direto para candidatos que querem entender melhor a etapa psicológica dos concursos policiais e se preparar com mais segurança.</p>
@@ -1235,7 +1239,7 @@
     <div class="curso-grid curso-pcsp-only">
       <a class="curso-card produto-card" href="https://go.hotmart.com/K105562484Y?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Raciocínio Lógico para Polícia Civil de São Paulo">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="curso-raciocinio-logico-pcsp" data-img-base="curso-raciocinio-logico-pcsp" alt="Raciocínio Lógico para Polícia Civil de São Paulo PCSP" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img decoding="async" src="curso-raciocinio-logico-pcsp" data-img-base="curso-raciocinio-logico-pcsp" alt="Raciocínio Lógico para Polícia Civil de São Paulo PCSP" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Raciocínio Lógico para Polícia Civil de São Paulo (PCSP)</h3>
         <p>Curso de Raciocínio Lógico com foco na PCSP e na banca VUNESP, pensado para acelerar o aprendizado com abordagem prática.</p>
@@ -1250,7 +1254,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/K105562579S?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Curso de Informática PCSP">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="curso-informatica-pcsp" data-img-base="curso-informatica-pcsp" alt="PCSP Curso de Informática Edital Completo" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img decoding="async" src="curso-informatica-pcsp" data-img-base="curso-informatica-pcsp" alt="PCSP Curso de Informática Edital Completo" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>PCSP - Curso de Informática - Edital Completo</h3>
         <p>Curso de Informática para concursos da Polícia Civil de São Paulo, com teoria, exercícios, videoaulas, PDFs e foco na banca VUNESP.</p>
@@ -1272,7 +1276,7 @@
     <div class="curso-grid" aria-label="Livros e e-books com link de compra">
       <a class="curso-card produto-card" href="https://go.hotmart.com/C105562969M?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Pacote Viva Sem Procrastinar">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="pacote-viva-sem-procrastinar" data-img-base="pacote-viva-sem-procrastinar" alt="Pacote Viva Sem Procrastinar" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img decoding="async" src="pacote-viva-sem-procrastinar" data-img-base="pacote-viva-sem-procrastinar" alt="Pacote Viva Sem Procrastinar" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Pacote - Viva Sem Procrastinar</h3>
         <p>Pacote voltado para quem deseja combater a procrastinação, melhorar a rotina e construir mais atitude prática no dia a dia.</p>
@@ -1287,7 +1291,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/U105563061C?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Otimizando o Cérebro para Concursos Públicos">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="otimizando-cerebro-concursos" data-img-base="otimizando-cerebro-concursos" alt="Otimizando o Cérebro para Concursos Públicos" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img decoding="async" src="otimizando-cerebro-concursos" data-img-base="otimizando-cerebro-concursos" alt="Otimizando o Cérebro para Concursos Públicos" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Otimizando o Cérebro para Concursos Públicos</h3>
         <p>E-book com técnicas para melhorar memória, concentração, aprendizado, organização do tempo e produtividade nos estudos para concursos.</p>
@@ -1302,7 +1306,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/Y105563100L?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Além da Farda O Código da Travessia">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="alem-da-farda-codigo-travessia" data-img-base="alem-da-farda-codigo-travessia" alt="Além da Farda O Código da Travessia" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img decoding="async" src="alem-da-farda-codigo-travessia" data-img-base="alem-da-farda-codigo-travessia" alt="Além da Farda O Código da Travessia" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Além da Farda: O Código da Travessia</h3>
         <p>Manual de reconstrução de identidade e transição do modo institucional para uma vida com mais autonomia, estratégia e consciência de valor.</p>
@@ -1317,7 +1321,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/V105563143D" target="_blank" rel="noopener noreferrer" aria-label="Abrir Método DMA">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="metodo-dma-procrastinacao" data-img-base="metodo-dma-procrastinacao" alt="Método DMA Vença a Procrastinação e Alcance o Sucesso em seus Objetivos" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img decoding="async" src="metodo-dma-procrastinacao" data-img-base="metodo-dma-procrastinacao" alt="Método DMA Vença a Procrastinação e Alcance o Sucesso em seus Objetivos" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Método DMA: Vença a Procrastinação e Alcance o Sucesso em seus Objetivos</h3>
         <p>Método de planejamento, gestão de tempo, disciplina e desenvolvimento pessoal para quem busca mais resultado na vida profissional e pessoal.</p>
@@ -1332,7 +1336,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/M105563187S?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Táticas de Liderança Militar Aplicadas ao Dia a Dia">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="taticas-lideranca-militar" data-img-base="taticas-lideranca-militar" alt="Táticas de Liderança Militar Aplicadas ao Dia a Dia" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img decoding="async" src="taticas-lideranca-militar" data-img-base="taticas-lideranca-militar" alt="Táticas de Liderança Militar Aplicadas ao Dia a Dia" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Táticas de Liderança Militar Aplicadas ao Dia a Dia</h3>
         <p>E-book sobre disciplina, liderança, tomada de decisão, comunicação objetiva e organização da rotina com princípios militares.</p>
@@ -1475,7 +1479,16 @@
      Camada visual final: apenas aparência, sem alterar HTML funcional ou JavaScript.
      ======================================================= -->
 <!-- CSS movido para css/style.css -->
-<script src="js/script.js"></script>
+<!-- JavaScript dividido em chunks e carregado com defer para preservar ordem sem bloquear renderização -->
+<script src="js/chunks/01-parametros-cargos.js" defer></script>
+<script src="js/chunks/02-policia-penal.js" defer></script>
+<script src="js/chunks/03-bases-conteudo.js" defer></script>
+<script src="js/chunks/04-navegacao-ui.js" defer></script>
+<script src="js/chunks/05-remuneracao.js" defer></script>
+<script src="js/chunks/06-header-estados.js" defer></script>
+<script src="js/chunks/07-direitos.js" defer></script>
+<script src="js/chunks/08-concursos-comparador.js" defer></script>
+<script src="js/chunks/09-contato-init.js" defer></script>
 
 </body>
 </html>

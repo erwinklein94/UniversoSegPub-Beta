@@ -2304,7 +2304,7 @@ function atualizarHeaderDesc(descInstituicao) {
     ppmt: 'Polícia Penal de Mato Grosso'
   };
   const textoAba = getNomeAbaAtual();
-  const desc = descInstituicao || descs[currInst] || descs.pmesp;
+  const desc = descInstituicao || descs[currInst] || HEADER_INSTITUICOES_INFO?.[currInst]?.desc || descs.pmesp;
   const el = document.getElementById('header-desc');
   if (el) el.textContent = textoAba;
 
@@ -2346,7 +2346,7 @@ function popularCargos(inst) {
     pmes: CARGOS_PMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,
     pmms: CARGOS_PMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
     pmmt: CARGOS_PMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,};
-  currTabela = map[inst] || CARGOS_PM;
+  currTabela = CARGOS_ESTRUTURA_GENERICAS[inst] || map[inst] || CARGOS_PM;
 
   const sCargo = document.getElementById('cargo');
   const sCargoDir = document.getElementById('cargo_dir');
@@ -2747,7 +2747,8 @@ function getTabelaCargosRemuneracao(inst) {
     pmes: CARGOS_PMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,
     pmms: CARGOS_PMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
     pmmt: CARGOS_PMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,};
-  return map[normalizarInstituicao(inst)] || CARGOS_PM;
+  const instNorm = normalizarInstituicao(inst);
+  return CARGOS_ESTRUTURA_GENERICAS[instNorm] || map[instNorm] || CARGOS_PM;
 }
 
 function calcularRemuneracaoTabelada(inst, cargo) {
@@ -3163,6 +3164,272 @@ const HEADER_INSTITUICOES_RESUMO = {
   ppmt: { criacao: 'EC 104/2019 · SEJUS/MT · Polícia Penal MT', ativa: 2620, ativaLabel: 'Ativo informado: 2.620 policiais penais', reservaLabel: 'Inativos: MTPREV/MT', totalLabel: '2.620 ativos · inativos à parte', populacao: 3893659, governador: 'Mauro Mendes', comando: POLICIAS_PENAIS_INFO.ppmt.direcao, atualizado: POLICIAS_PENAIS_INFO.ppmt.atualizado }
 };
 
+/* ============================================================ */
+/* === ESTRUTURA-BASE PARA UFs FALTANTES ======================= */
+/* ============================================================ */
+/*
+  Bloco de expansão criado para manter os estados já cadastrados e abrir
+  a estrutura dos demais entes da federação. Os valores ficam como
+  "A confirmar" para permitir o preenchimento detalhado depois, sem
+  copiar remunerações de São Paulo para outras UFs.
+*/
+const ESTADOS_ESTRUTURA_FALTANTES = [
+  { estado: 'ac', nome: 'Acre', sigla: 'AC', pm: 'pmac', pc: 'pcac', pp: 'ppac', pmSigla: 'PMAC', pcSigla: 'PCAC', ppSigla: 'PPAC', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Acre.svg' },
+  { estado: 'al', nome: 'Alagoas', sigla: 'AL', pm: 'pmal', pc: 'pcal', pp: 'ppal', pmSigla: 'PMAL', pcSigla: 'PCAL', ppSigla: 'PPAL', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Alagoas.svg' },
+  { estado: 'am', nome: 'Amazonas', sigla: 'AM', pm: 'pmam', pc: 'pcam', pp: 'ppam', pmSigla: 'PMAM', pcSigla: 'PCAM', ppSigla: 'PPAM', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amazonas.svg' },
+  { estado: 'ap', nome: 'Amapá', sigla: 'AP', pm: 'pmap', pc: 'pcap', pp: 'ppap', pmSigla: 'PMAP', pcSigla: 'PCAP', ppSigla: 'PPAP', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amap%C3%A1.svg' },
+  { estado: 'ce', nome: 'Ceará', sigla: 'CE', pm: 'pmce', pc: 'pcce', pp: 'ppce', pmSigla: 'PMCE', pcSigla: 'PCCE', ppSigla: 'PPCE', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Cear%C3%A1.svg' },
+  { estado: 'df', nome: 'Distrito Federal', sigla: 'DF', pm: 'pmdf', pc: 'pcdf', pp: 'ppdf', pmSigla: 'PMDF', pcSigla: 'PCDF', ppSigla: 'PPDF', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Distrito_Federal_(Brasil).svg' },
+  { estado: 'go', nome: 'Goiás', sigla: 'GO', pm: 'pmgo', pc: 'pcgo', pp: 'ppgo', pmSigla: 'PMGO', pcSigla: 'PCGO', ppSigla: 'PPGO', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Goi%C3%A1s.svg' },
+  { estado: 'ma', nome: 'Maranhão', sigla: 'MA', pm: 'pmma', pc: 'pcma', pp: 'ppma', pmSigla: 'PMMA', pcSigla: 'PCMA', ppSigla: 'PPMA', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Maranh%C3%A3o.svg' },
+  { estado: 'pa', nome: 'Pará', sigla: 'PA', pm: 'pmpa', pc: 'pcpa', pp: 'pppa', pmSigla: 'PMPA', pcSigla: 'PCPA', ppSigla: 'PPPA', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Par%C3%A1.svg' },
+  { estado: 'pb', nome: 'Paraíba', sigla: 'PB', pm: 'pmpb', pc: 'pcpb', pp: 'pppb', pmSigla: 'PMPB', pcSigla: 'PCPB', ppSigla: 'PPPB', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_da_Para%C3%ADba.svg' },
+  { estado: 'pe', nome: 'Pernambuco', sigla: 'PE', pm: 'pmpe', pc: 'pcpe', pp: 'pppe', pmSigla: 'PMPE', pcSigla: 'PCPE', ppSigla: 'PPPE', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Pernambuco.svg' },
+  { estado: 'pi', nome: 'Piauí', sigla: 'PI', pm: 'pmpi', pc: 'pcpi', pp: 'pppi', pmSigla: 'PMPI', pcSigla: 'PCPI', ppSigla: 'PPPI', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Piau%C3%AD.svg' },
+  { estado: 'rn', nome: 'Rio Grande do Norte', sigla: 'RN', pm: 'pmrn', pc: 'pcrn', pp: 'pprn', pmSigla: 'PMRN', pcSigla: 'PCRN', ppSigla: 'PPRN', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Rio_Grande_do_Norte.svg' },
+  { estado: 'ro', nome: 'Rondônia', sigla: 'RO', pm: 'pmro', pc: 'pcro', pp: 'ppro', pmSigla: 'PMRO', pcSigla: 'PCRO', ppSigla: 'PPRO', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Rond%C3%B4nia.svg' },
+  { estado: 'rr', nome: 'Roraima', sigla: 'RR', pm: 'pmrr', pc: 'pcrr', pp: 'pprr', pmSigla: 'PMRR', pcSigla: 'PCRR', ppSigla: 'PPRR', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Roraima.svg' },
+  { estado: 'se', nome: 'Sergipe', sigla: 'SE', pm: 'pmse', pc: 'pcse', pp: 'ppse', pmSigla: 'PMSE', pcSigla: 'PCSE', ppSigla: 'PPSE', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Sergipe.svg' },
+  { estado: 'to', nome: 'Tocantins', sigla: 'TO', pm: 'pmto', pc: 'pcto', pp: 'ppto', pmSigla: 'PMTO', pcSigla: 'PCTO', ppSigla: 'PPTO', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Tocantins.svg' }
+];
+
+const CARGOS_ESTRUTURA_GENERICAS = {};
+const CONFIGS_INSTITUICOES_GENERICAS = {};
+
+function criarCargoEstrutural(inst, val, text, oficial = false, selected = false) {
+  return {
+    val: `${val}_${inst}`,
+    text,
+    padrao: 0,
+    gratif: 0,
+    oficial,
+    selected,
+    retpFator: 0,
+    valorPendente: true,
+    fonteKey: inst,
+    criterio: 'Estrutura-base cadastrada. Informe depois a tabela remuneratória oficial, lei, edital, classe/referência e rubricas da instituição.',
+    benefDesc: 'Auxílios, adicionais, indenizações, escalas, gratificações e vantagens dependem da legislação local e ainda não foram preenchidos.',
+    badge: 'Estrutura a preencher'
+  };
+}
+
+function criarCargosPmEstrutura(inst, sigla) {
+  return [
+    criarCargoEstrutural(inst, 'cmtg', `${sigla} — Comandante-Geral`, true),
+    criarCargoEstrutural(inst, 'cel', `${sigla} — Coronel`, true),
+    criarCargoEstrutural(inst, 'tencel', `${sigla} — Tenente-Coronel`, true),
+    criarCargoEstrutural(inst, 'maj', `${sigla} — Major`, true),
+    criarCargoEstrutural(inst, 'cap', `${sigla} — Capitão`, true),
+    criarCargoEstrutural(inst, '1ten', `${sigla} — 1º Tenente`, true),
+    criarCargoEstrutural(inst, '2ten', `${sigla} — 2º Tenente`, true),
+    criarCargoEstrutural(inst, 'aspof', `${sigla} — Aspirante a Oficial`, true),
+    criarCargoEstrutural(inst, 'alof', `${sigla} — Aluno-Oficial / CFO`, false),
+    criarCargoEstrutural(inst, 'subten', `${sigla} — Subtenente`, false),
+    criarCargoEstrutural(inst, '1sgt', `${sigla} — 1º Sargento`, false),
+    criarCargoEstrutural(inst, '2sgt', `${sigla} — 2º Sargento`, false),
+    criarCargoEstrutural(inst, '3sgt', `${sigla} — 3º Sargento`, false),
+    criarCargoEstrutural(inst, 'cabo', `${sigla} — Cabo`, false),
+    criarCargoEstrutural(inst, 'sd1', `${sigla} — Soldado 1ª Classe`, false, true),
+    criarCargoEstrutural(inst, 'sd2', `${sigla} — Soldado 2ª Classe / Aluno-Soldado`, false)
+  ];
+}
+
+function criarCargosPcEstrutura(inst, sigla) {
+  return [
+    criarCargoEstrutural(inst, 'delegado_geral', `${sigla} — Delegado-Geral / Direção Superior`, true),
+    criarCargoEstrutural(inst, 'delegado_esp', `${sigla} — Delegado de Polícia — Classe Especial`, true),
+    criarCargoEstrutural(inst, 'delegado_1', `${sigla} — Delegado de Polícia — 1ª Classe`, true),
+    criarCargoEstrutural(inst, 'delegado_2', `${sigla} — Delegado de Polícia — 2ª Classe`, true),
+    criarCargoEstrutural(inst, 'delegado_3', `${sigla} — Delegado de Polícia — Classe Inicial`, true),
+    criarCargoEstrutural(inst, 'perito_esp', `${sigla} — Perito / Médico Legista — Classe Especial`, true),
+    criarCargoEstrutural(inst, 'perito_1', `${sigla} — Perito / Médico Legista — 1ª Classe`, true),
+    criarCargoEstrutural(inst, 'perito_2', `${sigla} — Perito / Médico Legista — 2ª Classe`, true),
+    criarCargoEstrutural(inst, 'perito_3', `${sigla} — Perito / Médico Legista — Classe Inicial`, true),
+    criarCargoEstrutural(inst, 'investigador_esp', `${sigla} — Investigador / Agente / Escrivão — Classe Especial`, false),
+    criarCargoEstrutural(inst, 'investigador_1', `${sigla} — Investigador / Agente / Escrivão — 1ª Classe`, false),
+    criarCargoEstrutural(inst, 'investigador_2', `${sigla} — Investigador / Agente / Escrivão — 2ª Classe`, false),
+    criarCargoEstrutural(inst, 'investigador_3', `${sigla} — Investigador / Agente / Escrivão — Classe Inicial`, false, true),
+    criarCargoEstrutural(inst, 'papiloscopista', `${sigla} — Papiloscopista / Auxiliar / Técnico Policial`, false)
+  ];
+}
+
+function criarCargosPpEstrutura(inst, sigla) {
+  return [
+    criarCargoEstrutural(inst, 'direcao_superior', `${sigla} — Direção / Comando da Polícia Penal`, true),
+    criarCargoEstrutural(inst, 'classe_esp', `${sigla} — Policial Penal — Classe Especial`, false),
+    criarCargoEstrutural(inst, 'classe_1', `${sigla} — Policial Penal — 1ª Classe`, false),
+    criarCargoEstrutural(inst, 'classe_2', `${sigla} — Policial Penal — 2ª Classe`, false),
+    criarCargoEstrutural(inst, 'classe_3', `${sigla} — Policial Penal — Classe Inicial`, false, true),
+    criarCargoEstrutural(inst, 'aluno_formacao', `${sigla} — Aluno / Curso de Formação`, false)
+  ];
+}
+
+function criarInfoPenalEstrutura(estado) {
+  return {
+    sigla: estado.ppSigla,
+    nome: `Polícia Penal de ${estado.nome}`,
+    uf: estado.nome,
+    criacao: 'EC 104/2019 · estrutura estadual/distrital a preencher',
+    marco: 'Estrutura aberta no site para receber histórico, legislação, carreira, organograma e dados oficiais da Polícia Penal local.',
+    orgao: `Órgão gestor da administração penitenciária de ${estado.nome} — preencher`,
+    direcao: 'Direção/comando atual — preencher',
+    subordinacao: 'Sistema penitenciário estadual/distrital — preencher conforme legislação local.',
+    efetivoAtivoLabel: 'Efetivo ativo — preencher',
+    reservaLabel: 'Inativos/reserva — preencher',
+    totalLabel: 'Total — preencher',
+    relacaoLabel: 'Relação por habitante — preencher após informar efetivo e população',
+    quadro: 'Quadro e carreira da Polícia Penal — preencher com lei, classes, níveis e requisitos.',
+    ingresso: 'Concurso público, curso de formação, investigação social, exames, TAF e demais fases conforme edital local.',
+    escolaridade: 'Preencher conforme edital vigente ou legislação da carreira.',
+    formacao: 'Curso de formação e capacitação continuada — preencher com regras locais.',
+    atribuicoes: 'Segurança interna e externa de unidades penais, custódia, escoltas, disciplina, inteligência prisional e demais atribuições legais — detalhar conforme norma local.',
+    remuneracao: 'Tabela remuneratória ainda não preenchida; inserir valores oficiais, classe/referência e rubricas da carreira.',
+    vantagens: 'Auxílios, adicionais, plantões, indenizações e vantagens a preencher conforme lei, escala, lotação e contracheque.',
+    saude: 'Assistência à saúde e previdência — preencher conforme regime estadual/distrital.',
+    previdencia: 'Regime próprio/previdência local — preencher regras, contribuição e aposentadoria policial aplicável.',
+    concurso: {
+      vagas: 'Preencher com edital/autorização vigente.',
+      salario: 'A confirmar em edital, tabela oficial ou Diário Oficial.',
+      banca: 'A definir/preencher conforme edital.',
+      escolaridade: 'Preencher conforme edital.'
+    },
+    associacaoBusca: `associação ou sindicato dos policiais penais de ${estado.nome}`,
+    fonte: `Fontes oficiais de ${estado.nome} — preencher`,
+    url: '#',
+    atualizado: 'Estrutura criada para preenchimento'
+  };
+}
+
+function criarConcursoEstrutura(inst, info, ramo) {
+  return {
+    edital: `${info.titulo} — ${info.desc} — estrutura de concurso a preencher`,
+    salario: 'A confirmar em edital, tabela oficial ou Diário Oficial.',
+    vagas: 'Preencher com edital/autorização vigente.',
+    cotas: 'Preencher conforme legislação local e edital.',
+    idade: 'Preencher requisitos de idade, CNH, altura, aptidão física e demais exigências conforme edital.',
+    escolaridade: 'Preencher escolaridade e requisitos do cargo conforme edital.',
+    banca: 'A definir/preencher conforme edital.',
+    inscritos: 'Preencher quando houver dado oficial.',
+    materias: 'Preencher disciplinas conforme edital do cargo.',
+    etapas: ramo === 'pm'
+      ? 'Prova objetiva/discursiva quando prevista, TAF, exames médicos, avaliação psicológica, investigação social, curso de formação e demais etapas do edital.'
+      : 'Prova objetiva/discursiva quando prevista, exames, investigação social, TAF quando aplicável, avaliação psicológica, curso de formação e demais etapas do edital.',
+    cfsd: ramo === 'pm' ? 'Curso de Formação de Soldados/Oficiais — preencher.' : 'Curso de formação profissional — preencher.',
+    estagio: 'Estágio probatório e desenvolvimento na carreira — preencher conforme lei local.',
+    validade: 'Preencher conforme edital e atos de homologação/prorrogação.',
+    previsao: 'Acompanhar Diário Oficial, órgão oficial e banca. Não afirmar concurso aberto sem publicação oficial.',
+    site: '#'
+  };
+}
+
+function criarAcoesEstrutura(info) {
+  return [
+    { titulo: `${info.titulo} — Estrutura de direitos e ações a preencher`, status: 'A preencher', ano: 'Base local pendente', tipo: 'individual', desc: 'Espaço reservado para inserir ações judiciais, teses administrativas, precedentes, prazos e observações específicas desta instituição.', base: 'Preencher com lei estadual/distrital, edital, estatuto, jurisprudência e documentos funcionais.', fonte: 'Fonte oficial a preencher', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' },
+    { titulo: `${info.titulo} — Remuneração, adicionais e rubricas`, status: 'Verificar caso a caso', ano: 'Tema permanente', tipo: 'individual', desc: 'Use este item para detalhar adicionais, gratificações, auxílio-alimentação, insalubridade, periculosidade, serviço extraordinário, plantões e eventuais diferenças.', base: 'Tabela remuneratória, contracheque, laudo, escala, ato de designação e legislação local.', fonte: 'Documentos funcionais e normas locais', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' },
+    { titulo: `${info.titulo} — Aposentadoria, reserva, reforma e previdência`, status: 'Análise individual', ano: 'Regra local a preencher', tipo: 'individual', desc: 'Espaço para regras previdenciárias, transições, paridade/integralidade quando aplicável, abono de permanência e regras próprias da carreira.', base: 'Data de ingresso, tempo de contribuição, cargo/carreira, sexo, idade, regime previdenciário e norma local.', fonte: 'Conferência previdenciária individual', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' }
+  ];
+}
+
+function criarAssociacoesEstrutura(info, estadoNome) {
+  return [
+    { nome: `Associação/Sindicato — ${info.titulo}`, foco: `${estadoNome} — ${info.desc}`, acao: 'Espaço reservado para cadastrar entidade representativa, atuação institucional, pautas remuneratórias, previdenciárias e jurídicas da carreira.', site: 'Consultar site oficial da entidade local', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Jurídico, comunicação institucional, convênios, assembleias, atendimento ao associado e acompanhamento legislativo — preencher conforme entidade.' },
+    { nome: `Entidade representativa estadual — ${estadoNome}`, foco: `Profissionais ativos, inativos e pensionistas vinculados à ${info.titulo}`, acao: 'Cadastrar aqui associações, sindicatos, clubes e entidades de classe existentes na unidade federativa.', site: 'Consultar canais oficiais', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Serviços a preencher conforme entidade.' }
+  ];
+}
+
+function aplicarEstruturaEstadosFaltantesDados() {
+  ESTADOS_ESTRUTURA_FALTANTES.forEach(estado => {
+    if (!HEADER_ESTADOS[estado.estado]) {
+      HEADER_ESTADOS[estado.estado] = { nome: estado.nome, sigla: estado.sigla, pm: estado.pm, pc: estado.pc, pp: estado.pp, flag: estado.flag };
+    }
+
+    const instituicoes = [
+      { ramo: 'pm', inst: estado.pm, titulo: estado.pmSigla, desc: `Polícia Militar de ${estado.nome}` },
+      { ramo: 'pc', inst: estado.pc, titulo: estado.pcSigla, desc: `Polícia Civil de ${estado.nome}` },
+      { ramo: 'pp', inst: estado.pp, titulo: estado.ppSigla, desc: `Polícia Penal de ${estado.nome}` }
+    ];
+
+    instituicoes.forEach(item => {
+      if (!INSTITUICOES_VALIDAS.includes(item.inst)) INSTITUICOES_VALIDAS.push(item.inst);
+      if (!HEADER_INSTITUICOES_INFO[item.inst]) HEADER_INSTITUICOES_INFO[item.inst] = { titulo: item.titulo, desc: item.desc };
+      if (!HEADER_INSTITUICOES_RESUMO[item.inst]) {
+        HEADER_INSTITUICOES_RESUMO[item.inst] = {
+          criacao: 'A preencher',
+          ativaLabel: 'Efetivo ativo — preencher',
+          reservaLabel: 'Reserva/inativos — preencher',
+          totalLabel: 'Total — preencher',
+          relacaoLabel: 'Relação ativa — preencher',
+          populacao: 0,
+          governador: 'Chefe do Executivo — preencher',
+          comando: 'Comando/direção atual — preencher',
+          atualizado: 'Estrutura criada para preenchimento'
+        };
+      }
+      if (!REMUNERACAO_FONTES_OFICIAIS[item.inst]) {
+        REMUNERACAO_FONTES_OFICIAIS[item.inst] = { nome: `${item.titulo} — fonte oficial a preencher`, url: '#' };
+      }
+      CONFIGS_INSTITUICOES_GENERICAS[item.inst] = {
+        titulo: item.titulo,
+        desc: item.desc,
+        cor: item.ramo === 'pm' ? '#1f4f7a' : item.ramo === 'pc' ? '#4b5563' : '#6b5f2f',
+        alertaPrev: `${item.titulo}: estrutura aberta para preenchimento. Conferir previdência, remuneração, adicionais, auxílios, regras de ingresso e direitos conforme legislação de ${estado.nome}.`
+      };
+      CONCURSOS[item.inst] = CONCURSOS[item.inst] || criarConcursoEstrutura(item.inst, item, item.ramo);
+      ACOES_JUDICIAIS[item.inst] = ACOES_JUDICIAIS[item.inst] || criarAcoesEstrutura(item);
+      ASSOCIACOES[item.inst] = ASSOCIACOES[item.inst] || criarAssociacoesEstrutura(item, estado.nome);
+    });
+
+    if (!POLICIAS_PENAIS_INFO[estado.pp]) POLICIAS_PENAIS_INFO[estado.pp] = criarInfoPenalEstrutura(estado);
+    if (!CARGOS_ESTRUTURA_GENERICAS[estado.pm]) CARGOS_ESTRUTURA_GENERICAS[estado.pm] = criarCargosPmEstrutura(estado.pm, estado.pmSigla);
+    if (!CARGOS_ESTRUTURA_GENERICAS[estado.pc]) CARGOS_ESTRUTURA_GENERICAS[estado.pc] = criarCargosPcEstrutura(estado.pc, estado.pcSigla);
+    if (!CARGOS_ESTRUTURA_GENERICAS[estado.pp]) CARGOS_ESTRUTURA_GENERICAS[estado.pp] = criarCargosPpEstrutura(estado.pp, estado.ppSigla);
+  });
+}
+
+function criarOptionInstituicao(inst, texto) {
+  const opt = document.createElement('option');
+  opt.value = inst;
+  opt.textContent = texto;
+  return opt;
+}
+
+function aplicarEstruturaEstadosFaltantesNoHtml() {
+  const montarOptgroups = select => {
+    if (!select) return;
+    ESTADOS_ESTRUTURA_FALTANTES.forEach(estado => {
+      if (Array.from(select.options || []).some(opt => opt.value === estado.pm)) return;
+      const grupo = document.createElement('optgroup');
+      grupo.label = estado.nome;
+      grupo.appendChild(criarOptionInstituicao(estado.pm, `${estado.pmSigla} - Polícia Militar`));
+      grupo.appendChild(criarOptionInstituicao(estado.pc, `${estado.pcSigla} - Polícia Civil`));
+      grupo.appendChild(criarOptionInstituicao(estado.pp, `${estado.ppSigla} - Polícia Penal`));
+      select.appendChild(grupo);
+    });
+  };
+
+  montarOptgroups(document.getElementById('instituicao_header'));
+  montarOptgroups(document.getElementById('instituicao'));
+
+  const flags = document.querySelector('.header-state-flags');
+  if (flags) {
+    ESTADOS_ESTRUTURA_FALTANTES.forEach(estado => {
+      if (flags.querySelector(`[data-estado="${estado.estado}"]`)) return;
+      const btn = document.createElement('button');
+      btn.className = 'state-flag';
+      btn.type = 'button';
+      btn.dataset.estado = estado.estado;
+      btn.title = estado.nome;
+      btn.setAttribute('aria-label', `Selecionar ${estado.nome}`);
+      btn.setAttribute('aria-pressed', 'false');
+      btn.onclick = () => selecionarEstado(estado.estado);
+      btn.innerHTML = `<img src="${estado.flag}" alt="Bandeira de ${estado.nome}"><span>${estado.sigla}</span>`;
+      flags.appendChild(btn);
+    });
+  }
+}
+
+aplicarEstruturaEstadosFaltantesDados();
+
 function formatarNumeroHeader(valor) {
   return Number(valor || 0).toLocaleString('pt-BR');
 }
@@ -3456,6 +3723,8 @@ function mudarInstituicao(novaInstituicao) {
     ppmt: { titulo: "PPMT", desc: POLICIAS_PENAIS_INFO.ppmt.nome, cor: "#6b5f2f", alertaPrev: `${POLICIAS_PENAIS_INFO.ppmt.sigla}: ${POLICIAS_PENAIS_INFO.ppmt.previdencia} ${POLICIAS_PENAIS_INFO.ppmt.vantagens}` }
   };
 
+  Object.assign(configs, CONFIGS_INSTITUICOES_GENERICAS || {});
+
   const solicitada = novaInstituicao || document.getElementById('instituicao')?.value || currInst || 'pmesp';
   const inst = configs[solicitada] ? solicitada : 'pmesp';
 
@@ -3537,16 +3806,16 @@ function analisarDireitos() {
     pmms: 'PMMS', pcms: 'PCMS', ppms: 'PPMS',
     pmmt: 'PMMT', pcmt: 'PCMT', ppmt: 'PPMT'
   };
-  const isPM = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs', 'pmsc', 'pmes', 'pmms', 'pmmt'].includes(inst);
-  const isPC = ['pcsp', 'pcerj', 'pcmg', 'pcba', 'pcpr', 'pcrs', 'pcsc', 'pces', 'pcms', 'pcmt'].includes(inst);
+  const isPM = String(inst || '').startsWith('pm');
+  const isPC = String(inst || '').startsWith('pc');
   const isPP = isPoliciaPenal(inst);
-  const uf = inst.includes('sp') ? 'SP' : inst.includes('rj') ? 'RJ' : inst.includes('mg') ? 'MG' : inst.includes('ba') ? 'BA' : inst.includes('pr') ? 'PR' : inst.includes('rs') ? 'RS' : inst.includes('sc') ? 'SC' :
-             inst.includes('es') ? 'ES' : inst.includes('ms') ? 'MS' : inst.includes('mt') ? 'MT' : '';
+  const dadosUfDireitos = HEADER_ESTADOS[getEstadoDaInstituicao(inst)] || {};
+  const uf = dadosUfDireitos.sigla || '';
   const ingressoAntesEC103 = ingresso ? new Date(ingresso + 'T00:00:00') < new Date('2019-11-13T00:00:00') : false;
 
   let html = '';
 
-  html += direitoResumo(c.text, nomesInst[inst], tempo, idade, sit, sexo, ingresso, renda, dependente);
+  html += direitoResumo(c.text, nomesInst[inst] || getSiglaInstituicao(inst), tempo, idade, sit, sexo, ingresso, renda, dependente);
 
   // ===== DIREITOS GERAIS =====
   html += direitoSecao('Direitos gerais e benefícios familiares');
@@ -4037,7 +4306,7 @@ function getStatusAposentadoria(tempo, idade, requisitosApos) {
 }
 
 function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingressoAntesEC103) {
-  const tipo = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs', 'pmsc', 'pmes'].includes(inst) ? 'reserva remunerada/reforma' : 'aposentadoria policial';
+  const tipo = String(inst || '').startsWith('pm') ? 'reserva remunerada/reforma' : 'aposentadoria policial';
   if (requisitosApos === 'sim') {
     return `Você informou que os requisitos de ${tipo} já foram cumpridos. O próximo passo é confirmar a regra usada, cálculo, paridade/integralidade quando cabível e eventual abono de permanência.`;
   }
@@ -4567,6 +4836,7 @@ function enviarEmailContato(event) {
 /* BLOCO 15.15 — Inicialização, eventos automáticos e atalhos de teclado */
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
+  aplicarEstruturaEstadosFaltantesNoHtml();
 
   // Popula cargos usados na aba Direitos e Vantagens.
   popularCargos('pmesp');

@@ -3835,6 +3835,48 @@
     linear-gradient(135deg, color-mix(in srgb, var(--vermelho) 88%, #ff4b4b), var(--vermelho-escuro)) !important;
 }
 
+body {
+  --page-institution-image: none;
+  --site-header-bg-image: url('../../img/logoleao.jpeg');
+}
+
+/* Instituição selecionada: a página usa o logo/brasão da instituição como marca d'água. */
+body:not([data-inst="portal"]) {
+  background-image:
+    linear-gradient(135deg, rgba(248, 250, 252, 0.86) 0%, rgba(238, 242, 247, 0.74) 48%, rgba(229, 231, 235, 0.90) 100%),
+    var(--page-institution-image),
+    radial-gradient(circle at 8% 10%, color-mix(in srgb, var(--vermelho) 18%, transparent), transparent 28%),
+    radial-gradient(circle at 50% 100%, color-mix(in srgb, var(--vermelho) 10%, transparent), transparent 34%) !important;
+  background-size: cover, min(520px, 45vw) auto, auto, auto !important;
+  background-position: center, right 6vw top 190px, center, center !important;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat !important;
+  background-attachment: fixed, fixed, fixed, fixed !important;
+}
+
+[data-theme="dark"] body:not([data-inst="portal"]) {
+  background-image:
+    linear-gradient(135deg, rgba(5, 6, 10, 0.88) 0%, rgba(10, 14, 23, 0.76) 50%, rgba(17, 24, 39, 0.92) 100%),
+    var(--page-institution-image),
+    radial-gradient(circle at 8% 10%, color-mix(in srgb, var(--vermelho) 26%, transparent), transparent 28%),
+    radial-gradient(circle at 50% 100%, color-mix(in srgb, var(--vermelho) 16%, transparent), transparent 36%) !important;
+  background-size: cover, min(540px, 47vw) auto, auto, auto !important;
+  background-position: center, right 6vw top 190px, center, center !important;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat !important;
+  background-attachment: fixed, fixed, fixed, fixed !important;
+}
+
+/* Instituição selecionada: o cabeçalho volta a usar a bandeira do estado como fundo. */
+body:not([data-inst="portal"]) header.site-header::before {
+  background:
+    linear-gradient(90deg, rgba(5, 6, 10, 0.44), rgba(5, 6, 10, 0.12) 38%, rgba(5, 6, 10, 0.50)),
+    var(--site-header-bg-image),
+    repeating-linear-gradient(135deg, transparent, transparent 28px, rgba(255,255,255,0.018) 28px, rgba(255,255,255,0.018) 56px) !important;
+  background-size: cover, min(620px, 55vw) auto, auto !important;
+  background-position: center, left center, center !important;
+  background-repeat: no-repeat, no-repeat, repeat !important;
+  opacity: 0.34;
+}
+
 body[data-inst="portal"] .header-institution-card::before {
   width: min(58%, 690px);
   filter: saturate(1.08) contrast(1.08) brightness(0.76);

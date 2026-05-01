@@ -172,13 +172,29 @@ const HEADER_INSTITUICOES_IMAGENS = {
 };
 
 
+function setCssUrlVariable(elemento, nomeVariavel, src, fallback = 'img/logoleao.jpeg') {
+  if (!elemento || !nomeVariavel) return;
+  const imagemOriginal = String(src || fallback || 'img/logoleao.jpeg');
+  const imagem = imagemOriginal.replace(/["\\]/g, '\\$&');
+  elemento.style.setProperty(nomeVariavel, `url("${imagem}")`);
+  return imagemOriginal;
+}
+
 function setHeaderHeroImage(src) {
   const card = document.querySelector('.header-institution-card');
   if (!card) return;
-  const imagemOriginal = String(src || 'img/logoleao.jpeg');
-  const imagem = imagemOriginal.replace(/["\\]/g, '\\$&');
-  card.style.setProperty('--header-hero-image', `url("${imagem}")`);
+  const imagemOriginal = setCssUrlVariable(card, '--header-hero-image', src);
   card.dataset.headerHeroImage = imagemOriginal;
+}
+
+function setSiteHeaderBackgroundImage(src) {
+  const imagemOriginal = setCssUrlVariable(document.body, '--site-header-bg-image', src);
+  if (imagemOriginal) document.body.dataset.siteHeaderBgImage = imagemOriginal;
+}
+
+function setPageInstitutionBackgroundImage(src) {
+  const imagemOriginal = setCssUrlVariable(document.body, '--page-institution-image', src);
+  if (imagemOriginal) document.body.dataset.pageInstitutionImage = imagemOriginal;
 }
 
 function configurarLogoInicialHeader(img) {
@@ -209,13 +225,19 @@ function configurarLogoInicialHeader(img) {
 function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
   const card = document.querySelector('.header-institution-card');
   if (card) card.classList.remove('header-portal-home');
-  if (!img) return;
+
   const imagemInstituicao = HEADER_INSTITUICOES_IMAGENS[inst];
   const fallbackBandeira = dadosEstado?.flag || HEADER_ESTADOS.sp.flag;
   const altInstituicao = instituicao?.desc || instituicao?.titulo || 'Instituição de segurança pública';
 
-  setHeaderHeroImage(imagemInstituicao || fallbackBandeira || 'img/logoleao.jpeg');
+  // Cabeçalho do estado: volta a usar a bandeira como plano de fundo.
+  setHeaderHeroImage(fallbackBandeira || 'img/logoleao.jpeg');
+  setSiteHeaderBackgroundImage(fallbackBandeira || 'img/logoleao.jpeg');
 
+  // Página da instituição: usa o brasão/logo da instituição como plano de fundo geral.
+  setPageInstitutionBackgroundImage(imagemInstituicao || fallbackBandeira || 'img/logoleao.jpeg');
+
+  if (!img) return;
   img.style.display = '';
   img.removeAttribute('data-retry');
   img.removeAttribute('data-img-base');
@@ -638,6 +660,8 @@ function aplicarHeaderInicialPortal() {
   headerModoInicialPortal = true;
   document.body.setAttribute('data-inst', 'portal');
   setHeaderHeroImage('img/logoleao.jpeg');
+  setSiteHeaderBackgroundImage('img/logoleao.jpeg');
+  setPageInstitutionBackgroundImage('img/logoleao.jpeg');
   const card = document.querySelector('.header-institution-card');
   if (card) card.classList.add('header-portal-home');
 

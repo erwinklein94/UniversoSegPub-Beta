@@ -37,7 +37,23 @@
     }));
   }
 
+  function instalarFechamentoSidebarAoTrocarAba() {
+    if (typeof window.switchPage !== 'function' || window.switchPage.fechaSidebarAoTrocarAba) return;
+
+    const switchPageOriginal = window.switchPage;
+    window.switchPage = function (...args) {
+      const retorno = switchPageOriginal.apply(this, args);
+      const sidebar = document.getElementById('sidebar');
+      if (sidebar && sidebar.classList.contains('active') && typeof window.toggleMenu === 'function') {
+        window.toggleMenu(false);
+      }
+      return retorno;
+    };
+    window.switchPage.fechaSidebarAoTrocarAba = true;
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
+    instalarFechamentoSidebarAoTrocarAba();
     atualizarDeckVisual();
     observarCabecalho();
     setTimeout(atualizarDeckVisual, 80);

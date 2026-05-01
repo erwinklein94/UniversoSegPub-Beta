@@ -340,6 +340,57 @@ const CONCURSOS = {
     validade: "Conferir edital, homologação, prorrogação, convocações e atos posteriores no DOE/MT.",
     previsao: "Acompanhar PJC-MT, SEPLAG/MT, SESP/MT, UFMT e Diário Oficial/MT para novo edital e convocações.",
     site: "https://www.pjc.mt.gov.br/"
+  },
+  pmgo: {
+    edital: "PMGO — Soldado e Cadete; acompanhar PMGO/SEAD-GO para novo edital",
+    salario: "Lei GO nº 23.235/2025: Soldado 2ª Classe R$ 7.452,68; Soldado 1ª Classe R$ 8.216,59; Cadete 1º ano R$ 9.893,35. Conferir RGA e edital vigente.",
+    vagas: "Último ciclo organizado pelo Instituto AOCP; novas vagas dependem de autorização e edital.",
+    cotas: "Conforme legislação estadual e regras do edital vigente.",
+    idade: "Conferir edital vigente; requisitos de idade, CNH, altura e aptidão variam conforme cargo.",
+    escolaridade: "Conferir edital vigente para Soldado/Cadete PMGO.",
+    materias: "A definir no edital vigente; acompanhar conteúdos programáticos da banca e da PMGO/SEAD-GO.",
+    banca: "Instituto AOCP no último ciclo localizado; próxima banca somente com edital/contrato oficial.",
+    inscritos: "Sem inscrições abertas no cadastro atual do portal.",
+    etapas: "Prova objetiva/discursiva quando prevista, TAF, avaliação médica, psicológica, investigação social, avaliação de vida pregressa, curso de formação e demais fases do edital.",
+    cfsd: "Curso de formação pela PMGO conforme cargo e convocação.",
+    estagio: "Conforme legislação militar estadual e edital.",
+    validade: "Conforme edital vigente.",
+    previsao: "Acompanhar PMGO, SEAD-GO, Diário Oficial e banca contratada; não tratar previsão como edital aberto.",
+    site: "https://goias.gov.br/policiamilitar/cursos-e-concursos/"
+  },
+  pcgo: {
+    edital: "PCGO — Agente, Escrivão, Papiloscopista e Delegado; último ciclo 2022 em acompanhamento",
+    salario: "Lei GO nº 23.235/2025: Agente/Escrivão 3ª Classe I R$ 7.863,15; Especial R$ 14.917,77; Delegado Substituto em referência de tabela atual: R$ 27.663,10. Conferir edital e tabela vigente.",
+    vagas: "Último edital PCGO: cargos de Agente, Escrivão, Papiloscopista e Delegado; novo edital depende de autorização oficial.",
+    cotas: "Conforme legislação estadual e regras do edital.",
+    idade: "Conferir edital vigente; normalmente exige idade mínima legal e demais requisitos por cargo.",
+    escolaridade: "Nível superior para cargos policiais civis, conforme edital vigente e cargo.",
+    materias: "A definir no edital; últimos certames cobraram Língua Portuguesa, Informática, Direito e conhecimentos específicos por cargo.",
+    banca: "Instituto AOCP no último ciclo localizado.",
+    inscritos: "Sem inscrições abertas no cadastro atual do portal.",
+    etapas: "Provas, avaliação médica/psicológica, TAF quando previsto, investigação social, curso de formação e fases específicas por cargo.",
+    cfsd: "Curso de formação na estrutura da Polícia Civil/GO conforme convocação.",
+    estagio: "Conforme legislação da PCGO.",
+    validade: "Conforme edital vigente.",
+    previsao: "Acompanhar Polícia Civil/GO, SEAD-GO, Diário Oficial e banca contratada.",
+    site: "https://goias.gov.br/policiacivil/"
+  },
+  ppgo: {
+    edital: "Polícia Penal GO — Edital DGPP/GO 02/2024",
+    salario: "Edital 02/2024: R$ 5.971,42. Tabela legal cadastrada no portal: Policial Penal de R$ 6.668,88 a R$ 16.393,90 conforme Lei GO nº 23.235/2025.",
+    vagas: "1.600 vagas para Policial Penal no edital 02/2024.",
+    cotas: "Conforme legislação estadual e regras do edital.",
+    idade: "Conferir edital 02/2024 e atos posteriores.",
+    escolaridade: "Nível superior, conforme edital 02/2024.",
+    materias: "Conferir edital 02/2024, retificações e conteúdo programático do IBFC.",
+    banca: "IBFC",
+    inscritos: "Conferir status no IBFC/DGPP-GO; concurso 2024 em acompanhamento conforme publicações.",
+    etapas: "Prova objetiva, prova discursiva quando prevista, TAF, avaliação psicológica, exames, investigação social, curso de formação e demais fases do edital.",
+    cfsd: "Curso de formação da Polícia Penal/GO conforme edital e convocações.",
+    estagio: "Conforme legislação estadual e edital.",
+    validade: "Conforme edital e atos de homologação/prorrogação.",
+    previsao: "Acompanhar IBFC, DGPP/GO, SEAD-GO e Diário Oficial.",
+    site: "https://concursos.ibfc.org.br/informacoes/465/"
   }
 
 };
@@ -351,7 +402,7 @@ const CONCURSOS = {
 let currTabela = CARGOS_PM;
 let currInst = 'pmesp';
 let headerModoInicialPortal = true;
-const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
+const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt','pmgo','pcgo','ppgo'];
 function normalizarInstituicao(inst) {
   return INSTITUICOES_VALIDAS.includes(inst) ? inst : 'pmesp';
 }

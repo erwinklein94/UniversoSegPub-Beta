@@ -334,6 +334,39 @@ const POLICIAS_PENAIS_INFO = {
     fonte: 'SEJUS/MT, Portal do Servidor/SEPLAG-MT e SINDSPPEN-MT — tabela 40h Policial Penal',
     url: 'https://sindspenmt.com.br/tabela-salarial-do-sistema-penitenciario/',
     atualizado: 'Atualizado em 28/04/2026'
+  },
+  ppgo: {
+    sigla: 'PPGO',
+    nome: 'Polícia Penal de Goiás',
+    uf: 'Goiás',
+    criacao: 'EC 104/2019 · Lei GO 17.090/2010 · Lei GO 21.792/2023',
+    marco: 'A Diretoria-Geral de Polícia Penal integra a estrutura administrativa de Goiás e possui quadro legal de Policial Penal previsto na legislação estadual.',
+    orgao: 'Diretoria-Geral de Polícia Penal do Estado de Goiás (DGPP/GO)',
+    direcao: 'Josimar Pires Nicolau do Nascimento — Diretor-Geral de Polícia Penal',
+    subordinacao: 'Sistema prisional estadual goiano, com atuação em segurança prisional, custódia, escolta, controle e inteligência penitenciária.',
+    efetivoAtivoLabel: 'Conferir DGPP/GO',
+    reservaLabel: 'Inativos: conferir GOIASPREV/GO',
+    totalLabel: 'Quadro legal: 3.693 cargos de Policial Penal',
+    relacaoLabel: 'Não calcular sem efetivo oficial consolidado',
+    quadro: 'Lei GO nº 23.235/2025 reorganiza quantitativos e tabela de subsídios do grupo ocupacional Policial Penal.',
+    ingresso: 'Concurso público, investigação social, TAF, exames, avaliação psicológica, curso de formação e posse conforme edital.',
+    escolaridade: 'Edital 02/2024: nível superior para Policial Penal; conferir edital vigente e atos posteriores.',
+    formacao: 'Curso de formação com execução penal, segurança prisional, direitos humanos, armamento, procedimentos operacionais e normas internas.',
+    atribuicoes: 'Segurança interna e externa dos estabelecimentos penais, custódia, vigilância, escolta, recambiamento, manutenção da ordem e disciplina e apoio à execução penal.',
+    remuneracao: 'Tabela de subsídios da Lei GO nº 23.235/2025 para Policial Penal; conferir RGA, Diário Oficial, portal oficial e contracheque.',
+    vantagens: 'Auxílios, adicionais, plantões, serviço extraordinário, indenizações e demais rubricas dependem de lei, escala, lotação, ato administrativo e contracheque.',
+    saude: 'Assistência e perícias conforme regras estaduais, DGPP/GO e GOIASPREV.',
+    previdencia: 'Regime próprio estadual/GOIASPREV; aposentadoria policial e regras de transição dependem da trajetória funcional individual.',
+    concurso: {
+      vagas: 'Edital DGPP/GO 02/2024: 1.600 vagas para Policial Penal.',
+      salario: 'Edital 02/2024 informou R$ 5.971,42; tabela legal cadastrada no portal: de R$ 6.668,88 a R$ 16.393,90 na carreira de Policial Penal.',
+      banca: 'IBFC no concurso DGPP/GO 2024.',
+      escolaridade: 'Nível superior, conforme edital 02/2024.'
+    },
+    associacaoBusca: 'associação ou sindicato dos policiais penais de Goiás',
+    fonte: 'DGPP/GO, IBFC e Legisla Goiás — Lei GO nº 23.235/2025',
+    url: 'https://www.policiapenal.go.gov.br/',
+    atualizado: 'Atualizado em 30/04/2026'
   }
 };
 
@@ -727,6 +760,24 @@ const CARGOS_PPMT = mapearTabelaPoliciaPenal('ppmt', [
   'Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente.',
   'ppmt',
   { badge: 'Tabela 2026' }
+);
+
+const CARGOS_PPGO = mapearTabelaPoliciaPenal('ppgo', [
+  { id: 'classe_especial', text: 'PPGO — Policial Penal — Classe Especial', valor: 16393.90 },
+  { id: 'primeira_iii', text: 'PPGO — Policial Penal — 1ª Classe / Padrão III', valor: 14903.54 },
+  { id: 'primeira_ii', text: 'PPGO — Policial Penal — 1ª Classe / Padrão II', valor: 13598.74 },
+  { id: 'primeira_i', text: 'PPGO — Policial Penal — 1ª Classe / Padrão I', valor: 12601.29 },
+  { id: 'segunda_iii', text: 'PPGO — Policial Penal — 2ª Classe / Padrão III', valor: 11192.16 },
+  { id: 'segunda_ii', text: 'PPGO — Policial Penal — 2ª Classe / Padrão II', valor: 10081.62 },
+  { id: 'segunda_i', text: 'PPGO — Policial Penal — 2ª Classe / Padrão I', valor: 9255.23 },
+  { id: 'terceira_iii', text: 'PPGO — Policial Penal — 3ª Classe / Padrão III', valor: 8843.56 },
+  { id: 'terceira_ii', text: 'PPGO — Policial Penal — 3ª Classe / Padrão II', valor: 8437.58 },
+  { id: 'terceira_i', text: 'PPGO — Policial Penal — 3ª Classe / Padrão I', valor: 6668.88 }
+],
+  'Tabela de subsídios do cargo de Policial Penal conforme Lei GO nº 23.235/2025, Anexo VI/Lei GO nº 17.090/2010.',
+  'Não inclui plantões, serviço extraordinário, indenizações, auxílios, adicionais, gratificações, diárias ou vantagens pessoais. Conferir edital, rubricas, escala, lotação e contracheque.',
+  'ppgo',
+  { badge: 'Lei GO 23.235/2025' }
 );
 
 /* ============================================================ */

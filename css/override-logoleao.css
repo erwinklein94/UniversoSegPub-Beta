@@ -1,0 +1,137 @@
+/*
+  Correção aplicada: exibe o logoleao como plano de fundo em todas as páginas grandes.
+  Este arquivo é carregado depois de css/dist/main.min.css para vencer regras antigas/minificadas.
+*/
+
+:root {
+  --usp-logoleao-bg: url("../img/logoleao.webp");
+}
+
+body,
+body[data-inst="portal"],
+body:not([data-inst="portal"]),
+[data-theme="dark"] body,
+[data-theme="dark"] body:not([data-inst="portal"]) {
+  --page-institution-image: var(--usp-logoleao-bg) !important;
+  background-color: var(--bg-site) !important;
+  background-image:
+    linear-gradient(135deg, rgba(248, 250, 252, 0.88) 0%, rgba(238, 242, 247, 0.78) 48%, rgba(229, 231, 235, 0.92) 100%),
+    var(--usp-logoleao-bg) !important;
+  background-size: cover, min(820px, 74vw) auto !important;
+  background-position: center center, right 4vw center !important;
+  background-repeat: no-repeat, no-repeat !important;
+  background-attachment: fixed, fixed !important;
+}
+
+[data-theme="dark"] body,
+[data-theme="dark"] body:not([data-inst="portal"]) {
+  background-image:
+    linear-gradient(135deg, rgba(5, 6, 10, 0.88) 0%, rgba(10, 14, 23, 0.78) 52%, rgba(17, 24, 39, 0.92) 100%),
+    var(--usp-logoleao-bg) !important;
+}
+
+/* Marca d'água dentro de cada página principal/aba grande. */
+main.page-section.active {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+main.page-section.active::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: var(--usp-logoleao-bg);
+  background-size: min(780px, 68vw) auto;
+  background-position: right 4vw top 70px;
+  background-repeat: no-repeat;
+  opacity: 0.13;
+  filter: saturate(1.04) contrast(1.04);
+}
+
+[data-theme="dark"] main.page-section.active::before {
+  opacity: 0.18;
+}
+
+main.page-section.active > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Deixa os cards levemente translúcidos para o fundo aparecer sem prejudicar leitura. */
+.card,
+.principal-hero,
+.result-section,
+.comparison-container,
+.produtos-layout,
+.produto-card,
+.acoes-grid,
+.associacoes-grid,
+.parceiros-grid,
+.ad-slot,
+.info-card,
+.stat-card,
+.benefit-card,
+.rights-card,
+.remuneracao-card,
+.concurso-card {
+  backdrop-filter: blur(10px) saturate(112%);
+  -webkit-backdrop-filter: blur(10px) saturate(112%);
+}
+
+html:not([data-theme="dark"]) body .card,
+html:not([data-theme="dark"]) body .principal-hero,
+html:not([data-theme="dark"]) body .result-section,
+html:not([data-theme="dark"]) body .comparison-container,
+html:not([data-theme="dark"]) body .produtos-layout,
+html:not([data-theme="dark"]) body .produto-card,
+html:not([data-theme="dark"]) body .acoes-grid,
+html:not([data-theme="dark"]) body .associacoes-grid,
+html:not([data-theme="dark"]) body .parceiros-grid,
+html:not([data-theme="dark"]) body .ad-slot,
+html:not([data-theme="dark"]) body .info-card,
+html:not([data-theme="dark"]) body .stat-card,
+html:not([data-theme="dark"]) body .benefit-card,
+html:not([data-theme="dark"]) body .rights-card,
+html:not([data-theme="dark"]) body .remuneracao-card,
+html:not([data-theme="dark"]) body .concurso-card {
+  background-color: rgba(255, 255, 255, 0.91) !important;
+}
+
+[data-theme="dark"] .card,
+[data-theme="dark"] .principal-hero,
+[data-theme="dark"] .result-section,
+[data-theme="dark"] .comparison-container,
+[data-theme="dark"] .produtos-layout,
+[data-theme="dark"] .produto-card,
+[data-theme="dark"] .acoes-grid,
+[data-theme="dark"] .associacoes-grid,
+[data-theme="dark"] .parceiros-grid,
+[data-theme="dark"] .ad-slot,
+[data-theme="dark"] .info-card,
+[data-theme="dark"] .stat-card,
+[data-theme="dark"] .benefit-card,
+[data-theme="dark"] .rights-card,
+[data-theme="dark"] .remuneracao-card,
+[data-theme="dark"] .concurso-card {
+  background-color: rgba(20, 21, 24, 0.88) !important;
+}
+
+@media (max-width: 780px) {
+  body,
+  body[data-inst="portal"],
+  body:not([data-inst="portal"]),
+  [data-theme="dark"] body,
+  [data-theme="dark"] body:not([data-inst="portal"]) {
+    background-size: cover, min(620px, 118vw) auto !important;
+    background-position: center center, center top 185px !important;
+  }
+
+  main.page-section.active::before {
+    background-size: min(560px, 112vw) auto;
+    background-position: center top 52px;
+    opacity: 0.10;
+  }
+}

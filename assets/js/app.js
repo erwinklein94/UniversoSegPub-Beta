@@ -2414,11 +2414,11 @@ function enviarEmailContato(event) {
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
 
-  // Popula cargos usados na aba Direitos e Vantagens.
+  // Popula campos técnicos sem selecionar uma instituição no cabeçalho.
   popularCargos('pmesp');
 
-  // Abre o site já na visualização institucional do print de referência.
-  mudarInstituicao('pmesp');
+  // Abre o site na identidade do portal, com o logoleão e o resumo geral.
+  aplicarHeaderInicialPortal();
 
   // Direitos: atualizar quando muda cargo/situação/tempo.
   ['cargo_dir', 'situacao_dir', 'tempo_dir'].forEach(id => {

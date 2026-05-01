@@ -6,78 +6,22 @@
    "Header Variacoes.html" (Polish fiel — mais hierarquia, mesma paleta).
    ========================================================================= */
 
-/* 0) Cabeçalho com fundo preto puro */
-header.site-header {
-  background: #000000 !important;
-}
-header.site-header::before {
-  background: none !important;
-}
-
-/* Card institucional grande — fundo preto puro com fade nas extremidades */
-.header-institution-card {
-  background: #000000 !important;
-  border: none !important;
-  -webkit-mask-image:
-    linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%),
-    linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
-  -webkit-mask-composite: source-in;
-          mask-composite: intersect;
-  mask-image:
-    linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%),
-    linear-gradient(180deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
-}
-.header-institution-card::before,
-.header-institution-card::after {
-  background: none !important;
-  opacity: 0 !important;
-}
-
-/* Logo institucional do cabeçalho — apenas a imagem, sem moldura alguma */
-.current-flag-frame.brand-logo-frame,
-.current-flag-frame.institution-logo-frame {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  overflow: visible !important;
-}
-.current-flag-frame.brand-logo-frame img,
-.current-flag-frame.institution-logo-frame img {
-  border-radius: 0 !important;
-  object-fit: contain !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
-  -webkit-mask-image: none !important;
-  mask-image: none !important;
-}
-
-/* Esconder sigla e nome da instituição ao lado da logo (logo já comunica) */
-#header-active-sigla,
-#header-active-name {
-  display: none !important;
-}
-
-/* 1) Kicker dourado COMO TÍTULO grande — "UNIVERSO SEGURANÇA PÚBLICA" */
+/* 1) Kicker dourado como pílula leve no topo do brand */
 .header-kicker {
-  background: transparent !important;
-  border: none !important;
+  background: rgba(244, 213, 138, 0.10) !important;
+  border: 1px solid rgba(244, 213, 138, 0.30) !important;
   color: var(--usp-gold-soft) !important;
-  font-family: 'Oswald', 'Inter', sans-serif !important;
-  font-size: clamp(28px, 4vw, 48px) !important;
-  letter-spacing: 0.04em !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 10px !important;
+  letter-spacing: 0.32em !important;
   text-transform: uppercase !important;
-  font-weight: 700 !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
-  line-height: 1 !important;
+  font-weight: 800 !important;
+  padding: 8px 14px !important;
+  border-radius: 999px !important;
 }
 .header-kicker::before {
-  display: none !important;
+  background: var(--usp-gold) !important;
+  box-shadow: 0 0 0 3px rgba(201, 154, 46, 0.22) !important;
 }
 
 /* 2) Subtítulo da marca com tom mais editorial */

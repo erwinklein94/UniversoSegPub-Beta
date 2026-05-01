@@ -175,11 +175,40 @@ const HEADER_INSTITUICOES_IMAGENS = {
 function setHeaderHeroImage(src) {
   const card = document.querySelector('.header-institution-card');
   if (!card) return;
-  const imagem = String(src || 'img/logoleao.jpeg').replace(/["\\]/g, '\\$&');
+  const imagemOriginal = String(src || 'img/logoleao.jpeg');
+  const imagem = imagemOriginal.replace(/["\\]/g, '\\$&');
   card.style.setProperty('--header-hero-image', `url("${imagem}")`);
+  card.dataset.headerHeroImage = imagemOriginal;
+}
+
+function configurarLogoInicialHeader(img) {
+  if (!img) return;
+  img.style.display = '';
+  img.onerror = null;
+  img.removeAttribute('srcset');
+  img.removeAttribute('sizes');
+  img.removeAttribute('data-fallback-aplicado');
+  img.dataset.imgBase = 'img/logoleao';
+  img.dataset.retry = '';
+  img.dataset.logoRetry = '0';
+  img.alt = 'Logo Universo Segurança Pública';
+  img.onerror = function () {
+    const alternativas = ['img/logoleao.png', 'img/logoleao.jpg', 'img/logoleao.webp'];
+    const indice = parseInt(this.dataset.logoRetry || '0', 10);
+    if (indice < alternativas.length) {
+      this.dataset.logoRetry = String(indice + 1);
+      this.src = alternativas[indice];
+      return;
+    }
+    this.onerror = null;
+    this.style.display = 'none';
+  };
+  img.src = 'img/logoleao.jpeg';
 }
 
 function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
+  const card = document.querySelector('.header-institution-card');
+  if (card) card.classList.remove('header-portal-home');
   if (!img) return;
   const imagemInstituicao = HEADER_INSTITUICOES_IMAGENS[inst];
   const fallbackBandeira = dadosEstado?.flag || HEADER_ESTADOS.sp.flag;
@@ -608,6 +637,9 @@ function calcularResumoPortalHeader() {
 function aplicarHeaderInicialPortal() {
   headerModoInicialPortal = true;
   document.body.setAttribute('data-inst', 'portal');
+  setHeaderHeroImage('img/logoleao.jpeg');
+  const card = document.querySelector('.header-institution-card');
+  if (card) card.classList.add('header-portal-home');
 
   const resumoPortal = calcularResumoPortalHeader();
   const setTexto = (id, valor) => {
@@ -617,12 +649,7 @@ function aplicarHeaderInicialPortal() {
 
   const flagAtual = document.getElementById('header-active-flag');
   if (flagAtual) {
-    flagAtual.style.display = '';
-    flagAtual.dataset.imgBase = 'img/logoleao';
-    flagAtual.dataset.retry = '';
-    flagAtual.src = 'img/logoleao.jpeg';
-    flagAtual.alt = 'Logo Universo Segurança Pública';
-    setHeaderHeroImage('img/logoleao.jpeg');
+    configurarLogoInicialHeader(flagAtual);
     const moldura = flagAtual.closest('.current-flag-frame');
     if (moldura) {
       moldura.classList.remove('institution-logo-frame');

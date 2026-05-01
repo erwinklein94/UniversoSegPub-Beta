@@ -226,7 +226,7 @@
    Banner visual sem borda, com imagem/bandeira ampla e fade para o resumo.
    ======================================================= */
 .header-institution-card {
-  --header-hero-image: url('../logoleao.jpeg');
+  --header-hero-image: url('../../img/logoleao.jpeg');
   min-height: 334px;
   padding: clamp(16px, 1.7vw, 22px);
   border-left: 0 !important;

@@ -61,12 +61,34 @@
     background-attachment: fixed;
   }
 
+
+  body[data-inst="portal"] {
+    background-image:
+      linear-gradient(135deg, rgba(248, 250, 252, 0.84) 0%, rgba(238, 242, 247, 0.78) 48%, rgba(229, 231, 235, 0.88) 100%),
+      url('../../img/logoleao.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
   [data-theme="dark"] body {
     background-image:
       radial-gradient(circle at 8% 10%, color-mix(in srgb, var(--vermelho) 26%, transparent), transparent 28%),
       radial-gradient(circle at 88% 6%, rgba(255, 255, 255, 0.08), transparent 24%),
       radial-gradient(circle at 50% 100%, color-mix(in srgb, var(--vermelho) 16%, transparent), transparent 36%),
       linear-gradient(135deg, #05060a 0%, #0a0e17 48%, #111827 100%);
+  }
+
+
+  [data-theme="dark"] body[data-inst="portal"] {
+    background-image:
+      linear-gradient(135deg, rgba(5, 6, 10, 0.84) 0%, rgba(10, 14, 23, 0.76) 50%, rgba(17, 24, 39, 0.90) 100%),
+      url('../../img/logoleao.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 
   /* BLOCO 14.4 — Cabeçalho glass */

@@ -3291,22 +3291,50 @@ const HEADER_INSTITUICOES_INFO = {
 };
 
 const HEADER_INSTITUICOES_IMAGENS = {
-  pmesp: 'pmesp.jpeg', pcsp: 'pcsp.jpeg', pmerj: 'pmerj.jpeg', pcerj: 'pcrj.jpeg',
-  pmmg: 'pmmg.jpeg', pcmg: 'pcmg.jpeg', pmba: 'pmba.jpeg', pcba: 'pcba.jpeg',
-  pmpr: 'pmpr.jpeg', pcpr: 'pcpr.jpeg', pmrs: 'pmrs.jpeg', pcrs: 'pcrs.jpeg',
-  pmsc: 'pmsc.jpeg', pcsc: 'pcsc.jpeg', pmes: 'pmes.jpeg', pces: 'pces.jpeg',
-  pmms: 'pmms.jpeg', pcms: 'pcms.jpeg', pmmt: 'pmmt.jpeg', pcmt: 'pcmt.jpeg',
-  ppsp: 'ppsp.jpeg', pprj: 'pprj.jpeg', ppmg: 'ppmg.jpeg', ppba: 'ppba.jpeg',
-  pppr: 'pppr.jpeg', pprs: 'pprs.jpeg', ppsc: 'ppsc.jpeg', ppes: 'ppes.jpeg',
-  ppms: 'ppms.jpeg', ppmt: 'ppmt.jpeg', ppto: 'ppto.jpeg', pmto: 'pmto.jpeg',
-  pcto: 'pcto.jpeg', ppma: 'ppma.jpeg', pmma: 'pmma.jpeg', pcma: 'pcma.jpeg'
+  pmesp: 'img/pmesp.jpeg',
+  pcsp: 'img/pcsp.jpeg',
+  pmerj: 'img/pmerj.jpeg',
+  pcerj: 'img/pcrj.jpeg',
+  pmmg: 'img/pmmg.jpeg',
+  pcmg: 'img/pcmg.jpeg',
+  pmba: 'img/pmba.jpeg',
+  pcba: 'img/pcba.jpeg',
+  pmpr: 'img/pmpr.jpeg',
+  pcpr: 'img/pcpr.jpeg',
+  pmrs: 'img/pmrs.jpeg',
+  pcrs: 'img/pcrs.jpeg',
+  pmsc: 'img/pmsc.jpeg',
+  pcsc: 'img/pcsc.jpeg',
+  pmes: 'img/pmes.jpeg',
+  pces: 'img/pces.jpeg',
+  pmgo: 'img/pmgo.jpeg',
+  pmms: 'img/pmms.jpeg',
+  pcms: 'img/pcms.jpeg',
+  pmmt: 'img/pmmt.jpeg',
+  pcmt: 'img/pcmt.jpeg',
+  ppsp: 'img/ppsp.jpeg',
+  pprj: 'img/pprj.jpeg',
+  ppmg: 'img/ppmg.jpeg',
+  ppba: 'img/ppba.jpeg',
+  pppr: 'img/pppr.jpeg',
+  pprs: 'img/pprs.jpeg',
+  ppsc: 'img/ppsc.jpeg',
+  ppes: 'img/ppes.jpeg',
+  ppms: 'img/ppms.jpeg',
+  ppmt: 'img/ppmt.jpeg',
+  pmma: 'img/pmma.jpeg',
+  pcma: 'img/pcma.jpeg',
+  ppma: 'img/ppma.jpeg',
+  pmto: 'img/pmto.jpeg',
+  pcto: 'img/pcto.jpeg',
+  ppto: 'img/ppto.jpeg'
 };
 
 
 function setHeaderHeroImage(src) {
   const card = document.querySelector('.header-institution-card');
   if (!card) return;
-  const imagem = String(src || 'logoleao.jpeg').replace(/["\\]/g, '\\$&');
+  const imagem = String(src || 'img/logoleao.jpeg').replace(/["\\]/g, '\\$&');
   card.style.setProperty('--header-hero-image', `url("${imagem}")`);
 }
 
@@ -3316,7 +3344,7 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
   const fallbackBandeira = dadosEstado?.flag || HEADER_ESTADOS.sp.flag;
   const altInstituicao = instituicao?.desc || instituicao?.titulo || 'Instituição de segurança pública';
 
-  setHeaderHeroImage(fallbackBandeira || imagemInstituicao || 'logoleao.jpeg');
+  setHeaderHeroImage(imagemInstituicao || fallbackBandeira || 'img/logoleao.jpeg');
 
   img.style.display = '';
   img.removeAttribute('data-retry');
@@ -3749,11 +3777,11 @@ function aplicarHeaderInicialPortal() {
   const flagAtual = document.getElementById('header-active-flag');
   if (flagAtual) {
     flagAtual.style.display = '';
-    flagAtual.dataset.imgBase = 'logoleao';
+    flagAtual.dataset.imgBase = 'img/logoleao';
     flagAtual.dataset.retry = '';
-    flagAtual.src = 'logoleao';
+    flagAtual.src = 'img/logoleao.jpeg';
     flagAtual.alt = 'Logo Universo Segurança Pública';
-    setHeaderHeroImage('logoleao.jpeg');
+    setHeaderHeroImage('img/logoleao.jpeg');
     const moldura = flagAtual.closest('.current-flag-frame');
     if (moldura) {
       moldura.classList.remove('institution-logo-frame');

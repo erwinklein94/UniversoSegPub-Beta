@@ -205,6 +205,7 @@ function toggleTheme() {
   html.setAttribute('data-theme', tema);
   localStorage.setItem('theme', tema);
   initTheme();
+  animarHeaderInstitucional();
 }
 
 function initTheme() {
@@ -213,9 +214,24 @@ function initTheme() {
   document.documentElement.setAttribute('data-theme', tema);
   const btnHeader = document.getElementById('theme-toggle-header');
   if (btnHeader) {
-    btnHeader.innerHTML = tema === 'dark' ? '◼ Alto contraste' : '▣ Interface tática';
-    btnHeader.setAttribute('aria-label', tema === 'dark' ? 'Ativar modo de alto contraste' : 'Voltar para interface tática');
+    const proximoTema = tema === 'dark' ? 'claro' : 'escuro';
+    btnHeader.innerHTML = tema === 'dark' ? '☀️ Tema claro' : '🌙 Tema escuro';
+    btnHeader.setAttribute('aria-label', `Ativar tema ${proximoTema}`);
+    btnHeader.setAttribute('title', `Ativar tema ${proximoTema}`);
   }
+}
+
+function animarHeaderInstitucional() {
+  const card = document.querySelector('.header-institution-card');
+  if (!card) return;
+  card.classList.remove('is-updating');
+  // força reinício da animação em trocas rápidas de instituição/tema
+  void card.offsetWidth;
+  card.classList.add('is-updating');
+  clearTimeout(animarHeaderInstitucional._timer);
+  animarHeaderInstitucional._timer = setTimeout(() => {
+    card.classList.remove('is-updating');
+  }, 380);
 }
 
 /* ============================================================ */
@@ -1370,6 +1386,7 @@ function aplicarHeaderInicialPortal() {
   });
 
   atualizarVisibilidadeResumoInstitucional('principal');
+  animarHeaderInstitucional();
 }
 
 function atualizarHeaderResumo(inst) {
@@ -1498,6 +1515,7 @@ function atualizarHeaderInstitucional(inst) {
   }
 
   atualizarHeaderResumo(inst);
+  animarHeaderInstitucional();
 }
 
 function atualizarFlagsEstado(inst) {

@@ -3161,7 +3161,15 @@ function aplicarHeaderInicialPortal() {
   const resumoPortal = calcularResumoPortalHeader();
   const setTexto = (id, valor) => {
     const el = document.getElementById(id);
-    if (el) el.textContent = valor;
+    if (!el) return;
+    const textoFinal = valor;
+    el.textContent = textoFinal;
+    const cardResumo = el.closest('.header-fact, .header-leadership-item');
+    if (cardResumo) {
+      const textoResumoNormalizado = String(textoFinal || '').trim().toLowerCase();
+      const vazio = !textoResumoNormalizado || textoResumoNormalizado === 'dados em breve' || textoResumoNormalizado === 'não informado' || textoResumoNormalizado === 'nao informado';
+      cardResumo.classList.toggle('is-empty-data', vazio);
+    }
   };
 
   const flagAtual = document.getElementById('header-active-flag');
@@ -3348,7 +3356,15 @@ function atualizarHeaderResumo(inst) {
 
   const setTexto = (id, valor) => {
     const el = document.getElementById(id);
-    if (el) el.textContent = resumoValorOuEmBreve(valor);
+    if (!el) return;
+    const textoFinal = resumoValorOuEmBreve(valor);
+    el.textContent = textoFinal;
+    const cardResumo = el.closest('.header-fact, .header-leadership-item');
+    if (cardResumo) {
+      const textoResumoNormalizado = String(textoFinal || '').trim().toLowerCase();
+      const vazio = !textoResumoNormalizado || textoResumoNormalizado === 'dados em breve' || textoResumoNormalizado === 'não informado' || textoResumoNormalizado === 'nao informado';
+      cardResumo.classList.toggle('is-empty-data', vazio);
+    }
   };
 
   const ativaTexto = dados.ativaLabel || formatarEfetivoHeader(dados.ativa);

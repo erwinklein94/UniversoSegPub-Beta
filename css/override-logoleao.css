@@ -1037,3 +1037,263 @@ body[data-inst="portal"] .header-current-copy strong {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ============================================================
+   Ajuste mobile do cabeçalho institucional
+   Objetivo: evitar que o cabeçalho/resumo ocupe a tela inteira em celulares.
+   ============================================================ */
+@media (max-width: 820px) {
+  header.site-header {
+    padding: 8px 0 10px !important;
+    border-bottom-width: 3px !important;
+  }
+
+  .header-content.header-shell,
+  .header-shell {
+    gap: 8px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .header-topbar {
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .menu-btn {
+    padding: 6px !important;
+    gap: 5px !important;
+  }
+
+  .menu-btn span {
+    width: 22px !important;
+    height: 2px !important;
+  }
+
+  .theme-toggle-header {
+    min-height: 28px !important;
+    padding: 6px 8px !important;
+    font-size: 9px !important;
+    letter-spacing: .45px !important;
+  }
+
+  .header-brand-block h1,
+  .header-text h1 {
+    font-size: clamp(22px, 7vw, 30px) !important;
+    line-height: .98 !important;
+    letter-spacing: .55px !important;
+  }
+
+  .header-independent-note,
+  .header-disclaimer-note {
+    margin-top: 4px !important;
+    padding: 4px 7px !important;
+    font-size: 7.4px !important;
+    letter-spacing: .55px !important;
+    line-height: 1.15 !important;
+  }
+
+  .header-institution-card {
+    min-height: 0 !important;
+    padding: 9px !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+  }
+
+  .header-institution-card::before {
+    height: 112px !important;
+    width: 100% !important;
+    bottom: auto !important;
+    opacity: .64 !important;
+    background-position: center !important;
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.74) 64%, transparent 100%) !important;
+    mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.74) 64%, transparent 100%) !important;
+  }
+
+  .header-institution-card::after {
+    width: 120px !important;
+    height: 120px !important;
+    top: -36px !important;
+    right: -36px !important;
+    opacity: .32 !important;
+  }
+
+  .header-institution-main {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 8px !important;
+    min-height: 0 !important;
+  }
+
+  .header-current-identity {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    min-height: 86px !important;
+    gap: 9px !important;
+    padding: 8px 6px !important;
+    text-align: left !important;
+  }
+
+  .header-current-identity::before {
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: 100% !important;
+    border-radius: 14px !important;
+    background: linear-gradient(90deg, rgba(0,0,0,.56), rgba(0,0,0,.22), rgba(0,0,0,.04)) !important;
+    filter: none !important;
+    opacity: .72 !important;
+  }
+
+  .current-flag-frame.institution-logo-frame,
+  .current-flag-frame.brand-logo-frame {
+    width: 54px !important;
+    height: 54px !important;
+    min-width: 54px !important;
+    min-height: 54px !important;
+    max-width: 54px !important;
+    max-height: 54px !important;
+    padding: 4px !important;
+    border-radius: 16px !important;
+    flex: 0 0 54px !important;
+  }
+
+  .current-flag-frame.institution-logo-frame img,
+  .current-flag-frame.brand-logo-frame img {
+    border-radius: 12px !important;
+    padding: 2px !important;
+  }
+
+  .header-current-copy {
+    width: auto !important;
+    max-width: calc(100% - 66px) !important;
+    display: grid !important;
+    justify-items: start !important;
+    text-align: left !important;
+    min-width: 0 !important;
+  }
+
+  .header-current-copy strong {
+    font-size: clamp(24px, 8vw, 34px) !important;
+    line-height: .96 !important;
+    letter-spacing: .55px !important;
+    white-space: nowrap !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .header-current-copy p {
+    max-width: 100% !important;
+    margin-top: 3px !important;
+    font-size: 12px !important;
+    line-height: 1.08 !important;
+    text-align: left !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  .header-current-copy small {
+    max-width: 100% !important;
+    margin-top: 5px !important;
+    padding: 4px 7px !important;
+    font-size: 8px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .header-facts-panel {
+    width: 100% !important;
+    margin-top: 0 !important;
+    padding: 9px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 12px 30px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.08) !important;
+  }
+
+  .header-facts-head {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .header-facts-head span {
+    font-size: 8px !important;
+    letter-spacing: .08em !important;
+    line-height: 1 !important;
+  }
+
+  .header-facts-head strong {
+    max-width: 54% !important;
+    padding: 3px 6px !important;
+    font-size: 8px !important;
+    line-height: 1.1 !important;
+    text-align: right !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .header-facts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+    width: 100% !important;
+  }
+
+  .header-fact,
+  .header-leadership-item {
+    min-height: 52px !important;
+    padding: 7px 8px !important;
+    border-radius: 12px !important;
+  }
+
+  .header-fact span,
+  .header-leadership-item span {
+    min-height: 0 !important;
+    font-size: 7.5px !important;
+    line-height: 1.05 !important;
+    letter-spacing: .055em !important;
+  }
+
+  .header-fact strong,
+  .header-leadership-item strong {
+    margin-top: 4px !important;
+    font-size: 11px !important;
+    line-height: 1.1 !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .header-fact.is-empty-data,
+  .header-leadership-item.is-empty-data,
+  .header-facts-grid .header-fact:nth-child(n+5),
+  .header-leadership {
+    display: none !important;
+  }
+
+  .header-controls-grid {
+    display: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .header-content.header-shell,
+  .header-shell {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .header-facts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .header-fact strong,
+  .header-leadership-item strong {
+    font-size: 10.5px !important;
+  }
+}

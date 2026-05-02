@@ -3085,6 +3085,12 @@ function formatarNumeroHeader(valor) {
 function formatarEfetivoHeader(valor) {
   const numero = Number(valor || 0);
   if (!numero) return RESUMO_DADOS_EM_BREVE;
+  if (numero >= 1000000) {
+    const milhao = numero / 1000000;
+    let texto = Number.isInteger(milhao) ? String(milhao) : milhao.toFixed(1).replace('.', ',');
+    texto = texto.replace(',0', '');
+    return `≈ ${texto} ${milhao >= 2 ? 'milhões' : 'milhão'}`;
+  }
   if (numero >= 1000) {
     const mil = numero / 1000;
     let texto = Number.isInteger(mil) ? String(mil) : mil.toFixed(1).replace('.', ',');
@@ -3103,12 +3109,21 @@ function calcularRelacaoHeader(populacao, ativa) {
   return `1 ativo / ${habitantesPorAtivo.toLocaleString('pt-BR')} hab. · ${percentual}%`;
 }
 
+function calcularEfetivoTotalResumoHeader(dados = {}) {
+  if (dados.efetivoTotalLabel) return dados.efetivoTotalLabel;
+  const ativa = Number(dados.ativa || 0);
+  const reserva = Number(dados.reserva || 0);
+  if (ativa || reserva) return formatarEfetivoHeader(ativa + reserva);
+  if (dados.ativaLabel) return dados.ativaLabel;
+  return formatarEfetivoHeader(dados.ativa);
+}
+
 function atualizarLabelsHeaderResumo(labels = {}) {
   const padrao = {
     'header-label-natureza': 'Natureza',
     'header-label-uf': 'UF/Jurisdição',
     'header-label-criacao': 'Criação',
-    'header-label-ativa': 'Efetivo ativo',
+    'header-label-ativa': 'Efetivo total',
     'header-label-reserva': 'Reserva/inativos',
     'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População do Estado',
@@ -3185,7 +3200,7 @@ function aplicarHeaderInicialPortal() {
     'header-label-natureza': 'Escopo',
     'header-label-uf': 'Abrangência',
     'header-label-criacao': 'Instituições',
-    'header-label-ativa': 'Ativos estimados',
+    'header-label-ativa': 'Efetivo total estimado',
     'header-label-reserva': 'Reserva/inativos',
     'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População abrangida',
@@ -3197,7 +3212,7 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-natureza', 'Portal informativo');
   setTexto('header-resumo-uf', 'Brasil');
   setTexto('header-resumo-criacao', String(resumoPortal.instituicoes));
-  setTexto('header-resumo-ativa', `${formatarEfetivoHeader(resumoPortal.ativa)}+`);
+  setTexto('header-resumo-ativa', `${formatarEfetivoHeader(resumoPortal.total)}+`);
   setTexto('header-resumo-reserva', `${formatarEfetivoHeader(resumoPortal.reserva)}+`);
   setTexto('header-resumo-total', `${formatarEfetivoHeader(resumoPortal.femininas)}+`);
   setTexto('header-resumo-populacao', formatarNumeroHeader(resumoPortal.populacao));
@@ -3257,7 +3272,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'UF/Jurisdição',
       'header-label-criacao': 'Criação',
-      'header-label-ativa': 'Efetivo ativo',
+      'header-label-ativa': 'Efetivo total',
       'header-label-reserva': 'Reserva/reforma',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
@@ -3272,7 +3287,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'UF/Jurisdição',
       'header-label-criacao': 'Criação',
-      'header-label-ativa': 'Efetivo ativo',
+      'header-label-ativa': 'Efetivo total',
       'header-label-reserva': 'Reserva/reforma',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
@@ -3287,7 +3302,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'UF/Jurisdição',
       'header-label-criacao': 'Origem histórica',
-      'header-label-ativa': 'Efetivo ativo',
+      'header-label-ativa': 'Efetivo total',
       'header-label-reserva': 'Inativos estimados',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
@@ -3302,7 +3317,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'Jurisdição',
       'header-label-criacao': 'Base legal/histórica',
-      'header-label-ativa': 'Efetivo ativo',
+      'header-label-ativa': 'Efetivo total',
       'header-label-reserva': 'Aposentados/inativos',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'Abrangência',
@@ -3352,7 +3367,7 @@ function atualizarHeaderResumo(inst) {
     if (el) el.textContent = resumoValorOuEmBreve(valor);
   };
 
-  const ativaTexto = dados.ativaLabel || formatarEfetivoHeader(dados.ativa);
+  const ativaTexto = calcularEfetivoTotalResumoHeader(dados);
   const reservaTexto = dados.reservaLabel || formatarEfetivoHeader(dados.reserva);
   const femininasTexto = dados.femininasLabel || (dados.femininas ? formatarNumeroHeader(dados.femininas) : RESUMO_DADOS_EM_BREVE);
   const relacaoTexto = dados.relacaoLabel || calcularRelacaoHeader(dados.populacao, dados.ativa);
@@ -4194,7 +4209,7 @@ function montarCamposResumoHistoria(inst, dados) {
     { rotulo: 'Jurisdição', valor: `${uf} · ${estadoNome}` },
     { rotulo: 'Criação/origem', valor: valorHistoriaOuNaoDeclarado(resumo.criacao, 'Registro histórico específico a confirmar') },
     { rotulo: 'Criador/ato de origem', valor: getCriadorInstitucional(inst, tipo, estadoNome) },
-    { rotulo: 'Efetivo ativo', valor: valorHistoriaOuNaoDeclarado(resumo.ativaLabel || resumo.ativa, 'Efetivo específico a confirmar') },
+    { rotulo: 'Efetivo total', valor: valorHistoriaOuNaoDeclarado(resumo.efetivoTotalLabel || calcularEfetivoTotalResumoHeader(resumo), 'Efetivo específico a confirmar') },
     { rotulo: /Bombeiro|Polícia Militar/i.test(tipo) ? 'Reserva/reforma' : 'Aposentados/inativos', valor: valorHistoriaOuNaoDeclarado(resumo.reservaLabel || resumo.reserva, 'Inativos específicos a confirmar') },
     { rotulo: 'Mulheres no efetivo', valor: valorHistoriaOuNaoDeclarado(resumo.femininasLabel || resumo.femininas, 'Dado específico a confirmar') },
     { rotulo: populacaoTitulo, valor: valorHistoriaOuNaoDeclarado(resumo.populacaoLabel || (resumo.populacao ? formatarNumeroHeader(resumo.populacao) : ''), 'Abrangência específica a confirmar') },

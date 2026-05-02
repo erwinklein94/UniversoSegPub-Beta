@@ -1,3 +1,4 @@
+/* ===== js/data/parametros-cargos.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Parâmetros oficiais e cargos principais por instituição.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -825,6 +826,7 @@ const CARGOS_PCAC = [
   { val: 'agente_i_ac', text: 'Agente / Escrivão / Papiloscopista / Aux. Necropsia PCAC — Classe I', padrao: 5000.00, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_OPERACIONAL, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' }
 ];
 
+/* ===== js/data/policia-penal.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Informações e tabelas da Polícia Penal.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -1611,6 +1613,7 @@ const CARGOS_PPAC = mapearTabelaPoliciaPenal(
 
 /* BLOCO 15.4 — Base de dados das ações judiciais por instituição */
 
+/* ===== js/data/bases-conteudo.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Bases de ações judiciais, associações, concursos e estado inicial.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2318,6 +2321,7 @@ let headerModoInicialPortal = true;
 const HEADER_BRASIL_FLAG = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Brazil.svg';
 const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmac','pcac','ppac','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
 
+/* ===== js/ui/navegacao-ui.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Helpers, menu, tema, navegação e popularização de cargos.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2583,6 +2587,7 @@ function popularCargos(inst) {
 
 /* ============================================================ */
 
+/* ===== js/services/remuneracao.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Cálculos e renderização da remuneração tabelada.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -3196,6 +3201,7 @@ function carregarRemuneracaoTabelada() {
 
 /* ============================================================ */
 
+/* ===== js/ui/header-estados.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Troca de instituição, estados, cabeçalho e estrutura de UFs.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -6283,6 +6289,12 @@ function formatarNumeroHeader(valor) {
 function formatarEfetivoHeader(valor) {
   const numero = Number(valor || 0);
   if (!numero) return RESUMO_DADOS_EM_BREVE;
+  if (numero >= 1000000) {
+    const milhao = numero / 1000000;
+    let texto = Number.isInteger(milhao) ? String(milhao) : milhao.toFixed(1).replace('.', ',');
+    texto = texto.replace(',0', '');
+    return `≈ ${texto} ${milhao >= 2 ? 'milhões' : 'milhão'}`;
+  }
   if (numero >= 1000) {
     const mil = numero / 1000;
     let texto = Number.isInteger(mil) ? String(mil) : mil.toFixed(1).replace('.', ',');
@@ -6301,12 +6313,21 @@ function calcularRelacaoHeader(populacao, ativa) {
   return `1 ativo / ${habitantesPorAtivo.toLocaleString('pt-BR')} hab. · ${percentual}%`;
 }
 
+function calcularEfetivoTotalResumoHeader(dados = {}) {
+  if (dados.efetivoTotalLabel) return dados.efetivoTotalLabel;
+  const ativa = Number(dados.ativa || 0);
+  const reserva = Number(dados.reserva || 0);
+  if (ativa || reserva) return formatarEfetivoHeader(ativa + reserva);
+  if (dados.ativaLabel) return dados.ativaLabel;
+  return formatarEfetivoHeader(dados.ativa);
+}
+
 function atualizarLabelsHeaderResumo(labels = {}) {
   const padrao = {
     'header-label-natureza': 'Natureza',
     'header-label-uf': 'UF/Jurisdição',
     'header-label-criacao': 'Criação',
-    'header-label-ativa': 'Efetivo ativo',
+    'header-label-ativa': 'Efetivo total',
     'header-label-reserva': 'Reserva/inativos',
     'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População do Estado',
@@ -6383,7 +6404,7 @@ function aplicarHeaderInicialPortal() {
     'header-label-natureza': 'Escopo',
     'header-label-uf': 'Abrangência',
     'header-label-criacao': 'Instituições',
-    'header-label-ativa': 'Ativos estimados',
+    'header-label-ativa': 'Efetivo total estimado',
     'header-label-reserva': 'Reserva/inativos',
     'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População abrangida',
@@ -6395,7 +6416,7 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-natureza', 'Portal informativo');
   setTexto('header-resumo-uf', 'Brasil');
   setTexto('header-resumo-criacao', String(resumoPortal.instituicoes));
-  setTexto('header-resumo-ativa', `${formatarEfetivoHeader(resumoPortal.ativa)}+`);
+  setTexto('header-resumo-ativa', `${formatarEfetivoHeader(resumoPortal.total)}+`);
   setTexto('header-resumo-reserva', `${formatarEfetivoHeader(resumoPortal.reserva)}+`);
   setTexto('header-resumo-total', `${formatarEfetivoHeader(resumoPortal.femininas)}+`);
   setTexto('header-resumo-populacao', formatarNumeroHeader(resumoPortal.populacao));
@@ -6455,7 +6476,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'UF/Jurisdição',
       'header-label-criacao': 'Criação',
-      'header-label-ativa': 'Efetivo ativo',
+      'header-label-ativa': 'Efetivo total',
       'header-label-reserva': 'Reserva/reforma',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
@@ -6470,7 +6491,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'UF/Jurisdição',
       'header-label-criacao': 'Criação',
-      'header-label-ativa': 'Efetivo ativo',
+      'header-label-ativa': 'Efetivo total',
       'header-label-reserva': 'Reserva/reforma',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
@@ -6485,7 +6506,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'UF/Jurisdição',
       'header-label-criacao': 'Origem histórica',
-      'header-label-ativa': 'Efetivo ativo',
+      'header-label-ativa': 'Efetivo total',
       'header-label-reserva': 'Inativos estimados',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
@@ -6500,7 +6521,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'Jurisdição',
       'header-label-criacao': 'Base legal/histórica',
-      'header-label-ativa': 'Efetivo ativo',
+      'header-label-ativa': 'Efetivo total',
       'header-label-reserva': 'Aposentados/inativos',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'Abrangência',
@@ -6550,7 +6571,7 @@ function atualizarHeaderResumo(inst) {
     if (el) el.textContent = resumoValorOuEmBreve(valor);
   };
 
-  const ativaTexto = dados.ativaLabel || formatarEfetivoHeader(dados.ativa);
+  const ativaTexto = calcularEfetivoTotalResumoHeader(dados);
   const reservaTexto = dados.reservaLabel || formatarEfetivoHeader(dados.reserva);
   const femininasTexto = dados.femininasLabel || (dados.femininas ? formatarNumeroHeader(dados.femininas) : RESUMO_DADOS_EM_BREVE);
   const relacaoTexto = dados.relacaoLabel || calcularRelacaoHeader(dados.populacao, dados.ativa);
@@ -7392,7 +7413,7 @@ function montarCamposResumoHistoria(inst, dados) {
     { rotulo: 'Jurisdição', valor: `${uf} · ${estadoNome}` },
     { rotulo: 'Criação/origem', valor: valorHistoriaOuNaoDeclarado(resumo.criacao, 'Registro histórico específico a confirmar') },
     { rotulo: 'Criador/ato de origem', valor: getCriadorInstitucional(inst, tipo, estadoNome) },
-    { rotulo: 'Efetivo ativo', valor: valorHistoriaOuNaoDeclarado(resumo.ativaLabel || resumo.ativa, 'Efetivo específico a confirmar') },
+    { rotulo: 'Efetivo total', valor: valorHistoriaOuNaoDeclarado(resumo.efetivoTotalLabel || calcularEfetivoTotalResumoHeader(resumo), 'Efetivo específico a confirmar') },
     { rotulo: /Bombeiro|Polícia Militar/i.test(tipo) ? 'Reserva/reforma' : 'Aposentados/inativos', valor: valorHistoriaOuNaoDeclarado(resumo.reservaLabel || resumo.reserva, 'Inativos específicos a confirmar') },
     { rotulo: 'Mulheres no efetivo', valor: valorHistoriaOuNaoDeclarado(resumo.femininasLabel || resumo.femininas, 'Dado específico a confirmar') },
     { rotulo: populacaoTitulo, valor: valorHistoriaOuNaoDeclarado(resumo.populacaoLabel || (resumo.populacao ? formatarNumeroHeader(resumo.populacao) : ''), 'Abrangência específica a confirmar') },
@@ -7472,6 +7493,7 @@ function renderizarBrasoesHistoria() {
 
 /* ============================================================ */
 
+/* ===== js/services/direitos.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Análise de direitos, vantagens e aposentadoria.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -8057,6 +8079,7 @@ function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingress
 
 /* ============================================================ */
 
+/* ===== js/pages/concursos-comparador.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Concursos, comparador de carreiras, ações judiciais e associações.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -8202,7 +8225,10 @@ function inicializarComparadorCarreiras() {
     selecao.dataset.renderizado = 'true';
   }
 
-  if (!selecao.querySelector('input[type="checkbox"]:checked')) comparadorSelecionarEstadoAtual(false);
+  const esferaComparador = document.getElementById('comparador-esfera');
+  if (esferaComparador && esferaComparador.value) {
+    popularInstituicoesComparadorPorEsfera(esferaComparador.value);
+  }
   carregarComparadorCarreiras();
 }
 
@@ -8213,6 +8239,68 @@ function getComparadorSelect() {
 function getComparadorCheckboxes() {
   const selecao = getComparadorSelect();
   return selecao ? Array.from(selecao.querySelectorAll('input[type="checkbox"]')) : [];
+}
+
+function popularInstituicoesComparadorPorEsfera(esfera, valorPreferido = '') {
+  const seletorInst = document.getElementById('comparador-instituicao');
+  if (!seletorInst) return;
+  const esferaNormalizada = String(esfera || '').trim().toLowerCase();
+  const itens = typeof getInstituicoesParaConsulta === 'function'
+    ? getInstituicoesParaConsulta(esferaNormalizada)
+    : getInstituicoesComparador().filter(item => !esferaNormalizada || getEsferaConsultaInstituicao(item.inst) === esferaNormalizada);
+
+  if (!esferaNormalizada) {
+    seletorInst.innerHTML = '<option value="">Escolha primeiro a esfera</option>';
+    seletorInst.disabled = true;
+    return;
+  }
+
+  if (!itens.length) {
+    seletorInst.innerHTML = '<option value="">Nenhuma instituição disponível para esta esfera</option>';
+    seletorInst.disabled = true;
+    return;
+  }
+
+  let html = '<option value="">Escolha a instituição</option>';
+  let grupoAtual = '';
+  itens.forEach(item => {
+    const grupo = esferaNormalizada === 'estadual'
+      ? `${item.estadoNome} (${item.uf})`
+      : (esferaNormalizada === 'federal' ? 'União' : 'Municípios');
+    if (grupo !== grupoAtual) {
+      if (grupoAtual) html += '</optgroup>';
+      html += `<optgroup label="${escapeHtml(grupo)}">`;
+      grupoAtual = grupo;
+    }
+    const texto = esferaNormalizada === 'estadual'
+      ? `${item.sigla} — ${item.ramo}`
+      : `${item.sigla} — ${item.nome}`;
+    html += `<option value="${escapeHtml(item.inst)}">${escapeHtml(texto)}</option>`;
+  });
+  if (grupoAtual) html += '</optgroup>';
+
+  seletorInst.disabled = false;
+  seletorInst.innerHTML = html;
+  seletorInst.value = valorPreferido && itens.some(item => item.inst === valorPreferido) ? valorPreferido : '';
+}
+
+function comparadorAlterarEsfera(esfera) {
+  popularInstituicoesComparadorPorEsfera(esfera, '');
+}
+
+function comparadorAdicionarInstituicaoSelecionada() {
+  const seletorInst = document.getElementById('comparador-instituicao');
+  const inst = seletorInst?.value;
+  if (!inst) return;
+  const check = getComparadorCheckboxes().find(item => item.value === inst);
+  if (!check) return;
+  const jaSelecionada = check.checked;
+  check.checked = true;
+  carregarComparadorCarreiras();
+  const info = HEADER_INSTITUICOES_INFO[inst];
+  if (typeof mostrarToast === 'function') {
+    mostrarToast(jaSelecionada ? `${info?.titulo || inst.toUpperCase()} já estava na comparação.` : `${info?.titulo || inst.toUpperCase()} adicionada à comparação.`);
+  }
 }
 
 function toggleComparadorLista() {
@@ -8618,6 +8706,7 @@ function carregarAssociacoes() {
 
 /* ============================================================ */
 
+/* ===== js/pages/poderes-deveres.js ===== */
 /* ============================================================
    PODERES E DEVERES — aba independente da instituição principal
    ============================================================ */
@@ -9435,6 +9524,7 @@ function mudarInstituicaoPoderes(valor) {
   poderesRenderizar(valor || currInst || 'pf');
 }
 
+/* ===== js/pages/contato-init.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Contato, anúncios, contador e inicialização.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -9559,6 +9649,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+/* ===== js/ui/event-bindings.js ===== */
 /* =======================================================
    Eventos centralizados.
    Remove a dependência de onclick/onchange/oninput inline no HTML.
@@ -9674,7 +9765,16 @@ document.addEventListener('DOMContentLoaded', () => {
     bindClick('[data-action="comparador-estado-atual"]', () => safeCall('comparadorSelecionarEstadoAtual'));
     bindClick('[data-action="comparador-todas"]', () => safeCall('comparadorSelecionarTodas'));
     bindClick('[data-action="comparador-limpar"]', () => safeCall('comparadorLimparSelecao'));
+    bindClick('[data-action="comparador-adicionar-instituicao"]', () => safeCall('comparadorAdicionarInstituicaoSelecionada'));
     bindClick('#comparador-toggle-lista', () => safeCall('toggleComparadorLista'));
+
+    bindChange('#comparador-esfera', event => {
+      safeCall('comparadorAlterarEsfera', [event.currentTarget.value]);
+    });
+
+    bindChange('#comparador-instituicao', () => {
+      safeCall('comparadorAdicionarInstituicaoSelecionada');
+    });
 
     document.addEventListener('change', event => {
       const alvo = event.target;

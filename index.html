@@ -29,7 +29,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link rel="preload" href="css/dist/main.min.css" as="style">
 <link rel="stylesheet" href="css/dist/main.min.css">
-<link rel="stylesheet" href="css/override-logoleao.css?v=20260502brasoesv1">
+<link rel="stylesheet" href="css/override-logoleao.css?v=20260502comparadorv1">
 
 </head>
 <body data-inst="portal">
@@ -95,8 +95,8 @@
                 <strong id="header-resumo-criacao">111</strong>
               </div>
               <div class="header-fact">
-                <span id="header-label-ativa">Ativos estimados</span>
-                <strong id="header-resumo-ativa">≈ 588,7 mil+</strong>
+                <span id="header-label-ativa">Efetivo total estimado</span>
+                <strong id="header-resumo-ativa">≈ 1,2 milhão+</strong>
               </div>
               <div class="header-fact">
                 <span id="header-label-reserva">Reserva/inativos</span>
@@ -1142,14 +1142,40 @@
     <div class="comparador-topo">
       <div class="comparador-topo-texto">
         <strong>Escolha as carreiras que deseja comparar</strong>
-        <span>O comparador usa as mesmas bases já cadastradas nas abas de Remuneração Tabelada e Concursos.</span>
+        <span>Use as caixas abaixo para adicionar instituições por esfera. Depois compare remuneração, benefícios, concursos e fontes oficiais lado a lado.</span>
       </div>
       <div class="comparador-acoes">
-        <button class="btn-secondary" type="button" data-action="comparador-estado-atual">Selecionar estado atual</button>
+        <button class="btn-secondary" type="button" data-action="comparador-estado-atual">Adicionar estado atual</button>
         <button class="btn-secondary" type="button" data-action="comparador-todas">Selecionar todas</button>
         <button class="btn-secondary" type="button" data-action="comparador-limpar">Limpar</button>
       </div>
     </div>
+
+    <section class="comparador-selector-rapido consulta-instituicao-card" aria-label="Adicionar instituição à comparação">
+      <div class="consulta-instituicao-texto">
+        <span>Adicionar à comparação</span>
+        <strong>Escolha por esfera e instituição</strong>
+        <small>Selecione Federal, Estadual ou Municipal; depois escolha a instituição que entrará no comparativo.</small>
+      </div>
+      <div class="consulta-instituicao-grid comparador-select-duplo">
+        <div class="field">
+          <label for="comparador-esfera">Tipo de instituição</label>
+          <select id="comparador-esfera" aria-label="Selecione se a instituição é federal, estadual ou municipal">
+            <option value="" selected>Escolha a esfera</option>
+            <option value="federal">Federal</option>
+            <option value="estadual">Estadual</option>
+            <option value="municipal">Municipal</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="comparador-instituicao">Instituição</label>
+          <select id="comparador-instituicao" aria-label="Selecione a instituição para adicionar à comparação" disabled>
+            <option value="">Escolha primeiro a esfera</option>
+          </select>
+        </div>
+        <button class="btn-primary comparador-add-btn" type="button" data-action="comparador-adicionar-instituicao">Adicionar</button>
+      </div>
+    </section>
 
     <div class="comparador-selecao" aria-label="Seleção de instituições para comparação">
       <div class="comparador-select-panel">
@@ -1581,7 +1607,7 @@
 <!-- CSS movido para css/style.css -->
 <!-- JavaScript fonte reorganizado em js/data, js/services, js/ui e js/pages.
      Produção: bundle único para reduzir requisições e preservar a ordem de execução. -->
-<script src="js/dist/app.bundle.js?v=20260502brasoesv1" defer></script>
+<script src="js/dist/app.bundle.js?v=20260502comparadorv1" defer></script>
 <script src="js/brasao-lightbox.js?v=20260501" defer></script>
 
 </body>

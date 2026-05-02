@@ -113,7 +113,16 @@
     bindClick('[data-action="comparador-estado-atual"]', () => safeCall('comparadorSelecionarEstadoAtual'));
     bindClick('[data-action="comparador-todas"]', () => safeCall('comparadorSelecionarTodas'));
     bindClick('[data-action="comparador-limpar"]', () => safeCall('comparadorLimparSelecao'));
+    bindClick('[data-action="comparador-adicionar-instituicao"]', () => safeCall('comparadorAdicionarInstituicaoSelecionada'));
     bindClick('#comparador-toggle-lista', () => safeCall('toggleComparadorLista'));
+
+    bindChange('#comparador-esfera', event => {
+      safeCall('comparadorAlterarEsfera', [event.currentTarget.value]);
+    });
+
+    bindChange('#comparador-instituicao', () => {
+      safeCall('comparadorAdicionarInstituicaoSelecionada');
+    });
 
     document.addEventListener('change', event => {
       const alvo = event.target;

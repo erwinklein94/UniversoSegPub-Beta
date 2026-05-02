@@ -29,7 +29,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link rel="preload" href="css/dist/main.min.css" as="style">
 <link rel="stylesheet" href="css/dist/main.min.css">
-<link rel="stylesheet" href="css/override-logoleao.css?v=20260501c">
+<link rel="stylesheet" href="css/override-logoleao.css?v=20260502poderesrev">
 
 </head>
 <body data-inst="portal">
@@ -1061,14 +1061,15 @@
   <div class="card">
     <h2>Poderes e Deveres (<span id="txt-inst-poderes">PF</span>)</h2>
     <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
-      Esta aba tem uma seleção independente da instituição principal do site. A escolha abaixo altera apenas o conteúdo de Poderes e Deveres, mantendo as demais abas como estão.
+      Esta aba reúne uma síntese prática e revisada sobre competências, deveres, limites, cautelas e fontes oficiais de cada instituição. A escolha abaixo altera apenas o conteúdo de Poderes e Deveres, mantendo as demais abas como estão.
     </div>
 
     <div class="form-grid poderes-form-grid" style="margin-bottom: 24px;">
       <div class="field span-2">
-        <label for="poderes_instituicao">Escolha o tipo de instituição para consultar leis, poderes e deveres</label>
+        <label for="poderes_instituicao">Escolha a instituição para consultar deveres, poderes, limites e fontes</label>
         <select id="poderes_instituicao" aria-label="Selecione o tipo de instituição para consultar poderes e deveres">
           <option value="pm">Polícia Militar</option>
+          <option value="bm">Corpo de Bombeiros Militar</option>
           <option value="pc">Polícia Civil</option>
           <option value="pp">Polícia Penal</option>
           <option value="pf">Polícia Federal</option>
@@ -1560,7 +1561,7 @@
 <!-- CSS movido para css/style.css -->
 <!-- JavaScript fonte reorganizado em js/data, js/services, js/ui e js/pages.
      Produção: bundle único para reduzir requisições e preservar a ordem de execução. -->
-<script src="js/dist/app.bundle.js?v=20260502poderesbombeiros" defer></script>
+<script src="js/dist/app.bundle.js?v=20260502poderesrev" defer></script>
 <script src="js/brasao-lightbox.js?v=20260501" defer></script>
 
 </body>

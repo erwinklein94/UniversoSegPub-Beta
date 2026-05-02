@@ -6,101 +6,131 @@ const PODERES_DEVERES_BASE = {
   "pf": {
     "rotulo": "Polícia Federal",
     "categoria": "Federal",
-    "abrangencia": "Nacional, com foco em infrações penais de competência federal, polícia judiciária da União, polícia marítima, aeroportuária e de fronteiras, repressão ao tráfico ilícito e funções administrativas federais atribuídas em lei.",
+    "essencia": "Polícia judiciária da União e órgão federal especializado: investiga crimes federais, exerce funções de fronteira, imigração, polícia marítima e aeroportuária, e executa fiscalizações administrativas federais atribuídas por lei.",
+    "abrangencia": "Atuação nacional, vinculada a bens, serviços, interesses e competências da União; crimes de repercussão interestadual ou internacional previstos em lei; fronteiras, portos, aeroportos, migração, passaportes, segurança privada, armas e outras atribuições federais específicas.",
+    "naoConfundir": "Não é polícia ostensiva geral da União nem substitui automaticamente a Polícia Civil em todo crime comum. A competência federal precisa decorrer da Constituição, de lei ou de conexão concreta com interesse federal.",
+    "pontoAtencao": "Na prática, a pergunta-chave é: há interesse, bem, serviço, autarquia, empresa pública federal, fronteira, repercussão interestadual/internacional legalmente prevista ou atribuição administrativa federal específica? Se não houver, a competência tende a ser estadual.",
     "deveres": [
-      "Apurar infrações penais contra a ordem política e social ou em detrimento de bens, serviços e interesses da União, autarquias e empresas públicas federais.",
-      "Prevenir e reprimir tráfico ilícito de entorpecentes, contrabando e descaminho, sem prejuízo da atuação fazendária e de outros órgãos nas respectivas áreas.",
-      "Exercer as funções de polícia judiciária da União e atuar em polícia marítima, aeroportuária e de fronteiras.",
-      "Atuar em investigações de repercussão interestadual ou internacional quando presentes os requisitos legais.",
-      "Fiscalizar atividades administrativas federais atribuídas à PF, como controle de segurança privada, armas e passaportes, conforme legislação específica."
+      "Apurar infrações penais contra a ordem política e social ou em detrimento de bens, serviços e interesses da União, de suas autarquias e de empresas públicas federais.",
+      "Exercer, com exclusividade constitucional, as funções de polícia judiciária da União, instaurando e conduzindo procedimentos investigatórios federais.",
+      "Prevenir e reprimir tráfico ilícito de drogas, contrabando, descaminho e outros ilícitos federais, sem prejuízo da atuação fazendária e de órgãos especializados.",
+      "Atuar como polícia marítima, aeroportuária e de fronteiras, inclusive em controle migratório, passaportes e atividades correlatas previstas em normas federais.",
+      "Assumir investigações de repercussão interestadual ou internacional quando houver previsão legal e necessidade de repressão uniforme.",
+      "Fiscalizar atividades administrativas federais atribuídas à PF, como segurança privada, controle de armas, produtos controlados sob sua atribuição e documentação de viagem, conforme legislação específica."
     ],
     "poderes": [
-      "Investigação criminal federal, instauração e condução de inquéritos policiais federais e representação por medidas cautelares quando cabíveis.",
-      "Atuação ostensiva especializada em áreas federais específicas, inclusive fronteiras, aeroportos e portos, dentro da competência constitucional e legal.",
-      "Fiscalização administrativa e poder de polícia em matérias federais atribuídas por lei.",
-      "Cooperação com órgãos nacionais e internacionais nos limites legais e por atos formais de cooperação."
+      "Instaurar inquérito policial federal, realizar diligências, ouvir pessoas, requisitar perícias e representar por medidas cautelares quando a lei exigir decisão judicial.",
+      "Cumprir mandados judiciais, efetuar prisão em flagrante e executar operações de polícia judiciária da União.",
+      "Representar por busca e apreensão, prisão cautelar, interceptação, quebra de sigilo e outras medidas invasivas, sempre com controle judicial quando exigido.",
+      "Exercer poder de polícia administrativa federal em áreas como segurança privada, passaportes, migração, armas e atividades definidas em lei.",
+      "Cooperar com órgãos estaduais, federais e internacionais mediante instrumentos formais, tratados, acordos e canais oficiais."
     ],
     "limites": [
-      "Não substitui, de forma geral, a polícia judiciária estadual em crimes comuns sem competência federal ou sem hipótese legal de atuação federal.",
-      "Atos investigativos invasivos dependem de controle judicial quando a Constituição ou a lei exigirem autorização.",
-      "A competência federal deve ser demonstrada por matéria, sujeito, bem jurídico, repercussão ou previsão legal."
+      "Não há competência federal por simples gravidade do fato; é preciso enquadramento constitucional ou legal.",
+      "Não exerce policiamento ostensivo geral como missão ordinária, embora possa realizar ações ostensivas especializadas vinculadas às suas atribuições.",
+      "Busca domiciliar, interceptação, quebra de sigilo e medidas equivalentes dependem de autorização judicial quando a Constituição ou a lei exigirem.",
+      "A atuação internacional depende de cooperação jurídica/policial formal, soberania do Estado estrangeiro e regras de tratados ou acordos aplicáveis."
     ],
     "leis": [
       {
         "nome": "Constituição Federal, art. 144, § 1º",
-        "resumo": "Define a Polícia Federal como órgão permanente, organizado e mantido pela União, com funções de polícia judiciária da União e atribuições federais próprias.",
-        "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
-      },
-      {
-        "nome": "Lei nº 9.266/1996",
-        "resumo": "Reorganiza a carreira policial federal e disciplina aspectos estruturais dos cargos policiais federais.",
-        "url": "https://www.planalto.gov.br/ccivil_03/LEIS/l9266.htm"
+        "resumo": "Define a Polícia Federal como órgão permanente, organizado e mantido pela União, com funções próprias de polícia judiciária da União e atribuições federais específicas.",
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
       },
       {
         "nome": "Lei nº 10.446/2002",
-        "resumo": "Autoriza atuação da Polícia Federal em infrações de repercussão interestadual ou internacional que exijam repressão uniforme, nos casos definidos em lei.",
+        "resumo": "Permite atuação da PF em infrações penais de repercussão interestadual ou internacional que exijam repressão uniforme, nas hipóteses legais.",
         "url": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10446.htm"
       },
       {
+        "nome": "Lei nº 9.266/1996",
+        "resumo": "Reorganiza classes da carreira policial federal e estrutura aspectos dos cargos policiais federais.",
+        "url": "https://www.planalto.gov.br/ccivil_03/LEIS/l9266.htm"
+      },
+      {
+        "nome": "Código de Processo Penal",
+        "resumo": "Base processual para inquérito policial, prisão em flagrante, medidas cautelares e atos investigatórios.",
+        "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689.htm"
+      },
+      {
         "nome": "Lei nº 7.102/1983",
-        "resumo": "Base legal relevante para fiscalização federal da segurança privada, quando aplicável.",
+        "resumo": "Base legal relevante para fiscalização federal de segurança privada, conforme atribuições da Polícia Federal.",
         "url": "https://www.planalto.gov.br/ccivil_03/leis/l7102.htm"
       }
     ],
     "entendimentos": [
       {
-        "titulo": "Competência federal deve respeitar o art. 144 da Constituição",
+        "titulo": "Competência federal exige vínculo constitucional ou legal com a União",
         "data": "Base constitucional permanente",
-        "status": "Atualizado por conferência oficial",
-        "resumo": "A atuação da PF deve ser lida a partir da função de polícia judiciária da União e das competências expressas no art. 144.",
+        "status": "Fonte oficial de conferência",
+        "resumo": "A leitura segura da atuação da PF começa pelo art. 144: polícia judiciária da União, infrações contra interesses federais e atribuições expressas.",
         "fonte": "STF — Constituição anotada, art. 144",
         "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
+      },
+      {
+        "titulo": "Repercussão interestadual ou internacional não é cláusula aberta",
+        "data": "Lei nº 10.446/2002",
+        "status": "Critério de aplicação",
+        "resumo": "A federalização operacional pela PF depende das hipóteses legais e da necessidade de repressão uniforme; não basta o caso ser notório ou grave.",
+        "fonte": "Planalto — Lei nº 10.446/2002",
+        "url": "https://www.planalto.gov.br/ccivil_03/leis/2002/l10446.htm"
       }
     ],
-    "local": "Não se aplica; instituição federal.",
-    "atualizacao": "Revisado em 02/05/2026"
+    "local": "Competência federal; não depende de lei estadual ou municipal para sua função central.",
+    "atualizacao": "Revisado e ampliado em 02/05/2026"
   },
   "prf": {
     "rotulo": "Polícia Rodoviária Federal",
     "categoria": "Federal",
-    "abrangencia": "Nacional, nas rodovias e estradas federais, com patrulhamento ostensivo, segurança viária, fiscalização de trânsito e atuação operacional vinculada à malha rodoviária federal.",
+    "essencia": "Órgão federal de patrulhamento ostensivo das rodovias e estradas federais, com foco em segurança viária, fiscalização de trânsito, prevenção de acidentes e repressão imediata a ilícitos no ambiente rodoviário federal.",
+    "abrangencia": "Atuação nacional nas rodovias e estradas federais, incluindo fiscalização de trânsito, atendimento a acidentes, escolta, operações de segurança viária, combate a crimes em trânsito e cooperação em operações integradas quando houver pertinência legal e operacional.",
+    "naoConfundir": "A PRF não é polícia judiciária federal. Ela pode prender em flagrante e lavrar TCO em hipóteses admitidas, mas investigação criminal ampla e inquérito federal continuam vinculados à Polícia Federal.",
+    "pontoAtencao": "O limite prático é territorial e funcional: rodovia/estrada federal, trânsito, segurança viária e ocorrência encontrada no patrulhamento. Fora desse eixo, a atuação precisa de base normativa ou operação integrada formal.",
     "deveres": [
-      "Realizar patrulhamento ostensivo das rodovias federais.",
-      "Cumprir e fazer cumprir a legislação de trânsito no âmbito das rodovias e estradas federais.",
-      "Executar fiscalização, prevenção e repressão de ilícitos relacionados ao ambiente rodoviário federal.",
-      "Prestar apoio a operações integradas quando houver base legal, pertinência operacional e ato competente."
+      "Realizar patrulhamento ostensivo das rodovias e estradas federais, prevenindo acidentes, crimes e situações de risco.",
+      "Cumprir e fazer cumprir a legislação de trânsito no âmbito federal, com fiscalização, autuação e medidas administrativas cabíveis.",
+      "Atender acidentes, preservar locais de ocorrência, orientar usuários e apoiar a fluidez e segurança do tráfego.",
+      "Reprimir ilícitos encontrados no patrulhamento rodoviário, como tráfico de drogas, contrabando, descaminho, receptação, roubo de cargas e crimes ambientais em trânsito.",
+      "Apoiar operações integradas de segurança pública quando houver competência, ordem de serviço, convênio ou ato formal adequado."
     ],
     "poderes": [
-      "Fiscalização de trânsito, autuação, retenção/remoção quando prevista em lei e demais atos de autoridade de trânsito nas rodovias federais.",
-      "Abordagem, prisão em flagrante e atuação ostensiva em ocorrências encontradas no patrulhamento rodoviário federal.",
-      "Lavratura de termo circunstanciado em hipóteses admitidas pelo STF e por norma aplicável.",
-      "Cooperação operacional com outros órgãos de segurança pública sem perder o limite funcional de sua competência constitucional."
+      "Fiscalizar veículos, condutores e cargas, lavrar autos de infração, aplicar medidas administrativas de trânsito e acionar remoção, retenção ou recolhimento quando previsto em lei.",
+      "Realizar abordagem policial, busca pessoal/veicular quando houver fundada suspeita ou situação objetiva de fiscalização, e prender em flagrante.",
+      "Lavrar termo circunstanciado em infrações de menor potencial ofensivo nas hipóteses admitidas pelo STF e pelas normas aplicáveis.",
+      "Executar operações ostensivas, escoltas, controle de tráfego, interdições e apoio emergencial no âmbito da malha federal.",
+      "Compartilhar informações e atuar com PF, polícias estaduais, Receita, órgãos ambientais e demais instituições em ações integradas."
     ],
     "limites": [
-      "A competência constitucional central da PRF é o patrulhamento ostensivo das rodovias federais; investigação criminal ampla não é sua atribuição ordinária.",
-      "A atuação fora do eixo rodoviário federal exige base normativa, pertinência, operação integrada ou hipótese legal específica.",
-      "Medidas invasivas dependem dos mesmos controles legais e judiciais exigidos para qualquer órgão público."
+      "A atribuição constitucional central é patrulhamento ostensivo de rodovias federais; investigação criminal ampla não é sua função ordinária.",
+      "A lavratura de TCO não transforma a PRF em polícia judiciária nem autoriza condução de inquérito policial.",
+      "Busca, retenção, apreensão e interdição precisam de motivação, previsão legal e proporcionalidade.",
+      "Atuação fora de rodovias federais deve ser excepcional, vinculada a base legal, cooperação formal, continuidade da ocorrência ou situação de flagrante."
     ],
     "leis": [
       {
         "nome": "Constituição Federal, art. 144, § 2º",
         "resumo": "Define a PRF como órgão permanente, organizado e mantido pela União, destinado ao patrulhamento ostensivo das rodovias federais.",
-        "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
       },
       {
         "nome": "Decreto nº 1.655/1995",
-        "resumo": "Define competências da Polícia Rodoviária Federal.",
+        "resumo": "Define competências da Polícia Rodoviária Federal, incluindo patrulhamento, fiscalização, segurança viária e colaboração operacional.",
         "url": "https://www.planalto.gov.br/ccivil_03/decreto/d1655.htm"
       },
       {
         "nome": "Lei nº 9.503/1997 — Código de Trânsito Brasileiro",
-        "resumo": "Atribui competências de fiscalização e aplicação da legislação de trânsito à PRF no âmbito das rodovias e estradas federais.",
+        "resumo": "Base da fiscalização de trânsito, autuações e medidas administrativas aplicáveis nas rodovias e estradas federais.",
         "url": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm"
       },
       {
         "nome": "Lei nº 9.654/1998",
         "resumo": "Cria e estrutura a carreira de Policial Rodoviário Federal.",
         "url": "https://www.planalto.gov.br/ccivil_03/Leis/l9654.htm"
+      },
+      {
+        "nome": "Lei nº 9.099/1995",
+        "resumo": "Disciplina os juizados especiais criminais e o termo circunstanciado para infrações de menor potencial ofensivo.",
+        "url": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
       }
     ],
     "entendimentos": [
@@ -108,103 +138,55 @@ const PODERES_DEVERES_BASE = {
         "titulo": "PRF pode lavrar termo circunstanciado de ocorrência",
         "data": "STF, 2023",
         "status": "Entendimento oficial localizado",
-        "resumo": "O STF decidiu que a lavratura de TCO para infrações de menor potencial ofensivo não é atribuição exclusiva da polícia judiciária, admitindo a atuação da PRF nas hipóteses legais.",
+        "resumo": "O STF admitiu que a lavratura de TCO pela PRF não configura investigação criminal nem usurpação da polícia judiciária, desde que respeitadas as hipóteses legais.",
         "fonte": "STF — notícia institucional sobre TCO pela PRF",
         "url": "https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=503028&ori=1"
+      },
+      {
+        "titulo": "TCO tem natureza distinta de inquérito policial",
+        "data": "STF, Informativo 1083",
+        "status": "Ponto de atenção",
+        "resumo": "A distinção entre TCO e investigação formal é essencial para evitar leitura exagerada dos poderes da PRF.",
+        "fonte": "STF — Informativo 1083",
+        "url": "https://www.stf.jus.br/arquivo/informativo/documento/informativo1083.htm"
       }
     ],
-    "local": "Não se aplica; instituição federal.",
-    "atualizacao": "Revisado em 02/05/2026"
+    "local": "Competência federal vinculada às rodovias e estradas federais.",
+    "atualizacao": "Revisado e ampliado em 02/05/2026"
   },
   "pm": {
     "rotulo": "Polícia Militar",
     "categoria": "Estadual/Distrital",
-    "abrangencia": "Unidade federativa correspondente, com polícia ostensiva e preservação da ordem pública, nos limites da Constituição Federal, da Lei Orgânica Nacional e da legislação estadual ou distrital.",
+    "essencia": "Força estadual/distrital de polícia ostensiva e preservação da ordem pública. Sua missão principal é prevenir, conter e responder imediatamente a fatos que afetem a segurança coletiva.",
+    "abrangencia": "Atuação no território do Estado ou do Distrito Federal, por meio de policiamento ostensivo fardado, radiopatrulhamento, policiamento comunitário, policiamento de trânsito quando previsto, controle de distúrbios, operações de preservação da ordem pública e atendimento emergencial.",
+    "naoConfundir": "A PM não substitui a Polícia Civil na investigação criminal comum. Ela atua ostensivamente, prende em flagrante e preserva a ordem; a apuração formal de crimes comuns, como regra, segue para a polícia judiciária.",
+    "pontoAtencao": "O ponto mais sensível é a abordagem: deve haver contexto objetivo, fundada suspeita, legalidade, proporcionalidade e registro adequado. Poder ostensivo forte exige controle forte.",
     "deveres": [
-      "Realizar policiamento ostensivo preventivo e repressivo imediato para preservação da ordem pública.",
-      "Atender ocorrências emergenciais, proteger pessoas e patrimônio e agir diante de flagrante delito.",
-      "Executar policiamento de trânsito urbano/rodoviário estadual quando previsto em lei, convênio ou estrutura local.",
-      "Cumprir ordens legais, preservar direitos fundamentais e atuar com uso progressivo, proporcional e necessário da força."
+      "Realizar policiamento ostensivo preventivo, com presença fardada, patrulhamento e ações de dissuasão de delitos.",
+      "Preservar a ordem pública, atuando em ocorrências, tumultos, crises, eventos, emergências e situações de risco coletivo.",
+      "Atender chamadas emergenciais, proteger vítimas, preservar locais de crime e encaminhar ocorrências à autoridade competente.",
+      "Prender em flagrante delito e adotar providências imediatas para cessar agressão, crime, ameaça ou perturbação da ordem.",
+      "Executar policiamento de trânsito, ambiental, rodoviário estadual, escolar ou especializado quando previsto na estrutura local.",
+      "Atuar com legalidade, hierarquia, disciplina, direitos humanos, uso diferenciado/progressivo da força e prestação de contas."
     ],
     "poderes": [
-      "Abordagem policial quando houver fundada suspeita ou contexto operacional legítimo.",
-      "Prisão em flagrante e condução à autoridade competente.",
-      "Lavratura de TCO em unidades federativas e hipóteses admitidas por norma local e entendimento do STF.",
-      "Emprego ostensivo fardado, operações de preservação da ordem pública e apoio a outras autoridades nos limites legais."
+      "Realizar abordagem, busca pessoal e veicular quando houver fundada suspeita ou contexto operacional legítimo.",
+      "Efetuar prisão em flagrante, conduzir envolvidos e apresentar ocorrência à autoridade de polícia judiciária ou órgão competente.",
+      "Empregar força, algemas e instrumentos de menor potencial ofensivo quando necessário, proporcional e justificado.",
+      "Lavrar TCO em unidades federativas e hipóteses admitidas por norma local e entendimento do STF, sem transformar a PM em polícia judiciária.",
+      "Realizar operações ostensivas, barreiras, bloqueios, patrulhamento tático e policiamento especializado dentro da competência estadual/distrital."
     ],
     "limites": [
-      "Não exerce, como regra, polícia judiciária ou investigação criminal típica da Polícia Civil, salvo atos de polícia militar judiciária e hipóteses legalmente autorizadas.",
-      "A busca pessoal exige fundada suspeita e respeito aos direitos fundamentais.",
-      "Atos administrativos locais dependem da lei estadual/distrital e de regulamentos internos."
+      "Não conduz inquérito policial comum nem exerce investigação criminal típica da Polícia Civil, salvo polícia judiciária militar e hipóteses legalmente autorizadas.",
+      "Busca pessoal não pode ser genérica, discriminatória ou baseada apenas em intuição; exige elementos objetivos do caso concreto.",
+      "Uso da força deve observar necessidade, proporcionalidade, legalidade, técnica e registro posterior.",
+      "Atribuições administrativas específicas dependem de lei estadual/distrital, regulamento, convênio ou ordem legal competente."
     ],
     "leis": [
       {
         "nome": "Constituição Federal, art. 144, § 5º",
         "resumo": "Atribui às Polícias Militares a polícia ostensiva e a preservação da ordem pública.",
-        "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
-      },
-      {
-        "nome": "Lei nº 14.751/2023",
-        "resumo": "Institui a Lei Orgânica Nacional das Polícias Militares e dos Corpos de Bombeiros Militares dos Estados, do Distrito Federal e dos Territórios.",
-        "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14751.htm"
-      },
-      {
-        "nome": "Decreto-Lei nº 667/1969",
-        "resumo": "Norma histórica de reorganização das Polícias Militares e Corpos de Bombeiros Militares, naquilo que permaneça compatível com a legislação posterior.",
-        "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del0667.htm"
-      },
-      {
-        "nome": "Lei estadual/distrital específica",
-        "resumo": "Dados em breve",
-        "url": ""
-      }
-    ],
-    "entendimentos": [
-      {
-        "titulo": "Possibilidade de lavratura de TCO por Polícia Militar em hipóteses admitidas",
-        "data": "STF, 2022",
-        "status": "Entendimento oficial localizado",
-        "resumo": "O STF manteve a possibilidade de PM lavrar termo circunstanciado, distinguindo TCO de inquérito policial. A aplicação depende da norma local e do caso concreto.",
-        "fonte": "STF — PM-MG e termo circunstanciado",
-        "url": "https://noticias.stf.jus.br/postsnoticias/supremo-mantem-possibilidade-de-pm-mg-lavrar-termo-circunstanciado/"
-      },
-      {
-        "titulo": "Leitura constitucional do art. 144",
-        "data": "Base permanente",
-        "status": "Fonte oficial de conferência",
-        "resumo": "A atribuição central da PM permanece vinculada à polícia ostensiva e preservação da ordem pública.",
-        "fonte": "STF — Constituição anotada, art. 144",
         "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
-      }
-    ],
-    "local": "Dados em breve",
-    "atualizacao": "Revisado em 02/05/2026"
-  },
-  "bm": {
-    "rotulo": "Corpo de Bombeiros Militar",
-    "categoria": "Estadual/Distrital",
-    "abrangencia": "Unidade federativa correspondente, com execução de defesa civil, prevenção e combate a incêndios, busca e salvamento, atendimento de emergências e fiscalização técnica quando prevista na legislação local.",
-    "deveres": [
-      "Executar atividades de defesa civil.",
-      "Prevenir e combater incêndios, realizar busca, salvamento e atendimento a emergências.",
-      "Fiscalizar segurança contra incêndio e pânico quando a lei estadual/distrital atribuir esse poder ao Corpo de Bombeiros Militar.",
-      "Atuar em desastres, calamidades, emergências ambientais e ações de proteção da vida."
-    ],
-    "poderes": [
-      "Vistoria, análise técnica, emissão de auto/certificado/licença de segurança contra incêndio quando previsto em norma local.",
-      "Interdição, exigência de adequação ou medida preventiva nos limites da lei estadual/distrital e do devido processo administrativo.",
-      "Atuação operacional de emergência com prioridade de proteção à vida e redução de danos."
-    ],
-    "limites": [
-      "O poder de fiscalização técnica depende de lei e regulamento local; não deve ser presumido sem base normativa.",
-      "A atuação dos bombeiros voluntários/privados não pode substituir competências públicas reservadas quando houver invasão da competência constitucional.",
-      "Atos restritivos devem observar legalidade, motivação, proporcionalidade e contraditório quando cabível."
-    ],
-    "leis": [
-      {
-        "nome": "Constituição Federal, art. 144, § 5º",
-        "resumo": "Atribui aos Corpos de Bombeiros Militares, além das atribuições definidas em lei, a execução de atividades de defesa civil.",
-        "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
       },
       {
         "nome": "Lei nº 14.751/2023",
@@ -212,73 +194,166 @@ const PODERES_DEVERES_BASE = {
         "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14751.htm"
       },
       {
-        "nome": "Lei estadual/distrital de segurança contra incêndio e pânico",
-        "resumo": "Dados em breve",
-        "url": ""
+        "nome": "Decreto-Lei nº 667/1969",
+        "resumo": "Norma histórica de organização das Polícias Militares e Corpos de Bombeiros Militares, aplicada no que permanecer compatível com a legislação posterior.",
+        "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del0667.htm"
+      },
+      {
+        "nome": "Lei nº 9.099/1995",
+        "resumo": "Base legal do termo circunstanciado para infrações de menor potencial ofensivo, conforme aplicação definida por normas e entendimentos locais.",
+        "url": "https://www.planalto.gov.br/ccivil_03/leis/l9099.htm"
+      },
+      {
+        "nome": "Código de Processo Penal",
+        "resumo": "Base geral para prisão em flagrante, preservação da prova e encaminhamento à autoridade competente.",
+        "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689.htm"
+      }
+    ],
+    "entendimentos": [
+      {
+        "titulo": "Possibilidade de lavratura de TCO por Polícia Militar",
+        "data": "STF, 2022",
+        "status": "Entendimento oficial localizado",
+        "resumo": "O STF manteve a possibilidade de PM lavrar termo circunstanciado, distinguindo TCO de inquérito policial. A aplicação depende da norma local e do caso concreto.",
+        "fonte": "STF — PM-MG e termo circunstanciado",
+        "url": "https://noticias.stf.jus.br/postsnoticias/supremo-mantem-possibilidade-de-pm-mg-lavrar-termo-circunstanciado/"
+      },
+      {
+        "titulo": "Atribuição central permanece ostensiva",
+        "data": "Base constitucional permanente",
+        "status": "Fonte oficial de conferência",
+        "resumo": "O núcleo constitucional da Polícia Militar continua sendo polícia ostensiva e preservação da ordem pública.",
+        "fonte": "STF — Constituição anotada, art. 144",
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
+      }
+    ],
+    "local": "Varia conforme lei estadual ou distrital, regulamentos da corporação e normas operacionais locais.",
+    "atualizacao": "Revisado e ampliado em 02/05/2026"
+  },
+  "bm": {
+    "rotulo": "Corpo de Bombeiros Militar",
+    "categoria": "Estadual/Distrital",
+    "essencia": "Instituição militar estadual/distrital voltada à proteção da vida, do patrimônio e do meio ambiente, com defesa civil, prevenção e combate a incêndios, busca, salvamento, resgate e fiscalização técnica quando prevista em lei local.",
+    "abrangencia": "Atuação no território da unidade federativa, em incêndios, salvamentos, emergências pré-hospitalares onde houver atribuição, desastres, defesa civil, perícias/relatórios técnicos de incêndio quando previstos, vistorias e segurança contra incêndio e pânico conforme legislação estadual ou distrital.",
+    "naoConfundir": "O Corpo de Bombeiros Militar não é órgão de policiamento ostensivo geral nem polícia judiciária. Seu poder restritivo costuma aparecer em emergência, defesa civil e fiscalização técnica de segurança contra incêndio, sempre conforme lei local.",
+    "pontoAtencao": "A parte mais variável é a fiscalização: AVCB/CLCB, vistoria, interdição, multa, exigências técnicas e licenças dependem da lei estadual/distrital e das instruções técnicas da corporação.",
+    "deveres": [
+      "Executar atividades de defesa civil, prevenção, preparação, resposta e apoio à recuperação em desastres e calamidades.",
+      "Prevenir e combater incêndios urbanos, florestais, industriais e especiais, conforme estrutura e normas locais.",
+      "Realizar busca, salvamento, resgate e atendimento a emergências com prioridade absoluta à proteção da vida.",
+      "Fiscalizar segurança contra incêndio e pânico, analisar projetos, vistoriar edificações e emitir certificados quando a legislação local atribuir essa competência.",
+      "Atuar em emergências ambientais, produtos perigosos, desabamentos, enchentes, afogamentos, acidentes e eventos críticos.",
+      "Orientar a população, promover educação preventiva e apoiar planos de contingência e evacuação."
+    ],
+    "poderes": [
+      "Ingressar e atuar em áreas de risco em situação emergencial para salvar vidas, controlar danos e remover pessoas expostas a perigo iminente.",
+      "Realizar vistorias, exigir adequações, emitir autos, relatórios, licenças, certificados ou pareceres técnicos conforme lei local.",
+      "Interditar, embargar, restringir uso ou recomendar evacuação quando houver risco grave e previsão normativa, observando motivação e devido processo quando cabível.",
+      "Coordenar ou integrar resposta a desastres com defesa civil, saúde, polícia, órgãos ambientais, concessionárias e autoridades municipais.",
+      "Aplicar medidas administrativas de segurança contra incêndio e pânico quando houver competência legal expressa."
+    ],
+    "limites": [
+      "Fiscalização, multa, interdição e emissão de certificados dependem de lei estadual/distrital e regulamentos técnicos locais.",
+      "Atos de restrição fora da emergência devem ser motivados, proporcionais e sujeitos a recurso ou revisão administrativa quando a norma prever.",
+      "Bombeiros civis, voluntários ou brigadas privadas podem complementar prevenção e resposta, mas não substituem competências públicas reservadas ao CBM.",
+      "O CBM não conduz investigação criminal comum; eventual apuração técnica de incêndio não se confunde com inquérito policial."
+    ],
+    "leis": [
+      {
+        "nome": "Constituição Federal, art. 144, § 5º",
+        "resumo": "Atribui aos Corpos de Bombeiros Militares, além das atribuições definidas em lei, a execução de atividades de defesa civil.",
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
+      },
+      {
+        "nome": "Lei nº 14.751/2023",
+        "resumo": "Institui normas gerais para Polícias Militares e Corpos de Bombeiros Militares dos Estados, do Distrito Federal e dos Territórios.",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14751.htm"
+      },
+      {
+        "nome": "Decreto-Lei nº 667/1969",
+        "resumo": "Norma histórica de organização das PMs e CBMs, aplicável no que permanecer compatível com a ordem constitucional e leis posteriores.",
+        "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del0667.htm"
+      },
+      {
+        "nome": "Lei nº 12.608/2012 — Política Nacional de Proteção e Defesa Civil",
+        "resumo": "Base nacional da proteção e defesa civil, relevante para atuação integrada em desastres.",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2012/lei/l12608.htm"
       }
     ],
     "entendimentos": [
       {
         "titulo": "Competência pública dos bombeiros militares e limites a estruturas voluntárias/privadas",
-        "data": "STF, 2025",
+        "data": "STF, Informativo 1171",
         "status": "Entendimento oficial localizado",
-        "resumo": "O STF analisou normas sobre atribuições de bombeiros voluntários e reforçou a necessidade de respeito às competências constitucionais e legais dos Corpos de Bombeiros Militares.",
+        "resumo": "O STF analisou normas sobre bombeiros voluntários e reforçou que atividades de defesa civil e competências constitucionais dos CBMs devem ser respeitadas.",
         "fonte": "STF — Informativo 1171",
         "url": "https://www.stf.jus.br/arquivo/informativo/documento/informativo1171.htm"
       },
       {
-        "titulo": "Normas gerais de PM/CBM são matéria de competência da União",
-        "data": "STF, base constitucional",
+        "titulo": "Defesa civil é núcleo constitucional dos CBMs",
+        "data": "Base constitucional permanente",
         "status": "Fonte oficial de conferência",
-        "resumo": "A Constituição atribui à União competência para normas gerais de organização, efetivos, material bélico, garantias, convocação e mobilização das polícias militares e bombeiros militares.",
+        "resumo": "A Constituição expressamente vincula os Corpos de Bombeiros Militares à execução de atividades de defesa civil, além das atribuições definidas em lei.",
         "fonte": "STF — Constituição anotada, art. 144",
         "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
       }
     ],
-    "local": "Dados em breve",
-    "atualizacao": "Revisado em 02/05/2026"
+    "local": "Varia conforme lei estadual ou distrital de segurança contra incêndio, defesa civil e organização do CBM.",
+    "atualizacao": "Revisado e ampliado em 02/05/2026"
   },
   "pc": {
     "rotulo": "Polícia Civil",
     "categoria": "Estadual/Distrital",
-    "abrangencia": "Unidade federativa correspondente, com funções de polícia judiciária estadual e apuração de infrações penais, exceto as militares, nos termos da Constituição e da Lei Orgânica Nacional.",
+    "essencia": "Polícia judiciária dos Estados e do Distrito Federal: apura infrações penais comuns, formaliza a investigação e encaminha elementos ao Ministério Público e ao Poder Judiciário.",
+    "abrangencia": "Atuação no território estadual ou distrital, em delegacias territoriais e especializadas, com registro de ocorrências, investigação, inquérito policial, cumprimento de mandados, identificação, inteligência policial, atendimento a vítimas e articulação com perícia oficial.",
+    "naoConfundir": "A Polícia Civil não faz, como missão principal, policiamento ostensivo preventivo fardado. Também não apura crimes militares, que seguem regras e órgãos próprios.",
+    "pontoAtencao": "A PC tem poder investigativo forte, mas atos invasivos dependem de controle judicial quando exigido. O inquérito não é processo: é procedimento administrativo preparatório da ação penal.",
     "deveres": [
-      "Apurar infrações penais de competência estadual, exceto as militares.",
-      "Exercer funções de polícia judiciária, formalizando inquéritos, termos, procedimentos e representações cabíveis.",
-      "Coletar provas, cumprir mandados e realizar diligências investigativas com respeito à legalidade e ao controle judicial quando exigido.",
-      "Atender vítimas, registrar ocorrências e articular perícias, inteligência e unidades especializadas."
+      "Apurar infrações penais de competência estadual ou distrital, exceto as militares.",
+      "Exercer funções de polícia judiciária, instaurando e conduzindo inquéritos e outros procedimentos previstos em lei.",
+      "Registrar ocorrências, atender vítimas, requisitar exames periciais, colher depoimentos e preservar elementos de prova.",
+      "Cumprir mandados judiciais, localizar autores, recuperar bens e produzir relatórios investigativos.",
+      "Atuar por unidades especializadas em crimes contra a vida, patrimônio, vulneráveis, entorpecentes, cibernéticos, corrupção, meio ambiente e outras áreas conforme organização local.",
+      "Garantir legalidade, cadeia de custódia, proteção de vítimas/testemunhas e respeito aos direitos fundamentais durante a investigação."
     ],
     "poderes": [
-      "Instauração e condução de inquérito policial e outros procedimentos investigativos previstos em lei.",
-      "Representação por prisão cautelar, busca e apreensão, quebras de sigilo e demais medidas sujeitas a controle judicial.",
-      "Cumprimento de mandados judiciais, prisão em flagrante e atos de polícia judiciária.",
-      "Coordenação de investigação criminal estadual em conjunto com perícia oficial e Ministério Público nos limites constitucionais."
+      "Instaurar inquérito policial e procedimentos investigativos, ouvir pessoas, realizar diligências e requisitar perícias.",
+      "Representar por prisão temporária/preventiva, busca e apreensão, interceptação, quebras de sigilo e outras medidas cautelares perante o Judiciário.",
+      "Cumprir mandados, efetuar prisão em flagrante, proceder a reconhecimento, apreensão de objetos e formalização de autos.",
+      "Coordenar a investigação criminal estadual, sem prejuízo do controle externo do Ministério Público e do controle judicial de medidas restritivas.",
+      "Gerir unidades de polícia judiciária, delegacias especializadas e sistemas de registro/informação conforme lei orgânica e normas estaduais."
     ],
     "limites": [
-      "Não apura crimes militares, que seguem rito e atribuições próprias.",
-      "Medidas invasivas dependem de autorização judicial quando exigida.",
-      "A investigação policial não substitui a titularidade da ação penal pública pelo Ministério Público."
+      "Não apura crimes militares, salvo hipóteses de conexão ou atribuição específica definidas pela legislação e pela autoridade competente.",
+      "Não substitui o Ministério Público na titularidade da ação penal pública.",
+      "Medidas que invadem domicílio, sigilo, comunicações ou liberdade dependem de base legal e autorização judicial quando exigida.",
+      "A investigação deve respeitar contraditório diferido quando aplicável, cadeia de custódia, controle externo e direitos de investigados e vítimas."
     ],
     "leis": [
       {
         "nome": "Constituição Federal, art. 144, § 4º",
         "resumo": "Atribui às Polícias Civis funções de polícia judiciária e apuração de infrações penais, exceto as militares.",
-        "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
       },
       {
         "nome": "Lei nº 14.735/2023",
-        "resumo": "Institui a Lei Orgânica Nacional das Polícias Civis e dispõe sobre normas gerais de funcionamento.",
+        "resumo": "Institui a Lei Orgânica Nacional das Polícias Civis e normas gerais de funcionamento.",
         "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14735.htm"
       },
       {
+        "nome": "Lei nº 12.830/2013",
+        "resumo": "Dispõe sobre a investigação criminal conduzida pelo delegado de polícia.",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12830.htm"
+      },
+      {
         "nome": "Código de Processo Penal",
-        "resumo": "Base processual geral para investigação criminal, inquérito policial, prisão em flagrante e medidas relacionadas.",
+        "resumo": "Base processual de inquérito, flagrante, provas, medidas cautelares e atos de polícia judiciária.",
         "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689.htm"
       },
       {
-        "nome": "Lei estadual/distrital específica",
-        "resumo": "Dados em breve",
-        "url": ""
+        "nome": "Lei nº 13.964/2019 — Pacote Anticrime",
+        "resumo": "Alterou regras processuais e reforçou temas como cadeia de custódia, medidas cautelares e persecução penal.",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2019/lei/l13964.htm"
       }
     ],
     "entendimentos": [
@@ -289,31 +364,46 @@ const PODERES_DEVERES_BASE = {
         "resumo": "O STF reafirmou que o texto constitucional atribui às Polícias Civis as funções de polícia judiciária e apuração de infrações penais, exceto as militares.",
         "fonte": "STF — Informativo 1160",
         "url": "https://www.stf.jus.br/arquivo/informativo/documento/informativo1160.htm"
+      },
+      {
+        "titulo": "Subordinação institucional e desenho constitucional",
+        "data": "STF, jurisprudência constitucional",
+        "status": "Ponto de atenção",
+        "resumo": "A autonomia administrativa da Polícia Civil encontra limites no modelo constitucional estadual, inclusive na chefia do Executivo e no controle externo da atividade policial.",
+        "fonte": "STF — Constituição anotada, art. 144",
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
       }
     ],
-    "local": "Dados em breve",
-    "atualizacao": "Revisado em 02/05/2026"
+    "local": "Varia conforme lei orgânica estadual/distrital, estrutura de delegacias e normas da unidade federativa.",
+    "atualizacao": "Revisado e ampliado em 02/05/2026"
   },
   "pp": {
     "rotulo": "Polícia Penal",
     "categoria": "Federal/Estadual/Distrital, conforme o ente",
-    "abrangencia": "Sistema prisional do respectivo ente federativo, com segurança dos estabelecimentos penais e atividades vinculadas à execução penal, escolta, custódia e proteção da ordem prisional conforme lei local.",
+    "essencia": "Órgão de segurança pública voltado à segurança dos estabelecimentos penais e à custódia, vigilância, escolta e proteção da ordem prisional, conforme a Constituição, a Lei de Execução Penal e a lei do ente federativo.",
+    "abrangencia": "Atuação no sistema prisional federal, estadual ou distrital correspondente, abrangendo segurança interna e externa de unidades penais, movimentação de custodiados, escoltas, revistas, controle de acesso, prevenção de fugas, gerenciamento de crises e apoio à execução penal.",
+    "naoConfundir": "Polícia Penal não é Polícia Civil, Polícia Federal nem Polícia Militar. Ela não assume investigação criminal geral nem policiamento ostensivo urbano; seu eixo é a segurança prisional.",
+    "pontoAtencao": "Como a EC 104 criou a Polícia Penal, muitos detalhes ainda dependem de lei federal, estadual ou distrital: carreira, porte, corregedoria, escolta externa, grupos especializados e integração operacional.",
     "deveres": [
-      "Garantir a segurança dos estabelecimentos penais.",
-      "Realizar custódia, vigilância, escolta e movimentação de pessoas privadas de liberdade conforme lei e regulamento.",
-      "Preservar a integridade física de presos, servidores, visitantes e terceiros no ambiente prisional.",
-      "Apoiar a execução penal nos limites da Lei de Execução Penal e da legislação do ente federativo."
+      "Garantir a segurança dos estabelecimentos penais e preservar a ordem interna e externa das unidades prisionais.",
+      "Realizar custódia, vigilância, escolta, movimentação e recambiamento de pessoas privadas de liberdade conforme normas do ente federativo.",
+      "Controlar acesso, realizar revistas, fiscalizar objetos, prevenir fugas, motins, rebeliões e entrada de materiais ilícitos.",
+      "Preservar a integridade física de presos, servidores, visitantes, prestadores de serviço e terceiros no ambiente prisional.",
+      "Apoiar a execução penal, a disciplina prisional e o cumprimento de decisões judiciais no limite das atribuições administrativas.",
+      "Atuar de forma integrada com demais órgãos de segurança quando a ocorrência tiver relação com o sistema prisional."
     ],
     "poderes": [
-      "Controle de acesso, revista, vigilância interna/externa e procedimentos de segurança penitenciária nos limites legais.",
-      "Uso legal, necessário e proporcional da força em situações de risco, fuga, motim ou proteção de vidas.",
-      "Escolta e recaptura quando previstas nas normas locais e atos administrativos.",
-      "Atuação integrada com órgãos de segurança pública em ocorrências relacionadas ao sistema prisional."
+      "Realizar revista pessoal, inspeção de celas, controle de acesso, rondas, vigilância armada e procedimentos de segurança penitenciária nos limites legais.",
+      "Empregar força necessária e proporcional para conter fuga, rebelião, motim, agressão, entrada ilícita ou risco concreto à vida.",
+      "Executar escoltas, transferências e recapturas quando previstas em normas locais e atos administrativos competentes.",
+      "Apreender objetos ilícitos, comunicar crime ou falta disciplinar e preservar elementos para autoridade competente.",
+      "Integrar inteligência penitenciária e operações de segurança prisional, respeitada a competência dos demais órgãos de investigação."
     ],
     "limites": [
-      "A Polícia Penal não substitui, como regra, Polícia Civil/PF na investigação criminal geral nem Polícia Militar na polícia ostensiva geral.",
-      "A extensão de porte, escolta, atuação externa e grupos especializados depende de lei e regulamento do ente federativo.",
-      "Dados em breve"
+      "Não conduz investigação criminal geral nem substitui a polícia judiciária em crimes comuns fora do sistema prisional.",
+      "Atuação externa, grupos táticos, porte, escolta e recaptura dependem da lei e dos regulamentos do ente federativo.",
+      "Revistas e uso da força devem observar legalidade, dignidade humana, proporcionalidade, registros e protocolos institucionais.",
+      "A disciplina prisional não autoriza pena informal, tratamento degradante ou restrição sem base normativa e controle cabível."
     ],
     "leis": [
       {
@@ -323,68 +413,78 @@ const PODERES_DEVERES_BASE = {
       },
       {
         "nome": "Constituição Federal, art. 144",
-        "resumo": "Inclui a Polícia Penal no sistema de segurança pública, com vinculação à segurança dos estabelecimentos penais.",
-        "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+        "resumo": "Inclui a Polícia Penal no sistema de segurança pública e vincula sua atuação à segurança dos estabelecimentos penais.",
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
       },
       {
         "nome": "Lei nº 7.210/1984 — Lei de Execução Penal",
-        "resumo": "Regula a execução penal e serve de base para rotinas, deveres e direitos no sistema prisional.",
+        "resumo": "Regula a execução penal, disciplina prisional, direitos e deveres de presos e funcionamento de estabelecimentos penais.",
         "url": "https://www.planalto.gov.br/ccivil_03/leis/l7210.htm"
       },
       {
-        "nome": "Lei orgânica nacional específica da Polícia Penal",
-        "resumo": "Dados em breve",
-        "url": ""
-      },
-      {
-        "nome": "Lei estadual/distrital/federal específica da carreira",
-        "resumo": "Dados em breve",
-        "url": ""
+        "nome": "Lei nº 13.675/2018 — SUSP",
+        "resumo": "Organiza o Sistema Único de Segurança Pública e a Política Nacional de Segurança Pública e Defesa Social.",
+        "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13675.htm"
       }
     ],
     "entendimentos": [
       {
-        "titulo": "Implementação da Polícia Penal e segurança pública prisional",
-        "data": "STF, 2026",
+        "titulo": "Implementação normativa e administrativa da Polícia Penal",
+        "data": "STF, Informativo 1208, 2026",
         "status": "Entendimento oficial localizado",
-        "resumo": "O STF registrou providências concretas de implementação da Polícia Penal e tratou o tema dentro da arquitetura constitucional da segurança pública e do sistema prisional.",
+        "resumo": "O STF tratou da implementação da Polícia Penal no âmbito estadual e registrou a análise da EC nº 104/2019 dentro da arquitetura constitucional da segurança pública.",
         "fonte": "STF — Informativo 1208",
         "url": "https://www.stf.jus.br/arquivo/informativo/documento/informativo1208.htm"
+      },
+      {
+        "titulo": "Competência central é a segurança dos estabelecimentos penais",
+        "data": "Base constitucional permanente",
+        "status": "Ponto de atenção",
+        "resumo": "A leitura segura da Polícia Penal deve partir do vínculo com estabelecimentos penais, não de uma competência policial geral.",
+        "fonte": "STF — Constituição anotada, art. 144",
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
       }
     ],
-    "local": "Dados em breve",
-    "atualizacao": "Revisado em 02/05/2026"
+    "local": "Varia conforme lei federal, estadual ou distrital de organização da Polícia Penal e normas do sistema prisional.",
+    "atualizacao": "Revisado e ampliado em 02/05/2026"
   },
   "gm": {
     "rotulo": "Guarda Municipal",
     "categoria": "Municipal",
-    "abrangencia": "Município que tenha criado guarda municipal por lei local, com proteção de bens, serviços e instalações municipais e ações de segurança urbana, preventiva, comunitária e de cooperação, nos limites da Constituição, do Estatuto Geral das Guardas Municipais e da lei municipal.",
+    "essencia": "Instituição municipal de segurança urbana, preventiva, comunitária e patrimonial, voltada à proteção de bens, serviços, instalações e logradouros municipais, com atuação integrada no sistema de segurança pública.",
+    "abrangencia": "Atuação no território do município que criou a guarda por lei local, incluindo proteção de escolas, praças, prédios e serviços municipais, patrulhamento preventivo, segurança urbana comunitária, apoio à defesa civil, fiscalização administrativa municipal e cooperação com outros órgãos.",
+    "naoConfundir": "A Guarda Municipal não tem poder de investigação criminal. O STF reconhece ações de segurança urbana, inclusive policiamento ostensivo e comunitário, mas isso não a transforma em Polícia Civil, Militar ou Federal.",
+    "pontoAtencao": "O alcance real muda muito de município para município: lei local, efetivo, formação, porte, corregedoria, ouvidoria, convênios e protocolos determinam o que a guarda pode fazer na prática.",
     "deveres": [
-      "Proteger bens, serviços, logradouros e instalações municipais.",
-      "Atuar de forma preventiva, comunitária e integrada para proteção da população no espaço urbano municipal.",
-      "Cooperar com órgãos de segurança pública da União, dos Estados e do Distrito Federal quando houver necessidade e formalização adequada.",
-      "Apoiar proteção escolar, defesa civil municipal, ordenamento urbano e atendimento a ocorrências locais conforme lei municipal."
+      "Proteger bens, serviços, instalações e logradouros públicos municipais, conforme Constituição e lei local.",
+      "Atuar preventivamente na segurança urbana, com presença comunitária, patrulhamento municipal e mediação de conflitos quando cabível.",
+      "Apoiar escolas, unidades de saúde, praças, eventos públicos, fiscalização municipal, defesa civil e proteção de servidores e usuários de serviços municipais.",
+      "Cooperar com órgãos de segurança pública da União, dos Estados e do Distrito Federal por meio de integração, convênios, protocolos ou acionamento formal.",
+      "Atender situações de flagrante delito, preservar local e encaminhar envolvidos à autoridade competente.",
+      "Observar uso proporcional da força, formação, controle interno, ouvidoria e demais exigências do Estatuto Geral das Guardas Municipais."
     ],
     "poderes": [
-      "Policiamento ostensivo e comunitário no âmbito municipal, conforme entendimento do STF e sem poder de investigação criminal.",
-      "Abordagem e atuação preventiva quando houver situação concreta, legalidade e respeito a direitos fundamentais.",
-      "Prisão em flagrante, como qualquer do povo e agente público diante de flagrante delito, com encaminhamento à autoridade competente.",
-      "Poder de polícia administrativa municipal quando a lei local atribuir fiscalização específica."
+      "Realizar patrulhamento preventivo, ostensivo e comunitário no âmbito municipal, conforme lei local e entendimento do STF.",
+      "Efetuar abordagem quando houver situação concreta, fundada suspeita ou contexto operacional legítimo, com respeito a direitos fundamentais.",
+      "Prender em flagrante e apresentar imediatamente à autoridade policial competente, como qualquer agente público diante de flagrante delito.",
+      "Exercer poder de polícia administrativa municipal quando a lei local atribuir fiscalização específica, como posturas, trânsito municipal, patrimônio, comércio ou ordenamento urbano.",
+      "Atuar em cooperação com polícias e órgãos públicos, preservando sua identidade municipal e seus limites legais."
     ],
     "limites": [
-      "Não possui poder de investigação criminal típico de Polícia Civil ou Polícia Federal.",
-      "A atuação deve respeitar a competência municipal e não pode substituir as polícias estaduais/federais.",
-      "Criação, porte, corregedoria, ouvidoria, formação e atribuições dependem da Lei nº 13.022/2014 e da lei municipal."
+      "Não conduz inquérito policial nem investigação criminal típica de Polícia Civil ou Polícia Federal.",
+      "Não substitui a Polícia Militar no policiamento estadual geral nem pode invadir competências estaduais/federais sem base legal ou cooperação formal.",
+      "Porte de arma, estrutura, corregedoria, ouvidoria, formação e atribuições exigem observância da Lei nº 13.022/2014 e da legislação municipal.",
+      "Abordagens e revistas devem ter justificativa objetiva; atuação meramente genérica, abusiva ou discriminatória compromete a legalidade do ato."
     ],
     "leis": [
       {
         "nome": "Constituição Federal, art. 144, § 8º",
         "resumo": "Autoriza os municípios a constituírem guardas municipais destinadas à proteção de seus bens, serviços e instalações, conforme lei.",
-        "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+        "url": "https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=144&abrirBase=CF"
       },
       {
         "nome": "Lei nº 13.022/2014 — Estatuto Geral das Guardas Municipais",
-        "resumo": "Define normas gerais, princípios mínimos de atuação, competências, controle interno/externo e estrutura das guardas municipais.",
+        "resumo": "Define normas gerais, princípios, competências, controle interno/externo e estrutura mínima das guardas municipais.",
         "url": "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2014/lei/l13022.htm"
       },
       {
@@ -398,9 +498,9 @@ const PODERES_DEVERES_BASE = {
         "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/decreto/d11841.htm"
       },
       {
-        "nome": "Lei municipal de criação/organização da guarda",
-        "resumo": "Dados em breve",
-        "url": ""
+        "nome": "Código de Processo Penal",
+        "resumo": "Base geral para prisão em flagrante e encaminhamento à autoridade competente.",
+        "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689.htm"
       }
     ],
     "entendimentos": [
@@ -408,21 +508,21 @@ const PODERES_DEVERES_BASE = {
         "titulo": "Guardas municipais integram o sistema de segurança pública",
         "data": "STF, ADPF 995, 2023",
         "status": "Entendimento oficial localizado",
-        "resumo": "O STF firmou entendimento de que as guardas municipais integram o sistema de segurança pública.",
+        "resumo": "O STF reconheceu que as guardas municipais integram o sistema de segurança pública, superando leitura meramente patrimonial e restritiva.",
         "fonte": "STF — ADPF 995",
         "url": "https://noticias.stf.jus.br/postsnoticias/guardas-municipais-integram-o-sistema-de-seguranca-publica-decide-stf/"
       },
       {
-        "titulo": "Guardas municipais podem fazer policiamento urbano ostensivo e comunitário",
+        "titulo": "Policiamento urbano ostensivo e comunitário é constitucional",
         "data": "STF, Tema 656, 2025",
         "status": "Entendimento oficial localizado",
-        "resumo": "O STF reconheceu a constitucionalidade de ações de segurança urbana pelas guardas municipais, inclusive policiamento ostensivo e comunitário, sem atribuir poder de investigação.",
+        "resumo": "O STF reconheceu a constitucionalidade de ações de segurança urbana pelas guardas municipais, inclusive policiamento ostensivo e comunitário, sem poder de investigação.",
         "fonte": "STF — Tema 656",
         "url": "https://noticias.stf.jus.br/postsnoticias/guardas-municipais-podem-fazer-policiamento-urbano-decide-stf/"
       }
     ],
-    "local": "Dados em breve",
-    "atualizacao": "Revisado em 02/05/2026"
+    "local": "Varia conforme lei municipal de criação, plano de cargos, regulamento, convênios e estrutura local.",
+    "atualizacao": "Revisado e ampliado em 02/05/2026"
   }
 };
 
@@ -608,6 +708,28 @@ function poderesEntendimentosHtml(lista) {
 }
 
 
+
+function poderesDestaquesHtml(dados = {}) {
+  const cards = [
+    { titulo: 'Essência da competência', valor: dados.essencia },
+    { titulo: 'Não confundir', valor: dados.naoConfundir },
+    { titulo: 'Ponto de atenção', valor: dados.pontoAtencao }
+  ].filter(card => !poderesEhDadoPendente(card.valor));
+
+  if (!cards.length) return '';
+
+  return `
+    <section class="poderes-destaques-grid" aria-label="Destaques práticos">
+      ${cards.map(card => `
+        <article class="poderes-destaque-card">
+          <span>${poderesEscapar(card.titulo)}</span>
+          <p>${poderesEscapar(poderesValor(card.valor))}</p>
+        </article>
+      `).join('')}
+    </section>
+  `;
+}
+
 function poderesRenderizar(inst) {
   const painel = document.getElementById('poderes_resultado');
   const tituloSpan = document.getElementById('txt-inst-poderes');
@@ -633,10 +755,12 @@ function poderesRenderizar(inst) {
       <div class="poderes-meta-grid">
         <div><span>Tipo de instituição</span><strong>${poderesEscapar(itemSelecionado.nome || dados.rotulo)}</strong></div>
         <div><span>Abrangência geral</span><strong>${poderesEscapar(itemSelecionado.estadoNome || dados.categoria)}</strong></div>
-        <div><span>Lei específica complementar</span><strong>${poderesEscapar(dados.local || PODERES_DEVERES_DADOS_EM_BREVE)}</strong></div>
+        <div><span>Base local/complementar</span><strong>${poderesEscapar(dados.local || PODERES_DEVERES_DADOS_EM_BREVE)}</strong></div>
         <div><span>Última revisão</span><strong>${poderesEscapar(dados.atualizacao || PODERES_DEVERES_DADOS_EM_BREVE)}</strong></div>
       </div>
     </section>
+
+    ${poderesDestaquesHtml(dados)}
 
     <div class="poderes-grid">
       <section class="direito-item poderes-bloco">
@@ -644,28 +768,28 @@ function poderesRenderizar(inst) {
         <ul>${poderesListaHtml(dados.deveres)}</ul>
       </section>
       <section class="direito-item poderes-bloco">
-        <span class="direito-nome">Abrangência de poder</span>
+        <span class="direito-nome">Poderes e competências</span>
         <ul>${poderesListaHtml(dados.poderes)}</ul>
       </section>
       <section class="direito-item poderes-bloco poderes-bloco-largo">
-        <span class="direito-nome">Limites importantes</span>
+        <span class="direito-nome">Limites, cautelas e controles</span>
         <ul>${poderesListaHtml(dados.limites)}</ul>
       </section>
     </div>
 
     <section class="poderes-fontes-card">
-      <h3>Leis e normas de referência</h3>
-      <p>Fontes oficiais ou institucionais importantes para conferência.</p>
+      <h3>Leis, normas e bases de referência</h3>
+      <p>Fontes oficiais ou institucionais selecionadas para conferência e aprofundamento.</p>
       <div class="poderes-fontes-lista">${poderesLeisHtml(dados.leis)}</div>
     </section>
 
     <section class="poderes-entendimentos-card">
-      <h3>Entendimentos recentes e pontos de atenção</h3>
+      <h3>Entendimentos e pontos práticos de interpretação</h3>
       <div class="result-list">${poderesEntendimentosHtml(dados.entendimentos)}</div>
     </section>
 
     <div class="alerta legal">
-      <strong>Aviso:</strong> Esta aba é informativa e independente. Ela não substitui consulta a advogado, corregedoria, setor jurídico, legislação local, decisão judicial aplicável ou canal oficial da instituição.
+      <strong>Aviso:</strong> Esta aba é informativa e independente. Ela resume competências gerais, mas não substitui consulta a advogado, corregedoria, setor jurídico, legislação local, decisão judicial aplicável, edital, norma interna ou canal oficial da instituição.
     </div>
   `;
 }

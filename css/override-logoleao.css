@@ -725,6 +725,48 @@ header.site-header,
   opacity: .9;
 }
 
+
+
+.poderes-destaques-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 18px 0 22px;
+}
+
+.poderes-destaque-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(255,255,255,.055);
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+
+.poderes-destaque-card span {
+  display: inline-flex;
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  opacity: .78;
+  margin-bottom: 8px;
+}
+
+.poderes-destaque-card p {
+  margin: 0;
+  line-height: 1.58;
+}
+
+.poderes-bloco .direito-nome {
+  font-size: 1.02rem;
+}
+
+@media (max-width: 980px) {
+  .poderes-destaques-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 860px) {
   .poderes-resumo-card,
   .poderes-grid,

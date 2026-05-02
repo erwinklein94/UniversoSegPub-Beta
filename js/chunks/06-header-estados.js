@@ -2914,6 +2914,109 @@ aplicarEstruturaBombeirosMilitaresDados();
 aplicarEstruturaFederaisDados();
 aplicarRevisaoResumosInstitucionais();
 
+/* ============================================================ */
+/* === REVISÃO DA ABA CONCURSOS ================================ */
+/* ============================================================ */
+const CONCURSO_DADOS_EM_BREVE = 'Dados em breve';
+const CONCURSO_CAMPOS_TEXTO = [
+  'edital', 'salario', 'vagas', 'cotas', 'idade', 'escolaridade', 'banca',
+  'inscritos', 'materias', 'etapas', 'cfsd', 'estagio', 'validade', 'previsao'
+];
+
+function concursoEhDadoPendente(valor) {
+  if (valor === undefined || valor === null) return true;
+  if (typeof valor === 'number') return !Number.isFinite(valor) || valor === 0;
+  const texto = String(valor).trim();
+  if (!texto || texto === '#' || texto === '-' || texto === '—') return true;
+  if (texto === CONCURSO_DADOS_EM_BREVE) return true;
+  return /^(a definir|a confirmar|a preencher|preencher|consultar|conferir|sem informação|sem informacao|sem inscrições|sem inscricoes|ainda não divulgado|ainda nao divulgado|não divulgado|nao divulgado|fonte oficial a preencher|dados pendentes|pendente|acompanhar|curso de formação.*preencher|curso de formacao.*preencher|prova objetiva\/discursiva quando prevista)\b/i.test(texto)
+    || /\b(estrutura de concurso a preencher|estrutura .*para preenchimento|fonte oficial a preencher|preencher|a definir\/preencher|base .*pendente)\b/i.test(texto);
+}
+
+function concursoValorOuEmBreve(valor) {
+  return concursoEhDadoPendente(valor) ? CONCURSO_DADOS_EM_BREVE : String(valor).trim();
+}
+
+function concursoUrlValida(valor) {
+  const url = String(valor || '').trim();
+  return /^https?:\/\//i.test(url) ? url : '#';
+}
+
+function concursoInfoInstituicao(inst) {
+  const info = HEADER_INSTITUICOES_INFO[inst] || {};
+  return {
+    titulo: info.titulo || String(inst || '').toUpperCase(),
+    desc: info.desc || CONCURSO_DADOS_EM_BREVE
+  };
+}
+
+function concursoCriarBaseDadosEmBreve(inst) {
+  const info = concursoInfoInstituicao(inst);
+  const fonte = REMUNERACAO_FONTES_OFICIAIS[inst] || {};
+  return {
+    edital: `${info.titulo} — ${info.desc}`,
+    salario: CONCURSO_DADOS_EM_BREVE,
+    vagas: CONCURSO_DADOS_EM_BREVE,
+    cotas: CONCURSO_DADOS_EM_BREVE,
+    idade: CONCURSO_DADOS_EM_BREVE,
+    escolaridade: CONCURSO_DADOS_EM_BREVE,
+    banca: CONCURSO_DADOS_EM_BREVE,
+    inscritos: CONCURSO_DADOS_EM_BREVE,
+    materias: CONCURSO_DADOS_EM_BREVE,
+    etapas: CONCURSO_DADOS_EM_BREVE,
+    cfsd: CONCURSO_DADOS_EM_BREVE,
+    estagio: CONCURSO_DADOS_EM_BREVE,
+    validade: CONCURSO_DADOS_EM_BREVE,
+    previsao: CONCURSO_DADOS_EM_BREVE,
+    site: concursoUrlValida(fonte.url)
+  };
+}
+
+function concursoNormalizarObjeto(inst, dados) {
+  const normalizado = concursoCriarBaseDadosEmBreve(inst);
+  const origem = dados && typeof dados === 'object' ? dados : {};
+
+  CONCURSO_CAMPOS_TEXTO.forEach(campo => {
+    normalizado[campo] = concursoValorOuEmBreve(origem[campo] ?? normalizado[campo]);
+  });
+
+  normalizado.site = concursoUrlValida(origem.site || normalizado.site);
+  return normalizado;
+}
+
+function aplicarRevisaoConcursosInstituicoes() {
+  const instituicoes = new Set(INSTITUICOES_VALIDAS || []);
+
+  Object.values(HEADER_ESTADOS || {}).forEach(estado => {
+    ['pm', 'bm', 'pc', 'pp', 'pf', 'prf'].forEach(ramo => {
+      if (estado && estado[ramo]) instituicoes.add(estado[ramo]);
+    });
+  });
+
+  ['pf', 'prf'].forEach(inst => instituicoes.add(inst));
+
+  instituicoes.forEach(inst => {
+    if (!inst) return;
+    if (!INSTITUICOES_VALIDAS.includes(inst)) INSTITUICOES_VALIDAS.push(inst);
+    if (!HEADER_INSTITUICOES_INFO[inst]) {
+      HEADER_INSTITUICOES_INFO[inst] = { titulo: String(inst).toUpperCase(), desc: CONCURSO_DADOS_EM_BREVE };
+    }
+
+    let dados = CONCURSOS[inst];
+    if (!dados && typeof isPoliciaPenal === 'function' && typeof getConcursoPoliciaPenal === 'function') {
+      try {
+        if (isPoliciaPenal(inst)) dados = getConcursoPoliciaPenal(inst);
+      } catch (erro) {
+        dados = null;
+      }
+    }
+
+    CONCURSOS[inst] = concursoNormalizarObjeto(inst, dados);
+  });
+}
+
+aplicarRevisaoConcursosInstituicoes();
+
 function formatarNumeroHeader(valor) {
   return Number(valor || 0).toLocaleString('pt-BR');
 }

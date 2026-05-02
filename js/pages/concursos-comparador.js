@@ -54,6 +54,9 @@ function getAssociacoesPoliciaPenal(inst) {
 /* BLOCO 15.14.1 — Comparar remuneração, benefícios, concursos e fontes entre instituições */
 function getRamoComparador(inst) {
   inst = String(inst || '');
+  if (inst === 'pf') return 'Federal';
+  if (inst === 'prf') return 'Rodoviária Federal';
+  if (inst.startsWith('bm')) return 'Bombeiro Militar';
   if (inst.startsWith('pp')) return 'Penal';
   if (inst.startsWith('pc')) return 'Civil';
   if (inst.startsWith('pm')) return inst === 'pmrs' ? 'Militar / Brigada' : 'Militar';
@@ -64,8 +67,11 @@ function getOrdemComparador(inst) {
   const estado = getEstadoDaInstituicao(inst);
   const dadosEstado = HEADER_ESTADOS[estado] || {};
   if (dadosEstado.pm === inst) return 1;
-  if (dadosEstado.pc === inst) return 2;
-  if (dadosEstado.pp === inst) return 3;
+  if (dadosEstado.bm === inst) return 2;
+  if (dadosEstado.pc === inst) return 3;
+  if (dadosEstado.pp === inst) return 4;
+  if (dadosEstado.pf === inst) return 1;
+  if (dadosEstado.prf === inst) return 2;
   return 9;
 }
 
@@ -172,7 +178,7 @@ function atualizarResumoSelecaoComparador() {
 function comparadorSelecionarEstadoAtual(exibirToast = true) {
   const estadoAtivo = getEstadoDaInstituicao(currInst);
   const dadosEstado = HEADER_ESTADOS[estadoAtivo] || HEADER_ESTADOS.sp;
-  const valores = [dadosEstado.pm, dadosEstado.pc, dadosEstado.pp].filter(Boolean);
+  const valores = [dadosEstado.pm, dadosEstado.bm, dadosEstado.pc, dadosEstado.pp, dadosEstado.pf, dadosEstado.prf].filter(Boolean);
   setSelecionadasComparador(valores);
   carregarComparadorCarreiras();
   if (exibirToast) mostrarToast(`Comparando carreiras de ${dadosEstado.nome}.`);
@@ -192,18 +198,27 @@ function comparadorLimparSelecao() {
 }
 
 function getConcursoComparador(inst) {
-  return CONCURSOS[inst] || getConcursoPoliciaPenal(inst) || {
-    edital: 'Concurso de referência não cadastrado',
-    salario: 'Consultar edital vigente',
-    vagas: 'Consultar edital vigente',
-    inscritos: 'Consultar banca e órgão oficial',
-    banca: 'Consultar edital',
-    materias: 'Consultar edital do cargo',
-    previsao: 'Acompanhar Diário Oficial, órgão e banca.',
-    escolaridade: 'Consultar edital',
-    etapas: 'Consultar edital',
+  if (CONCURSOS[inst]) return CONCURSOS[inst];
+  const penal = getConcursoPoliciaPenal(inst);
+  if (penal) return typeof concursoNormalizarObjeto === 'function' ? concursoNormalizarObjeto(inst, penal) : penal;
+  const dados = {
+    edital: HEADER_INSTITUICOES_INFO[inst]?.titulo || inst.toUpperCase(),
+    salario: 'Dados em breve',
+    vagas: 'Dados em breve',
+    cotas: 'Dados em breve',
+    idade: 'Dados em breve',
+    inscritos: 'Dados em breve',
+    banca: 'Dados em breve',
+    materias: 'Dados em breve',
+    previsao: 'Dados em breve',
+    escolaridade: 'Dados em breve',
+    etapas: 'Dados em breve',
+    cfsd: 'Dados em breve',
+    estagio: 'Dados em breve',
+    validade: 'Dados em breve',
     site: REMUNERACAO_FONTES_OFICIAIS[inst]?.url || '#'
   };
+  return typeof concursoNormalizarObjeto === 'function' ? concursoNormalizarObjeto(inst, dados) : dados;
 }
 
 function limitarTextoComparador(texto, limite = 220) {
@@ -258,7 +273,7 @@ function getSelecionadasComparador() {
 }
 
 function linkComparador(url, texto = 'Abrir fonte') {
-  if (!url || url === '#') return '<span>Consultar fonte oficial</span>';
+  if (!url || url === '#') return '<span>Dados em breve</span>';
   return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(texto)}</a>`;
 }
 
@@ -396,7 +411,7 @@ function carregarConcursos() {
       <span class="direito-desc"><strong>Estágio Probatório:</strong> ${c.estagio}</span>
       <span class="direito-desc"><strong>Validade do edital:</strong> ${c.validade}</span>
       <span class="direito-desc" style="margin-top:8px;"><strong>Próximo Edital:</strong> ${c.previsao}</span>
-      ${c.site ? `<a href="${c.site}" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>` : ''}
+      ${c.site && c.site !== '#' ? `<a href="${c.site}" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>` : `<span class="direito-desc"><strong>Site oficial/fonte:</strong> Dados em breve</span>`}
     </div>
 
     <a class="taf-produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="noopener noreferrer" aria-label="Ver barra fixa para porta, produto útil para treino de TAF">

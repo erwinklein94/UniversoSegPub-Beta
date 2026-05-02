@@ -825,8 +825,6 @@ const CARGOS_PCAC = [
   { val: 'agente_i_ac', text: 'Agente / Escrivão / Papiloscopista / Aux. Necropsia PCAC — Classe I', padrao: 5000.00, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_OPERACIONAL, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' }
 ];
 
-
-
 /* Chunk gerado a partir de js/script-original.js — Informações e tabelas da Polícia Penal.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -1612,8 +1610,6 @@ const CARGOS_PPAC = mapearTabelaPoliciaPenal(
 );
 
 /* BLOCO 15.4 — Base de dados das ações judiciais por instituição */
-
-
 /* Chunk gerado a partir de js/script-original.js — Bases de ações judiciais, associações, concursos e estado inicial.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2320,8 +2316,6 @@ let currInst = 'pmesp';
 let headerModoInicialPortal = true;
 const HEADER_BRASIL_FLAG = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Brazil.svg';
 const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmac','pcac','ppac','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
-
-
 /* Chunk gerado a partir de js/script-original.js — Helpers, menu, tema, navegação e popularização de cargos.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2576,8 +2570,6 @@ function popularCargos(inst) {
 
 
 /* ============================================================ */
-
-
 /* Chunk gerado a partir de js/script-original.js — Cálculos e renderização da remuneração tabelada.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -3186,8 +3178,6 @@ function carregarRemuneracaoTabelada() {
 
 
 /* ============================================================ */
-
-
 /* Chunk gerado a partir de js/script-original.js — Troca de instituição, estados, cabeçalho e estrutura de UFs.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -6104,6 +6094,109 @@ aplicarEstruturaBombeirosMilitaresDados();
 aplicarEstruturaFederaisDados();
 aplicarRevisaoResumosInstitucionais();
 
+/* ============================================================ */
+/* === REVISÃO DA ABA CONCURSOS ================================ */
+/* ============================================================ */
+const CONCURSO_DADOS_EM_BREVE = 'Dados em breve';
+const CONCURSO_CAMPOS_TEXTO = [
+  'edital', 'salario', 'vagas', 'cotas', 'idade', 'escolaridade', 'banca',
+  'inscritos', 'materias', 'etapas', 'cfsd', 'estagio', 'validade', 'previsao'
+];
+
+function concursoEhDadoPendente(valor) {
+  if (valor === undefined || valor === null) return true;
+  if (typeof valor === 'number') return !Number.isFinite(valor) || valor === 0;
+  const texto = String(valor).trim();
+  if (!texto || texto === '#' || texto === '-' || texto === '—') return true;
+  if (texto === CONCURSO_DADOS_EM_BREVE) return true;
+  return /^(a definir|a confirmar|a preencher|preencher|consultar|conferir|sem informação|sem informacao|sem inscrições|sem inscricoes|ainda não divulgado|ainda nao divulgado|não divulgado|nao divulgado|fonte oficial a preencher|dados pendentes|pendente|acompanhar|curso de formação.*preencher|curso de formacao.*preencher|prova objetiva\/discursiva quando prevista)\b/i.test(texto)
+    || /\b(estrutura de concurso a preencher|estrutura .*para preenchimento|fonte oficial a preencher|preencher|a definir\/preencher|base .*pendente)\b/i.test(texto);
+}
+
+function concursoValorOuEmBreve(valor) {
+  return concursoEhDadoPendente(valor) ? CONCURSO_DADOS_EM_BREVE : String(valor).trim();
+}
+
+function concursoUrlValida(valor) {
+  const url = String(valor || '').trim();
+  return /^https?:\/\//i.test(url) ? url : '#';
+}
+
+function concursoInfoInstituicao(inst) {
+  const info = HEADER_INSTITUICOES_INFO[inst] || {};
+  return {
+    titulo: info.titulo || String(inst || '').toUpperCase(),
+    desc: info.desc || CONCURSO_DADOS_EM_BREVE
+  };
+}
+
+function concursoCriarBaseDadosEmBreve(inst) {
+  const info = concursoInfoInstituicao(inst);
+  const fonte = REMUNERACAO_FONTES_OFICIAIS[inst] || {};
+  return {
+    edital: `${info.titulo} — ${info.desc}`,
+    salario: CONCURSO_DADOS_EM_BREVE,
+    vagas: CONCURSO_DADOS_EM_BREVE,
+    cotas: CONCURSO_DADOS_EM_BREVE,
+    idade: CONCURSO_DADOS_EM_BREVE,
+    escolaridade: CONCURSO_DADOS_EM_BREVE,
+    banca: CONCURSO_DADOS_EM_BREVE,
+    inscritos: CONCURSO_DADOS_EM_BREVE,
+    materias: CONCURSO_DADOS_EM_BREVE,
+    etapas: CONCURSO_DADOS_EM_BREVE,
+    cfsd: CONCURSO_DADOS_EM_BREVE,
+    estagio: CONCURSO_DADOS_EM_BREVE,
+    validade: CONCURSO_DADOS_EM_BREVE,
+    previsao: CONCURSO_DADOS_EM_BREVE,
+    site: concursoUrlValida(fonte.url)
+  };
+}
+
+function concursoNormalizarObjeto(inst, dados) {
+  const normalizado = concursoCriarBaseDadosEmBreve(inst);
+  const origem = dados && typeof dados === 'object' ? dados : {};
+
+  CONCURSO_CAMPOS_TEXTO.forEach(campo => {
+    normalizado[campo] = concursoValorOuEmBreve(origem[campo] ?? normalizado[campo]);
+  });
+
+  normalizado.site = concursoUrlValida(origem.site || normalizado.site);
+  return normalizado;
+}
+
+function aplicarRevisaoConcursosInstituicoes() {
+  const instituicoes = new Set(INSTITUICOES_VALIDAS || []);
+
+  Object.values(HEADER_ESTADOS || {}).forEach(estado => {
+    ['pm', 'bm', 'pc', 'pp', 'pf', 'prf'].forEach(ramo => {
+      if (estado && estado[ramo]) instituicoes.add(estado[ramo]);
+    });
+  });
+
+  ['pf', 'prf'].forEach(inst => instituicoes.add(inst));
+
+  instituicoes.forEach(inst => {
+    if (!inst) return;
+    if (!INSTITUICOES_VALIDAS.includes(inst)) INSTITUICOES_VALIDAS.push(inst);
+    if (!HEADER_INSTITUICOES_INFO[inst]) {
+      HEADER_INSTITUICOES_INFO[inst] = { titulo: String(inst).toUpperCase(), desc: CONCURSO_DADOS_EM_BREVE };
+    }
+
+    let dados = CONCURSOS[inst];
+    if (!dados && typeof isPoliciaPenal === 'function' && typeof getConcursoPoliciaPenal === 'function') {
+      try {
+        if (isPoliciaPenal(inst)) dados = getConcursoPoliciaPenal(inst);
+      } catch (erro) {
+        dados = null;
+      }
+    }
+
+    CONCURSOS[inst] = concursoNormalizarObjeto(inst, dados);
+  });
+}
+
+aplicarRevisaoConcursosInstituicoes();
+
 function formatarNumeroHeader(valor) {
   return Number(valor || 0).toLocaleString('pt-BR');
 }
@@ -6482,8 +6575,6 @@ function mudarInstituicao(novaInstituicao) {
 
 
 /* ============================================================ */
-
-
 /* Chunk gerado a partir de js/script-original.js — Análise de direitos, vantagens e aposentadoria.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -7064,8 +7155,6 @@ function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingress
 }
 
 /* ============================================================ */
-
-
 /* Chunk gerado a partir de js/script-original.js — Concursos, comparador de carreiras, ações judiciais e associações.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -7122,6 +7211,9 @@ function getAssociacoesPoliciaPenal(inst) {
 /* BLOCO 15.14.1 — Comparar remuneração, benefícios, concursos e fontes entre instituições */
 function getRamoComparador(inst) {
   inst = String(inst || '');
+  if (inst === 'pf') return 'Federal';
+  if (inst === 'prf') return 'Rodoviária Federal';
+  if (inst.startsWith('bm')) return 'Bombeiro Militar';
   if (inst.startsWith('pp')) return 'Penal';
   if (inst.startsWith('pc')) return 'Civil';
   if (inst.startsWith('pm')) return inst === 'pmrs' ? 'Militar / Brigada' : 'Militar';
@@ -7132,8 +7224,11 @@ function getOrdemComparador(inst) {
   const estado = getEstadoDaInstituicao(inst);
   const dadosEstado = HEADER_ESTADOS[estado] || {};
   if (dadosEstado.pm === inst) return 1;
-  if (dadosEstado.pc === inst) return 2;
-  if (dadosEstado.pp === inst) return 3;
+  if (dadosEstado.bm === inst) return 2;
+  if (dadosEstado.pc === inst) return 3;
+  if (dadosEstado.pp === inst) return 4;
+  if (dadosEstado.pf === inst) return 1;
+  if (dadosEstado.prf === inst) return 2;
   return 9;
 }
 
@@ -7240,7 +7335,7 @@ function atualizarResumoSelecaoComparador() {
 function comparadorSelecionarEstadoAtual(exibirToast = true) {
   const estadoAtivo = getEstadoDaInstituicao(currInst);
   const dadosEstado = HEADER_ESTADOS[estadoAtivo] || HEADER_ESTADOS.sp;
-  const valores = [dadosEstado.pm, dadosEstado.pc, dadosEstado.pp].filter(Boolean);
+  const valores = [dadosEstado.pm, dadosEstado.bm, dadosEstado.pc, dadosEstado.pp, dadosEstado.pf, dadosEstado.prf].filter(Boolean);
   setSelecionadasComparador(valores);
   carregarComparadorCarreiras();
   if (exibirToast) mostrarToast(`Comparando carreiras de ${dadosEstado.nome}.`);
@@ -7260,18 +7355,27 @@ function comparadorLimparSelecao() {
 }
 
 function getConcursoComparador(inst) {
-  return CONCURSOS[inst] || getConcursoPoliciaPenal(inst) || {
-    edital: 'Concurso de referência não cadastrado',
-    salario: 'Consultar edital vigente',
-    vagas: 'Consultar edital vigente',
-    inscritos: 'Consultar banca e órgão oficial',
-    banca: 'Consultar edital',
-    materias: 'Consultar edital do cargo',
-    previsao: 'Acompanhar Diário Oficial, órgão e banca.',
-    escolaridade: 'Consultar edital',
-    etapas: 'Consultar edital',
+  if (CONCURSOS[inst]) return CONCURSOS[inst];
+  const penal = getConcursoPoliciaPenal(inst);
+  if (penal) return typeof concursoNormalizarObjeto === 'function' ? concursoNormalizarObjeto(inst, penal) : penal;
+  const dados = {
+    edital: HEADER_INSTITUICOES_INFO[inst]?.titulo || inst.toUpperCase(),
+    salario: 'Dados em breve',
+    vagas: 'Dados em breve',
+    cotas: 'Dados em breve',
+    idade: 'Dados em breve',
+    inscritos: 'Dados em breve',
+    banca: 'Dados em breve',
+    materias: 'Dados em breve',
+    previsao: 'Dados em breve',
+    escolaridade: 'Dados em breve',
+    etapas: 'Dados em breve',
+    cfsd: 'Dados em breve',
+    estagio: 'Dados em breve',
+    validade: 'Dados em breve',
     site: REMUNERACAO_FONTES_OFICIAIS[inst]?.url || '#'
   };
+  return typeof concursoNormalizarObjeto === 'function' ? concursoNormalizarObjeto(inst, dados) : dados;
 }
 
 function limitarTextoComparador(texto, limite = 220) {
@@ -7326,7 +7430,7 @@ function getSelecionadasComparador() {
 }
 
 function linkComparador(url, texto = 'Abrir fonte') {
-  if (!url || url === '#') return '<span>Consultar fonte oficial</span>';
+  if (!url || url === '#') return '<span>Dados em breve</span>';
   return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(texto)}</a>`;
 }
 
@@ -7464,7 +7568,7 @@ function carregarConcursos() {
       <span class="direito-desc"><strong>Estágio Probatório:</strong> ${c.estagio}</span>
       <span class="direito-desc"><strong>Validade do edital:</strong> ${c.validade}</span>
       <span class="direito-desc" style="margin-top:8px;"><strong>Próximo Edital:</strong> ${c.previsao}</span>
-      ${c.site ? `<a href="${c.site}" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>` : ''}
+      ${c.site && c.site !== '#' ? `<a href="${c.site}" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>` : `<span class="direito-desc"><strong>Site oficial/fonte:</strong> Dados em breve</span>`}
     </div>
 
     <a class="taf-produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="noopener noreferrer" aria-label="Ver barra fixa para porta, produto útil para treino de TAF">
@@ -7556,8 +7660,6 @@ function carregarAssociacoes() {
 
 
 /* ============================================================ */
-
-
 /* Chunk gerado a partir de js/script-original.js — Contato, anúncios, contador e inicialização.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -7680,8 +7782,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-
 /* =======================================================
    Eventos centralizados.
    Remove a dependência de onclick/onchange/oninput inline no HTML.

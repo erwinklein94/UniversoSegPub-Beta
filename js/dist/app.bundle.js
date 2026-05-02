@@ -1,5 +1,3 @@
-
-/* === js/data/parametros-cargos.js === */
 /* Chunk gerado a partir de js/script-original.js — Parâmetros oficiais e cargos principais por instituição.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -827,9 +825,6 @@ const CARGOS_PCAC = [
   { val: 'agente_i_ac', text: 'Agente / Escrivão / Papiloscopista / Aux. Necropsia PCAC — Classe I', padrao: 5000.00, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_OPERACIONAL, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' }
 ];
 
-
-
-/* === js/data/policia-penal.js === */
 /* Chunk gerado a partir de js/script-original.js — Informações e tabelas da Polícia Penal.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -1615,9 +1610,6 @@ const CARGOS_PPAC = mapearTabelaPoliciaPenal(
 );
 
 /* BLOCO 15.4 — Base de dados das ações judiciais por instituição */
-
-
-/* === js/data/bases-conteudo.js === */
 /* Chunk gerado a partir de js/script-original.js — Bases de ações judiciais, associações, concursos e estado inicial.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2324,9 +2316,6 @@ let currInst = 'pmesp';
 let headerModoInicialPortal = true;
 const HEADER_BRASIL_FLAG = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Brazil.svg';
 const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmac','pcac','ppac','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
-
-
-/* === js/ui/navegacao-ui.js === */
 /* Chunk gerado a partir de js/script-original.js — Helpers, menu, tema, navegação e popularização de cargos.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2581,9 +2570,6 @@ function popularCargos(inst) {
 
 
 /* ============================================================ */
-
-
-/* === js/services/remuneracao.js === */
 /* Chunk gerado a partir de js/script-original.js — Cálculos e renderização da remuneração tabelada.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -3192,9 +3178,6 @@ function carregarRemuneracaoTabelada() {
 
 
 /* ============================================================ */
-
-
-/* === js/ui/header-estados.js === */
 /* Chunk gerado a partir de js/script-original.js — Troca de instituição, estados, cabeçalho e estrutura de UFs.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -3369,6 +3352,40 @@ const HEADER_INSTITUICOES_IMAGENS = {
   pcto: 'img/pcto.webp'
 };
 
+/* Brasões/insígnias em versão leve. Preferência: WebP; fallback automático para PNG/JPEG/JPG/SVG. */
+Object.assign(HEADER_INSTITUICOES_IMAGENS, {
+  bmsp: 'img/bmsp.webp',
+  bmrj: 'img/bmrj.webp',
+  bmmg: 'img/bmmg.webp',
+  pmdf: 'img/pmdf.webp',
+  pcdf: 'img/pcdf.webp',
+  ppdf: 'img/ppdf.webp',
+  bmdf: 'img/bmdf.webp',
+  pf: 'img/pf.webp',
+  prf: 'img/prf.webp'
+});
+
+const EXTENSOES_BRASAO_SUPORTADAS = ['webp', 'png', 'jpeg', 'jpg', 'svg'];
+
+function montarCandidatosImagemInstituicao(inst, caminhoInicial) {
+  const candidatos = [];
+  const adicionar = valor => {
+    if (!valor) return;
+    const caminho = String(valor).trim();
+    if (caminho && !candidatos.includes(caminho)) candidatos.push(caminho);
+  };
+
+  adicionar(caminhoInicial);
+
+  const baseDoCaminho = caminhoInicial
+    ? String(caminhoInicial).replace(/\.(webp|png|jpe?g|svg)$/i, '')
+    : `img/${String(inst || '').toLowerCase()}`;
+
+  EXTENSOES_BRASAO_SUPORTADAS.forEach(ext => adicionar(`${baseDoCaminho}.${ext}`));
+  return candidatos;
+}
+
+
 
 function setCssUrlVariable(elemento, nomeVariavel, src, fallback = 'img/logoleao.webp') {
   if (!elemento || !nomeVariavel) return;
@@ -3425,6 +3442,7 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
   if (card) card.classList.remove('header-portal-home');
 
   const imagemInstituicao = HEADER_INSTITUICOES_IMAGENS[inst];
+  const candidatosImagem = montarCandidatosImagemInstituicao(inst, imagemInstituicao);
   const fallbackBandeira = dadosEstado?.flag || HEADER_ESTADOS.sp.flag;
   const altInstituicao = instituicao?.desc || instituicao?.titulo || 'Instituição de segurança pública';
 
@@ -3439,12 +3457,14 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
   img.style.display = '';
   img.removeAttribute('data-retry');
   img.removeAttribute('data-img-base');
+  img.removeAttribute('data-fallback-jpeg-aplicado');
   img.onerror = function () {
-    if (imagemInstituicao && !this.dataset.fallbackJpegAplicado) {
-      const jpegFallback = imagemInstituicao.replace(/\.webp$/i, '.jpeg');
-      if (jpegFallback && jpegFallback !== this.getAttribute('src')) {
-        this.dataset.fallbackJpegAplicado = 'true';
-        this.src = jpegFallback;
+    const indice = parseInt(this.dataset.fallbackIndex || '0', 10);
+    if (indice < candidatosImagem.length) {
+      this.dataset.fallbackIndex = String(indice + 1);
+      const proximaImagem = candidatosImagem[indice];
+      if (proximaImagem && proximaImagem !== this.getAttribute('src')) {
+        this.src = proximaImagem;
         return;
       }
     }
@@ -3459,12 +3479,14 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
     this.alt = `Bandeira de ${dadosEstado?.nome || 'estado'}`;
   };
 
-  if (imagemInstituicao) {
+  if (candidatosImagem.length) {
     img.dataset.fallbackAplicado = '';
-    img.src = imagemInstituicao;
+    img.dataset.fallbackIndex = '1';
+    img.src = candidatosImagem[0];
     img.alt = `Logo/brasão da ${altInstituicao}`;
   } else {
     img.dataset.fallbackAplicado = 'bandeira';
+    img.dataset.fallbackIndex = '0';
     img.onerror = null;
     img.src = fallbackBandeira;
     img.alt = `Bandeira de ${dadosEstado?.nome || 'estado'}`;
@@ -5456,6 +5478,164 @@ function criarAssociacoesEstrutura(info, estadoNome) {
 }
 
 
+/* ============================================================ */
+/* === ESTRUTURA-BASE PARA INSTITUIÇÕES FEDERAIS =============== */
+/* ============================================================ */
+const INSTITUICOES_FEDERAIS_ESTRUTURA = [
+  { inst: 'pf', titulo: 'PF', desc: 'Polícia Federal', tipo: 'Polícia Federal', cor: '#1f4f7a' },
+  { inst: 'prf', titulo: 'PRF', desc: 'Polícia Rodoviária Federal', tipo: 'Polícia Rodoviária Federal', cor: '#1f5f8a' }
+];
+
+function criarResumoFederalEstrutura(item) {
+  return {
+    nome: item.desc,
+    sigla: item.titulo,
+    estado: 'Brasil',
+    estadoSigla: 'BR',
+    tipo: item.tipo,
+    criacao: 'A preencher',
+    ativa: 0,
+    ativaLabel: 'Efetivo ativo — preencher',
+    reserva: 0,
+    reservaLabel: 'Aposentados/inativos — preencher',
+    femininas: 0,
+    femininasLabel: 'Integrantes femininas — preencher',
+    populacao: 0,
+    populacaoTitulo: 'Abrangência nacional',
+    relacaoLabel: 'Relação por habitante/rodovia/atribuição — preencher',
+    relacaoTitulo: 'Relação institucional',
+    governador: 'Governo Federal / Ministério responsável — preencher',
+    comando: 'Direção-Geral atual — preencher',
+    fonte: 'Fontes oficiais federais — preencher',
+    atualizado: 'Estrutura criada para preenchimento'
+  };
+}
+
+function criarCargosPfEstrutura(inst, sigla) {
+  return [
+    criarCargoEstrutural(inst, 'diretor_geral', `${sigla} — Diretor-Geral / Direção Superior`, true),
+    criarCargoEstrutural(inst, 'delegado', `${sigla} — Delegado de Polícia Federal`, true),
+    criarCargoEstrutural(inst, 'perito', `${sigla} — Perito Criminal Federal`, true),
+    criarCargoEstrutural(inst, 'papiloscopista', `${sigla} — Papiloscopista Policial Federal`, false),
+    criarCargoEstrutural(inst, 'escrivao', `${sigla} — Escrivão de Polícia Federal`, false),
+    criarCargoEstrutural(inst, 'agente', `${sigla} — Agente de Polícia Federal`, false, true),
+    criarCargoEstrutural(inst, 'administrativo', `${sigla} — Carreira administrativa / apoio`, false)
+  ];
+}
+
+function criarCargosPrfEstrutura(inst, sigla) {
+  return [
+    criarCargoEstrutural(inst, 'diretor_geral', `${sigla} — Diretor-Geral / Direção Superior`, true),
+    criarCargoEstrutural(inst, 'classe_especial', `${sigla} — Policial Rodoviário Federal — Classe Especial`, false),
+    criarCargoEstrutural(inst, 'primeira_classe', `${sigla} — Policial Rodoviário Federal — 1ª Classe`, false),
+    criarCargoEstrutural(inst, 'segunda_classe', `${sigla} — Policial Rodoviário Federal — 2ª Classe`, false),
+    criarCargoEstrutural(inst, 'terceira_classe', `${sigla} — Policial Rodoviário Federal — 3ª Classe`, false, true),
+    criarCargoEstrutural(inst, 'aluno_formacao', `${sigla} — Aluno / Curso de Formação Profissional`, false),
+    criarCargoEstrutural(inst, 'administrativo', `${sigla} — Carreira administrativa / apoio`, false)
+  ];
+}
+
+function criarConcursoFederalEstrutura(item) {
+  return {
+    edital: `${item.titulo} — ${item.desc} — estrutura de concurso a preencher`,
+    salario: 'A confirmar em edital, tabela oficial federal ou Diário Oficial da União.',
+    vagas: 'Preencher com edital/autorização vigente.',
+    cotas: 'Preencher conforme legislação federal e edital.',
+    idade: 'Preencher requisitos de idade, CNH, aptidão física, investigação social e demais exigências conforme edital.',
+    escolaridade: 'Preencher escolaridade e requisitos do cargo conforme edital.',
+    banca: 'A definir/preencher conforme edital.',
+    inscritos: 'Preencher quando houver dado oficial.',
+    materias: 'Preencher disciplinas conforme edital do cargo.',
+    etapas: 'Prova objetiva/discursiva quando prevista, TAF, exames médicos, avaliação psicológica, investigação social, curso de formação profissional e demais etapas do edital.',
+    cfsd: 'Curso de formação profissional — preencher conforme edital e academia responsável.',
+    estagio: 'Estágio probatório e desenvolvimento na carreira — preencher conforme legislação federal.',
+    validade: 'Preencher conforme edital e atos de homologação/prorrogação.',
+    previsao: 'Acompanhar Diário Oficial da União, órgão oficial e banca. Não afirmar concurso aberto sem publicação oficial.',
+    site: '#'
+  };
+}
+
+function criarAcoesFederalEstrutura(item) {
+  return [
+    { titulo: `${item.titulo} — Estrutura de direitos e ações a preencher`, status: 'A preencher', ano: 'Base federal pendente', tipo: 'individual', desc: 'Espaço reservado para inserir ações judiciais, teses administrativas, precedentes, prazos e observações específicas desta instituição federal.', base: 'Preencher com lei federal, edital, estatuto, jurisprudência, atos administrativos e documentos funcionais.', fonte: 'Fonte oficial a preencher', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' },
+    { titulo: `${item.titulo} — Remuneração, adicionais e indenizações`, status: 'Verificar caso a caso', ano: 'Tema permanente', tipo: 'individual', desc: 'Use este item para detalhar subsídio/vencimento, indenizações, adicionais, auxílio-alimentação, adicional de fronteira, plantões, serviço extraordinário e eventuais diferenças.', base: 'Tabela remuneratória federal, contracheque, escala, portaria, ato de designação e legislação aplicável.', fonte: 'Documentos funcionais e normas federais', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' },
+    { titulo: `${item.titulo} — Aposentadoria policial e previdência`, status: 'Análise individual', ano: 'Regra federal a preencher', tipo: 'individual', desc: 'Espaço para regras previdenciárias, transições, paridade/integralidade quando aplicável, abono de permanência e regras próprias da carreira policial federal.', base: 'Data de ingresso, tempo de contribuição, cargo/carreira, sexo, idade, regime previdenciário e norma federal.', fonte: 'Conferência previdenciária individual', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' }
+  ];
+}
+
+function criarAssociacoesFederalEstrutura(item) {
+  return [
+    { nome: `Associação/Sindicato — ${item.titulo}`, foco: `Brasil — ${item.desc}`, acao: 'Espaço reservado para cadastrar entidade representativa, atuação institucional, pautas remuneratórias, previdenciárias e jurídicas da carreira.', site: 'Consultar site oficial da entidade nacional', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Jurídico, comunicação institucional, convênios, assembleias, atendimento ao associado e acompanhamento legislativo — preencher conforme entidade.' },
+    { nome: `Entidade representativa federal — ${item.titulo}`, foco: `Profissionais ativos, aposentados e pensionistas vinculados à ${item.desc}`, acao: 'Cadastrar aqui associações, sindicatos, clubes e entidades de classe nacionais/regionais existentes.', site: 'Consultar canais oficiais', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Serviços a preencher conforme entidade.' }
+  ];
+}
+
+function aplicarEstruturaFederaisDados() {
+  HEADER_ESTADOS.br = {
+    nome: 'Brasil',
+    sigla: 'BR',
+    pc: 'pf',
+    pp: 'prf',
+    pf: 'pf',
+    prf: 'prf',
+    flag: HEADER_BRASIL_FLAG
+  };
+
+  INSTITUICOES_FEDERAIS_ESTRUTURA.forEach(item => {
+    if (!INSTITUICOES_VALIDAS.includes(item.inst)) INSTITUICOES_VALIDAS.push(item.inst);
+    HEADER_INSTITUICOES_INFO[item.inst] = HEADER_INSTITUICOES_INFO[item.inst] || { titulo: item.titulo, desc: item.desc };
+    HEADER_INSTITUICOES_RESUMO[item.inst] = HEADER_INSTITUICOES_RESUMO[item.inst] || criarResumoFederalEstrutura(item);
+    REMUNERACAO_FONTES_OFICIAIS[item.inst] = REMUNERACAO_FONTES_OFICIAIS[item.inst] || { nome: `${item.titulo} — fonte oficial federal a preencher`, url: '#' };
+    CONFIGS_INSTITUICOES_GENERICAS[item.inst] = {
+      titulo: item.titulo,
+      desc: item.desc,
+      cor: item.cor,
+      alertaPrev: `${item.titulo}: estrutura aberta para preenchimento. Conferir legislação federal, carreira, previdência, remuneração, indenizações, auxílios, regras de ingresso e direitos conforme fontes oficiais.`
+    };
+    CONCURSOS[item.inst] = CONCURSOS[item.inst] || criarConcursoFederalEstrutura(item);
+    ACOES_JUDICIAIS[item.inst] = ACOES_JUDICIAIS[item.inst] || criarAcoesFederalEstrutura(item);
+    ASSOCIACOES[item.inst] = ASSOCIACOES[item.inst] || criarAssociacoesFederalEstrutura(item);
+    if (!CARGOS_ESTRUTURA_GENERICAS[item.inst]) {
+      CARGOS_ESTRUTURA_GENERICAS[item.inst] = item.inst === 'pf'
+        ? criarCargosPfEstrutura(item.inst, item.titulo)
+        : criarCargosPrfEstrutura(item.inst, item.titulo);
+    }
+  });
+}
+
+function inserirOptionFederalNoSelect(select, item) {
+  if (!select || Array.from(select.options || []).some(opt => opt.value === item.inst)) return;
+  let grupo = Array.from(select.querySelectorAll('optgroup')).find(optgroup => optgroup.label === 'Federais');
+  if (!grupo) {
+    grupo = document.createElement('optgroup');
+    grupo.label = 'Federais';
+    select.appendChild(grupo);
+  }
+  grupo.appendChild(criarOptionInstituicao(item.inst, `${item.titulo} - ${item.desc}`));
+}
+
+function aplicarEstruturaFederaisNoHtml() {
+  INSTITUICOES_FEDERAIS_ESTRUTURA.forEach(item => {
+    inserirOptionFederalNoSelect(document.getElementById('instituicao_header'), item);
+    inserirOptionFederalNoSelect(document.getElementById('instituicao'), item);
+  });
+
+  const flags = document.querySelector('.header-state-flags');
+  if (flags && !flags.querySelector('[data-estado="br"]')) {
+    const btn = document.createElement('button');
+    btn.className = 'state-flag';
+    btn.type = 'button';
+    btn.dataset.estado = 'br';
+    btn.title = 'Brasil / Instituições federais';
+    btn.setAttribute('aria-label', 'Selecionar instituições federais');
+    btn.setAttribute('aria-pressed', 'false');
+    btn.onclick = () => selecionarEstado('br');
+    btn.innerHTML = `<img src="${HEADER_BRASIL_FLAG}" alt="Bandeira do Brasil"><span>BR</span>`;
+    flags.appendChild(btn);
+  }
+}
+
+
 const BOMBEIROS_MILITARES_ESTRUTURA = [
   { estado: 'ac', nome: 'Acre', sigla: 'AC', inst: 'bmac', titulo: 'BMAC', desc: 'Corpo de Bombeiros Militar do Acre' },
   { estado: 'al', nome: 'Alagoas', sigla: 'AL', inst: 'bmal', titulo: 'BMAL', desc: 'Corpo de Bombeiros Militar de Alagoas' },
@@ -5667,10 +5847,12 @@ function aplicarEstruturaEstadosFaltantesNoHtml() {
   }
 
   aplicarEstruturaBombeirosMilitaresNoHtml();
+  aplicarEstruturaFederaisNoHtml();
 }
 
 aplicarEstruturaEstadosFaltantesDados();
 aplicarEstruturaBombeirosMilitaresDados();
+aplicarEstruturaFederaisDados();
 
 function formatarNumeroHeader(valor) {
   return Number(valor || 0).toLocaleString('pt-BR');
@@ -5905,6 +6087,16 @@ function atualizarHeaderInstitucional(inst) {
   const ppSigla = document.getElementById('header-pp-sigla');
   if (ppSigla) ppSigla.textContent = ppInfo ? ppInfo.titulo : 'PP';
 
+  const ramoFederalAtivo = estadoAtivo === 'br';
+  const setBranchSmall = (id, texto) => {
+    const small = document.querySelector(`#${id} small`);
+    if (small) small.textContent = texto;
+  };
+  setBranchSmall('header-branch-pm', ramoFederalAtivo ? '—' : 'Militar');
+  setBranchSmall('header-branch-bm', ramoFederalAtivo ? '—' : 'Bombeiros');
+  setBranchSmall('header-branch-pc', ramoFederalAtivo ? 'Federal' : 'Civil');
+  setBranchSmall('header-branch-pp', ramoFederalAtivo ? 'Rodoviária' : 'Penal');
+
   const btnPm = document.getElementById('header-branch-pm');
   const btnBm = document.getElementById('header-branch-bm');
   const btnPc = document.getElementById('header-branch-pc');
@@ -6040,9 +6232,6 @@ function mudarInstituicao(novaInstituicao) {
 
 
 /* ============================================================ */
-
-
-/* === js/services/direitos.js === */
 /* Chunk gerado a partir de js/script-original.js — Análise de direitos, vantagens e aposentadoria.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -6623,9 +6812,6 @@ function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingress
 }
 
 /* ============================================================ */
-
-
-/* === js/pages/concursos-comparador.js === */
 /* Chunk gerado a partir de js/script-original.js — Concursos, comparador de carreiras, ações judiciais e associações.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -6736,7 +6922,7 @@ function inicializarComparadorCarreiras() {
           <div class="comparador-check-titulo">${escapeHtml(dadosEstado.nome || estado.toUpperCase())}</div>
           ${itens.map(item => `
             <label class="comparador-check-option">
-              <input type="checkbox" value="${escapeHtml(item.inst)}" data-sigla="${escapeHtml(item.sigla)}">
+              <input type="checkbox" value="${escapeHtml(item.inst)}" data-sigla="${escapeHtml(item.sigla)}" onchange="carregarComparadorCarreiras()">
               <span>
                 <strong>${escapeHtml(item.sigla)}</strong>
                 <small>${escapeHtml(item.nome)} · ${escapeHtml(item.uf)} · ${escapeHtml(item.ramo)}</small>
@@ -7029,7 +7215,7 @@ function carregarConcursos() {
 
     <a class="taf-produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="noopener noreferrer" aria-label="Ver barra fixa para porta, produto útil para treino de TAF">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="img/barrafixa01.webp" data-img-base="img/barrafixa01" alt="Detalhes da Oferta do Produto - barra fixa para porta" loading="lazy">
+        <img src="barrafixa01" alt="Detalhes da Oferta do Produto - barra fixa para porta" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='png';this.src='barrafixa01.png';}else if(this.dataset.retry==='png'){this.dataset.retry='jpg';this.src='barrafixa01.jpg';}else if(this.dataset.retry==='jpg'){this.dataset.retry='jpeg';this.src='barrafixa01.jpeg';}else if(this.dataset.retry==='jpeg'){this.dataset.retry='webp';this.src='barrafixa01.webp';}else{this.style.display='none';this.closest('.taf-produto-card').classList.add('img-indisponivel');}">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para o TAF</span>
@@ -7053,7 +7239,7 @@ function carregarConcursos() {
 
     <a class="taf-produto-card taf-produto-card-barrafixa02" href="https://s.shopee.com.br/9fHJ0X4HVl" target="_blank" rel="noopener noreferrer" aria-label="Ver Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela, produto útil para treino de TAF">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="img/barrafixa02.webp" data-img-base="img/barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy">
+        <img src="barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='png';this.src='barrafixa02.png';}else if(this.dataset.retry==='png'){this.dataset.retry='jpg';this.src='barrafixa02.jpg';}else if(this.dataset.retry==='jpg'){this.dataset.retry='jpeg';this.src='barrafixa02.jpeg';}else if(this.dataset.retry==='jpeg'){this.dataset.retry='webp';this.src='barrafixa02.webp';}else{this.style.display='none';this.closest('.taf-produto-card').classList.add('img-indisponivel');}">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para o TAF</span>
@@ -7116,9 +7302,6 @@ function carregarAssociacoes() {
 
 
 /* ============================================================ */
-
-
-/* === js/pages/contato-init.js === */
 /* Chunk gerado a partir de js/script-original.js — Contato, anúncios, contador e inicialização.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -7241,139 +7424,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-
-
-/* === js/ui/event-bindings.js === */
-/* =======================================================
-   Eventos centralizados.
-   Remove a dependência de onclick/onchange/oninput inline no HTML.
-   Este arquivo deve ser carregado depois dos dados, serviços e páginas.
-   ======================================================= */
-
-(function () {
-  function safeCall(fnName, args = []) {
-    const fn = window[fnName];
-    if (typeof fn === 'function') return fn.apply(window, args);
-    console.warn(`[UniSegPub] Função não encontrada: ${fnName}`);
-    return undefined;
-  }
-
-  function bindClick(selector, handler) {
-    document.querySelectorAll(selector).forEach(el => {
-      el.addEventListener('click', handler);
-    });
-  }
-
-  function bindChange(selector, handler) {
-    document.querySelectorAll(selector).forEach(el => {
-      el.addEventListener('change', handler);
-    });
-  }
-
-  function bindInput(selector, handler) {
-    document.querySelectorAll(selector).forEach(el => {
-      el.addEventListener('input', handler);
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    bindClick('.menu-btn, #menuOverlay, .close-btn', () => safeCall('toggleMenu'));
-    bindClick('#theme-toggle-header', () => safeCall('toggleTheme'));
-
-    bindChange('#instituicao, #instituicao_header', event => {
-      safeCall('mudarInstituicao', [event.currentTarget.value]);
-    });
-
-    bindClick('.branch-option[data-branch]', event => {
-      safeCall('selecionarRamo', [event.currentTarget.dataset.branch]);
-    });
-
-    bindClick('.state-flag[data-estado]', event => {
-      safeCall('selecionarEstado', [event.currentTarget.dataset.estado]);
-    });
-
-    bindClick('.sidebar-nav a[href^="#"]', event => {
-      const link = event.currentTarget;
-      const page = (link.getAttribute('href') || '').replace('#', '');
-      if (!page) return;
-
-      event.preventDefault();
-
-      if (page === 'principal') {
-        safeCall('abrirPaginaInicial');
-        return;
-      }
-
-      safeCall('switchPage', [page]);
-    });
-
-    bindClick('[data-page]', event => {
-      const page = event.currentTarget.dataset.page;
-      if (!page) return;
-      safeCall('switchPage', [page]);
-    });
-
-    document.querySelectorAll('[data-page]').forEach(el => {
-      el.addEventListener('keydown', event => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          safeCall('switchPage', [event.currentTarget.dataset.page]);
-        }
-      });
-    });
-
-    bindClick('.ad-slot .ad-placeholder-link', event => {
-      const link = event.currentTarget;
-      const href = link.getAttribute('href') || '';
-
-      // Produtos/anúncios com link externo devem abrir o afiliado diretamente.
-      if (link.classList.contains('ad-placeholder-link--product') || /^https?:\/\//i.test(href)) {
-        return;
-      }
-
-      const area = link.closest('[data-ad-area]')?.dataset.adArea;
-      if (!area) return;
-      event.preventDefault();
-      safeCall('abrirContatoAnuncio', [area]);
-    });
-
-    bindInput('#idade_dir, #renda_dir', () => safeCall('analisarDireitos'));
-    bindChange('#idade_dir, #renda_dir, #sexo_dir, #ingresso_dir, #dependente_dir, #local_especial_dir, #requisitos_apos_dir', () => safeCall('analisarDireitos'));
-
-    bindClick('[data-action="comparador-estado-atual"]', () => safeCall('comparadorSelecionarEstadoAtual'));
-    bindClick('[data-action="comparador-todas"]', () => safeCall('comparadorSelecionarTodas'));
-    bindClick('[data-action="comparador-limpar"]', () => safeCall('comparadorLimparSelecao'));
-    bindClick('#comparador-toggle-lista', () => safeCall('toggleComparadorLista'));
-
-    document.addEventListener('change', event => {
-      const alvo = event.target;
-      if (alvo && alvo.matches('#comparador-selecao input[type="checkbox"]')) {
-        safeCall('carregarComparadorCarreiras');
-      }
-    });
-
-    bindInput('#contato_mensagem', () => safeCall('atualizarContador'));
-
-    const contatoForm = document.querySelector('form[data-form="contato"]');
-    if (contatoForm) {
-      contatoForm.addEventListener('submit', event => safeCall('enviarEmailContato', [event]));
-    }
-  });
-
-  document.addEventListener('error', event => {
-    const img = event.target;
-    if (!(img instanceof HTMLImageElement)) return;
-
-    if (img.matches('.produto-imagem img[data-img-base], .taf-produto-imagem img[data-img-base]')) {
-      safeCall('carregarImagemProduto', [img]);
-      return;
-    }
-
-    if (img.dataset.hideOnError === 'true') {
-      img.style.display = 'none';
-      const container = img.closest('.produto-imagem, .taf-produto-imagem, .partner-image-slot');
-      if (container) container.classList.add('img-indisponivel');
-    }
-  }, true);
-})();
-

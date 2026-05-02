@@ -2,13 +2,7 @@
    Mantém a ordem original para preservar compatibilidade. */
 
 function normalizarInstituicao(inst) {
-  let valor = String(inst || '').toLowerCase();
-  try {
-    if (typeof normalizarInstituicaoBombeiro === 'function') valor = normalizarInstituicaoBombeiro(valor);
-  } catch (e) {
-    // normalizarInstituicaoBombeiro pode ainda não estar carregada durante a avaliação inicial.
-  }
-  return INSTITUICOES_VALIDAS.includes(valor) ? valor : 'pmesp';
+  return INSTITUICOES_VALIDAS.includes(inst) ? inst : 'pmesp';
 }
 
 function isPoliciaPenal(inst) {

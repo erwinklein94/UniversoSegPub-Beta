@@ -2289,42 +2289,6 @@ const BOMBEIROS_MILITARES_ESTRUTURA = [
   { estado: 'to', nome: 'Tocantins', sigla: 'TO', inst: 'bmto', titulo: 'bmto', desc: 'Corpo de Bombeiros Militar do Tocantins' }
 ];
 
-const BOMBEIROS_MILITARES_ALIASES = {
-  cbmac: 'bmac',
-  cbmal: 'bmal',
-  cbmam: 'bmam',
-  cbmap: 'bmap',
-  cbmba: 'bmba',
-  cbmce: 'bmce',
-  cbmdf: 'bmdf',
-  cbmes: 'bmes',
-  cbmgo: 'bmgo',
-  cbmma: 'bmma',
-  cbmmg: 'bmmg',
-  cbmms: 'bmms',
-  cbmmt: 'bmmt',
-  cbmpa: 'bmpa',
-  cbmpb: 'bmpb',
-  cbmpe: 'bmpe',
-  cbmpi: 'bmpi',
-  cbmpr: 'bmpr',
-  cbmerj: 'bmrj',
-  cbmrn: 'bmrn',
-  cbmro: 'bmro',
-  cbmrr: 'bmrr',
-  cbmrs: 'bmrs',
-  cbmsc: 'bmsc',
-  cbmse: 'bmse',
-  cbpmesp: 'bmsp',
-  cbmto: 'bmto'
-};
-
-function normalizarInstituicaoBombeiro(inst) {
-  const valor = String(inst || '').toLowerCase();
-  return BOMBEIROS_MILITARES_ALIASES[valor] || valor;
-}
-
-
 function criarResumoBombeiroEstrutura(estado, item) {
   return {
     nome: item.desc,
@@ -2630,7 +2594,7 @@ function aplicarHeaderInicialPortal() {
     if (seletor) seletor.value = '';
   });
 
-  [['header-pm-sigla', 'PM'], ['header-bm-sigla', 'BM'], ['header-pc-sigla', 'PC'], ['header-pp-sigla', 'PP']].forEach(([id, valor]) => setTexto(id, valor));
+  [['header-pm-sigla', 'PM'], ['header-bm-sigla', 'CBM'], ['header-pc-sigla', 'PC'], ['header-pp-sigla', 'PP']].forEach(([id, valor]) => setTexto(id, valor));
   ['header-branch-pm', 'header-branch-bm', 'header-branch-pc', 'header-branch-pp'].forEach(id => {
     const btn = document.getElementById(id);
     if (!btn) return;
@@ -2679,7 +2643,6 @@ function atualizarHeaderResumo(inst) {
 }
 
 function getEstadoDaInstituicao(inst) {
-  inst = normalizarInstituicaoBombeiro(inst);
   return Object.keys(HEADER_ESTADOS).find(estado => {
     const item = HEADER_ESTADOS[estado];
     return item.pm === inst || item.bm === inst || item.pc === inst || item.pp === inst;
@@ -2704,7 +2667,6 @@ function selecionarRamo(ramo) {
 }
 
 function atualizarHeaderInstitucional(inst) {
-  inst = normalizarInstituicaoBombeiro(inst);
   const instituicao = HEADER_INSTITUICOES_INFO[inst] || HEADER_INSTITUICOES_INFO.pmesp;
   const estadoAtivo = getEstadoDaInstituicao(inst);
   const dadosEstado = HEADER_ESTADOS[estadoAtivo] || HEADER_ESTADOS.sp;
@@ -2734,7 +2696,7 @@ function atualizarHeaderInstitucional(inst) {
   if (pmSigla) pmSigla.textContent = pmInfo ? pmInfo.titulo : '—';
 
   const bmSigla = document.getElementById('header-bm-sigla');
-  if (bmSigla) bmSigla.textContent = bmInfo ? bmInfo.titulo : 'BM';
+  if (bmSigla) bmSigla.textContent = bmInfo ? bmInfo.titulo : 'CBM';
 
   const pcSigla = document.getElementById('header-pc-sigla');
   if (pcSigla) pcSigla.textContent = pcInfo ? pcInfo.titulo : '—';
@@ -2825,7 +2787,7 @@ function mudarInstituicao(novaInstituicao) {
 
   Object.assign(configs, CONFIGS_INSTITUICOES_GENERICAS || {});
 
-  const solicitada = normalizarInstituicaoBombeiro(novaInstituicao || document.getElementById('instituicao')?.value || currInst || 'pmesp');
+  const solicitada = novaInstituicao || document.getElementById('instituicao')?.value || currInst || 'pmesp';
   const inst = configs[solicitada] ? solicitada : 'pmesp';
 
   // Proteção contra instituições antigas/inexistentes salvas no navegador.

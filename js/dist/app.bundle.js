@@ -1,3 +1,6 @@
+
+
+/* ===== js/data/parametros-cargos.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Parâmetros oficiais e cargos principais por instituição.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -825,6 +828,10 @@ const CARGOS_PCAC = [
   { val: 'agente_i_ac', text: 'Agente / Escrivão / Papiloscopista / Aux. Necropsia PCAC — Classe I', padrao: 5000.00, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_OPERACIONAL, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' }
 ];
 
+
+
+
+/* ===== js/data/policia-penal.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Informações e tabelas da Polícia Penal.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -1610,6 +1617,10 @@ const CARGOS_PPAC = mapearTabelaPoliciaPenal(
 );
 
 /* BLOCO 15.4 — Base de dados das ações judiciais por instituição */
+
+
+
+/* ===== js/data/bases-conteudo.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Bases de ações judiciais, associações, concursos e estado inicial.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2316,6 +2327,10 @@ let currInst = 'pmesp';
 let headerModoInicialPortal = true;
 const HEADER_BRASIL_FLAG = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Brazil.svg';
 const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmac','pcac','ppac','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
+
+
+
+/* ===== js/ui/navegacao-ui.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Helpers, menu, tema, navegação e popularização de cargos.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2572,6 +2587,10 @@ function popularCargos(inst) {
 
 
 /* ============================================================ */
+
+
+
+/* ===== js/services/remuneracao.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Cálculos e renderização da remuneração tabelada.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2792,7 +2811,7 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
       : 'Referência de remuneração do último concurso/edital PMMS; confirmar tabela vigente antes de decisão financeira.';
     benefDesc = 'Auxílios, adicionais, fardamento, indenizações e verbas por escala/lotação dependem da legislação estadual, ato administrativo e contracheque; não foram somados automaticamente.';
     fonteKey = 'pmms';
-    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : 'Edital/triagem';
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : 'Edital/triagem';
   } else if (inst === 'pcms') {
     remuneracao = padrao;
     beneficios = 0;
@@ -2801,7 +2820,7 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
       : 'Remuneração inicial divulgada no Edital SAD/SEJUSP/PCMS/APJ/2025 para jornada de 40h.';
     benefDesc = 'Abonos, adicionais, plantões, indenizações e outras rubricas dependem da legislação estadual, lotação, escala e contracheque; não foram somados automaticamente.';
     fonteKey = 'pcms';
-    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : 'Edital APJ/2025';
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : 'Edital APJ/2025';
   } else if (inst === 'pmerj') {
     let gret = '150%';
     let ghp = '110%';
@@ -2987,28 +3006,28 @@ function calcularRemuneracaoTabelada(inst, cargo) {
     criterio = cargo.criterio || 'Tabela salarial militar de Mato Grosso do Sul por posto/graduação e nível; confirmar DOE/MS, edital ou contracheque para rubricas individuais.';
     benefDesc = cargo.benefDesc || 'Auxílios, adicionais, fardamento, indenizações e verbas por escala/lotação dependem da legislação estadual, ato administrativo e contracheque; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || 'pmms';
-    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : (cargo.badge || 'Tabela 05/2025');
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Tabela 05/2025');
   } else if (inst === 'pcms') {
     remuneracao = padrao;
     beneficios = 0;
     criterio = cargo.criterio || 'Tabela legal/edital da Polícia Civil de Mato Grosso do Sul; conferir DOE/MS, edital vigente e contracheque para a situação individual.';
     benefDesc = cargo.benefDesc || 'Abonos, adicionais, plantões, indenizações e outras rubricas dependem da legislação estadual, lotação, escala e contracheque; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || 'pcms';
-    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : (cargo.badge || 'Fonte oficial');
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Fonte oficial');
   } else if (inst === 'pmmt') {
     remuneracao = padrao;
     beneficios = 0;
-    criterio = cargo.criterio || 'Referência de edital/portal oficial da PMMT; postos sem valor confirmado ficam como "a confirmar".';
+    criterio = cargo.criterio || 'Referência de edital/portal oficial da PMMT; postos sem valor confirmado ficam como "Dados em breve".';
     benefDesc = cargo.benefDesc || 'Adicionais, indenizações, etapas, auxílio, escala, fardamento e demais rubricas dependem da legislação estadual, lotação, escala e contracheque; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || 'pmmt';
-    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : (cargo.badge || 'Edital/portal oficial');
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Edital/portal oficial');
   } else if (inst === 'pcmt') {
     remuneracao = padrao;
     beneficios = 0;
-    criterio = cargo.criterio || 'Tabela salarial do Portal do Servidor/SEPLAG-MT usada para referências cadastradas da PCMT; cargos sem tabela específica confirmada ficam como "a confirmar".';
+    criterio = cargo.criterio || 'Tabela salarial do Portal do Servidor/SEPLAG-MT usada para referências cadastradas da PCMT; cargos sem tabela específica confirmada ficam como "Dados em breve".';
     benefDesc = cargo.benefDesc || 'Adicionais, plantões, indenizações, verbas de escala e demais rubricas dependem da legislação estadual, lotação, escala e contracheque; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || 'pcmt';
-    badge = cargo.valorPendente || padrao <= 0 ? 'A confirmar' : (cargo.badge || 'Tabela 2025');
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Tabela 2025');
   } else if (inst === 'pmerj') {
     const gret = padrao * Number(cargo.gretPct || 0);
     const ghp = padrao * Number(cargo.ghpPct || 0);
@@ -3155,8 +3174,8 @@ function carregarRemuneracaoTabelada() {
   const elMenor = document.getElementById('remu-menor-total');
   const elMaior = document.getElementById('remu-maior-total');
   if (elTotal) elTotal.textContent = String(linhas.length);
-  if (elMenor) elMenor.textContent = menor ? fmt(menor) : 'A confirmar';
-  if (elMaior) elMaior.textContent = maior ? fmt(maior) : 'A confirmar';
+  if (elMenor) elMenor.textContent = menor ? fmt(menor) : 'Dados em breve';
+  if (elMaior) elMaior.textContent = maior ? fmt(maior) : 'Dados em breve';
 
   tbody.innerHTML = linhas.map(l => {
     const fonte = REMUNERACAO_FONTES_OFICIAIS[l.fonteKey] || REMUNERACAO_FONTES_OFICIAIS[inst] || { nome: 'Fonte oficial da carreira', url: '#' };
@@ -3166,7 +3185,7 @@ function carregarRemuneracaoTabelada() {
           <strong>${escapeHtml(l.cargo)}</strong>
           <br><span class="remuneracao-badge">${escapeHtml(l.badge || 'Fonte oficial')}</span>
         </td>
-        <td class="valor">${l.valorPendente ? 'A confirmar' : fmt(l.remuneracao)}</td>
+        <td class="valor">${l.valorPendente ? 'Dados em breve' : fmt(l.remuneracao)}</td>
         <td class="adicionais">${formatarAdicionaisRemuneracaoHtml(inst, l)}</td>
         <td>
           ${escapeHtml(l.criterio || '')}<br>
@@ -3180,6 +3199,10 @@ function carregarRemuneracaoTabelada() {
 
 
 /* ============================================================ */
+
+
+
+/* ===== js/ui/header-estados.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Troca de instituição, estados, cabeçalho e estrutura de UFs.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -6199,6 +6222,67 @@ function aplicarRevisaoConcursosInstituicoes() {
 
 aplicarRevisaoConcursosInstituicoes();
 
+
+/* ============================================================ */
+/* === PADRONIZAÇÃO GLOBAL DE DADOS SEM FONTE SEGURA =========== */
+/* ============================================================ */
+const DADOS_EM_BREVE_PADRAO_GLOBAL = 'Dados em breve';
+
+function dadoSemFonteSegura(valor) {
+  if (valor === undefined || valor === null) return true;
+  if (typeof valor === 'number') return false;
+  if (typeof valor !== 'string') return false;
+  const texto = valor.trim();
+  if (!texto || texto === '#' || texto === '-' || texto === '—') return true;
+  if (texto === DADOS_EM_BREVE_PADRAO_GLOBAL) return false;
+  if (/^https?:\/\//i.test(texto)) return false;
+  return /(?:a preencher|preencher|a confirmar|nome a confirmar|a definir|sem informação|sem informacao|não informado|nao informado|não divulgado|nao divulgado|ainda não divulgado|ainda nao divulgado|pendente|dados pendentes|estrutura criada|estrutura aberta|para preenchimento|fonte oficial a preencher|fontes oficiais .* preencher|consultar diretamente|consultar site|consultar canais|consultar edital|consultar banca|consultar fonte|conferir edital|conferir autorização|acompanhar diário oficial|acompanhar diario oficial|não afirmar concurso aberto|nao afirmar concurso aberto|espaço reservado|espaco reservado|reservado para|cadastrar aqui|serviços a preencher|servicos a preencher|verificar caso a caso|análise individual|analise individual|base local pendente|base federal pendente|regra local a preencher|regra federal a preencher|tema permanente|tema recorrente|documentos funcionais e normas locais|documentos funcionais e normas federais|conferência previdenciária individual|conferencia previdenciaria individual)/i.test(texto);
+}
+
+function normalizarTextoSemFonteSegura(valor) {
+  return dadoSemFonteSegura(valor) ? DADOS_EM_BREVE_PADRAO_GLOBAL : valor;
+}
+
+function normalizarObjetoSemFonteSegura(obj, visitados = new WeakSet()) {
+  if (!obj || typeof obj !== 'object') return obj;
+  if (visitados.has(obj)) return obj;
+  visitados.add(obj);
+
+  if (Array.isArray(obj)) {
+    obj.forEach((item, indice) => {
+      if (item && typeof item === 'object') normalizarObjetoSemFonteSegura(item, visitados);
+      else obj[indice] = normalizarTextoSemFonteSegura(item);
+    });
+    return obj;
+  }
+
+  Object.keys(obj).forEach(chave => {
+    const valor = obj[chave];
+    if (valor && typeof valor === 'object') {
+      normalizarObjetoSemFonteSegura(valor, visitados);
+      return;
+    }
+    if (/^(url|fonteUrl|href|flag|brasao|imagem|img|logo)$/i.test(chave)) return;
+    obj[chave] = normalizarTextoSemFonteSegura(valor);
+  });
+  return obj;
+}
+
+function aplicarPadraoDadosEmBreveGlobal() {
+  [
+    HEADER_INSTITUICOES_RESUMO,
+    CONCURSOS,
+    ACOES_JUDICIAIS,
+    ASSOCIACOES,
+    POLICIAS_PENAIS_INFO,
+    CONFIGS_INSTITUICOES_GENERICAS,
+    CARGOS_ESTRUTURA_GENERICAS,
+    REMUNERACAO_FONTES_OFICIAIS
+  ].forEach(base => normalizarObjetoSemFonteSegura(base));
+}
+
+aplicarPadraoDadosEmBreveGlobal();
+
 function formatarNumeroHeader(valor) {
   return Number(valor || 0).toLocaleString('pt-BR');
 }
@@ -6577,6 +6661,10 @@ function mudarInstituicao(novaInstituicao) {
 
 
 /* ============================================================ */
+
+
+
+/* ===== js/services/direitos.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Análise de direitos, vantagens e aposentadoria.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -7157,6 +7245,10 @@ function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingress
 }
 
 /* ============================================================ */
+
+
+
+/* ===== js/pages/concursos-comparador.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Concursos, comparador de carreiras, ações judiciais e associações.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -7164,45 +7256,61 @@ function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingress
 /* ============================================================ */
 /* BLOCO 15.12 — Renderização das páginas de concursos, ações e associações */
 
+const TEXTO_DADOS_EM_BREVE = 'Dados em breve';
+
+function valorOuDadosEmBreve(valor) {
+  if (typeof normalizarTextoSemFonteSegura === 'function') return normalizarTextoSemFonteSegura(valor);
+  const texto = String(valor ?? '').trim();
+  if (!texto || texto === '#' || /(?:a preencher|preencher|a confirmar|a definir|consultar|conferir|sem informação|sem informacao|pendente|estrutura criada|estrutura aberta|espaço reservado|reservado para|não afirmar|nao afirmar)/i.test(texto)) return TEXTO_DADOS_EM_BREVE;
+  return texto;
+}
+
+function ehDadosEmBreve(valor) {
+  return valorOuDadosEmBreve(valor) === TEXTO_DADOS_EM_BREVE;
+}
+
+function itemUnicoDadosEmBreve(classe = 'acao') {
+  return `<div class="direito-item ${classe}"><span class="direito-nome">${TEXTO_DADOS_EM_BREVE}</span></div>`;
+}
+
+function urlPublicaValida(valor) {
+  return /^https?:\/\//i.test(String(valor || '').trim());
+}
+
 function getConcursoPoliciaPenal(inst) {
   if (!isPoliciaPenal(inst)) return null;
   const info = getInfoPoliciaPenal(inst);
-  return {
-    edital: `${info.sigla} — ${info.nome} — concursos, formação e carreira penal`,
-    salario: info.concurso.salario || info.remuneracao,
-    vagas: info.concurso.vagas || 'Conferir autorização, edital e Diário Oficial da unidade federativa.',
-    cotas: 'Reserva de vagas conforme legislação estadual, federal e regras do edital vigente.',
-    idade: 'Em regra, idade mínima de 18 anos; limites máximos, CNH, altura, aptidão física e demais requisitos dependem do edital e da legislação local.',
-    escolaridade: info.concurso.escolaridade || info.escolaridade,
-    materias: 'Português, Raciocínio Lógico, Informática, Direito Constitucional, Administrativo, Penal, Processo Penal, Direitos Humanos, Lei de Execução Penal, legislação penitenciária, atualidades e conhecimentos específicos, conforme edital.',
-    banca: info.concurso.banca || 'A definir conforme edital.',
-    inscritos: 'Sem informação automática; acompanhar Diário Oficial, portal do governo e site da banca.',
-    etapas: 'Prova objetiva, investigação social, exames médicos, avaliação psicológica, TAF, curso de formação e demais fases previstas no edital.',
-    cfsd: info.formacao,
-    estagio: 'Estágio probatório e avaliação de desempenho conforme regime jurídico e lei da carreira penal.',
-    validade: 'Conferir edital do certame.',
-    previsao: `Acompanhar publicações oficiais: ${info.fonte}. Não afirmar edital aberto sem publicação oficial.`,
-    site: info.url || REMUNERACAO_FONTES_OFICIAIS[inst]?.url || '#'
+  const dados = {
+    edital: `${info.sigla} — ${info.nome}`,
+    salario: valorOuDadosEmBreve(info.concurso?.salario || info.remuneracao),
+    vagas: valorOuDadosEmBreve(info.concurso?.vagas),
+    cotas: TEXTO_DADOS_EM_BREVE,
+    idade: TEXTO_DADOS_EM_BREVE,
+    escolaridade: valorOuDadosEmBreve(info.concurso?.escolaridade || info.escolaridade),
+    materias: TEXTO_DADOS_EM_BREVE,
+    banca: valorOuDadosEmBreve(info.concurso?.banca),
+    inscritos: TEXTO_DADOS_EM_BREVE,
+    etapas: TEXTO_DADOS_EM_BREVE,
+    cfsd: valorOuDadosEmBreve(info.formacao),
+    estagio: TEXTO_DADOS_EM_BREVE,
+    validade: TEXTO_DADOS_EM_BREVE,
+    previsao: TEXTO_DADOS_EM_BREVE,
+    site: urlPublicaValida(info.url) ? info.url : (REMUNERACAO_FONTES_OFICIAIS[inst]?.url || '#')
   };
+  return typeof concursoNormalizarObjeto === 'function' ? concursoNormalizarObjeto(inst, dados) : dados;
 }
 
 function getAcoesPoliciaPenal(inst) {
   if (!isPoliciaPenal(inst)) return [];
-  const info = getInfoPoliciaPenal(inst);
   return [
-    { titulo: `${info.sigla} — Enquadramento, transformação de cargos e implantação da carreira`, status: 'Verificar caso a caso', ano: info.criacao, tipo: 'individual', desc: `Discussões podem envolver transformação de antigos cargos penitenciários em Polícia Penal, enquadramento, classe, referência, atribuições, efeitos financeiros e data de implantação. ${info.marco}`, base: `${info.criacao}; ato de enquadramento; ficha funcional; tabela remuneratória; Diário Oficial.`, fonte: info.fonte, fonteUrl: info.url, atualizado: 'Abril/2026' },
-    { titulo: `${info.sigla} — Adicional penitenciário, risco, periculosidade, insalubridade e rubricas`, status: 'Tema dependente de rubrica e laudo', ano: 'Tema recorrente', tipo: 'individual', desc: info.vantagens, base: 'Lei estadual da carreira, laudo/ato administrativo, contracheques, lotação, escala e local de exercício.', fonte: info.fonte, fonteUrl: info.url, atualizado: 'Abril/2026' },
-    { titulo: `${info.sigla} — Aposentadoria policial, transições e previdência`, status: 'Análise individual', ano: 'EC 103/2019, EC 104/2019 e normas locais', tipo: 'individual', desc: info.previdencia, base: 'Data de ingresso, tempo de contribuição, tempo no cargo/carreira, sexo, idade, regra aplicada e ficha funcional.', fonte: 'Conferência previdenciária individual', fonteUrl: info.url, atualizado: 'Abril/2026' },
-    { titulo: `${info.sigla} — Plantões, escoltas, operações, diárias e serviço extraordinário`, status: 'Depende de escala e autorização', ano: 'Tema operacional', tipo: 'individual', desc: `Atribuições operacionais: ${info.atribuicoes} Diferenças dependem de escala, ordem de serviço, autorização, deslocamento e rubrica.`, base: 'Escalas, ordens de serviço, publicações, lei local, contracheques e atos administrativos.', fonte: 'Documentos funcionais e normas internas', fonteUrl: info.url, atualizado: 'Abril/2026' }
+    { titulo: TEXTO_DADOS_EM_BREVE, status: TEXTO_DADOS_EM_BREVE, ano: TEXTO_DADOS_EM_BREVE, tipo: 'individual', desc: TEXTO_DADOS_EM_BREVE, base: TEXTO_DADOS_EM_BREVE, fonte: TEXTO_DADOS_EM_BREVE, fonteUrl: '', atualizado: TEXTO_DADOS_EM_BREVE }
   ];
 }
 
 function getAssociacoesPoliciaPenal(inst) {
   if (!isPoliciaPenal(inst)) return [];
-  const info = getInfoPoliciaPenal(inst);
   return [
-    { nome: `Entidade representativa da ${info.sigla} — ${info.nome}`, foco: `${info.uf} — policiais penais ativos, aposentados e pensionistas quando abrangidos`, acao: `Representação da categoria em carreira, remuneração, saúde, aposentadoria policial, porte funcional, condições de trabalho, segurança prisional e valorização institucional. Busca sugerida: ${info.associacaoBusca}.`, site: 'Consultar site/canal oficial da entidade local', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação sindical/associativa, notícias, mobilização, acompanhamento legislativo e eventual apoio jurídico conforme regras internas.' },
-    { nome: `Associação/Sindicato dos Policiais Penais — ${info.uf}`, foco: `${info.orgao}`, acao: `Acompanhamento de pautas ligadas a ${info.criacao}, implantação da carreira, adicionais, concurso, formação, segurança das unidades e direitos funcionais.`, site: 'Consultar canais oficiais e redes da entidade local', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Atendimento associativo, comunicação, assembleias, convênios, acompanhamento legislativo e eventual suporte jurídico conforme contrato.' }
+    { nome: TEXTO_DADOS_EM_BREVE, foco: TEXTO_DADOS_EM_BREVE, acao: TEXTO_DADOS_EM_BREVE, site: '', telefone: TEXTO_DADOS_EM_BREVE, mensalidade: TEXTO_DADOS_EM_BREVE, servicos: TEXTO_DADOS_EM_BREVE }
   ];
 }
 
@@ -7392,16 +7500,16 @@ function getResumoRemuneracaoComparador(inst) {
   const maior = validas.length ? Math.max(...validas.map(l => Number(l.remuneracao || 0))) : 0;
   const linhaMenor = validas.find(l => Number(l.remuneracao || 0) === menor) || linhas[0] || {};
   const linhaMaior = validas.find(l => Number(l.remuneracao || 0) === maior) || linhas[0] || {};
-  const fonte = REMUNERACAO_FONTES_OFICIAIS[linhaMenor.fonteKey] || REMUNERACAO_FONTES_OFICIAIS[inst] || { nome: 'Fonte oficial da carreira', url: '#' };
+  const fonte = REMUNERACAO_FONTES_OFICIAIS[linhaMenor.fonteKey] || REMUNERACAO_FONTES_OFICIAIS[inst] || { nome: 'Dados em breve', url: '#' };
   const adicionais = getAdicionaisRemuneracaoResumo(inst, linhaMenor);
   return {
     totalCargos: linhas.length,
     menor,
     maior,
-    cargoMenor: linhaMenor.cargo || 'Cargo inicial/de referência',
-    cargoMaior: linhaMaior.cargo || 'Topo de carreira/de referência',
+    cargoMenor: linhaMenor.cargo || 'Dados em breve',
+    cargoMaior: linhaMaior.cargo || 'Dados em breve',
     adicionais,
-    fonteNome: fonte.nome || 'Fonte oficial da carreira',
+    fonteNome: fonte.nome || 'Dados em breve',
     fonteUrl: fonte.url || '#'
   };
 }
@@ -7472,11 +7580,11 @@ function carregarComparadorCarreiras() {
     </div>
     <div class="comparador-stat">
       <span>Menor remuneração encontrada</span>
-      <strong>${menores.length ? fmt(Math.min(...menores)) : 'A confirmar'}</strong>
+      <strong>${menores.length ? fmt(Math.min(...menores)) : 'Dados em breve'}</strong>
     </div>
     <div class="comparador-stat">
       <span>Maior remuneração encontrada</span>
-      <strong>${maiores.length ? fmt(Math.max(...maiores)) : 'A confirmar'}</strong>
+      <strong>${maiores.length ? fmt(Math.max(...maiores)) : 'Dados em breve'}</strong>
     </div>
     <div class="comparador-stat">
       <span>Destaques</span>
@@ -7496,25 +7604,25 @@ function carregarComparadorCarreiras() {
           <span class="comparador-pill">${escapeHtml(d.ramo)}</span>
         </td>
         <td>
-          <strong>Menor:</strong> ${r.menor ? fmt(r.menor) : 'A confirmar'}<br>
+          <strong>Menor:</strong> ${r.menor ? fmt(r.menor) : 'Dados em breve'}<br>
           <small>${escapeHtml(r.cargoMenor)}</small><br>
-          <strong>Maior:</strong> ${r.maior ? fmt(r.maior) : 'A confirmar'}<br>
+          <strong>Maior:</strong> ${r.maior ? fmt(r.maior) : 'Dados em breve'}<br>
           <small>${escapeHtml(r.cargoMaior)}</small>
         </td>
         <td>
           ${escapeHtml(limitarTextoComparador(r.adicionais, 260))}
         </td>
         <td>
-          <strong>Último edital:</strong> ${escapeHtml(c.edital || 'Edital de referência')}<br>
-          <strong>Salário edital:</strong> ${escapeHtml(c.salario || 'Consultar edital')}<br>
+          <strong>Último edital:</strong> ${escapeHtml(c.edital || 'Dados em breve')}<br>
+          <strong>Salário edital:</strong> ${escapeHtml(c.salario || 'Dados em breve')}<br>
           <strong>Próximo concurso / andamento:</strong> ${escapeHtml(limitarTextoComparador(c.previsao, 180))}
         </td>
         <td>
-          <strong>Vagas:</strong> ${escapeHtml(c.vagas || 'Consultar edital')}<br>
-          <strong>Inscritos:</strong> ${escapeHtml(c.inscritos || 'Consultar banca')}
+          <strong>Vagas:</strong> ${escapeHtml(c.vagas || 'Dados em breve')}<br>
+          <strong>Inscritos:</strong> ${escapeHtml(c.inscritos || 'Dados em breve')}
         </td>
         <td>
-          <strong>Banca:</strong> ${escapeHtml(c.banca || 'Consultar edital')}<br>
+          <strong>Banca:</strong> ${escapeHtml(c.banca || 'Dados em breve')}<br>
           <strong>Matérias:</strong> ${escapeHtml(limitarTextoComparador(c.materias, 230))}
         </td>
         <td>
@@ -7533,11 +7641,11 @@ function carregarComparadorCarreiras() {
         <h3>${escapeHtml(d.sigla)} — ${escapeHtml(d.uf)}</h3>
         <p><strong>${escapeHtml(d.nome)}</strong> · ${escapeHtml(d.ramo)}</p>
         <ul>
-          <li><strong>Faixa cadastrada:</strong> ${r.menor ? fmt(r.menor) : 'A confirmar'} até ${r.maior ? fmt(r.maior) : 'A confirmar'}.</li>
+          <li><strong>Faixa cadastrada:</strong> ${r.menor ? fmt(r.menor) : 'Dados em breve'} até ${r.maior ? fmt(r.maior) : 'Dados em breve'}.</li>
           <li><strong>Referência inferior:</strong> ${escapeHtml(r.cargoMenor)}.</li>
-          <li><strong>Último edital de referência:</strong> ${escapeHtml(c.edital || 'Consultar edital vigente')}.</li>
-          <li><strong>Vagas:</strong> ${escapeHtml(c.vagas || 'Consultar edital')}.</li>
-          <li><strong>Banca:</strong> ${escapeHtml(c.banca || 'Consultar edital')}.</li>
+          <li><strong>Último edital de referência:</strong> ${escapeHtml(c.edital || 'Dados em breve')}.</li>
+          <li><strong>Vagas:</strong> ${escapeHtml(c.vagas || 'Dados em breve')}.</li>
+          <li><strong>Banca:</strong> ${escapeHtml(c.banca || 'Dados em breve')}.</li>
           <li><strong>Escolaridade:</strong> ${escapeHtml(limitarTextoComparador(c.escolaridade, 180))}.</li>
           <li><strong>Etapas:</strong> ${escapeHtml(limitarTextoComparador(c.etapas, 200))}.</li>
         </ul>
@@ -7570,7 +7678,7 @@ function carregarConcursos() {
       <span class="direito-desc"><strong>Estágio Probatório:</strong> ${c.estagio}</span>
       <span class="direito-desc"><strong>Validade do edital:</strong> ${c.validade}</span>
       <span class="direito-desc" style="margin-top:8px;"><strong>Próximo Edital:</strong> ${c.previsao}</span>
-      ${c.site && c.site !== '#' ? `<a href="${c.site}" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>` : `<span class="direito-desc"><strong>Site oficial/fonte:</strong> Dados em breve</span>`}
+      ${urlPublicaValida(c.site) ? `<a href="${c.site}" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>` : `<span class="direito-desc">Dados em breve</span>`}
     </div>
 
     <a class="taf-produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="noopener noreferrer" aria-label="Ver barra fixa para porta, produto útil para treino de TAF">
@@ -7619,20 +7727,32 @@ function carregarAcoes() {
   if (!cont) return;
   const lista = ACOES_JUDICIAIS[currInst] || getAcoesPoliciaPenal(currInst) || [];
 
+  if (!lista.length) {
+    cont.innerHTML = itemUnicoDadosEmBreve('acao');
+    return;
+  }
+
   cont.innerHTML = lista.map(a => {
-    const fonteHtml = a.fonte ? `<span class="direito-desc"><strong>Fonte de conferência:</strong> ${a.fonteUrl ? `<a href="${a.fonteUrl}" target="_blank" rel="noopener noreferrer" class="concurso-link">${a.fonte}</a>` : a.fonte}</span>` : '';
-    const atualizadoHtml = a.atualizado ? `<span class="direito-desc"><strong>Última atualização:</strong> ${a.atualizado}</span>` : '';
+    const titulo = valorOuDadosEmBreve(a.titulo);
+    const campos = [a.status, a.ano, a.desc, a.base, a.fonte, a.atualizado].map(valorOuDadosEmBreve);
+    const semFonteSegura = titulo === TEXTO_DADOS_EM_BREVE || campos.every(v => v === TEXTO_DADOS_EM_BREVE);
+    if (semFonteSegura) return itemUnicoDadosEmBreve('acao');
+
+    const fonteHtml = a.fonte && a.fonte !== TEXTO_DADOS_EM_BREVE
+      ? `<span class="direito-desc"><strong>Fonte de conferência:</strong> ${urlPublicaValida(a.fonteUrl) ? `<a href="${a.fonteUrl}" target="_blank" rel="noopener noreferrer" class="concurso-link">${a.fonte}</a>` : TEXTO_DADOS_EM_BREVE}</span>`
+      : `<span class="direito-desc">${TEXTO_DADOS_EM_BREVE}</span>`;
+    const atualizadoHtml = !ehDadosEmBreve(a.atualizado) ? `<span class="direito-desc"><strong>Última atualização:</strong> ${a.atualizado}</span>` : '';
 
     return `
       <div class="direito-item acao">
-        <span class="direito-nome">${a.titulo}</span>
-        <span class="direito-status" style="color: var(--vermelho);">${a.status}</span>
+        <span class="direito-nome">${titulo}</span>
+        <span class="direito-status" style="color: var(--vermelho);">${valorOuDadosEmBreve(a.status)}</span>
         <div>
-          <span class="badge-info ${a.tipo}">${a.tipo === 'coletiva' ? '⚖ Ação Coletiva' : '👤 Ação Individual'}</span>
-          <span class="badge-info ativa">${a.ano}</span>
+          <span class="badge-info ${a.tipo === 'coletiva' ? 'coletiva' : 'individual'}">${a.tipo === 'coletiva' ? '⚖ Ação Coletiva' : '👤 Ação Individual'}</span>
+          <span class="badge-info ativa">${valorOuDadosEmBreve(a.ano)}</span>
         </div>
-        <span class="direito-desc">${a.desc}</span>
-        <span class="direito-desc"><strong>Base legal/jurisprudência:</strong> ${a.base}</span>
+        <span class="direito-desc">${valorOuDadosEmBreve(a.desc)}</span>
+        <span class="direito-desc"><strong>Base legal/jurisprudência:</strong> ${valorOuDadosEmBreve(a.base)}</span>
         ${fonteHtml}
         ${atualizadoHtml}
       </div>
@@ -7647,21 +7767,40 @@ function carregarAssociacoes() {
   const cont = document.getElementById('lista-associacoes');
   if (!cont) return;
   const lista = ASSOCIACOES[currInst] || getAssociacoesPoliciaPenal(currInst) || [];
-  cont.innerHTML = lista.map(a => `
-    <div class="direito-item associacao">
-      <span class="direito-nome">${a.nome}</span>
-      <span class="direito-desc"><strong>Foco:</strong> ${a.foco}</span>
-      <span class="direito-desc"><strong>Atuação atual:</strong> ${a.acao}</span>
-      <span class="direito-desc"><strong>Serviços:</strong> ${a.servicos}</span>
-      <span class="direito-desc"><strong>Mensalidade:</strong> ${a.mensalidade}</span>
-      <span class="direito-desc"><strong>Contato:</strong> ${a.telefone} · <a href="https://${a.site}" target="_blank" rel="noopener noreferrer" class="concurso-link" style="margin-top:0;">${a.site}</a></span>
-    </div>
-  `).join('');
+  if (!lista.length) {
+    cont.innerHTML = itemUnicoDadosEmBreve('associacao');
+    return;
+  }
+
+  cont.innerHTML = lista.map(a => {
+    const nome = valorOuDadosEmBreve(a.nome);
+    const campos = [a.foco, a.acao, a.servicos, a.mensalidade, a.telefone, a.site].map(valorOuDadosEmBreve);
+    const semFonteSegura = nome === TEXTO_DADOS_EM_BREVE || campos.every(v => v === TEXTO_DADOS_EM_BREVE);
+    if (semFonteSegura) return itemUnicoDadosEmBreve('associacao');
+    const contato = urlPublicaValida(a.site)
+      ? `${valorOuDadosEmBreve(a.telefone)} · <a href="${a.site}" target="_blank" rel="noopener noreferrer" class="concurso-link" style="margin-top:0;">${a.site}</a>`
+      : TEXTO_DADOS_EM_BREVE;
+    return `
+      <div class="direito-item associacao">
+        <span class="direito-nome">${nome}</span>
+        <span class="direito-desc"><strong>Foco:</strong> ${valorOuDadosEmBreve(a.foco)}</span>
+        <span class="direito-desc"><strong>Atuação atual:</strong> ${valorOuDadosEmBreve(a.acao)}</span>
+        <span class="direito-desc"><strong>Serviços:</strong> ${valorOuDadosEmBreve(a.servicos)}</span>
+        <span class="direito-desc"><strong>Mensalidade:</strong> ${valorOuDadosEmBreve(a.mensalidade)}</span>
+        <span class="direito-desc"><strong>Contato:</strong> ${contato}</span>
+      </div>
+    `;
+  }).join('');
 }
 
 
 
+
 /* ============================================================ */
+
+
+
+/* ===== js/pages/poderes-deveres.js ===== */
 /* ============================================================
    PODERES E DEVERES — aba independente da instituição principal
    ============================================================ */
@@ -7977,7 +8116,7 @@ const PODERES_DEVERES_BASE = {
     "limites": [
       "A Polícia Penal não substitui, como regra, Polícia Civil/PF na investigação criminal geral nem Polícia Militar na polícia ostensiva geral.",
       "A extensão de porte, escolta, atuação externa e grupos especializados depende de lei e regulamento do ente federativo.",
-      "A lei nacional orgânica específica da Polícia Penal ainda depende de consolidação normativa ampla; quando não houver dado local, usar Dados em breve."
+      "Dados em breve"
     ],
     "leis": [
       {
@@ -8189,17 +8328,34 @@ function poderesValor(valor) {
   return texto ? texto : PODERES_DEVERES_DADOS_EM_BREVE;
 }
 
+function poderesEhDadoPendente(valor) {
+  const texto = poderesValor(valor);
+  if (texto === PODERES_DEVERES_DADOS_EM_BREVE) return true;
+  if (/^(lei estadual|lei distrital|lei municipal|lei orgânica nacional específica|lei organica nacional especifica|lei estadual\/distrital|lei local|norma local)/i.test(texto)) return true;
+  return /(?:dados em breve|a preencher|preencher|a confirmar|a definir|sem informação|sem informacao|pendente|fonte oficial a preencher|consultar|conferir|não localizado|nao localizado)/i.test(texto);
+}
+
+function poderesUrlValida(url) {
+  return /^https?:\/\//i.test(String(url || '').trim());
+}
+
+function poderesItemDadosEmBreve(classe = 'poderes-fonte-item') {
+  return `<div class="${classe}"><strong>${PODERES_DEVERES_DADOS_EM_BREVE}</strong></div>`;
+}
+
 function poderesListaHtml(lista) {
   if (!Array.isArray(lista) || !lista.length) return `<li>${PODERES_DEVERES_DADOS_EM_BREVE}</li>`;
   return lista.map(item => `<li>${poderesEscapar(poderesValor(item))}</li>`).join('');
 }
 
 function poderesLeisHtml(lista) {
-  if (!Array.isArray(lista) || !lista.length) return `<div class="poderes-fonte-item"><strong>${PODERES_DEVERES_DADOS_EM_BREVE}</strong></div>`;
+  if (!Array.isArray(lista) || !lista.length) return poderesItemDadosEmBreve('poderes-fonte-item');
   return lista.map(lei => {
+    const semFonteSegura = !poderesUrlValida(lei?.url) || poderesEhDadoPendente(lei?.nome) || poderesEhDadoPendente(lei?.resumo);
+    if (semFonteSegura) return poderesItemDadosEmBreve('poderes-fonte-item');
     const nome = poderesEscapar(poderesValor(lei.nome));
     const resumo = poderesEscapar(poderesValor(lei.resumo));
-    const link = lei.url ? `<a href="${poderesEscapar(lei.url)}" target="_blank" rel="noopener noreferrer" class="concurso-link">Abrir fonte oficial</a>` : `<span class="poderes-dados-breve">${PODERES_DEVERES_DADOS_EM_BREVE}</span>`;
+    const link = `<a href="${poderesEscapar(lei.url)}" target="_blank" rel="noopener noreferrer" class="concurso-link">Abrir fonte oficial</a>`;
     return `<div class="poderes-fonte-item"><strong>${nome}</strong><span>${resumo}</span>${link}</div>`;
   }).join('');
 }
@@ -8207,7 +8363,12 @@ function poderesLeisHtml(lista) {
 function poderesEntendimentosHtml(lista) {
   if (!Array.isArray(lista) || !lista.length) return `<div class="direito-item acao"><span class="direito-nome">${PODERES_DEVERES_DADOS_EM_BREVE}</span></div>`;
   return lista.map(item => {
-    const link = item.url ? `<a href="${poderesEscapar(item.url)}" target="_blank" rel="noopener noreferrer" class="concurso-link">${poderesEscapar(item.fonte || 'Abrir fonte')}</a>` : `<span>${PODERES_DEVERES_DADOS_EM_BREVE}</span>`;
+    const semFonteSegura = !poderesUrlValida(item?.url)
+      || poderesEhDadoPendente(item?.titulo)
+      || poderesEhDadoPendente(item?.resumo)
+      || poderesEhDadoPendente(item?.fonte);
+    if (semFonteSegura) return `<div class="direito-item acao"><span class="direito-nome">${PODERES_DEVERES_DADOS_EM_BREVE}</span></div>`;
+    const link = `<a href="${poderesEscapar(item.url)}" target="_blank" rel="noopener noreferrer" class="concurso-link">${poderesEscapar(item.fonte)}</a>`;
     return `
       <div class="direito-item acao poderes-entendimento-item">
         <span class="direito-nome">${poderesEscapar(poderesValor(item.titulo))}</span>
@@ -8219,6 +8380,7 @@ function poderesEntendimentosHtml(lista) {
     `;
   }).join('');
 }
+
 
 function poderesRenderizar(inst) {
   const painel = document.getElementById('poderes_resultado');
@@ -8267,7 +8429,7 @@ function poderesRenderizar(inst) {
 
     <section class="poderes-fontes-card">
       <h3>Leis e normas de referência</h3>
-      <p>Fontes oficiais ou institucionais importantes para conferência. Quando a lei estadual, distrital ou municipal específica ainda não estiver cadastrada, aparece exatamente como Dados em breve.</p>
+      <p>Fontes oficiais ou institucionais importantes para conferência.</p>
       <div class="poderes-fontes-lista">${poderesLeisHtml(dados.leis)}</div>
     </section>
 
@@ -8291,6 +8453,10 @@ function inicializarPoderesDeveres() {
 function mudarInstituicaoPoderes(valor) {
   poderesRenderizar(valor || 'pf');
 }
+
+
+
+/* ===== js/pages/contato-init.js ===== */
 /* Chunk gerado a partir de js/script-original.js — Contato, anúncios, contador e inicialização.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -8413,6 +8579,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+
+/* ===== js/ui/event-bindings.js ===== */
 /* =======================================================
    Eventos centralizados.
    Remove a dependência de onclick/onchange/oninput inline no HTML.

@@ -3017,6 +3017,67 @@ function aplicarRevisaoConcursosInstituicoes() {
 
 aplicarRevisaoConcursosInstituicoes();
 
+
+/* ============================================================ */
+/* === PADRONIZAÇÃO GLOBAL DE DADOS SEM FONTE SEGURA =========== */
+/* ============================================================ */
+const DADOS_EM_BREVE_PADRAO_GLOBAL = 'Dados em breve';
+
+function dadoSemFonteSegura(valor) {
+  if (valor === undefined || valor === null) return true;
+  if (typeof valor === 'number') return false;
+  if (typeof valor !== 'string') return false;
+  const texto = valor.trim();
+  if (!texto || texto === '#' || texto === '-' || texto === '—') return true;
+  if (texto === DADOS_EM_BREVE_PADRAO_GLOBAL) return false;
+  if (/^https?:\/\//i.test(texto)) return false;
+  return /(?:a preencher|preencher|a confirmar|nome a confirmar|a definir|sem informação|sem informacao|não informado|nao informado|não divulgado|nao divulgado|ainda não divulgado|ainda nao divulgado|pendente|dados pendentes|estrutura criada|estrutura aberta|para preenchimento|fonte oficial a preencher|fontes oficiais .* preencher|consultar diretamente|consultar site|consultar canais|consultar edital|consultar banca|consultar fonte|conferir edital|conferir autorização|acompanhar diário oficial|acompanhar diario oficial|não afirmar concurso aberto|nao afirmar concurso aberto|espaço reservado|espaco reservado|reservado para|cadastrar aqui|serviços a preencher|servicos a preencher|verificar caso a caso|análise individual|analise individual|base local pendente|base federal pendente|regra local a preencher|regra federal a preencher|tema permanente|tema recorrente|documentos funcionais e normas locais|documentos funcionais e normas federais|conferência previdenciária individual|conferencia previdenciaria individual)/i.test(texto);
+}
+
+function normalizarTextoSemFonteSegura(valor) {
+  return dadoSemFonteSegura(valor) ? DADOS_EM_BREVE_PADRAO_GLOBAL : valor;
+}
+
+function normalizarObjetoSemFonteSegura(obj, visitados = new WeakSet()) {
+  if (!obj || typeof obj !== 'object') return obj;
+  if (visitados.has(obj)) return obj;
+  visitados.add(obj);
+
+  if (Array.isArray(obj)) {
+    obj.forEach((item, indice) => {
+      if (item && typeof item === 'object') normalizarObjetoSemFonteSegura(item, visitados);
+      else obj[indice] = normalizarTextoSemFonteSegura(item);
+    });
+    return obj;
+  }
+
+  Object.keys(obj).forEach(chave => {
+    const valor = obj[chave];
+    if (valor && typeof valor === 'object') {
+      normalizarObjetoSemFonteSegura(valor, visitados);
+      return;
+    }
+    if (/^(url|fonteUrl|href|flag|brasao|imagem|img|logo)$/i.test(chave)) return;
+    obj[chave] = normalizarTextoSemFonteSegura(valor);
+  });
+  return obj;
+}
+
+function aplicarPadraoDadosEmBreveGlobal() {
+  [
+    HEADER_INSTITUICOES_RESUMO,
+    CONCURSOS,
+    ACOES_JUDICIAIS,
+    ASSOCIACOES,
+    POLICIAS_PENAIS_INFO,
+    CONFIGS_INSTITUICOES_GENERICAS,
+    CARGOS_ESTRUTURA_GENERICAS,
+    REMUNERACAO_FONTES_OFICIAIS
+  ].forEach(base => normalizarObjetoSemFonteSegura(base));
+}
+
+aplicarPadraoDadosEmBreveGlobal();
+
 function formatarNumeroHeader(valor) {
   return Number(valor || 0).toLocaleString('pt-BR');
 }

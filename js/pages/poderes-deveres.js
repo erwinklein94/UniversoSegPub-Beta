@@ -737,13 +737,21 @@ function poderesRenderizar(inst) {
 
   const tipo = poderesTipoDaInstituicao(inst);
   const dados = PODERES_DEVERES_BASE[tipo] || PODERES_DEVERES_BASE.pm;
-  const itemSelecionado = poderesInstituicoesDisponiveis().find(item => item.inst === tipo) || {
+  const infoInstituicao = HEADER_INSTITUICOES_INFO?.[inst];
+  const estadoInstituicao = HEADER_ESTADOS?.[getEstadoDaInstituicao(inst)] || {};
+  const itemSelecionado = infoInstituicao ? {
+    nome: infoInstituicao.desc,
+    estadoNome: estadoInstituicao.nome || dados.categoria,
+    sigla: infoInstituicao.titulo
+  } : (poderesInstituicoesDisponiveis().find(item => item.inst === tipo) || {
     nome: dados.rotulo,
     estadoNome: dados.categoria,
     sigla: String(tipo || '').toUpperCase()
-  };
-  const nomeCompleto = dados.rotulo || itemSelecionado.nome || PODERES_DEVERES_DADOS_EM_BREVE;
-  if (tituloSpan) tituloSpan.textContent = nomeCompleto;
+  });
+  const nomeCompleto = infoInstituicao
+    ? `${infoInstituicao.titulo} — ${infoInstituicao.desc}`
+    : (dados.rotulo || itemSelecionado.nome || PODERES_DEVERES_DADOS_EM_BREVE);
+  if (tituloSpan) tituloSpan.textContent = infoInstituicao?.titulo || dados.rotulo || itemSelecionado.sigla || '—';
 
   painel.innerHTML = `
     <section class="poderes-resumo-card" aria-label="Resumo de poderes e deveres">
@@ -795,11 +803,14 @@ function poderesRenderizar(inst) {
 }
 
 function inicializarPoderesDeveres() {
-  poderesPopularSeletor();
-  const select = document.getElementById('poderes_instituicao');
-  poderesRenderizar(select?.value || 'pf');
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('poderes');
+    return;
+  }
+  poderesRenderizar(currInst);
 }
 
 function mudarInstituicaoPoderes(valor) {
-  poderesRenderizar(valor || 'pf');
+  if (valor && typeof mudarInstituicao === 'function') mudarInstituicao(valor);
+  poderesRenderizar(valor || currInst || 'pf');
 }

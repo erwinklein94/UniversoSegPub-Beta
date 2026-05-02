@@ -409,6 +409,10 @@ function carregarComparadorCarreiras() {
 function carregarConcursos() {
   const cont = document.getElementById('lista-concursos');
   if (!cont) return;
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('concursos');
+    return;
+  }
   const c = CONCURSOS[currInst] || getConcursoPoliciaPenal(currInst);
   if (!c) { cont.innerHTML = ""; return; }
 
@@ -474,6 +478,10 @@ function carregarConcursos() {
 function carregarAcoes() {
   const cont = document.getElementById('lista-acoes');
   if (!cont) return;
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('acoes');
+    return;
+  }
   const lista = ACOES_JUDICIAIS[currInst] || getAcoesPoliciaPenal(currInst) || [];
 
   if (!lista.length) {
@@ -515,6 +523,10 @@ function carregarAcoes() {
 function carregarAssociacoes() {
   const cont = document.getElementById('lista-associacoes');
   if (!cont) return;
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('associacoes');
+    return;
+  }
   const lista = ASSOCIACOES[currInst] || getAssociacoesPoliciaPenal(currInst) || [];
   if (!lista.length) {
     cont.innerHTML = itemUnicoDadosEmBreve('associacao');

@@ -3148,6 +3148,8 @@ function calcularResumoPortalHeader() {
 function aplicarHeaderInicialPortal() {
   headerModoInicialPortal = true;
   document.body.setAttribute('data-inst', 'portal');
+  document.body.style.removeProperty('--vermelho');
+  document.body.style.removeProperty('--vermelho-escuro');
   setHeaderHeroImage('img/LOGO/logoleao.webp');
   setSiteHeaderBackgroundImage('img/LOGO/logoleao.webp');
   setPageInstitutionBackgroundImage('img/LOGO/logoleao.webp');
@@ -3252,7 +3254,7 @@ function atualizarHeaderResumo(inst) {
 function getEstadoDaInstituicao(inst) {
   return Object.keys(HEADER_ESTADOS).find(estado => {
     const item = HEADER_ESTADOS[estado];
-    return item.pm === inst || item.bm === inst || item.pc === inst || item.pp === inst;
+    return item.pm === inst || item.bm === inst || item.pc === inst || item.pp === inst || item.gm === inst;
   }) || 'sp';
 }
 
@@ -3425,6 +3427,10 @@ function mudarInstituicao(novaInstituicao) {
   });
 
   const config = configs[inst];
+  if (config?.cor) {
+    document.body.style.setProperty('--vermelho', config.cor);
+    document.body.style.setProperty('--vermelho-escuro', config.cor);
+  }
   atualizarFlagsEstado(inst);
 
   // Atualiza textos visíveis
@@ -3451,7 +3457,472 @@ function mudarInstituicao(novaInstituicao) {
   carregarAcoes();
   carregarAssociacoes();
   carregarRemuneracaoTabelada();
+  if (typeof sincronizarSeletoresConsulta === 'function') sincronizarSeletoresConsulta();
   if (document.getElementById('page-comparar')?.classList.contains('active')) carregarComparadorCarreiras();
+}
+
+
+/* ============================================================ */
+/* === SELEÇÃO INTERNA POR ABA: ESFERA → INSTITUIÇÃO ========== */
+/* ============================================================ */
+const PAGINAS_COM_SELECAO_INSTITUICAO = {
+  remuneracao: {
+    titulo: 'Consultar remuneração por instituição',
+    subtitulo: 'Escolha a esfera e depois a instituição para carregar a tabela correspondente.',
+    destino: 'lista-remuneracao'
+  },
+  direitos: {
+    titulo: 'Consultar direitos por instituição',
+    subtitulo: 'A análise usa a instituição escolhida nesta aba e os dados funcionais preenchidos abaixo.',
+    destino: 'resultados_dir'
+  },
+  poderes: {
+    titulo: 'Consultar poderes e deveres por instituição',
+    subtitulo: 'Escolha a esfera e a instituição para ver competências, deveres, limites, fontes e entendimentos aplicáveis.',
+    destino: 'poderes_resultado'
+  },
+  concursos: {
+    titulo: 'Consultar concursos por instituição',
+    subtitulo: 'Escolha a esfera e a instituição para carregar os dados de edital, requisitos, etapas e fontes.',
+    destino: 'lista-concursos'
+  },
+  acoes: {
+    titulo: 'Consultar ações judiciais por instituição',
+    subtitulo: 'Escolha a esfera e a instituição para ver teses, alertas e referências cadastradas.',
+    destino: 'lista-acoes'
+  },
+  associacoes: {
+    titulo: 'Consultar associações e sindicatos por instituição',
+    subtitulo: 'Escolha a esfera e a instituição para localizar entidades relacionadas à carreira.',
+    destino: 'lista-associacoes'
+  }
+};
+
+function instituicaoConsultaFoiSelecionada() {
+  return !headerModoInicialPortal && !!currInst && INSTITUICOES_VALIDAS.includes(currInst);
+}
+
+function garantirEstruturaGuardaMunicipalConsulta() {
+  if (!INSTITUICOES_VALIDAS.includes('gm')) INSTITUICOES_VALIDAS.push('gm');
+
+  HEADER_INSTITUICOES_INFO.gm = HEADER_INSTITUICOES_INFO.gm || {
+    titulo: 'GM',
+    desc: 'Guarda Municipal'
+  };
+
+  HEADER_INSTITUICOES_IMAGENS.gm = HEADER_INSTITUICOES_IMAGENS.gm || 'img/LOGO/logoleao.webp';
+
+  HEADER_ESTADOS.municipal = HEADER_ESTADOS.municipal || {
+    nome: 'Municípios',
+    sigla: 'MUN',
+    gm: 'gm',
+    flag: HEADER_BRASIL_FLAG
+  };
+
+  HEADER_INSTITUICOES_RESUMO.gm = HEADER_INSTITUICOES_RESUMO.gm || {
+    nome: 'Guarda Municipal',
+    sigla: 'GM',
+    estado: 'Municípios',
+    estadoSigla: 'MUN',
+    tipo: 'Guarda Municipal',
+    criacao: 'Varia por município',
+    ativaLabel: 'Efetivo municipal — varia por cidade',
+    reservaLabel: 'Regime local — verificar município',
+    femininasLabel: 'Dados locais — consultar prefeitura',
+    populacaoLabel: 'Município selecionado',
+    relacaoLabel: 'Depende da lei municipal e do efetivo local',
+    populacaoTitulo: 'Abrangência',
+    relacaoTitulo: 'Relação efetivo/população',
+    governador: 'Prefeitura municipal / Secretaria municipal competente',
+    comando: 'Comando/direção da Guarda Municipal, conforme lei local',
+    atualizado: 'Conteúdo geral municipal'
+  };
+
+  CONFIGS_INSTITUICOES_GENERICAS.gm = CONFIGS_INSTITUICOES_GENERICAS.gm || {
+    titulo: 'GM',
+    desc: 'Guarda Municipal',
+    cor: '#0f766e',
+    alertaPrev: 'Guarda Municipal: conteúdo geral. Direitos, remuneração, concurso e organização dependem da lei municipal, estatuto local, plano de cargos, regime previdenciário e edital de cada cidade.'
+  };
+
+  if (typeof CARGOS_ESTRUTURA_GENERICAS !== 'undefined' && !CARGOS_ESTRUTURA_GENERICAS.gm) {
+    CARGOS_ESTRUTURA_GENERICAS.gm = [
+      { val: 'gm_guarda', text: 'Guarda Municipal / Agente da Guarda' },
+      { val: 'gm_inspetor', text: 'Inspetor / Classe intermediária — quando existir' },
+      { val: 'gm_comando', text: 'Comando / direção — conforme lei municipal' }
+    ];
+  }
+
+  if (typeof REMUNERACAO_FONTES_OFICIAIS !== 'undefined') {
+    REMUNERACAO_FONTES_OFICIAIS.gm = REMUNERACAO_FONTES_OFICIAIS.gm || {
+      nome: 'Guarda Municipal — verificar portal da transparência, lei municipal e edital local',
+      url: '#'
+    };
+  }
+
+  if (typeof CONCURSOS !== 'undefined') {
+    CONCURSOS.gm = CONCURSOS.gm || {
+      edital: 'Guarda Municipal — concurso municipal conforme cidade escolhida',
+      salario: 'Varia conforme lei municipal e edital local',
+      vagas: 'Varia por município',
+      cotas: 'Conforme edital municipal',
+      idade: 'Conforme edital e legislação local',
+      escolaridade: 'Geralmente ensino médio, podendo variar conforme município',
+      materias: 'Língua Portuguesa, legislação municipal, Estatuto Geral das Guardas Municipais, noções de Direito, conhecimentos gerais, informática e outras disciplinas conforme edital.',
+      banca: 'Conforme contratação municipal',
+      inscritos: 'Varia por edital',
+      etapas: 'Prova objetiva, TAF, avaliação psicológica, investigação social, exames médicos e curso de formação quando previstos.',
+      cfsd: 'Curso de formação ou capacitação conforme matriz curricular e regulamento local.',
+      estagio: 'Conforme estatuto municipal.',
+      validade: 'Conforme edital.',
+      previsao: 'Consultar prefeitura e diário oficial do município.',
+      site: '#'
+    };
+  }
+
+  if (typeof ACOES_JUDICIAIS !== 'undefined') {
+    ACOES_JUDICIAIS.gm = ACOES_JUDICIAIS.gm || [
+      {
+        titulo: 'Guarda Municipal — direitos e enquadramentos locais',
+        status: 'Verificar caso individual',
+        ano: 'Tema permanente',
+        tipo: 'individual',
+        desc: 'Demandas podem envolver plano de carreira, adicional de risco, adicional noturno, horas extras, previdência, aposentadoria especial quando discutida, porte institucional, enquadramento e condições de trabalho.',
+        base: 'Lei municipal, Estatuto Geral das Guardas Municipais, Constituição, decisões judiciais aplicáveis e documentos funcionais.',
+        fonte: 'Consultar legislação municipal e advogado/entidade local',
+        fonteUrl: '',
+        atualizado: 'Conteúdo geral municipal'
+      }
+    ];
+  }
+
+  if (typeof ASSOCIACOES !== 'undefined') {
+    ASSOCIACOES.gm = ASSOCIACOES.gm || [
+      {
+        nome: 'Entidade representativa de Guardas Municipais — consultar município',
+        foco: 'Guardas municipais ativos, aposentados, pensionistas e familiares, conforme base territorial da entidade.',
+        acao: 'Acompanhamento de pautas de carreira, remuneração, plano de cargos, condições de trabalho, porte, formação e valorização profissional.',
+        site: '',
+        telefone: 'Consultar entidade local',
+        mensalidade: 'Consultar diretamente',
+        servicos: 'Jurídico, comunicação, convênios e representação institucional conforme estatuto da entidade.'
+      }
+    ];
+  }
+}
+
+function getEsferaConsultaInstituicao(inst) {
+  inst = String(inst || '').toLowerCase();
+  if (inst === 'pf' || inst === 'prf') return 'federal';
+  if (inst === 'gm' || inst === 'guarda_municipal') return 'municipal';
+  return 'estadual';
+}
+
+function getRamoConsultaInstituicao(inst) {
+  inst = String(inst || '').toLowerCase();
+  if (inst === 'pf') return 'Polícia Federal';
+  if (inst === 'prf') return 'Polícia Rodoviária Federal';
+  if (inst === 'gm') return 'Guarda Municipal';
+  if (inst.startsWith('bm')) return 'Bombeiro Militar';
+  if (inst.startsWith('pp')) return 'Polícia Penal';
+  if (inst.startsWith('pc')) return 'Polícia Civil';
+  if (inst.startsWith('pm')) return inst === 'pmrs' ? 'Brigada Militar / Polícia Militar' : 'Polícia Militar';
+  return 'Instituição';
+}
+
+function getOrdemConsultaInstituicao(inst) {
+  const estado = getEstadoDaInstituicao(inst);
+  const dadosEstado = HEADER_ESTADOS[estado] || {};
+  if (inst === 'pf') return 1;
+  if (inst === 'prf') return 2;
+  if (dadosEstado.pm === inst) return 1;
+  if (dadosEstado.bm === inst) return 2;
+  if (dadosEstado.pc === inst) return 3;
+  if (dadosEstado.pp === inst) return 4;
+  if (inst === 'gm') return 1;
+  return 9;
+}
+
+function getInstituicoesParaConsulta(esfera) {
+  garantirEstruturaGuardaMunicipalConsulta();
+  const esferaNormalizada = String(esfera || '').toLowerCase();
+  let base = [];
+
+  if (esferaNormalizada === 'federal') {
+    base = ['pf', 'prf'];
+  } else if (esferaNormalizada === 'municipal') {
+    base = ['gm'];
+  } else if (esferaNormalizada === 'estadual') {
+    base = INSTITUICOES_VALIDAS.filter(inst => getEsferaConsultaInstituicao(inst) === 'estadual');
+  }
+
+  return base
+    .filter(inst => HEADER_INSTITUICOES_INFO[inst])
+    .map(inst => {
+      const estado = getEstadoDaInstituicao(inst);
+      const dadosEstado = HEADER_ESTADOS[estado] || HEADER_ESTADOS.sp;
+      const info = HEADER_INSTITUICOES_INFO[inst] || {};
+      return {
+        inst,
+        estado,
+        estadoNome: dadosEstado.nome || 'Brasil',
+        uf: dadosEstado.sigla || estado.toUpperCase(),
+        sigla: info.titulo || inst.toUpperCase(),
+        nome: info.desc || inst.toUpperCase(),
+        ramo: getRamoConsultaInstituicao(inst),
+        ordem: getOrdemConsultaInstituicao(inst)
+      };
+    })
+    .sort((a, b) => {
+      if (a.estado !== b.estado) {
+        const ordemEstados = Object.keys(HEADER_ESTADOS);
+        return ordemEstados.indexOf(a.estado) - ordemEstados.indexOf(b.estado);
+      }
+      return a.ordem - b.ordem || a.sigla.localeCompare(b.sigla, 'pt-BR');
+    });
+}
+
+function removerSeletorAntigoPoderes() {
+  const antigo = document.getElementById('poderes_instituicao');
+  const bloco = antigo?.closest('.poderes-form-grid');
+  if (bloco) bloco.remove();
+}
+
+function criarHtmlSeletorConsulta(page, config) {
+  const idEsfera = `consulta_esfera_${page}`;
+  const idInstituicao = `consulta_instituicao_${page}`;
+  return `
+    <section class="consulta-instituicao-card" data-consulta-selector="${page}" aria-label="Seleção de instituição para esta aba">
+      <div class="consulta-instituicao-texto">
+        <span>Escolha dentro desta aba</span>
+        <strong>${escapeHtml(config.titulo)}</strong>
+        <small>${escapeHtml(config.subtitulo)}</small>
+      </div>
+      <div class="consulta-instituicao-grid">
+        <div class="field">
+          <label for="${idEsfera}">Tipo de instituição</label>
+          <select id="${idEsfera}" data-consulta-esfera data-consulta-page="${page}" aria-label="Selecione se a instituição é federal, estadual ou municipal">
+            <option value="" selected>Escolha a esfera</option>
+            <option value="federal">Federal</option>
+            <option value="estadual">Estadual</option>
+            <option value="municipal">Municipal</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="${idInstituicao}">Instituição</label>
+          <select id="${idInstituicao}" data-consulta-instituicao data-consulta-page="${page}" aria-label="Selecione a instituição" disabled>
+            <option value="">Escolha primeiro a esfera</option>
+          </select>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function inserirSeletorConsultaNaPagina(page) {
+  const config = PAGINAS_COM_SELECAO_INSTITUICAO[page];
+  if (!config) return;
+  const pageEl = document.getElementById(`page-${page}`);
+  const card = pageEl?.querySelector('.card');
+  if (!card || card.querySelector(`[data-consulta-selector="${page}"]`)) return;
+
+  if (page === 'poderes') removerSeletorAntigoPoderes();
+
+  const h2 = card.querySelector('h2');
+  const temp = document.createElement('div');
+  temp.innerHTML = criarHtmlSeletorConsulta(page, config).trim();
+  const seletor = temp.firstElementChild;
+  if (h2 && h2.nextSibling) card.insertBefore(seletor, h2.nextSibling);
+  else card.prepend(seletor);
+}
+
+function montarSeletoresConsultaInstituicao() {
+  garantirEstruturaGuardaMunicipalConsulta();
+  Object.keys(PAGINAS_COM_SELECAO_INSTITUICAO).forEach(inserirSeletorConsultaNaPagina);
+  sincronizarSeletoresConsulta();
+}
+
+function atualizarInstituicoesConsulta(page, esfera, valorPreferido = '') {
+  const pageEl = document.getElementById(`page-${page}`);
+  const seletorInst = pageEl?.querySelector('[data-consulta-instituicao]');
+  if (!seletorInst) return;
+
+  const itens = getInstituicoesParaConsulta(esfera);
+  if (!itens.length) {
+    seletorInst.innerHTML = '<option value="">Nenhuma instituição disponível para esta esfera</option>';
+    seletorInst.disabled = true;
+    return;
+  }
+
+  let html = '<option value="">Escolha a instituição</option>';
+  let grupoAtual = '';
+  itens.forEach(item => {
+    const grupo = esfera === 'estadual' ? `${item.estadoNome} (${item.uf})` : (esfera === 'federal' ? 'União' : 'Municípios');
+    if (grupo !== grupoAtual) {
+      if (grupoAtual) html += '</optgroup>';
+      html += `<optgroup label="${escapeHtml(grupo)}">`;
+      grupoAtual = grupo;
+    }
+    const texto = esfera === 'estadual'
+      ? `${item.sigla} — ${item.ramo}`
+      : `${item.sigla} — ${item.nome}`;
+    html += `<option value="${escapeHtml(item.inst)}">${escapeHtml(texto)}</option>`;
+  });
+  if (grupoAtual) html += '</optgroup>';
+
+  seletorInst.disabled = false;
+  seletorInst.innerHTML = html;
+  if (valorPreferido && itens.some(item => item.inst === valorPreferido)) {
+    seletorInst.value = valorPreferido;
+  } else {
+    seletorInst.value = '';
+  }
+}
+
+function sincronizarSeletoresConsulta(pageUnica = '') {
+  const paginas = pageUnica ? [pageUnica] : Object.keys(PAGINAS_COM_SELECAO_INSTITUICAO);
+  paginas.forEach(page => {
+    inserirSeletorConsultaNaPagina(page);
+    const pageEl = document.getElementById(`page-${page}`);
+    if (!pageEl) return;
+    const esferaSelect = pageEl.querySelector('[data-consulta-esfera]');
+    const instSelect = pageEl.querySelector('[data-consulta-instituicao]');
+    if (!esferaSelect || !instSelect) return;
+
+    if (!instituicaoConsultaFoiSelecionada()) {
+      if (!esferaSelect.value) {
+        instSelect.innerHTML = '<option value="">Escolha primeiro a esfera</option>';
+        instSelect.disabled = true;
+      }
+      return;
+    }
+
+    const esfera = getEsferaConsultaInstituicao(currInst);
+    esferaSelect.value = esfera;
+    atualizarInstituicoesConsulta(page, esfera, currInst);
+  });
+}
+
+function alterarEsferaConsultaInstituicao(page, esfera) {
+  inserirSeletorConsultaNaPagina(page);
+  if (instituicaoConsultaFoiSelecionada()) {
+    aplicarHeaderInicialPortal();
+  }
+  atualizarInstituicoesConsulta(page, esfera, '');
+  mostrarAvisoSelecaoInstituicao(page);
+}
+
+function selecionarInstituicaoConsulta(page, inst) {
+  if (!inst) {
+    mostrarAvisoSelecaoInstituicao(page);
+    return;
+  }
+  mudarInstituicao(inst);
+  sincronizarSeletoresConsulta();
+  renderizarConteudoPaginaInstitucional(page);
+  const info = HEADER_INSTITUICOES_INFO[inst];
+  if (info) mostrarToast(`${info.titulo} selecionada para esta consulta.`);
+}
+
+function avisoSelecaoInstituicaoHtml(page) {
+  const nomes = {
+    remuneracao: 'a tabela de remuneração',
+    direitos: 'a análise de direitos',
+    poderes: 'os poderes e deveres',
+    concursos: 'os dados de concursos',
+    acoes: 'as ações judiciais',
+    associacoes: 'as associações e sindicatos'
+  };
+  return `
+    <div class="consulta-vazio" role="status">
+      <strong>Escolha uma instituição nesta aba.</strong>
+      <span>Primeiro selecione se a instituição é federal, estadual ou municipal. Depois escolha a instituição específica para carregar ${nomes[page] || 'as informações'}.</span>
+    </div>
+  `;
+}
+
+function atualizarTitulosConsultaSemInstituicao() {
+  [
+    'txt-inst-dir',
+    'txt-inst-concursos',
+    'txt-inst-poderes',
+    'txt-inst-remuneracao',
+    'txt-inst-acoes',
+    'txt-inst-assoc'
+  ].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = '—';
+  });
+}
+
+function mostrarAvisoSelecaoInstituicao(page = '') {
+  if (!page) return;
+  atualizarTitulosConsultaSemInstituicao();
+
+  if (page === 'remuneracao') {
+    const tbody = document.getElementById('lista-remuneracao');
+    if (tbody) tbody.innerHTML = `<tr><td colspan="4">Escolha uma instituição nesta aba para carregar a tabela.</td></tr>`;
+    const total = document.getElementById('remu-total-cargos');
+    const menor = document.getElementById('remu-menor-total');
+    const maior = document.getElementById('remu-maior-total');
+    if (total) total.textContent = '0';
+    if (menor) menor.textContent = '—';
+    if (maior) maior.textContent = '—';
+    return;
+  }
+
+  if (page === 'direitos') {
+    const cargo = document.getElementById('cargo_dir');
+    if (cargo && !instituicaoConsultaFoiSelecionada()) cargo.innerHTML = '<option value="">Selecione uma instituição primeiro</option>';
+    const cont = document.getElementById('resultados_dir');
+    if (cont) cont.innerHTML = avisoSelecaoInstituicaoHtml(page);
+    return;
+  }
+
+  const destino = PAGINAS_COM_SELECAO_INSTITUICAO[page]?.destino;
+  const cont = destino ? document.getElementById(destino) : null;
+  if (cont) cont.innerHTML = avisoSelecaoInstituicaoHtml(page);
+}
+
+function limparConsultaInstitucionalInicial() {
+  montarSeletoresConsultaInstituicao();
+  atualizarTitulosConsultaSemInstituicao();
+  Object.keys(PAGINAS_COM_SELECAO_INSTITUICAO).forEach(mostrarAvisoSelecaoInstituicao);
+}
+
+function renderizarConteudoPaginaInstitucional(page) {
+  if (!instituicaoConsultaFoiSelecionada()) {
+    mostrarAvisoSelecaoInstituicao(page);
+    return;
+  }
+
+  sincronizarSeletoresConsulta(page);
+
+  if (page === 'direitos') {
+    popularCargos(currInst);
+    analisarDireitos();
+  } else if (page === 'concursos') {
+    carregarConcursos();
+  } else if (page === 'poderes') {
+    inicializarPoderesDeveres();
+  } else if (page === 'acoes') {
+    carregarAcoes();
+  } else if (page === 'associacoes') {
+    carregarAssociacoes();
+  } else if (page === 'remuneracao') {
+    carregarRemuneracaoTabelada();
+  }
+}
+
+function prepararPaginaComSelecaoInstituicao(page) {
+  if (!PAGINAS_COM_SELECAO_INSTITUICAO[page]) return false;
+  montarSeletoresConsultaInstituicao();
+  if (!instituicaoConsultaFoiSelecionada()) {
+    mostrarAvisoSelecaoInstituicao(page);
+    return true;
+  }
+  renderizarConteudoPaginaInstitucional(page);
+  return true;
 }
 
 

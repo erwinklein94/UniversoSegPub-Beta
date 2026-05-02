@@ -44,6 +44,16 @@
       safeCall('mudarInstituicaoPoderes', [event.currentTarget.value]);
     });
 
+    bindChange('[data-consulta-esfera]', event => {
+      const page = event.currentTarget.dataset.consultaPage;
+      safeCall('alterarEsferaConsultaInstituicao', [page, event.currentTarget.value]);
+    });
+
+    bindChange('[data-consulta-instituicao]', event => {
+      const page = event.currentTarget.dataset.consultaPage;
+      safeCall('selecionarInstituicaoConsulta', [page, event.currentTarget.value]);
+    });
+
     bindClick('.branch-option[data-branch]', event => {
       safeCall('selecionarRamo', [event.currentTarget.dataset.branch]);
     });

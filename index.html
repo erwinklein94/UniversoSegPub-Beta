@@ -29,7 +29,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link rel="preload" href="css/dist/main.min.css" as="style">
 <link rel="stylesheet" href="css/dist/main.min.css">
-<link rel="stylesheet" href="css/override-logoleao.css?v=20260502poderesrev">
+<link rel="stylesheet" href="css/override-logoleao.css?v=20260502logicav2">
 
 </head>
 <body data-inst="portal">
@@ -449,7 +449,7 @@
   <div class="sidebar-header">
     <div class="sidebar-brand" aria-label="Identidade da navegação">
       <strong>Universo Segurança Pública</strong>
-      <span>Navegação por instituição</span>
+      <span>Escolha o que consultar</span>
     </div>
     <button class="close-btn" aria-label="Fechar menu">✕</button>
   </div>
@@ -721,7 +721,7 @@
       </div>
     </div>
     <p class="principal-subtitle">
-      Selecione sua instituição e acesse dados organizados sobre salários, benefícios, concursos, ações judiciais, associações e materiais úteis para profissionais da segurança pública.
+      Primeiro escolha a aba que quer consultar. Dentro das abas institucionais, selecione a esfera — federal, estadual ou municipal — e depois a instituição específica para carregar as informações corretas.
     </p>
     <p class="portal-disclaimer portal-disclaimer--hero" aria-label="Aviso institucional do portal">
       <strong>Importante:</strong> este é um portal informativo independente. Não é site oficial do governo, não representa órgãos públicos e não pertence às instituições mencionadas.
@@ -767,21 +767,21 @@
   <section class="principal-como-usar" aria-labelledby="como-usar-titulo">
     <div class="principal-section-title">
       <h2 id="como-usar-titulo">Como usar o Universo Segurança Pública</h2>
-      <p>Comece pela instituição e vá direto para a consulta que resolve sua dúvida.</p>
+      <p>Comece pela dúvida que quer resolver. A escolha da instituição aparece dentro da própria aba de consulta.</p>
     </div>
 
     <div class="como-usar-grid">
       <div class="como-usar-step">
         <strong>1</strong>
-        <span>Escolha sua instituição no topo do site ou pelas bandeiras dos estados.</span>
+        <span>Clique na aba desejada: remuneração, direitos, poderes e deveres, concursos, ações ou associações.</span>
       </div>
       <div class="como-usar-step">
         <strong>2</strong>
-        <span>Consulte remuneração, direitos, concursos, ações judiciais ou entidades.</span>
+        <span>Dentro da aba, escolha se a instituição é federal, estadual ou municipal.</span>
       </div>
       <div class="como-usar-step">
         <strong>3</strong>
-        <span>Acesse fontes, produtos, materiais de estudo e parceiros quando quiser se aprofundar.</span>
+        <span>Na segunda caixa, selecione a instituição específica para carregar as informações, foto e cor correspondente no cabeçalho.</span>
       </div>
     </div>
   </section>
@@ -799,7 +799,7 @@
           <span class="principal-card-icon" aria-hidden="true">💰</span>
           <h3>Remuneração Tabelada</h3>
         </div>
-        <p>Consulte, de forma simples e gratuita, os valores brutos de remuneração por cargo da instituição selecionada.</p>
+        <p>Consulte, de forma simples e gratuita, os valores brutos de remuneração por cargo depois de escolher a instituição dentro da aba.</p>
         <span class="principal-tag">Ver tabela grátis</span>
       </article>
 
@@ -844,7 +844,7 @@
           <span class="principal-card-icon" aria-hidden="true">🛡️</span>
           <h3>Associações e Sindicatos</h3>
         </div>
-        <p>Consulte entidades representativas, sindicatos e associações de apoio relacionadas à instituição selecionada.</p>
+        <p>Consulte entidades representativas, sindicatos e associações de apoio depois de escolher a instituição dentro da aba.</p>
         <span class="principal-tag">Ver entidades</span>
       </article>
     </div>
@@ -906,9 +906,9 @@
 <!-- BLOCO 04.3 — PÁGINA REMUNERAÇÃO TABELADA -->
 <main id="page-remuneracao" class="page-section" role="main">
   <div class="card">
-    <h2>Remuneração Tabelada (<span id="txt-inst-remuneracao">PMESP</span>)</h2>
+    <h2>Remuneração Tabelada (<span id="txt-inst-remuneracao">—</span>)</h2>
     <div class="remuneracao-intro">
-      Consulta simples e gratuita com valores brutos por cargo da instituição selecionada, organizada por este portal independente a partir de fontes públicas e oficiais sempre que disponíveis. A tabela mostra a remuneração bruta mensal, uma coluna informativa sobre adicionais/auxílios possíveis e o link da fonte usada, sem descontos e sem calcular automaticamente adicionais individuais.
+      Consulta simples e gratuita com valores brutos por cargo. Escolha a esfera e a instituição nesta aba para carregar a tabela correspondente, organizada por este portal independente a partir de fontes públicas e oficiais sempre que disponíveis. A tabela mostra a remuneração bruta mensal, adicionais/auxílios possíveis e o link da fonte usada, sem descontos e sem calcular automaticamente adicionais individuais.
     </div>
 
     <div class="remuneracao-resumo-grid" aria-label="Resumo da remuneração tabelada">
@@ -967,7 +967,7 @@
     <!-- BLOCO 06.1 — Formulário para análise de direitos -->
     <h2>Análise de Direitos, Benefícios e Vantagens Funcionais</h2>
     <div class="direitos-intro">
-      Preencha os campos abaixo para consultar uma visão informativa dos principais direitos, vantagens, licenças, benefícios e alertas funcionais da instituição selecionada. O conteúdo é independente, não oficial, e evita tratar como “garantido” aquilo que depende de renda, perícia, requerimento, data de ingresso, cargo, local de exercício ou regra de transição.
+      Escolha a esfera e a instituição nesta aba. Depois preencha os campos abaixo para consultar uma visão informativa dos principais direitos, vantagens, licenças, benefícios e alertas funcionais. O conteúdo é independente, não oficial, e evita tratar como “garantido” aquilo que depende de renda, perícia, requerimento, data de ingresso, cargo, local de exercício ou regra de transição.
     </div>
 
     <div class="form-grid" style="margin-bottom: 0;">
@@ -1045,7 +1045,7 @@
   </aside>
 
   <!-- BLOCO 06.2 — Resultado da análise de direitos -->
-    <h2>Parecer de Direitos (<span id="txt-inst-dir">PMESP</span>)</h2>
+    <h2>Parecer de Direitos (<span id="txt-inst-dir">—</span>)</h2>
     <div class="alerta legal" style="margin-top:0; margin-bottom:18px;">
       <strong>Última revisão desta aba:</strong> 26/04/2026. Os itens abaixo são organizados por categoria e por grau de segurança: direito automático, direito condicionado, depende de requerimento/perícia ou verificar caso individual.
     </div>
@@ -1059,27 +1059,12 @@
 <!-- BLOCO 06.5 — PÁGINA PODERES E DEVERES -->
 <main id="page-poderes" class="page-section" role="main">
   <div class="card">
-    <h2>Poderes e Deveres (<span id="txt-inst-poderes">PF</span>)</h2>
+    <h2>Poderes e Deveres (<span id="txt-inst-poderes">—</span>)</h2>
     <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
-      Esta aba reúne uma síntese prática e revisada sobre competências, deveres, limites, cautelas e fontes oficiais de cada instituição. A escolha abaixo altera apenas o conteúdo de Poderes e Deveres, mantendo as demais abas como estão.
+      Esta aba reúne uma síntese prática e revisada sobre competências, deveres, limites, cautelas e fontes oficiais. Escolha a esfera e a instituição nesta aba para atualizar o conteúdo, a foto e a cor do cabeçalho.
     </div>
-
-    <div class="form-grid poderes-form-grid" style="margin-bottom: 24px;">
-      <div class="field span-2">
-        <label for="poderes_instituicao">Escolha a instituição para consultar deveres, poderes, limites e fontes</label>
-        <select id="poderes_instituicao" aria-label="Selecione o tipo de instituição para consultar poderes e deveres">
-          <option value="pm">Polícia Militar</option>
-          <option value="bm">Corpo de Bombeiros Militar</option>
-          <option value="pc">Polícia Civil</option>
-          <option value="pp">Polícia Penal</option>
-          <option value="pf">Polícia Federal</option>
-          <option value="prf">Polícia Rodoviária Federal</option>
-          <option value="gm">Guarda Municipal</option>
-        </select>
-      </div>
-    </div>
-
-    <aside class="ad-slot ad-slot--inline" data-ad-area="poderes_antes_conteudo" aria-label="Espaço de anúncio: Poderes e Deveres antes do conteúdo">
+    <!-- Seletor de instituição inserido automaticamente pelo JavaScript nesta aba. -->
+<aside class="ad-slot ad-slot--inline" data-ad-area="poderes_antes_conteudo" aria-label="Espaço de anúncio: Poderes e Deveres antes do conteúdo">
       <a class="ad-placeholder-link" href="#parceiros">
         <span class="ad-label">Publicidade</span>
         <strong>Anuncie aqui</strong>
@@ -1094,9 +1079,9 @@
 <!-- BLOCO 07 — PÁGINA CONCURSOS -->
 <main id="page-concursos" class="page-section" role="main">
   <div class="card">
-    <h2>Informações de Concursos (<span id="txt-inst-concursos">PMESP</span>)</h2>
+    <h2>Informações de Concursos (<span id="txt-inst-concursos">—</span>)</h2>
     <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
-      Abaixo estão dados informativos consolidados a partir de editais, leis e fontes públicas. Este portal não é banca organizadora, órgão oficial ou canal de inscrição; confirme sempre prazos e regras no edital e nos canais governamentais competentes.
+      Escolha a esfera e a instituição nesta aba para carregar dados informativos consolidados a partir de editais, leis e fontes públicas. Este portal não é banca organizadora, órgão oficial ou canal de inscrição; confirme sempre prazos e regras no edital e nos canais governamentais competentes.
     </div>
     <!-- BLOCO 07.0A — Espaço comercial contextual de concursos -->
     <aside class="ad-slot ad-slot--inline" data-ad-area="concursos_antes_lista" aria-label="Espaço de anúncio: Concursos antes da lista">
@@ -1440,7 +1425,7 @@
 <!-- BLOCO 09 — PÁGINA AÇÕES JUDICIAIS -->
 <main id="page-acoes" class="page-section" role="main">
   <div class="card">
-    <h2>Notícias e Ações Judiciais (<span id="txt-inst-acoes">PMESP</span>)</h2>
+    <h2>Notícias e Ações Judiciais (<span id="txt-inst-acoes">—</span>)</h2>
     <div class="alerta legal" style="margin-top: 0; margin-bottom: 24px;">
       <strong>Aviso legal:</strong> conteúdo meramente informativo. As teses abaixo dependem de análise individual, documentos funcionais, holerites, data de ingresso, situação ativa/inativa e entendimento judicial atualizado. Em regra, pretensões contra a Fazenda Pública observam prescrição quinquenal, sem prejuízo de regras específicas. Consulte advogado, associação ou sindicato antes de tomar decisão.
     </div>
@@ -1460,9 +1445,9 @@
 <!-- BLOCO 10 — PÁGINA ASSOCIAÇÕES E SINDICATOS -->
 <main id="page-associacoes" class="page-section" role="main">
   <div class="card">
-    <h2>Associações e Sindicatos (<span id="txt-inst-assoc">PMESP</span>)</h2>
+    <h2>Associações e Sindicatos (<span id="txt-inst-assoc">—</span>)</h2>
     <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
-      Entidades representativas e de apoio relacionadas à instituição selecionada. Listagem informativa e independente: consulte diretamente cada entidade antes de se filiar, pois valores, serviços, cobertura, convênios e atendimento podem mudar.
+      Escolha a esfera e a instituição nesta aba para consultar entidades representativas e de apoio relacionadas à carreira. Listagem informativa e independente: consulte diretamente cada entidade antes de se filiar, pois valores, serviços, cobertura, convênios e atendimento podem mudar.
     </div>
     <!-- BLOCO 10.0A — Espaço comercial contextual de associações -->
     <aside class="ad-slot ad-slot--inline" data-ad-area="associacoes_antes_lista" aria-label="Espaço de anúncio: Associações antes da lista">
@@ -1561,7 +1546,7 @@
 <!-- CSS movido para css/style.css -->
 <!-- JavaScript fonte reorganizado em js/data, js/services, js/ui e js/pages.
      Produção: bundle único para reduzir requisições e preservar a ordem de execução. -->
-<script src="js/dist/app.bundle.js?v=20260502poderesrev" defer></script>
+<script src="js/dist/app.bundle.js?v=20260502logicav2" defer></script>
 <script src="js/brasao-lightbox.js?v=20260501" defer></script>
 
 </body>

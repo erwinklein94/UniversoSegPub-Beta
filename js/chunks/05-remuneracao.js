@@ -562,9 +562,13 @@ function formatarAdicionaisRemuneracaoHtml(inst, linha = {}) {
 }
 
 function carregarRemuneracaoTabelada() {
-  const inst = normalizarInstituicao(currInst);
   const tbody = document.getElementById('lista-remuneracao');
   if (!tbody) return;
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('remuneracao');
+    return;
+  }
+  const inst = normalizarInstituicao(currInst);
 
   const linhas = gerarRemuneracaoTabelada(inst);
 

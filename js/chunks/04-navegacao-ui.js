@@ -73,6 +73,7 @@ function abrirPaginaInicial() {
   // Volta ao mesmo estado visual da primeira entrada no portal:
   // página principal, cabeçalho institucional genérico e nenhum Estado/instituição marcado.
   aplicarHeaderInicialPortal();
+  if (typeof limparConsultaInstitucionalInicial === 'function') limparConsultaInstitucionalInicial();
   switchPage('principal');
   try {
     if (window.location.hash !== '#principal') window.history.replaceState(null, '', '#principal');
@@ -94,6 +95,11 @@ function switchPage(page) {
 
   // Fecha a sidebar automaticamente após escolher uma aba, liberando a área principal da página.
   closeMenu();
+
+  // As páginas institucionais agora exigem escolha dentro da própria aba.
+  if (typeof prepararPaginaComSelecaoInstituicao === 'function' && prepararPaginaComSelecaoInstituicao(page)) {
+    return;
+  }
 
   // Atualiza dados da página alvo
   if (page === 'direitos') analisarDireitos();

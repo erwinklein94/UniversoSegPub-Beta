@@ -777,3 +777,80 @@ header.site-header,
     grid-template-columns: 1fr;
   }
 }
+
+/* Revisão de lógica — seleção da instituição dentro de cada aba */
+.header-controls-grid,
+.header-state-flags,
+.sidebar-inst-panel {
+  display: none !important;
+}
+
+.consulta-instituicao-card {
+  margin: 18px 0 24px;
+  padding: 18px;
+  border: 1px solid rgba(230, 0, 0, .18);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(230,0,0,.06), rgba(255,255,255,.92));
+  box-shadow: 0 14px 34px rgba(0,0,0,.08);
+}
+
+.consulta-instituicao-texto {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.consulta-instituicao-texto span {
+  color: var(--vermelho);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  font-size: .78rem;
+}
+
+.consulta-instituicao-texto strong {
+  color: var(--text-main);
+  font-size: 1.08rem;
+}
+
+.consulta-instituicao-texto small {
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.consulta-instituicao-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, .7fr) minmax(260px, 1.3fr);
+  gap: 14px;
+  align-items: end;
+}
+
+.consulta-instituicao-grid .field {
+  margin: 0;
+}
+
+.consulta-vazio {
+  display: grid;
+  gap: 8px;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px dashed rgba(230, 0, 0, .32);
+  background: rgba(230, 0, 0, .05);
+  color: var(--text-main);
+}
+
+.consulta-vazio strong {
+  color: var(--vermelho);
+  font-size: 1.02rem;
+}
+
+.consulta-vazio span {
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+@media (max-width: 760px) {
+  .consulta-instituicao-grid {
+    grid-template-columns: 1fr;
+  }
+}

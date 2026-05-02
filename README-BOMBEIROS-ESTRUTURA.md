@@ -6,7 +6,7 @@ Esta etapa abriu a lógica para cadastrar os Corpos de Bombeiros Militares de to
 
 - Novo ramo no seletor do cabeçalho: **Bombeiros**.
 - Nova chave por estado no objeto `HEADER_ESTADOS`: `bm`.
-- Novas instituições válidas para todos os estados e DF, como `cbpmesp`, `cbmerj`, `cbmmg`, `cbmsc`, `cbmdf` etc.
+- Novas instituições válidas para todos os estados e DF, como `bmsp`, `bmrj`, `bmmg`, `bmsc`, `bmdf` etc.
 - Estrutura genérica de cargos bombeiro militar:
   - Comandante-Geral
   - Subcomandante-Geral

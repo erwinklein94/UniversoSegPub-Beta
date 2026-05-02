@@ -1610,6 +1610,7 @@ const CARGOS_PPAC = mapearTabelaPoliciaPenal(
 );
 
 /* BLOCO 15.4 — Base de dados das ações judiciais por instituição */
+
 /* Chunk gerado a partir de js/script-original.js — Bases de ações judiciais, associações, concursos e estado inicial.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2316,11 +2317,18 @@ let currInst = 'pmesp';
 let headerModoInicialPortal = true;
 const HEADER_BRASIL_FLAG = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Brazil.svg';
 const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmac','pcac','ppac','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
+
 /* Chunk gerado a partir de js/script-original.js — Helpers, menu, tema, navegação e popularização de cargos.
    Mantém a ordem original para preservar compatibilidade. */
 
 function normalizarInstituicao(inst) {
-  return INSTITUICOES_VALIDAS.includes(inst) ? inst : 'pmesp';
+  let valor = String(inst || '').toLowerCase();
+  try {
+    if (typeof normalizarInstituicaoBombeiro === 'function') valor = normalizarInstituicaoBombeiro(valor);
+  } catch (e) {
+    // normalizarInstituicaoBombeiro pode ainda não estar carregada durante a avaliação inicial.
+  }
+  return INSTITUICOES_VALIDAS.includes(valor) ? valor : 'pmesp';
 }
 
 function isPoliciaPenal(inst) {
@@ -2570,6 +2578,7 @@ function popularCargos(inst) {
 
 
 /* ============================================================ */
+
 /* Chunk gerado a partir de js/script-original.js — Cálculos e renderização da remuneração tabelada.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -3178,6 +3187,7 @@ function carregarRemuneracaoTabelada() {
 
 
 /* ============================================================ */
+
 /* Chunk gerado a partir de js/script-original.js — Troca de instituição, estados, cabeçalho e estrutura de UFs.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -3312,6 +3322,7 @@ const HEADER_INSTITUICOES_INFO = {
 };
 
 const HEADER_INSTITUICOES_IMAGENS = {
+  bmsp: 'img/bmsp.png',
   pmesp: 'img/pmesp.webp',
   pcsp: 'img/pcsp.webp',
   pmerj: 'img/pmerj.webp',
@@ -5439,34 +5450,70 @@ function criarAssociacoesEstrutura(info, estadoNome) {
 
 
 const BOMBEIROS_MILITARES_ESTRUTURA = [
-  { estado: 'ac', nome: 'Acre', sigla: 'AC', inst: 'cbmac', titulo: 'CBMAC', desc: 'Corpo de Bombeiros Militar do Acre' },
-  { estado: 'al', nome: 'Alagoas', sigla: 'AL', inst: 'cbmal', titulo: 'CBMAL', desc: 'Corpo de Bombeiros Militar de Alagoas' },
-  { estado: 'am', nome: 'Amazonas', sigla: 'AM', inst: 'cbmam', titulo: 'CBMAM', desc: 'Corpo de Bombeiros Militar do Amazonas' },
-  { estado: 'ap', nome: 'Amapá', sigla: 'AP', inst: 'cbmap', titulo: 'CBMAP', desc: 'Corpo de Bombeiros Militar do Amapá' },
-  { estado: 'ba', nome: 'Bahia', sigla: 'BA', inst: 'cbmba', titulo: 'CBMBA', desc: 'Corpo de Bombeiros Militar da Bahia' },
-  { estado: 'ce', nome: 'Ceará', sigla: 'CE', inst: 'cbmce', titulo: 'CBMCE', desc: 'Corpo de Bombeiros Militar do Ceará' },
-  { estado: 'df', nome: 'Distrito Federal', sigla: 'DF', inst: 'cbmdf', titulo: 'CBMDF', desc: 'Corpo de Bombeiros Militar do Distrito Federal' },
-  { estado: 'es', nome: 'Espírito Santo', sigla: 'ES', inst: 'cbmes', titulo: 'CBMES', desc: 'Corpo de Bombeiros Militar do Espírito Santo' },
-  { estado: 'go', nome: 'Goiás', sigla: 'GO', inst: 'cbmgo', titulo: 'CBMGO', desc: 'Corpo de Bombeiros Militar do Estado de Goiás' },
-  { estado: 'ma', nome: 'Maranhão', sigla: 'MA', inst: 'cbmma', titulo: 'CBMMA', desc: 'Corpo de Bombeiros Militar do Maranhão' },
-  { estado: 'mg', nome: 'Minas Gerais', sigla: 'MG', inst: 'cbmmg', titulo: 'CBMMG', desc: 'Corpo de Bombeiros Militar de Minas Gerais' },
-  { estado: 'ms', nome: 'Mato Grosso do Sul', sigla: 'MS', inst: 'cbmms', titulo: 'CBMMS', desc: 'Corpo de Bombeiros Militar de Mato Grosso do Sul' },
-  { estado: 'mt', nome: 'Mato Grosso', sigla: 'MT', inst: 'cbmmt', titulo: 'CBMMT', desc: 'Corpo de Bombeiros Militar de Mato Grosso' },
-  { estado: 'pa', nome: 'Pará', sigla: 'PA', inst: 'cbmpa', titulo: 'CBMPA', desc: 'Corpo de Bombeiros Militar do Pará' },
-  { estado: 'pb', nome: 'Paraíba', sigla: 'PB', inst: 'cbmpb', titulo: 'CBMPB', desc: 'Corpo de Bombeiros Militar da Paraíba' },
-  { estado: 'pe', nome: 'Pernambuco', sigla: 'PE', inst: 'cbmpe', titulo: 'CBMPE', desc: 'Corpo de Bombeiros Militar de Pernambuco' },
-  { estado: 'pi', nome: 'Piauí', sigla: 'PI', inst: 'cbmpi', titulo: 'CBMPI', desc: 'Corpo de Bombeiros Militar do Piauí' },
-  { estado: 'pr', nome: 'Paraná', sigla: 'PR', inst: 'cbmpr', titulo: 'CBMPR', desc: 'Corpo de Bombeiros Militar do Paraná' },
-  { estado: 'rj', nome: 'Rio de Janeiro', sigla: 'RJ', inst: 'cbmerj', titulo: 'CBMERJ', desc: 'Corpo de Bombeiros Militar do Estado do Rio de Janeiro' },
-  { estado: 'rn', nome: 'Rio Grande do Norte', sigla: 'RN', inst: 'cbmrn', titulo: 'CBMRN', desc: 'Corpo de Bombeiros Militar do Rio Grande do Norte' },
-  { estado: 'ro', nome: 'Rondônia', sigla: 'RO', inst: 'cbmro', titulo: 'CBMRO', desc: 'Corpo de Bombeiros Militar de Rondônia' },
-  { estado: 'rr', nome: 'Roraima', sigla: 'RR', inst: 'cbmrr', titulo: 'CBMRR', desc: 'Corpo de Bombeiros Militar de Roraima' },
-  { estado: 'rs', nome: 'Rio Grande do Sul', sigla: 'RS', inst: 'cbmrs', titulo: 'CBMRS', desc: 'Corpo de Bombeiros Militar do Rio Grande do Sul' },
-  { estado: 'sc', nome: 'Santa Catarina', sigla: 'SC', inst: 'cbmsc', titulo: 'CBMSC', desc: 'Corpo de Bombeiros Militar de Santa Catarina' },
-  { estado: 'se', nome: 'Sergipe', sigla: 'SE', inst: 'cbmse', titulo: 'CBMSE', desc: 'Corpo de Bombeiros Militar de Sergipe' },
-  { estado: 'sp', nome: 'São Paulo', sigla: 'SP', inst: 'cbpmesp', titulo: 'CBPMESP', desc: 'Corpo de Bombeiros da Polícia Militar do Estado de São Paulo' },
-  { estado: 'to', nome: 'Tocantins', sigla: 'TO', inst: 'cbmto', titulo: 'CBMTO', desc: 'Corpo de Bombeiros Militar do Tocantins' }
+  { estado: 'ac', nome: 'Acre', sigla: 'AC', inst: 'bmac', titulo: 'bmac', desc: 'Corpo de Bombeiros Militar do Acre' },
+  { estado: 'al', nome: 'Alagoas', sigla: 'AL', inst: 'bmal', titulo: 'bmal', desc: 'Corpo de Bombeiros Militar de Alagoas' },
+  { estado: 'am', nome: 'Amazonas', sigla: 'AM', inst: 'bmam', titulo: 'bmam', desc: 'Corpo de Bombeiros Militar do Amazonas' },
+  { estado: 'ap', nome: 'Amapá', sigla: 'AP', inst: 'bmap', titulo: 'bmap', desc: 'Corpo de Bombeiros Militar do Amapá' },
+  { estado: 'ba', nome: 'Bahia', sigla: 'BA', inst: 'bmba', titulo: 'bmba', desc: 'Corpo de Bombeiros Militar da Bahia' },
+  { estado: 'ce', nome: 'Ceará', sigla: 'CE', inst: 'bmce', titulo: 'bmce', desc: 'Corpo de Bombeiros Militar do Ceará' },
+  { estado: 'df', nome: 'Distrito Federal', sigla: 'DF', inst: 'bmdf', titulo: 'bmdf', desc: 'Corpo de Bombeiros Militar do Distrito Federal' },
+  { estado: 'es', nome: 'Espírito Santo', sigla: 'ES', inst: 'bmes', titulo: 'bmes', desc: 'Corpo de Bombeiros Militar do Espírito Santo' },
+  { estado: 'go', nome: 'Goiás', sigla: 'GO', inst: 'bmgo', titulo: 'bmgo', desc: 'Corpo de Bombeiros Militar do Estado de Goiás' },
+  { estado: 'ma', nome: 'Maranhão', sigla: 'MA', inst: 'bmma', titulo: 'bmma', desc: 'Corpo de Bombeiros Militar do Maranhão' },
+  { estado: 'mg', nome: 'Minas Gerais', sigla: 'MG', inst: 'bmmg', titulo: 'bmmg', desc: 'Corpo de Bombeiros Militar de Minas Gerais' },
+  { estado: 'ms', nome: 'Mato Grosso do Sul', sigla: 'MS', inst: 'bmms', titulo: 'bmms', desc: 'Corpo de Bombeiros Militar de Mato Grosso do Sul' },
+  { estado: 'mt', nome: 'Mato Grosso', sigla: 'MT', inst: 'bmmt', titulo: 'bmmt', desc: 'Corpo de Bombeiros Militar de Mato Grosso' },
+  { estado: 'pa', nome: 'Pará', sigla: 'PA', inst: 'bmpa', titulo: 'bmpa', desc: 'Corpo de Bombeiros Militar do Pará' },
+  { estado: 'pb', nome: 'Paraíba', sigla: 'PB', inst: 'bmpb', titulo: 'bmpb', desc: 'Corpo de Bombeiros Militar da Paraíba' },
+  { estado: 'pe', nome: 'Pernambuco', sigla: 'PE', inst: 'bmpe', titulo: 'bmpe', desc: 'Corpo de Bombeiros Militar de Pernambuco' },
+  { estado: 'pi', nome: 'Piauí', sigla: 'PI', inst: 'bmpi', titulo: 'bmpi', desc: 'Corpo de Bombeiros Militar do Piauí' },
+  { estado: 'pr', nome: 'Paraná', sigla: 'PR', inst: 'bmpr', titulo: 'bmpr', desc: 'Corpo de Bombeiros Militar do Paraná' },
+  { estado: 'rj', nome: 'Rio de Janeiro', sigla: 'RJ', inst: 'bmrj', titulo: 'bmrj', desc: 'Corpo de Bombeiros Militar do Rio de Janeiro' },
+  { estado: 'rn', nome: 'Rio Grande do Norte', sigla: 'RN', inst: 'bmrn', titulo: 'bmrn', desc: 'Corpo de Bombeiros Militar do Rio Grande do Norte' },
+  { estado: 'ro', nome: 'Rondônia', sigla: 'RO', inst: 'bmro', titulo: 'bmro', desc: 'Corpo de Bombeiros Militar de Rondônia' },
+  { estado: 'rr', nome: 'Roraima', sigla: 'RR', inst: 'bmrr', titulo: 'bmrr', desc: 'Corpo de Bombeiros Militar de Roraima' },
+  { estado: 'rs', nome: 'Rio Grande do Sul', sigla: 'RS', inst: 'bmrs', titulo: 'bmrs', desc: 'Corpo de Bombeiros Militar do Rio Grande do Sul' },
+  { estado: 'sc', nome: 'Santa Catarina', sigla: 'SC', inst: 'bmsc', titulo: 'bmsc', desc: 'Corpo de Bombeiros Militar de Santa Catarina' },
+  { estado: 'se', nome: 'Sergipe', sigla: 'SE', inst: 'bmse', titulo: 'bmse', desc: 'Corpo de Bombeiros Militar de Sergipe' },
+  { estado: 'sp', nome: 'São Paulo', sigla: 'SP', inst: 'bmsp', titulo: 'bmsp', desc: 'Corpo de Bombeiros Militar de São Paulo' },
+  { estado: 'to', nome: 'Tocantins', sigla: 'TO', inst: 'bmto', titulo: 'bmto', desc: 'Corpo de Bombeiros Militar do Tocantins' }
 ];
+
+const BOMBEIROS_MILITARES_ALIASES = {
+  cbmac: 'bmac',
+  cbmal: 'bmal',
+  cbmam: 'bmam',
+  cbmap: 'bmap',
+  cbmba: 'bmba',
+  cbmce: 'bmce',
+  cbmdf: 'bmdf',
+  cbmes: 'bmes',
+  cbmgo: 'bmgo',
+  cbmma: 'bmma',
+  cbmmg: 'bmmg',
+  cbmms: 'bmms',
+  cbmmt: 'bmmt',
+  cbmpa: 'bmpa',
+  cbmpb: 'bmpb',
+  cbmpe: 'bmpe',
+  cbmpi: 'bmpi',
+  cbmpr: 'bmpr',
+  cbmerj: 'bmrj',
+  cbmrn: 'bmrn',
+  cbmro: 'bmro',
+  cbmrr: 'bmrr',
+  cbmrs: 'bmrs',
+  cbmsc: 'bmsc',
+  cbmse: 'bmse',
+  cbpmesp: 'bmsp',
+  cbmto: 'bmto'
+};
+
+function normalizarInstituicaoBombeiro(inst) {
+  const valor = String(inst || '').toLowerCase();
+  return BOMBEIROS_MILITARES_ALIASES[valor] || valor;
+}
+
 
 function criarResumoBombeiroEstrutura(estado, item) {
   return {
@@ -5543,7 +5590,7 @@ function inserirOptionBombeiroNoSelect(select, item) {
   }
 
   const opt = criarOptionInstituicao(item.inst, `${item.titulo} - Bombeiros Militares`);
-  const pmOption = Array.from(grupo.querySelectorAll('option')).find(option => /^pm|^cbpmesp/.test(option.value));
+  const pmOption = Array.from(grupo.querySelectorAll('option')).find(option => String(option.value || '').startsWith('pm'));
   if (pmOption && pmOption.nextSibling) grupo.insertBefore(opt, pmOption.nextSibling);
   else grupo.appendChild(opt);
 }
@@ -5773,7 +5820,7 @@ function aplicarHeaderInicialPortal() {
     if (seletor) seletor.value = '';
   });
 
-  [['header-pm-sigla', 'PM'], ['header-bm-sigla', 'CBM'], ['header-pc-sigla', 'PC'], ['header-pp-sigla', 'PP']].forEach(([id, valor]) => setTexto(id, valor));
+  [['header-pm-sigla', 'PM'], ['header-bm-sigla', 'BM'], ['header-pc-sigla', 'PC'], ['header-pp-sigla', 'PP']].forEach(([id, valor]) => setTexto(id, valor));
   ['header-branch-pm', 'header-branch-bm', 'header-branch-pc', 'header-branch-pp'].forEach(id => {
     const btn = document.getElementById(id);
     if (!btn) return;
@@ -5822,6 +5869,7 @@ function atualizarHeaderResumo(inst) {
 }
 
 function getEstadoDaInstituicao(inst) {
+  inst = normalizarInstituicaoBombeiro(inst);
   return Object.keys(HEADER_ESTADOS).find(estado => {
     const item = HEADER_ESTADOS[estado];
     return item.pm === inst || item.bm === inst || item.pc === inst || item.pp === inst;
@@ -5846,6 +5894,7 @@ function selecionarRamo(ramo) {
 }
 
 function atualizarHeaderInstitucional(inst) {
+  inst = normalizarInstituicaoBombeiro(inst);
   const instituicao = HEADER_INSTITUICOES_INFO[inst] || HEADER_INSTITUICOES_INFO.pmesp;
   const estadoAtivo = getEstadoDaInstituicao(inst);
   const dadosEstado = HEADER_ESTADOS[estadoAtivo] || HEADER_ESTADOS.sp;
@@ -5875,7 +5924,7 @@ function atualizarHeaderInstitucional(inst) {
   if (pmSigla) pmSigla.textContent = pmInfo ? pmInfo.titulo : '—';
 
   const bmSigla = document.getElementById('header-bm-sigla');
-  if (bmSigla) bmSigla.textContent = bmInfo ? bmInfo.titulo : 'CBM';
+  if (bmSigla) bmSigla.textContent = bmInfo ? bmInfo.titulo : 'BM';
 
   const pcSigla = document.getElementById('header-pc-sigla');
   if (pcSigla) pcSigla.textContent = pcInfo ? pcInfo.titulo : '—';
@@ -5966,7 +6015,7 @@ function mudarInstituicao(novaInstituicao) {
 
   Object.assign(configs, CONFIGS_INSTITUICOES_GENERICAS || {});
 
-  const solicitada = novaInstituicao || document.getElementById('instituicao')?.value || currInst || 'pmesp';
+  const solicitada = normalizarInstituicaoBombeiro(novaInstituicao || document.getElementById('instituicao')?.value || currInst || 'pmesp');
   const inst = configs[solicitada] ? solicitada : 'pmesp';
 
   // Proteção contra instituições antigas/inexistentes salvas no navegador.
@@ -6018,6 +6067,7 @@ function mudarInstituicao(novaInstituicao) {
 
 
 /* ============================================================ */
+
 /* Chunk gerado a partir de js/script-original.js — Análise de direitos, vantagens e aposentadoria.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -6598,6 +6648,7 @@ function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingress
 }
 
 /* ============================================================ */
+
 /* Chunk gerado a partir de js/script-original.js — Concursos, comparador de carreiras, ações judiciais e associações.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -6708,7 +6759,7 @@ function inicializarComparadorCarreiras() {
           <div class="comparador-check-titulo">${escapeHtml(dadosEstado.nome || estado.toUpperCase())}</div>
           ${itens.map(item => `
             <label class="comparador-check-option">
-              <input type="checkbox" value="${escapeHtml(item.inst)}" data-sigla="${escapeHtml(item.sigla)}">
+              <input type="checkbox" value="${escapeHtml(item.inst)}" data-sigla="${escapeHtml(item.sigla)}" onchange="carregarComparadorCarreiras()">
               <span>
                 <strong>${escapeHtml(item.sigla)}</strong>
                 <small>${escapeHtml(item.nome)} · ${escapeHtml(item.uf)} · ${escapeHtml(item.ramo)}</small>
@@ -7001,7 +7052,7 @@ function carregarConcursos() {
 
     <a class="taf-produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="noopener noreferrer" aria-label="Ver barra fixa para porta, produto útil para treino de TAF">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="img/barrafixa01.webp" data-img-base="img/barrafixa01" alt="Detalhes da Oferta do Produto - barra fixa para porta" loading="lazy">
+        <img src="barrafixa01" alt="Detalhes da Oferta do Produto - barra fixa para porta" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='png';this.src='barrafixa01.png';}else if(this.dataset.retry==='png'){this.dataset.retry='jpg';this.src='barrafixa01.jpg';}else if(this.dataset.retry==='jpg'){this.dataset.retry='jpeg';this.src='barrafixa01.jpeg';}else if(this.dataset.retry==='jpeg'){this.dataset.retry='webp';this.src='barrafixa01.webp';}else{this.style.display='none';this.closest('.taf-produto-card').classList.add('img-indisponivel');}">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para o TAF</span>
@@ -7025,7 +7076,7 @@ function carregarConcursos() {
 
     <a class="taf-produto-card taf-produto-card-barrafixa02" href="https://s.shopee.com.br/9fHJ0X4HVl" target="_blank" rel="noopener noreferrer" aria-label="Ver Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela, produto útil para treino de TAF">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="img/barrafixa02.webp" data-img-base="img/barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy">
+        <img src="barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='png';this.src='barrafixa02.png';}else if(this.dataset.retry==='png'){this.dataset.retry='jpg';this.src='barrafixa02.jpg';}else if(this.dataset.retry==='jpg'){this.dataset.retry='jpeg';this.src='barrafixa02.jpeg';}else if(this.dataset.retry==='jpeg'){this.dataset.retry='webp';this.src='barrafixa02.webp';}else{this.style.display='none';this.closest('.taf-produto-card').classList.add('img-indisponivel');}">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para o TAF</span>
@@ -7088,6 +7139,7 @@ function carregarAssociacoes() {
 
 
 /* ============================================================ */
+
 /* Chunk gerado a partir de js/script-original.js — Contato, anúncios, contador e inicialização.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -7210,135 +7262,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-/* =======================================================
-   Eventos centralizados.
-   Remove a dependência de onclick/onchange/oninput inline no HTML.
-   Este arquivo deve ser carregado depois dos dados, serviços e páginas.
-   ======================================================= */
-
-(function () {
-  function safeCall(fnName, args = []) {
-    const fn = window[fnName];
-    if (typeof fn === 'function') return fn.apply(window, args);
-    console.warn(`[UniSegPub] Função não encontrada: ${fnName}`);
-    return undefined;
-  }
-
-  function bindClick(selector, handler) {
-    document.querySelectorAll(selector).forEach(el => {
-      el.addEventListener('click', handler);
-    });
-  }
-
-  function bindChange(selector, handler) {
-    document.querySelectorAll(selector).forEach(el => {
-      el.addEventListener('change', handler);
-    });
-  }
-
-  function bindInput(selector, handler) {
-    document.querySelectorAll(selector).forEach(el => {
-      el.addEventListener('input', handler);
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    bindClick('.menu-btn, #menuOverlay, .close-btn', () => safeCall('toggleMenu'));
-    bindClick('#theme-toggle-header', () => safeCall('toggleTheme'));
-
-    bindChange('#instituicao, #instituicao_header', event => {
-      safeCall('mudarInstituicao', [event.currentTarget.value]);
-    });
-
-    bindClick('.branch-option[data-branch]', event => {
-      safeCall('selecionarRamo', [event.currentTarget.dataset.branch]);
-    });
-
-    bindClick('.state-flag[data-estado]', event => {
-      safeCall('selecionarEstado', [event.currentTarget.dataset.estado]);
-    });
-
-    bindClick('.sidebar-nav a[href^="#"]', event => {
-      const link = event.currentTarget;
-      const page = (link.getAttribute('href') || '').replace('#', '');
-      if (!page) return;
-
-      event.preventDefault();
-
-      if (page === 'principal') {
-        safeCall('abrirPaginaInicial');
-        return;
-      }
-
-      safeCall('switchPage', [page]);
-    });
-
-    bindClick('[data-page]', event => {
-      const page = event.currentTarget.dataset.page;
-      if (!page) return;
-      safeCall('switchPage', [page]);
-    });
-
-    document.querySelectorAll('[data-page]').forEach(el => {
-      el.addEventListener('keydown', event => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          safeCall('switchPage', [event.currentTarget.dataset.page]);
-        }
-      });
-    });
-
-    bindClick('.ad-slot .ad-placeholder-link', event => {
-      const link = event.currentTarget;
-      const href = link.getAttribute('href') || '';
-
-      // Produtos/anúncios com link externo devem abrir o afiliado diretamente.
-      if (link.classList.contains('ad-placeholder-link--product') || /^https?:\/\//i.test(href)) {
-        return;
-      }
-
-      const area = link.closest('[data-ad-area]')?.dataset.adArea;
-      if (!area) return;
-      event.preventDefault();
-      safeCall('abrirContatoAnuncio', [area]);
-    });
-
-    bindInput('#idade_dir, #renda_dir', () => safeCall('analisarDireitos'));
-    bindChange('#idade_dir, #renda_dir, #sexo_dir, #ingresso_dir, #dependente_dir, #local_especial_dir, #requisitos_apos_dir', () => safeCall('analisarDireitos'));
-
-    bindClick('[data-action="comparador-estado-atual"]', () => safeCall('comparadorSelecionarEstadoAtual'));
-    bindClick('[data-action="comparador-todas"]', () => safeCall('comparadorSelecionarTodas'));
-    bindClick('[data-action="comparador-limpar"]', () => safeCall('comparadorLimparSelecao'));
-    bindClick('#comparador-toggle-lista', () => safeCall('toggleComparadorLista'));
-
-    document.addEventListener('change', event => {
-      const alvo = event.target;
-      if (alvo && alvo.matches('#comparador-selecao input[type="checkbox"]')) {
-        safeCall('carregarComparadorCarreiras');
-      }
-    });
-
-    bindInput('#contato_mensagem', () => safeCall('atualizarContador'));
-
-    const contatoForm = document.querySelector('form[data-form="contato"]');
-    if (contatoForm) {
-      contatoForm.addEventListener('submit', event => safeCall('enviarEmailContato', [event]));
-    }
-  });
-
-  document.addEventListener('error', event => {
-    const img = event.target;
-    if (!(img instanceof HTMLImageElement)) return;
-
-    if (img.matches('.produto-imagem img[data-img-base], .taf-produto-imagem img[data-img-base]')) {
-      safeCall('carregarImagemProduto', [img]);
-      return;
-    }
-
-    if (img.dataset.hideOnError === 'true') {
-      img.style.display = 'none';
-      const container = img.closest('.produto-imagem, .taf-produto-imagem, .partner-image-slot');
-      if (container) container.classList.add('img-indisponivel');
-    }
-  }, true);
-})();

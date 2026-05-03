@@ -963,3 +963,225 @@ footer,
     margin-bottom: 126px !important;
   }
 }
+
+
+/* ============================================================
+   Ajustes v3 — botão de tema no topo e tema claro legível.
+   ============================================================ */
+
+.app-floating-action--theme {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] {
+  --app-soft-bg: #e7eaee;
+  --app-soft-panel: #eceff4;
+  --app-soft-card: #f2f4f7;
+  --app-soft-card-2: #e5e8ee;
+  --app-soft-text: #15191f;
+  --app-soft-muted: #515866;
+  --app-soft-border: rgba(255, 255, 255, 0.72);
+  --app-soft-shadow-dark: rgba(134, 141, 153, 0.28);
+  --app-soft-shadow-light: rgba(255, 255, 255, 0.96);
+  --app-soft-shadow: 14px 14px 28px var(--app-soft-shadow-dark), -12px -12px 28px var(--app-soft-shadow-light);
+  --app-soft-shadow-small: 8px 8px 16px rgba(134, 141, 153, 0.24), -7px -7px 15px rgba(255,255,255,0.96);
+  --app-soft-shadow-inset: inset 5px 5px 12px rgba(134, 141, 153, 0.16), inset -5px -5px 12px rgba(255,255,255,0.92);
+}
+
+html[data-theme="light"] body {
+  background-color: var(--app-soft-bg) !important;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='900' height='900' viewBox='0 0 900 900' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23aeb4bf' stroke-width='2' stroke-opacity='.22'%3E%3Cpath d='M-100 76c145-34 270-21 376 40 145 83 260 88 390 11 88-52 191-64 314-34'/%3E%3Cpath d='M-93 142c138-38 266-28 383 31 151 77 278 74 389-9 84-63 186-82 304-56'/%3E%3Cpath d='M-110 235c117-42 237-46 360-13 171 46 305 29 402-51 92-76 206-105 344-83'/%3E%3Cpath d='M-125 343c143-55 276-55 399 2 142 66 267 59 374-23 100-77 220-104 361-80'/%3E%3Cpath d='M-102 472c119-34 236-30 352 12 166 60 307 47 423-37 96-70 207-91 333-63'/%3E%3Cpath d='M-100 610c140-54 268-51 383 9 146 76 283 71 411-15 86-58 187-71 305-38'/%3E%3Cpath d='M-95 742c123-40 242-38 357 5 164 62 302 52 414-31 90-67 198-87 322-61'/%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(circle at 18% 8%, rgba(255,255,255,0.84), transparent 30%),
+    radial-gradient(circle at 82% 12%, rgba(255,255,255,0.52), transparent 26%) !important;
+  color: var(--app-soft-text) !important;
+}
+
+html[data-theme="light"] body::before {
+  border-color: rgba(255,255,255,0.56) !important;
+}
+
+html[data-theme="light"] .site-header {
+  background: linear-gradient(145deg, rgba(247,248,251,0.98), rgba(228,232,239,0.98)) !important;
+  border-color: rgba(255,255,255,0.82) !important;
+}
+
+html[data-theme="light"] .menu-btn,
+html[data-theme="light"] .theme-toggle-header,
+html[data-theme="light"] .close-btn,
+html[data-theme="light"] .app-floating-action,
+html[data-theme="light"] .app-bottom-item,
+html[data-theme="light"] .principal-btn,
+html[data-theme="light"] .btn-primary,
+html[data-theme="light"] .btn-secondary,
+html[data-theme="light"] .btn-submit,
+html[data-theme="light"] .ad-button,
+html[data-theme="light"] .comparador-add-btn,
+html[data-theme="light"] .comparador-toggle-lista {
+  background: linear-gradient(145deg, #f8f9fb, #dde2ea) !important;
+  color: #171b21 !important;
+  border-color: rgba(255,255,255,0.82) !important;
+}
+
+html[data-theme="light"] .menu-btn span {
+  background: #171b21 !important;
+}
+
+html[data-theme="light"] .current-flag-frame,
+html[data-theme="light"] .current-flag-frame.brand-logo-frame,
+html[data-theme="light"] .current-flag-frame.institution-logo-frame,
+html[data-theme="light"] .principal-card-icon {
+  background: linear-gradient(145deg, #f8f9fb, #dde2ea) !important;
+  border-color: rgba(255,255,255,.82) !important;
+}
+
+html[data-theme="light"] .header-independent-note,
+html[data-theme="light"] .header-current-label,
+html[data-theme="light"] .header-current-copy small,
+html[data-theme="light"] .header-desc,
+html[data-theme="light"] .header-facts-panel,
+html[data-theme="light"] .header-fact,
+html[data-theme="light"] .header-leadership-item,
+html[data-theme="light"] .principal-eyebrow,
+html[data-theme="light"] .principal-tag,
+html[data-theme="light"] .ad-label,
+html[data-theme="light"] .sidebar-nav a,
+html[data-theme="light"] .sidebar-social-btn,
+html[data-theme="light"] .sidebar-product,
+html[data-theme="light"] .sidebar-ad a {
+  background: rgba(255,255,255,0.42) !important;
+  color: var(--app-soft-muted) !important;
+  border-color: rgba(255,255,255,0.65) !important;
+}
+
+html[data-theme="light"] .header-institution-card,
+html[data-theme="light"] .principal-hero,
+html[data-theme="light"] .principal-card,
+html[data-theme="light"] .card,
+html[data-theme="light"] .consulta-instituicao-card,
+html[data-theme="light"] .poderes-resultado,
+html[data-theme="light"] .brasoes-historia-resultado,
+html[data-theme="light"] .comparador-topo,
+html[data-theme="light"] .comparador-select-panel,
+html[data-theme="light"] .comparador-selecionadas,
+html[data-theme="light"] .remuneracao-stat,
+html[data-theme="light"] .ad-slot--card,
+html[data-theme="light"] .ad-slot--inline,
+html[data-theme="light"] .ad-slot--hero,
+html[data-theme="light"] .produto-card,
+html[data-theme="light"] .curso-card,
+html[data-theme="light"] .field,
+html[data-theme="light"] .principal-como-usar,
+html[data-theme="light"] .principal-nota,
+html[data-theme="light"] .portal-disclaimer,
+html[data-theme="light"] .result-list,
+html[data-theme="light"] .alerta,
+html[data-theme="light"] .success,
+html[data-theme="light"] .remuneracao-table-wrap,
+html[data-theme="light"] .comparador-table-wrap,
+html[data-theme="light"] footer {
+  background: linear-gradient(145deg, rgba(246,247,250,0.98), rgba(228,232,239,0.98)) !important;
+  border-color: rgba(255,255,255,0.82) !important;
+  color: var(--app-soft-text) !important;
+}
+
+html[data-theme="light"] .sidebar {
+  background: linear-gradient(145deg, rgba(246,247,250,0.98), rgba(228,232,239,0.98)) !important;
+  border-color: rgba(255,255,255,0.82) !important;
+}
+
+html[data-theme="light"] .sidebar-nav a.active,
+html[data-theme="light"] body[data-page="principal"] .app-bottom-item[href="index.html"],
+html[data-theme="light"] body[data-page="remuneracao"] .app-bottom-item[href="remuneracao.html"],
+html[data-theme="light"] body[data-page="concursos"] .app-bottom-item[href="concursos.html"],
+html[data-theme="light"] body[data-page="comparar"] .app-bottom-item[href="comparar-carreiras.html"] {
+  background: linear-gradient(145deg, #dee3eb, #f7f8fb) !important;
+  color: #11151c !important;
+}
+
+html[data-theme="light"] select,
+html[data-theme="light"] input,
+html[data-theme="light"] textarea {
+  background: linear-gradient(145deg, #f8f9fb, #e1e5ed) !important;
+  color: #15191f !important;
+  border-color: rgba(255,255,255,0.82) !important;
+}
+
+html[data-theme="light"] select option {
+  background: #f6f8fb;
+  color: #15191f;
+}
+
+html[data-theme="light"] ::placeholder {
+  color: #68717e !important;
+}
+
+html[data-theme="light"] .header-brand-block h1,
+html[data-theme="light"] .header-brand-block h1 span,
+html[data-theme="light"] .header-current-copy strong,
+html[data-theme="light"] .header-current-copy p,
+html[data-theme="light"] .header-facts-head strong,
+html[data-theme="light"] .header-facts-head span,
+html[data-theme="light"] .header-fact strong,
+html[data-theme="light"] .header-fact span,
+html[data-theme="light"] .header-leadership-item strong,
+html[data-theme="light"] .header-leadership-item span,
+html[data-theme="light"] .principal-title,
+html[data-theme="light"] .principal-section-title h2,
+html[data-theme="light"] .card h2,
+html[data-theme="light"] .card h3,
+html[data-theme="light"] .principal-card h3,
+html[data-theme="light"] .curso-section-title h2,
+html[data-theme="light"] .sidebar-brand strong,
+html[data-theme="light"] footer strong,
+html[data-theme="light"] footer .footer-disclaimer strong,
+html[data-theme="light"] .remuneracao-table,
+html[data-theme="light"] .comparador-table,
+html[data-theme="light"] .remuneracao-table th,
+html[data-theme="light"] .remuneracao-table td,
+html[data-theme="light"] .comparador-table th,
+html[data-theme="light"] .comparador-table td,
+html[data-theme="light"] label,
+html[data-theme="light"] legend,
+html[data-theme="light"] strong,
+html[data-theme="light"] .summary-card strong,
+html[data-theme="light"] .summary-card span,
+html[data-theme="light"] .result-list,
+html[data-theme="light"] .result-list * {
+  color: var(--app-soft-text) !important;
+}
+
+html[data-theme="light"] .header-current-copy small,
+html[data-theme="light"] .header-fact span,
+html[data-theme="light"] .header-leadership-item span,
+html[data-theme="light"] .principal-subtitle,
+html[data-theme="light"] .principal-card p,
+html[data-theme="light"] .principal-section-title p,
+html[data-theme="light"] .como-usar-step span,
+html[data-theme="light"] .small-note,
+html[data-theme="light"] .ad-placeholder-link small,
+html[data-theme="light"] .produto-card p,
+html[data-theme="light"] .curso-card p,
+html[data-theme="light"] footer,
+html[data-theme="light"] .footer-disclaimer,
+html[data-theme="light"] .remuneracao-table .small,
+html[data-theme="light"] .comparador-table .small,
+html[data-theme="light"] .card p,
+html[data-theme="light"] .card li,
+html[data-theme="light"] .card ul,
+html[data-theme="light"] .card ol,
+html[data-theme="light"] .portal-disclaimer p,
+html[data-theme="light"] .alerta p,
+html[data-theme="light"] .success p {
+  color: var(--app-soft-muted) !important;
+}
+
+html[data-theme="light"] .app-bottom-nav {
+  background: linear-gradient(145deg, rgba(246,247,250,.95), rgba(228,232,239,.95)) !important;
+  border-color: rgba(255,255,255,0.82) !important;
+}
+
+html[data-theme="light"] .menu-overlay.active {
+  background: rgba(180, 186, 196, .42) !important;
+}

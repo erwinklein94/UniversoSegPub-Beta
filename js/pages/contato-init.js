@@ -21,20 +21,11 @@ const ANUNCIO_AREAS_LABELS = {
 
 function abrirContatoAnuncio(area = '') {
   const areaNome = ANUNCIO_AREAS_LABELS[area] || 'Espaço de anúncio do portal';
-  const paginaAtual = document.body?.dataset?.page || '';
 
-  if (paginaAtual && paginaAtual !== 'parceiros') {
-    const destino = (window.UNISEGPUB_PAGE_URLS && window.UNISEGPUB_PAGE_URLS.parceiros) || 'anuncie.html';
-    const query = area ? `?area=${encodeURIComponent(area)}` : '';
-    window.location.href = `${destino}${query}`;
-    return;
-  }
+  switchPage('parceiros');
 
-  if (!paginaAtual && typeof switchPage === 'function') {
-    switchPage('parceiros');
-    if (window.history && window.history.replaceState) {
-      window.history.replaceState(null, '', '#parceiros');
-    }
+  if (window.history && window.history.replaceState) {
+    window.history.replaceState(null, '', '#parceiros');
   }
 
   window.setTimeout(() => {

@@ -9685,7 +9685,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    bindClick('.menu-btn, #menuOverlay, .close-btn', () => safeCall('toggleMenu'));
+    bindClick('.menu-btn', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      safeCall('toggleMenu');
+    });
+
+    bindClick('#menuOverlay, .close-btn', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      safeCall('toggleMenu', [false]);
+    });
+
     bindClick('#theme-toggle-header', () => safeCall('toggleTheme'));
 
     bindChange('#instituicao, #instituicao_header', event => {
@@ -9729,16 +9740,29 @@ document.addEventListener('DOMContentLoaded', () => {
       safeCall('switchPage', [page]);
     });
 
-    bindClick('[data-page]', event => {
-      const page = event.currentTarget.dataset.page;
+    bindClick('[data-page]:not(body)', event => {
+      const el = event.currentTarget;
+      const page = el.dataset.page;
       if (!page) return;
+
+      // Em páginas reais, links com href devem navegar normalmente.
+      // Botões/cards sem href ainda usam a compatibilidade com switchPage().
+      const href = el.getAttribute('href');
+      if (href && href !== '#') return;
+
+      event.preventDefault();
+      event.stopPropagation();
       safeCall('switchPage', [page]);
     });
 
-    document.querySelectorAll('[data-page]').forEach(el => {
+    document.querySelectorAll('[data-page]:not(body)').forEach(el => {
       el.addEventListener('keydown', event => {
         if (event.key === 'Enter' || event.key === ' ') {
+          const href = event.currentTarget.getAttribute('href');
+          if (href && href !== '#') return;
+
           event.preventDefault();
+          event.stopPropagation();
           safeCall('switchPage', [event.currentTarget.dataset.page]);
         }
       });

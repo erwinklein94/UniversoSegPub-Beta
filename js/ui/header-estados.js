@@ -2558,28 +2558,43 @@ function criarCargosPfEstrutura(inst, sigla) {
 
 function criarCargosPrfEstrutura(inst, sigla) {
   const fonteKey = 'prf';
-  const criterio = 'Subsídio federal da carreira de Policial Rodoviário Federal, referência 2026, conforme tabela remuneratória federal/MGI e Lei nº 14.875/2024.';
-  const benefDesc = 'Benefícios não somados ao subsídio: auxílio-alimentação federal, assistência à saúde suplementar por faixa, auxílio pré-escolar quando devido, adicional de fronteira quando houver exercício em localidade prevista, diárias/indenizações e demais rubricas funcionais.';
-  return [
-    { id: 'especial_iii', nome: `${sigla} — Policial Rodoviário Federal — Especial III`, padrao: 23000.00, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'especial_ii', nome: `${sigla} — Policial Rodoviário Federal — Especial II`, padrao: 22249.43, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'especial_i', nome: `${sigla} — Policial Rodoviário Federal — Especial I`, padrao: 21524.32, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'primeira_vi', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe VI`, padrao: 20306.21, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'primeira_v', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe V`, padrao: 19649.56, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'primeira_iv', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe IV`, padrao: 19015.88, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'primeira_iii', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe III`, padrao: 18404.39, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'primeira_ii', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe II`, padrao: 17814.28, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'primeira_i', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe I`, padrao: 17244.77, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'segunda_vi', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe VI`, padrao: 15949.32, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'segunda_v', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe V`, padrao: 15704.54, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'segunda_iv', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe IV`, padrao: 15467.49, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'segunda_iii', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe III`, padrao: 15237.63, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'segunda_ii', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe II`, padrao: 15014.50, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'segunda_i', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe I`, padrao: 14798.58, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'terceira_iii', nome: `${sigla} — Policial Rodoviário Federal — 3ª Classe III`, padrao: 12646.11, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'terceira_ii', nome: `${sigla} — Policial Rodoviário Federal — 3ª Classe II`, padrao: 12448.92, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
-    { id: 'terceira_i', nome: `${sigla} — Policial Rodoviário Federal — 3ª Classe I`, padrao: 12253.84, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' }
+  const criterio = 'Subsídio federal da carreira de Policial Rodoviário Federal, efeitos financeiros a partir de 01/05/2026, conforme Lei nº 14.875/2024, Anexo XXVII, que alterou o Anexo III da Lei nº 11.358/2006.';
+  const benefDesc = 'Benefícios não somados ao subsídio: auxílio-alimentação federal, assistência à saúde suplementar por faixa, auxílio pré-escolar quando devido, indenização de fronteira quando houver exercício em localidade prevista, diárias, ajuda de custo, transporte, adicional de férias, gratificação natalina e demais rubricas funcionais conforme legislação e situação individual.';
+  const linhas = [
+    ['especial_iii', 'Policial Rodoviário Federal — Classe Especial — Padrão III', 23000.00],
+    ['especial_ii', 'Policial Rodoviário Federal — Classe Especial — Padrão II', 22249.43],
+    ['especial_i', 'Policial Rodoviário Federal — Classe Especial — Padrão I', 21524.32],
+    ['primeira_vi', 'Policial Rodoviário Federal — 1ª Classe — Padrão VI', 20306.21],
+    ['primeira_v', 'Policial Rodoviário Federal — 1ª Classe — Padrão V', 19649.56],
+    ['primeira_iv', 'Policial Rodoviário Federal — 1ª Classe — Padrão IV', 19015.88],
+    ['primeira_iii', 'Policial Rodoviário Federal — 1ª Classe — Padrão III', 18404.39],
+    ['primeira_ii', 'Policial Rodoviário Federal — 1ª Classe — Padrão II', 17814.28],
+    ['primeira_i', 'Policial Rodoviário Federal — 1ª Classe — Padrão I', 17244.77],
+    ['segunda_vi', 'Policial Rodoviário Federal — 2ª Classe — Padrão VI', 15949.32],
+    ['segunda_v', 'Policial Rodoviário Federal — 2ª Classe — Padrão V', 15704.54],
+    ['segunda_iv', 'Policial Rodoviário Federal — 2ª Classe — Padrão IV', 15463.72],
+    ['segunda_iii', 'Policial Rodoviário Federal — 2ª Classe — Padrão III', 15226.76],
+    ['segunda_ii', 'Policial Rodoviário Federal — 2ª Classe — Padrão II', 14993.63],
+    ['segunda_i', 'Policial Rodoviário Federal — 2ª Classe — Padrão I', 14764.25],
+    ['terceira_iii', 'Policial Rodoviário Federal — 3ª Classe — Padrão III', 12630.98],
+    ['terceira_ii', 'Policial Rodoviário Federal — 3ª Classe — Padrão II', 12440.90],
+    ['terceira_i', 'Policial Rodoviário Federal — 3ª Classe — Padrão I', 12253.84]
   ];
+  return linhas.map(([id, nome, padrao], idx) => ({
+    id,
+    val: `${id}_${inst}`,
+    text: `${sigla} — ${nome}`,
+    nome: `${sigla} — ${nome}`,
+    padrao,
+    gratif: 0,
+    oficial: true,
+    selected: idx === linhas.length - 1,
+    retpFator: 0,
+    fonteKey,
+    criterio,
+    benefDesc,
+    badge: 'Federal 2026'
+  }));
 }
 
 function criarConcursoFederalEstrutura(item) {

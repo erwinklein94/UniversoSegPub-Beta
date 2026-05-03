@@ -40,13 +40,19 @@
   }
 
   .page-produtos #page-produtos .curso-pmesp-only.produtos-vitrine,
-  .page-produtos #page-produtos .curso-pcsp-only.produtos-vitrine {
+  .page-produtos #page-produtos .curso-pcsp-only.produtos-vitrine,
+  .page-produtos #page-produtos .curso-pmto-only.produtos-vitrine {
     display: none !important;
   }
 
   body[data-inst="pmesp"] #page-produtos .curso-pmesp-only.produtos-vitrine,
-  body[data-inst="pcsp"] #page-produtos .curso-pcsp-only.produtos-vitrine {
+  body[data-inst="pcsp"] #page-produtos .curso-pcsp-only.produtos-vitrine,
+  body[data-inst="pmto"] #page-produtos .curso-pmto-only.produtos-vitrine {
     display: grid !important;
+  }
+
+  body[data-inst="pmto"] #page-produtos .curso-outra-inst-only {
+    display: none !important;
   }
 
   .page-produtos #page-produtos .produtos-vitrine .produto-card {
@@ -596,6 +602,23 @@
 <div class="alerta curso-outra-inst-only" style="margin-top: 0; margin-bottom: 0;">
       Espaço destinado a cursos preparatórios, mentorias e materiais de estudo. Em breve, novos produtos específicos serão adicionados para esta instituição.
     </div>
+<div class="curso-grid produtos-vitrine curso-pmto-only">
+<a aria-label="Abrir MAPA PMTO: Método de Aprovação Policial Acelerado na Polícia Militar de Tocantins" class="curso-card produto-card produto-card--destaque" href="https://go.hotmart.com/P105668763H?dp=1" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
+<img alt="MAPA PMTO: Método de Aprovação Policial Acelerado na Polícia Militar de Tocantins" data-img-base="img/HOTMART/cursopmto1" decoding="async" loading="lazy" src="img/HOTMART/cursopmto1.webp"/>
+</div>
+<span class="ad-label">Curso PMTO</span>
+<h3>MAPA PMTO: Método de Aprovação Policial Acelerado na Polícia Militar de Tocantins</h3>
+<p>Curso preparatório direcionado para candidatos da Polícia Militar do Tocantins, com método de estudo acelerado, organização da preparação e foco na aprovação no concurso da PMTO.</p>
+<div aria-label="Destaques do curso" class="curso-meta">
+<span>Curso online</span>
+<span>PMTO</span>
+<span>Polícia Militar do Tocantins</span>
+<span>Preparação acelerada</span>
+</div>
+<span class="curso-cta">Comprar por afiliado</span>
+</a>
+</div>
 <div class="curso-grid produtos-vitrine curso-pmesp-only">
 <a aria-label="Abrir Curso Preparatório Sargento PMESP" class="curso-card produto-card" href="https://go.hotmart.com/Q105560013F?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -786,8 +809,8 @@
 <script defer="" src="js/data/policia-penal.js"></script>
 <script defer="" src="js/data/bases-conteudo.js"></script>
 <script defer="" src="js/ui/navegacao-ui.js?v=20260503homeinst1"></script>
-<script defer="" src="js/services/remuneracao.js"></script>
-<script defer="" src="js/ui/header-estados.js?v=20260503homeinst1"></script>
+<script defer="" src="js/services/remuneracao.js?v=20260503prf1"></script>
+<script defer="" src="js/ui/header-estados.js?v=20260503prf1"></script>
 <script defer="" src="js/pages/contato-init.js?v=20260503homeinst1"></script>
 <script defer="" src="js/ui/event-bindings.js?v=20260503homeinst1"></script>
 <script defer="" src="js/core/page-context.js"></script>

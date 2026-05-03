@@ -143,7 +143,10 @@ function inicializarComparadorCarreiras() {
     selecao.dataset.renderizado = 'true';
   }
 
-  if (!selecao.querySelector('input[type="checkbox"]:checked')) comparadorSelecionarEstadoAtual(false);
+  const esferaComparador = document.getElementById('comparador-esfera');
+  if (esferaComparador && esferaComparador.value) {
+    popularInstituicoesComparadorPorEsfera(esferaComparador.value);
+  }
   carregarComparadorCarreiras();
 }
 
@@ -154,6 +157,68 @@ function getComparadorSelect() {
 function getComparadorCheckboxes() {
   const selecao = getComparadorSelect();
   return selecao ? Array.from(selecao.querySelectorAll('input[type="checkbox"]')) : [];
+}
+
+function popularInstituicoesComparadorPorEsfera(esfera, valorPreferido = '') {
+  const seletorInst = document.getElementById('comparador-instituicao');
+  if (!seletorInst) return;
+  const esferaNormalizada = String(esfera || '').trim().toLowerCase();
+  const itens = typeof getInstituicoesParaConsulta === 'function'
+    ? getInstituicoesParaConsulta(esferaNormalizada)
+    : getInstituicoesComparador().filter(item => !esferaNormalizada || getEsferaConsultaInstituicao(item.inst) === esferaNormalizada);
+
+  if (!esferaNormalizada) {
+    seletorInst.innerHTML = '<option value="">Escolha primeiro a esfera</option>';
+    seletorInst.disabled = true;
+    return;
+  }
+
+  if (!itens.length) {
+    seletorInst.innerHTML = '<option value="">Nenhuma instituição disponível para esta esfera</option>';
+    seletorInst.disabled = true;
+    return;
+  }
+
+  let html = '<option value="">Escolha a instituição</option>';
+  let grupoAtual = '';
+  itens.forEach(item => {
+    const grupo = esferaNormalizada === 'estadual'
+      ? `${item.estadoNome} (${item.uf})`
+      : (esferaNormalizada === 'federal' ? 'União' : 'Municípios');
+    if (grupo !== grupoAtual) {
+      if (grupoAtual) html += '</optgroup>';
+      html += `<optgroup label="${escapeHtml(grupo)}">`;
+      grupoAtual = grupo;
+    }
+    const texto = esferaNormalizada === 'estadual'
+      ? `${item.sigla} — ${item.ramo}`
+      : `${item.sigla} — ${item.nome}`;
+    html += `<option value="${escapeHtml(item.inst)}">${escapeHtml(texto)}</option>`;
+  });
+  if (grupoAtual) html += '</optgroup>';
+
+  seletorInst.disabled = false;
+  seletorInst.innerHTML = html;
+  seletorInst.value = valorPreferido && itens.some(item => item.inst === valorPreferido) ? valorPreferido : '';
+}
+
+function comparadorAlterarEsfera(esfera) {
+  popularInstituicoesComparadorPorEsfera(esfera, '');
+}
+
+function comparadorAdicionarInstituicaoSelecionada() {
+  const seletorInst = document.getElementById('comparador-instituicao');
+  const inst = seletorInst?.value;
+  if (!inst) return;
+  const check = getComparadorCheckboxes().find(item => item.value === inst);
+  if (!check) return;
+  const jaSelecionada = check.checked;
+  check.checked = true;
+  carregarComparadorCarreiras();
+  const info = HEADER_INSTITUICOES_INFO[inst];
+  if (typeof mostrarToast === 'function') {
+    mostrarToast(jaSelecionada ? `${info?.titulo || inst.toUpperCase()} já estava na comparação.` : `${info?.titulo || inst.toUpperCase()} adicionada à comparação.`);
+  }
 }
 
 function toggleComparadorLista() {

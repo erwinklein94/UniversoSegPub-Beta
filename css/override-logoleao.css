@@ -1341,21 +1341,6 @@ body[data-inst="portal"] .header-current-copy strong {
   filter: drop-shadow(0 18px 28px rgba(0,0,0,.35));
 }
 
-.brasoes-imagem,
-.brasao-clickable-img {
-  cursor: zoom-in !important;
-}
-
-.brasoes-imagem:hover {
-  transform: scale(1.018);
-}
-
-.brasoes-imagem:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--vermelho) 72%, #ffffff);
-  outline-offset: 7px;
-  border-radius: 18px;
-}
-
 .brasoes-hero-copy {
   min-width: 0;
 }

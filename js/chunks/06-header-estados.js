@@ -4241,7 +4241,7 @@ function renderizarBrasoesHistoria() {
   cont.innerHTML = `
     <section class="brasoes-hero" aria-label="Brasão e identificação da instituição">
       <div class="brasoes-imagem-wrap">
-        <img class="brasoes-imagem" src="${escapeHtml(imagem)}" alt="Brasão ou insígnia da ${escapeHtml(nome)}" role="button" tabindex="0" title="Clique para ampliar o brasão" aria-label="Ampliar brasão da ${escapeHtml(nome)}" loading="eager" decoding="async" onerror="this.onerror=null;this.src='img/LOGO/logoleao.webp';">
+        <img class="brasoes-imagem" src="${escapeHtml(imagem)}" alt="Brasão ou insígnia da ${escapeHtml(nome)}" loading="eager" decoding="async" onerror="this.onerror=null;this.src='img/LOGO/logoleao.webp';">
       </div>
       <div class="brasoes-hero-copy">
         <span class="brasoes-kicker">${escapeHtml(tipo)}</span>

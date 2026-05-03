@@ -1,15 +1,13 @@
 /*
-  Ampliação dos brasões do cabeçalho e da aba "Brasões e história".
+  Ampliação dos brasões do cabeçalho.
   - Mantém a imagem do brasão grande no cabeçalho.
-  - Ao clicar no brasão do cabeçalho ou da página informativa, abre uma visualização ampliada.
+  - Ao clicar, abre uma visualização ampliada da imagem atual.
   - Fecha pelo botão, clique fora da imagem ou tecla ESC.
 */
 (function () {
   'use strict';
 
   const HEADER_BRASAO_SELECTOR = '#header-active-flag';
-  const PAGE_BRASAO_SELECTOR = '.brasoes-imagem';
-  const BRASAO_INTERATIVO_SELECTOR = `${HEADER_BRASAO_SELECTOR}, ${PAGE_BRASAO_SELECTOR}`;
   const LIGHTBOX_ID = 'brasao-lightbox';
 
   let ultimoFocoAntesDoLightbox = null;
@@ -18,30 +16,21 @@
     return document.querySelector(HEADER_BRASAO_SELECTOR);
   }
 
-  function prepararImagemInterativa(img, origem = 'brasão') {
-    if (!img) return;
-    img.setAttribute('role', 'button');
-    img.setAttribute('tabindex', '0');
-    img.setAttribute('aria-label', img.getAttribute('aria-label') || `Ampliar imagem do ${origem}`);
-    img.setAttribute('title', img.getAttribute('title') || 'Clique para ampliar o brasão');
-    img.classList.add('brasao-clickable-img');
-  }
-
   function prepararImagemCabecalho() {
     const img = getImagemCabecalho();
     if (!img) return;
 
     const moldura = img.closest('.current-flag-frame');
     if (moldura) {
+      // O brasão agora é interativo, então não deve ficar escondido da acessibilidade.
       moldura.removeAttribute('aria-hidden');
       moldura.classList.add('brasao-header-clickable');
     }
 
-    prepararImagemInterativa(img, 'brasão no cabeçalho');
-  }
-
-  function prepararImagensDaPagina() {
-    document.querySelectorAll(PAGE_BRASAO_SELECTOR).forEach(img => prepararImagemInterativa(img, 'brasão da instituição'));
+    img.setAttribute('role', 'button');
+    img.setAttribute('tabindex', '0');
+    img.setAttribute('aria-label', 'Ampliar imagem do brasão no cabeçalho');
+    img.setAttribute('title', 'Clique para ampliar o brasão');
   }
 
   function garantirLightbox() {
@@ -70,7 +59,7 @@
   }
 
   function abrirLightbox(imgOrigem) {
-    if (!imgOrigem || (!imgOrigem.currentSrc && !imgOrigem.src)) return;
+    if (!imgOrigem || !imgOrigem.currentSrc && !imgOrigem.src) return;
 
     const lightbox = garantirLightbox();
     const imgAmpliada = lightbox.querySelector('.brasao-lightbox__img');
@@ -102,14 +91,13 @@
 
   function iniciar() {
     prepararImagemCabecalho();
-    prepararImagensDaPagina();
     garantirLightbox();
 
     document.addEventListener('click', function (event) {
-      const imgBrasao = event.target.closest && event.target.closest(BRASAO_INTERATIVO_SELECTOR);
-      if (imgBrasao) {
+      const imgCabecalho = event.target.closest(HEADER_BRASAO_SELECTOR);
+      if (imgCabecalho) {
         event.preventDefault();
-        abrirLightbox(imgBrasao);
+        abrirLightbox(imgCabecalho);
         return;
       }
 
@@ -120,10 +108,10 @@
     });
 
     document.addEventListener('keydown', function (event) {
-      const imgBrasao = event.target.closest && event.target.closest(BRASAO_INTERATIVO_SELECTOR);
-      if (imgBrasao && (event.key === 'Enter' || event.key === ' ')) {
+      const imgCabecalho = event.target.closest && event.target.closest(HEADER_BRASAO_SELECTOR);
+      if (imgCabecalho && (event.key === 'Enter' || event.key === ' ')) {
         event.preventDefault();
-        abrirLightbox(imgBrasao);
+        abrirLightbox(imgCabecalho);
         return;
       }
 
@@ -135,9 +123,6 @@
       const observer = new MutationObserver(prepararImagemCabecalho);
       observer.observe(img, { attributes: true, attributeFilter: ['src', 'alt', 'class'] });
     }
-
-    const pageObserver = new MutationObserver(prepararImagensDaPagina);
-    pageObserver.observe(document.body, { childList: true, subtree: true });
   }
 
   if (document.readyState === 'loading') {

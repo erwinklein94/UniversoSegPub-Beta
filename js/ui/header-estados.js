@@ -3345,12 +3345,17 @@ function calcularEfetivoTotalResumoHeader(dados = {}) {
   return formatarEfetivoHeader(dados.ativa);
 }
 
+function calcularEfetivoAtivoResumoHeader(dados = {}) {
+  if (dados.ativaLabel) return dados.ativaLabel;
+  return formatarEfetivoHeader(dados.ativa);
+}
+
 function atualizarLabelsHeaderResumo(labels = {}) {
   const padrao = {
     'header-label-natureza': 'Natureza',
     'header-label-uf': 'UF/Jurisdição',
     'header-label-criacao': 'Criação',
-    'header-label-ativa': 'Efetivo total',
+    'header-label-ativa': 'Efetivo na ativa',
     'header-label-reserva': 'Reserva/inativos',
     'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População do Estado',
@@ -3363,6 +3368,14 @@ function atualizarLabelsHeaderResumo(labels = {}) {
   Object.entries({ ...padrao, ...labels }).forEach(([id, valor]) => {
     const el = document.getElementById(id);
     if (el) el.textContent = valor;
+  });
+}
+
+
+function alternarHeaderComandoResumo(visivel) {
+  document.querySelectorAll('.header-command-item').forEach(item => {
+    item.hidden = !visivel;
+    item.classList.toggle('is-hidden', !visivel);
   });
 }
 
@@ -3424,6 +3437,8 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-titulo', 'Resumo do portal');
   setTexto('header-resumo-atualizado', 'Visão geral do portal');
 
+  alternarHeaderComandoResumo(false);
+
   atualizarLabelsHeaderResumo({
     'header-label-natureza': 'Escopo',
     'header-label-uf': 'Abrangência',
@@ -3435,7 +3450,7 @@ function aplicarHeaderInicialPortal() {
     'header-label-relacao': 'UFs',
     'header-label-dados-atualizados': 'Dados Atualizados do site',
     'header-label-governador': 'Cobertura',
-    'header-label-comando': 'Primeiro passo'
+    'header-label-comando': 'Comando/Direção'
   });
 
   setTexto('header-resumo-natureza', 'Portal informativo');
@@ -3448,7 +3463,7 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-relacao', `${resumoPortal.estados} UFs`);
   atualizarIndicadorPercentualPortal();
   setTexto('header-resumo-governador', 'Polícias militares, bombeiros militares, civis e penais');
-  setTexto('header-resumo-comando', 'Selecione uma instituição para ver os dados específicos');
+  setTexto('header-resumo-comando', '—');
 
   ['instituicao', 'instituicao_header'].forEach(id => {
     const seletor = document.getElementById(id);
@@ -3487,7 +3502,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'UF/Jurisdição',
       'header-label-criacao': 'Base constitucional',
-      'header-label-ativa': 'Policiais penais',
+      'header-label-ativa': 'Efetivo na ativa',
       'header-label-reserva': 'Inativos/RPPS',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'Presos atendidos',
@@ -3502,7 +3517,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'UF/Jurisdição',
       'header-label-criacao': 'Criação',
-      'header-label-ativa': 'Efetivo total',
+      'header-label-ativa': 'Efetivo na ativa',
       'header-label-reserva': 'Reserva/reforma',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
@@ -3517,7 +3532,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'UF/Jurisdição',
       'header-label-criacao': 'Criação',
-      'header-label-ativa': 'Efetivo total',
+      'header-label-ativa': 'Efetivo na ativa',
       'header-label-reserva': 'Reserva/reforma',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
@@ -3532,7 +3547,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'UF/Jurisdição',
       'header-label-criacao': 'Origem histórica',
-      'header-label-ativa': 'Efetivo total',
+      'header-label-ativa': 'Efetivo na ativa',
       'header-label-reserva': 'Inativos estimados',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
@@ -3547,7 +3562,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'Jurisdição',
       'header-label-criacao': 'Base legal/histórica',
-      'header-label-ativa': 'Efetivo total',
+      'header-label-ativa': 'Efetivo na ativa',
       'header-label-reserva': 'Aposentados/inativos',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'Abrangência',
@@ -3562,7 +3577,7 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
       'header-label-natureza': 'Natureza',
       'header-label-uf': 'Jurisdição',
       'header-label-criacao': 'Base local',
-      'header-label-ativa': 'Efetivo municipal',
+      'header-label-ativa': 'Efetivo na ativa',
       'header-label-reserva': 'Regime previdenciário',
       'header-label-total': 'Mulheres no efetivo',
       'header-label-populacao': dados.populacaoTitulo || 'Abrangência',
@@ -3590,6 +3605,7 @@ function atualizarHeaderResumo(inst) {
   if (tituloResumo) tituloResumo.textContent = 'Resumo institucional';
 
   const dados = HEADER_INSTITUICOES_RESUMO[inst] || HEADER_INSTITUICOES_RESUMO.pmesp;
+  alternarHeaderComandoResumo(true);
   atualizarLabelsHeaderResumo(getResumoHeaderLabelsPorInstituicao(inst, dados));
 
   const setTexto = (id, valor) => {
@@ -3597,7 +3613,7 @@ function atualizarHeaderResumo(inst) {
     if (el) el.textContent = resumoValorOuEmBreve(valor);
   };
 
-  const ativaTexto = calcularEfetivoTotalResumoHeader(dados);
+  const ativaTexto = calcularEfetivoAtivoResumoHeader(dados);
   const reservaTexto = dados.reservaLabel || formatarEfetivoHeader(dados.reserva);
   const femininasTexto = dados.femininasLabel || (dados.femininas ? formatarNumeroHeader(dados.femininas) : RESUMO_DADOS_EM_BREVE);
   const relacaoTexto = dados.relacaoLabel || calcularRelacaoHeader(dados.populacao, dados.ativa);

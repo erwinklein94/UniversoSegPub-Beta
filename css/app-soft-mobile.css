@@ -1502,3 +1502,9 @@ body[data-theme="dark"] .header-facts-panel,
     justify-self: start !important;
   }
 }
+
+/* Oculta o bloco de comando no resumo inicial do portal; ele volta apenas quando uma instituição é selecionada. */
+.header-command-item[hidden],
+.header-command-item.is-hidden {
+  display: none !important;
+}

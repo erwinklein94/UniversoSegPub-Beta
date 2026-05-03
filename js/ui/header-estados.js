@@ -2748,7 +2748,59 @@ function criarOptionInstituicao(inst, texto) {
   return opt;
 }
 
+
+function getRotuloRamoSelect(ramo, inst, info = {}) {
+  if (ramo === 'bm') return 'Bombeiros Militares';
+  if (ramo === 'pc') return 'Polícia Civil';
+  if (ramo === 'pp') return 'Polícia Penal';
+  if (inst === 'pmrs' || /Brigada Militar/i.test(info.desc || '')) return 'Brigada Militar';
+  return 'Polícia Militar';
+}
+
+function montarSelectInstituicoes(select) {
+  if (!select || select.dataset.instituicoesMontadas === 'true') return;
+
+  const valorAtual = select.value;
+  const fragmento = document.createDocumentFragment();
+  const placeholder = criarOptionInstituicao('', 'Escolha uma instituição');
+  placeholder.disabled = true;
+  placeholder.selected = true;
+  fragmento.appendChild(placeholder);
+
+  Object.entries(HEADER_ESTADOS || {}).forEach(([uf, estado]) => {
+    if (!estado || ['br', 'municipal'].includes(uf)) return;
+
+    const grupo = document.createElement('optgroup');
+    grupo.label = estado.nome || String(uf).toUpperCase();
+
+    ['pm', 'bm', 'pc', 'pp'].forEach(ramo => {
+      const inst = estado[ramo];
+      if (!inst) return;
+      const info = HEADER_INSTITUICOES_INFO[inst] || {};
+      const titulo = info.titulo || String(inst).toUpperCase();
+      const rotulo = getRotuloRamoSelect(ramo, inst, info);
+      grupo.appendChild(criarOptionInstituicao(inst, `${titulo} - ${rotulo}`));
+    });
+
+    if (grupo.children.length) fragmento.appendChild(grupo);
+  });
+
+  select.innerHTML = '';
+  select.appendChild(fragmento);
+  select.dataset.instituicoesMontadas = 'true';
+
+  if (valorAtual && Array.from(select.options || []).some(opt => opt.value === valorAtual)) {
+    select.value = valorAtual;
+  }
+}
+
+function montarSelectsInstituicoes() {
+  document.querySelectorAll('#instituicao, #instituicao_header').forEach(montarSelectInstituicoes);
+}
+
 function aplicarEstruturaEstadosFaltantesNoHtml() {
+  montarSelectsInstituicoes();
+
   const montarOptgroups = select => {
     if (!select) return;
     ESTADOS_ESTRUTURA_FALTANTES.forEach(estado => {

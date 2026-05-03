@@ -1,6 +1,6 @@
 /* Fonte JS organizada por responsabilidade.
    As páginas públicas carregam os arquivos individuais na ordem abaixo.
-   O arquivo js/dist/app.bundle.js é mantido apenas como artefato gerado de compatibilidade.
+   Não há bundle gerado em runtime; isto evita manter um artefato grande e não utilizado.
 */
 const UNISEGPUB_JS_ORDER = [
   'js/data/parametros-cargos.js',

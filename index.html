@@ -29,7 +29,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link rel="preload" href="css/dist/main.min.css" as="style">
 <link rel="stylesheet" href="css/dist/main.min.css">
-<link rel="stylesheet" href="css/override-logoleao.css?v=20260502bugfixv1">
+<link rel="stylesheet" href="css/override-logoleao.css?v=20260502hotfixv1">
 
 </head>
 <body data-inst="portal">
@@ -1149,8 +1149,8 @@
 
     <div class="comparador-selecao" aria-label="Seleção de carreiras para comparação">
       <div class="comparador-select-panel">
-        <div class="comparador-select-label" id="comparador-selecao-titulo">Carreiras para comparar</div>
-        <div id="comparador-selecao" class="comparador-select-grid" role="group" aria-labelledby="comparador-selecao-titulo"></div>
+        <label class="comparador-select-label" for="comparador-selecao">Carreiras para comparar</label>
+        <div id="comparador-selecao" class="comparador-select-grid" role="group" aria-label="Carreiras disponíveis para comparação"></div>
         <small class="comparador-select-help">O comparador aceita no mínimo 2 e no máximo 4 carreiras. Carreiras repetidas ficam bloqueadas nos outros campos.</small>
         <div id="comparador-selecionadas" class="comparador-selecionadas" aria-live="polite"></div>
       </div>
@@ -1571,8 +1571,8 @@
 <!-- CSS movido para css/style.css -->
 <!-- JavaScript fonte reorganizado em js/data, js/services, js/ui e js/pages.
      Produção: bundle único para reduzir requisições e preservar a ordem de execução. -->
-<script src="js/dist/app.bundle.js?v=20260502bugfixv1" defer></script>
-<script src="js/brasao-lightbox.js?v=20260502bugfixv1" defer></script>
+<script src="js/dist/app.bundle.js?v=20260502hotfixv1" defer></script>
+<script src="js/brasao-lightbox.js?v=20260502hotfixv1" defer></script>
 
 </body>
 </html>

@@ -1979,3 +1979,28 @@ body[data-inst="portal"] .header-current-copy strong {
   }
 }
 
+
+
+/* ============================================================
+   HOTFIX CRÍTICO — protege scroll e cliques na carga inicial
+   ============================================================ */
+html,
+body {
+  overflow-x: hidden !important;
+}
+
+body:not(.brasao-lightbox-open) {
+  overflow-y: auto !important;
+}
+
+.menu-overlay:not(.active),
+.brasao-lightbox:not(.is-open) {
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+.brasao-lightbox.is-open {
+  pointer-events: auto !important;
+  visibility: visible !important;
+  display: flex !important;
+}

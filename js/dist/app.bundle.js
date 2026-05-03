@@ -8175,7 +8175,6 @@ function getOrdemComparador(inst) {
 }
 
 function getInstituicoesComparador() {
-  if (typeof garantirEstruturaGuardaMunicipalConsulta === 'function') garantirEstruturaGuardaMunicipalConsulta();
   return INSTITUICOES_VALIDAS
     .filter(inst => HEADER_INSTITUICOES_INFO[inst])
     .map(inst => {
@@ -8351,8 +8350,8 @@ function atualizarResumoSelecaoComparador() {
 function comparadorSelecionarEstadoAtual(exibirToast = true) {
   const estadoAtivo = getEstadoDaInstituicao(currInst);
   const dadosEstado = HEADER_ESTADOS[estadoAtivo] || HEADER_ESTADOS.sp;
-  const valores = Array.from(new Set([dadosEstado.pm, dadosEstado.bm, dadosEstado.pc, dadosEstado.pp, dadosEstado.pf, dadosEstado.prf, dadosEstado.gm]
-    .filter(Boolean)))
+  const valores = [dadosEstado.pm, dadosEstado.bm, dadosEstado.pc, dadosEstado.pp, dadosEstado.pf, dadosEstado.prf]
+    .filter(Boolean)
     .slice(0, COMPARADOR_MAX_CARREIRAS);
   setSelecionadasComparador(valores);
   carregarComparadorCarreiras();

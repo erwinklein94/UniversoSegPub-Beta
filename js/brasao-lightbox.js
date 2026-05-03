@@ -101,9 +101,16 @@
   }
 
   function iniciar() {
+    // Segurança: a camada de ampliação só deve existir quando o usuário clicar.
+    // Isso evita qualquer bloqueio acidental de scroll/cliques na carga inicial.
+    document.body.classList.remove('brasao-lightbox-open');
+    const lightboxInicial = document.getElementById(LIGHTBOX_ID);
+    if (lightboxInicial && !lightboxInicial.classList.contains('is-open')) {
+      lightboxInicial.setAttribute('aria-hidden', 'true');
+    }
+
     prepararImagemCabecalho();
     prepararImagensDaPagina();
-    garantirLightbox();
 
     document.addEventListener('click', function (event) {
       const imgBrasao = event.target.closest && event.target.closest(BRASAO_INTERATIVO_SELECTOR);

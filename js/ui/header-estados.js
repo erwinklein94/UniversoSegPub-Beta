@@ -3072,11 +3072,186 @@ function aplicarPadraoDadosEmBreveGlobal() {
     POLICIAS_PENAIS_INFO,
     CONFIGS_INSTITUICOES_GENERICAS,
     CARGOS_ESTRUTURA_GENERICAS,
-    REMUNERACAO_FONTES_OFICIAIS
+    REMUNERACAO_FONTES_OFICIAIS,
+    typeof CARGOS_PM !== 'undefined' ? CARGOS_PM : null,
+    typeof CARGOS_PC !== 'undefined' ? CARGOS_PC : null,
+    typeof CARGOS_PMERJ !== 'undefined' ? CARGOS_PMERJ : null,
+    typeof CARGOS_PCERJ !== 'undefined' ? CARGOS_PCERJ : null,
+    typeof CARGOS_PMMG !== 'undefined' ? CARGOS_PMMG : null,
+    typeof CARGOS_PCMG !== 'undefined' ? CARGOS_PCMG : null,
+    typeof CARGOS_PMBA !== 'undefined' ? CARGOS_PMBA : null,
+    typeof CARGOS_PCBA !== 'undefined' ? CARGOS_PCBA : null,
+    typeof CARGOS_PMPR !== 'undefined' ? CARGOS_PMPR : null,
+    typeof CARGOS_PCPR !== 'undefined' ? CARGOS_PCPR : null,
+    typeof CARGOS_PMRS !== 'undefined' ? CARGOS_PMRS : null,
+    typeof CARGOS_PCRS !== 'undefined' ? CARGOS_PCRS : null,
+    typeof CARGOS_PMSC !== 'undefined' ? CARGOS_PMSC : null,
+    typeof CARGOS_PCSC !== 'undefined' ? CARGOS_PCSC : null,
+    typeof CARGOS_PMES !== 'undefined' ? CARGOS_PMES : null,
+    typeof CARGOS_PCES !== 'undefined' ? CARGOS_PCES : null,
+    typeof CARGOS_PMMS !== 'undefined' ? CARGOS_PMMS : null,
+    typeof CARGOS_PCMS !== 'undefined' ? CARGOS_PCMS : null,
+    typeof CARGOS_PMMT !== 'undefined' ? CARGOS_PMMT : null,
+    typeof CARGOS_PCMT !== 'undefined' ? CARGOS_PCMT : null,
+    typeof CARGOS_PMAC !== 'undefined' ? CARGOS_PMAC : null,
+    typeof CARGOS_PCAC !== 'undefined' ? CARGOS_PCAC : null,
+    typeof CARGOS_PPSP !== 'undefined' ? CARGOS_PPSP : null,
+    typeof CARGOS_PPRJ !== 'undefined' ? CARGOS_PPRJ : null,
+    typeof CARGOS_PPMG !== 'undefined' ? CARGOS_PPMG : null,
+    typeof CARGOS_PPBA !== 'undefined' ? CARGOS_PPBA : null,
+    typeof CARGOS_PPPR !== 'undefined' ? CARGOS_PPPR : null,
+    typeof CARGOS_PPRS !== 'undefined' ? CARGOS_PPRS : null,
+    typeof CARGOS_PPSC !== 'undefined' ? CARGOS_PPSC : null,
+    typeof CARGOS_PPES !== 'undefined' ? CARGOS_PPES : null,
+    typeof CARGOS_PPMS !== 'undefined' ? CARGOS_PPMS : null,
+    typeof CARGOS_PPMT !== 'undefined' ? CARGOS_PPMT : null,
+    typeof CARGOS_PPAC !== 'undefined' ? CARGOS_PPAC : null
   ].forEach(base => normalizarObjetoSemFonteSegura(base));
 }
 
 aplicarPadraoDadosEmBreveGlobal();
+
+/* ============================================================ */
+/* === INDICADOR DE ATUALIZAÇÃO DO PORTAL ====================== */
+/* ============================================================ */
+const CAMPOS_IGNORADOS_PERCENTUAL_PORTAL = new Set([
+  'id', 'inst', 'selected', 'cor', 'color', 'flag', 'brasao', 'imagem', 'img',
+  'logo', 'path', 'classe', 'className', 'data', 'tipoCalculo', 'grupo'
+]);
+
+function campoContaParaPercentualPortal(chave, valor) {
+  if (valor === undefined || valor === null) return true;
+  if (typeof valor === 'boolean' || typeof valor === 'function') return false;
+  if (!chave) return true;
+  return !CAMPOS_IGNORADOS_PERCENTUAL_PORTAL.has(String(chave));
+}
+
+function valorPreenchidoParaPercentualPortal(valor, chave = '') {
+  if (valor === undefined || valor === null) return false;
+  if (typeof valor === 'number') return Number.isFinite(valor) && valor > 0;
+  if (typeof valor === 'boolean' || typeof valor === 'function') return true;
+
+  const texto = String(valor).trim();
+  if (!texto || texto === '#' || texto === '-' || texto === '—') return false;
+  if (/dados em breve/i.test(texto)) return false;
+
+  if (/url|href|site|fonteurl/i.test(String(chave))) {
+    return /^https?:\/\//i.test(texto);
+  }
+
+  if (typeof dadoSemFonteSegura === 'function' && dadoSemFonteSegura(texto)) return false;
+  if (typeof resumoEhDadoPendente === 'function' && resumoEhDadoPendente(texto)) return false;
+  if (typeof concursoEhDadoPendente === 'function' && concursoEhDadoPendente(texto)) return false;
+  return true;
+}
+
+function adicionarBasePercentualPortal(bases, nome, valor) {
+  if (valor && typeof valor === 'object') bases.push({ nome, valor });
+}
+
+function getBasesPercentualAtualizacaoPortal() {
+  const bases = [];
+  adicionarBasePercentualPortal(bases, 'resumos institucionais', HEADER_INSTITUICOES_RESUMO);
+  adicionarBasePercentualPortal(bases, 'concursos', CONCURSOS);
+  adicionarBasePercentualPortal(bases, 'ações judiciais', ACOES_JUDICIAIS);
+  adicionarBasePercentualPortal(bases, 'associações e sindicatos', ASSOCIACOES);
+  adicionarBasePercentualPortal(bases, 'polícias penais', POLICIAS_PENAIS_INFO);
+  adicionarBasePercentualPortal(bases, 'fontes oficiais de remuneração', REMUNERACAO_FONTES_OFICIAIS);
+
+  [
+    ['cargos PM', typeof CARGOS_PM !== 'undefined' ? CARGOS_PM : null],
+    ['cargos PC', typeof CARGOS_PC !== 'undefined' ? CARGOS_PC : null],
+    ['cargos PMERJ', typeof CARGOS_PMERJ !== 'undefined' ? CARGOS_PMERJ : null],
+    ['cargos PCERJ', typeof CARGOS_PCERJ !== 'undefined' ? CARGOS_PCERJ : null],
+    ['cargos PMMG', typeof CARGOS_PMMG !== 'undefined' ? CARGOS_PMMG : null],
+    ['cargos PCMG', typeof CARGOS_PCMG !== 'undefined' ? CARGOS_PCMG : null],
+    ['cargos PMBA', typeof CARGOS_PMBA !== 'undefined' ? CARGOS_PMBA : null],
+    ['cargos PCBA', typeof CARGOS_PCBA !== 'undefined' ? CARGOS_PCBA : null],
+    ['cargos PMPR', typeof CARGOS_PMPR !== 'undefined' ? CARGOS_PMPR : null],
+    ['cargos PCPR', typeof CARGOS_PCPR !== 'undefined' ? CARGOS_PCPR : null],
+    ['cargos PMRS', typeof CARGOS_PMRS !== 'undefined' ? CARGOS_PMRS : null],
+    ['cargos PCRS', typeof CARGOS_PCRS !== 'undefined' ? CARGOS_PCRS : null],
+    ['cargos PMSC', typeof CARGOS_PMSC !== 'undefined' ? CARGOS_PMSC : null],
+    ['cargos PCSC', typeof CARGOS_PCSC !== 'undefined' ? CARGOS_PCSC : null],
+    ['cargos PMES', typeof CARGOS_PMES !== 'undefined' ? CARGOS_PMES : null],
+    ['cargos PCES', typeof CARGOS_PCES !== 'undefined' ? CARGOS_PCES : null],
+    ['cargos PMMS', typeof CARGOS_PMMS !== 'undefined' ? CARGOS_PMMS : null],
+    ['cargos PCMS', typeof CARGOS_PCMS !== 'undefined' ? CARGOS_PCMS : null],
+    ['cargos PMMT', typeof CARGOS_PMMT !== 'undefined' ? CARGOS_PMMT : null],
+    ['cargos PCMT', typeof CARGOS_PCMT !== 'undefined' ? CARGOS_PCMT : null],
+    ['cargos PMAC', typeof CARGOS_PMAC !== 'undefined' ? CARGOS_PMAC : null],
+    ['cargos PCAC', typeof CARGOS_PCAC !== 'undefined' ? CARGOS_PCAC : null],
+    ['cargos PPSP', typeof CARGOS_PPSP !== 'undefined' ? CARGOS_PPSP : null],
+    ['cargos PPRJ', typeof CARGOS_PPRJ !== 'undefined' ? CARGOS_PPRJ : null],
+    ['cargos PPMG', typeof CARGOS_PPMG !== 'undefined' ? CARGOS_PPMG : null],
+    ['cargos PPBA', typeof CARGOS_PPBA !== 'undefined' ? CARGOS_PPBA : null],
+    ['cargos PPPR', typeof CARGOS_PPPR !== 'undefined' ? CARGOS_PPPR : null],
+    ['cargos PPRS', typeof CARGOS_PPRS !== 'undefined' ? CARGOS_PPRS : null],
+    ['cargos PPSC', typeof CARGOS_PPSC !== 'undefined' ? CARGOS_PPSC : null],
+    ['cargos PPES', typeof CARGOS_PPES !== 'undefined' ? CARGOS_PPES : null],
+    ['cargos PPMS', typeof CARGOS_PPMS !== 'undefined' ? CARGOS_PPMS : null],
+    ['cargos PPMT', typeof CARGOS_PPMT !== 'undefined' ? CARGOS_PPMT : null],
+    ['cargos PPAC', typeof CARGOS_PPAC !== 'undefined' ? CARGOS_PPAC : null],
+    ['cargos estruturais genéricos', CARGOS_ESTRUTURA_GENERICAS]
+  ].forEach(([nome, valor]) => adicionarBasePercentualPortal(bases, nome, valor));
+
+  return bases;
+}
+
+function contabilizarPercentualAtualizacaoPortal(valor, stats, chave = '', visitados = new WeakSet()) {
+  if (valor && typeof valor === 'object') {
+    if (visitados.has(valor)) return stats;
+    visitados.add(valor);
+
+    if (Array.isArray(valor)) {
+      valor.forEach(item => contabilizarPercentualAtualizacaoPortal(item, stats, chave, visitados));
+      return stats;
+    }
+
+    Object.entries(valor).forEach(([subChave, subValor]) => {
+      contabilizarPercentualAtualizacaoPortal(subValor, stats, subChave, visitados);
+    });
+    return stats;
+  }
+
+  if (!campoContaParaPercentualPortal(chave, valor)) return stats;
+  stats.total += 1;
+  if (valorPreenchidoParaPercentualPortal(valor, chave)) stats.preenchidos += 1;
+  else stats.emBreve += 1;
+  return stats;
+}
+
+function calcularPercentualAtualizacaoPortal() {
+  const stats = { total: 0, preenchidos: 0, emBreve: 0 };
+  getBasesPercentualAtualizacaoPortal().forEach(base => {
+    contabilizarPercentualAtualizacaoPortal(base.valor, stats);
+  });
+
+  const percentual = stats.total ? (stats.preenchidos / stats.total) * 100 : 0;
+  return {
+    ...stats,
+    percentual,
+    percentualTexto: `${percentual.toFixed(percentual >= 99.5 || percentual < 10 ? 0 : 1).replace('.', ',')}%`
+  };
+}
+
+function atualizarIndicadorPercentualPortal() {
+  const indicador = calcularPercentualAtualizacaoPortal();
+  const valor = document.getElementById('header-resumo-dados-atualizados');
+  const label = document.getElementById('header-label-dados-atualizados');
+
+  if (label) label.textContent = 'Dados atualizados';
+  if (valor) {
+    valor.textContent = indicador.percentualTexto;
+    valor.title = `${indicador.preenchidos.toLocaleString('pt-BR')} de ${indicador.total.toLocaleString('pt-BR')} campos com dados preenchidos; ${indicador.emBreve.toLocaleString('pt-BR')} em “Dados em breve”.`;
+    valor.setAttribute('aria-label', `${indicador.percentualTexto} dos dados cadastrados estão preenchidos`);
+    valor.dataset.totalCampos = String(indicador.total);
+    valor.dataset.camposPreenchidos = String(indicador.preenchidos);
+    valor.dataset.camposEmBreve = String(indicador.emBreve);
+  }
+
+  return indicador;
+}
 
 function formatarNumeroHeader(valor) {
   return Number(valor || 0).toLocaleString('pt-BR');
@@ -3128,6 +3303,7 @@ function atualizarLabelsHeaderResumo(labels = {}) {
     'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População do Estado',
     'header-label-relacao': 'Relação ativa/população',
+    'header-label-dados-atualizados': 'Dados atualizados',
     'header-label-governador': 'Chefe do Executivo',
     'header-label-comando': 'Comando/Direção'
   };
@@ -3205,6 +3381,7 @@ function aplicarHeaderInicialPortal() {
     'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População abrangida',
     'header-label-relacao': 'UFs',
+    'header-label-dados-atualizados': 'Dados atualizados',
     'header-label-governador': 'Cobertura',
     'header-label-comando': 'Primeiro passo'
   });
@@ -3217,6 +3394,7 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-total', `${formatarEfetivoHeader(resumoPortal.femininas)}+`);
   setTexto('header-resumo-populacao', formatarNumeroHeader(resumoPortal.populacao));
   setTexto('header-resumo-relacao', `${resumoPortal.estados} UFs`);
+  atualizarIndicadorPercentualPortal();
   setTexto('header-resumo-governador', 'Polícias militares, bombeiros militares, civis e penais');
   setTexto('header-resumo-comando', 'Selecione uma instituição para ver os dados específicos');
 
@@ -3382,6 +3560,7 @@ function atualizarHeaderResumo(inst) {
   setTexto('header-resumo-total', femininasTexto);
   setTexto('header-resumo-populacao', dados.populacaoLabel || (dados.populacao ? formatarNumeroHeader(dados.populacao) : RESUMO_DADOS_EM_BREVE));
   setTexto('header-resumo-relacao', relacaoTexto);
+  atualizarIndicadorPercentualPortal();
   setTexto('header-resumo-governador', dados.governador || RESUMO_DADOS_EM_BREVE);
   setTexto('header-resumo-comando', dados.comando || RESUMO_DADOS_EM_BREVE);
 }

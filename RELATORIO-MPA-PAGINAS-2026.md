@@ -1,172 +1,43 @@
-# Refatoração para páginas reais — Universo Segurança Pública
+# Relatório de correção — MPA páginas reais
 
-## O que foi alterado
+## Correção aplicada nesta versão
 
-O projeto deixou de depender de uma navegação principal baseada somente em `#hash` dentro de um único `index.html`.
-Agora cada seção principal tem uma página HTML própria:
+Esta versão foi gerada a partir da **v2**, que era a última versão funcional relatada.
 
-- `index.html` — Página principal
-- `remuneracao.html` — Remuneração Tabelada
-- `direitos.html` — Direitos e Vantagens
-- `poderes-deveres.html` — Poderes e Deveres
-- `brasoes.html` — Brasões e História
-- `concursos.html` — Concursos
-- `comparar-carreiras.html` — Comparar Carreiras
-- `produtos.html` — Produtos
-- `acoes-judiciais.html` — Ações Judiciais
-- `associacoes-sindicatos.html` — Associações e Sindicatos
-- `anuncie.html` — Parceiros / Anuncie aqui
-- `parceiros.html` — alias de compatibilidade apontando para o mesmo conteúdo de `anuncie.html`
+A alteração da v3 foi revertida porque o `js/brasao-lightbox.js` havia sido modificado e carregado globalmente, mudando o comportamento do site inteiro.
 
-## Objetivo
+Nesta versão, a correção é conservadora:
 
-A mudança foi feita para melhorar:
+- Mantido o `js/brasao-lightbox.js` original.
+- Removida a versão alterada do lightbox.
+- Adicionada uma única chamada ao `js/brasao-lightbox.js?v=20260501` em cada página HTML, como acontecia no site original de página única.
+- Mantidas as correções anteriores da v2 para seleção de instituição e páginas reais.
 
-1. **Performance percebida**: cada URL contém apenas o bloco principal daquela seção.
-2. **SEO**: cada assunto agora tem título, descrição e URL própria.
-3. **Anúncios direcionados**: os espaços comerciais agora apontam para `anuncie.html?area=...`, permitindo identificar de qual página/área veio o interesse comercial.
-4. **Manutenção**: o JS passou a ser carregado por arquivos-fonte menores, sem usar o bundle grande em todas as páginas.
+## Páginas revisadas
 
-## Arquivos novos/importantes
+- `index.html`
+- `remuneracao.html`
+- `direitos.html`
+- `poderes-deveres.html`
+- `brasoes.html`
+- `concursos.html`
+- `comparar-carreiras.html`
+- `acoes-judiciais.html`
+- `associacoes-sindicatos.html`
+- `produtos.html`
+- `parceiros.html`
+- `anuncie.html`
 
-- `js/core/page-context.js`  
-  Controla o modo MPA, ativa o item correto do menu, preserva compatibilidade com funções antigas e preenche o formulário comercial quando a URL possui `?area=`.
+## Validações executadas
 
-- `backup-original/index-spa-original.html`  
-  Cópia do `index.html` antigo, mantida apenas para comparação e rollback.
-
-## Scripts
-
-As páginas não carregam mais:
-
-```html
-<script src="js/dist/app.bundle.js"></script>
-```
-
-Em vez disso, carregam os arquivos necessários em ordem. Exemplo resumido:
-
-```html
-<script src="js/data/parametros-cargos.js" defer></script>
-<script src="js/data/policia-penal.js" defer></script>
-<script src="js/data/bases-conteudo.js" defer></script>
-<script src="js/ui/navegacao-ui.js" defer></script>
-<script src="js/services/remuneracao.js" defer></script>
-<script src="js/ui/header-estados.js" defer></script>
-<script src="js/pages/contato-init.js" defer></script>
-<script src="js/ui/event-bindings.js" defer></script>
-<script src="js/core/page-context.js" defer></script>
-```
-
-Páginas específicas carregam também seus módulos próprios, por exemplo:
-
-- `direitos.html` carrega `js/services/direitos.js`
-- `concursos.html`, `comparar-carreiras.html`, `acoes-judiciais.html` e `associacoes-sindicatos.html` carregam `js/pages/concursos-comparador.js`
-- `poderes-deveres.html` carrega `js/pages/poderes-deveres.js`
-- `brasoes.html` carrega `js/brasao-lightbox.js`
-
-## Anúncios direcionados
-
-Os links de anúncio deixaram de apontar para `#parceiros` e passaram a apontar para URLs como:
-
-```text
-anuncie.html?area=home_topo
-anuncie.html?area=remuneracao_antes_tabela
-anuncie.html?area=concursos_antes_lista
-anuncie.html?area=rodape_geral
-```
-
-Na página `anuncie.html`, o formulário é preenchido automaticamente com a área de interesse.
-
-## Revisões feitas
-
-Foram feitas estas checagens antes de compactar a versão final:
-
-- Cada página HTML possui apenas um `<main>` ativo.
-- Cada página possui apenas um item ativo no menu lateral.
-- Todos os scripts locais referenciados existem.
-- Todos os CSS locais referenciados existem.
-- Todos os links internos `.html` apontam para arquivos existentes.
-- Não há mais links internos principais baseados em `href="#..."` nas novas páginas.
-- Nenhuma página nova carrega `js/dist/app.bundle.js`.
-- Os JS carregados pelas páginas passaram no `node --check`.
-- Foi executada uma simulação básica em Node com DOM falso para detectar erros de carregamento e dependências globais óbvias.
+- `node --check` em todos os arquivos JavaScript: sem erros de sintaxe.
+- Conferência de todos os HTML: 12 arquivos encontrados.
+- Cada HTML possui exatamente um `<main>`.
+- Cada HTML possui `body[data-page]` coerente com a página.
+- Cada HTML possui exatamente uma chamada ao `js/brasao-lightbox.js`.
+- Conferidos arquivos locais de CSS, JS e imagens referenciados nos HTML: sem recurso ausente.
+- Conferidos elementos essenciais: `#header-active-flag`, `.menu-btn` e `#sidebar` presentes em todas as páginas.
 
 ## Observação
 
-O arquivo `js/dist/app.bundle.js` foi mantido no projeto como artefato antigo/rollback, mas não é carregado pelas páginas novas. Se a versão MPA for aprovada em produção, ele pode ser removido em uma próxima limpeza.
-
-## Revisão corretiva — sidebar e eventos globais
-
-### Problema encontrado
-A sidebar podia não permanecer aberta ao clicar no botão de menu porque o `body` possui `data-page` para identificar a página atual, e o arquivo `js/ui/event-bindings.js` registrava clique em todo seletor `[data-page]`. Como cliques no botão do menu sobem até o `body`, o handler global chamava `switchPage()` e fechava o menu imediatamente.
-
-### Correção aplicada
-- O handler de navegação por `data-page` agora ignora o `body`: `[data-page]:not(body)`.
-- O botão `.menu-btn` agora usa `event.stopPropagation()` para evitar conflito com outros handlers globais.
-- O overlay e o botão de fechar agora chamam `toggleMenu(false)`, fechando a sidebar de forma explícita em vez de alternar o estado.
-- A mesma correção foi replicada em `js/chunks/10-event-bindings.js` e `js/dist/app.bundle.js` para manter consistência caso algum arquivo antigo volte a ser usado.
-
-### Checagens executadas após a correção
-- Conferência de sintaxe com `node --check` em todos os arquivos JS.
-- Conferência de referências locais de CSS, JS e imagens em todos os HTML.
-- Conferência de que cada HTML principal contém exatamente um `<main class="page-section active">`.
-- Conferência de que cada página possui o item correto ativo na sidebar.
-- Conferência de que os links da sidebar apontam para páginas reais, não para hashes.
-- Conferência de que as páginas MPA não carregam `js/dist/app.bundle.js` diretamente.
-
-## Correção adicional — seleção de instituição nas páginas MPA
-
-### Problema encontrado
-Após a separação em páginas reais, os dados das instituições não haviam sido apagados. Eles continuavam nos arquivos `js/data/*.js` e nos serviços/páginas. O problema era de inicialização/eventos:
-
-1. Os seletores internos de cada página (`data-consulta-esfera` e `data-consulta-instituicao`) são inseridos dinamicamente por `page-context.js`, mas `event-bindings.js` tentava prender eventos apenas nos elementos existentes no `DOMContentLoaded`.
-2. A função `mudarInstituicao()` ainda chamava diretamente funções de outras páginas, como `analisarDireitos()`, `carregarConcursos()`, `carregarAcoes()` e `carregarAssociacoes()`. Como o modo MPA carrega menos scripts por página, essas funções nem sempre existem na página atual, o que podia interromper a atualização da tela.
-
-### Correções aplicadas
-- Troquei os eventos dos seletores internos para delegação via `document.addEventListener('change', ...)`.
-- Tornei opcionais as chamadas de funções por página dentro de `mudarInstituicao()` usando `typeof nomeFuncao === 'function'`.
-- Repliquei as correções em:
-  - `js/ui/event-bindings.js`
-  - `js/chunks/10-event-bindings.js`
-  - `js/ui/header-estados.js`
-  - `js/chunks/06-header-estados.js`
-  - `js/dist/app.bundle.js`
-
-### Revisão executada
-- `node --check` em todos os arquivos JS.
-- Verificação de links locais de JS, CSS e imagens nos HTML.
-- Verificação de resposta HTTP 200 para todas as páginas HTML em servidor local.
-- Smoke test em Node simulando carregamento das páginas e seleção de instituição em cada página principal.
-
-
----
-
-## Revisão funcional v3 — Brasão ampliado e handlers globais
-
-### Problema encontrado
-
-O arquivo `js/brasao-lightbox.js`, responsável por ampliar a imagem do brasão, ficou carregado apenas em `brasoes.html` após a divisão em páginas reais. No site original, esse script era carregado globalmente no `index.html`, portanto o zoom do brasão do cabeçalho funcionava em todas as abas/páginas.
-
-### Correções aplicadas
-
-- Restaurei o carregamento de `js/brasao-lightbox.js` em todas as páginas HTML.
-- Atualizei a versão do script para `v=20260503` para evitar cache antigo.
-- Melhorei o `js/brasao-lightbox.js` para aceitar clique/teclado em:
-  - `#header-active-flag`, o brasão/logotipo do cabeçalho;
-  - `.brasoes-imagem`, o brasão exibido dentro da página **Brasões e história**.
-- Adicionei delegação de evento e `MutationObserver` para imagens criadas dinamicamente depois que o usuário seleciona uma instituição.
-- Reforcei fechamento do lightbox por botão, clique no fundo e tecla `Esc`.
-- Adicionei foco acessível e cursor de zoom para as imagens ampliáveis.
-
-### Revisões executadas
-
-- `node --check` em todos os arquivos JavaScript.
-- Conferência de todos os HTML para garantir exatamente uma inclusão de `js/brasao-lightbox.js` por página.
-- Conferência de que cada página mantém apenas um `<main>` ativo.
-- Conferência de que o item ativo da sidebar corresponde ao `data-page` do `body`.
-- Conferência de scripts e CSS locais inexistentes: nenhum arquivo local referenciado ficou ausente.
-- Conferência das funções essenciais por página: remuneração, direitos, poderes, brasões, concursos, comparador, ações, associações e contato.
-
-### Observação
-
-O Chromium/headless do ambiente continuou bloqueando navegação por política administrativa, então a validação visual completa em navegador não pôde ser executada aqui. A correção foi feita por revisão estática, validação de dependências e checagem de sintaxe dos scripts.
+Esta versão evita mudanças amplas no JavaScript global. O objetivo foi restaurar o funcionamento do site e recolocar a ampliação do brasão sem alterar a lógica principal.

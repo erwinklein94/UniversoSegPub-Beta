@@ -184,15 +184,6 @@ html:not([data-theme="dark"]) body .concurso-card {
   cursor: zoom-in !important;
 }
 
-.brasao-lightbox-trigger:focus-visible {
-  outline: 3px solid color-mix(in srgb, var(--vermelho) 72%, #ffffff) !important;
-  outline-offset: 6px !important;
-}
-
-.brasoes-imagem-wrap.brasao-header-clickable .brasoes-imagem {
-  cursor: zoom-in !important;
-}
-
 body.brasao-lightbox-open {
   overflow: hidden !important;
 }

@@ -3292,7 +3292,7 @@ function atualizarIndicadorPercentualPortal() {
   const valor = document.getElementById('header-resumo-dados-atualizados');
   const label = document.getElementById('header-label-dados-atualizados');
 
-  if (label) label.textContent = 'Dados atualizados';
+  if (label) label.textContent = 'Dados Atualizados do site';
   if (valor) {
     valor.textContent = indicador.percentualTexto;
     valor.title = `${indicador.preenchidos.toLocaleString('pt-BR')} de ${indicador.total.toLocaleString('pt-BR')} campos com dados preenchidos; ${indicador.emBreve.toLocaleString('pt-BR')} em “Dados em breve”.`;
@@ -3355,7 +3355,7 @@ function atualizarLabelsHeaderResumo(labels = {}) {
     'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População do Estado',
     'header-label-relacao': 'Relação ativa/população',
-    'header-label-dados-atualizados': 'Dados atualizados',
+    'header-label-dados-atualizados': 'Dados Atualizados do site',
     'header-label-governador': 'Chefe do Executivo',
     'header-label-comando': 'Comando/Direção'
   };
@@ -3433,7 +3433,7 @@ function aplicarHeaderInicialPortal() {
     'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População abrangida',
     'header-label-relacao': 'UFs',
-    'header-label-dados-atualizados': 'Dados atualizados',
+    'header-label-dados-atualizados': 'Dados Atualizados do site',
     'header-label-governador': 'Cobertura',
     'header-label-comando': 'Primeiro passo'
   });

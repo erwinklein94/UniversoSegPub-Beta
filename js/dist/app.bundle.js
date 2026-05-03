@@ -6410,7 +6410,7 @@ function aplicarHeaderInicialPortal() {
     'header-label-populacao': 'População abrangida',
     'header-label-relacao': 'UFs',
     'header-label-governador': 'Cobertura',
-    'header-label-comando': 'Como começar'
+    'header-label-comando': 'Primeiro passo'
   });
 
   setTexto('header-resumo-natureza', 'Portal informativo');
@@ -6421,7 +6421,7 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-total', `${formatarEfetivoHeader(resumoPortal.femininas)}+`);
   setTexto('header-resumo-populacao', formatarNumeroHeader(resumoPortal.populacao));
   setTexto('header-resumo-relacao', `${resumoPortal.estados} UFs`);
-  setTexto('header-resumo-governador', 'Polícias militares, bombeiros militares, civis, penais, polícias federais e guardas municipais');
+  setTexto('header-resumo-governador', 'Polícias militares, bombeiros militares, civis e penais');
   setTexto('header-resumo-comando', 'Selecione uma instituição para ver os dados específicos');
 
   ['instituicao', 'instituicao_header'].forEach(id => {
@@ -8154,7 +8154,6 @@ function getRamoComparador(inst) {
   inst = String(inst || '');
   if (inst === 'pf') return 'Federal';
   if (inst === 'prf') return 'Rodoviária Federal';
-  if (inst === 'gm') return 'Guarda Municipal';
   if (inst.startsWith('bm')) return 'Bombeiro Militar';
   if (inst.startsWith('pp')) return 'Penal';
   if (inst.startsWith('pc')) return 'Civil';
@@ -8202,123 +8201,56 @@ function inicializarComparadorCarreiras() {
   if (!selecao) return;
 
   if (!selecao.dataset.renderizado) {
-    renderizarSeletoresComparador(selecao);
+    const instituicoes = getInstituicoesComparador();
+    const ordemEstados = Object.keys(HEADER_ESTADOS);
+    selecao.innerHTML = ordemEstados.map(estado => {
+      const dadosEstado = HEADER_ESTADOS[estado] || {};
+      const itens = instituicoes.filter(item => item.estado === estado);
+      if (!itens.length) return '';
+      return `
+        <div class="comparador-check-grupo" role="group" aria-label="${escapeHtml(dadosEstado.nome || estado.toUpperCase())}">
+          <div class="comparador-check-titulo">${escapeHtml(dadosEstado.nome || estado.toUpperCase())}</div>
+          ${itens.map(item => `
+            <label class="comparador-check-option">
+              <input type="checkbox" value="${escapeHtml(item.inst)}" data-sigla="${escapeHtml(item.sigla)}">
+              <span>
+                <strong>${escapeHtml(item.sigla)}</strong>
+                <small>${escapeHtml(item.nome)} · ${escapeHtml(item.uf)} · ${escapeHtml(item.ramo)}</small>
+              </span>
+            </label>
+          `).join('')}
+        </div>
+      `;
+    }).join('');
     selecao.dataset.renderizado = 'true';
   }
 
-  if (!getSelecionadasComparador().length) comparadorSelecionarEstadoAtual(false);
-  sincronizarOpcoesComparador();
+  if (!selecao.querySelector('input[type="checkbox"]:checked')) comparadorSelecionarEstadoAtual(false);
   carregarComparadorCarreiras();
 }
-
-const COMPARADOR_MIN_CARREIRAS = 2;
-const COMPARADOR_MAX_CARREIRAS = 4;
 
 function getComparadorSelect() {
   return document.getElementById('comparador-selecao');
 }
 
-function getComparadorSelects() {
-  const selecao = getComparadorSelect();
-  return selecao ? Array.from(selecao.querySelectorAll('select[data-comparador-select]')) : [];
-}
-
 function getComparadorCheckboxes() {
-  return [];
-}
-
-function montarOptionsComparador(valorAtual = '', placeholder = 'Selecione uma carreira') {
-  const instituicoes = getInstituicoesComparador();
-  const ordemEstados = Object.keys(HEADER_ESTADOS);
-  const selectedAttr = !valorAtual ? ' selected' : '';
-  const grupos = ordemEstados.map(estado => {
-    const dadosEstado = HEADER_ESTADOS[estado] || {};
-    const itens = instituicoes.filter(item => item.estado === estado);
-    if (!itens.length) return '';
-    const opcoes = itens.map(item => {
-      const selected = item.inst === valorAtual ? ' selected' : '';
-      const label = `${item.sigla} — ${item.uf} — ${item.ramo}`;
-      return `<option value="${escapeHtml(item.inst)}" data-sigla="${escapeHtml(item.sigla)}"${selected}>${escapeHtml(label)}</option>`;
-    }).join('');
-    return `<optgroup label="${escapeHtml(dadosEstado.nome || estado.toUpperCase())}">${opcoes}</optgroup>`;
-  }).join('');
-  return `<option value=""${selectedAttr}>${escapeHtml(placeholder)}</option>${grupos}`;
-}
-
-function renderizarSeletoresComparador(selecao) {
-  const placeholders = [
-    'Selecione a 1ª carreira',
-    'Selecione a 2ª carreira',
-    '3ª carreira opcional',
-    '4ª carreira opcional'
-  ];
-  const labels = [
-    'Carreira 1',
-    'Carreira 2',
-    'Carreira 3',
-    'Carreira 4'
-  ];
-  selecao.innerHTML = labels.map((label, index) => `
-    <div class="comparador-select-campo">
-      <label for="comparador-carreira-${index + 1}">
-        ${escapeHtml(label)} ${index < COMPARADOR_MIN_CARREIRAS ? '<span>obrigatória</span>' : '<span>opcional</span>'}
-      </label>
-      <select id="comparador-carreira-${index + 1}" data-comparador-select="${index + 1}" aria-label="${escapeHtml(label)}">
-        ${montarOptionsComparador('', placeholders[index])}
-      </select>
-    </div>
-  `).join('');
-}
-
-function getValoresComparador() {
-  const valores = [];
-  getComparadorSelects().forEach(select => {
-    const valor = String(select.value || '').trim();
-    if (valor && !valores.includes(valor)) valores.push(valor);
-  });
-  return valores.slice(0, COMPARADOR_MAX_CARREIRAS);
-}
-
-function setSelecionadasComparador(valores) {
-  const selects = getComparadorSelects();
-  const lista = Array.from(new Set((valores || []).filter(Boolean))).slice(0, COMPARADOR_MAX_CARREIRAS);
-  selects.forEach((select, index) => {
-    select.value = lista[index] || '';
-  });
-  sincronizarOpcoesComparador();
-}
-
-function sincronizarOpcoesComparador() {
-  const selects = getComparadorSelects();
-  const selecionadas = selects.map(select => select.value).filter(Boolean);
-  selects.forEach(select => {
-    Array.from(select.options).forEach(option => {
-      if (!option.value) {
-        option.disabled = false;
-        return;
-      }
-      option.disabled = selecionadas.includes(option.value) && option.value !== select.value;
-    });
-  });
-  atualizarResumoSelecaoComparador();
-}
-
-function comparadorSelectAlterado(event) {
-  const alvo = event?.target;
-  const selects = getComparadorSelects();
-  if (alvo && alvo.value) {
-    const repetido = selects.some(select => select !== alvo && select.value === alvo.value);
-    if (repetido) {
-      alvo.value = '';
-      if (typeof mostrarToast === 'function') mostrarToast('Essa carreira já foi selecionada. Escolha outra opção.');
-    }
-  }
-  sincronizarOpcoesComparador();
-  carregarComparadorCarreiras();
+  const selecao = getComparadorSelect();
+  return selecao ? Array.from(selecao.querySelectorAll('input[type="checkbox"]')) : [];
 }
 
 function toggleComparadorLista() {
-  return;
+  const lista = getComparadorSelect();
+  const botao = document.getElementById('comparador-toggle-lista');
+  if (!lista || !botao) return;
+  const aberta = !lista.classList.contains('aberta');
+  lista.classList.toggle('aberta', aberta);
+  botao.setAttribute('aria-expanded', aberta ? 'true' : 'false');
+}
+
+function setSelecionadasComparador(valores) {
+  const checkboxes = getComparadorCheckboxes();
+  const setValores = new Set((valores || []).filter(Boolean));
+  checkboxes.forEach(check => { check.checked = setValores.has(check.value); });
 }
 
 function atualizarResumoSelecaoComparador() {
@@ -8326,54 +8258,41 @@ function atualizarResumoSelecaoComparador() {
   const contador = document.getElementById('comparador-contador-selecao');
   if (!resumoSelecao) return;
 
-  const selects = getComparadorSelects();
-  const selecionadas = selects
-    .filter(select => select.value)
-    .map(select => {
-      const option = select.selectedOptions && select.selectedOptions[0];
-      return option?.dataset?.sigla || option?.textContent || select.value.toUpperCase();
-    })
+  const selecionadas = getComparadorCheckboxes()
+    .filter(check => check.checked)
+    .map(check => check.dataset.sigla || check.value.toUpperCase())
     .filter(Boolean);
 
-  if (contador) contador.textContent = `${selecionadas.length}/${COMPARADOR_MAX_CARREIRAS} selecionadas`;
+  if (contador) contador.textContent = `${selecionadas.length} selecionada${selecionadas.length === 1 ? '' : 's'}`;
 
   if (!selecionadas.length) {
-    resumoSelecao.innerHTML = `Selecione pelo menos ${COMPARADOR_MIN_CARREIRAS} carreiras para comparar.`;
+    resumoSelecao.innerHTML = 'Nenhuma instituição selecionada.';
     return;
   }
 
-  const faltam = Math.max(0, COMPARADOR_MIN_CARREIRAS - selecionadas.length);
-  const complemento = faltam ? ` <span>Falta ${faltam} carreira${faltam === 1 ? '' : 's'} para liberar a comparação.</span>` : '';
-  resumoSelecao.innerHTML = `<strong>Selecionadas (${selecionadas.length}/${COMPARADOR_MAX_CARREIRAS}):</strong> ${escapeHtml(selecionadas.join(', '))}${complemento}`;
+  resumoSelecao.innerHTML = `<strong>Selecionadas (${selecionadas.length}):</strong> ${escapeHtml(selecionadas.join(', '))}`;
 }
 
 function comparadorSelecionarEstadoAtual(exibirToast = true) {
   const estadoAtivo = getEstadoDaInstituicao(currInst);
   const dadosEstado = HEADER_ESTADOS[estadoAtivo] || HEADER_ESTADOS.sp;
-  const valores = [dadosEstado.pm, dadosEstado.bm, dadosEstado.pc, dadosEstado.pp, dadosEstado.pf, dadosEstado.prf]
-    .filter(Boolean)
-    .slice(0, COMPARADOR_MAX_CARREIRAS);
+  const valores = [dadosEstado.pm, dadosEstado.bm, dadosEstado.pc, dadosEstado.pp, dadosEstado.pf, dadosEstado.prf].filter(Boolean);
   setSelecionadasComparador(valores);
   carregarComparadorCarreiras();
-  if (exibirToast) mostrarToast(`Comparando até ${COMPARADOR_MAX_CARREIRAS} carreiras de ${dadosEstado.nome}.`);
+  if (exibirToast) mostrarToast(`Comparando carreiras de ${dadosEstado.nome}.`);
 }
 
 function comparadorSelecionarTodas() {
-  const valores = getInstituicoesComparador().map(item => item.inst).slice(0, COMPARADOR_MAX_CARREIRAS);
-  setSelecionadasComparador(valores);
+  const checkboxes = getComparadorCheckboxes();
+  checkboxes.forEach(check => { check.checked = true; });
   carregarComparadorCarreiras();
-  mostrarToast(`Limite aplicado: máximo de ${COMPARADOR_MAX_CARREIRAS} carreiras por comparação.`);
+  mostrarToast('Todas as instituições foram selecionadas para comparação.');
 }
 
 function comparadorLimparSelecao() {
-  setSelecionadasComparador([]);
+  const checkboxes = getComparadorCheckboxes();
+  checkboxes.forEach(check => { check.checked = false; });
   carregarComparadorCarreiras();
-}
-
-function getSelecionadasComparador() {
-  return getValoresComparador()
-    .filter(inst => INSTITUICOES_VALIDAS.includes(inst))
-    .slice(0, COMPARADOR_MAX_CARREIRAS);
 }
 
 function getConcursoComparador(inst) {
@@ -8444,6 +8363,13 @@ function getDadosComparador(inst) {
   };
 }
 
+function getSelecionadasComparador() {
+  return getComparadorCheckboxes()
+    .filter(check => check.checked)
+    .map(check => check.value)
+    .filter(inst => INSTITUICOES_VALIDAS.includes(inst));
+}
+
 function linkComparador(url, texto = 'Abrir fonte') {
   if (!url || url === '#') return '<span>Dados em breve</span>';
   return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(texto)}</a>`;
@@ -8461,7 +8387,7 @@ function carregarComparadorCarreiras() {
   if (selecionadas.length < 2) {
     resumo.innerHTML = '';
     tbody.innerHTML = '';
-    cards.innerHTML = '<div class="comparador-vazio">Selecione pelo menos duas carreiras para gerar o comparativo. O limite é de quatro carreiras por comparação.</div>';
+    cards.innerHTML = '<div class="comparador-vazio">Selecione pelo menos duas instituições para gerar o comparativo de carreiras.</div>';
     wrap.style.display = 'none';
     return;
   }
@@ -8961,10 +8887,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('change', event => {
       const alvo = event.target;
-      if (alvo && alvo.matches('#comparador-selecao select[data-comparador-select]')) {
-        safeCall('comparadorSelectAlterado', [event]);
-        return;
-      }
       if (alvo && alvo.matches('#comparador-selecao input[type="checkbox"]')) {
         safeCall('carregarComparadorCarreiras');
       }

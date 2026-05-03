@@ -118,10 +118,6 @@
 
     document.addEventListener('change', event => {
       const alvo = event.target;
-      if (alvo && alvo.matches('#comparador-selecao select[data-comparador-select]')) {
-        safeCall('comparadorSelectAlterado', [event]);
-        return;
-      }
       if (alvo && alvo.matches('#comparador-selecao input[type="checkbox"]')) {
         safeCall('carregarComparadorCarreiras');
       }

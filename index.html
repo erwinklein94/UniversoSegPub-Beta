@@ -29,7 +29,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link rel="preload" href="css/dist/main.min.css" as="style">
 <link rel="stylesheet" href="css/dist/main.min.css">
-<link rel="stylesheet" href="css/override-logoleao.css?v=20260502hotfixv1">
+<link rel="stylesheet" href="css/override-logoleao.css?v=20260502ajustesv2">
 
 </head>
 <body data-inst="portal">
@@ -119,10 +119,10 @@
             <div class="header-leadership">
               <div class="header-leadership-item">
                 <span id="header-label-governador">Cobertura</span>
-                <strong id="header-resumo-governador">Polícias militares, bombeiros militares, civis, penais, polícias federais e guardas municipais</strong>
+                <strong id="header-resumo-governador">Polícias militares, bombeiros militares, civis e penais</strong>
               </div>
               <div class="header-leadership-item">
-                <span id="header-label-comando">Como começar</span>
+                <span id="header-label-comando">Primeiro passo</span>
                 <strong id="header-resumo-comando">Selecione uma instituição para ver os dados específicos</strong>
               </div>
             </div>
@@ -1136,22 +1136,33 @@
   <div class="card">
     <h2>Comparar Carreiras</h2>
     <div class="alerta" style="margin-top: 0; margin-bottom: 20px;">
-      Selecione de 2 a 4 carreiras para comparar lado a lado remuneração, benefícios, vantagens, edital de referência, vagas, banca, inscritos, previsão de próximo concurso, matérias cobradas e fontes oficiais cadastradas no portal. Comparação informativa, independente e sem vínculo com as instituições citadas.
+      Selecione duas ou mais instituições para comparar lado a lado remuneração, benefícios, vantagens, edital de referência, vagas, banca, inscritos, previsão de próximo concurso, matérias cobradas e fontes oficiais cadastradas no portal. Comparação informativa, independente e sem vínculo com as instituições citadas.
     </div>
 
-    <div class="comparador-topo comparador-topo--simples">
+    <div class="comparador-topo">
       <div class="comparador-topo-texto">
-        <strong>Escolha de 2 a 4 carreiras</strong>
-        <span>Use apenas os campos abaixo. As duas primeiras carreiras são obrigatórias; a terceira e a quarta são opcionais.</span>
+        <strong>Escolha as carreiras que deseja comparar</strong>
+        <span>O comparador usa a lista de marcação já existente para selecionar duas ou mais instituições e comparar remuneração, benefícios, concursos e fontes oficiais lado a lado.</span>
       </div>
-      <div class="comparador-contador-box" id="comparador-contador-selecao" aria-live="polite">0/4 selecionadas</div>
+      <div class="comparador-acoes">
+        <button class="btn-secondary" type="button" data-action="comparador-estado-atual">Selecionar estado atual</button>
+        <button class="btn-secondary" type="button" data-action="comparador-todas">Selecionar todas</button>
+        <button class="btn-secondary" type="button" data-action="comparador-limpar">Limpar</button>
+      </div>
     </div>
 
-    <div class="comparador-selecao" aria-label="Seleção de carreiras para comparação">
+
+    <div class="comparador-selecao" aria-label="Seleção de instituições para comparação">
       <div class="comparador-select-panel">
-        <label class="comparador-select-label" for="comparador-selecao">Carreiras para comparar</label>
-        <div id="comparador-selecao" class="comparador-select-grid" role="group" aria-label="Carreiras disponíveis para comparação"></div>
-        <small class="comparador-select-help">O comparador aceita no mínimo 2 e no máximo 4 carreiras. Carreiras repetidas ficam bloqueadas nos outros campos.</small>
+        <label class="comparador-select-label" for="comparador-selecao">Instituições para comparar</label>
+        <div class="comparador-multiselect" aria-label="Selecione duas ou mais instituições para comparar">
+          <button class="comparador-toggle-lista" id="comparador-toggle-lista" type="button" aria-expanded="false" aria-controls="comparador-selecao">
+            <span>Escolher instituições</span>
+            <small id="comparador-contador-selecao">0 selecionadas</small>
+          </button>
+          <div id="comparador-selecao" class="comparador-check-list" role="group" aria-label="Instituições disponíveis para comparação"></div>
+        </div>
+        <small class="comparador-select-help">Marque ou desmarque as carreiras pelos botões de seleção abaixo. Não precisa usar Ctrl.</small>
         <div id="comparador-selecionadas" class="comparador-selecionadas" aria-live="polite"></div>
       </div>
     </div>
@@ -1571,8 +1582,8 @@
 <!-- CSS movido para css/style.css -->
 <!-- JavaScript fonte reorganizado em js/data, js/services, js/ui e js/pages.
      Produção: bundle único para reduzir requisições e preservar a ordem de execução. -->
-<script src="js/dist/app.bundle.js?v=20260502hotfixv1" defer></script>
-<script src="js/brasao-lightbox.js?v=20260502hotfixv1" defer></script>
+<script src="js/dist/app.bundle.js?v=20260502ajustesv2" defer></script>
+<script src="js/brasao-lightbox.js?v=20260502ajustesv2" defer></script>
 
 </body>
 </html>

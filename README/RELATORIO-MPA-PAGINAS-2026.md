@@ -113,3 +113,28 @@ A sidebar podia não permanecer aberta ao clicar no botão de menu porque o `bod
 - Conferência de que cada página possui o item correto ativo na sidebar.
 - Conferência de que os links da sidebar apontam para páginas reais, não para hashes.
 - Conferência de que as páginas MPA não carregam `js/dist/app.bundle.js` diretamente.
+
+## Correção adicional — seleção de instituição nas páginas MPA
+
+### Problema encontrado
+Após a separação em páginas reais, os dados das instituições não haviam sido apagados. Eles continuavam nos arquivos `js/data/*.js` e nos serviços/páginas. O problema era de inicialização/eventos:
+
+1. Os seletores internos de cada página (`data-consulta-esfera` e `data-consulta-instituicao`) são inseridos dinamicamente por `page-context.js`, mas `event-bindings.js` tentava prender eventos apenas nos elementos existentes no `DOMContentLoaded`.
+2. A função `mudarInstituicao()` ainda chamava diretamente funções de outras páginas, como `analisarDireitos()`, `carregarConcursos()`, `carregarAcoes()` e `carregarAssociacoes()`. Como o modo MPA carrega menos scripts por página, essas funções nem sempre existem na página atual, o que podia interromper a atualização da tela.
+
+### Correções aplicadas
+- Troquei os eventos dos seletores internos para delegação via `document.addEventListener('change', ...)`.
+- Tornei opcionais as chamadas de funções por página dentro de `mudarInstituicao()` usando `typeof nomeFuncao === 'function'`.
+- Repliquei as correções em:
+  - `js/ui/event-bindings.js`
+  - `js/chunks/10-event-bindings.js`
+  - `js/ui/header-estados.js`
+  - `js/chunks/06-header-estados.js`
+  - `js/dist/app.bundle.js`
+
+### Revisão executada
+- `node --check` em todos os arquivos JS.
+- Verificação de links locais de JS, CSS e imagens nos HTML.
+- Verificação de resposta HTTP 200 para todas as páginas HTML em servidor local.
+- Smoke test em Node simulando carregamento das páginas e seleção de instituição em cada página principal.
+

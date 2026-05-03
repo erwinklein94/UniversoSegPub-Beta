@@ -55,14 +55,23 @@
       safeCall('mudarInstituicaoPoderes', [event.currentTarget.value]);
     });
 
-    bindChange('[data-consulta-esfera]', event => {
-      const page = event.currentTarget.dataset.consultaPage;
-      safeCall('alterarEsferaConsultaInstituicao', [page, event.currentTarget.value]);
-    });
+    // Os seletores internos de cada página são inseridos dinamicamente por page-context.js.
+    // Por isso, eles precisam de delegação de evento; bindChange() só pegaria elementos
+    // que já existiam no DOM no momento do carregamento.
+    document.addEventListener('change', event => {
+      const alvo = event.target;
+      if (!alvo || !(alvo instanceof HTMLSelectElement)) return;
 
-    bindChange('[data-consulta-instituicao]', event => {
-      const page = event.currentTarget.dataset.consultaPage;
-      safeCall('selecionarInstituicaoConsulta', [page, event.currentTarget.value]);
+      if (alvo.matches('[data-consulta-esfera]')) {
+        const page = alvo.dataset.consultaPage;
+        safeCall('alterarEsferaConsultaInstituicao', [page, alvo.value]);
+        return;
+      }
+
+      if (alvo.matches('[data-consulta-instituicao]')) {
+        const page = alvo.dataset.consultaPage;
+        safeCall('selecionarInstituicaoConsulta', [page, alvo.value]);
+      }
     });
 
     bindClick('.branch-option[data-branch]', event => {

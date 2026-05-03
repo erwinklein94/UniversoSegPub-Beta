@@ -1890,3 +1890,92 @@ body[data-inst="portal"] .header-current-copy strong {
     padding: 5px 6px !important;
   }
 }
+
+/* Ajuste — Comparador de carreiras com 2 a 4 seletores essenciais */
+#page-comparar .comparador-topo--simples {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+#page-comparar .comparador-contador-box {
+  border: 1px solid rgba(30, 64, 175, 0.18);
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--azul, #1e3a8a);
+  background: rgba(255, 255, 255, 0.74);
+  white-space: nowrap;
+}
+
+#page-comparar .comparador-select-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+
+#page-comparar .comparador-select-campo {
+  display: grid;
+  gap: 7px;
+}
+
+#page-comparar .comparador-select-campo label {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--texto, #111827);
+}
+
+#page-comparar .comparador-select-campo label span {
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--azul, #1e3a8a);
+  background: rgba(30, 64, 175, 0.08);
+}
+
+#page-comparar .comparador-select-campo select {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid rgba(30, 64, 175, 0.18);
+  border-radius: 14px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--texto, #111827);
+  font: inherit;
+  outline: none;
+}
+
+#page-comparar .comparador-select-campo select:focus {
+  border-color: var(--azul, #1e3a8a);
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.12);
+}
+
+#page-comparar .comparador-selecionadas span {
+  display: inline-block;
+  margin-left: 6px;
+  color: var(--vermelho, #b91c1c);
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  #page-comparar .comparador-topo--simples {
+    grid-template-columns: 1fr;
+  }
+
+  #page-comparar .comparador-contador-box {
+    justify-self: start;
+  }
+
+  #page-comparar .comparador-select-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

@@ -527,26 +527,39 @@ const HEADER_INSTITUICOES_RESUMO = {
     "atualizado": "PPSP revisada em 03/05/2026 — efetivo ativo SAP/2025; feminino estimado; inativos em recorte de transparência"
   },
   "pmerj": {
-    "nome": "Polícia Militar do Rio de Janeiro",
+    "nome": "Polícia Militar do Estado do Rio de Janeiro",
     "sigla": "PMERJ",
     "estado": "Rio de Janeiro",
     "estadoSigla": "RJ",
     "tipo": "Polícia Militar",
     "criacao": "13/05/1809",
-    "ativa": 43362,
-    "ativaLabel": "43.362",
-    "reserva": 40000,
-    "reservaLabel": "40.000",
-    "femininas": 5637,
-    "femininasLabel": "5.637 · estimado",
+    "ativa": 43866,
+    "ativaLabel": "43.866 vínculos ativos · GESPERJ fev/2026",
+    "reserva": 26087,
+    "reservaLabel": "26.087 inativos/aposentados · GESPERJ fev/2026",
+    "femininas": 5703,
+    "femininasLabel": "5.703 · estimativa (13% do efetivo ativo)",
+    "efetivoTotalLabel": "60.445 cargos fixados em lei · Lei 11.041/2025",
     "populacao": 17223547,
-    "populacaoTitulo": "População do Estado",
-    "relacaoLabel": "1 ativo / 397 hab. · 0,252%",
+    "populacaoTitulo": "População do Estado · IBGE 2025",
+    "relacaoLabel": "1 ativo / 393 hab. · 0,255%",
     "relacaoTitulo": "Relação ativa/população",
-    "governador": "Ricardo Couto — Governador em exercício",
-    "comando": "Cel PM Sylvio Ricardo Ciuffo Guerra — Secretário de Estado e Comandante-Geral",
-    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
-    "atualizado": "Base numérica inserida em 01/05/2026"
+    "governador": "Ricardo Couto de Castro — Governador em exercício",
+    "comando": "Cel PM Sylvio Ricardo Ciuffo Guerra — Secretário de Estado de Polícia Militar e Comandante-Geral da PMERJ",
+    "estrutura": "SEPM/CG; Gabinete do Comando-Geral; Subsecretaria-Geral/Estado-Maior Geral; Subsecretarias de Gestão Administrativa, Gestão Operacional, Comando e Controle e Inteligência; Corregedoria-Geral; comandos intermediários; batalhões, companhias independentes e unidades especializadas.",
+    "sede": "Quartel-General: Rua Evaristo da Veiga, 78, Centro, Rio de Janeiro/RJ — emergência 190.",
+    "linksOficiais": [
+      "https://sepm.rj.gov.br/",
+      "https://sepm.rj.gov.br/comando/",
+      "https://sepm.rj.gov.br/institucional/",
+      "https://sepm.rj.gov.br/hierarquia/",
+      "https://sepm.rj.gov.br/decreto-no-46-600-de-18-de-marco-de-2019/",
+      "https://concursos.sepm.rj.gov.br",
+      "https://www.rj.gov.br/gesperj",
+      "https://www.transparencia.rj.gov.br/"
+    ],
+    "fonte": "PMERJ/SEPM; GESPERJ/RJ — Caderno de RH fevereiro/2026; GESPERJ/RJ — Caderno de Remuneração janeiro/2026; ALERJ — Lei 11.041/2025; IBGE — população estimada 2025; FGV/SEPM — concursos PMERJ.",
+    "atualizado": "Referência: comando PMERJ 24/03/2026; concurso 06/04/2026; folha GESPERJ fev/2026; remuneração GESPERJ jan/2026; população IBGE 2025"
   },
   "pcerj": {
     "nome": "Polícia Civil do Rio de Janeiro",
@@ -3085,7 +3098,7 @@ const RESUMO_GOVERNADORES_UF_2026 = {
   pr: 'Ratinho Júnior',
   pe: 'Raquel Lyra',
   pi: 'Rafael Fonteles',
-  rj: 'Ricardo Couto (interino)',
+  rj: 'Ricardo Couto de Castro (governador em exercício)',
   rn: 'Fátima Bezerra',
   rs: 'Eduardo Leite',
   ro: 'Marcos Rocha',
@@ -4588,6 +4601,7 @@ function imagemPrincipalBrasaoInstituicao(inst) {
 
 function getCriadorInstitucional(inst, tipo, estadoNome) {
   if (inst === 'pmesp') return 'Brigadeiro Rafael Tobias de Aguiar — então presidente da Província de São Paulo, pela lei provincial de 15/12/1831.';
+  if (inst === 'pmerj') return 'D. João VI — criação da Divisão Militar da Guarda Real da Polícia da Corte em 13/05/1809.';
   const esfera = getEsferaConsultaInstituicao(inst);
   if (inst === 'pf') return 'União — estrutura federal organizada pela Constituição, legislação federal e atos do Poder Executivo federal.';
   if (inst === 'prf') return 'União — estrutura federal vinculada à segurança pública e ao policiamento ostensivo das rodovias federais.';
@@ -4635,6 +4649,20 @@ function getHistoricoPorTipo(inst, dados) {
         'Reconhecimento constitucional como órgão permanente da segurança pública federal no art. 144 da Constituição.',
         'Fortalecimento da fiscalização de trânsito e do patrulhamento ostensivo nas rodovias federais.',
         'Atuação integrada no combate ao tráfico de drogas, armas, contrabando, crimes ambientais, roubo de cargas e crimes interestaduais.'
+      ]
+    };
+  }
+
+  if (inst === 'pmerj') {
+    return {
+      origem: `A ${nome} tem origem oficial em 13 de maio de 1809, com a criação da Divisão Militar da Guarda Real da Polícia da Corte. Hoje, a SEPM/PMERJ atua no policiamento ostensivo e na preservação da ordem pública no Estado do Rio de Janeiro, sob comando de Secretário de Estado que acumula o Comando-Geral da Corporação.`,
+      marcos: [
+        '1809: criação da Divisão Militar da Guarda Real da Polícia da Corte por D. João VI.',
+        '2019: Decreto 46.600 organiza a SEPM com Subsecretaria-Geral, Gestão Administrativa, Gestão Operacional, Comando e Controle, Inteligência, Corregedoria-Geral e Estado-Maior Geral.',
+        '2025: Lei 11.041/2025 readequa o efetivo legal da PMERJ para 60.445 integrantes, distribuídos entre postos e graduações.',
+        'Folha GESPERJ fev/2026: 43.866 vínculos ativos na SEPM e 26.087 inativos/aposentados.',
+        'Carreira militar organizada entre oficiais e praças, com postos e graduações de Coronel a Soldado, conforme hierarquia oficial.',
+        '2026: Cel PM Sylvio Ricardo Ciuffo Guerra assume como Secretário de Estado de Polícia Militar e Comandante-Geral da PMERJ.'
       ]
     };
   }

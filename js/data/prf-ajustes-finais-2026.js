@@ -1,7 +1,13 @@
 (function aplicarAjustesFinaisPRF2026() {
+  let timer;
+
   function getInstSelecionada() {
+    const selectHeader = document.getElementById('instituicao_header')?.value;
+    const selectSidebar = document.getElementById('instituicao')?.value;
+    if (selectHeader) return String(selectHeader).toLowerCase();
+    if (selectSidebar) return String(selectSidebar).toLowerCase();
     if (typeof currInst !== 'undefined' && currInst) return String(currInst).toLowerCase();
-    return String(document.getElementById('instituicao_header')?.value || document.getElementById('instituicao')?.value || '').toLowerCase();
+    return '';
   }
 
   function fmtBRL(valor) {
@@ -16,6 +22,7 @@
     if (Array.isArray(window.UNISEG_REMUNERACAO_PRF_2026) && window.UNISEG_REMUNERACAO_PRF_2026.length) {
       return window.UNISEG_REMUNERACAO_PRF_2026.map(([cargo, valor]) => ({ cargo, valor }));
     }
+
     return [
       ['Classe Especial — Padrão III', 23000.00],
       ['Classe Especial — Padrão II', 22249.43],
@@ -53,10 +60,9 @@
   }
 
   function htmlRemuneracaoMobilePRF() {
-    const linhas = getLinhasPRF();
     return `
       <div class="prf-remuneracao-mobile-list" aria-label="Remuneração dos cargos da PRF 2026">
-        ${linhas.map((linha) => `
+        ${getLinhasPRF().map((linha) => `
           <div class="prf-remuneracao-mobile-row">
             <strong>${escapeHtml(linha.cargo)}</strong>
             <span>${fmtBRL(linha.valor)}</span>
@@ -69,9 +75,12 @@
 
   function corrigirCardMobileRemuneracaoPRF() {
     if (getInstSelecionada() !== 'prf') return;
+    if (document.querySelector('.prf-remuneracao-mobile-list')) return;
+
     aplicarEstiloRemuneracaoMobilePRF();
     const marcador = 'Escolha uma instituição nesta aba para carregar a tabela';
-    const elementos = Array.from(document.querySelectorAll('p,span,div,td,li,article,section'))
+    const raiz = document.getElementById('page-remuneracao') || document.querySelector('main') || document.body;
+    const elementos = Array.from(raiz.querySelectorAll('p,span,div,td,li,article,section'))
       .filter((el) => !el.closest('.prf-remuneracao-mobile-list'))
       .filter((el) => (el.textContent || '').includes(marcador));
 
@@ -83,7 +92,7 @@
     });
   }
 
-  function aplicar() {
+  function aplicarDadosPublicos() {
     if (window.UNISEG_PRF_2026) {
       window.UNISEG_PRF_2026.instituicao.extensaoMalha = '75 mil+ km de rodovias federais · fonte PRF';
       window.UNISEG_PRF_2026.concursos.previsao = 'Sem edital novo publicado · fonte PRF/2026';
@@ -97,30 +106,42 @@
     if (typeof CONCURSOS !== 'undefined' && CONCURSOS.prf) {
       CONCURSOS.prf.previsao = 'Sem edital novo publicado · fonte PRF/2026';
     }
+  }
 
+  function aplicar() {
+    aplicarDadosPublicos();
     if (getInstSelecionada() === 'prf') {
-      const setText = (id, texto) => {
-        const el = document.getElementById(id);
-        if (el) el.textContent = texto;
-      };
-      setText('header-resumo-dados-atualizados', 'Fontes: PRF/2025 · Portal da Transparência · Lei 14.875/2024');
+      const headerFonte = document.getElementById('header-resumo-dados-atualizados');
+      if (headerFonte) headerFonte.textContent = 'Fontes: PRF/2025 · Portal da Transparência · Lei 14.875/2024';
       corrigirCardMobileRemuneracaoPRF();
     }
   }
 
+  function agendarAplicar(delay = 120) {
+    window.clearTimeout(timer);
+    timer = window.setTimeout(aplicar, delay);
+  }
+
+  function observarAlvos() {
+    if (window.__unisegPrfAjustesObserver) return;
+    const alvos = [
+      document.getElementById('page-remuneracao'),
+      document.getElementById('instituicao'),
+      document.getElementById('instituicao_header')
+    ].filter(Boolean);
+    if (!alvos.length) return;
+
+    const observer = new MutationObserver(() => agendarAplicar(160));
+    alvos.forEach((alvo) => observer.observe(alvo, { childList: true, subtree: true, attributes: true, attributeFilter: ['value'] }));
+    window.__unisegPrfAjustesObserver = observer;
+  }
+
   aplicar();
+  observarAlvos();
+  document.addEventListener('DOMContentLoaded', () => { aplicar(); observarAlvos(); }, { once: true });
   document.addEventListener('change', (event) => {
-    if (event.target && /^(instituicao|instituicao_header|comparador-instituicao)$/.test(event.target.id || '')) {
-      window.setTimeout(aplicar, 40);
-      window.setTimeout(aplicar, 300);
-      window.setTimeout(aplicar, 900);
-    }
+    if (event.target && /^(instituicao|instituicao_header|comparador-instituicao)$/.test(event.target.id || '')) agendarAplicar(80);
   }, true);
-  document.addEventListener('DOMContentLoaded', aplicar, { once: true });
-  const observer = new MutationObserver(() => window.setTimeout(corrigirCardMobileRemuneracaoPRF, 30));
-  observer.observe(document.documentElement, { childList: true, subtree: true });
   window.setTimeout(aplicar, 250);
-  window.setTimeout(aplicar, 500);
-  window.setTimeout(aplicar, 1200);
-  window.setTimeout(aplicar, 2200);
+  window.setTimeout(aplicar, 900);
 }());

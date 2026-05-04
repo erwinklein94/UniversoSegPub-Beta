@@ -80,17 +80,29 @@
 }());
 
 (function carregarAtualizacaoPublicaPRF2026() {
-  const src = 'js/data/prf-atualizacao-2026.js?v=20260504prf2';
-  if (document.querySelector(`script[src="${src}"]`)) return;
+  const fontes = [
+    'js/data/prf-atualizacao-2026.js?v=20260504prf2',
+    'js/data/prf-ajustes-finais-2026.js?v=20260504prf1'
+  ];
 
-  const carregar = () => {
-    if (document.querySelector(`script[src="${src}"]`)) return;
+  function carregarSequencia(index = 0) {
+    const src = fontes[index];
+    if (!src) return;
+
+    if (document.querySelector(`script[src="${src}"]`)) {
+      carregarSequencia(index + 1);
+      return;
+    }
+
     const script = document.createElement('script');
     script.src = src;
     script.defer = true;
     script.dataset.unisegPrf2026 = 'true';
+    script.onload = () => carregarSequencia(index + 1);
     document.body.appendChild(script);
-  };
+  }
+
+  const carregar = () => carregarSequencia();
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', carregar, { once: true });

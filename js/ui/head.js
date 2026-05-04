@@ -56,16 +56,21 @@ function carregarImagemProduto(img) {
    Carregado depois dos links CSS estáticos para garantir precedência.
    ======================================================= */
 (function carregarTemaLiquidGlassApp() {
-  const href = 'css/liquid-glass-app.css?v=20260504glass1';
+  const estilos = [
+    'css/liquid-glass-app.css?v=20260504glass2',
+    'css/header-mobile-emblem.css?v=20260504emblem1'
+  ];
 
   function aplicarTema() {
-    if (document.querySelector('link[data-liquid-glass-app="true"]')) return;
+    estilos.forEach((href) => {
+      if (document.querySelector(`link[href="${href}"]`)) return;
 
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = href;
-    link.dataset.liquidGlassApp = 'true';
-    document.head.appendChild(link);
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = href;
+      link.dataset.liquidGlassApp = 'true';
+      document.head.appendChild(link);
+    });
   }
 
   if (document.readyState === 'loading') {

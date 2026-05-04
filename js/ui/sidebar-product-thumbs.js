@@ -84,7 +84,7 @@
     'js/data/prf-atualizacao-2026.js?v=20260504prf2',
     'js/data/prf-ajustes-finais-2026.js?v=20260504prf1',
     'js/data/comparador-federais-fix.js?v=20260504fed1',
-    'js/ui/sidebar-produtos-unificado.js?v=20260504produtos2'
+    'js/ui/sidebar-produtos-unificado.js?v=20260504produtos3'
   ];
 
   function carregarSequencia(index = 0) {

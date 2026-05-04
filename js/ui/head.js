@@ -76,7 +76,7 @@ function carregarImagemProduto(img) {
 
   const scripts = [
     'js/ui/header-emblem-zoom.js?v=20260504emblemzoom1',
-    'js/ui/sidebar-product-thumbs.js?v=20260504thumbs4'
+    'js/ui/sidebar-product-thumbs.js?v=20260504thumbs5'
   ];
 
   function ajustarTextosDoCabecalho() {
@@ -225,11 +225,11 @@ function carregarImagemProduto(img) {
 
     const bloco = document.createElement('div');
     bloco.className = 'sidebar-extra-products';
-    bloco.setAttribute('aria-label', 'Mais produtos sugeridos');
+    bloco.setAttribute('aria-label', 'Produtos');
 
     const titulo = document.createElement('div');
     titulo.className = 'sidebar-extra-products-title';
-    titulo.textContent = 'Mais produtos';
+    titulo.textContent = 'Produtos';
     bloco.appendChild(titulo);
 
     produtos.forEach(([icone, nome, descricao]) => {

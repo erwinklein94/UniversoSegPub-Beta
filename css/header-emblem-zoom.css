@@ -1,0 +1,108 @@
+/* ============================================================
+   UniSegPub — Zoom mobile do logo/brasão do cabeçalho
+   Permite tocar no logo ou brasão para ver ampliado.
+   ============================================================ */
+
+@media (max-width: 760px) {
+  .site-header .current-flag-frame,
+  .site-header .current-flag-frame.brand-logo-frame,
+  .site-header .current-flag-frame.institution-logo-frame {
+    pointer-events: auto !important;
+    cursor: zoom-in !important;
+  }
+
+  .site-header .current-flag-frame img,
+  .site-header .current-flag-frame.brand-logo-frame img,
+  .site-header .current-flag-frame.institution-logo-frame img {
+    pointer-events: auto !important;
+  }
+
+  .site-header .current-flag-frame::after {
+    content: "↗";
+    position: absolute;
+    right: 6px;
+    bottom: 6px;
+    z-index: 4;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.24);
+    background: rgba(9,12,17,.58);
+    color: #fff;
+    font-size: 14px;
+    line-height: 1;
+    box-shadow: 0 8px 20px rgba(0,0,0,.28);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+}
+
+.emblem-zoom-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  background: rgba(0, 0, 0, .72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.emblem-zoom-overlay.is-active {
+  display: flex;
+}
+
+.emblem-zoom-dialog {
+  position: relative;
+  width: min(88vw, 430px);
+  min-height: min(88vw, 430px);
+  display: grid;
+  place-items: center;
+  padding: 26px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 34px;
+  background:
+    radial-gradient(circle at 30% 18%, rgba(255,211,0,.18), transparent 34%),
+    linear-gradient(145deg, rgba(255,255,255,.12), rgba(9,12,17,.22)),
+    rgba(20, 23, 28, .88);
+  box-shadow: 0 34px 96px rgba(0,0,0,.58), inset 0 1px 0 rgba(255,255,255,.14);
+}
+
+.emblem-zoom-dialog img {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  max-height: 64vh;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 32px rgba(0,0,0,.34));
+}
+
+.emblem-zoom-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(9,12,17,.68);
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.emblem-zoom-caption {
+  margin-top: 14px;
+  color: rgba(255,255,255,.82);
+  font-size: .9rem;
+  line-height: 1.2;
+  text-align: center;
+}

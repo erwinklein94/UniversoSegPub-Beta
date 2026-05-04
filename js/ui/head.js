@@ -68,7 +68,7 @@ function carregarImagemProduto(img) {
     'css/produtos-mobile-grid.css?v=20260504prodgrid1',
     'css/reduce-instructions.css?v=20260504instructions1',
     'css/home-hero-title-size.css?v=20260504herotitle1',
-    'css/home-remove-duplicate-selector.css?v=20260504homeselector1',
+    'css/home-remove-duplicate-selector.css?v=20260504homeselector2',
     'css/desktop-navigation-cleanup.css?v=20260504desktopnav1',
     'css/bottom-menu-button-match.css?v=20260504menumatch1',
     'css/header-emblem-zoom.css?v=20260504emblemzoom1'
@@ -96,11 +96,89 @@ function carregarImagemProduto(img) {
   function removerSeletorDuplicadoDaHome() {
     if (document.body?.dataset.page !== 'principal') return;
 
-    document.querySelectorAll('main select[id*="instituicao"], #page-principal select[id*="instituicao"]').forEach((select) => {
-      if (select.id === 'instituicao_header') return;
-      const bloco = select.closest('.inst-selector, .header-inst-selector, .field, .card, .principal-card, .consulta-instituicao-card, section, article, aside, div');
-      if (bloco) bloco.remove();
+    const raizHome = document.querySelector('main') || document.getElementById('page-principal');
+    if (!raizHome) return;
+
+    const estaNoCabecalhoOuMenu = (elemento) => Boolean(elemento.closest('header, .site-header, #sidebar, .sidebar'));
+
+    const textoNormalizado = (elemento) => (elemento.textContent || '')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+
+    const temReferenciaInstituicao = (elemento) => {
+      const texto = textoNormalizado(elemento);
+      const attrs = [
+        elemento.id,
+        elemento.name,
+        elemento.className,
+        elemento.getAttribute?.('aria-label'),
+        elemento.getAttribute?.('for'),
+        elemento.getAttribute?.('data-field')
+      ].join(' ').toLowerCase();
+
+      return /institui[cç][aã]o|institui[cç][oõ]es/.test(`${texto} ${attrs}`);
+    };
+
+    const deveRemoverBloco = (bloco) => {
+      if (!bloco || bloco === document.body || estaNoCabecalhoOuMenu(bloco)) return false;
+
+      const texto = textoNormalizado(bloco);
+      const possuiControle = Boolean(bloco.querySelector('select, [role="combobox"], option, label, .select-wrapper, .custom-select'));
+      const ehCardDeSelecao = bloco.matches('.consulta-instituicao-card, .inst-selector, .header-inst-selector, .field');
+      const ehResumoDaHome = [
+        'resumo da página inicial',
+        'resumo da pagina inicial',
+        'escolha uma instituição para ver no cabeçalho',
+        'escolha uma instituicao para ver no cabecalho',
+        'esta escolha muda apenas o cabeçalho',
+        'esta escolha muda apenas o cabecalho'
+      ].some((marcador) => texto.includes(marcador));
+
+      return ehResumoDaHome || (ehCardDeSelecao && possuiControle && temReferenciaInstituicao(bloco));
+    };
+
+    const removerBloco = (bloco) => {
+      if (!bloco || estaNoCabecalhoOuMenu(bloco)) return;
+      bloco.setAttribute('hidden', '');
+      bloco.setAttribute('aria-hidden', 'true');
+      bloco.style.setProperty('display', 'none', 'important');
+      bloco.remove();
+    };
+
+    raizHome.querySelectorAll('.consulta-instituicao-card, .inst-selector:not(.sidebar-inst-panel), .header-inst-selector, .field, .card, .principal-card, section, article, aside').forEach((bloco) => {
+      if (deveRemoverBloco(bloco)) removerBloco(bloco);
     });
+
+    raizHome.querySelectorAll('select, [role="combobox"], .select-wrapper, .custom-select').forEach((controle) => {
+      if (estaNoCabecalhoOuMenu(controle)) return;
+      if (!temReferenciaInstituicao(controle) && !temReferenciaInstituicao(controle.closest('label, .field, .card, .principal-card, .consulta-instituicao-card, .inst-selector') || controle)) return;
+
+      const bloco = controle.closest('.consulta-instituicao-card, .principal-card, .card, .field, .inst-selector, .header-inst-selector, section, article, aside, div');
+      removerBloco(bloco || controle);
+    });
+  }
+
+  function observarSeletorDuplicadoDaHome() {
+    if (document.body?.dataset.page !== 'principal') return;
+
+    const alvo = document.querySelector('main') || document.getElementById('page-principal');
+    if (!alvo || window.__unisegHomeSelectorObserver) return;
+
+    let timer;
+    const executarRemocao = () => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(removerSeletorDuplicadoDaHome, 40);
+    };
+
+    const observer = new MutationObserver(executarRemocao);
+    observer.observe(alvo, { childList: true, subtree: true });
+    window.__unisegHomeSelectorObserver = observer;
+
+    removerSeletorDuplicadoDaHome();
+    window.setTimeout(removerSeletorDuplicadoDaHome, 250);
+    window.setTimeout(removerSeletorDuplicadoDaHome, 900);
+    window.setTimeout(removerSeletorDuplicadoDaHome, 1800);
   }
 
   function substituirCardGratisDaHome() {
@@ -306,6 +384,7 @@ function carregarImagemProduto(img) {
 
     ajustarTextosDoCabecalho();
     removerSeletorDuplicadoDaHome();
+    observarSeletorDuplicadoDaHome();
     substituirCardGratisDaHome();
     reduzirInstrucoesForaDaHome();
     reorganizarSidebar();

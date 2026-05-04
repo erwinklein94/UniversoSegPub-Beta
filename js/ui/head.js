@@ -1,18 +1,9 @@
 /* =======================================================
    Head do portal — inicialização mínima e carregamento ordenado.
-   Responsabilidades mantidas aqui:
-   - analytics;
-   - tema inicial;
-   - fallback global de imagens de produtos;
-   - CSS complementar imediato;
-   - JS complementar versionado e sequencial.
    ======================================================= */
 
 window.dataLayer = window.dataLayer || [];
-window.gtag = window.gtag || function gtag(){
-  window.dataLayer.push(arguments);
-};
-
+window.gtag = window.gtag || function gtag(){ window.dataLayer.push(arguments); };
 window.gtag('js', new Date());
 window.gtag('config', 'G-XHR4TCCF9D');
 window.gtag('config', 'AW-18121830612');
@@ -23,7 +14,6 @@ document.documentElement.setAttribute('data-theme', savedTheme);
 
 function carregarImagemProduto(img) {
   if (!img) return;
-
   const original = img.dataset.imgBase || img.getAttribute('src') || '';
   const base = String(original).replace(/\.(webp|png|jpe?g)$/i, '');
   const extensoes = ['webp'];
@@ -34,7 +24,6 @@ function carregarImagemProduto(img) {
     const proxima = `${base}.${extensoes[tentativaAtual]}`;
     tentativaAtual += 1;
     img.dataset.tentativa = String(tentativaAtual);
-
     if (!srcAtual.endsWith(proxima)) {
       img.src = proxima;
       return;
@@ -49,11 +38,8 @@ function carregarImagemProduto(img) {
   }
 
   img.style.display = 'none';
-  const container = img.closest('.produto-imagem, .taf-produto-imagem, .partner-image-slot');
-  if (container) container.classList.add('img-indisponivel');
-
-  const card = img.closest('.produto-card, .taf-produto-card');
-  if (card) card.classList.add('img-indisponivel');
+  img.closest('.produto-imagem, .taf-produto-imagem, .partner-image-slot')?.classList.add('img-indisponivel');
+  img.closest('.produto-card, .taf-produto-card')?.classList.add('img-indisponivel');
 }
 
 (function carregarComplementosDoPortal() {
@@ -75,7 +61,7 @@ function carregarImagemProduto(img) {
   const scripts = [
     'js/ui/site-ui-cleanup.js?v=20260504uiclean1',
     'js/ui/header-restaurar-original.js?v=20260504headerrestore2',
-    'js/ui/header-background-dinamico.js?v=20260504headerbg2',
+    'js/ui/header-background-dinamico.js?v=20260504headerbg3',
     'js/ui/sidebar-product-thumbs.js?v=20260504thumbs10'
   ];
 
@@ -91,12 +77,7 @@ function carregarImagemProduto(img) {
   function carregarScriptSequencial(index = 0) {
     const src = scripts[index];
     if (!src) return;
-
-    if (document.querySelector(`script[src="${src}"]`)) {
-      carregarScriptSequencial(index + 1);
-      return;
-    }
-
+    if (document.querySelector(`script[src="${src}"]`)) return carregarScriptSequencial(index + 1);
     const script = document.createElement('script');
     script.src = src;
     script.defer = true;
@@ -106,10 +87,6 @@ function carregarImagemProduto(img) {
   }
 
   estilos.forEach(carregarCss);
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => carregarScriptSequencial(), { once: true });
-  } else {
-    carregarScriptSequencial();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => carregarScriptSequencial(), { once: true });
+  else carregarScriptSequencial();
 }());

@@ -67,7 +67,8 @@ function carregarImagemProduto(img) {
     'css/reduce-instructions.css?v=20260504instructions1',
     'css/home-hero-title-size.css?v=20260504herotitle1',
     'css/home-remove-duplicate-selector.css?v=20260504homeselector1',
-    'css/desktop-navigation-cleanup.css?v=20260504desktopnav1'
+    'css/desktop-navigation-cleanup.css?v=20260504desktopnav1',
+    'css/bottom-menu-button-match.css?v=20260504menumatch1'
   ];
 
   function ajustarTextosDoCabecalho() {

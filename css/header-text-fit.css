@@ -202,14 +202,48 @@
 
 /* ============================================================
    Correção do cabeçalho do portal
-   - Não quebra UNIVERSO no meio da palavra.
-   - Mantém Segurança Pública em linhas normais, sem sobreposição.
-   - Remove o cartão decorativo amarelo sobre o resumo do portal.
+   - Título sem corte no meio da palavra.
+   - Segurança Pública pode quebrar em linhas normais, sem sobrepor.
+   - Remove só o enfeite amarelo do painel de resumo.
+   - Mantém a imagem de fundo logoleao no card esquerdo.
    ============================================================ */
 
+body[data-inst="portal"] .site-header .header-current-identity {
+  position: relative !important;
+  overflow: hidden !important;
+  justify-content: flex-start !important;
+  gap: clamp(18px, 2vw, 26px) !important;
+}
+
+body[data-inst="portal"] .site-header .header-current-identity::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  background-image:
+    linear-gradient(90deg, rgba(9,12,17,.42) 0%, rgba(9,12,17,.18) 46%, rgba(9,12,17,.74) 100%),
+    var(--usp-logoleao-bg, url("../img/LOGO/logoleao.webp")) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover, min(430px, 78%) auto !important;
+  background-position: center, right -34px center !important;
+  opacity: .82 !important;
+  filter: saturate(1.02) contrast(1.04) !important;
+}
+
+body[data-inst="portal"] .site-header .current-flag-frame,
 body[data-inst="portal"] .site-header .header-current-copy {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+body[data-inst="portal"] .site-header .header-current-copy {
+  flex: 1 1 auto !important;
+  width: auto !important;
+  max-width: none !important;
   overflow: visible !important;
   align-content: center !important;
+  justify-items: start !important;
   gap: clamp(5px, .7vw, 9px) !important;
 }
 
@@ -219,26 +253,26 @@ body[data-inst="portal"] .site-header #header-active-name {
   max-width: 100% !important;
   overflow: visible !important;
   overflow-wrap: normal !important;
-  word-break: keep-all !important;
+  word-break: normal !important;
   hyphens: none !important;
   text-overflow: clip !important;
 }
 
 body[data-inst="portal"] .site-header #header-active-sigla {
   display: block !important;
-  width: auto !important;
+  width: max-content !important;
   white-space: nowrap !important;
-  font-size: clamp(32px, 2.55vw, 40px) !important;
-  line-height: 1.04 !important;
-  letter-spacing: .03em !important;
+  font-size: clamp(30px, 2.9vw, 42px) !important;
+  line-height: 1.02 !important;
+  letter-spacing: .02em !important;
 }
 
 body[data-inst="portal"] .site-header #header-active-name {
   display: block !important;
-  width: min(100%, 16ch) !important;
+  width: max-content !important;
   white-space: normal !important;
-  font-size: clamp(1.05rem, 1.28vw, 1.34rem) !important;
-  line-height: 1.16 !important;
+  font-size: clamp(1.03rem, 1.25vw, 1.32rem) !important;
+  line-height: 1.18 !important;
   letter-spacing: .01em !important;
 }
 
@@ -254,9 +288,6 @@ body[data-inst="portal"] .site-header .header-facts-head > * {
   z-index: 1 !important;
 }
 
-body[data-inst="portal"] .site-header::after,
-body[data-inst="portal"] .site-header .header-institution-card::before,
-body[data-inst="portal"] .site-header .header-institution-card::after,
 body[data-inst="portal"] .site-header .header-facts-panel::before,
 body[data-inst="portal"] .site-header .header-facts-panel::after,
 body[data-inst="portal"] .site-header .header-facts-head::before,
@@ -268,29 +299,47 @@ body[data-inst="portal"] .site-header .header-facts-head::after {
   box-shadow: none !important;
 }
 
-@media (max-width: 760px) {
+@media (min-width: 761px) {
   body[data-inst="portal"] .site-header .header-current-copy {
-    max-width: min(74%, 260px) !important;
+    min-width: 190px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body[data-inst="portal"] .site-header .header-current-identity {
+    align-items: center !important;
+    text-align: left !important;
+  }
+
+  body[data-inst="portal"] .site-header .header-current-identity::after {
+    background-size: cover, min(330px, 86%) auto !important;
+    background-position: center, right -58px center !important;
+    opacity: .72 !important;
+  }
+
+  body[data-inst="portal"] .site-header .header-current-copy {
+    max-width: min(58%, 250px) !important;
+    justify-items: start !important;
   }
 
   body[data-inst="portal"] .site-header #header-active-sigla {
-    font-size: clamp(31px, 8.8vw, 38px) !important;
+    font-size: clamp(30px, 7.4vw, 38px) !important;
     line-height: 1.05 !important;
   }
 
   body[data-inst="portal"] .site-header #header-active-name {
-    width: min(100%, 12ch) !important;
-    font-size: clamp(1rem, 4.25vw, 1.22rem) !important;
-    line-height: 1.16 !important;
+    width: min(100%, 13ch) !important;
+    font-size: clamp(1rem, 3.55vw, 1.2rem) !important;
+    line-height: 1.18 !important;
   }
 }
 
 @media (max-width: 390px) {
   body[data-inst="portal"] .site-header .header-current-copy {
-    max-width: min(72%, 228px) !important;
+    max-width: min(56%, 220px) !important;
   }
 
   body[data-inst="portal"] .site-header #header-active-sigla {
-    font-size: clamp(29px, 8.2vw, 34px) !important;
+    font-size: clamp(28px, 7vw, 34px) !important;
   }
 }

@@ -50,7 +50,8 @@
   box-shadow: 0 14px 30px rgba(9,12,17,.26), 0 0 18px rgba(255,211,0,.10) !important;
 }
 
-.sidebar-extra-product-thumb {
+.sidebar-extra-product-thumb,
+.sidebar-extra-product-icon {
   grid-area: image !important;
   width: 58px !important;
   height: 58px !important;
@@ -59,8 +60,18 @@
   border-radius: 16px !important;
   overflow: hidden !important;
   border: 1px solid rgba(255,255,255,.16) !important;
-  background: rgba(255,255,255,.88) !important;
+  background-color: rgba(255,255,255,.88) !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: contain !important;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.38), 0 8px 18px rgba(9,12,17,.18) !important;
+}
+
+.sidebar-extra-product-icon {
+  color: transparent !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+  text-indent: -9999px !important;
 }
 
 .sidebar-extra-product-thumb img {
@@ -74,6 +85,17 @@
   background: rgba(255,255,255,.92) !important;
   border-radius: 13px !important;
 }
+
+.sidebar-extra-products .sidebar-extra-product:nth-of-type(1) .sidebar-extra-product-icon { background-image: url('../img/SHOPEE/mochilaimpermeavel50l.webp') !important; }
+.sidebar-extra-products .sidebar-extra-product:nth-of-type(2) .sidebar-extra-product-icon { background-image: url('../img/SHOPEE/lanterna.webp') !important; }
+.sidebar-extra-products .sidebar-extra-product:nth-of-type(3) .sidebar-extra-product-icon { background-image: url('../img/SHOPEE/botaacero.webp') !important; }
+.sidebar-extra-products .sidebar-extra-product:nth-of-type(4) .sidebar-extra-product-icon { background-image: url('../img/SHOPEE/presilha.webp') !important; }
+.sidebar-extra-products .sidebar-extra-product:nth-of-type(5) .sidebar-extra-product-icon { background-image: url('../img/SHOPEE/bonecaveira.webp') !important; }
+.sidebar-extra-products .sidebar-extra-product:nth-of-type(6) .sidebar-extra-product-icon { background-image: url('../img/SHOPEE/prfquestoesalfacon.webp') !important; }
+.sidebar-extra-products .sidebar-extra-product:nth-of-type(7) .sidebar-extra-product-icon { background-image: url('../img/SHOPEE/apostilapfdelegado.webp') !important; }
+.sidebar-extra-products .sidebar-extra-product:nth-of-type(8) .sidebar-extra-product-icon { background-image: url('../img/SHOPEE/relogiotatico.webp') !important; }
+.sidebar-extra-products .sidebar-extra-product:nth-of-type(9) .sidebar-extra-product-icon { background-image: url('../img/SHOPEE/cantil950.webp') !important; }
+.sidebar-extra-products .sidebar-extra-product:nth-of-type(10) .sidebar-extra-product-icon { background-image: url('../img/SHOPEE/barrafixa01.webp') !important; }
 
 .sidebar-extra-product strong {
   grid-area: title !important;
@@ -105,6 +127,7 @@
   font-weight: 900 !important;
   line-height: 1 !important;
   text-transform: uppercase !important;
+  text-indent: 0 !important;
 }
 
 .sidebar-products-cta {
@@ -173,9 +196,11 @@ html[data-theme="light"] .sidebar-extra-product small,
 }
 
 html[data-theme="light"] .sidebar-extra-product-thumb,
-:root[data-theme="light"] .sidebar-extra-product-thumb {
+html[data-theme="light"] .sidebar-extra-product-icon,
+:root[data-theme="light"] .sidebar-extra-product-thumb,
+:root[data-theme="light"] .sidebar-extra-product-icon {
   border-color: rgba(38,43,50,.14) !important;
-  background: rgba(255,255,255,.92) !important;
+  background-color: rgba(255,255,255,.92) !important;
 }
 
 @media (max-width: 760px) {
@@ -185,7 +210,8 @@ html[data-theme="light"] .sidebar-extra-product-thumb,
     padding: 12px !important;
   }
 
-  .sidebar-extra-product-thumb {
+  .sidebar-extra-product-thumb,
+  .sidebar-extra-product-icon {
     width: 64px !important;
     height: 64px !important;
     border-radius: 17px !important;

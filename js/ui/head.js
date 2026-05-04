@@ -68,7 +68,12 @@ function carregarImagemProduto(img) {
     'css/home-hero-title-size.css?v=20260504herotitle1',
     'css/home-remove-duplicate-selector.css?v=20260504homeselector1',
     'css/desktop-navigation-cleanup.css?v=20260504desktopnav1',
-    'css/bottom-menu-button-match.css?v=20260504menumatch1'
+    'css/bottom-menu-button-match.css?v=20260504menumatch1',
+    'css/header-emblem-zoom.css?v=20260504emblemzoom1'
+  ];
+
+  const scripts = [
+    'js/ui/header-emblem-zoom.js?v=20260504emblemzoom1'
   ];
 
   function ajustarTextosDoCabecalho() {
@@ -214,6 +219,18 @@ function carregarImagemProduto(img) {
     sidebar.dataset.sidebarOptimized = 'true';
   }
 
+  function carregarScriptsExtras() {
+    scripts.forEach((src) => {
+      if (document.querySelector(`script[src="${src}"]`)) return;
+
+      const script = document.createElement('script');
+      script.src = src;
+      script.defer = true;
+      script.dataset.liquidGlassApp = 'true';
+      document.body.appendChild(script);
+    });
+  }
+
   function aplicarTema() {
     estilos.forEach((href) => {
       if (document.querySelector(`link[href="${href}"]`)) return;
@@ -230,6 +247,7 @@ function carregarImagemProduto(img) {
     substituirCardGratisDaHome();
     reduzirInstrucoesForaDaHome();
     reorganizarSidebar();
+    carregarScriptsExtras();
   }
 
   if (document.readyState === 'loading') {

@@ -78,3 +78,23 @@
   const observer = new MutationObserver(aplicar);
   observer.observe(document.documentElement, { childList: true, subtree: true });
 }());
+
+(function carregarAtualizacaoPublicaPRF2026() {
+  const src = 'js/data/prf-atualizacao-2026.js?v=20260504prf2';
+  if (document.querySelector(`script[src="${src}"]`)) return;
+
+  const carregar = () => {
+    if (document.querySelector(`script[src="${src}"]`)) return;
+    const script = document.createElement('script');
+    script.src = src;
+    script.defer = true;
+    script.dataset.unisegPrf2026 = 'true';
+    document.body.appendChild(script);
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', carregar, { once: true });
+  } else {
+    carregar();
+  }
+}());

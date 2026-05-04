@@ -50,3 +50,27 @@ function carregarImagemProduto(img) {
   const card = img.closest('.produto-card, .taf-produto-card');
   if (card) card.classList.add('img-indisponivel');
 }
+
+/* =======================================================
+   Tema visual extra — Liquid Glass App
+   Carregado depois dos links CSS estáticos para garantir precedência.
+   ======================================================= */
+(function carregarTemaLiquidGlassApp() {
+  const href = 'css/liquid-glass-app.css?v=20260504glass1';
+
+  function aplicarTema() {
+    if (document.querySelector('link[data-liquid-glass-app="true"]')) return;
+
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    link.dataset.liquidGlassApp = 'true';
+    document.head.appendChild(link);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', aplicarTema, { once: true });
+  } else {
+    aplicarTema();
+  }
+}());

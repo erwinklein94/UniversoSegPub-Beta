@@ -1,0 +1,246 @@
+diff -ruN uniseg_orig/UniSegPub-Teste-main/404.html uniseg_work/UniSegPub-Teste-main/404.html
+--- uniseg_orig/UniSegPub-Teste-main/404.html	2026-05-04 21:55:15.000000000 +0000
++++ uniseg_work/UniSegPub-Teste-main/404.html	2026-05-04 22:23:58.000000000 +0000
+@@ -3,6 +3,7 @@
+ <head>
+ <meta charset="utf-8"/>
+ <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
++<meta name="description" content="Página de erro 404 do Universo Segurança Pública, exibida quando o endereço acessado não existe ou foi movido."/>
+ <meta name="robots" content="noindex, follow"/>
+ <title>Página não encontrada - Universo Segurança Pública</title>
+ <link href="css/dist/main.min.css" rel="stylesheet"/>
+diff -ruN uniseg_orig/UniSegPub-Teste-main/CNAME uniseg_work/UniSegPub-Teste-main/CNAME
+--- uniseg_orig/UniSegPub-Teste-main/CNAME	2026-05-04 21:55:15.000000000 +0000
++++ uniseg_work/UniSegPub-Teste-main/CNAME	2026-05-04 22:23:58.000000000 +0000
+@@ -1 +1 @@
+-universosegpub.com.br
+\ No newline at end of file
++universosegpub.com.br
+Binary files uniseg_orig/UniSegPub-Teste-main/img/HOTMART/taticadelideran#U00e7amilitar.webp and uniseg_work/UniSegPub-Teste-main/img/HOTMART/taticadelideran#U00e7amilitar.webp differ
+diff -ruN uniseg_orig/UniSegPub-Teste-main/js/pages/concursos-comparador.js uniseg_work/UniSegPub-Teste-main/js/pages/concursos-comparador.js
+--- uniseg_orig/UniSegPub-Teste-main/js/pages/concursos-comparador.js	2026-05-04 21:55:15.000000000 +0000
++++ uniseg_work/UniSegPub-Teste-main/js/pages/concursos-comparador.js	2026-05-04 22:28:07.972418026 +0000
+@@ -26,6 +26,15 @@
+   return /^https?:\/\//i.test(String(valor || '').trim());
+ }
+ 
++function urlPublicaSegura(valor) {
++  const url = String(valor || '').trim();
++  return urlPublicaValida(url) ? escapeHtml(url) : '';
++}
++
++function textoConteudoSeguro(valor) {
++  return escapeHtml(valorOuDadosEmBreve(valor));
++}
++
+ function getConcursoPoliciaPenal(inst) {
+   if (!isPoliciaPenal(inst)) return null;
+   const info = getInfoPoliciaPenal(inst);
+@@ -354,8 +363,9 @@
+ }
+ 
+ function linkComparador(url, texto = 'Abrir fonte') {
+-  if (!url || url === '#') return '<span>Dados em breve</span>';
+-  return `<a href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(texto)}</a>`;
++  const href = urlPublicaSegura(url);
++  if (!href) return '<span>Dados em breve</span>';
++  return `<a href="${href}" target="_blank" rel="noopener noreferrer">${escapeHtml(texto)}</a>`;
+ }
+ 
+ function carregarComparadorCarreiras() {
+@@ -483,20 +493,20 @@
+ 
+   cont.innerHTML = `
+     <div class="direito-item acao">
+-      <span class="direito-nome">${c.edital}</span>
+-      <span class="direito-desc"><strong>Salário inicial:</strong> ${c.salario}</span>
+-      <span class="direito-desc"><strong>Vagas:</strong> ${c.vagas}</span>
+-      <span class="direito-desc"><strong>Cotas:</strong> ${c.cotas}</span>
+-      <span class="direito-desc"><strong>Idade exigida:</strong> ${c.idade}</span>
+-      <span class="direito-desc"><strong>Escolaridade:</strong> ${c.escolaridade}</span>
+-      <span class="direito-desc"><strong>Banca:</strong> ${c.banca} · <strong>Inscritos no último:</strong> ${c.inscritos}</span>
+-      <span class="direito-desc"><strong>Disciplinas:</strong> ${c.materias}</span>
+-      <span class="direito-desc"><strong>Etapas do certame:</strong> ${c.etapas}</span>
+-      <span class="direito-desc"><strong>Curso de Formação:</strong> ${c.cfsd}</span>
+-      <span class="direito-desc"><strong>Estágio Probatório:</strong> ${c.estagio}</span>
+-      <span class="direito-desc"><strong>Validade do edital:</strong> ${c.validade}</span>
+-      <span class="direito-desc" style="margin-top:8px;"><strong>Próximo Edital:</strong> ${c.previsao}</span>
+-      ${urlPublicaValida(c.site) ? `<a href="${c.site}" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>` : `<span class="direito-desc">Dados em breve</span>`}
++      <span class="direito-nome">${textoConteudoSeguro(c.edital)}</span>
++      <span class="direito-desc"><strong>Salário inicial:</strong> ${textoConteudoSeguro(c.salario)}</span>
++      <span class="direito-desc"><strong>Vagas:</strong> ${textoConteudoSeguro(c.vagas)}</span>
++      <span class="direito-desc"><strong>Cotas:</strong> ${textoConteudoSeguro(c.cotas)}</span>
++      <span class="direito-desc"><strong>Idade exigida:</strong> ${textoConteudoSeguro(c.idade)}</span>
++      <span class="direito-desc"><strong>Escolaridade:</strong> ${textoConteudoSeguro(c.escolaridade)}</span>
++      <span class="direito-desc"><strong>Banca:</strong> ${textoConteudoSeguro(c.banca)} · <strong>Inscritos no último:</strong> ${textoConteudoSeguro(c.inscritos)}</span>
++      <span class="direito-desc"><strong>Disciplinas:</strong> ${textoConteudoSeguro(c.materias)}</span>
++      <span class="direito-desc"><strong>Etapas do certame:</strong> ${textoConteudoSeguro(c.etapas)}</span>
++      <span class="direito-desc"><strong>Curso de Formação:</strong> ${textoConteudoSeguro(c.cfsd)}</span>
++      <span class="direito-desc"><strong>Estágio Probatório:</strong> ${textoConteudoSeguro(c.estagio)}</span>
++      <span class="direito-desc"><strong>Validade do edital:</strong> ${textoConteudoSeguro(c.validade)}</span>
++      <span class="direito-desc" style="margin-top:8px;"><strong>Próximo Edital:</strong> ${textoConteudoSeguro(c.previsao)}</span>
++      ${urlPublicaValida(c.site) ? `<a href="${urlPublicaSegura(c.site)}" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>` : `<span class="direito-desc">Dados em breve</span>`}
+     </div>
+ 
+     <a class="taf-produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="noopener noreferrer" aria-label="Ver barra fixa para porta, produto útil para treino de TAF">
+@@ -561,20 +571,20 @@
+     if (semFonteSegura) return itemUnicoDadosEmBreve('acao');
+ 
+     const fonteHtml = a.fonte && a.fonte !== TEXTO_DADOS_EM_BREVE
+-      ? `<span class="direito-desc"><strong>Fonte de conferência:</strong> ${urlPublicaValida(a.fonteUrl) ? `<a href="${a.fonteUrl}" target="_blank" rel="noopener noreferrer" class="concurso-link">${a.fonte}</a>` : TEXTO_DADOS_EM_BREVE}</span>`
++      ? `<span class="direito-desc"><strong>Fonte de conferência:</strong> ${urlPublicaValida(a.fonteUrl) ? `<a href="${urlPublicaSegura(a.fonteUrl)}" target="_blank" rel="noopener noreferrer" class="concurso-link">${textoConteudoSeguro(a.fonte)}</a>` : TEXTO_DADOS_EM_BREVE}</span>`
+       : `<span class="direito-desc">${TEXTO_DADOS_EM_BREVE}</span>`;
+-    const atualizadoHtml = !ehDadosEmBreve(a.atualizado) ? `<span class="direito-desc"><strong>Última atualização:</strong> ${a.atualizado}</span>` : '';
++    const atualizadoHtml = !ehDadosEmBreve(a.atualizado) ? `<span class="direito-desc"><strong>Última atualização:</strong> ${textoConteudoSeguro(a.atualizado)}</span>` : '';
+ 
+     return `
+       <div class="direito-item acao">
+-        <span class="direito-nome">${titulo}</span>
+-        <span class="direito-status" style="color: var(--vermelho);">${valorOuDadosEmBreve(a.status)}</span>
++        <span class="direito-nome">${textoConteudoSeguro(titulo)}</span>
++        <span class="direito-status" style="color: var(--vermelho);">${textoConteudoSeguro(a.status)}</span>
+         <div>
+           <span class="badge-info ${a.tipo === 'coletiva' ? 'coletiva' : 'individual'}">${a.tipo === 'coletiva' ? '⚖ Ação Coletiva' : '👤 Ação Individual'}</span>
+-          <span class="badge-info ativa">${valorOuDadosEmBreve(a.ano)}</span>
++          <span class="badge-info ativa">${textoConteudoSeguro(a.ano)}</span>
+         </div>
+-        <span class="direito-desc">${valorOuDadosEmBreve(a.desc)}</span>
+-        <span class="direito-desc"><strong>Base legal/jurisprudência:</strong> ${valorOuDadosEmBreve(a.base)}</span>
++        <span class="direito-desc">${textoConteudoSeguro(a.desc)}</span>
++        <span class="direito-desc"><strong>Base legal/jurisprudência:</strong> ${textoConteudoSeguro(a.base)}</span>
+         ${fonteHtml}
+         ${atualizadoHtml}
+       </div>
+@@ -604,15 +614,15 @@
+     const semFonteSegura = nome === TEXTO_DADOS_EM_BREVE || campos.every(v => v === TEXTO_DADOS_EM_BREVE);
+     if (semFonteSegura) return itemUnicoDadosEmBreve('associacao');
+     const contato = urlPublicaValida(a.site)
+-      ? `${valorOuDadosEmBreve(a.telefone)} · <a href="${a.site}" target="_blank" rel="noopener noreferrer" class="concurso-link" style="margin-top:0;">${a.site}</a>`
++      ? `${textoConteudoSeguro(a.telefone)} · <a href="${urlPublicaSegura(a.site)}" target="_blank" rel="noopener noreferrer" class="concurso-link" style="margin-top:0;">${textoConteudoSeguro(a.site)}</a>`
+       : TEXTO_DADOS_EM_BREVE;
+     return `
+       <div class="direito-item associacao">
+-        <span class="direito-nome">${nome}</span>
+-        <span class="direito-desc"><strong>Foco:</strong> ${valorOuDadosEmBreve(a.foco)}</span>
+-        <span class="direito-desc"><strong>Atuação atual:</strong> ${valorOuDadosEmBreve(a.acao)}</span>
+-        <span class="direito-desc"><strong>Serviços:</strong> ${valorOuDadosEmBreve(a.servicos)}</span>
+-        <span class="direito-desc"><strong>Mensalidade:</strong> ${valorOuDadosEmBreve(a.mensalidade)}</span>
++        <span class="direito-nome">${textoConteudoSeguro(nome)}</span>
++        <span class="direito-desc"><strong>Foco:</strong> ${textoConteudoSeguro(a.foco)}</span>
++        <span class="direito-desc"><strong>Atuação atual:</strong> ${textoConteudoSeguro(a.acao)}</span>
++        <span class="direito-desc"><strong>Serviços:</strong> ${textoConteudoSeguro(a.servicos)}</span>
++        <span class="direito-desc"><strong>Mensalidade:</strong> ${textoConteudoSeguro(a.mensalidade)}</span>
+         <span class="direito-desc"><strong>Contato:</strong> ${contato}</span>
+       </div>
+     `;
+diff -ruN uniseg_orig/UniSegPub-Teste-main/js/services/direitos.js uniseg_work/UniSegPub-Teste-main/js/services/direitos.js
+--- uniseg_orig/UniSegPub-Teste-main/js/services/direitos.js	2026-05-04 21:55:15.000000000 +0000
++++ uniseg_work/UniSegPub-Teste-main/js/services/direitos.js	2026-05-04 22:28:35.553983171 +0000
+@@ -233,6 +233,13 @@
+   cont.innerHTML = html;
+ }
+ 
++function direitoHtmlSeguro(valor = '') {
++  const escapado = typeof escapeHtml === 'function'
++    ? escapeHtml(valor)
++    : String(valor ?? '').replace(/[&<>'"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[ch]));
++  return escapado.replace(/&lt;(\/?)strong&gt;/g, '<$1strong>');
++}
++
+ function direitoResumo(cargo, instNome, tempo, idade, sit, sexo, ingresso, renda, dependente) {
+   const sitTxt = sit === 'ativa' ? 'Serviço ativo' : sit === 'reserva' ? 'Inatividade / aposentadoria' : 'Reforma / invalidez';
+   const sexoTxt = sexo === 'masculino' ? 'masculino' : sexo === 'feminino' ? 'feminino' : 'não informado';
+@@ -240,15 +247,15 @@
+   const rendaTxt = renda > 0 ? fmt(renda) : 'não informada';
+   const depTxt = dependente === 'sim' ? 'sim' : dependente === 'nao' ? 'não' : 'não informado';
+   return `<div class="direito-item acao" style="border-left-color: var(--vermelho);">
+-    <span class="direito-nome">Resumo da análise — ${instNome}</span>
+-    <span class="direito-desc"><strong>Cargo/nível:</strong> ${cargo}</span>
+-    <span class="direito-desc"><strong>Situação:</strong> ${sitTxt} · <strong>Tempo informado:</strong> ${tempo} ano(s) · <strong>Idade:</strong> ${idade || 'não informada'} · <strong>Sexo:</strong> ${sexoTxt}</span>
+-    <span class="direito-desc"><strong>Ingresso:</strong> ${ingressoTxt} · <strong>Remuneração bruta:</strong> ${rendaTxt} · <strong>Dependente para salário-família:</strong> ${depTxt}</span>
++    <span class="direito-nome">Resumo da análise — ${direitoHtmlSeguro(instNome)}</span>
++    <span class="direito-desc"><strong>Cargo/nível:</strong> ${direitoHtmlSeguro(cargo)}</span>
++    <span class="direito-desc"><strong>Situação:</strong> ${direitoHtmlSeguro(sitTxt)} · <strong>Tempo informado:</strong> ${direitoHtmlSeguro(tempo)} ano(s) · <strong>Idade:</strong> ${direitoHtmlSeguro(idade || 'não informada')} · <strong>Sexo:</strong> ${direitoHtmlSeguro(sexoTxt)}</span>
++    <span class="direito-desc"><strong>Ingresso:</strong> ${direitoHtmlSeguro(ingressoTxt)} · <strong>Remuneração bruta:</strong> ${direitoHtmlSeguro(rendaTxt)} · <strong>Dependente para salário-família:</strong> ${direitoHtmlSeguro(depTxt)}</span>
+   </div>`;
+ }
+ 
+ function direitoSecao(titulo) {
+-  return `<div class="direitos-section-title">${titulo}</div>`;
++  return `<div class="direitos-section-title">${direitoHtmlSeguro(titulo)}</div>`;
+ }
+ 
+ function direitoItem(nome, status, desc, base = '') {
+@@ -260,12 +267,12 @@
+     atencao: { label: '⚠ Atenção / requisito não indicado', color: '#e60000', bg: 'rgba(230, 0, 0, 0.05)' }
+   };
+   const cfg = statusMap[status] || statusMap.verificar;
+-  const baseHtml = base ? `<span class="direito-meta"><strong>Base/observação:</strong> ${base}</span>` : '';
++  const baseHtml = base ? `<span class="direito-meta"><strong>Base/observação:</strong> ${direitoHtmlSeguro(base)}</span>` : '';
+   const classe = status === 'automatico' ? 'sim' : status === 'atencao' ? 'nao' : '';
+   return `<div class="direito-item ${classe}" style="border-left-color:${cfg.color}; background:${cfg.bg};">
+-    <span class="direito-nome">${nome}</span>
+-    <span class="direito-status" style="color:${cfg.color};">${cfg.label}</span>
+-    <span class="direito-desc">${desc}</span>
++    <span class="direito-nome">${direitoHtmlSeguro(nome)}</span>
++    <span class="direito-status" style="color:${cfg.color};">${direitoHtmlSeguro(cfg.label)}</span>
++    <span class="direito-desc">${direitoHtmlSeguro(desc)}</span>
+     ${baseHtml}
+   </div>`;
+ }
+diff -ruN uniseg_orig/UniSegPub-Teste-main/js/services/remuneracao.js uniseg_work/UniSegPub-Teste-main/js/services/remuneracao.js
+--- uniseg_orig/UniSegPub-Teste-main/js/services/remuneracao.js	2026-05-04 21:55:15.000000000 +0000
++++ uniseg_work/UniSegPub-Teste-main/js/services/remuneracao.js	2026-05-04 22:28:57.081524806 +0000
+@@ -585,6 +585,11 @@
+   });
+ }
+ 
++function remuneracaoUrlSegura(valor) {
++  const url = String(valor || '').trim();
++  return /^https?:\/\//i.test(url) ? url : '#';
++}
++
+ function formatarAdicionaisRemuneracaoHtml(inst, linha = {}) {
+   const resumo = String(getAdicionaisRemuneracaoResumo(inst, linha) || '').replace(/\s+/g, ' ').trim();
+ 
+@@ -648,7 +653,7 @@
+         <td>
+           ${escapeHtml(l.criterio || '')}<br>
+           <span class="remuneracao-fonte">${escapeHtml(fonte.nome)}</span><br>
+-          <a class="remuneracao-link" href="${escapeHtml(fonte.url)}" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
++          <a class="remuneracao-link" href="${escapeHtml(remuneracaoUrlSegura(fonte.url))}" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>
+         </td>
+       </tr>
+     `;
+diff -ruN uniseg_orig/UniSegPub-Teste-main/js/ui/header-estados.js uniseg_work/UniSegPub-Teste-main/js/ui/header-estados.js
+--- uniseg_orig/UniSegPub-Teste-main/js/ui/header-estados.js	2026-05-04 21:55:15.000000000 +0000
++++ uniseg_work/UniSegPub-Teste-main/js/ui/header-estados.js	2026-05-04 22:29:43.177547449 +0000
+@@ -2788,7 +2788,7 @@
+     btn.setAttribute('aria-label', 'Selecionar instituições federais');
+     btn.setAttribute('aria-pressed', 'false');
+     btn.onclick = () => selecionarEstado('br');
+-    btn.innerHTML = `<img src="${HEADER_BRASIL_FLAG}" alt="" aria-hidden="true"><span>BR</span>`;
++    btn.innerHTML = `<img src="${escapeHtml(HEADER_BRASIL_FLAG)}" alt="" aria-hidden="true"><span>BR</span>`;
+     flags.appendChild(btn);
+   }
+ }
+@@ -3078,7 +3078,7 @@
+       btn.setAttribute('aria-label', `Selecionar ${estado.nome}`);
+       btn.setAttribute('aria-pressed', 'false');
+       btn.onclick = () => selecionarEstado(estado.estado);
+-      btn.innerHTML = `<img src="${estado.flag}" alt="" aria-hidden="true"><span>${estado.sigla}</span>`;
++      btn.innerHTML = `<img src="${escapeHtml(estado.flag)}" alt="" aria-hidden="true"><span>${escapeHtml(estado.sigla)}</span>`;
+       flags.appendChild(btn);
+     });
+   }
+diff -ruN uniseg_orig/UniSegPub-Teste-main/parceiros.html uniseg_work/UniSegPub-Teste-main/parceiros.html
+--- uniseg_orig/UniSegPub-Teste-main/parceiros.html	2026-05-04 21:55:15.000000000 +0000
++++ uniseg_work/UniSegPub-Teste-main/parceiros.html	2026-05-04 22:23:58.000000000 +0000
+@@ -3,6 +3,7 @@
+ <head>
+ <meta charset="utf-8"/>
+ <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
++<meta name="description" content="Redirecionamento para a página Anuncie Aqui do Universo Segurança Pública."/>
+ <meta http-equiv="refresh" content="0; url=anuncie.html"/>
+ <meta name="robots" content="noindex, follow"/>
+ <title>Redirecionando para Anuncie Aqui - Universo Segurança Pública</title>

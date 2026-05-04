@@ -1,0 +1,28 @@
+UniSegPub - correções de innerHTML / escape seguro
+
+Opção A - aplicar manualmente:
+1. Abra o projeto original.
+2. Substitua os arquivos pelas versões dentro da pasta files/ deste ZIP, preservando os caminhos.
+3. Remova o arquivo duplicado, se existir:
+   img/HOTMART/taticadelideran#U00e7amilitar.webp
+
+Arquivos substituídos:
+- 404.html
+- CNAME
+- parceiros.html
+- js/pages/concursos-comparador.js
+- js/services/direitos.js
+- js/services/remuneracao.js
+- js/ui/header-estados.js
+
+Opção B - aplicar com patch:
+Na raiz do projeto original, rode:
+  git apply uniseg-innerhtml-escape.patch
+
+Validações feitas:
+- node --check nos JS alterados
+- JSON de brasões válido
+- referências locais preservadas
+
+Observação:
+Estas mudanças são cirúrgicas. Não alteram arquitetura, layout ou comportamento principal.

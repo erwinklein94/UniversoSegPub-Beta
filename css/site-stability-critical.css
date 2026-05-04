@@ -1,0 +1,84 @@
+/* =======================================================
+   Estabilidade crítica visual — carregamento inicial.
+   Evita flash de blocos antigos enquanto os scripts finais aplicam
+   a sidebar unificada, cabeçalho estável e ajustes mobile.
+   ======================================================= */
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+}
+
+.site-header,
+.site-header .header-shell,
+.site-header .header-institution-card,
+.site-header .header-current-identity,
+.site-header .header-facts-panel,
+main,
+.page,
+.page-content,
+.content,
+.main-content {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.site-header .current-flag-frame,
+.site-header .current-flag-frame.brand-logo-frame,
+.site-header .current-flag-frame.institution-logo-frame {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.site-header .current-flag-frame img,
+#header-active-flag {
+  display: block;
+  margin: auto;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.sidebar .sidebar-extra-products,
+.sidebar .sidebar-products-cta,
+.sidebar .sidebar-ad,
+.sidebar .ad-slot--sidebar {
+  visibility: hidden;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.sidebar .sidebar-products-unified {
+  visibility: visible;
+  max-height: none;
+  overflow: visible;
+}
+
+@media (max-width: 760px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  body {
+    padding-bottom: max(116px, env(safe-area-inset-bottom));
+  }
+
+  main,
+  .page,
+  .page-content,
+  .content,
+  .main-content,
+  .site-main {
+    padding-bottom: 126px;
+  }
+}

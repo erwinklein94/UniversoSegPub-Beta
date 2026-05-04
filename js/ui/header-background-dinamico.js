@@ -8,17 +8,27 @@
   const LOGO_LEAO = 'img/LOGO/logoleao.webp';
   const BANDEIRA_BRASIL = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Brazil.svg';
 
-  function getInstituicaoSelecionada() {
-    const valores = [
-      typeof currInst !== 'undefined' ? currInst : '',
-      document.getElementById('instituicao_header')?.value,
-      document.getElementById('instituicao')?.value,
-      document.body?.dataset?.instituicao,
-      localStorage.getItem('instituicaoSelecionada'),
-      localStorage.getItem('currInst')
-    ];
+  function estaNoModoInicial() {
+    const selectHeader = document.getElementById('instituicao_header');
+    const selectSidebar = document.getElementById('instituicao');
+    const textoSigla = String(document.getElementById('header-active-sigla')?.textContent || '').trim().toLowerCase();
+    const bodyInst = String(document.body?.dataset?.inst || document.body?.dataset?.instituicao || '').trim().toLowerCase();
+    const page = String(document.body?.dataset?.page || '').trim().toLowerCase();
 
-    return String(valores.find(Boolean) || '').trim().toLowerCase();
+    return (!selectHeader?.value && !selectSidebar?.value && (textoSigla === 'universo' || bodyInst === 'portal' || page === 'principal'));
+  }
+
+  function getInstituicaoSelecionada() {
+    const selectHeader = document.getElementById('instituicao_header')?.value;
+    const selectSidebar = document.getElementById('instituicao')?.value;
+    const bodyInst = document.body?.dataset?.instituicao || document.body?.dataset?.inst;
+
+    if (selectHeader) return String(selectHeader).trim().toLowerCase();
+    if (selectSidebar) return String(selectSidebar).trim().toLowerCase();
+    if (bodyInst && bodyInst !== 'portal') return String(bodyInst).trim().toLowerCase();
+    if (estaNoModoInicial()) return '';
+
+    return String(typeof currInst !== 'undefined' ? currInst : '').trim().toLowerCase();
   }
 
   function isGuardaMunicipal(inst) {
@@ -93,7 +103,7 @@
         z-index: -2 !important;
         display: block !important;
         background: var(--uniseg-header-bg-dynamic, url('img/LOGO/logoleao.webp')) center center / cover no-repeat !important;
-        opacity: .30 !important;
+        opacity: .28 !important;
         filter: blur(1px) saturate(.95) brightness(.82) !important;
         transform: scale(1.08) !important;
         pointer-events: none !important;
@@ -150,7 +160,7 @@
 
       @media (max-width: 760px) {
         .site-header .header-institution-card::before {
-          opacity: .26 !important;
+          opacity: .24 !important;
           transform: scale(1.12) !important;
         }
 
@@ -163,34 +173,35 @@
     `;
   }
 
+  let aplicarTimer;
   function aplicar() {
-    inserirEstilo();
-    const inst = getInstituicaoSelecionada();
-    const fundo = getImagemFundo(inst);
-    const card = document.querySelector('.site-header .header-institution-card');
-    const header = document.querySelector('.site-header');
+    window.clearTimeout(aplicarTimer);
+    aplicarTimer = window.setTimeout(() => {
+      inserirEstilo();
+      const inst = getInstituicaoSelecionada();
+      const fundo = getImagemFundo(inst);
+      const card = document.querySelector('.site-header .header-institution-card');
+      const header = document.querySelector('.site-header');
 
-    setCssUrl(card, '--uniseg-header-bg-dynamic', fundo);
-    setCssUrl(header, '--uniseg-header-bg-dynamic', fundo);
-    setCssUrl(document.body, '--uniseg-header-bg-dynamic', fundo);
+      setCssUrl(card, '--uniseg-header-bg-dynamic', fundo);
+      setCssUrl(header, '--uniseg-header-bg-dynamic', fundo);
+      setCssUrl(document.body, '--uniseg-header-bg-dynamic', fundo);
 
-    if (card) {
-      card.dataset.headerBgMode = inst ? 'instituicao' : 'inicio';
-      card.dataset.headerBgInst = inst || 'inicio';
-    }
+      if (card) {
+        card.dataset.headerBgMode = inst ? 'instituicao' : 'inicio';
+        card.dataset.headerBgInst = inst || 'inicio';
+      }
+    }, 30);
   }
 
   aplicar();
   document.addEventListener('DOMContentLoaded', aplicar, { once: true });
   document.addEventListener('change', (event) => {
-    if (event.target && /^(instituicao|instituicao_header)$/.test(event.target.id || '')) {
-      window.setTimeout(aplicar, 30);
-      window.setTimeout(aplicar, 240);
-    }
+    if (event.target && /^(instituicao|instituicao_header)$/.test(event.target.id || '')) aplicar();
   }, true);
 
-  const observer = new MutationObserver(() => window.setTimeout(aplicar, 40));
-  observer.observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['data-instituicao'] });
+  const observer = new MutationObserver(aplicar);
+  observer.observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['data-instituicao', 'data-inst'] });
 
   window.setTimeout(aplicar, 250);
   window.setTimeout(aplicar, 900);

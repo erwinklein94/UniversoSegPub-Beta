@@ -1,0 +1,10 @@
+/* ============================================================
+   UniSegPub — Remove duplicidade de anúncio na sidebar
+   A mochila Coban já aparece na lista de produtos selecionados.
+   O destaque antigo do menu lateral fica oculto para não repetir.
+   ============================================================ */
+
+.sidebar > .ad-slot--sidebar[data-ad-area="menu_lateral"],
+.sidebar .ad-slot--sidebar[data-ad-area="menu_lateral"] {
+  display: none !important;
+}

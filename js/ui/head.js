@@ -4,7 +4,8 @@
    - analytics;
    - tema inicial;
    - fallback global de imagens de produtos;
-   - carregamento versionado de CSS/JS complementares.
+   - CSS complementar imediato;
+   - JS complementar versionado e sequencial.
    ======================================================= */
 
 window.dataLayer = window.dataLayer || [];
@@ -104,14 +105,11 @@ function carregarImagemProduto(img) {
     document.body.appendChild(script);
   }
 
-  function aplicar() {
-    estilos.forEach(carregarCss);
-    carregarScriptSequencial();
-  }
+  estilos.forEach(carregarCss);
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', aplicar, { once: true });
+    document.addEventListener('DOMContentLoaded', () => carregarScriptSequencial(), { once: true });
   } else {
-    aplicar();
+    carregarScriptSequencial();
   }
 }());

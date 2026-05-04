@@ -1,0 +1,181 @@
+/* ============================================================
+   UniSegPub — Mais produtos na sidebar
+   Acrescenta uma vitrine compacta abaixo dos produtos existentes
+   e um bloco chamativo para abrir a aba Produtos.
+   ============================================================ */
+
+.sidebar-extra-products {
+  display: block !important;
+  margin: 0 14px 14px !important;
+  padding: 0 !important;
+}
+
+.sidebar-extra-products-title,
+.sidebar-products-cta-title {
+  margin: 8px 0 8px !important;
+  color: var(--lg-muted, #D3D7DA) !important;
+  font-size: .72rem !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  opacity: .86 !important;
+}
+
+.sidebar-extra-product {
+  display: grid !important;
+  grid-template-columns: 48px minmax(0, 1fr) !important;
+  grid-template-areas:
+    "icon title"
+    "icon text"
+    "icon action" !important;
+  gap: 4px 10px !important;
+  align-items: center !important;
+  margin: 8px 0 !important;
+  padding: 11px !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 18px !important;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255,211,0,.10), transparent 34%),
+    linear-gradient(145deg, rgba(255,255,255,.06), rgba(9,12,17,.14)) !important;
+  text-decoration: none !important;
+  overflow: hidden !important;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease !important;
+}
+
+.sidebar-extra-product:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(255,211,0,.42) !important;
+  box-shadow: 0 14px 30px rgba(9,12,17,.26), 0 0 18px rgba(255,211,0,.10) !important;
+}
+
+.sidebar-extra-product-icon {
+  grid-area: icon !important;
+  width: 48px !important;
+  height: 48px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 16px !important;
+  background: rgba(255,255,255,.08) !important;
+  font-size: 1.35rem !important;
+  line-height: 1 !important;
+}
+
+.sidebar-extra-product strong {
+  grid-area: title !important;
+  min-width: 0 !important;
+  color: var(--lg-text, #fff) !important;
+  font-size: .9rem !important;
+  font-weight: 900 !important;
+  line-height: 1.12 !important;
+}
+
+.sidebar-extra-product small {
+  grid-area: text !important;
+  min-width: 0 !important;
+  color: var(--lg-muted, #D3D7DA) !important;
+  font-size: .76rem !important;
+  line-height: 1.16 !important;
+  opacity: .9 !important;
+}
+
+.sidebar-extra-product span:last-child {
+  grid-area: action !important;
+  width: fit-content !important;
+  margin-top: 4px !important;
+  padding: 7px 10px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #FFD300, #f2d94c) !important;
+  color: #090C11 !important;
+  font-size: .72rem !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+}
+
+.sidebar-products-cta {
+  display: block !important;
+  margin: 12px 14px 20px !important;
+  padding: 16px !important;
+  border: 1px solid rgba(255,211,0,.52) !important;
+  border-radius: 24px !important;
+  background:
+    radial-gradient(circle at 14% 0%, rgba(255,255,255,.26), transparent 34%),
+    linear-gradient(135deg, #FFD300, #f2d94c) !important;
+  color: #090C11 !important;
+  text-decoration: none !important;
+  box-shadow: 0 18px 42px rgba(9,12,17,.28), 0 0 24px rgba(255,211,0,.16) !important;
+}
+
+.sidebar-products-cta strong,
+.sidebar-products-cta span,
+.sidebar-products-cta small {
+  display: block !important;
+  color: #090C11 !important;
+}
+
+.sidebar-products-cta strong {
+  font-size: 1rem !important;
+  line-height: 1.1 !important;
+  font-weight: 950 !important;
+  text-transform: uppercase !important;
+}
+
+.sidebar-products-cta small {
+  margin-top: 6px !important;
+  font-size: .82rem !important;
+  line-height: 1.22 !important;
+  opacity: .84 !important;
+}
+
+.sidebar-products-cta span {
+  width: fit-content !important;
+  margin-top: 12px !important;
+  padding: 9px 12px !important;
+  border-radius: 999px !important;
+  background: rgba(9,12,17,.16) !important;
+  font-size: .78rem !important;
+  font-weight: 950 !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+}
+
+html[data-theme="light"] .sidebar-extra-product,
+:root[data-theme="light"] .sidebar-extra-product {
+  border-color: rgba(255,255,255,.30) !important;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255,211,0,.14), transparent 34%),
+    linear-gradient(145deg, rgba(255,255,255,.18), rgba(117,123,129,.12)) !important;
+}
+
+html[data-theme="light"] .sidebar-extra-product strong,
+:root[data-theme="light"] .sidebar-extra-product strong {
+  color: #111418 !important;
+}
+
+html[data-theme="light"] .sidebar-extra-product small,
+:root[data-theme="light"] .sidebar-extra-product small {
+  color: #343A42 !important;
+}
+
+@media (max-width: 760px) {
+  .sidebar-extra-product {
+    grid-template-columns: 52px minmax(0, 1fr) !important;
+    min-height: 74px !important;
+    padding: 12px !important;
+  }
+
+  .sidebar-extra-product-icon {
+    width: 52px !important;
+    height: 52px !important;
+    font-size: 1.45rem !important;
+  }
+
+  .sidebar-extra-product strong {
+    font-size: .96rem !important;
+  }
+
+  .sidebar-extra-product small {
+    font-size: .82rem !important;
+  }
+}

@@ -235,6 +235,8 @@ STATIC_DATA_CONTRACTS = {
     ],
     "js/data/produtos-data.js": [
         "window.UNISEGPUB_PRODUTOS",
+        "window.UNISEGPUB_PRODUTOS_JSON_FALLBACKS",
+        "PRODUTOS_LIVROS_EBOOKS_FALLBACK",
     ],
 }
 
@@ -493,11 +495,45 @@ def test_produtos_data_matches_html_categories() -> None:
     assert_true(categories, "produtos.html: nenhuma categoria de produto encontrada")
 
     data_text = read_text("js/data/produtos-data.js")
+    json_categories = set()
+    livros_json = ROOT / "js" / "data" / "produtos-livros-ebooks.json"
+    if livros_json.is_file():
+        payload = json.loads(livros_json.read_text(encoding="utf-8"))
+        if isinstance(payload, dict):
+            json_categories.update(key for key, value in payload.items() if isinstance(value, list))
+
     for category in categories:
+        in_js_object = bool(re.search(rf'["\']{re.escape(category)}["\']\s*:', data_text))
+        in_js_fallback = bool(re.search(rf'\b{re.escape(category)}\s*:', data_text))
+        in_json = category in json_categories
         assert_true(
-            re.search(rf'["\']{re.escape(category)}["\']\s*:', data_text),
-            f"js/data/produtos-data.js: categoria usada no HTML não existe: {category}",
+            in_js_object or in_js_fallback or in_json,
+            f"Categoria usada no HTML não existe em JS/fallback/JSON: {category}",
         )
+
+
+def test_produtos_livros_ebooks_json_contract() -> None:
+    path = ROOT / "js" / "data" / "produtos-livros-ebooks.json"
+    assert_true(path.is_file(), "JSON de livros/e-books não encontrado")
+
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    produtos = payload.get("livrosEbooks") if isinstance(payload, dict) else None
+    assert_true(isinstance(produtos, list) and produtos, "JSON de livros/e-books deve conter lista não vazia")
+
+    fallback_text = read_text("js/data/produtos-data.js")
+    render_text = read_text("js/pages/produtos-render.js")
+    assert_true("PRODUTOS_LIVROS_EBOOKS_FALLBACK" in fallback_text, "Fallback JS de livros/e-books ausente")
+    assert_true("produtos-livros-ebooks.json" in render_text, "Render de produtos não carrega o JSON de livros/e-books")
+
+    for index, produto in enumerate(produtos, start=1):
+        assert_true(isinstance(produto, dict), f"Produto {index} do JSON deve ser objeto")
+        for field in ("titulo", "href", "imagem", "descricao", "cta"):
+            assert_true(field in produto, f"Produto {index} do JSON sem campo obrigatório: {field}")
+        imagem = produto.get("imagem")
+        assert_true(isinstance(imagem, dict), f"Produto {index} do JSON com imagem inválida")
+        src = imagem.get("src")
+        assert_true(isinstance(src, str) and src, f"Produto {index} do JSON sem imagem.src")
+        assert_true((ROOT / src).is_file(), f"Produto {index} do JSON aponta imagem ausente: {src}")
 
 
 def test_templates_generate_current_html() -> None:
@@ -562,6 +598,7 @@ TESTS = [
     ("sintaxe JS", test_js_syntax),
     ("JSON e imagens de brasões", test_brasoes_json_and_images),
     ("categorias de produtos", test_produtos_data_matches_html_categories),
+    ("JSON de livros/e-books com fallback", test_produtos_livros_ebooks_json_contract),
     ("templates geram HTML atual", test_templates_generate_current_html),
     ("sitemap e robots", test_sitemap_and_robots),
     ("nomes web sem caracteres arriscados", test_no_risky_web_filenames),

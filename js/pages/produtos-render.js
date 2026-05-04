@@ -6,6 +6,10 @@
   'use strict';
 
   const AVISO_AFILIADO_PADRAO = 'Exposição do produto em formato de afiliado.';
+  const CATEGORIAS_PRODUTOS_JSON = {
+    livrosEbooks: 'js/data/produtos-livros-ebooks.json'
+  };
+
 
   function setAttr(element, name, value) {
     if (value === undefined || value === null || value === '') return;
@@ -87,6 +91,49 @@
     return card;
   }
 
+
+  function normalizarCategoriaJson(categoria, payload) {
+    if (Array.isArray(payload)) return payload;
+    if (payload && Array.isArray(payload[categoria])) return payload[categoria];
+    return null;
+  }
+
+  function aplicarFallbackCategoriasJson() {
+    const base = window.UNISEGPUB_PRODUTOS;
+    const fallback = window.UNISEGPUB_PRODUTOS_JSON_FALLBACKS || {};
+    if (!base) return;
+
+    Object.keys(CATEGORIAS_PRODUTOS_JSON).forEach(categoria => {
+      if (!Array.isArray(base[categoria]) && Array.isArray(fallback[categoria])) {
+        base[categoria] = fallback[categoria];
+      }
+    });
+  }
+
+  async function carregarCategoriasJson() {
+    const base = window.UNISEGPUB_PRODUTOS;
+    const fallback = window.UNISEGPUB_PRODUTOS_JSON_FALLBACKS || {};
+    if (!base || typeof fetch !== 'function') return;
+
+    await Promise.all(Object.entries(CATEGORIAS_PRODUTOS_JSON).map(async ([categoria, url]) => {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const payload = await response.json();
+        const produtos = normalizarCategoriaJson(categoria, payload);
+        if (!Array.isArray(produtos)) throw new Error('Formato de dados inválido');
+        base[categoria] = produtos;
+      } catch (error) {
+        if (Array.isArray(fallback[categoria])) {
+          base[categoria] = fallback[categoria];
+        }
+        if (window.console && typeof window.console.warn === 'function') {
+          window.console.warn(`UniSegPub: usando fallback para ${categoria}.`, error);
+        }
+      }
+    }));
+  }
+
   function renderProdutos() {
     const base = window.UNISEGPUB_PRODUTOS;
     if (!base) return;
@@ -100,9 +147,18 @@
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', renderProdutos, { once: true });
-  } else {
+  function iniciarProdutos() {
+    aplicarFallbackCategoriasJson();
     renderProdutos();
+
+    carregarCategoriasJson().then(() => {
+      renderProdutos();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', iniciarProdutos, { once: true });
+  } else {
+    iniciarProdutos();
   }
 })();

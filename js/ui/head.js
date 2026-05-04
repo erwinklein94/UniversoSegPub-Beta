@@ -63,7 +63,8 @@ function carregarImagemProduto(img) {
     'css/header-unified-layout.css?v=20260504headerunified1',
     'css/sidebar-optimized.css?v=20260504sidebar1',
     'css/sidebar-deduplicate-ads.css?v=20260504dedupe1',
-    'css/produtos-mobile-grid.css?v=20260504prodgrid1'
+    'css/produtos-mobile-grid.css?v=20260504prodgrid1',
+    'css/reduce-instructions.css?v=20260504instructions1'
   ];
 
   function ajustarTextosDoCabecalho() {
@@ -77,6 +78,33 @@ function carregarImagemProduto(img) {
 
     document.querySelectorAll('.sidebar-selector-hint, .sidebar-independent-note').forEach((elemento) => {
       elemento.remove();
+    });
+  }
+
+  function reduzirInstrucoesForaDaHome() {
+    if (document.body?.dataset.page === 'principal') return;
+
+    const termosInstrucao = [
+      'como usar',
+      'como consultar',
+      'como mexer',
+      'passo a passo',
+      'dica',
+      'dicas',
+      'orientação',
+      'orientações',
+      'instruções',
+      'selecione uma instituição',
+      'escolha uma instituição'
+    ];
+
+    document.querySelectorAll('section, article, aside, .card, .principal-card, .principal-nota, .portal-disclaimer').forEach((bloco) => {
+      const texto = bloco.textContent?.trim().toLowerCase() || '';
+      if (!texto) return;
+      if (texto.length > 900) return;
+      if (termosInstrucao.some((termo) => texto.includes(termo))) {
+        bloco.classList.add('is-instruction-reduced');
+      }
     });
   }
 
@@ -159,6 +187,7 @@ function carregarImagemProduto(img) {
     });
 
     ajustarTextosDoCabecalho();
+    reduzirInstrucoesForaDaHome();
     reorganizarSidebar();
   }
 

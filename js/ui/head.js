@@ -61,6 +61,7 @@ function carregarImagemProduto(img) {
     'css/light-soft-gray-theme.css?v=20260504lightgray1',
     'css/header-mobile-emblem.css?v=20260504emblem1',
     'css/header-unified-layout.css?v=20260504headerunified1',
+    'css/header-text-fit.css?v=20260504headerfit1',
     'css/sidebar-optimized.css?v=20260504sidebar1',
     'css/sidebar-deduplicate-ads.css?v=20260504dedupe1',
     'css/sidebar-more-products.css?v=20260504moreproducts1',

@@ -2788,7 +2788,7 @@ function aplicarEstruturaFederaisNoHtml() {
     btn.setAttribute('aria-label', 'Selecionar instituições federais');
     btn.setAttribute('aria-pressed', 'false');
     btn.onclick = () => selecionarEstado('br');
-    btn.innerHTML = `<img src="${HEADER_BRASIL_FLAG}" alt="" aria-hidden="true"><span>BR</span>`;
+    btn.innerHTML = `<img src="${escapeHtml(HEADER_BRASIL_FLAG)}" alt="" aria-hidden="true"><span>BR</span>`;
     flags.appendChild(btn);
   }
 }
@@ -3078,7 +3078,7 @@ function aplicarEstruturaEstadosFaltantesNoHtml() {
       btn.setAttribute('aria-label', `Selecionar ${estado.nome}`);
       btn.setAttribute('aria-pressed', 'false');
       btn.onclick = () => selecionarEstado(estado.estado);
-      btn.innerHTML = `<img src="${estado.flag}" alt="" aria-hidden="true"><span>${estado.sigla}</span>`;
+      btn.innerHTML = `<img src="${escapeHtml(estado.flag)}" alt="" aria-hidden="true"><span>${escapeHtml(estado.sigla)}</span>`;
       flags.appendChild(btn);
     });
   }

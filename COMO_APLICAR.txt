@@ -1,3 +1,0 @@
-Na raiz do projeto original, rode:
-
-git apply uniseg-innerhtml-escape.patch

@@ -76,7 +76,7 @@ function carregarImagemProduto(img) {
     'js/ui/site-ui-cleanup.js?v=20260504uiclean1',
     'js/ui/header-restaurar-original.js?v=20260504headerrestore2',
     'js/ui/header-background-dinamico.js?v=20260504headerbg2',
-    'js/ui/sidebar-product-thumbs.js?v=20260504thumbs9'
+    'js/ui/sidebar-product-thumbs.js?v=20260504thumbs10'
   ];
 
   function carregarCss(href) {

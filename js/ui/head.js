@@ -59,8 +59,23 @@ function carregarImagemProduto(img) {
   const estilos = [
     'css/liquid-glass-app.css?v=20260504glass2',
     'css/light-soft-gray-theme.css?v=20260504lightgray1',
-    'css/header-mobile-emblem.css?v=20260504emblem1'
+    'css/header-mobile-emblem.css?v=20260504emblem1',
+    'css/header-unified-layout.css?v=20260504headerunified1'
   ];
+
+  function ajustarTextosDoCabecalho() {
+    document.querySelectorAll('.header-inst-selector label').forEach((label) => {
+      label.textContent = 'Escolha instituição';
+    });
+
+    document.querySelectorAll('#instituicao_header option[value=""], #instituicao option[value=""]').forEach((option) => {
+      option.textContent = 'Escolha instituição';
+    });
+
+    document.querySelectorAll('.sidebar-selector-hint, .sidebar-independent-note').forEach((elemento) => {
+      elemento.remove();
+    });
+  }
 
   function aplicarTema() {
     estilos.forEach((href) => {
@@ -72,6 +87,8 @@ function carregarImagemProduto(img) {
       link.dataset.liquidGlassApp = 'true';
       document.head.appendChild(link);
     });
+
+    ajustarTextosDoCabecalho();
   }
 
   if (document.readyState === 'loading') {

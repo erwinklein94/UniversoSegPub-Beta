@@ -60,11 +60,12 @@ function carregarImagemProduto(img) {
     'css/liquid-glass-app.css?v=20260504glass2',
     'css/light-soft-gray-theme.css?v=20260504lightgray1',
     'css/header-mobile-emblem.css?v=20260504emblem1',
-    'css/header-unified-layout.css?v=20260504headerunified1'
+    'css/header-unified-layout.css?v=20260504headerunified1',
+    'css/sidebar-optimized.css?v=20260504sidebar1'
   ];
 
   function ajustarTextosDoCabecalho() {
-    document.querySelectorAll('.header-inst-selector label').forEach((label) => {
+    document.querySelectorAll('.header-inst-selector label, .sidebar-inst-panel label').forEach((label) => {
       label.textContent = 'Escolha instituição';
     });
 
@@ -75,6 +76,73 @@ function carregarImagemProduto(img) {
     document.querySelectorAll('.sidebar-selector-hint, .sidebar-independent-note').forEach((elemento) => {
       elemento.remove();
     });
+  }
+
+  function reorganizarSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    const nav = sidebar?.querySelector('.sidebar-nav');
+    if (!sidebar || !nav || sidebar.dataset.sidebarOptimized === 'true') return;
+
+    const ordem = [
+      'menu-principal',
+      'menu-remuneracao',
+      'menu-comparar',
+      'menu-concursos',
+      'menu-brasoes',
+      'menu-direitos',
+      'menu-poderes',
+      'menu-acoes',
+      'menu-associacoes',
+      'menu-produtos',
+      'menu-parceiros'
+    ];
+
+    const rotulosGrupo = {
+      consultas: 'Consultas',
+      carreira: 'Carreira e dados',
+      apoio: 'Direitos e apoio',
+      extras: 'Produtos e parceiros'
+    };
+
+    const grupos = {
+      consultas: ['menu-principal', 'menu-remuneracao', 'menu-comparar'],
+      carreira: ['menu-concursos', 'menu-brasoes'],
+      apoio: ['menu-direitos', 'menu-poderes', 'menu-acoes', 'menu-associacoes'],
+      extras: ['menu-produtos', 'menu-parceiros']
+    };
+
+    const links = new Map();
+    ordem.forEach((id) => {
+      const link = nav.querySelector(`#${id}`);
+      if (link) links.set(id, link);
+    });
+
+    nav.replaceChildren();
+
+    Object.entries(grupos).forEach(([grupo, ids]) => {
+      const existentes = ids.map((id) => links.get(id)).filter(Boolean);
+      if (!existentes.length) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'sidebar-nav-group';
+      wrapper.setAttribute('aria-label', rotulosGrupo[grupo]);
+
+      const titulo = document.createElement('div');
+      titulo.className = 'sidebar-nav-title';
+      titulo.textContent = rotulosGrupo[grupo];
+      wrapper.appendChild(titulo);
+
+      existentes.forEach((link) => wrapper.appendChild(link));
+      nav.appendChild(wrapper);
+    });
+
+    const social = sidebar.querySelector('.sidebar-social');
+    const primeiroAnuncio = sidebar.querySelector('.ad-slot--sidebar');
+    if (social && primeiroAnuncio) {
+      sidebar.insertBefore(social, primeiroAnuncio);
+    }
+
+    sidebar.dataset.sidebarOptimized = 'true';
   }
 
   function aplicarTema() {
@@ -89,6 +157,7 @@ function carregarImagemProduto(img) {
     });
 
     ajustarTextosDoCabecalho();
+    reorganizarSidebar();
   }
 
   if (document.readyState === 'loading') {

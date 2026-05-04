@@ -53,15 +53,12 @@ function carregarImagemProduto(img) {
 
 /* =======================================================
    Tema visual extra — Liquid Glass App
-   Carregado depois dos links CSS estáticos para garantir precedência.
+   Mantém ajustes gerais, sem alterar o cabeçalho original.
    ======================================================= */
 (function carregarTemaLiquidGlassApp() {
   const estilos = [
     'css/liquid-glass-app.css?v=20260504glass2',
     'css/light-soft-gray-theme.css?v=20260504lightgray1',
-    'css/header-mobile-emblem.css?v=20260504emblem1',
-    'css/header-unified-layout.css?v=20260504headerunified1',
-    'css/header-text-fit.css?v=20260504headerfit1',
     'css/sidebar-optimized.css?v=20260504sidebar1',
     'css/sidebar-deduplicate-ads.css?v=20260504dedupe1',
     'css/sidebar-more-products.css?v=20260504moreproducts1',
@@ -70,13 +67,12 @@ function carregarImagemProduto(img) {
     'css/home-hero-title-size.css?v=20260504herotitle1',
     'css/home-remove-duplicate-selector.css?v=20260504homeselector2',
     'css/desktop-navigation-cleanup.css?v=20260504desktopnav1',
-    'css/bottom-menu-button-match.css?v=20260504menumatch1',
-    'css/header-emblem-zoom.css?v=20260504emblemzoom1'
+    'css/bottom-menu-button-match.css?v=20260504menumatch1'
   ];
 
   const scripts = [
-    'js/ui/header-emblem-zoom.js?v=20260504emblemzoom1',
-    'js/ui/sidebar-product-thumbs.js?v=20260504thumbs6'
+    'js/ui/header-restaurar-original.js?v=20260504headerrestore1',
+    'js/ui/sidebar-product-thumbs.js?v=20260504thumbs7'
   ];
 
   function ajustarTextosDoCabecalho() {

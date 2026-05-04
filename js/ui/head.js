@@ -71,7 +71,7 @@ function carregarImagemProduto(img) {
   ];
 
   const scripts = [
-    'js/ui/header-restaurar-original.js?v=20260504headerrestore1',
+    'js/ui/header-restaurar-original.js?v=20260504headerrestore2',
     'js/ui/sidebar-product-thumbs.js?v=20260504thumbs7'
   ];
 

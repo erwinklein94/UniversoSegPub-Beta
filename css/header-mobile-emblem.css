@@ -2,6 +2,7 @@
    UniSegPub — Brasão/logo maior no cabeçalho mobile
    Deixa o leão e os brasões em destaque como elemento visual
    de fundo, ocupando cerca de 30%+ do cabeçalho no celular.
+   As imagens ficam retas, sem inclinação.
    ============================================================ */
 
 @media (max-width: 760px) {
@@ -38,7 +39,7 @@
     margin: 0 !important;
     opacity: .78 !important;
     pointer-events: none !important;
-    transform: translateY(-50%) rotate(-8deg) scale(1.08) !important;
+    transform: translateY(-50%) scale(1.08) !important;
   }
 
   .site-header .current-flag-frame img,
@@ -50,6 +51,7 @@
     max-height: none !important;
     object-fit: contain !important;
     opacity: .98 !important;
+    transform: none !important;
   }
 
   .site-header .header-current-copy strong,
@@ -68,6 +70,7 @@
     right: -28px !important;
     width: clamp(132px, 42vw, 168px) !important;
     height: clamp(132px, 42vw, 168px) !important;
+    transform: translateY(-50%) scale(1.08) !important;
   }
 
   .site-header .header-current-copy {

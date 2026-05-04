@@ -93,6 +93,31 @@ function carregarImagemProduto(img) {
     });
   }
 
+  function substituirCardGratisDaHome() {
+    if (document.body?.dataset.page !== 'principal') return;
+
+    const seletorCards = [
+      'main .principal-card',
+      '#page-principal .principal-card',
+      'main .header-fact',
+      '#page-principal .header-fact',
+      'main .remuneracao-stat',
+      '#page-principal .remuneracao-stat',
+      'main .card',
+      '#page-principal .card'
+    ].join(', ');
+
+    document.querySelectorAll(seletorCards).forEach((card) => {
+      const texto = (card.textContent || '').trim().toLowerCase();
+      const temGratis = /gr[aá]tis|gratis/.test(texto);
+      const temConsulta = /consulta/.test(texto);
+      if (!temGratis || !temConsulta) return;
+
+      card.classList.add('principal-card--abrangencia');
+      card.innerHTML = '<h3>Federal, Estadual e Municipal</h3>';
+    });
+  }
+
   function reduzirInstrucoesForaDaHome() {
     if (document.body?.dataset.page === 'principal') return;
 
@@ -200,6 +225,7 @@ function carregarImagemProduto(img) {
 
     ajustarTextosDoCabecalho();
     removerSeletorDuplicadoDaHome();
+    substituirCardGratisDaHome();
     reduzirInstrucoesForaDaHome();
     reorganizarSidebar();
   }

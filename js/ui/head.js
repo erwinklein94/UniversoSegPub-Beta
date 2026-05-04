@@ -58,6 +58,7 @@ function carregarImagemProduto(img) {
 (function carregarTemaLiquidGlassApp() {
   const estilos = [
     'css/liquid-glass-app.css?v=20260504glass2',
+    'css/light-soft-gray-theme.css?v=20260504lightgray1',
     'css/header-mobile-emblem.css?v=20260504emblem1'
   ];
 

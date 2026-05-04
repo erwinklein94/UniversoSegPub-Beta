@@ -65,7 +65,8 @@ function carregarImagemProduto(img) {
     'css/sidebar-deduplicate-ads.css?v=20260504dedupe1',
     'css/produtos-mobile-grid.css?v=20260504prodgrid1',
     'css/reduce-instructions.css?v=20260504instructions1',
-    'css/home-hero-title-size.css?v=20260504herotitle1'
+    'css/home-hero-title-size.css?v=20260504herotitle1',
+    'css/home-remove-duplicate-selector.css?v=20260504homeselector1'
   ];
 
   function ajustarTextosDoCabecalho() {
@@ -79,6 +80,16 @@ function carregarImagemProduto(img) {
 
     document.querySelectorAll('.sidebar-selector-hint, .sidebar-independent-note').forEach((elemento) => {
       elemento.remove();
+    });
+  }
+
+  function removerSeletorDuplicadoDaHome() {
+    if (document.body?.dataset.page !== 'principal') return;
+
+    document.querySelectorAll('main select[id*="instituicao"], #page-principal select[id*="instituicao"]').forEach((select) => {
+      if (select.id === 'instituicao_header') return;
+      const bloco = select.closest('.inst-selector, .header-inst-selector, .field, .card, .principal-card, .consulta-instituicao-card, section, article, aside, div');
+      if (bloco) bloco.remove();
     });
   }
 
@@ -188,6 +199,7 @@ function carregarImagemProduto(img) {
     });
 
     ajustarTextosDoCabecalho();
+    removerSeletorDuplicadoDaHome();
     reduzirInstrucoesForaDaHome();
     reorganizarSidebar();
   }

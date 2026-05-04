@@ -60,9 +60,9 @@ function carregarImagemProduto(img) {
 
   const scripts = [
     'js/ui/site-ui-cleanup.js?v=20260504uiclean1',
-    'js/ui/header-restaurar-original.js?v=20260504headerrestore2',
+    'js/ui/header-restaurar-original.js?v=20260504headerrestore3',
     'js/ui/header-background-dinamico.js?v=20260504headerbg3',
-    'js/ui/sidebar-product-thumbs.js?v=20260504thumbs10'
+    'js/ui/sidebar-product-thumbs.js?v=20260504thumbs11'
   ];
 
   function carregarCss(href) {

@@ -63,6 +63,7 @@ function carregarImagemProduto(img) {
     'css/header-unified-layout.css?v=20260504headerunified1',
     'css/sidebar-optimized.css?v=20260504sidebar1',
     'css/sidebar-deduplicate-ads.css?v=20260504dedupe1',
+    'css/sidebar-more-products.css?v=20260504moreproducts1',
     'css/produtos-mobile-grid.css?v=20260504prodgrid1',
     'css/reduce-instructions.css?v=20260504instructions1',
     'css/home-hero-title-size.css?v=20260504herotitle1',
@@ -123,6 +124,65 @@ function carregarImagemProduto(img) {
       card.classList.add('principal-card--abrangencia');
       card.innerHTML = '<h3>Federal, Estadual e Municipal</h3>';
     });
+  }
+
+  function adicionarProdutosExtrasSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    if (!sidebar || sidebar.querySelector('.sidebar-extra-products')) return;
+
+    const produtos = [
+      ['🎒', 'Mochilas e bolsas táticas', 'Organização para rotina operacional e estudo.'],
+      ['🔦', 'Lanternas compactas', 'Itens úteis para plantão, trilha e deslocamento.'],
+      ['👢', 'Coturnos e botas', 'Opções para serviço, treino e uso diário.'],
+      ['🧤', 'Luvas operacionais', 'Proteção e aderência para atividades práticas.'],
+      ['🧢', 'Bonés e camisetas', 'Vestuário casual inspirado na segurança pública.'],
+      ['📚', 'Livros de concursos', 'Materiais para preparação e revisão.'],
+      ['📝', 'Cadernos e organização', 'Apoio para estudos, metas e planejamento.'],
+      ['🎧', 'Fones e acessórios', 'Equipamentos para foco nos estudos e deslocamento.'],
+      ['🥤', 'Garrafas e térmicos', 'Hidratação para treino, plantão e rotina.'],
+      ['🏋️', 'Itens de treino físico', 'Apoio para TAF, condicionamento e disciplina.']
+    ];
+
+    const bloco = document.createElement('div');
+    bloco.className = 'sidebar-extra-products';
+    bloco.setAttribute('aria-label', 'Mais produtos sugeridos');
+
+    const titulo = document.createElement('div');
+    titulo.className = 'sidebar-extra-products-title';
+    titulo.textContent = 'Mais produtos';
+    bloco.appendChild(titulo);
+
+    produtos.forEach(([icone, nome, descricao]) => {
+      const link = document.createElement('a');
+      link.className = 'sidebar-extra-product';
+      link.href = 'produtos.html';
+      link.innerHTML = `
+        <span class="sidebar-extra-product-icon" aria-hidden="true">${icone}</span>
+        <strong>${nome}</strong>
+        <small>${descricao}</small>
+        <span>Ver</span>
+      `;
+      bloco.appendChild(link);
+    });
+
+    const cta = document.createElement('a');
+    cta.className = 'sidebar-products-cta';
+    cta.href = 'produtos.html';
+    cta.setAttribute('aria-label', 'Abrir aba Produtos com a vitrine completa');
+    cta.innerHTML = `
+      <strong>Ver vitrine completa</strong>
+      <small>Abra a aba Produtos para conferir todos os itens selecionados em uma tela maior.</small>
+      <span>Ir para Produtos</span>
+    `;
+
+    const ancora = sidebar.querySelector('.sidebar-ad');
+    if (ancora) {
+      ancora.insertAdjacentElement('afterend', bloco);
+      bloco.insertAdjacentElement('afterend', cta);
+    } else {
+      sidebar.appendChild(bloco);
+      sidebar.appendChild(cta);
+    }
   }
 
   function reduzirInstrucoesForaDaHome() {
@@ -247,6 +307,7 @@ function carregarImagemProduto(img) {
     substituirCardGratisDaHome();
     reduzirInstrucoesForaDaHome();
     reorganizarSidebar();
+    adicionarProdutosExtrasSidebar();
     carregarScriptsExtras();
   }
 

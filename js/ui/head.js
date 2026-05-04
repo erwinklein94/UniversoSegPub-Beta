@@ -1,6 +1,10 @@
 /* =======================================================
-   JavaScript de inicialização extraído do index.html
-   Inclui analytics, tema inicial e funções necessárias antes do carregamento das imagens.
+   Head do portal — inicialização mínima e carregamento ordenado.
+   Responsabilidades mantidas aqui:
+   - analytics;
+   - tema inicial;
+   - fallback global de imagens de produtos;
+   - carregamento versionado de CSS/JS complementares.
    ======================================================= */
 
 window.dataLayer = window.dataLayer || [];
@@ -51,12 +55,9 @@ function carregarImagemProduto(img) {
   if (card) card.classList.add('img-indisponivel');
 }
 
-/* =======================================================
-   Tema visual extra — Liquid Glass App
-   Mantém ajustes gerais, sem alterar o cabeçalho original.
-   ======================================================= */
-(function carregarTemaLiquidGlassApp() {
+(function carregarComplementosDoPortal() {
   const estilos = [
+    'css/site-stability-critical.css?v=20260504stable1',
     'css/liquid-glass-app.css?v=20260504glass2',
     'css/light-soft-gray-theme.css?v=20260504lightgray1',
     'css/sidebar-optimized.css?v=20260504sidebar1',
@@ -71,327 +72,46 @@ function carregarImagemProduto(img) {
   ];
 
   const scripts = [
+    'js/ui/site-ui-cleanup.js?v=20260504uiclean1',
     'js/ui/header-restaurar-original.js?v=20260504headerrestore2',
-    'js/ui/header-background-dinamico.js?v=20260504headerbg1',
-    'js/ui/sidebar-product-thumbs.js?v=20260504thumbs8'
+    'js/ui/header-background-dinamico.js?v=20260504headerbg2',
+    'js/ui/sidebar-product-thumbs.js?v=20260504thumbs9'
   ];
 
-  function ajustarTextosDoCabecalho() {
-    document.querySelectorAll('.header-inst-selector label, .sidebar-inst-panel label').forEach((label) => {
-      label.textContent = 'Escolha instituição';
-    });
-
-    document.querySelectorAll('#instituicao_header option[value=""], #instituicao option[value=""]').forEach((option) => {
-      option.textContent = 'Escolha instituição';
-    });
-
-    document.querySelectorAll('.sidebar-selector-hint, .sidebar-independent-note').forEach((elemento) => {
-      elemento.remove();
-    });
+  function carregarCss(href) {
+    if (document.querySelector(`link[href="${href}"]`)) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    link.dataset.unisegComplemento = 'true';
+    document.head.appendChild(link);
   }
 
-  function removerSeletorDuplicadoDaHome() {
-    if (document.body?.dataset.page !== 'principal') return;
+  function carregarScriptSequencial(index = 0) {
+    const src = scripts[index];
+    if (!src) return;
 
-    const raizHome = document.querySelector('main') || document.getElementById('page-principal');
-    if (!raizHome) return;
-
-    const estaNoCabecalhoOuMenu = (elemento) => Boolean(elemento.closest('header, .site-header, #sidebar, .sidebar'));
-
-    const textoNormalizado = (elemento) => (elemento.textContent || '')
-      .replace(/\s+/g, ' ')
-      .trim()
-      .toLowerCase();
-
-    const temReferenciaInstituicao = (elemento) => {
-      const texto = textoNormalizado(elemento);
-      const attrs = [
-        elemento.id,
-        elemento.name,
-        elemento.className,
-        elemento.getAttribute?.('aria-label'),
-        elemento.getAttribute?.('for'),
-        elemento.getAttribute?.('data-field')
-      ].join(' ').toLowerCase();
-
-      return /institui[cç][aã]o|institui[cç][oõ]es/.test(`${texto} ${attrs}`);
-    };
-
-    const deveRemoverBloco = (bloco) => {
-      if (!bloco || bloco === document.body || estaNoCabecalhoOuMenu(bloco)) return false;
-
-      const texto = textoNormalizado(bloco);
-      const possuiControle = Boolean(bloco.querySelector('select, [role="combobox"], option, label, .select-wrapper, .custom-select'));
-      const ehCardDeSelecao = bloco.matches('.consulta-instituicao-card, .inst-selector, .header-inst-selector, .field');
-      const ehResumoDaHome = [
-        'resumo da página inicial',
-        'resumo da pagina inicial',
-        'escolha uma instituição para ver no cabeçalho',
-        'escolha uma instituicao para ver no cabecalho',
-        'esta escolha muda apenas o cabeçalho',
-        'esta escolha muda apenas o cabecalho'
-      ].some((marcador) => texto.includes(marcador));
-
-      return ehResumoDaHome || (ehCardDeSelecao && possuiControle && temReferenciaInstituicao(bloco));
-    };
-
-    const removerBloco = (bloco) => {
-      if (!bloco || estaNoCabecalhoOuMenu(bloco)) return;
-      bloco.setAttribute('hidden', '');
-      bloco.setAttribute('aria-hidden', 'true');
-      bloco.style.setProperty('display', 'none', 'important');
-      bloco.remove();
-    };
-
-    raizHome.querySelectorAll('.consulta-instituicao-card, .inst-selector:not(.sidebar-inst-panel), .header-inst-selector, .field, .card, .principal-card, section, article, aside').forEach((bloco) => {
-      if (deveRemoverBloco(bloco)) removerBloco(bloco);
-    });
-
-    raizHome.querySelectorAll('select, [role="combobox"], .select-wrapper, .custom-select').forEach((controle) => {
-      if (estaNoCabecalhoOuMenu(controle)) return;
-      if (!temReferenciaInstituicao(controle) && !temReferenciaInstituicao(controle.closest('label, .field, .card, .principal-card, .consulta-instituicao-card, .inst-selector') || controle)) return;
-
-      const bloco = controle.closest('.consulta-instituicao-card, .principal-card, .card, .field, .inst-selector, .header-inst-selector, section, article, aside, div');
-      removerBloco(bloco || controle);
-    });
-  }
-
-  function observarSeletorDuplicadoDaHome() {
-    if (document.body?.dataset.page !== 'principal') return;
-
-    const alvo = document.querySelector('main') || document.getElementById('page-principal');
-    if (!alvo || window.__unisegHomeSelectorObserver) return;
-
-    let timer;
-    const executarRemocao = () => {
-      window.clearTimeout(timer);
-      timer = window.setTimeout(removerSeletorDuplicadoDaHome, 40);
-    };
-
-    const observer = new MutationObserver(executarRemocao);
-    observer.observe(alvo, { childList: true, subtree: true });
-    window.__unisegHomeSelectorObserver = observer;
-
-    removerSeletorDuplicadoDaHome();
-    window.setTimeout(removerSeletorDuplicadoDaHome, 250);
-    window.setTimeout(removerSeletorDuplicadoDaHome, 900);
-    window.setTimeout(removerSeletorDuplicadoDaHome, 1800);
-  }
-
-  function substituirCardGratisDaHome() {
-    if (document.body?.dataset.page !== 'principal') return;
-
-    const seletorCards = [
-      'main .principal-card',
-      '#page-principal .principal-card',
-      'main .header-fact',
-      '#page-principal .header-fact',
-      'main .remuneracao-stat',
-      '#page-principal .remuneracao-stat',
-      'main .card',
-      '#page-principal .card'
-    ].join(', ');
-
-    document.querySelectorAll(seletorCards).forEach((card) => {
-      const texto = (card.textContent || '').trim().toLowerCase();
-      const temGratis = /gr[aá]tis|gratis/.test(texto);
-      const temConsulta = /consulta/.test(texto);
-      if (!temGratis || !temConsulta) return;
-
-      card.classList.add('principal-card--abrangencia');
-      card.innerHTML = '<h3>Federal, Estadual e Municipal</h3>';
-    });
-  }
-
-  function adicionarProdutosExtrasSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    if (!sidebar || sidebar.querySelector('.sidebar-extra-products')) return;
-
-    const produtos = [
-      ['🎒', 'Mochilas e bolsas táticas', 'Organização para rotina operacional e estudo.'],
-      ['🔦', 'Lanternas compactas', 'Itens úteis para plantão, trilha e deslocamento.'],
-      ['👢', 'Coturnos e botas', 'Opções para serviço, treino e uso diário.'],
-      ['🧤', 'Luvas operacionais', 'Proteção e aderência para atividades práticas.'],
-      ['🧢', 'Bonés e camisetas', 'Vestuário casual inspirado na segurança pública.'],
-      ['📚', 'Livros de concursos', 'Materiais para preparação e revisão.'],
-      ['📝', 'Cadernos e organização', 'Apoio para estudos, metas e planejamento.'],
-      ['🎧', 'Fones e acessórios', 'Equipamentos para foco nos estudos e deslocamento.'],
-      ['🥤', 'Garrafas e térmicos', 'Hidratação para treino, plantão e rotina.'],
-      ['🏋️', 'Itens de treino físico', 'Apoio para TAF, condicionamento e disciplina.']
-    ];
-
-    const bloco = document.createElement('div');
-    bloco.className = 'sidebar-extra-products';
-    bloco.setAttribute('aria-label', 'Produtos');
-
-    const titulo = document.createElement('div');
-    titulo.className = 'sidebar-extra-products-title';
-    titulo.textContent = 'Produtos';
-    bloco.appendChild(titulo);
-
-    produtos.forEach(([icone, nome, descricao]) => {
-      const link = document.createElement('a');
-      link.className = 'sidebar-extra-product';
-      link.href = 'produtos.html';
-      link.innerHTML = `
-        <span class="sidebar-extra-product-icon" aria-hidden="true">${icone}</span>
-        <strong>${nome}</strong>
-        <small>${descricao}</small>
-        <span>Ver</span>
-      `;
-      bloco.appendChild(link);
-    });
-
-    const cta = document.createElement('a');
-    cta.className = 'sidebar-products-cta';
-    cta.href = 'produtos.html';
-    cta.setAttribute('aria-label', 'Abrir aba Produtos com a vitrine completa');
-    cta.innerHTML = `
-      <strong>Ver vitrine completa</strong>
-      <small>Abra a aba Produtos para conferir todos os itens selecionados em uma tela maior.</small>
-      <span>Ir para Produtos</span>
-    `;
-
-    const ancora = sidebar.querySelector('.sidebar-ad');
-    if (ancora) {
-      ancora.insertAdjacentElement('afterend', bloco);
-      bloco.insertAdjacentElement('afterend', cta);
-    } else {
-      sidebar.appendChild(bloco);
-      sidebar.appendChild(cta);
-    }
-  }
-
-  function reduzirInstrucoesForaDaHome() {
-    if (document.body?.dataset.page === 'principal') return;
-
-    const termosInstrucao = [
-      'como usar',
-      'como consultar',
-      'como mexer',
-      'passo a passo',
-      'dica',
-      'dicas',
-      'orientação',
-      'orientações',
-      'instruções',
-      'selecione uma instituição',
-      'escolha uma instituição'
-    ];
-
-    document.querySelectorAll('section, article, aside, .card, .principal-card, .principal-nota, .portal-disclaimer').forEach((bloco) => {
-      const texto = bloco.textContent?.trim().toLowerCase() || '';
-      if (!texto) return;
-      if (texto.length > 900) return;
-      if (termosInstrucao.some((termo) => texto.includes(termo))) {
-        bloco.classList.add('is-instruction-reduced');
-      }
-    });
-  }
-
-  function reorganizarSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    const nav = sidebar?.querySelector('.sidebar-nav');
-    if (!sidebar || !nav || sidebar.dataset.sidebarOptimized === 'true') return;
-
-    const ordem = [
-      'menu-principal',
-      'menu-remuneracao',
-      'menu-comparar',
-      'menu-concursos',
-      'menu-brasoes',
-      'menu-direitos',
-      'menu-poderes',
-      'menu-acoes',
-      'menu-associacoes',
-      'menu-produtos',
-      'menu-parceiros'
-    ];
-
-    const rotulosGrupo = {
-      consultas: 'Consultas',
-      carreira: 'Carreira e dados',
-      apoio: 'Direitos e apoio',
-      extras: 'Produtos e parceiros'
-    };
-
-    const grupos = {
-      consultas: ['menu-principal', 'menu-remuneracao', 'menu-comparar'],
-      carreira: ['menu-concursos', 'menu-brasoes'],
-      apoio: ['menu-direitos', 'menu-poderes', 'menu-acoes', 'menu-associacoes'],
-      extras: ['menu-produtos', 'menu-parceiros']
-    };
-
-    const links = new Map();
-    ordem.forEach((id) => {
-      const link = nav.querySelector(`#${id}`);
-      if (link) links.set(id, link);
-    });
-
-    nav.replaceChildren();
-
-    Object.entries(grupos).forEach(([grupo, ids]) => {
-      const existentes = ids.map((id) => links.get(id)).filter(Boolean);
-      if (!existentes.length) return;
-
-      const wrapper = document.createElement('div');
-      wrapper.className = 'sidebar-nav-group';
-      wrapper.setAttribute('aria-label', rotulosGrupo[grupo]);
-
-      const titulo = document.createElement('div');
-      titulo.className = 'sidebar-nav-title';
-      titulo.textContent = rotulosGrupo[grupo];
-      wrapper.appendChild(titulo);
-
-      existentes.forEach((link) => wrapper.appendChild(link));
-      nav.appendChild(wrapper);
-    });
-
-    const social = sidebar.querySelector('.sidebar-social');
-    const primeiroAnuncio = sidebar.querySelector('.ad-slot--sidebar');
-    if (social && primeiroAnuncio) {
-      sidebar.insertBefore(social, primeiroAnuncio);
+    if (document.querySelector(`script[src="${src}"]`)) {
+      carregarScriptSequencial(index + 1);
+      return;
     }
 
-    sidebar.dataset.sidebarOptimized = 'true';
+    const script = document.createElement('script');
+    script.src = src;
+    script.defer = true;
+    script.dataset.unisegComplemento = 'true';
+    script.onload = () => carregarScriptSequencial(index + 1);
+    document.body.appendChild(script);
   }
 
-  function carregarScriptsExtras() {
-    scripts.forEach((src) => {
-      if (document.querySelector(`script[src="${src}"]`)) return;
-
-      const script = document.createElement('script');
-      script.src = src;
-      script.defer = true;
-      script.dataset.liquidGlassApp = 'true';
-      document.body.appendChild(script);
-    });
-  }
-
-  function aplicarTema() {
-    estilos.forEach((href) => {
-      if (document.querySelector(`link[href="${href}"]`)) return;
-
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = href;
-      link.dataset.liquidGlassApp = 'true';
-      document.head.appendChild(link);
-    });
-
-    ajustarTextosDoCabecalho();
-    removerSeletorDuplicadoDaHome();
-    observarSeletorDuplicadoDaHome();
-    substituirCardGratisDaHome();
-    reduzirInstrucoesForaDaHome();
-    reorganizarSidebar();
-    adicionarProdutosExtrasSidebar();
-    carregarScriptsExtras();
+  function aplicar() {
+    estilos.forEach(carregarCss);
+    carregarScriptSequencial();
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', aplicarTema, { once: true });
+    document.addEventListener('DOMContentLoaded', aplicar, { once: true });
   } else {
-    aplicarTema();
+    aplicar();
   }
 }());

@@ -1,19 +1,7 @@
 (function corrigirComparadorCarreirasFederais() {
   const FEDERAIS = [
-    {
-      inst: 'pf',
-      sigla: 'PF',
-      nome: 'Polícia Federal',
-      ramo: 'Polícia Federal',
-      ordem: 1
-    },
-    {
-      inst: 'prf',
-      sigla: 'PRF',
-      nome: 'Polícia Rodoviária Federal',
-      ramo: 'Rodoviária Federal',
-      ordem: 2
-    }
+    { inst: 'pf', sigla: 'PF', nome: 'Polícia Federal', ramo: 'Polícia Federal', ordem: 1 },
+    { inst: 'prf', sigla: 'PRF', nome: 'Polícia Rodoviária Federal', ramo: 'Rodoviária Federal', ordem: 2 }
   ];
 
   const PF_REMUNERACAO_2026 = [
@@ -36,10 +24,14 @@
     return inst === 'pf' || inst === 'prf';
   }
 
-  function ensureArrayGlobal(nome) {
-    const arr = window[nome];
-    if (!Array.isArray(arr)) return null;
-    return arr;
+  function getInstituicoesValidasArray() {
+    if (typeof INSTITUICOES_VALIDAS !== 'undefined' && Array.isArray(INSTITUICOES_VALIDAS)) return INSTITUICOES_VALIDAS;
+    if (Array.isArray(window.INSTITUICOES_VALIDAS)) return window.INSTITUICOES_VALIDAS;
+    return [];
+  }
+
+  function instValidaNoComparador(inst) {
+    return isFederal(inst) || getInstituicoesValidasArray().includes(inst);
   }
 
   function ensureFederaisBasicos() {
@@ -58,9 +50,10 @@
       }, HEADER_ESTADOS.federal || {});
     }
 
-    if (typeof INSTITUICOES_VALIDAS !== 'undefined' && Array.isArray(INSTITUICOES_VALIDAS)) {
+    const validas = getInstituicoesValidasArray();
+    if (validas.length) {
       FEDERAIS.forEach(({ inst }) => {
-        if (!INSTITUICOES_VALIDAS.includes(inst)) INSTITUICOES_VALIDAS.push(inst);
+        if (!validas.includes(inst)) validas.push(inst);
       });
     }
 
@@ -132,7 +125,7 @@
 
   function getInstituicoesComparadorFederalFix() {
     ensureFederaisBasicos();
-    const listaBase = Array.isArray(window.INSTITUICOES_VALIDAS) ? window.INSTITUICOES_VALIDAS.slice() : [];
+    const listaBase = getInstituicoesValidasArray().slice();
     FEDERAIS.forEach(({ inst }) => {
       if (!listaBase.includes(inst)) listaBase.push(inst);
     });
@@ -270,7 +263,7 @@
       .filter((check) => check.checked)
       .map((check) => check.value)
       .filter((inst, index, arr) => inst && arr.indexOf(inst) === index)
-      .filter((inst) => isFederal(inst) || (Array.isArray(window.INSTITUICOES_VALIDAS) && window.INSTITUICOES_VALIDAS.includes(inst)));
+      .filter(instValidaNoComparador);
   }
 
   function inicializarComparadorCarreirasFederalFix() {

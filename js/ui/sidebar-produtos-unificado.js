@@ -5,6 +5,8 @@
    ======================================================= */
 
 (function unificarProdutosSidebar() {
+  let timerAplicar;
+
   const PRODUTOS = [
     {
       titulo: 'Mochila Coban Tática 24 L',
@@ -159,8 +161,7 @@
     const sidebar = document.querySelector('.sidebar, #sidebar');
     if (!sidebar) return;
 
-    const antigos = sidebar.querySelectorAll('.ad-slot--sidebar, .sidebar-ad, .sidebar-extra-products, .sidebar-products-cta');
-    antigos.forEach(ocultar);
+    sidebar.querySelectorAll('.ad-slot--sidebar, .sidebar-ad, .sidebar-extra-products, .sidebar-products-cta').forEach(ocultar);
 
     let vitrine = sidebar.querySelector('.sidebar-products-unified');
     if (!vitrine) {
@@ -177,15 +178,31 @@
     }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', aplicar, { once: true });
-  } else {
-    aplicar();
+  function agendarAplicar(delay = 80) {
+    window.clearTimeout(timerAplicar);
+    timerAplicar = window.setTimeout(aplicar, delay);
   }
 
-  const observer = new MutationObserver(() => window.setTimeout(aplicar, 30));
-  observer.observe(document.documentElement, { childList: true, subtree: true });
-  window.setTimeout(aplicar, 250);
+  function observarSidebar() {
+    if (window.__unisegSidebarProdutosObserver) return;
+    const sidebar = document.querySelector('.sidebar, #sidebar');
+    if (!sidebar) return;
+    const observer = new MutationObserver(() => agendarAplicar(100));
+    observer.observe(sidebar, { childList: true, subtree: true });
+    window.__unisegSidebarProdutosObserver = observer;
+  }
+
+  function iniciar() {
+    aplicar();
+    observarSidebar();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', iniciar, { once: true });
+  } else {
+    iniciar();
+  }
+
+  window.setTimeout(iniciar, 250);
   window.setTimeout(aplicar, 900);
-  window.setTimeout(aplicar, 1800);
 }());

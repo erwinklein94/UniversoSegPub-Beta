@@ -199,3 +199,98 @@
     letter-spacing: .07em !important;
   }
 }
+
+/* ============================================================
+   Correção do cabeçalho do portal
+   - Não quebra UNIVERSO no meio da palavra.
+   - Mantém Segurança Pública em linhas normais, sem sobreposição.
+   - Remove o cartão decorativo amarelo sobre o resumo do portal.
+   ============================================================ */
+
+body[data-inst="portal"] .site-header .header-current-copy {
+  overflow: visible !important;
+  align-content: center !important;
+  gap: clamp(5px, .7vw, 9px) !important;
+}
+
+body[data-inst="portal"] .site-header #header-active-sigla,
+body[data-inst="portal"] .site-header #header-active-name {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+  overflow-wrap: normal !important;
+  word-break: keep-all !important;
+  hyphens: none !important;
+  text-overflow: clip !important;
+}
+
+body[data-inst="portal"] .site-header #header-active-sigla {
+  display: block !important;
+  width: auto !important;
+  white-space: nowrap !important;
+  font-size: clamp(32px, 2.55vw, 40px) !important;
+  line-height: 1.04 !important;
+  letter-spacing: .03em !important;
+}
+
+body[data-inst="portal"] .site-header #header-active-name {
+  display: block !important;
+  width: min(100%, 16ch) !important;
+  white-space: normal !important;
+  font-size: clamp(1.05rem, 1.28vw, 1.34rem) !important;
+  line-height: 1.16 !important;
+  letter-spacing: .01em !important;
+}
+
+body[data-inst="portal"] .site-header .header-facts-panel,
+body[data-inst="portal"] .site-header .header-facts-head {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+body[data-inst="portal"] .site-header .header-facts-panel > *,
+body[data-inst="portal"] .site-header .header-facts-head > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+body[data-inst="portal"] .site-header::after,
+body[data-inst="portal"] .site-header .header-institution-card::before,
+body[data-inst="portal"] .site-header .header-institution-card::after,
+body[data-inst="portal"] .site-header .header-facts-panel::before,
+body[data-inst="portal"] .site-header .header-facts-panel::after,
+body[data-inst="portal"] .site-header .header-facts-head::before,
+body[data-inst="portal"] .site-header .header-facts-head::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 760px) {
+  body[data-inst="portal"] .site-header .header-current-copy {
+    max-width: min(74%, 260px) !important;
+  }
+
+  body[data-inst="portal"] .site-header #header-active-sigla {
+    font-size: clamp(31px, 8.8vw, 38px) !important;
+    line-height: 1.05 !important;
+  }
+
+  body[data-inst="portal"] .site-header #header-active-name {
+    width: min(100%, 12ch) !important;
+    font-size: clamp(1rem, 4.25vw, 1.22rem) !important;
+    line-height: 1.16 !important;
+  }
+}
+
+@media (max-width: 390px) {
+  body[data-inst="portal"] .site-header .header-current-copy {
+    max-width: min(72%, 228px) !important;
+  }
+
+  body[data-inst="portal"] .site-header #header-active-sigla {
+    font-size: clamp(29px, 8.2vw, 34px) !important;
+  }
+}

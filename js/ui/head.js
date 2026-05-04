@@ -64,7 +64,8 @@ function carregarImagemProduto(img) {
     'css/sidebar-optimized.css?v=20260504sidebar1',
     'css/sidebar-deduplicate-ads.css?v=20260504dedupe1',
     'css/produtos-mobile-grid.css?v=20260504prodgrid1',
-    'css/reduce-instructions.css?v=20260504instructions1'
+    'css/reduce-instructions.css?v=20260504instructions1',
+    'css/home-hero-title-size.css?v=20260504herotitle1'
   ];
 
   function ajustarTextosDoCabecalho() {

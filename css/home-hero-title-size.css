@@ -1,0 +1,18 @@
+/* ============================================================
+   UniSegPub — Título principal da Home 20% menor
+   Texto: "Consulte remuneração, direitos, concursos..."
+   ============================================================ */
+
+body[data-page="principal"] .principal-hero .principal-title,
+.page-principal #page-principal .principal-hero .principal-title {
+  font-size: clamp(27.2px, 4vw, 46.4px) !important;
+  line-height: 1.04 !important;
+}
+
+@media (max-width: 760px) {
+  body[data-page="principal"] .principal-hero .principal-title,
+  .page-principal #page-principal .principal-hero .principal-title {
+    font-size: clamp(25.6px, 10.4vw, 41.6px) !important;
+    line-height: 1.02 !important;
+  }
+}

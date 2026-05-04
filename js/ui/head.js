@@ -75,7 +75,8 @@ function carregarImagemProduto(img) {
   ];
 
   const scripts = [
-    'js/ui/header-emblem-zoom.js?v=20260504emblemzoom1'
+    'js/ui/header-emblem-zoom.js?v=20260504emblemzoom1',
+    'js/ui/sidebar-product-thumbs.js?v=20260504thumbs1'
   ];
 
   function ajustarTextosDoCabecalho() {

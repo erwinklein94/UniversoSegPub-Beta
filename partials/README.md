@@ -43,3 +43,32 @@ python scripts/build-pilot-anuncie.py --write
 
 Nenhuma outra página foi migrada nesta etapa.
 
+## Expansão do padrão piloto para as demais páginas
+
+Após validação do piloto em `anuncie.html`, o mesmo padrão foi aplicado nas demais páginas públicas, uma por vez.
+
+Arquivos principais:
+
+- `src/pages/*.template.html`
+- `partials/pages/<pagina>/*.html`
+- `scripts/build-static-pages.py`
+
+Para validar todas as páginas com template:
+
+```bash
+python scripts/build-static-pages.py --check
+```
+
+Para validar uma página específica:
+
+```bash
+python scripts/build-static-pages.py --check remuneracao
+```
+
+Para regenerar uma página específica:
+
+```bash
+python scripts/build-static-pages.py --write remuneracao
+```
+
+O HTML público continua estático. Esta etapa não migra para framework, não usa `fetch`, não muda CSS, não muda JavaScript funcional e não altera o comportamento principal do site.

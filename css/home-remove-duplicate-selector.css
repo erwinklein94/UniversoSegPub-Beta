@@ -1,0 +1,11 @@
+/* ============================================================
+   UniSegPub — Remove seletor duplicado da página inicial
+   A Home usa somente a caixa de instituição integrada ao cabeçalho.
+   ============================================================ */
+
+body[data-page="principal"] main :is(.inst-selector, .header-inst-selector, .field, .card, .principal-card, .consulta-instituicao-card):has(select[id*="instituicao"]),
+body[data-page="principal"] #page-principal :is(.inst-selector, .header-inst-selector, .field, .card, .principal-card, .consulta-instituicao-card):has(select[id*="instituicao"]),
+body[data-page="principal"] main select[id*="instituicao"]:not(#instituicao_header),
+body[data-page="principal"] #page-principal select[id*="instituicao"]:not(#instituicao_header) {
+  display: none !important;
+}

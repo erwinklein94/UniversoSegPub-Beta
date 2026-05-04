@@ -30,10 +30,14 @@
 <link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260503headerportal1" rel="stylesheet"/>
 <!-- BLOCO 01.6 — Ajuste da vitrine da aba Produtos -->
 <style>
+  .page-produtos #page-produtos {
+    max-width: min(1480px, calc(100% - 40px)) !important;
+  }
+
   .page-produtos #page-produtos .produtos-vitrine {
     display: grid !important;
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 20px !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 18px !important;
     align-items: stretch !important;
     margin-bottom: 24px;
   }
@@ -106,9 +110,9 @@
 
   .page-produtos #page-produtos .cursos-preparatorios-geral {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 340px)) !important;
-    justify-content: start !important;
-    gap: 20px !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    justify-content: stretch !important;
+    gap: 18px !important;
     margin: 0 0 20px !important;
     opacity: 1 !important;
     visibility: visible !important;
@@ -154,14 +158,27 @@
     margin-top: 0;
   }
 
-  @media (max-width: 980px) {
-    .page-produtos #page-produtos .produtos-vitrine {
-      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  @media (max-width: 1280px) {
+    .page-produtos #page-produtos .produtos-vitrine,
+    .page-produtos #page-produtos .cursos-preparatorios-geral {
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .page-produtos #page-produtos .produtos-vitrine,
+    .page-produtos #page-produtos .cursos-preparatorios-geral {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     }
   }
 
   @media (max-width: 760px) {
-    .page-produtos #page-produtos .produtos-vitrine {
+    .page-produtos #page-produtos {
+      max-width: calc(100% - 24px) !important;
+    }
+
+    .page-produtos #page-produtos .produtos-vitrine,
+    .page-produtos #page-produtos .cursos-preparatorios-geral {
       grid-template-columns: 1fr !important;
     }
   }

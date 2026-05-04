@@ -101,9 +101,14 @@
       .sidebar-products-unified-body strong{font-family:'Roboto Condensed',sans-serif;font-size:.94rem;font-weight:800;line-height:1.08;color:inherit;text-transform:none;letter-spacing:0}
       .sidebar-products-unified-body small{font-size:.78rem;line-height:1.18;opacity:.78;color:inherit}
       .sidebar-products-unified-cta{width:max-content;min-width:58px;margin-top:3px;padding:6px 12px;border-radius:999px;background:#ffd21f;color:#111;font-family:'Oswald',sans-serif;font-size:.72rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;line-height:1}
+      .sidebar-products-more-card{grid-template-columns:1fr!important;text-align:center;min-height:94px;background:linear-gradient(135deg,rgba(255,210,31,.18),rgba(255,255,255,.06));border-color:rgba(255,210,31,.42)}
+      .sidebar-products-more-card .sidebar-products-unified-body{align-items:center;gap:7px}
+      .sidebar-products-more-card strong{font-size:1rem!important;letter-spacing:.03em;text-transform:uppercase}
+      .sidebar-products-more-card small{max-width:260px;opacity:.86}
+      .sidebar-products-more-card .sidebar-products-unified-cta{font-size:.78rem;padding:8px 16px}
       .sidebar-products-unified-note{margin:12px 2px 0;font-size:.76rem;line-height:1.25;opacity:.72;text-align:center}
       .sidebar .ad-slot--sidebar[hidden],.sidebar .sidebar-ad[hidden],.sidebar .sidebar-extra-products[hidden],.sidebar .sidebar-products-cta[hidden]{display:none!important}
-      @media (max-width:760px){.sidebar-products-unified{padding:12px}.sidebar-products-unified-card{grid-template-columns:70px minmax(0,1fr);gap:11px;min-height:108px}.sidebar-products-unified-thumb{width:70px;height:70px}.sidebar-products-unified-body strong{font-size:.92rem}.sidebar-products-unified-body small{font-size:.76rem}}
+      @media (max-width:760px){.sidebar-products-unified{padding:12px}.sidebar-products-unified-card{grid-template-columns:70px minmax(0,1fr);gap:11px;min-height:108px}.sidebar-products-unified-thumb{width:70px;height:70px}.sidebar-products-unified-body strong{font-size:.92rem}.sidebar-products-unified-body small{font-size:.76rem}.sidebar-products-more-card{grid-template-columns:1fr!important}}
     `;
     document.head.appendChild(style);
   }
@@ -124,12 +129,25 @@
     `;
   }
 
+  function maisProdutosHtml() {
+    return `
+      <a class="sidebar-products-unified-card sidebar-products-more-card" href="produtos.html" aria-label="Ver mais produtos do site">
+        <span class="sidebar-products-unified-body">
+          <strong>Ver mais produtos do site</strong>
+          <small>Abra a vitrine completa com cursos, livros, equipamentos e itens úteis para estudo, treino e rotina operacional.</small>
+          <span class="sidebar-products-unified-cta">Abrir vitrine</span>
+        </span>
+      </a>
+    `;
+  }
+
   function vitrineHtml() {
     return `
       <section class="sidebar-products-unified" aria-label="Produtos">
         <h2 class="sidebar-products-unified-title">Produtos</h2>
         <div class="sidebar-products-unified-list">
           ${PRODUTOS.map(cardHtml).join('')}
+          ${maisProdutosHtml()}
         </div>
         <p class="sidebar-products-unified-note">Links podem ser comerciais ou afiliados. Confira a página do produto antes de comprar.</p>
       </section>

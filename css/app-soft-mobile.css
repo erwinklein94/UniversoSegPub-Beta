@@ -1919,3 +1919,77 @@ body[data-page="principal"] .header-institution-card .header-inst-selector--home
   }
 }
 
+
+/* Ajuste: cabeçalho institucional com estrutura visual alinhada ao cabeçalho da página inicial.
+   Mantém o conteúdo institucional e usa bandeira/identidade da instituição como fundo, sem logoleão. */
+@media (min-width: 1041px) {
+  body:not([data-inst="portal"]) .header-institution-card {
+    min-height: 0 !important;
+  }
+
+  body:not([data-inst="portal"]) .header-institution-card::before {
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    background-image:
+      linear-gradient(90deg,
+        rgba(4, 6, 11, 0.36) 0%,
+        rgba(4, 6, 11, 0.18) 38%,
+        rgba(4, 6, 11, 0.56) 72%,
+        rgba(4, 6, 11, 0.82) 100%),
+      linear-gradient(180deg,
+        rgba(4, 6, 11, 0.08) 0%,
+        rgba(4, 6, 11, 0.12) 48%,
+        rgba(4, 6, 11, 0.58) 100%),
+      var(--header-hero-image) !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    filter: saturate(1.06) contrast(1.06) brightness(0.72) !important;
+    opacity: 0.92 !important;
+  }
+
+  body:not([data-inst="portal"]) .header-institution-main {
+    grid-template-columns: minmax(420px, 0.96fr) minmax(500px, 1.04fr) !important;
+    min-height: clamp(286px, 25vw, 350px) !important;
+    gap: clamp(18px, 2.2vw, 28px) !important;
+    align-items: stretch !important;
+  }
+
+  body:not([data-inst="portal"]) .header-current-identity {
+    min-height: clamp(286px, 25vw, 350px) !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: clamp(16px, 1.9vw, 24px) !important;
+    padding: clamp(28px, 4vw, 52px) 8px clamp(26px, 3vw, 38px) clamp(6px, 1vw, 12px) !important;
+  }
+
+  body:not([data-inst="portal"]) .header-current-identity::before {
+    left: -24px !important;
+    right: 0 !important;
+    bottom: 12px !important;
+    height: 62% !important;
+    border-radius: 30px !important;
+    background: linear-gradient(90deg, rgba(0,0,0,.62), rgba(0,0,0,.28), rgba(0,0,0,.04)) !important;
+    filter: blur(8px) !important;
+    opacity: .78 !important;
+  }
+
+  body:not([data-inst="portal"]) .current-flag-frame.institution-logo-frame {
+    width: clamp(142px, 13vw, 186px) !important;
+    height: clamp(142px, 13vw, 186px) !important;
+    min-width: clamp(142px, 13vw, 186px) !important;
+    min-height: clamp(142px, 13vw, 186px) !important;
+  }
+
+  body:not([data-inst="portal"]) .header-facts-panel {
+    align-self: center !important;
+    padding: clamp(12px, 1.15vw, 15px) !important;
+    border-radius: 20px !important;
+  }
+}

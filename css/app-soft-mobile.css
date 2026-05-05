@@ -1849,3 +1849,20 @@ html[data-theme="dark"] .sidebar-product-card {
   border-color: rgba(255,255,255,.10) !important;
 }
 
+
+/* Ajuste desktop: faz o logoleao preencher todo o cabeçalho sem alterar a altura. */
+@media (min-width: 1041px) {
+  body[data-inst="portal"] .header-institution-card::before,
+  .header-institution-card.header-portal-home::before {
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+}

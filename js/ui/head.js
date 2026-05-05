@@ -104,6 +104,61 @@ body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact-
   document.head.appendChild(style);
 })();
 
+(function aplicarMenuInferiorMobileMesmoTamanho(){
+  if (document.getElementById('usp-mobile-bottom-menu-size-style')) return;
+
+  const style = document.createElement('style');
+  style.id = 'usp-mobile-bottom-menu-size-style';
+  style.textContent = `
+/* Ajuste visual mobile: botão Menu da barra inferior com o mesmo tamanho dos demais. */
+@media (max-width: 760px) {
+  .app-bottom-nav .menu-btn.app-bottom-item {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    height: 62px !important;
+    min-height: 62px !important;
+    aspect-ratio: auto !important;
+    padding: 7px 4px !important;
+    display: grid !important;
+    place-items: center !important;
+    align-content: center !important;
+    gap: 3px !important;
+    border-radius: 17px !important;
+  }
+
+  .app-bottom-nav .menu-btn.app-bottom-item .app-bottom-icon,
+  .app-bottom-nav .menu-btn.app-bottom-item .app-bottom-label {
+    display: block !important;
+  }
+
+  .app-bottom-nav .menu-btn.app-bottom-item .app-bottom-icon {
+    font-size: 22px !important;
+    line-height: 1 !important;
+  }
+
+  .app-bottom-nav .menu-btn.app-bottom-item .app-bottom-label {
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .app-bottom-nav .menu-btn.app-bottom-item {
+    height: 62px !important;
+    min-height: 62px !important;
+  }
+
+  .app-bottom-nav .menu-btn.app-bottom-item .app-bottom-icon {
+    font-size: 20px !important;
+  }
+}
+`;
+  document.head.appendChild(style);
+})();
+
 function carregarImagemProduto(img) {
   if (!img) return;
 

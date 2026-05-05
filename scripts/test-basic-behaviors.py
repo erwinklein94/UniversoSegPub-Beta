@@ -536,6 +536,25 @@ def test_produtos_livros_ebooks_json_contract() -> None:
         assert_true((ROOT / src).is_file(), f"Produto {index} do JSON aponta imagem ausente: {src}")
 
 
+def test_produtos_mobile_vitrine_contract() -> None:
+    html = read_text("produtos.html")
+    head_partial = read_text("partials/pages/produtos/head.html")
+    render_text = read_text("js/pages/produtos-render.js")
+    produtos_data = read_text("js/data/produtos-data.js")
+    livros_json = read_text("js/data/produtos-livros-ebooks.json")
+
+    for source_name, source in (("produtos.html", html), ("partials/pages/produtos/head.html", head_partial)):
+        assert_true("@media (max-width: 760px)" in source, f"{source_name}: regra mobile da vitrine ausente")
+        assert_true("grid-template-columns: repeat(2, minmax(0, 1fr))" in source, f"{source_name}: vitrine mobile deve usar 2 colunas")
+        assert_true("-webkit-line-clamp: 2" in source, f"{source_name}: textos mobile devem estar limitados")
+        assert_true(".descricao-afiliado" in source and "display: none" in source, f"{source_name}: aviso afiliado deve ficar oculto nos cards mobile")
+
+    assert_true("produto.cta || 'Ver na loja'" in render_text, "produtos-render.js: CTA padrão deve ser Ver na loja")
+    assert_true('"cta": "Comprar"' not in produtos_data, "produtos-data.js ainda contém CTA Comprar")
+    assert_true('"cta": "Comprar"' not in livros_json, "produtos-livros-ebooks.json ainda contém CTA Comprar")
+    assert_true(">Comprar<" not in html, "produtos.html ainda contém botão visível Comprar")
+
+
 def test_templates_generate_current_html() -> None:
     script = ROOT / "scripts" / "build-static-pages.py"
     if not script.is_file():
@@ -599,6 +618,7 @@ TESTS = [
     ("JSON e imagens de brasões", test_brasoes_json_and_images),
     ("categorias de produtos", test_produtos_data_matches_html_categories),
     ("JSON de livros/e-books com fallback", test_produtos_livros_ebooks_json_contract),
+    ("vitrine mobile de produtos", test_produtos_mobile_vitrine_contract),
     ("templates geram HTML atual", test_templates_generate_current_html),
     ("sitemap e robots", test_sitemap_and_robots),
     ("nomes web sem caracteres arriscados", test_no_risky_web_filenames),

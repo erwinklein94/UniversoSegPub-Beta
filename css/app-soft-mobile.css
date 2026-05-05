@@ -340,6 +340,7 @@ textarea {
 }
 
 .principal-title {
+  font-size: clamp(27.2px, 4vw, 46.4px) !important;
   letter-spacing: -0.03em !important;
 }
 
@@ -648,7 +649,7 @@ footer .footer-disclaimer strong {
   }
 
   .principal-title {
-    font-size: clamp(32px, 13vw, 52px) !important;
+    font-size: clamp(25.6px, 10.4vw, 41.6px) !important;
   }
 
   .principal-actions {

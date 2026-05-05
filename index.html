@@ -27,7 +27,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
-<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260503headerportal1" rel="stylesheet"/>
+<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260503headerhome2" rel="stylesheet"/>
 <!-- BLOCO SEO GERADO --
      Canonical absoluto, Open Graph, Twitter Card e JSON-LD.
      Gerado na revisão de manutenção.
@@ -152,33 +152,11 @@
 </div>
 </aside>
 </div>
-<div class="header-controls-grid">
-<div aria-label="Escolha rápida de instituição" class="header-inst-selector">
-<label for="instituicao_header">Consultar instituição</label>
-<select aria-label="Selecione a instituição no topo do site" id="instituicao_header">
-<option disabled="" selected="" value="">Escolha uma instituição</option>
+<div class="header-controls-grid header-controls-grid--home">
+<div aria-label="Escolha de instituição para o cabeçalho da página inicial" class="header-inst-selector header-inst-selector--home">
+<select aria-label="Escolha uma Instituição" id="instituicao_home">
+<option selected="" value="">Escolha uma Instituição</option>
 </select>
-</div>
-<div aria-label="Alternar entre instituição militar, bombeiros, civil e penal do estado selecionado" class="header-branch-switcher">
-<span>Carreira do estado</span>
-<div class="branch-buttons">
-<button aria-pressed="false" class="branch-option" data-branch="pm" disabled="" id="header-branch-pm" type="button">
-<strong id="header-pm-sigla">PM</strong>
-<small>Militar</small>
-</button>
-<button aria-pressed="false" class="branch-option" data-branch="bm" disabled="" id="header-branch-bm" type="button">
-<strong id="header-bm-sigla">CBM</strong>
-<small>Bombeiros</small>
-</button>
-<button aria-pressed="false" class="branch-option" data-branch="pc" disabled="" id="header-branch-pc" type="button">
-<strong id="header-pc-sigla">PC</strong>
-<small>Civil</small>
-</button>
-<button aria-pressed="false" class="branch-option" data-branch="pp" disabled="" id="header-branch-pp" type="button">
-<strong id="header-pp-sigla">PP</strong>
-<small>Penal</small>
-</button>
-</div>
 </div>
 </div>
 </section>
@@ -483,24 +461,6 @@
 </aside>
 <!-- BLOCO 03.5 — Toast/mensagem temporária controlada pelo JavaScript -->
 <div aria-live="polite" class="toast" id="toast" role="status"></div>
-<!-- BLOCO 03.6 — Seletor institucional exclusivo da página inicial -->
-<section aria-label="Escolha de instituição para o resumo do cabeçalho da página inicial" class="home-institution-selector-wrap">
-<div class="consulta-instituicao-card home-institution-selector" data-home-selector="principal">
-<div class="consulta-instituicao-texto">
-<span>Resumo da página inicial</span>
-<strong>Escolha uma instituição para ver no cabeçalho</strong>
-<small>Esta escolha muda apenas o cabeçalho da página inicial. Ao entrar em outra aba, o cabeçalho volta ao resumo do portal até você escolher uma instituição no seletor da própria aba.</small>
-</div>
-<div class="consulta-instituicao-grid consulta-instituicao-grid--home">
-<div class="field">
-<label for="instituicao_home">Instituição</label>
-<select aria-label="Escolha a instituição exibida no cabeçalho da página inicial" id="instituicao_home">
-<option selected="" value="">Resumo do portal</option>
-</select>
-</div>
-</div>
-</div>
-</section>
 <!-- BLOCO 04 — PÁGINA PRINCIPAL / RESUMO DO SITE -->
 <main class="page-section active" id="page-principal" role="main">
 <!-- BLOCO 04.1 — Hero inicial e botões principais -->

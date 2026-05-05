@@ -1866,3 +1866,56 @@ html[data-theme="dark"] .sidebar-product-card {
     mask-image: none !important;
   }
 }
+
+/* Página inicial: seletor de instituição integrado ao card do cabeçalho. */
+body[data-page="principal"] .header-institution-card .header-controls-grid--home {
+  display: grid !important;
+  grid-template-columns: minmax(220px, 420px) !important;
+  justify-content: start !important;
+  gap: 0 !important;
+  margin: 14px 0 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  z-index: 4 !important;
+}
+
+body[data-page="principal"] .header-institution-card .header-inst-selector--home {
+  display: block !important;
+  width: 100% !important;
+  max-width: 420px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  clip-path: none !important;
+}
+
+body[data-page="principal"] .header-institution-card .header-inst-selector--home select {
+  width: 100% !important;
+  min-height: 48px !important;
+  padding: 0 18px !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(255,255,255,.18) !important;
+  background: rgba(12,16,26,.84) !important;
+  color: #fff !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  letter-spacing: .2px !important;
+}
+
+body[data-page="principal"] .header-institution-card .header-inst-selector--home select:focus {
+  border-color: color-mix(in srgb, var(--vermelho) 70%, #fff) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--vermelho) 24%, transparent) !important;
+  outline: 0 !important;
+}
+
+@media (max-width: 640px) {
+  body[data-page="principal"] .header-institution-card .header-controls-grid--home,
+  body[data-page="principal"] .header-institution-card .header-inst-selector--home {
+    max-width: none !important;
+    width: 100% !important;
+  }
+}
+

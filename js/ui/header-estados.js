@@ -2995,7 +2995,7 @@ function prepararSelectInstituicaoHome() {
   if (primeiraOpcao) {
     primeiraOpcao.disabled = false;
     primeiraOpcao.selected = true;
-    primeiraOpcao.textContent = 'Resumo do portal';
+    primeiraOpcao.textContent = 'Escolha uma Instituição';
     primeiraOpcao.value = '';
   }
   seletor.value = '';

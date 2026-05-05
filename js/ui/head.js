@@ -153,6 +153,78 @@ body[data-page="principal"] .header-update-note.header-fact--dados-atualizados s
   document.head.appendChild(style);
 })();
 
+(function aplicarTamanhoBrasaoCabecalho(){
+  if (document.getElementById('usp-header-emblem-size-style')) return;
+
+  const style = document.createElement('style');
+  style.id = 'usp-header-emblem-size-style';
+  style.textContent = `
+/* Ajuste visual: brasão/logo do cabeçalho 2,5x maior, mantendo clique e sem distorção. */
+.site-header .header-current-identity {
+  align-items: center !important;
+  gap: clamp(14px, 2vw, 24px) !important;
+}
+
+.site-header .current-flag-frame,
+.site-header .current-flag-frame.brand-logo-frame,
+.site-header .current-flag-frame.institution-logo-frame {
+  width: clamp(132px, 13vw, 240px) !important;
+  height: clamp(132px, 13vw, 240px) !important;
+  min-width: clamp(132px, 13vw, 240px) !important;
+  min-height: clamp(132px, 13vw, 240px) !important;
+  flex: 0 0 clamp(132px, 13vw, 240px) !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+}
+
+.site-header .current-flag-frame img,
+.site-header .current-flag-frame.brand-logo-frame img,
+.site-header .current-flag-frame.institution-logo-frame img,
+.site-header img#header-active-flag {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  transform: none !important;
+}
+
+.site-header .header-current-copy {
+  min-width: 0 !important;
+}
+
+@media (max-width: 760px) {
+  .site-header .header-current-identity {
+    gap: 14px !important;
+  }
+
+  .site-header .current-flag-frame,
+  .site-header .current-flag-frame.brand-logo-frame,
+  .site-header .current-flag-frame.institution-logo-frame {
+    width: 150px !important;
+    height: 150px !important;
+    min-width: 150px !important;
+    min-height: 150px !important;
+    flex-basis: 150px !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .site-header .current-flag-frame,
+  .site-header .current-flag-frame.brand-logo-frame,
+  .site-header .current-flag-frame.institution-logo-frame {
+    width: 140px !important;
+    height: 140px !important;
+    min-width: 140px !important;
+    min-height: 140px !important;
+    flex-basis: 140px !important;
+  }
+}
+`;
+  document.head.appendChild(style);
+})();
+
 function carregarImagemProduto(img) {
   if (!img) return;
 

@@ -445,6 +445,18 @@ def test_script_order_contracts() -> None:
     )
 
 
+
+
+def test_sidebar_products_vitrine_contract() -> None:
+    for page in APP_PAGES:
+        html = read_text(page)
+        assert_true('class="sidebar-products-vitrine"' in html, f"{page}: vitrine de produtos da sidebar ausente")
+        assert_true('<strong>Produtos</strong>' in html, f"{page}: título Produtos da sidebar ausente")
+        assert_true(html.count('class="sidebar-product-card"') == 10, f"{page}: sidebar deve exibir 10 produtos")
+        assert_true('sidebar-product--featured' not in html, f"{page}: sidebar ainda possui produto em destaque")
+        assert_true(html.count('<em>Ver na loja</em>') == 10, f"{page}: cada produto da sidebar deve ter Ver na loja")
+        assert_true('class="sidebar-products-more" href="produtos.html"' in html, f"{page}: chamada para aba Produtos ausente")
+
 def test_static_data_contracts() -> None:
     for rel, snippets in STATIC_DATA_CONTRACTS.items():
         path = ROOT / rel
@@ -613,6 +625,7 @@ TESTS = [
     ("referências locais existem", test_local_references_exist),
     ("target=_blank protegido", test_target_blank_rel_noopener),
     ("ordem crítica de scripts", test_script_order_contracts),
+    ("vitrine de produtos na sidebar", test_sidebar_products_vitrine_contract),
     ("contratos de dados estáticos", test_static_data_contracts),
     ("sintaxe JS", test_js_syntax),
     ("JSON e imagens de brasões", test_brasoes_json_and_images),

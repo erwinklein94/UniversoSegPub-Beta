@@ -22,82 +22,76 @@ document.documentElement.setAttribute('data-theme', savedTheme);
   const style = document.createElement('style');
   style.id = 'usp-home-update-card-style';
   style.textContent = `
-/* Ajuste visual: indicador de atualização apenas no cabeçalho inicial do portal. */
+/* Ajuste visual: indicador de atualização solto, discreto e apenas na página inicial. */
 .header-update-note.header-fact--dados-atualizados {
   display: none !important;
 }
 
-body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados {
-  display: grid !important;
-  grid-template-columns: 1fr !important;
-  place-items: center !important;
-  gap: 4px !important;
-  width: clamp(64px, 5.6vw, 76px) !important;
-  min-width: clamp(64px, 5.6vw, 76px) !important;
-  aspect-ratio: 1 / 1 !important;
-  margin: 8px 0 0 auto !important;
-  padding: 8px 7px !important;
-  border: 1px solid var(--usp-summary-divider) !important;
-  border-radius: 16px !important;
-  background: var(--usp-summary-sheet-bg) !important;
-  box-shadow: none !important;
-  opacity: .94 !important;
+body[data-page="principal"] .header-update-note.header-fact--dados-atualizados {
+  position: fixed !important;
+  top: max(12px, env(safe-area-inset-top)) !important;
+  right: max(12px, env(safe-area-inset-right)) !important;
+  z-index: 140 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: 20px !important;
+  min-height: 20px !important;
+  aspect-ratio: auto !important;
+  margin: 0 !important;
+  padding: 2px 7px !important;
+  border: 1px solid rgba(255,255,255,.13) !important;
+  border-radius: 999px !important;
+  background: rgba(30,34,42,.72) !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,.22) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  opacity: .76 !important;
+  pointer-events: none !important;
   text-align: center !important;
 }
 
-body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados span {
-  display: block !important;
-  margin: 0 !important;
-  color: var(--usp-summary-muted) !important;
-  font-size: 6.4px !important;
-  font-weight: 800 !important;
-  line-height: 1.04 !important;
-  letter-spacing: .055em !important;
-  text-transform: uppercase !important;
+body[data-page="principal"] .header-update-note.header-fact--dados-atualizados span {
+  display: none !important;
 }
 
-body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados strong {
+body[data-page="principal"] .header-update-note.header-fact--dados-atualizados strong {
   display: block !important;
-  justify-self: center !important;
   color: #00c853 !important;
-  font-size: clamp(15px, 1.35vw, 18px) !important;
+  font-size: 10.5px !important;
   font-weight: 900 !important;
   line-height: 1 !important;
+  letter-spacing: .01em !important;
   white-space: nowrap !important;
 }
 
-@media (max-width: 820px) {
-  body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados {
-    width: 66px !important;
-    min-width: 66px !important;
-    margin-top: 7px !important;
-    padding: 7px 6px !important;
-    border-radius: 15px !important;
+@media (max-width: 760px) {
+  body[data-page="principal"] .header-update-note.header-fact--dados-atualizados {
+    top: calc(env(safe-area-inset-top) + 82px) !important;
+    right: 14px !important;
+    height: 18px !important;
+    min-height: 18px !important;
+    padding: 2px 6px !important;
+    opacity: .72 !important;
   }
 
-  body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados span {
-    font-size: 5.9px !important;
-  }
-
-  body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados strong {
-    font-size: 15px !important;
+  body[data-page="principal"] .header-update-note.header-fact--dados-atualizados strong {
+    font-size: 9.8px !important;
   }
 }
 
-@media (max-width: 480px) {
-  body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados {
-    width: 62px !important;
-    min-width: 62px !important;
-    padding: 6px 5px !important;
-    border-radius: 14px !important;
+@media (max-width: 390px) {
+  body[data-page="principal"] .header-update-note.header-fact--dados-atualizados {
+    right: 10px !important;
+    height: 17px !important;
+    min-height: 17px !important;
+    padding: 2px 5px !important;
   }
 
-  body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados span {
-    font-size: 5.5px !important;
-  }
-
-  body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados strong {
-    font-size: 14px !important;
+  body[data-page="principal"] .header-update-note.header-fact--dados-atualizados strong {
+    font-size: 9.2px !important;
   }
 }
 `;

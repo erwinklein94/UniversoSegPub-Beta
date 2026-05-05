@@ -16,6 +16,94 @@ window.gtag('event', 'conversion', {'send_to': 'AW-18121830612/GtZCCJSGh6McENThl
 const savedTheme = localStorage.getItem('theme') || 'dark';
 document.documentElement.setAttribute('data-theme', savedTheme);
 
+(function aplicarCardAtualizacaoHome(){
+  if (document.getElementById('usp-home-update-card-style')) return;
+
+  const style = document.createElement('style');
+  style.id = 'usp-home-update-card-style';
+  style.textContent = `
+/* Ajuste visual: indicador de atualização apenas no cabeçalho inicial do portal. */
+.header-update-note.header-fact--dados-atualizados {
+  display: none !important;
+}
+
+body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  place-items: center !important;
+  gap: 4px !important;
+  width: clamp(64px, 5.6vw, 76px) !important;
+  min-width: clamp(64px, 5.6vw, 76px) !important;
+  aspect-ratio: 1 / 1 !important;
+  margin: 8px 0 0 auto !important;
+  padding: 8px 7px !important;
+  border: 1px solid var(--usp-summary-divider) !important;
+  border-radius: 16px !important;
+  background: var(--usp-summary-sheet-bg) !important;
+  box-shadow: none !important;
+  opacity: .94 !important;
+  text-align: center !important;
+}
+
+body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados span {
+  display: block !important;
+  margin: 0 !important;
+  color: var(--usp-summary-muted) !important;
+  font-size: 6.4px !important;
+  font-weight: 800 !important;
+  line-height: 1.04 !important;
+  letter-spacing: .055em !important;
+  text-transform: uppercase !important;
+}
+
+body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados strong {
+  display: block !important;
+  justify-self: center !important;
+  color: #00c853 !important;
+  font-size: clamp(15px, 1.35vw, 18px) !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 820px) {
+  body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados {
+    width: 66px !important;
+    min-width: 66px !important;
+    margin-top: 7px !important;
+    padding: 7px 6px !important;
+    border-radius: 15px !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados span {
+    font-size: 5.9px !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados strong {
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados {
+    width: 62px !important;
+    min-width: 62px !important;
+    padding: 6px 5px !important;
+    border-radius: 14px !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados span {
+    font-size: 5.5px !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados strong {
+    font-size: 14px !important;
+  }
+}
+`;
+  document.head.appendChild(style);
+})();
+
 function carregarImagemProduto(img) {
   if (!img) return;
 

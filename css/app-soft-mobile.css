@@ -3374,3 +3374,241 @@ body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-p
     border-radius: 16px !important;
   }
 }
+
+
+/* ============================================================
+   Ajuste 2026-05-06F — Mobile: logo maior, atualização no topo
+   e botão Menu igual aos demais na barra inferior.
+   ============================================================ */
+@media (max-width: 760px) {
+  /* Cabeçalho mobile: cria espaço seguro para o card de atualização no canto superior direito. */
+  .header-institution-card {
+    position: relative !important;
+    padding-top: 78px !important;
+    padding-bottom: 16px !important;
+    overflow: hidden !important;
+  }
+
+  .header-institution-main {
+    align-items: start !important;
+    gap: 14px !important;
+  }
+
+  /* A imagem principal do cabeçalho fica maior no mobile, sem alterar o plano de fundo. */
+  body[data-page="principal"][data-inst="portal"] .header-current-identity,
+  body:not([data-inst="portal"]) .header-current-identity {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    min-height: clamp(258px, 72vw, 330px) !important;
+    gap: 14px !important;
+    padding: 4px 4px 18px !important;
+    text-align: left !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-current-copy,
+  body:not([data-inst="portal"]) .header-current-copy {
+    order: 1 !important;
+    width: min(100%, calc(100% - 92px)) !important;
+    max-width: calc(100% - 92px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 3px !important;
+    position: relative !important;
+    z-index: 4 !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-current-copy strong,
+  body:not([data-inst="portal"]) .header-current-copy strong {
+    font-size: clamp(32px, 12vw, 46px) !important;
+    line-height: .96 !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-current-copy p,
+  body:not([data-inst="portal"]) .header-current-copy p {
+    font-size: clamp(14px, 5vw, 20px) !important;
+    line-height: 1.08 !important;
+    max-width: 100% !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .current-flag-frame.brand-logo-frame,
+  body:not([data-inst="portal"]) .current-flag-frame.institution-logo-frame {
+    order: 2 !important;
+    width: clamp(168px, 52vw, 204px) !important;
+    height: clamp(168px, 52vw, 204px) !important;
+    min-width: clamp(168px, 52vw, 204px) !important;
+    min-height: clamp(168px, 52vw, 204px) !important;
+    border-radius: 30px !important;
+    padding: 8px !important;
+    position: relative !important;
+    z-index: 3 !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .current-flag-frame.brand-logo-frame img,
+  body:not([data-inst="portal"]) .current-flag-frame.institution-logo-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    border-radius: 23px !important;
+  }
+
+  /* O resumo deixa de ser referência de posicionamento para o card de atualização. */
+  .header-institution-card .header-facts-panel {
+    position: static !important;
+  }
+
+  body[data-page="principal"] .header-institution-card > .header-controls-grid--home {
+    position: static !important;
+    width: 0 !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Card "Dados de atualização do site" no canto superior direito do cabeçalho. */
+  .header-institution-card .header-update-note.header-fact--dados-atualizados,
+  body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home {
+    position: absolute !important;
+    top: 14px !important;
+    right: 14px !important;
+    z-index: 12 !important;
+    display: grid !important;
+    place-items: center !important;
+    gap: 3px !important;
+    width: 74px !important;
+    min-width: 74px !important;
+    height: 74px !important;
+    min-height: 74px !important;
+    aspect-ratio: 1 / 1 !important;
+    margin: 0 !important;
+    padding: 7px 6px !important;
+    border: 1px solid rgba(255,255,255,.18) !important;
+    border-radius: 18px !important;
+    background: linear-gradient(145deg, rgba(22,25,32,.92), rgba(8,10,15,.88)) !important;
+    box-shadow: 0 14px 32px rgba(0,0,0,.32), inset 0 1px 0 rgba(255,255,255,.09) !important;
+    text-align: center !important;
+    opacity: .98 !important;
+  }
+
+  .header-institution-card .header-update-note.header-fact--dados-atualizados span,
+  body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home span {
+    display: block !important;
+    margin: 0 !important;
+    color: rgba(255,255,255,.74) !important;
+    font-family: 'Roboto Condensed', sans-serif !important;
+    font-size: 6px !important;
+    font-weight: 900 !important;
+    line-height: 1.04 !important;
+    letter-spacing: .055em !important;
+    text-transform: uppercase !important;
+  }
+
+  .header-institution-card .header-update-note.header-fact--dados-atualizados strong,
+  body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home strong {
+    display: block !important;
+    color: #00d66f !important;
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+
+  html[data-theme="light"] .header-institution-card .header-update-note.header-fact--dados-atualizados,
+  html[data-theme="light"] body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home {
+    background: linear-gradient(145deg, rgba(255,255,255,.94), rgba(226,230,238,.92)) !important;
+    border-color: rgba(255,255,255,.72) !important;
+  }
+
+  html[data-theme="light"] .header-institution-card .header-update-note.header-fact--dados-atualizados span,
+  html[data-theme="light"] body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home span {
+    color: rgba(20,24,32,.64) !important;
+  }
+
+  /* Barra inferior mobile: o botão Menu passa a ter exatamente a mesma caixa dos demais botões. */
+  .app-bottom-nav {
+    align-items: stretch !important;
+  }
+
+  .app-bottom-nav .app-bottom-item,
+  .app-bottom-nav button.app-bottom-item.menu-btn {
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 62px !important;
+    min-height: 62px !important;
+    max-height: 62px !important;
+    margin: 0 !important;
+    padding: 7px 4px !important;
+    border-radius: 17px !important;
+    display: grid !important;
+    place-items: center !important;
+    align-content: center !important;
+    justify-content: center !important;
+    gap: 3px !important;
+    font: 700 10px/1.05 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+    letter-spacing: .01em !important;
+    text-transform: none !important;
+    overflow: hidden !important;
+  }
+
+  .app-bottom-nav button.app-bottom-item.menu-btn .app-bottom-icon,
+  .app-bottom-nav button.app-bottom-item.menu-btn .app-bottom-label {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: inherit !important;
+    box-shadow: none !important;
+    line-height: 1 !important;
+    text-align: center !important;
+  }
+
+  .app-bottom-nav button.app-bottom-item.menu-btn .app-bottom-icon {
+    font-size: 22px !important;
+  }
+
+  .app-bottom-nav button.app-bottom-item.menu-btn .app-bottom-label {
+    max-width: 100% !important;
+    font-size: 10px !important;
+    line-height: 1.05 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+}
+
+@media (max-width: 390px) {
+  body[data-page="principal"][data-inst="portal"] .current-flag-frame.brand-logo-frame,
+  body:not([data-inst="portal"]) .current-flag-frame.institution-logo-frame {
+    width: clamp(156px, 51vw, 184px) !important;
+    height: clamp(156px, 51vw, 184px) !important;
+    min-width: clamp(156px, 51vw, 184px) !important;
+    min-height: clamp(156px, 51vw, 184px) !important;
+  }
+
+  .header-institution-card .header-update-note.header-fact--dados-atualizados,
+  body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home {
+    width: 68px !important;
+    min-width: 68px !important;
+    height: 68px !important;
+    min-height: 68px !important;
+    top: 12px !important;
+    right: 12px !important;
+  }
+
+  .app-bottom-nav .app-bottom-item,
+  .app-bottom-nav button.app-bottom-item.menu-btn {
+    height: 58px !important;
+    min-height: 58px !important;
+    max-height: 58px !important;
+  }
+}

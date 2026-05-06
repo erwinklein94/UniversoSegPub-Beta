@@ -2495,3 +2495,486 @@ body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-p
 .principal-grid.conteudos-parceiros a:hover * {
   text-decoration: none !important;
 }
+
+
+/* ============================================================
+   Ajuste 2026-05-06D — Comparador de carreiras simplificado
+   ============================================================ */
+
+#page-comparar .comparador-simples-page {
+  display: grid !important;
+  gap: 16px !important;
+  padding: clamp(16px, 2.2vw, 24px) !important;
+}
+
+.comparador-hero-simples,
+.comparador-controle-simples,
+.comparador-resultado-simples,
+.comparador-detalhes-tecnicos {
+  border: 1px solid var(--app-soft-border, rgba(255,255,255,.14)) !important;
+  border-radius: 22px !important;
+  background: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.035)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 12px 30px rgba(0,0,0,.12) !important;
+}
+
+.comparador-hero-simples {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  gap: 18px !important;
+  align-items: center !important;
+  padding: clamp(18px, 2vw, 24px) !important;
+  overflow: hidden !important;
+}
+
+.comparador-hero-copy h2 {
+  margin: 6px 0 8px !important;
+  font-size: clamp(30px, 4vw, 48px) !important;
+  line-height: .98 !important;
+  letter-spacing: -.02em !important;
+}
+
+.comparador-hero-copy p,
+.comparador-resultado-head p,
+.comparador-selecao-cabecalho small {
+  color: var(--text-muted) !important;
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+}
+
+.comparador-eyebrow {
+  display: inline-flex !important;
+  width: fit-content !important;
+  padding: 5px 9px !important;
+  border: 1px solid color-mix(in srgb, var(--vermelho) 40%, rgba(255,255,255,.18)) !important;
+  border-radius: 999px !important;
+  color: color-mix(in srgb, var(--vermelho) 78%, #ffffff) !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 900 !important;
+  letter-spacing: .12em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+}
+
+.comparador-hero-passos {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(92px, 1fr)) !important;
+  gap: 10px !important;
+}
+
+.comparador-passo {
+  display: grid !important;
+  gap: 7px !important;
+  justify-items: center !important;
+  min-width: 92px !important;
+  padding: 12px 10px !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 18px !important;
+  background: rgba(255,255,255,.055) !important;
+  text-align: center !important;
+}
+
+.comparador-passo strong {
+  display: grid !important;
+  place-items: center !important;
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 999px !important;
+  background: var(--vermelho) !important;
+  color: #fff !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+}
+
+.comparador-passo span {
+  color: var(--text-main) !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  text-transform: uppercase !important;
+}
+
+.comparador-controle-simples {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  gap: 14px !important;
+  align-items: end !important;
+  padding: 16px !important;
+}
+
+.comparador-filtros-simples {
+  display: grid !important;
+  grid-template-columns: minmax(260px, 1.2fr) minmax(180px, .55fr) !important;
+  gap: 12px !important;
+  align-items: end !important;
+}
+
+.comparador-controle-simples .field {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.comparador-controle-simples label {
+  display: block !important;
+  margin-bottom: 7px !important;
+  color: var(--text-main) !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+}
+
+.comparador-controle-simples input,
+.comparador-controle-simples select {
+  width: 100% !important;
+  min-height: 48px !important;
+  padding: 0 14px !important;
+  border-radius: 16px !important;
+}
+
+.comparador-acoes-simples {
+  display: flex !important;
+  gap: 8px !important;
+  justify-content: flex-end !important;
+  align-items: end !important;
+}
+
+.comparador-acoes-simples .btn-secondary {
+  min-height: 48px !important;
+  padding: 0 14px !important;
+  white-space: nowrap !important;
+}
+
+.comparador-selecao--simples {
+  margin: 0 !important;
+}
+
+.comparador-selecao--simples .comparador-select-panel {
+  padding: 16px !important;
+  border-radius: 22px !important;
+}
+
+.comparador-selecao-cabecalho {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 14px !important;
+  align-items: flex-start !important;
+  margin-bottom: 12px !important;
+}
+
+.comparador-selecao-cabecalho .comparador-select-label {
+  margin: 0 0 4px !important;
+  font-size: 14px !important;
+}
+
+.comparador-contador {
+  flex: 0 0 auto !important;
+  padding: 6px 10px !important;
+  border-radius: 999px !important;
+  background: var(--vermelho) !important;
+  color: #fff !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+}
+
+#page-comparar .comparador-check-list--simples {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  max-height: min(440px, 58vh) !important;
+  overflow: auto !important;
+  margin-top: 0 !important;
+  padding: 10px !important;
+  border-radius: 18px !important;
+}
+
+#page-comparar .comparador-check-list--simples .comparador-check-grupo {
+  align-content: start !important;
+  padding: 10px !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  border-radius: 16px !important;
+  background: rgba(255,255,255,.035) !important;
+}
+
+#page-comparar .comparador-check-list--simples .comparador-check-grupo + .comparador-check-grupo {
+  padding-top: 10px !important;
+  border-top: 1px solid rgba(255,255,255,.10) !important;
+}
+
+#page-comparar .comparador-check-list--simples .comparador-check-titulo {
+  margin-bottom: 4px !important;
+}
+
+#page-comparar .comparador-check-list--simples .comparador-check-option {
+  border-radius: 14px !important;
+}
+
+#page-comparar .comparador-check-option.is-hidden,
+#page-comparar .comparador-check-grupo.is-hidden {
+  display: none !important;
+}
+
+.comparador-lista-vazia {
+  margin-top: 10px !important;
+  padding: 14px !important;
+  border: 1px dashed var(--border-input) !important;
+  border-radius: 16px !important;
+  color: var(--text-muted) !important;
+  text-align: center !important;
+}
+
+.comparador-selecionadas {
+  margin-top: 12px !important;
+  padding: 12px 14px !important;
+  border-radius: 16px !important;
+}
+
+.comparador-resultado-simples {
+  padding: 16px !important;
+}
+
+.comparador-resultado-head {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+  align-items: flex-end !important;
+  margin-bottom: 12px !important;
+}
+
+.comparador-resultado-head h3 {
+  margin: 5px 0 0 !important;
+  font-size: clamp(22px, 2.4vw, 30px) !important;
+}
+
+#page-comparar .comparador-resumo-grid {
+  margin: 0 0 14px !important;
+}
+
+#page-comparar .comparador-cards {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  margin-top: 0 !important;
+}
+
+#page-comparar .comparador-card--simples {
+  padding: 16px !important;
+  border-radius: 20px !important;
+}
+
+.comparador-card-cabecalho {
+  display: flex !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  align-items: flex-start !important;
+  margin-bottom: 12px !important;
+}
+
+.comparador-card-cabecalho h3 {
+  margin: 0 !important;
+  font-size: 22px !important;
+  line-height: 1 !important;
+}
+
+.comparador-card-cabecalho p {
+  margin: 4px 0 0 !important;
+  color: var(--text-muted) !important;
+  font-size: 13px !important;
+  line-height: 1.3 !important;
+}
+
+.comparador-card-tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 5px !important;
+  justify-content: flex-end !important;
+}
+
+.comparador-card-metricas {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+}
+
+.comparador-card-metricas > div {
+  padding: 11px !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+  border-radius: 15px !important;
+  background: rgba(255,255,255,.045) !important;
+}
+
+.comparador-card-metricas span {
+  display: block !important;
+  margin-bottom: 4px !important;
+  color: var(--text-muted) !important;
+  font-size: 9.5px !important;
+  font-weight: 900 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+}
+
+.comparador-card-metricas strong {
+  display: block !important;
+  color: var(--text-main) !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 17px !important;
+  line-height: 1.12 !important;
+}
+
+.comparador-card-metricas small {
+  display: block !important;
+  margin-top: 4px !important;
+  color: var(--text-muted) !important;
+  font-size: 11px !important;
+  line-height: 1.25 !important;
+}
+
+.comparador-card-notas {
+  margin-top: 12px !important;
+}
+
+.comparador-card-notas p {
+  margin: 8px 0 0 !important;
+  color: var(--text-muted) !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+}
+
+.comparador-card-links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-top: 12px !important;
+}
+
+.comparador-card-links a {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 34px !important;
+  padding: 0 11px !important;
+  border: 1px solid color-mix(in srgb, var(--vermelho) 44%, rgba(255,255,255,.16)) !important;
+  border-radius: 999px !important;
+  background: color-mix(in srgb, var(--vermelho) 11%, transparent) !important;
+  text-decoration: none !important;
+}
+
+.comparador-detalhes-tecnicos {
+  margin-top: 14px !important;
+  overflow: hidden !important;
+}
+
+.comparador-detalhes-tecnicos summary {
+  cursor: pointer !important;
+  padding: 14px 16px !important;
+  color: var(--text-main) !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+}
+
+.comparador-detalhes-tecnicos .comparador-table-wrap {
+  border-radius: 0 0 18px 18px !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+}
+
+.comparador-vazio--simples {
+  display: grid !important;
+  gap: 5px !important;
+  padding: 18px !important;
+}
+
+.comparador-vazio--simples strong {
+  color: var(--text-main) !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 18px !important;
+}
+
+.comparador-vazio--simples span {
+  color: var(--text-muted) !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+}
+
+.comparador-aviso-final {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 1020px) {
+  .comparador-hero-simples,
+  .comparador-controle-simples,
+  .comparador-resultado-head {
+    grid-template-columns: 1fr !important;
+  }
+
+  .comparador-controle-simples {
+    align-items: stretch !important;
+  }
+
+  .comparador-acoes-simples {
+    justify-content: flex-start !important;
+  }
+
+  #page-comparar .comparador-check-list--simples {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 760px) {
+  #page-comparar .comparador-simples-page {
+    gap: 12px !important;
+    padding: 13px !important;
+  }
+
+  .comparador-hero-simples,
+  .comparador-controle-simples,
+  .comparador-resultado-simples,
+  .comparador-selecao--simples .comparador-select-panel {
+    padding: 13px !important;
+    border-radius: 18px !important;
+  }
+
+  .comparador-hero-passos,
+  .comparador-filtros-simples,
+  #page-comparar .comparador-cards,
+  .comparador-card-metricas {
+    grid-template-columns: 1fr !important;
+  }
+
+  .comparador-acoes-simples {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .comparador-acoes-simples .btn-secondary {
+    width: 100% !important;
+  }
+
+  .comparador-selecao-cabecalho,
+  .comparador-card-cabecalho,
+  .comparador-resultado-head {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .comparador-contador {
+    width: fit-content !important;
+  }
+
+  #page-comparar .comparador-check-list--simples {
+    max-height: 340px !important;
+    padding: 8px !important;
+  }
+}

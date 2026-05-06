@@ -2288,3 +2288,210 @@ body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-p
     font-size: 14px !important;
   }
 }
+
+
+/* ============================================================
+   Ajuste 2026-05-06B — refinamento desktop do cabeçalho
+   - home: logo maior, título acima da imagem e remoção do texto solto
+   - instituições: brasão maior, nome acima da imagem e remoção das referências
+   - ajuste da altura do card do cabeçalho sem mexer no plano de fundo
+   ============================================================ */
+@media (min-width: 1041px) {
+  /* Ajuste geral da altura do cabeçalho para aproximar a borda inferior do seletor. */
+  .header-institution-card {
+    min-height: auto !important;
+    padding-bottom: 14px !important;
+  }
+
+  .header-institution-main {
+    align-items: start !important;
+    min-height: 0 !important;
+    gap: clamp(16px, 1.8vw, 24px) !important;
+  }
+
+  .header-facts-panel {
+    align-self: start !important;
+  }
+
+  /* HOME */
+  body[data-page="principal"][data-inst="portal"] .header-institution-main {
+    grid-template-columns: minmax(360px, 0.88fr) minmax(520px, 1.12fr) !important;
+    min-height: 0 !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-current-identity {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    min-height: 0 !important;
+    gap: 16px !important;
+    padding: 18px 8px 8px 6px !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-current-identity::before {
+    bottom: 4px !important;
+    height: 52% !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-current-copy {
+    order: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+    max-width: 100% !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .current-flag-frame.brand-logo-frame {
+    order: 2 !important;
+    width: clamp(154px, 14vw, 184px) !important;
+    height: clamp(154px, 14vw, 184px) !important;
+    min-width: clamp(154px, 14vw, 184px) !important;
+    min-height: clamp(154px, 14vw, 184px) !important;
+    border-radius: 28px !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .current-flag-frame.brand-logo-frame img {
+    border-radius: 22px !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-current-copy strong {
+    font-size: clamp(46px, 4.8vw, 60px) !important;
+    line-height: .96 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-current-copy p {
+    max-width: 420px !important;
+    margin-top: 0 !important;
+    font-size: clamp(20px, 1.95vw, 26px) !important;
+    line-height: 1.04 !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    color: rgba(255,255,255,.96) !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] #header-desc,
+  body[data-page="principal"][data-inst="portal"] .header-current-copy small {
+    display: none !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-institution-card > .header-controls-grid--home {
+    margin-top: 10px !important;
+  }
+
+  /* INSTITUIÇÕES */
+  body:not([data-inst="portal"]) .header-institution-main {
+    grid-template-columns: minmax(370px, 0.88fr) minmax(520px, 1.12fr) !important;
+    min-height: 0 !important;
+  }
+
+  body:not([data-inst="portal"]) .header-current-identity {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    min-height: 0 !important;
+    gap: 16px !important;
+    padding: 18px 8px 8px 6px !important;
+  }
+
+  body:not([data-inst="portal"]) .header-current-identity::before {
+    bottom: 4px !important;
+    height: 52% !important;
+  }
+
+  body:not([data-inst="portal"]) .header-current-copy {
+    order: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body:not([data-inst="portal"]) .current-flag-frame.institution-logo-frame {
+    order: 2 !important;
+    width: clamp(164px, 15vw, 194px) !important;
+    height: clamp(164px, 15vw, 194px) !important;
+    min-width: clamp(164px, 15vw, 194px) !important;
+    min-height: clamp(164px, 15vw, 194px) !important;
+    border-radius: 28px !important;
+  }
+
+  body:not([data-inst="portal"]) .current-flag-frame.institution-logo-frame img {
+    border-radius: 22px !important;
+  }
+
+  body:not([data-inst="portal"]) .header-current-copy strong {
+    font-size: clamp(44px, 4.55vw, 58px) !important;
+    line-height: .96 !important;
+    letter-spacing: 1.5px !important;
+  }
+
+  body:not([data-inst="portal"]) .header-current-copy p {
+    max-width: 430px !important;
+    margin-top: 0 !important;
+    font-size: clamp(19px, 1.7vw, 25px) !important;
+    line-height: 1.08 !important;
+    font-weight: 800 !important;
+    color: rgba(255,255,255,.96) !important;
+  }
+
+  body:not([data-inst="portal"]) .header-facts-head {
+    margin-bottom: 8px !important;
+    padding-bottom: 8px !important;
+  }
+
+  body:not([data-inst="portal"]) .header-facts-head strong,
+  body:not([data-inst="portal"]) #header-resumo-atualizado,
+  body:not([data-inst="portal"]) .header-update-note.header-fact--dados-atualizados {
+    display: none !important;
+  }
+
+  body:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary {
+    margin-top: 10px !important;
+  }
+}
+
+
+/* ============================================================
+   Ajuste 2026-05-06C — home: textos, cards e rodapé
+   ============================================================ */
+
+/* Igualdade visual das siglas PF, PRF, PM, PC, PP, BM e GM. */
+.principal-stat--instituicoes strong {
+  display: block !important;
+  width: 100% !important;
+  font-size: inherit !important;
+  font-weight: 900 !important;
+  line-height: 1.08 !important;
+  letter-spacing: .02em !important;
+  white-space: normal !important;
+}
+
+/* Formatação normal: sem sublinhado nas áreas da página inicial. */
+.consultas-principais a,
+.consultas-principais a *,
+.conteudos-parceiros a,
+.conteudos-parceiros a *,
+.principal-grid.consultas-principais a,
+.principal-grid.consultas-principais a *,
+.principal-grid.conteudos-parceiros a,
+.principal-grid.conteudos-parceiros a * {
+  text-decoration: none !important;
+}
+
+.consultas-principais a:hover,
+.consultas-principais a:hover *,
+.conteudos-parceiros a:hover,
+.conteudos-parceiros a:hover *,
+.principal-grid.consultas-principais a:hover,
+.principal-grid.consultas-principais a:hover *,
+.principal-grid.conteudos-parceiros a:hover,
+.principal-grid.conteudos-parceiros a:hover * {
+  text-decoration: none !important;
+}

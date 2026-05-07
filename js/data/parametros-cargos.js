@@ -125,6 +125,26 @@ const CARGOS_PMERJ = [
   { val: "alesfo_rj",  text: "ALUNO ESFO — Aluno EsFO PMERJ",       padrao: 1141.48, oficial: false, gretPct: 1.225, ghpPct: 0,    retpFator: 0 }
 ];
 
+const CARGOS_BMRJ = [
+  // CBMERJ — Caderno de Remuneração RJ/SEDEC, janeiro/2026.
+  // Cálculo por parcelas: Soldo + GRET + GHP + GRAM; totais oficiais exibidos na aba de remuneração.
+  { val: "cel_bmrj",     text: "CEL BM — Coronel CBMERJ",                  padrao: 3270.72, oficial: true,  gretPct: 1.925, ghpPct: 1.60, retpFator: 0, fonteKey: 'bmrj', badge: 'SEDEC jan/2026' },
+  { val: "tencel_bmrj",  text: "TEN CEL BM — Tenente-Coronel CBMERJ",      padrao: 2943.64, oficial: true,  gretPct: 1.925, ghpPct: 1.60, retpFator: 0, fonteKey: 'bmrj', badge: 'SEDEC jan/2026' },
+  { val: "maj_bmrj",     text: "MAJ BM — Major CBMERJ",                    padrao: 2649.27, oficial: true,  gretPct: 1.925, ghpPct: 1.10, retpFator: 0, fonteKey: 'bmrj', badge: 'SEDEC jan/2026' },
+  { val: "cap_bmrj",     text: "CAP BM — Capitão CBMERJ",                  padrao: 2384.35, oficial: true,  gretPct: 1.500, ghpPct: 1.10, retpFator: 0, fonteKey: 'bmrj', badge: 'SEDEC jan/2026' },
+  { val: "1ten_bmrj",    text: "1º TEN BM — 1º Tenente CBMERJ",            padrao: 2145.59, oficial: true,  gretPct: 1.500, ghpPct: 1.10, retpFator: 0, fonteKey: 'bmrj', badge: 'SEDEC jan/2026' },
+  { val: "2ten_bmrj",    text: "2º TEN BM — 2º Tenente CBMERJ",            padrao: 1929.73, oficial: true,  gretPct: 1.500, ghpPct: 1.10, retpFator: 0, fonteKey: 'bmrj', badge: 'SEDEC jan/2026' },
+  { val: "asp_bmrj",     text: "ASP OF BM — Aspirante Oficial CBMERJ",     padrao: 1736.74, oficial: true,  gretPct: 1.500, ghpPct: 1.10, retpFator: 0, fonteKey: 'bmrj', badge: 'SEDEC jan/2026' },
+  { val: "subten_bmrj",  text: "SUBTEN BM — Subtenente CBMERJ",            padrao: 1736.74, oficial: false, gretPct: 1.500, ghpPct: 1.10, retpFator: 0, fonteKey: 'bmrj', badge: 'SEDEC jan/2026' },
+  { val: "1sgt_bmrj",    text: "1º SGT BM — 1º Sargento CBMERJ",           padrao: 1596.10, oficial: false, gretPct: 1.500, ghpPct: 1.10, retpFator: 0, fonteKey: 'bmrj', badge: 'SEDEC jan/2026' },
+  { val: "2sgt_bmrj",    text: "2º SGT BM — 2º Sargento CBMERJ",           padrao: 1448.93, oficial: false, gretPct: 1.500, ghpPct: 1.10, retpFator: 0, fonteKey: 'bmrj', badge: 'SEDEC jan/2026' },
+  { val: "3sgt_bmrj",    text: "3º SGT BM — 3º Sargento CBMERJ",           padrao: 1318.10, oficial: false, gretPct: 1.500, ghpPct: 1.10, retpFator: 0, fonteKey: 'bmrj', badge: 'SEDEC jan/2026' },
+  { val: "cabo_bmrj",    text: "CB BM — Cabo CBMERJ",                      padrao: 1141.48, oficial: false, gretPct: 1.500, ghpPct: 0.75, retpFator: 0, fonteKey: 'bmrj', badge: 'SEDEC jan/2026' },
+  { val: "sd_bmrj",      text: "SD BM — Soldado A/B/C CBMERJ",             padrao: 991.03,  oficial: false, selected: true, gretPct: 1.500, ghpPct: 0.75, retpFator: 0, fonteKey: 'bmrj', badge: 'SEDEC jan/2026' },
+  { val: "sdaluno_bmrj", text: "SD ALUNO BM — Soldado-Aluno CBMERJ",       padrao: 817.67,  oficial: false, gretPct: 1.225, ghpPct: 0,    retpFator: 0, fonteKey: 'bmrj', badge: 'SEDEC jan/2026' },
+  { val: "alesfo_bmrj",  text: "ALUNO ESFO BM — Aluno EsFO CBMERJ",        padrao: 1141.48, oficial: false, gretPct: 1.225, ghpPct: 0,    retpFator: 0, fonteKey: 'bmrj', badge: 'SEDEC jan/2026' }
+];
+
 const CARGOS_PCERJ = [
   // Tabela oficial do Caderno de Remuneração RJ — janeiro/2026, conforme Lei 11.003/2025.
   // Cálculo por parcelas: VB + AAP/Representação + GHP máxima + GATC quando aplicável.
@@ -172,6 +192,27 @@ const CARGOS_PMMG = [
   { val: "cabo_mg",    text: "CABO PM — Cabo PMMG",                  padrao: 5797.00,  oficial: false, retpFator: 0 },
   { val: "sd1_mg",     text: "SD 1ª CL — Soldado 1ª Classe PMMG",    padrao: 5372.35,  oficial: false, selected: true, retpFator: 0 },
   { val: "sd2_mg",     text: "SD 2ª CL — Soldado 2ª Classe PMMG",    padrao: 4596.31,  oficial: false, retpFator: 0 }
+];
+
+
+const CRITERIO_BMMG_2026 = 'Subsídio/remuneração bruta mensal por posto/graduação, com referência 2026. Linhas de Soldado 2ª Classe, Soldado 1ª Classe, Cadete e 2º Tenente conferidas nos editais CBMMG 09/2026 e 10/2026; demais postos seguem tabela MG/SEPLAG Grupo XI — Defesa Social e devem ser conferidos no contracheque.';
+const BENEF_BMMG_2026 = 'Ajuda de custo para alimentação por dia efetivamente trabalhado, abono fardamento e assistência médico-hospitalar, psicológica e odontológica quando previstos; benefícios, adicionais, diárias, indenizações, retroativos e parcelas pessoais não foram somados automaticamente.';
+const CARGOS_BMMG = [
+  { val: 'cel_bmmg',     text: 'CEL BM — Coronel CBMMG',                  padrao: 21635.64, oficial: true,  retpFator: 0, fonteKey: 'bmmg', criterio: CRITERIO_BMMG_2026, benefDesc: BENEF_BMMG_2026, badge: 'MG/SEPLAG 2026' },
+  { val: 'tencel_bmmg',  text: 'TEN CEL BM — Tenente-Coronel CBMMG',       padrao: 19515.61, oficial: true,  retpFator: 0, fonteKey: 'bmmg', criterio: CRITERIO_BMMG_2026, benefDesc: BENEF_BMMG_2026, badge: 'MG/SEPLAG 2026' },
+  { val: 'maj_bmmg',     text: 'MAJ BM — Major CBMMG',                    padrao: 17394.91, oficial: true,  retpFator: 0, fonteKey: 'bmmg', criterio: CRITERIO_BMMG_2026, benefDesc: BENEF_BMMG_2026, badge: 'MG/SEPLAG 2026' },
+  { val: 'cap_bmmg',     text: 'CAP BM — Capitão CBMMG',                  padrao: 16101.58, oficial: true,  retpFator: 0, fonteKey: 'bmmg', criterio: CRITERIO_BMMG_2026, benefDesc: BENEF_BMMG_2026, badge: 'MG/SEPLAG 2026' },
+  { val: '1ten_bmmg',    text: '1º TEN BM — 1º Tenente CBMMG',            padrao: 14324.95, oficial: true,  retpFator: 0, fonteKey: 'bmmg', criterio: CRITERIO_BMMG_2026, benefDesc: BENEF_BMMG_2026, badge: 'MG/SEPLAG 2026' },
+  { val: '2ten_bmmg',    text: '2º TEN BM — 2º Tenente CBMMG',            padrao: 11547.07, oficial: true,  retpFator: 0, fonteKey: 'bmmg', criterio: CRITERIO_BMMG_2026, benefDesc: BENEF_BMMG_2026, badge: 'Edital CFO 2027' },
+  { val: 'asp_bmmg',     text: 'ASP OF BM — Aspirante a Oficial CBMMG',   padrao: 10932.55, oficial: true,  retpFator: 0, fonteKey: 'bmmg', criterio: CRITERIO_BMMG_2026, benefDesc: BENEF_BMMG_2026, badge: 'MG/SEPLAG 2026' },
+  { val: 'cadete_bmmg',  text: 'CADETE BM — Cadete CFO CBMMG',            padrao: 7506.80,  oficial: true,  retpFator: 0, fonteKey: 'bmmg', criterio: CRITERIO_BMMG_2026, benefDesc: BENEF_BMMG_2026, badge: 'Edital CFO 2027' },
+  { val: 'subten_bmmg',  text: 'SUBTEN BM — Subtenente CBMMG',            padrao: 10932.55, oficial: false, retpFator: 0, fonteKey: 'bmmg', criterio: CRITERIO_BMMG_2026, benefDesc: BENEF_BMMG_2026, badge: 'MG/SEPLAG 2026' },
+  { val: '1sgt_bmmg',    text: '1º SGT BM — 1º Sargento CBMMG',           padrao: 9743.51,  oficial: false, retpFator: 0, fonteKey: 'bmmg', criterio: CRITERIO_BMMG_2026, benefDesc: BENEF_BMMG_2026, badge: 'MG/SEPLAG 2026' },
+  { val: '2sgt_bmmg',    text: '2º SGT BM — 2º Sargento CBMMG',           padrao: 8505.46,  oficial: false, retpFator: 0, fonteKey: 'bmmg', criterio: CRITERIO_BMMG_2026, benefDesc: BENEF_BMMG_2026, badge: 'MG/SEPLAG 2026' },
+  { val: '3sgt_bmmg',    text: '3º SGT BM — 3º Sargento CBMMG',           padrao: 7505.19,  oficial: false, retpFator: 0, fonteKey: 'bmmg', criterio: CRITERIO_BMMG_2026, benefDesc: BENEF_BMMG_2026, badge: 'MG/SEPLAG 2026' },
+  { val: 'cabo_bmmg',    text: 'CABO BM — Cabo CBMMG',                    padrao: 6505.00,  oficial: false, retpFator: 0, fonteKey: 'bmmg', criterio: CRITERIO_BMMG_2026, benefDesc: BENEF_BMMG_2026, badge: 'MG/SEPLAG 2026' },
+  { val: 'sd1_bmmg',     text: 'SD 1ª CL BM — Soldado 1ª Classe CBMMG',   padrao: 5332.60,  oficial: false, selected: true, retpFator: 0, fonteKey: 'bmmg', criterio: CRITERIO_BMMG_2026, benefDesc: BENEF_BMMG_2026, badge: 'Edital CFSd 2027' },
+  { val: 'sd2_bmmg',     text: 'SD 2ª CL BM — Soldado 2ª Classe CBMMG',   padrao: 4562.30,  oficial: false, retpFator: 0, fonteKey: 'bmmg', criterio: CRITERIO_BMMG_2026, benefDesc: BENEF_BMMG_2026, badge: 'Edital CFSd 2027' }
 ];
 
 const CARGOS_PCMG = [

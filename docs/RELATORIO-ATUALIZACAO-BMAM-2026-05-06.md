@@ -8,7 +8,7 @@ Atualização da instituição `bmam` — Corpo de Bombeiros Militar do Amazonas
 - `js/data/parametros-cargos.js`: criação de `CARGOS_BMAM` com 18 linhas remuneratórias.
 - `js/services/remuneracao.js`: fonte oficial e integração da BMAM no cálculo de remuneração tabelada.
 - `js/ui/header-estados.js`: dados institucionais, estimativas, concurso, ações judiciais e associações.
-- HTMLs da raiz e templates: cache busting atualizado para `20260506bmam1`.
+- HTMLs da raiz e templates: cache busting atualizado para `20260506bmap1`.
 
 ## Dados institucionais
 - Efetivo ativo: ≈ 1,5 mil militares ativos, com base em notícia oficial de março/2026 que informa efetivo superior a 1,5 mil após a formatura de 210 soldados.

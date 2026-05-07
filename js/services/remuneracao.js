@@ -21,6 +21,10 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     nome: 'CBMAM, Legisla.AM e ALEAM/SAPL — Lei AM 3.725/2012 atualizada pela Lei AM 7.445/2025; tabela de remuneração PM/BM com efeitos financeiros em 01/12/2025',
     url: 'https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/13902/7445.pdf'
   },
+  bmap: {
+    nome: 'CBMAP, SEAD/AP e Diário Oficial do Amapá — LC AP nº 113/2018 alterada pela LC AP nº 173/2025; Tabela de Progressão Horizontal 2026 I, vigente a partir de 01/04/2026',
+    url: 'https://editor.amapa.gov.br/arquivos_portais/publicacoes/SEAD_6df4154451d39fe1495462a15d40471c.pdf'
+  },
   pcac: {
     nome: 'Portal do Estado do Acre — tabelas salariais PCAC (Lei 2.250/3.228, LC 303 e Lei 3.107)',
     url: 'https://estado.ac.gov.br/tabelas-salariais/'
@@ -60,6 +64,10 @@ const REMUNERACAO_FONTES_OFICIAIS = {
   pmba: {
     nome: 'Casa Civil/BA — Lei nº 14.890/2025 — soldo, GAP e auxílio fardamento',
     url: 'https://www.legislabahia.ba.gov.br/documentos/lei-no-14890-de-05-de-maio-de-2025'
+  },
+  bmba: {
+    nome: 'Casa Civil/BA e DOE/BA — Lei nº 14.890/2025 — soldo, GAP e auxílio-fardamento do CBMBA; efeitos financeiros em 01/05/2026 e 01/06/2026',
+    url: 'https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf?xid=6642146'
   },
   pcba: {
     nome: 'Casa Civil/BA — Lei nº 14.891/2025 — vencimento, GAJ e GAPJ',
@@ -273,10 +281,11 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
     return `Ajuda de custo para alimentação: ${fmt(AUX_ALIM_MG_DIA_PADRAO)} por dia efetivamente trabalhado, quando atendidos os critérios. Adicionais funcionais, gratificações ou indenizações específicas dependem de cargo, lotação, ato próprio ou situação individual e não foram somados ao bruto.`;
   }
 
-  if (inst === 'pmba') {
+  if (inst === 'pmba' || inst === 'bmba') {
     const ref = (linha.cargo || '').match(/GAP Ref\.\s*([IVX]+)/i)?.[1] || 'informada';
-    return `GAP: gratificação por atividade policial na referência ${ref}, já considerada na remuneração bruta da linha. Auxílio-fardamento: R$ 256,18 mensais. Auxílio-alimentação: referência geral BA de ${fmt(AUX_ALIM_BA_40H)} para 40h ou ${fmt(AUX_ALIM_BA_30H)} para 30h, quando aplicável; não somado ao bruto.`;
+    return `GAP: gratificação por atividade policial/bombeiro militar na referência ${ref}, já considerada na remuneração bruta da linha. Auxílio-fardamento: R$ 256,18 mensais. Auxílio-alimentação: referência geral BA de ${fmt(AUX_ALIM_BA_40H)} para 40h ou ${fmt(AUX_ALIM_BA_30H)} para 30h, quando aplicável; CET, diárias, adicionais, função e parcelas pessoais não foram somados.`;
   }
+
 
   if (inst === 'pcba') {
     const verba = /delegado/i.test(linha.cargo || '') ? 'GAJ' : 'GAPJ';
@@ -430,10 +439,10 @@ const REMUNERACAO_MG_OFICIAL = {
 function getTabelaCargosRemuneracao(inst) {
   const map = {
     pmesp: CARGOS_PM,    pcsp: CARGOS_PC,    ppsp: CARGOS_PPSP, pf: CARGOS_PF, prf: CARGOS_PRF,
-    pmac: CARGOS_PMAC,   bmac: CARGOS_BMAC,   bmal: CARGOS_BMAL,   bmam: CARGOS_BMAM,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,
+    pmac: CARGOS_PMAC,   bmac: CARGOS_BMAC,   bmal: CARGOS_BMAL,   bmam: CARGOS_BMAM,   bmap: CARGOS_BMAP,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,
     pmerj: CARGOS_PMERJ, pcerj: CARGOS_PCERJ, pprj: CARGOS_PPRJ,
     pmmg: CARGOS_PMMG,   pcmg: CARGOS_PCMG,   ppmg: CARGOS_PPMG,
-    pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA,   ppba: CARGOS_PPBA,
+    pmba: CARGOS_PMBA,   bmba: CARGOS_BMBA,   pcba: CARGOS_PCBA,   ppba: CARGOS_PPBA,
     pmpr: CARGOS_PMPR,   pcpr: CARGOS_PCPR,   pppr: CARGOS_PPPR,
     pmrs: CARGOS_PMRS,   pcrs: CARGOS_PCRS,   pprs: CARGOS_PPRS,
     pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC,   ppsc: CARGOS_PPSC,
@@ -469,7 +478,7 @@ function calcularRemuneracaoTabelada(inst, cargo) {
     benefDesc = cargo.benefDesc || 'Benefícios e indenizações federais não somados automaticamente; dependem da legislação, lotação, exercício, faixa aplicável e situação funcional.';
     fonteKey = cargo.fonteKey || inst;
     badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Federal 2026');
-  } else if (inst === 'pmac' || inst === 'bmac' || inst === 'bmal' || inst === 'bmam') {
+  } else if (inst === 'pmac' || inst === 'bmac' || inst === 'bmal' || inst === 'bmam' || inst === 'bmap') {
     remuneracao = padrao;
     beneficios = Number(cargo.beneficios || 0);
     criterio = cargo.criterio || 'Total bruto mensal de referência para militares estaduais, conforme tabela remuneratória cadastrada para a instituição.';
@@ -569,21 +578,26 @@ function gerarRemuneracaoTabelada(inst) {
   if (REMUNERACAO_SP_OFICIAL[inst]) return REMUNERACAO_SP_OFICIAL[inst];
   if (REMUNERACAO_MG_OFICIAL[inst]) return REMUNERACAO_MG_OFICIAL[inst];
 
-  if (inst === 'pmba') {
+  if (inst === 'pmba' || inst === 'bmba') {
     const refs = ['I', 'II', 'III', 'IV', 'V'];
-    return CARGOS_PMBA.flatMap(cargo => (cargo.gapBa || [0]).map((gap, idx) => {
+    const cargosBa = inst === 'bmba' && typeof CARGOS_BMBA !== 'undefined' ? CARGOS_BMBA : CARGOS_PMBA;
+    return cargosBa.flatMap(cargo => (cargo.gapBa || [0]).map((gap, idx) => {
       const remuneracao = Number(cargo.padrao || 0) + Number(gap || 0);
+      const isAluno = /aluno/i.test(cargo.text || '') && Number(gap || 0) === 0;
       return linhaRemuneracaoOficial(
-        `${cargo.text} — GAP Ref. ${refs[idx] || (idx + 1)}`,
+        isAluno ? `${cargo.text} — referência de formação` : `${cargo.text} — GAP Ref. ${refs[idx] || (idx + 1)}`,
         remuneracao,
         256.18,
-        `Soldo oficial + GAP Referência ${refs[idx] || (idx + 1)}. Valores de soldo com efeito em 01/05/2026 e GAP com efeito em 01/06/2026.`,
-        'Auxílio fardamento oficial mensal: R$ 256,18. Auxílio-alimentação não somado por falta de valor geral oficial nesta fonte.',
-        'pmba',
+        isAluno
+          ? 'Valor de formação inserido como estimativa operacional do site; conferir edital vigente, curso de formação e ato de matrícula antes de uso individual.'
+          : `Soldo oficial + GAP Referência ${refs[idx] || (idx + 1)}. Valores de soldo com efeito em 01/05/2026 e GAP com efeito em 01/06/2026, nos termos da Lei BA nº 14.890/2025.`,
+        'Auxílio-fardamento oficial mensal: R$ 256,18. Auxílio-alimentação, CET, serviço extraordinário, diárias, função, indenizações, parcelas pessoais e retroativos não foram somados; dependem de lei, escala, lotação, ato e contracheque.',
+        inst,
         cargo.oficial ? 'Fonte oficial' : 'Carreira operacional'
       );
     }));
   }
+
 
   if (inst === 'pcba') {
     const refs = ['I', 'II', 'III', 'IV', 'V'];

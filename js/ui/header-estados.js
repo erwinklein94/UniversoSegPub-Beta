@@ -3151,6 +3151,111 @@ function aplicarDadosEspecificosBmam() {
 }
 
 
+function aplicarDadosEspecificosBmap() {
+  const inst = 'bmap';
+  const estado = 'ap';
+  const efetivoAtivo = 1073;
+  const populacaoAp = 806517;
+  const reservaEstimada = 600;
+  const mulheresEstimadas = 180;
+  const relacao = Math.round(populacaoAp / efetivoAtivo);
+
+  HEADER_ESTADOS[estado] = HEADER_ESTADOS[estado] || {
+    nome: 'Amapá',
+    sigla: 'AP',
+    pm: 'pmap',
+    bm: inst,
+    pc: 'pcap',
+    pp: 'ppap',
+    flag: 'https://upload.wikimedia.org/wikipedia/commons/0/0c/Bandeira_do_Amap%C3%A1.svg'
+  };
+  HEADER_ESTADOS[estado].bm = inst;
+  if (!INSTITUICOES_VALIDAS.includes(inst)) INSTITUICOES_VALIDAS.push(inst);
+
+  HEADER_INSTITUICOES_INFO[inst] = {
+    titulo: 'BMAP',
+    desc: 'Corpo de Bombeiros Militar do Amapá'
+  };
+
+  HEADER_INSTITUICOES_RESUMO[inst] = {
+    nome: 'Corpo de Bombeiros Militar do Amapá',
+    sigla: 'BMAP',
+    siglaInterna: 'CBMAP',
+    estado: 'Amapá',
+    estadoSigla: 'AP',
+    tipo: 'Bombeiro Militar',
+    criacao: '1967 · organização do Corpo de Bombeiros no então Território Federal do Amapá; 1992 · autonomia funcional e administrativa como CBMAP',
+    ativa: efetivoAtivo,
+    ativaLabel: '1.073 bombeiros militares — referência institucional do portal CBMAP, exibida como ordem de grandeza operacional sujeita a atualização por DRH/folha',
+    reserva: reservaEstimada,
+    reservaLabel: '≈ 600 vínculos de reserva, reforma e pensionistas — estimativa técnica para dar noção de grandeza; conferir AMPRev, SEAD/AP, DOE/AP, ficha financeira e DRH/CBMAP antes de uso jurídico ou previdenciário',
+    total: efetivoAtivo + reservaEstimada,
+    totalLabel: '≈ 1,7 mil vínculos somando efetivo ativo informado pelo CBMAP e estimativa de inativos/pensionistas',
+    femininas: mulheresEstimadas,
+    femininasLabel: '≈ 180 mulheres — estimativa técnica por composição provável da tropa; não usar como quantitativo oficial fechado',
+    populacao: populacaoAp,
+    populacaoLabel: '806.517 habitantes',
+    populacaoTitulo: 'População estimada do Amapá em 1º de julho de 2025, segundo IBGE',
+    relacaoLabel: `≈ 1 bombeiro militar ativo para cada ${relacao.toLocaleString('pt-BR')} habitantes`,
+    relacaoTitulo: `Relação estimada ativa/população: ${populacaoAp.toLocaleString('pt-BR')} habitantes ÷ ${efetivoAtivo.toLocaleString('pt-BR')} bombeiros militares informados pelo portal institucional`,
+    governador: 'Clécio Luís',
+    comando: 'Coronel QOCBM Pelsondré Martins da Silva — Comandante-Geral do CBMAP',
+    estrutura: 'Comando-Geral; Diretorias de Administração Geral, Ensino/Pesquisa/Extensão, Inteligência e Operações, Pessoal e Segurança Contra Incêndio e Pânico; Corregedoria, Controladoria, Academia Bombeiro Militar, Centro de Comunicação Social, Centro de Tecnologia da Informação, Centro de Logística e Centro de Saúde; Grupamentos 1º, 2º, 5º, 6º, 7º, GPCIF e GMAF, além de atuação em Macapá, Santana, Porto Grande, Oiapoque, Laranjal do Jari e Vitória do Jari.',
+    sede: 'Rua Hamilton Silva, nº 1647, bairro Santa Rita, Macapá/AP, CEP 68.900-068',
+    emergencia: '193',
+    coberturaLabel: '≈ 85% da população estadual atendida diretamente, conforme histórico institucional do CBMAP',
+    ocorrenciasLabel: 'Operações, prevenção, fiscalização e resposta operacional monitoradas pela Revista CBMAP360°, DIOP/CBMAP, DISCIP/CBMAP e publicações oficiais; usar número operacional anual somente quando houver relatório fechado',
+    fonte: 'CBMAP; SEAD/AP; Diário Oficial do Amapá; Portal da Transparência/AP; IBGE; Agência Amapá; Fundação Carlos Chagas',
+    atualizado: 'BMAP revisado em 06/05/2026 — efetivo e comando com base no portal oficial; população 2025 do IBGE; reserva e mulheres como estimativas identificadas; remuneração por LC AP nº 173/2025, Anexo III, efeitos em 01/04/2026'
+  };
+
+  REMUNERACAO_FONTES_OFICIAIS[inst] = {
+    nome: 'CBMAP, SEAD/AP e Diário Oficial do Amapá — LC AP nº 113/2018 alterada pela LC AP nº 173/2025; Tabela de Progressão Horizontal 2026 I, vigente a partir de 01/04/2026',
+    url: 'https://editor.amapa.gov.br/arquivos_portais/publicacoes/SEAD_6df4154451d39fe1495462a15d40471c.pdf'
+  };
+
+  if (typeof CARGOS_BMAP !== 'undefined' && Array.isArray(CARGOS_BMAP) && CARGOS_BMAP.length) {
+    CARGOS_ESTRUTURA_GENERICAS[inst] = CARGOS_BMAP;
+  }
+
+  CONFIGS_INSTITUICOES_GENERICAS[inst] = {
+    titulo: 'BMAP',
+    desc: 'Corpo de Bombeiros Militar do Amapá',
+    cor: '#b91c1c',
+    alertaPrev: 'BMAP/CBMAP: remuneração exibida como subsídio bruto mensal legal por posto/graduação e progressão horizontal, conforme LC AP 113/2018 alterada pela LC AP 173/2025. Não somar automaticamente indenizações, diárias, alimentação, fardamento, serviço extraordinário, funções, parcelas pessoais, retroativos ou rubricas de quadros federais do ex-Território. Conferir DOE/AP, SEAD/AP, Portal da Transparência, escala, ato funcional e contracheque.'
+  };
+
+  CONCURSOS[inst] = {
+    edital: 'BMAP/CBMAP — Concurso QOCBM/CBMAP 2025 para Oficial Combatente, cadastro de reserva, Edital nº 01/2025, Fundação Carlos Chagas; e histórico do CFSD/BM/CBMAP 2022 com convocações em 2026. Publicar novo certame somente com edital no DOE/AP, SEAD/AP, CBMAP e banca.',
+    salario: 'Referência remuneratória legal do site pela LC AP nº 173/2025, Anexo III, efeitos em 01/04/2026: Aluno Soldado BM Base R$ 3.213,26; Soldado BM Base R$ 6.039,13; Aluno Oficial 1º ano vinculado ao 2º Sargento Base R$ 8.592,24; Aluno Oficial 2º ano vinculado ao 1º Sargento Base R$ 9.574,23; Aluno Oficial 3º ano vinculado ao Subtenente Base R$ 10.556,19; Aspirante Oficial Base R$ 10.678,93; 2º Tenente Base R$ 11.660,90. Editais podem informar bolsa/remuneração de formação e regras próprias.',
+    vagas: 'QOCBM/CBMAP 2025: 180 vagas em cadastro de reserva para Oficial Combatente. CFSD/BM/CBMAP 2022/2026: concurso de Soldado em andamento histórico, com convocações; o Governo do Amapá informou expectativa de convocar até 1.500 aprovados e que esse número já foi superado em convocações.',
+    cotas: 'Conferir reserva de vagas, critérios de sexo, ampla concorrência, cotas, lista final, cadastro de reserva e retificações no edital da FCC, SEAD/AP e DOE/AP.',
+    idade: 'No edital QOCBM/CBMAP 2025, conferir requisitos de idade, diploma superior, altura, CNH, saúde, aptidão física, avaliação psicológica e investigação social. Não replicar regra de outro estado.',
+    escolaridade: 'QOCBM/CBMAP 2025 exige diploma de curso superior, conforme edital. CFSD/Soldado deve ser conferido no edital próprio e suas retificações.',
+    banca: 'Fundação Carlos Chagas no edital QOCBM/CBMAP 2025; verificar banca e atos complementares para CFSD/Soldado e futuros certames.',
+    inscritos: 'Total de inscritos, homologação e convocações devem ser conferidos na FCC, SEAD/AP, DOE/AP e portal do CBMAP.',
+    materias: 'Conteúdo programático consta no edital da banca. Publicar disciplinas, pesos e notas de corte somente após leitura da versão vigente e retificações.',
+    etapas: 'QOCBM/CBMAP 2025: prova objetiva, exame documental, avaliação das capacidades físicas, teste de avaliação psicológica, exame de saúde e investigação social. CFSD/Soldado possui fases próprias conforme edital.',
+    cfsd: 'Curso de Formação de Soldados Bombeiro Militar e Curso de Formação de Oficial Combatente dependem de matrícula, aprovação nas fases, cronograma de ensino, regime militar e atos do CBMAP/SEAD.',
+    estagio: 'Exercício inicial, estágio supervisionado e lotação operacional dependem de ato do CBMAP e necessidade da corporação na capital/interior.',
+    validade: 'Conferir validade, prorrogações, convocações, matrículas e homologações no DOE/AP, SEAD/AP, CBMAP e banca. Não afirmar concurso aberto sem fonte atual.',
+    previsao: 'Manter monitoramento do QOCBM/CBMAP 2025, CFSD/BM 2022/2026 e novas autorizações; tratar dados como situação de acompanhamento até novo edital/ato oficial.',
+    site: 'https://bombeiros.portal.ap.gov.br/'
+  };
+
+  ACOES_JUDICIAIS[inst] = [
+    { titulo: 'BMAP — subsídio, progressão horizontal e enquadramento', status: 'Conferência individual', ano: 'LC AP 113/2018 · LC AP 173/2025', tipo: 'individual', desc: 'Verificar se posto/graduação, nível de progressão horizontal, tempo de efetivo serviço, promoções e reflexos foram implantados corretamente. A tabela do site orienta a conferência, mas não liquida diferenças individuais.', base: 'LC AP nº 113/2018 alterada pela LC AP nº 173/2025, DOE/AP, ficha funcional, atos de promoção/progressão e contracheques.', fonte: 'SEAD/AP / Diário Oficial do Amapá', fonteUrl: 'https://editor.amapa.gov.br/arquivos_portais/publicacoes/SEAD_6df4154451d39fe1495462a15d40471c.pdf', atualizado: 'Maio/2026' },
+    { titulo: 'BMAP — indenizações, diárias, serviço extraordinário e rubricas não automáticas', status: 'Depende de ato, escala e lotação', ano: 'Tema permanente', tipo: 'individual', desc: 'Conferir diárias, ajuda de custo, alimentação, fardamento, serviço extraordinário, função, lotação especial, indenizações operacionais e eventuais retroativos. Não tratar como parcela universal da tropa.', base: 'Legislação estadual, decretos, boletins, escala, ordem de serviço, ato de designação, ficha financeira e contracheque.', fonte: 'CBMAP / SEAD-AP / DOE-AP', fonteUrl: 'https://bombeiros.portal.ap.gov.br/', atualizado: 'Maio/2026' },
+    { titulo: 'BMAP — reserva, reforma, pensão militar e quadros do ex-Território', status: 'Análise individual', ano: 'Tema previdenciário e funcional', tipo: 'individual', desc: 'Amapá tem situações que podem envolver militares estaduais e quadros federais oriundos do ex-Território. Não misturar tabela estadual do CBMAP com remuneração federal de transposição/ex-Território sem verificar vínculo, ato e regime jurídico.', base: 'Ficha funcional, ato de ingresso/transposição, processo de reserva/reforma, AMPRev, legislação estadual e federal aplicável, contracheques e decisões individuais.', fonte: 'SEAD/AP / AMPRev / Governo Federal quando houver quadro federal', fonteUrl: 'https://www.transparencia.ap.gov.br/', atualizado: 'Maio/2026' }
+  ];
+
+  ASSOCIACOES[inst] = [
+    { nome: 'ASMEAP — Associação dos Militares Estaduais do Amapá', foco: 'Militares estaduais do Amapá, incluindo policiais e bombeiros militares, ativos, veteranos e pensionistas', acao: 'Representação associativa, acompanhamento de pautas de carreira, remuneração, proteção social, promoções e condições de serviço.', site: 'https://www.asmeap.com.br', telefone: 'Consultar canais oficiais da entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação associativa, convênios, comunicação de pautas e eventual apoio jurídico conforme estatuto/contrato.' },
+    { nome: 'ASPOMETERFA — associação vinculada a militares do Amapá e ex-Território', foco: 'Militares estaduais/federais, veteranos, pensionistas e pautas ligadas a transposição e proteção social, conforme atuação da entidade', acao: 'Acompanhamento associativo de demandas funcionais, previdenciárias e remuneratórias. Conferir escopo atualizado diretamente com a entidade.', site: 'https://www.facebook.com/ASPOMETERFA', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Representação, orientação ao associado e acompanhamento de pautas administrativas/judiciais.' },
+    { nome: 'Canais institucionais do CBMAP', foco: 'Informação oficial para bombeiros militares e sociedade amapaense', acao: 'Publicações, legislação, editais, serviços técnicos, prevenção, Revista CBMAP360°, notícias e comunicação institucional.', site: 'https://bombeiros.portal.ap.gov.br/', telefone: 'Emergência 193; atendimento institucional em horário comercial no portal oficial', mensalidade: 'Não se aplica', servicos: 'Notícias, editais, alvarás, segurança contra incêndio e pânico, transparência, serviços técnicos e comunicação institucional.' }
+  ];
+}
+
 function inserirOptionBombeiroNoSelect(select, item) {
   if (!select || Array.from(select.options || []).some(opt => opt.value === item.inst)) return;
   let grupo = Array.from(select.querySelectorAll('optgroup')).find(optgroup => optgroup.label === item.nome);
@@ -3476,6 +3581,116 @@ aplicarEstruturaBombeirosMilitaresDados();
 aplicarDadosEspecificosBmac();
 aplicarDadosEspecificosBmal();
 aplicarDadosEspecificosBmam();
+
+
+function aplicarDadosEspecificosBmba() {
+  const inst = 'bmba';
+  const estado = 'ba';
+  const efetivoAtivo = 3800;
+  const populacaoBa = 14870907;
+  const reservaEstimada = 2700;
+  const mulheresEstimadas = 600;
+  const relacao = Math.round(populacaoBa / efetivoAtivo);
+
+  HEADER_ESTADOS[estado] = HEADER_ESTADOS[estado] || {
+    nome: 'Bahia',
+    sigla: 'BA',
+    pm: 'pmba',
+    bm: inst,
+    pc: 'pcba',
+    pp: 'ppba',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_da_Bahia.svg'
+  };
+  HEADER_ESTADOS[estado].bm = inst;
+  HEADER_ESTADOS[estado].bombeiro = inst;
+  if (!INSTITUICOES_VALIDAS.includes(inst)) INSTITUICOES_VALIDAS.push(inst);
+
+  HEADER_INSTITUICOES_INFO[inst] = {
+    titulo: 'BMBA',
+    desc: 'Corpo de Bombeiros Militar da Bahia'
+  };
+
+  HEADER_INSTITUICOES_RESUMO[inst] = {
+    nome: 'Corpo de Bombeiros Militar da Bahia',
+    sigla: 'BMBA',
+    siglaInterna: 'CBMBA',
+    estado: 'Bahia',
+    estadoSigla: 'BA',
+    tipo: 'Bombeiro Militar',
+    criacao: '2014 · autonomia administrativa e financeira pela PEC estadual nº 138/2014 e organização básica pela Lei BA nº 13.202/2014; origem histórica do serviço de bombeiros anterior à autonomia institucional',
+    ativa: efetivoAtivo,
+    ativaLabel: '≈ 3,8 mil bombeiros militares ativos — estimativa operacional baseada no efetivo de 3.483 bombeiros empregados no Carnaval 2026 e na incorporação/formatura de 291 novos soldados em 2026; conferir DRH/CBMBA, SAEB/BA e folha antes de uso jurídico',
+    reserva: reservaEstimada,
+    reservaLabel: '≈ 2,7 mil vínculos de reserva, reforma e pensionistas — estimativa técnica para ordem de grandeza; conferir Suprev/Funprev-BA, SAEB/BA, DOE/BA e contracheque antes de cálculo individual',
+    total: efetivoAtivo + reservaEstimada,
+    totalLabel: '≈ 6,5 mil vínculos somando efetivo ativo estimado e reserva/reforma/pensionistas estimados',
+    femininas: mulheresEstimadas,
+    femininasLabel: '≈ 600 mulheres — estimativa técnica por composição provável da tropa e ingresso recente; não usar como número oficial fechado',
+    populacao: populacaoBa,
+    populacaoLabel: '14.870.907 habitantes',
+    populacaoTitulo: 'População estimada da Bahia em 1º de julho de 2025, segundo IBGE',
+    relacaoLabel: `≈ 1 bombeiro militar ativo para cada ${relacao.toLocaleString('pt-BR')} habitantes`,
+    relacaoTitulo: `Relação estimada ativa/população: ${populacaoBa.toLocaleString('pt-BR')} habitantes ÷ ${efetivoAtivo.toLocaleString('pt-BR')} bombeiros militares ativos estimados`,
+    governador: 'Jerônimo Rodrigues',
+    comando: 'Coronel BM Aloísio Mascarenhas Fernandes — Comandante-Geral do CBMBA',
+    estrutura: 'Comando-Geral, Subcomando-Geral, Comando de Operações de Bombeiros Militar, Comandos Regionais, batalhões, grupamentos e companhias operacionais; unidades de prevenção, segurança contra incêndio e pânico, atividades técnicas, busca e salvamento, combate a incêndio, atendimento pré-hospitalar, operações aquáticas, resposta a desastres e apoio à Defesa Civil.',
+    sede: 'Comando-Geral do CBMBA — Ladeira Revolta dos Malês, nº 38, Centro Histórico, Salvador/BA, CEP 40.026-240',
+    emergencia: '193',
+    coberturaLabel: 'Atuação estadual, com reforços sazonais em Salvador, RMS, litoral, interior e grandes eventos; no Carnaval 2026 foram empregados 3.483 bombeiros militares.',
+    ocorrenciasLabel: 'Ocorrências operacionais, vistorias, incêndios, salvamentos, resgates, apoio a eventos e ações preventivas devem ser atualizadas por relatórios do CBMBA, COBM, boletins oficiais e publicações do Governo da Bahia.',
+    fonte: 'CBMBA; Governo da Bahia; SAEB/BA; DOE/BA; Lei BA nº 13.202/2014; Lei BA nº 14.890/2025; IBGE 2025; concursos CBMBA/FCC',
+    atualizado: 'BMBA revisado em 06/05/2026 — comando, sede, concursos e efetivo operacional com fontes institucionais; população 2025 do IBGE; efetivo, reserva e mulheres exibidos como estimativas identificadas; remuneração pela Lei BA nº 14.890/2025'
+  };
+
+  REMUNERACAO_FONTES_OFICIAIS[inst] = {
+    nome: 'DOE/BA e Casa Civil/BA — Lei BA nº 14.890/2025: soldo PM/BM, Gratificação de Atividade Policial Militar - GAP e auxílio-fardamento; soldo com efeitos em 01/05/2026 e GAP em 01/06/2026',
+    url: 'https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf?xid=6642146'
+  };
+
+  if (typeof CARGOS_BMBA !== 'undefined' && Array.isArray(CARGOS_BMBA) && CARGOS_BMBA.length) {
+    CARGOS_ESTRUTURA_GENERICAS[inst] = CARGOS_BMBA;
+  }
+
+  CONFIGS_INSTITUICOES_GENERICAS[inst] = {
+    titulo: 'BMBA',
+    desc: 'Corpo de Bombeiros Militar da Bahia',
+    cor: '#b91c1c',
+    alertaPrev: 'BMBA/CBMBA: remuneração exibida como soldo oficial + GAP por referência, conforme Lei BA nº 14.890/2025, com auxílio-fardamento separado. Não somar automaticamente CET, adicional noturno, serviço extraordinário, diárias, alimentação, função, indenizações, parcelas pessoais, retroativos, abonos ou diferenças sem verificar escala, lotação, ato específico, ficha financeira e contracheque. A previdência dos militares baianos deve ser conferida pela regra vigente do Funprev/Suprev-BA e pela base de contribuição aplicada no holerite.'
+  };
+
+  CONCURSOS[inst] = {
+    edital: 'BMBA/CBMBA — CFSD 2022 para Soldado Bombeiro Militar consta como em andamento no portal de concursos do CBMBA; CFOBM/2022 consta como finalizado. Manter monitoramento de DOE/BA, SAEB/BA, CBMBA e Fundação Carlos Chagas para homologações, prorrogações, convocações e eventual novo edital.',
+    salario: 'Referência legal do site pela Lei BA nº 14.890/2025: Soldado BM com soldo R$ 1.633,88 + GAP Ref. I a V entre R$ 1.500,56 e R$ 3.085,14, resultando em bruto de R$ 3.134,44 a R$ 4.719,02, além de auxílio-fardamento de R$ 256,18 separado. Aluno Soldado foi mantido como referência estimada de formação e deve ser conferido no edital vigente.',
+    vagas: 'Último CFSD BM 2022: 500 vagas para Soldado do CBMBA conforme edital divulgado pelo CBMBA/FCC. Há sinalizações públicas de novo concurso com 600 vagas para Soldado, mas o site deve publicar como previsão/monitoramento até edital oficial.',
+    cotas: 'Conferir ampla concorrência, reserva para negros, sexo, região, cadastro de reserva e demais regras no edital vigente e retificações. Não aplicar regra de outro certame por analogia.',
+    idade: 'Critérios de idade, altura, CNH, aptidão física, saúde, avaliação psicológica e investigação social devem ser extraídos do edital vigente. Manter cautela em convocações sub judice.',
+    escolaridade: 'Soldado BM: nível médio no edital de 2022. Oficial/CFOBM: conferir edital próprio, requisitos, curso, bolsa e regime de formação.',
+    banca: 'Fundação Carlos Chagas no CFSD 2022; confirmar organizadora em cada novo edital ou seleção.',
+    inscritos: 'Total de inscritos, resultado final, homologação, prorrogação, convocações e matrículas devem ser conferidos no CBMBA, SAEB/BA, DOE/BA e banca.',
+    materias: 'Conteúdo programático, pesos e critérios de aprovação variam por cargo e edital; publicar grade fechada somente após leitura da versão vigente e retificações.',
+    etapas: 'Certames do CBMBA podem envolver prova objetiva, prova discursiva/redação, exame documental, TAF, exames médicos/odontológicos/toxicológicos, avaliação psicológica, investigação social e curso de formação, conforme edital.',
+    cfsd: 'CBMBA informou em 2026 a conclusão/formatura de 291 novos soldados, reforçando capital e interior. Matrícula, bolsa/remuneração de formação, regime disciplinar e classificação final dependem dos atos do curso e do edital.',
+    estagio: 'Exercício inicial, estágio operacional e lotação dependem de ato do CBMBA, necessidade operacional, batalhão/companhia de destino e boletins internos.',
+    validade: 'CFSD 2022 aparece como em andamento no portal CBMBA; CFOBM/2022 como finalizado. Validar prazos, prorrogações e convocações no DOE/BA e no portal da banca antes de publicar status fechado.',
+    previsao: 'Há previsão pública de novo concurso para Soldado BMBA, mas o portal deve tratar como previsão até edital oficial assinado e publicado. Evitar mensagem de concurso aberto sem fonte oficial atual.',
+    site: 'https://www.cbm.ba.gov.br/portal/concursos'
+  };
+
+  ACOES_JUDICIAIS[inst] = [
+    { titulo: 'BMBA — soldo, GAP por referência e auxílio-fardamento', status: 'Conferência individual', ano: 'Lei BA nº 14.890/2025', tipo: 'individual', desc: 'Verificar se posto/graduação, soldo vigente, referência da GAP, implantação dos efeitos de maio/junho de 2026 e auxílio-fardamento foram pagos corretamente. A tabela do site é referência de conferência, não liquidação individual.', base: 'Lei BA nº 14.890/2025, DOE/BA, ficha financeira, contracheque, atos de promoção e referência da GAP.', fonte: 'DOE/BA / SAEB-BA / CBMBA', fonteUrl: 'https://cdn.atarde.com.br/img/attachmentinline/1310000/Jeronimo-sanciona-lei-de-reajuste-salarial-para-po0131683500202505060933.pdf?xid=6642146', atualizado: 'Maio/2026' },
+    { titulo: 'BMBA — CET, serviço extraordinário, diárias e parcelas indenizatórias', status: 'Depende de ato, escala e lotação', ano: 'Tema permanente', tipo: 'individual', desc: 'Conferir CET, adicional noturno, diárias, serviço extraordinário, gratificações de função, alimentação, fardamento, indenizações, retroativos e outras rubricas. Não tratar como parcela universal de toda a tropa.', base: 'Estatuto dos Policiais Militares da Bahia, normas do CBMBA/SSP/SAEB, escalas, boletins, ordem de serviço, ato de designação, contracheque e ficha financeira.', fonte: 'CBMBA / SAEB-BA / DOE-BA', fonteUrl: 'https://www.cbm.ba.gov.br/', atualizado: 'Maio/2026' },
+    { titulo: 'BMBA — promoções, quadro de acesso, reserva/reforma e proteção social militar', status: 'Análise funcional', ano: 'Lei BA nº 13.202/2014 e normas correlatas', tipo: 'individual', desc: 'Promoções, interstícios, quadro de acesso, agregação, reserva remunerada, reforma, incapacidade e pensão militar dependem de data de ingresso, quadro, posto/graduação, cursos, conceito, tempo de serviço, ficha funcional e atos publicados.', base: 'Lei BA nº 13.202/2014, Estatuto dos Policiais Militares da Bahia, normas de promoção, proteção social militar, processo individual, boletins e DOE/BA.', fonte: 'CBMBA / Governo da Bahia / SAEB-BA', fonteUrl: 'https://www.ba.gov.br/comunicacao/2014/12/noticias/leis-de-organizacao-basica-da-policia-militar-e-dos-bombeiros-sao-sancionadas', atualizado: 'Maio/2026' }
+  ];
+
+  ASSOCIACOES[inst] = [
+    { nome: 'APPMBA — Associação de Praças da Polícia e Bombeiro Militar da Bahia', foco: 'Praças da PMBA e do CBMBA, ativos, reserva, reformados e pensionistas', acao: 'Acompanhamento de pautas remuneratórias, carreira, proteção social, promoções, condições de trabalho e representação associativa.', site: 'https://appmba.com.br', telefone: 'Consultar canais oficiais da entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação associativa, comunicação de pautas, convênios e eventual apoio jurídico conforme contrato/estatuto.' },
+    { nome: 'Força Invicta — associação de oficiais militares estaduais da Bahia', foco: 'Oficiais da Polícia Militar e do Corpo de Bombeiros Militar da Bahia', acao: 'Representação de oficiais em pautas de carreira, remuneração, proteção social, gestão institucional e condições de serviço.', site: 'Consultar canais oficiais da entidade', telefone: 'Consultar diretamente na entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Representação, comunicação institucional, orientação ao associado e acompanhamento de pautas administrativas/judiciais.' },
+    { nome: 'Canais institucionais do CBMBA', foco: 'Informação oficial para bombeiros militares, candidatos e sociedade baiana', acao: 'Publicações, concursos, legislação, prevenção, atividades técnicas, unidades, notícias e atendimento institucional.', site: 'https://www.cbm.ba.gov.br', telefone: '193 · contatos administrativos conforme unidade', mensalidade: 'Não se aplica', servicos: 'Concursos, notícias, prevenção, vistorias, legislação, serviços técnicos e comunicação institucional.' }
+  ];
+}
+
+aplicarDadosEspecificosBmap();
+aplicarDadosEspecificosBmba();
 aplicarEstruturaFederaisDados();
 aplicarRevisaoResumosInstitucionais();
 
@@ -3645,6 +3860,7 @@ function aplicarPadraoDadosEmBreveGlobal() {
     typeof CARGOS_PMMG !== 'undefined' ? CARGOS_PMMG : null,
     typeof CARGOS_PCMG !== 'undefined' ? CARGOS_PCMG : null,
     typeof CARGOS_PMBA !== 'undefined' ? CARGOS_PMBA : null,
+    typeof CARGOS_BMBA !== 'undefined' ? CARGOS_BMBA : null,
     typeof CARGOS_PCBA !== 'undefined' ? CARGOS_PCBA : null,
     typeof CARGOS_PMPR !== 'undefined' ? CARGOS_PMPR : null,
     typeof CARGOS_PCPR !== 'undefined' ? CARGOS_PCPR : null,
@@ -5089,3 +5305,6 @@ function renderizarBrasoesHistoria() {
 
 
 /* ============================================================ */
+
+// Reaplica BMBA após as rotinas globais de normalização para preservar os campos estimados e a remuneração detalhada recém-cadastrados.
+if (typeof aplicarDadosEspecificosBmba === 'function') aplicarDadosEspecificosBmba();

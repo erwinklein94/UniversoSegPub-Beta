@@ -2962,6 +2962,195 @@ function aplicarDadosEspecificosBmac() {
   ];
 }
 
+function aplicarDadosEspecificosBmal() {
+  const inst = 'bmal';
+  const estado = 'al';
+  const efetivoLegal = 3246;
+  const populacaoAl = 3220848;
+  const relacao = Math.round(populacaoAl / efetivoLegal);
+
+  HEADER_ESTADOS[estado] = HEADER_ESTADOS[estado] || {
+    nome: 'Alagoas',
+    sigla: 'AL',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Alagoas.svg'
+  };
+  HEADER_ESTADOS[estado].bombeiro = inst;
+  HEADER_ESTADOS[estado].bm = inst;
+
+  HEADER_INSTITUICOES_RESUMO[inst] = {
+    nome: 'Corpo de Bombeiros Militar de Alagoas',
+    sigla: 'BMAL',
+    siglaInterna: 'CBMAL',
+    estado: 'Alagoas',
+    estadoSigla: 'AL',
+    tipo: 'Bombeiro Militar',
+    criacao: 'Estrutura militar estadual consolidada; organização básica moderna pela Lei AL nº 7.444/2012 e efetivo fixado pela Lei AL nº 8.668/2022',
+    ativa: efetivoLegal,
+    ativaLabel: '≈ 3,2 mil bombeiros militares — referência legal de efetivo fixado pela Lei AL nº 8.668/2022; usar como estimativa/teto operacional até conferência em folha ou transparência',
+    reserva: 1800,
+    reservaLabel: '≈ 1,8 mil vínculos de reserva, reforma e pensionistas — estimativa técnica para noção do usuário; conferir AL Previdência, DOE/AL e folha antes de uso jurídico/remuneratório',
+    femininas: 450,
+    femininasLabel: '≈ 450 mulheres — estimativa técnica por composição provável da tropa e entradas recentes; não usar como quantitativo oficial fechado',
+    populacao: populacaoAl,
+    populacaoLabel: '3.220.848 habitantes',
+    populacaoTitulo: 'População estimada de Alagoas em 1º de julho de 2025, segundo IBGE',
+    relacaoLabel: `≈ 1 bombeiro militar para cada ${relacao.toLocaleString('pt-BR')} habitantes`,
+    relacaoTitulo: `Relação estimada população/efetivo: ${populacaoAl.toLocaleString('pt-BR')} habitantes ÷ ${efetivoLegal.toLocaleString('pt-BR')} bombeiros militares fixados em lei`,
+    governador: 'Paulo Dantas',
+    comando: 'Coronel BM Sérgio André Silva Verçosa — Comandante-Geral do CBMAL',
+    estrutura: 'Comando-Geral, Comando Operacional de Bombeiros, Diretorias de Ensino, Pessoal, Apoio Logístico, Finanças e Tecnologia da Informação, unidades operacionais, atividades técnicas, prevenção, combate a incêndio, busca e salvamento, atendimento pré-hospitalar, defesa civil e análise/vistoria de segurança contra incêndio e pânico.',
+    sede: 'Comando-Geral do CBMAL — Maceió/AL',
+    emergencia: '193',
+    fonte: 'CBMAL; SAPL/ALEAL; Transparência/AL; DOE/AL; IBGE; SEPLAG/AL',
+    atualizado: 'BMAL revisado em 06/05/2026 — dados populacionais oficiais, efetivo por lei estadual e demais números exibidos como estimativas identificadas; remuneração estimada por tabela legal e RGAs até maio/2026'
+  };
+
+  REMUNERACAO_FONTES_OFICIAIS[inst] = {
+    nome: 'CBMAL, Transparência/AL e SAPL/ALEAL — Lei AL 7.580/2014, Lei AL 7.581/2014, Lei AL 8.668/2022 e revisões gerais até a Lei AL 9.852/2026; tabela exibida como estimativa técnica de maio/2026',
+    url: 'https://www.cbm.al.gov.br/paginas/legislacao'
+  };
+
+  if (typeof CARGOS_BMAL !== 'undefined' && Array.isArray(CARGOS_BMAL) && CARGOS_BMAL.length) {
+    CARGOS_ESTRUTURA_GENERICAS[inst] = CARGOS_BMAL;
+  }
+
+  CONFIGS_INSTITUICOES_GENERICAS[inst] = {
+    titulo: 'BMAL',
+    desc: 'Corpo de Bombeiros Militar de Alagoas',
+    cor: '#b91c1c',
+    alertaPrev: 'BMAL/CBMAL: a tabela remuneratória é estimativa técnica de maio/2026 a partir da Lei AL 7.580/2014 e revisões gerais identificadas até a Lei AL 9.852/2026. Conferir DOE/AL, SEPLAG/AL, Portal da Transparência, ficha financeira e contracheque. Não somar serviço voluntário remunerado, adicional de compensação orgânica, diárias, uniforme, função, indenizações ou parcelas pessoais sem ato, escala e previsão legal.'
+  };
+
+  CONCURSOS[inst] = {
+    edital: 'BMAL/CBMAL — monitorar portal oficial do CBMAL, SEPLAG/AL, DOE/AL e banca designada; histórico recente de seleções para Soldado Combatente e Oficial Bombeiro Militar deve ser tratado como histórico, não como concurso aberto.',
+    salario: 'Referência remuneratória estimada do site: Aluno Soldado BM ≈ R$ 2.371,28; Soldado BM ≈ R$ 6.125,51; Cadete 1º ano ≈ R$ 3.901,74; Aspirante a Oficial BM ≈ R$ 11.674,25; confirmar valor inicial no edital vigente, pois edital pode usar bolsa/subsídio de formação específico.',
+    vagas: 'Consultar edital vigente para número de vagas por cargo, sexo, ampla concorrência, cotas, cadastro de reserva, especialidades e distribuição territorial.',
+    cotas: 'Conferir regras de reserva de vagas, heteroidentificação, PCD quando aplicável, sexo, idade, altura e demais exigências diretamente no edital vigente.',
+    idade: 'Critérios de idade, altura, CNH e aptidão física dependem do edital e da legislação estadual vigente; não aplicar regra genérica sem conferir o certame.',
+    escolaridade: 'Soldado/Aluno Soldado e Oficial/Cadete devem ser tratados conforme edital vigente; conferir nível exigido, diploma, CNH e requisitos militares.',
+    banca: 'A definir no edital vigente; monitorar SEPLAG/AL, DOE/AL, CBMAL e página da banca contratada.',
+    inscritos: 'Consultar banca/SEPLAG/DOE para total de inscritos, homologação, resultado final e convocações.',
+    materias: 'Disciplinas e pesos dependem do edital vigente; não publicar grade fechada sem conferir edital e retificações.',
+    etapas: 'Normalmente inclui prova objetiva, exames médicos, TAF, avaliação psicológica, investigação social, curso de formação e fases próprias da carreira militar; conferir edital vigente.',
+    cfsd: 'Curso de Formação de Praças Bombeiros Militares conforme Lei de Ensino, atos do CBMAL e edital; carga horária, bolsa/subsídio e regime disciplinar devem ser conferidos no edital.',
+    estagio: 'Estágio operacional e exercício inicial dependem de ato do CBMAL, boletim, curso de formação, lotação e necessidade operacional.',
+    validade: 'Conferir homologação, validade, prorrogação e convocações no DOE/AL, SEPLAG/AL, CBMAL e banca.',
+    previsao: 'Não afirmar novo concurso aberto sem edital publicado. Exibir como monitoramento permanente de carreira estadual militar.',
+    site: 'https://www.cbm.al.gov.br/paginas/view/4/concursos'
+  };
+
+  ACOES_JUDICIAIS[inst] = [
+    { titulo: 'BMAL — subsídio, revisão geral anual e diferenças remuneratórias', status: 'Conferência individual', ano: 'Leis AL 7.580/2014 a 9.852/2026', tipo: 'individual', desc: 'Verificar se posto/graduação, Nível I/Nível II, revisões gerais, promoções e reflexos foram implantados corretamente em ficha financeira e contracheque. Não tratar a estimativa do portal como liquidação de valores.', base: 'Lei AL 7.580/2014, revisões gerais anuais, DOE/AL, ficha financeira, atos de promoção e contracheques.', fonte: 'CBMAL / SAPL-ALEAL / Transparência AL', fonteUrl: 'https://www.cbm.al.gov.br/paginas/legislacao', atualizado: 'Maio/2026' },
+    { titulo: 'BMAL — serviço voluntário remunerado, diárias, uniforme e adicionais', status: 'Depende de escala e ato', ano: 'Lei AL 7.581/2014 e normas correlatas', tipo: 'individual', desc: 'Conferir escala, autorização, jornada, limite mensal, diárias, verba de uniforme, adicional de compensação orgânica e eventuais indenizações. Serviço voluntário remunerado é eventual e não incorporável.', base: 'Lei AL 7.581/2014, decretos de diárias/uniforme, escala, boletim, ordem de serviço, lotação, ato administrativo e contracheque.', fonte: 'CBMAL / DOE-AL / Transparência AL', fonteUrl: 'https://www.cbm.al.gov.br/paginas/legislacao', atualizado: 'Maio/2026' },
+    { titulo: 'BMAL — fluxo de acesso, promoções, reserva/reforma e proteção social', status: 'Análise funcional', ano: 'Lei AL 8.668/2022 e normas militares estaduais', tipo: 'individual', desc: 'A Lei AL nº 8.668/2022 fixa efetivo, quadros e fluxo de acesso. Promoções, reserva, reforma, incapacidade, pensão e proteção social exigem análise de data de ingresso, tempo de serviço, quadro, posto/graduação, ficha funcional e atos publicados.', base: 'Lei AL 8.668/2022, Estatuto da PMAL aplicado aos militares estaduais, normas de promoção, proteção social militar e processo administrativo.', fonte: 'SAPL-ALEAL / CBMAL / DOE-AL', fonteUrl: 'https://sapl.al.al.leg.br/norma/2273', atualizado: 'Maio/2026' }
+  ];
+
+  ASSOCIACOES[inst] = [
+    { nome: 'AMEAL — Associação dos Militares do Estado de Alagoas', foco: 'Militares estaduais de Alagoas, incluindo policiais e bombeiros militares, ativos, veteranos e pensionistas', acao: 'Acompanhamento de pautas remuneratórias, carreira, proteção social, representação associativa, comunicação institucional e eventual apoio ao associado conforme regras internas.', site: 'https://ameal.org.br', telefone: 'Consultar canais oficiais da entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação associativa, acompanhamento legislativo, comunicação de pautas, convênios e apoio jurídico conforme contrato/estatuto.' },
+    { nome: 'Entidades de oficiais e praças militares estaduais de Alagoas', foco: 'Oficiais, praças, reserva, reformados e pensionistas da PMAL e do CBMAL', acao: 'Espaço para cadastrar entidades locais adicionais ligadas a remuneração, promoções, carreira, saúde, reserva/reforma e condições de serviço.', site: 'Consultar canais oficiais', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Representação, convênios, orientação ao associado e acompanhamento administrativo/judicial.' },
+    { nome: 'Canais institucionais do CBMAL', foco: 'Informação oficial para bombeiros militares e sociedade', acao: 'Publicações, legislação, diretoria, concursos, atividades técnicas, prevenção e comunicação institucional.', site: 'https://www.cbm.al.gov.br', telefone: 'Consultar portal oficial', mensalidade: 'Não se aplica', servicos: 'Legislação, notícias, concursos, normas técnicas, comunicação e serviços oficiais.' }
+  ];
+}
+
+
+function aplicarDadosEspecificosBmam() {
+  const inst = 'bmam';
+  const estado = 'am';
+  const efetivoEstimado = 1500;
+  const populacaoAm = 4321616;
+  const relacao = Math.round(populacaoAm / efetivoEstimado);
+
+  HEADER_ESTADOS[estado] = HEADER_ESTADOS[estado] || {
+    nome: 'Amazonas',
+    sigla: 'AM',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amazonas.svg'
+  };
+  HEADER_ESTADOS[estado].bombeiro = inst;
+  HEADER_ESTADOS[estado].bm = inst;
+  if (!INSTITUICOES_VALIDAS.includes(inst)) INSTITUICOES_VALIDAS.push(inst);
+
+  HEADER_INSTITUICOES_INFO[inst] = {
+    titulo: 'BMAM',
+    desc: 'Corpo de Bombeiros Militar do Amazonas'
+  };
+
+  HEADER_INSTITUICOES_RESUMO[inst] = {
+    nome: 'Corpo de Bombeiros Militar do Amazonas',
+    sigla: 'BMAM',
+    siglaInterna: 'CBMAM',
+    estado: 'Amazonas',
+    estadoSigla: 'AM',
+    tipo: 'Bombeiro Militar',
+    criacao: '1876 · 149 anos de história em 2025; emancipado/desvinculado da PMAM pela Emenda Constitucional AM nº 31/1998 e pela Lei AM nº 2.523/1998',
+    ativa: efetivoEstimado,
+    ativaLabel: '≈ 1,5 mil militares ativos — referência oficial de março/2026 informa que, após a formatura de 210 novos soldados, o efetivo ultrapassou 1,5 mil militares em atividade; valor exibido como estimativa operacional para orientar o usuário',
+    reserva: 900,
+    reservaLabel: '≈ 900 vínculos de reserva, reforma e pensionistas — estimativa técnica para dar ordem de grandeza; conferir Amazonprev, Portal da Transparência, SEAD/AM e folha antes de uso jurídico/remuneratório',
+    femininas: 230,
+    femininasLabel: '≈ 230 mulheres — estimativa técnica por composição provável da tropa e entradas recentes; não usar como quantitativo oficial fechado',
+    populacao: populacaoAm,
+    populacaoLabel: '4.321.616 habitantes',
+    populacaoTitulo: 'População estimada do Amazonas em 1º de julho de 2025, segundo IBGE',
+    relacaoLabel: `≈ 1 bombeiro militar ativo para cada ${relacao.toLocaleString('pt-BR')} habitantes`,
+    relacaoTitulo: `Relação estimada população/efetivo: ${populacaoAm.toLocaleString('pt-BR')} habitantes ÷ ≈ ${efetivoEstimado.toLocaleString('pt-BR')} militares ativos`,
+    governador: 'Wilson Miranda Lima',
+    comando: 'Coronel QOBM Orleilso Ximenes Muniz — Comandante-Geral do CBMAM',
+    estrutura: 'Comando-Geral em Manaus, órgãos de direção, apoio e execução, Diretoria de Atividades Técnicas, unidades operacionais, prevenção e combate a incêndio, busca e salvamento, atendimento pré-hospitalar, defesa civil, produtos perigosos, mergulho, salvamento aquático, atividades técnicas de segurança contra incêndio e expansão de bases no interior. A corporação informou presença permanente em 23 municípios em 2026 e meta de chegar a mais 12 cidades até o fim do ano.',
+    sede: 'Comando-Geral do CBMAM — Avenida Codajás, nº 1565, Petrópolis, Manaus/AM, CEP 69063-390',
+    emergencia: '193',
+    ocorrenciasLabel: '20.490 ocorrências atendidas em 2025 — 14.342 em Manaus e 6.148 no interior, conforme SSP/AM',
+    fonte: 'CBMAM; Agência Amazonas; SSP/AM; Legisla.AM; ALEAM/SAPL; IBGE; SEAD/AM; DOE/AM',
+    atualizado: 'BMAM revisado em 06/05/2026 — efetivo ativo e população com base oficial; reserva e mulheres como estimativas identificadas; remuneração por Lei AM nº 7.445/2025 com efeitos em 01/12/2025'
+  };
+
+  REMUNERACAO_FONTES_OFICIAIS[inst] = {
+    nome: 'CBMAM, Legisla.AM e ALEAM/SAPL — Lei AM 3.725/2012 atualizada pela Lei AM 7.445/2025; tabela PM/BM vigente a partir de 01/12/2025',
+    url: 'https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/13902/7445.pdf'
+  };
+
+  if (typeof CARGOS_BMAM !== 'undefined' && Array.isArray(CARGOS_BMAM) && CARGOS_BMAM.length) {
+    CARGOS_ESTRUTURA_GENERICAS[inst] = CARGOS_BMAM;
+  }
+
+  CONFIGS_INSTITUICOES_GENERICAS[inst] = {
+    titulo: 'BMAM',
+    desc: 'Corpo de Bombeiros Militar do Amazonas',
+    cor: '#b91c1c',
+    alertaPrev: 'BMAM/CBMAM: remuneração exibida pelo total bruto legal da Lei AM 7.445/2025, vigente a partir de 01/12/2025, sem somar automaticamente indenização de compensação orgânica e atividade técnica, função, diárias, fardamento, alimentação, saúde, retroativos ou parcelas pessoais. Conferir DOE/AM, Legisla.AM, Portal da Transparência, SEAD/AM, escala, ato funcional e contracheque.'
+  };
+
+  CONCURSOS[inst] = {
+    edital: 'BMAM/CBMAM — histórico recente do concurso público de 2021 para a corporação; em 2026 o governo informou a conclusão da nomeação das 453 vagas previstas no edital, com formatura de 210 novos soldados. Para novo certame, publicar somente quando houver autorização e edital no DOE/AM, SEAD/AM, CBMAM e banca.',
+    salario: 'Referência remuneratória legal do site: Aluno Soldado BM R$ 3.149,12; Soldado BM R$ 5.725,66; Aluno Oficial 1º Ano R$ 8.509,34; Aspirante a Oficial BM R$ 11.345,79; valores brutos da tabela PM/BM da Lei AM nº 7.445/2025, Anexo III, efeitos em 01/12/2025. Editais podem informar bolsa, remuneração de formação ou regras específicas.',
+    vagas: '453 vagas previstas no concurso público da corporação citado pelo Governo do Amazonas; formatura de 210 novos soldados em março/2026 concluiu as nomeações desse edital.',
+    cotas: 'Regras de vagas por cargo, sexo, ampla concorrência, cotas e cadastro de reserva dependem do edital de cada certame e das retificações publicadas.',
+    idade: 'Critérios de idade, altura, CNH, aptidão física e investigação social devem ser extraídos do edital vigente; não aplicar regra genérica sem o documento oficial.',
+    escolaridade: 'Aluno Soldado e Aluno Oficial/Cadete devem seguir o edital vigente; conferir nível exigido, diploma, CNH, documentos militares e requisitos legais no DOE/AM e na banca.',
+    banca: 'Banca do concurso vigente/histórico deve ser conferida no edital; manter monitoramento em CBMAM, SEAD/AM, DOE/AM e portal da organizadora.',
+    inscritos: 'Total de inscritos, homologação e convocações devem ser conferidos no portal da banca e no Diário Oficial do Amazonas.',
+    materias: 'Disciplinas, pesos e conteúdo programático variam conforme cargo e edital; publicar grade fechada somente após leitura do edital e retificações.',
+    etapas: 'Em regra, certames militares envolvem prova objetiva, TAF, exames médicos, avaliação psicológica, investigação social, curso de formação e fases próprias da carreira bombeiro militar, conforme edital.',
+    cfsd: 'Curso de Formação de Soldados concluído em março/2026 por 210 novos soldados, com dez meses de treinamento, incluindo combate a incêndios urbanos e florestais, salvamento em altura/aquático, resgate veicular, produtos perigosos e procedimentos operacionais.',
+    estagio: 'Exercício inicial e lotação operacional dependem de ato do CBMAM. A turma formada em 2026 reforça capital e interior em meio à expansão de bases permanentes.',
+    validade: 'Validade, prorrogações, atos de convocação, matrículas e formaturas devem ser conferidos no DOE/AM, CBMAM, SEAD/AM e banca.',
+    previsao: 'Sem novo concurso aberto confirmado nesta revisão. O site deve exibir o concurso 2021/2026 como histórico recente e monitorar autorizações futuras.',
+    site: 'https://www.cbm.am.gov.br/cbmam/concursos'
+  };
+
+  ACOES_JUDICIAIS[inst] = [
+    { titulo: 'BMAM — tabela PM/BM, soldo, gratificação de tropa e GAMS', status: 'Conferência individual', ano: 'Lei AM 3.725/2012 · Lei AM 7.445/2025', tipo: 'individual', desc: 'Verificar se posto/graduação, soldo, gratificação de tropa, GAMS quando cabível, revisões de 2025 e reflexos foram implantados corretamente no contracheque. A tabela do site é referência de orientação e não liquidação individual.', base: 'Lei AM nº 3.725/2012, Lei AM nº 7.445/2025, DOE/AM, ficha financeira, atos de promoção e contracheques.', fonte: 'Legisla.AM / ALEAM-SAPL / SEAD-AM', fonteUrl: 'https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/13902/7445.pdf', atualizado: 'Maio/2026' },
+    { titulo: 'BMAM — indenização de compensação orgânica e atividade técnica', status: 'Depende de habilitação, atividade e ato', ano: 'Lei AM 7.445/2025 · Anexo IV', tipo: 'individual', desc: 'Conferir se o militar exerce atividade técnica indenizável, como motorista, operador, mergulhador, aeronave, explosivista ou outras funções listadas, com habilitação, escala e ato de designação. Não é parcela automática para toda a tropa.', base: 'Anexo IV da Lei AM nº 7.445/2025, escalas, habilitações, boletins, ordem de serviço, lotação e contracheque.', fonte: 'Legisla.AM / DOE-AM / CBMAM', fonteUrl: 'https://legisla.imprensaoficial.am.gov.br/diario_am/12/2025/4/15715?o=1', atualizado: 'Maio/2026' },
+    { titulo: 'BMAM — promoções, quadro de acesso, reserva/reforma e proteção social', status: 'Análise funcional', ano: 'Tema permanente', tipo: 'individual', desc: 'Promoções, interstícios, curso de formação/aperfeiçoamento, reserva remunerada, reforma, pensão militar, incapacidade e proteção social dependem de data de ingresso, posto/graduação, quadro, tempo de serviço, ficha funcional e atos publicados.', base: 'Lei de Organização Básica, Estatuto dos Militares Estaduais, normas de promoção, proteção social militar, boletins e processo administrativo individual.', fonte: 'CBMAM / Legisla.AM / DOE-AM / Amazonprev', fonteUrl: 'https://www.cbm.am.gov.br/cbmam/legislacaos/listar', atualizado: 'Maio/2026' }
+  ];
+
+  ASSOCIACOES[inst] = [
+    { nome: 'ACS/AM — Associação dos Cabos e Soldados da Polícia Militar e Bombeiro Militar do Amazonas', foco: 'Praças da PMAM e do CBMAM, ativos, veteranos e pensionistas', acao: 'Representação associativa, acompanhamento de pautas remuneratórias, carreira, proteção social, condições de serviço e comunicação com a categoria.', site: 'https://acs-am.com.br', telefone: 'Consultar canais oficiais da entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação associativa, comunicação de pautas, convênios e eventual apoio jurídico conforme contrato/estatuto.' },
+    { nome: 'Entidades de oficiais e praças militares estaduais do Amazonas', foco: 'Oficiais, praças, reserva, reformados e pensionistas da PMAM e do CBMAM', acao: 'Espaço para cadastrar entidades locais adicionais ligadas a remuneração, promoções, carreira, saúde, reserva/reforma e condições de serviço.', site: 'Consultar canais oficiais da entidade', telefone: 'Consultar diretamente na entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Representação, convênios, orientação ao associado e acompanhamento administrativo/judicial.' },
+    { nome: 'Canais institucionais do CBMAM', foco: 'Informação oficial para bombeiros militares e sociedade amazonense', acao: 'Publicações, legislação, concursos, serviços técnicos, prevenção, notícias, comunicação institucional e atendimento ao público.', site: 'https://www.cbm.am.gov.br', telefone: '(92) 9 9123-3129 — canal institucional informado no portal oficial', mensalidade: 'Não se aplica', servicos: 'Legislação, notícias, concursos, atividades técnicas, serviços oficiais e comunicação institucional.' }
+  ];
+}
+
+
 function inserirOptionBombeiroNoSelect(select, item) {
   if (!select || Array.from(select.options || []).some(opt => opt.value === item.inst)) return;
   let grupo = Array.from(select.querySelectorAll('optgroup')).find(optgroup => optgroup.label === item.nome);
@@ -3285,6 +3474,8 @@ function aplicarRevisaoResumosInstitucionais() {
 aplicarEstruturaEstadosFaltantesDados();
 aplicarEstruturaBombeirosMilitaresDados();
 aplicarDadosEspecificosBmac();
+aplicarDadosEspecificosBmal();
+aplicarDadosEspecificosBmam();
 aplicarEstruturaFederaisDados();
 aplicarRevisaoResumosInstitucionais();
 

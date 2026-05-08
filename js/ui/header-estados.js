@@ -85,6 +85,7 @@ const HEADER_ESTADOS = {
     nome: 'Mato Grosso do Sul',
     sigla: 'MS',
     pm: 'pmms',
+    bm: 'bmms',
     pc: 'pcms',
     pp: 'ppms',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Mato_Grosso_do_Sul.svg'
@@ -132,6 +133,7 @@ const HEADER_INSTITUICOES_INFO = {
   ppsc: { titulo: 'PPSC', desc: 'Polícia Penal de Santa Catarina' },
   ppes: { titulo: 'PPES', desc: 'Polícia Penal do Espírito Santo' },
   pmms: { titulo: 'PMMS', desc: 'Polícia Militar de Mato Grosso do Sul' },
+  bmms: { titulo: 'CBMMS', desc: 'Corpo de Bombeiros Militar de Mato Grosso do Sul' },
   pcms: { titulo: 'PCMS', desc: 'Polícia Civil de Mato Grosso do Sul' },
   ppms: { titulo: 'PPMS', desc: 'Polícia Penal de Mato Grosso do Sul' },
   pmmt: { titulo: 'PMMT', desc: 'Polícia Militar de Mato Grosso' },
@@ -2796,7 +2798,7 @@ const BOMBEIROS_MILITARES_ESTRUTURA = [
   { estado: 'go', nome: 'Goiás', sigla: 'GO', inst: 'bmgo', titulo: 'BMGO', desc: 'Corpo de Bombeiros Militar do Estado de Goiás' },
   { estado: 'ma', nome: 'Maranhão', sigla: 'MA', inst: 'bmma', titulo: 'BMMA', desc: 'Corpo de Bombeiros Militar do Maranhão' },
   { estado: 'mg', nome: 'Minas Gerais', sigla: 'MG', inst: 'bmmg', titulo: 'CBMMG', desc: 'Corpo de Bombeiros Militar de Minas Gerais' },
-  { estado: 'ms', nome: 'Mato Grosso do Sul', sigla: 'MS', inst: 'bmms', titulo: 'BMMS', desc: 'Corpo de Bombeiros Militar de Mato Grosso do Sul' },
+  { estado: 'ms', nome: 'Mato Grosso do Sul', sigla: 'MS', inst: 'bmms', titulo: 'CBMMS', desc: 'Corpo de Bombeiros Militar de Mato Grosso do Sul' },
   { estado: 'mt', nome: 'Mato Grosso', sigla: 'MT', inst: 'bmmt', titulo: 'BMMT', desc: 'Corpo de Bombeiros Militar de Mato Grosso' },
   { estado: 'pa', nome: 'Pará', sigla: 'PA', inst: 'bmpa', titulo: 'BMPA', desc: 'Corpo de Bombeiros Militar do Pará' },
   { estado: 'pb', nome: 'Paraíba', sigla: 'PB', inst: 'bmpb', titulo: 'BMPB', desc: 'Corpo de Bombeiros Militar da Paraíba' },
@@ -3591,6 +3593,92 @@ aplicarDadosEspecificosBmam();
 
 
 
+function aplicarDadosEspecificosBmms() {
+  const inst = 'bmms';
+  const populacaoMs = 2924631;
+  const efetivoLegal = 3978;
+  const relacao = Math.round(populacaoMs / efetivoLegal);
+  HEADER_INSTITUICOES_INFO[inst] = { titulo: 'CBMMS', desc: 'Corpo de Bombeiros Militar de Mato Grosso do Sul' };
+  HEADER_INSTITUICOES_IMAGENS[inst] = 'img/BOMBEIRO/bmms.webp';
+  HEADER_INSTITUICOES_RESUMO[inst] = {
+    nome: 'Corpo de Bombeiros Militar de Mato Grosso do Sul',
+    sigla: 'CBMMS',
+    siglaInterna: 'BMMS',
+    estado: 'Mato Grosso do Sul',
+    estadoSigla: 'MS',
+    tipo: 'Bombeiro Militar',
+    criacao: '16/04/1973 · Lei MT nº 3.322 · origem histórica',
+    ativa: efetivoLegal,
+    ativaLabel: '3.978 cargos fixados em lei · LC MS nº 354/2025',
+    reserva: 0,
+    reservaLabel: 'Dados em breve',
+    femininas: 0,
+    femininasLabel: 'Dados em breve',
+    efetivoTotalLabel: '3.978 cargos fixados em lei · LC MS nº 354/2025',
+    populacao: populacaoMs,
+    populacaoLabel: '2.924.631 habitantes (estimado IBGE 2025)',
+    populacaoTitulo: 'População do Estado',
+    relacaoLabel: `1 cargo legal / ${relacao.toLocaleString('pt-BR')} hab. (estimado) · 0,136% (estimado)`,
+    relacaoTitulo: 'Relação efetivo legal/população',
+    governador: 'Eduardo Corrêa Riedel',
+    comando: 'Cel QOBM Frederico Reis Pouso Salas — Comandante-Geral',
+    estrutura: 'Comando-Geral, Subcomando-Geral, Estado-Maior-Geral, diretorias, coordenadorias, grupamentos e subgrupamentos bombeiro militar, unidades operacionais especializadas, atividades técnicas, ensino, logística e resposta a emergências.',
+    sede: 'Rua Fernando Augusto Corrêa da Costa, nº 376 — Jardim América, Campo Grande/MS — CEP 79080-790',
+    emergencia: '193',
+    linksOficiais: [
+      'https://www.bombeiros.ms.gov.br/',
+      'https://www.bombeiros.ms.gov.br/comando/comandante-geral/',
+      'https://legislacao.bombeiros.ms.gov.br/',
+      'https://www.concursos.ms.gov.br/'
+    ],
+    fonte: 'CBMMS; Governo de MS; Portal da Legislação MS; Normas internas CBMMS; LC MS 127/2008, LC MS 188/2014, LC MS 291/2021, LC MS 354/2025, Lei MS 6.562/2026; IBGE 2025; concursos.ms.gov.br',
+    atualizado: 'CBMMS revisado em 07/05/2026 — efetivo exibido como cargo legal; população e relação marcadas como estimadas; remuneração cadastrada por subsídio e nível com RGA 2026'
+  };
+
+  CONFIGS_INSTITUICOES_GENERICAS[inst] = {
+    titulo: 'CBMMS',
+    desc: 'Corpo de Bombeiros Militar de Mato Grosso do Sul',
+    cor: '#b91c1c',
+    alertaPrev: 'CBMMS/MS: conferir subsídio por posto/graduação e nível, SPSM/MS, AGEPREV/MS, ajuda de custo, fardamento, indenizações, função, escala, rubricas pessoais e base de contribuição diretamente no contracheque e na norma vigente.'
+  };
+
+  if (typeof CARGOS_BMMS !== 'undefined' && Array.isArray(CARGOS_BMMS) && CARGOS_BMMS.length) {
+    CARGOS_ESTRUTURA_GENERICAS[inst] = CARGOS_BMMS;
+  }
+
+  CONCURSOS[inst] = {
+    edital: 'CBMMS — Processo Seletivo Simplificado SAD/SEJUSP/CBMMS/QPTBM/2025 para Quadro de Praças Temporárias; concursos efetivos anteriores/homologados devem ser conferidos em concursos.ms.gov.br e DOE/MS.',
+    salario: 'Tabela de remuneração do portal: subsídio militar estadual por posto/graduação e nível com RGA 2026; valores de edital de formação devem ser conferidos no edital específico.',
+    vagas: 'QPTBM/2025: conferir editais complementares no portal oficial. Efetivo legal da corporação: 3.978 cargos pela LC MS nº 354/2025.',
+    cotas: 'Conforme edital específico e legislação estadual aplicável.',
+    idade: 'Conforme edital específico, Lei MS nº 3.808/2009 e alterações.',
+    escolaridade: 'Conforme edital específico; para ingresso operacional, conferir exigência de ensino médio/superior conforme carreira e curso.',
+    materias: 'Conforme conteúdo programático do edital específico.',
+    banca: 'Portal oficial de concursos do Governo de Mato Grosso do Sul; banca/organizadora conforme edital.',
+    inscritos: 'Acompanhar cronograma no portal concursos.ms.gov.br e publicações do DOE/MS.',
+    etapas: 'Prova quando prevista, TAF, avaliação psicológica, exame médico, investigação social, prova de títulos/documental e curso de formação conforme edital.',
+    cfsd: 'Curso de Formação de Soldados/Praças Bombeiro Militar conforme edital de ingresso ou seleção temporária.',
+    estagio: 'Conforme Estatuto dos Militares Estaduais de MS e edital específico.',
+    validade: 'Conforme edital específico.',
+    previsao: 'Não publicar novo concurso efetivo aberto sem fonte oficial. Manter destaque para editais vigentes no portal oficial de concursos de MS.',
+    site: 'https://www.concursos.ms.gov.br/'
+  };
+
+  ASSOCIACOES[inst] = [
+    { nome: 'ABMMS — Associação dos Bombeiros Militares de Mato Grosso do Sul', foco: 'Bombeiros militares estaduais de Mato Grosso do Sul', acao: 'Representação associativa, acompanhamento de pautas da categoria, apoio institucional e comunicação de interesse dos bombeiros militares.', site: 'Dados em breve', telefone: 'Consultar diretamente na entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação associativa, comunicação institucional, eventual apoio jurídico e convênios conforme estatuto/contrato.' },
+    { nome: 'ACS/MS — Associação e Centro Social dos Policiais Militares e Bombeiros Militares de MS', foco: 'Praças e militares estaduais de Mato Grosso do Sul', acao: 'Representação associativa de militares estaduais, acompanhamento de carreira, remuneração, proteção social e condições de trabalho.', site: 'https://acsms.org.br/', telefone: 'Consultar diretamente na entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Comunicação de pautas, convênios, orientação associativa e apoio ao associado conforme regras internas.' },
+    { nome: 'Canais oficiais do CBMMS', foco: 'Bombeiros militares, candidatos e sociedade', acao: 'Informação institucional, prevenção, legislação, concursos, atividades técnicas e notícias oficiais.', site: 'https://www.bombeiros.ms.gov.br/', telefone: '193 · (67) 3357-9400', mensalidade: 'Não se aplica', servicos: 'Emergência, prevenção, legislação, cursos, concursos, notícias e atendimento administrativo conforme unidade.' }
+  ];
+
+  ACOES_JUDICIAIS[inst] = [
+    { titulo: 'Subsídio militar MS — nível, referência e enquadramento', status: 'Conferência individual', ano: 'LC 127/2008, LC 291/2021 e Lei 6.562/2026', tipo: 'individual', desc: 'Conferir se posto/graduação, nível, tempo de carreira, promoção, enquadramento e RGA foram aplicados corretamente no contracheque. Não tratar como diferença automática.', base: 'LC MS nº 127/2008; LC MS nº 291/2021; Lei MS nº 6.562/2026.', fonte: 'Portal da Legislação MS / Normas internas CBMMS', fonteUrl: 'https://legislacao.bombeiros.ms.gov.br/tabelas-de-subsidios/', atualizado: 'Maio/2026' },
+    { titulo: 'Ajuda de custo, fardamento, diárias e indenizações', status: 'Conferência administrativa/judicial conforme caso', ano: 'Legislação estadual vigente', tipo: 'individual', desc: 'Verificar pagamento, base de cálculo e natureza das parcelas indenizatórias ou eventuais, conforme escala, designação, missão, curso e ato administrativo.', base: 'Estatuto dos Militares Estaduais de MS; LC MS nº 291/2021; normas internas do CBMMS; DOE/MS.', fonte: 'CBMMS / DOE-MS', fonteUrl: 'https://legislacao.bombeiros.ms.gov.br/', atualizado: 'Maio/2026' },
+    { titulo: 'SPSM/MS, AGEPREV/MS, reserva remunerada e reforma', status: 'Possível revisão individual', ano: 'Regime vigente', tipo: 'individual', desc: 'Conferir contribuição, base de cálculo, tempo de serviço, regras de passagem para reserva/reforma, pensão militar e eventual averbação. Depende da data de ingresso e situação funcional.', base: 'Legislação estadual de proteção social dos militares de MS; LC MS nº 053/1990 e alterações; normas previdenciárias estaduais.', fonte: 'AGEPREV/MS / Portal da Legislação MS', fonteUrl: 'https://www.ageprev.ms.gov.br/', atualizado: 'Maio/2026' },
+    { titulo: 'Promoção, antiguidade, merecimento e interstício', status: 'Análise individual ou coletiva conforme ato', ano: 'Normas de carreira', tipo: 'individual/coletivo', desc: 'Conferir publicações de promoção, interstícios, cursos, vagas por efetivo legal e critérios de antiguidade/merecimento. Não há ganho automático sem ato e documentação.', base: 'LC MS nº 188/2014; LC MS nº 354/2025; estatuto e normas internas do CBMMS.', fonte: 'CBMMS / Portal da Legislação MS', fonteUrl: 'https://legislacao.bombeiros.ms.gov.br/', atualizado: 'Maio/2026' },
+    { titulo: 'Licença especial, férias não gozadas e conversão em pecúnia', status: 'Possível cobrança individual', ano: 'Conforme histórico funcional', tipo: 'individual', desc: 'Verificar períodos adquiridos, não usufruídos e não indenizados, especialmente em passagem para reserva/reforma ou desligamento.', base: 'Estatuto dos Militares Estaduais de MS; jurisprudência aplicável; atos funcionais individuais.', fonte: 'Portal da Legislação MS / ficha funcional', fonteUrl: 'https://aacpdappls.net.ms.gov.br/appls/legislacao/secoge/govato.nsf', atualizado: 'Maio/2026' }
+  ];
+}
+
 function aplicarDadosEspecificosBmmg() {
   const inst = 'bmmg';
   const estado = 'mg';
@@ -4026,6 +4114,7 @@ function aplicarDadosEspecificosBmba() {
 
 aplicarDadosEspecificosBmap();
 aplicarDadosEspecificosBmmg();
+aplicarDadosEspecificosBmms();
 aplicarDadosEspecificosBmpr();
 aplicarDadosEspecificosBmrj();
 aplicarDadosEspecificosBmba();
@@ -4861,6 +4950,7 @@ function mudarInstituicao(novaInstituicao) {
     ppsc: { titulo: "PPSC", desc: POLICIAS_PENAIS_INFO.ppsc.nome, cor: "#38598b", alertaPrev: `${POLICIAS_PENAIS_INFO.ppsc.sigla}: ${POLICIAS_PENAIS_INFO.ppsc.previdencia} ${POLICIAS_PENAIS_INFO.ppsc.vantagens}` },
     ppes: { titulo: "PPES", desc: POLICIAS_PENAIS_INFO.ppes.nome, cor: "#5e548e", alertaPrev: `${POLICIAS_PENAIS_INFO.ppes.sigla}: ${POLICIAS_PENAIS_INFO.ppes.previdencia} ${POLICIAS_PENAIS_INFO.ppes.vantagens}` },
     pmms: { titulo: "PMMS", desc: "Polícia Militar de Mato Grosso do Sul", cor: "#2f5f8f", alertaPrev: "PMMS: conferir sistema de proteção social dos militares estaduais, AGEPREV/MS, regra de ingresso, averbações, reserva remunerada e reforma conforme legislação estadual." },
+    bmms: { titulo: "CBMMS", desc: "Corpo de Bombeiros Militar de Mato Grosso do Sul", cor: "#b91c1c", alertaPrev: "CBMMS/MS: conferir subsídio por posto/graduação e nível, SPSM/MS, AGEPREV/MS, ajuda de custo, fardamento, indenizações, função, escala e demais rubricas no contracheque e na norma vigente." },
     pcms: { titulo: "PCMS", desc: "Polícia Civil de Mato Grosso do Sul", cor: "#4b5563", alertaPrev: "PCMS: conferir LC MS 114/2005, LC MS 343/2024, AGEPREV/MS, cargo, classe, referência, tempo em atividade policial e regra de aposentadoria aplicada." },
     ppms: { titulo: "PPMS", desc: POLICIAS_PENAIS_INFO.ppms.nome, cor: "#516b3b", alertaPrev: `${POLICIAS_PENAIS_INFO.ppms.sigla}: ${POLICIAS_PENAIS_INFO.ppms.previdencia} ${POLICIAS_PENAIS_INFO.ppms.vantagens}` },
     pmmt: { titulo: "PMMT", desc: "Polícia Militar de Mato Grosso", cor: "#1f7a4d", alertaPrev: "PMMT: conferir sistema de proteção social dos militares estaduais, MTPREV/MT, regra de ingresso, averbações, reserva remunerada e reforma conforme legislação estadual." },
@@ -5432,6 +5522,7 @@ function imagemPrincipalBrasaoInstituicao(inst) {
 function getCriadorInstitucional(inst, tipo, estadoNome) {
   if (inst === 'pmesp') return 'Brigadeiro Rafael Tobias de Aguiar — então presidente da Província de São Paulo, pela lei provincial de 15/12/1831.';
   if (inst === 'pmerj') return 'D. João VI — criação da Divisão Militar da Guarda Real da Polícia da Corte em 13/05/1809.';
+  if (inst === 'bmms') return 'Governo de Mato Grosso — Lei MT nº 3.322/1973, origem histórica do Comando do Corpo de Bombeiros; Mato Grosso do Sul reorganizou a corporação após a criação do Estado.';
   if (inst === 'bmmg') return 'Júlio Bueno Brandão — Lei MG nº 557, de 31/08/1911, que autorizou a organização da Seção de Bombeiros Profissionais.';
   if (inst === 'bmpr') return 'Carlos Cavalcanti de Albuquerque — Lei PR nº 1.133, de 23/03/1912, que criou o Corpo de Bombeiros do Estado do Paraná.';
   if (inst === 'bmrj') return 'Dom Pedro II — Decreto Imperial nº 1.775, de 02/07/1856, criou o Corpo Provisório de Bombeiros da Corte.';
@@ -5464,6 +5555,23 @@ function getHistoricoPorTipo(inst, dados) {
     };
   }
 
+
+
+  if (inst === 'bmms') {
+    return {
+      origem: `O ${nome} tem origem histórica no Comando do Corpo de Bombeiros Militar criado em 16 de abril de 1973 pela Lei MT nº 3.322, ainda no antigo Estado de Mato Grosso, com destacamentos em Campo Grande e Corumbá. Com a criação de Mato Grosso do Sul, consolidou-se como corporação militar estadual de prevenção, combate a incêndios, salvamento, atendimento emergencial, defesa civil e segurança contra incêndio e pânico.`,
+      marcos: [
+        '1971: inauguração do quartel em Campo Grande, marco operacional anterior à criação formal do comando.',
+        '1973: Lei MT nº 3.322 cria o Comando do Corpo de Bombeiros Militar no antigo Mato Grosso.',
+        '1974: Lei MT nº 3.539 organiza o Comando e o Estado-Maior do Corpo de Bombeiros Militar.',
+        '1979: com a criação de Mato Grosso do Sul, o serviço passa a integrar a estrutura militar estadual sul-mato-grossense.',
+        '2008: LC MS nº 127 institui o sistema remuneratório por subsídio para PMMS e CBMMS.',
+        '2014: LC MS nº 188 dispõe sobre a organização básica do CBMMS.',
+        '2025: LC MS nº 354 fixa o efetivo legal do CBMMS em 3.978 integrantes.',
+        '2026: Lei MS nº 6.562 aplica RGA de 3,81% ao subsídio dos servidores estaduais.'
+      ]
+    };
+  }
 
   if (inst === 'bmmg') {
     return {
@@ -5696,5 +5804,6 @@ function renderizarBrasoesHistoria() {
 // Reaplica BMBA após as rotinas globais de normalização para preservar os campos estimados e a remuneração detalhada recém-cadastrados.
 if (typeof aplicarDadosEspecificosBmba === 'function') aplicarDadosEspecificosBmba();
 if (typeof aplicarDadosEspecificosBmmg === 'function') aplicarDadosEspecificosBmmg();
+if (typeof aplicarDadosEspecificosBmms === 'function') aplicarDadosEspecificosBmms();
 if (typeof aplicarDadosEspecificosBmpr === 'function') aplicarDadosEspecificosBmpr();
 if (typeof aplicarDadosEspecificosBmrj === 'function') aplicarDadosEspecificosBmrj();

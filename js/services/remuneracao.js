@@ -121,6 +121,10 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     nome: 'PMMS — Tabela salarial militar MS 05/2025, com reajuste de 5,06% aplicado',
     url: 'https://ronda.org.br/assembleia-aprova-reajuste-de-506-aos-servidores-de-ms-confira-a-tabela-salarial-da-pm-e-bm/'
   },
+  bmms: {
+    nome: 'CBMMS — Subsídio militar estadual por posto/graduação e nível; LC MS 127/2008, LC MS 291/2021, tabela militar 05/2025 e RGA 3,81% da Lei MS 6.562/2026',
+    url: 'https://legislacao.bombeiros.ms.gov.br/tabelas-de-subsidios/'
+  },
   pcms: {
     nome: 'PCMS — Edital APJ/2025; LC MS nº 343/2024; LC MS nº 290/2021 para Delegado',
     url: 'https://www.pc.ms.gov.br/governo-de-mato-grosso-do-sul-abre-concurso-publico-com-400-vagas-para-a-policia-civil/'
@@ -222,6 +226,9 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
     return `${detalhesLinha}${info.sigla}: ${info.atribuicoes} ${info.vantagens} Fonte principal: ${info.fonte}.`;
   }
 
+  if (inst === 'bmms') {
+    return linha.benefDesc || 'CBMMS: subsídio por posto/graduação e nível; SPSM/MS, AGEPREV/MS, ajuda de custo, fardamento, diárias, indenizações, função, escala e parcelas pessoais dependem da legislação estadual e do contracheque; não foram somados automaticamente.';
+  }
   if (inst === 'pmms') {
     return linha.benefDesc || 'PMMS: adicionais, indenizações, auxílio, escala, fardamento ou verbas específicas dependem da legislação estadual, lotação, ordem de serviço, escala e contracheque; não foram somados automaticamente.';
   }
@@ -531,7 +538,7 @@ function getTabelaCargosRemuneracao(inst) {
     pmrs: CARGOS_PMRS,   pcrs: CARGOS_PCRS,   pprs: CARGOS_PPRS,
     pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC,   ppsc: CARGOS_PPSC,
     pmes: CARGOS_PMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,
-    pmms: CARGOS_PMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
+    pmms: CARGOS_PMMS,   bmms: CARGOS_BMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
     pmmt: CARGOS_PMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,};
   const instNorm = normalizarInstituicao(inst);
   return CARGOS_ESTRUTURA_GENERICAS[instNorm] || map[instNorm] || CARGOS_PM;
@@ -576,6 +583,13 @@ function calcularRemuneracaoTabelada(inst, cargo) {
     benefDesc = cargo.benefDesc || 'Auxílios, adicionais, fardamento, indenizações e verbas por escala/lotação dependem da legislação estadual, ato administrativo e contracheque; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || 'pmms';
     badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Tabela 05/2025');
+  } else if (inst === 'bmms') {
+    remuneracao = padrao;
+    beneficios = 0;
+    criterio = cargo.criterio || 'Subsídio do CBMMS por posto/graduação e nível, com RGA 2026 aplicada; confirmar DOE/MS, edital ou contracheque para rubricas individuais.';
+    benefDesc = cargo.benefDesc || 'Ajuda de custo, fardamento, indenizações, adicionais por função/lotação, diárias e rubricas pessoais dependem da legislação estadual, ato administrativo e contracheque; não foram somados automaticamente.';
+    fonteKey = cargo.fonteKey || 'bmms';
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'RGA 2026');
   } else if (inst === 'pcms') {
     remuneracao = padrao;
     beneficios = 0;

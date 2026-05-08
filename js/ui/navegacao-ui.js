@@ -199,6 +199,7 @@ function atualizarHeaderDesc(descInstituicao) {
     ppes: 'Polícia Penal do Espírito Santo',
     bmap: 'Corpo de Bombeiros Militar do Amapá',
     pmms: 'Polícia Militar de Mato Grosso do Sul',
+    bmms: 'Corpo de Bombeiros Militar de Mato Grosso do Sul',
     pcms: 'Polícia Civil de Mato Grosso do Sul',
     ppms: 'Polícia Penal de Mato Grosso do Sul',
     pmmt: 'Polícia Militar de Mato Grosso',
@@ -264,7 +265,7 @@ function popularCargos(inst) {
     pmrs: CARGOS_PMRS,   pcrs: CARGOS_PCRS,   pprs: CARGOS_PPRS,
     pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC,   ppsc: CARGOS_PPSC,
     pmes: CARGOS_PMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,
-    pmms: CARGOS_PMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
+    pmms: CARGOS_PMMS,   bmms: CARGOS_BMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
     pmmt: CARGOS_PMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,
     bmap: CARGOS_BMAP,};
   currTabela = CARGOS_ESTRUTURA_GENERICAS[inst] || map[inst] || CARGOS_PM;

@@ -394,6 +394,24 @@ const CONCURSOS = {
     previsao: "Acompanhar PMMS, Concursos MS, SEJUSP/MS e Diário Oficial/MS para novos editais e convocações.",
     site: "https://www.pm.ms.gov.br/"
   },
+
+  bmms: {
+    edital: "CBMMS — Processo Seletivo Simplificado SAD/SEJUSP/CBMMS/QPTBM/2025 para Quadro de Praças Temporárias; concursos efetivos anteriores/homologados devem ser conferidos no portal oficial de concursos e no DOE/MS.",
+    salario: "Remuneração no portal pela tabela de subsídio do CBMMS com RGA 2026 aplicada. Valores de edital de formação devem ser conferidos no edital específico.",
+    vagas: "QPTBM/2025: conferir editais complementares. Efetivo legal do CBMMS: 3.978 cargos pela LC MS nº 354/2025.",
+    cotas: "Conforme edital específico e legislação estadual aplicável.",
+    idade: "Conforme edital específico, Lei MS nº 3.808/2009 e alterações.",
+    escolaridade: "Conforme edital específico.",
+    materias: "Conforme conteúdo programático do edital específico.",
+    banca: "Portal oficial de concursos do Governo de Mato Grosso do Sul; banca/organizadora conforme edital.",
+    inscritos: "Acompanhar cronograma no portal concursos.ms.gov.br e publicações do DOE/MS.",
+    etapas: "Prova quando prevista, TAF, avaliação psicológica, exame médico, investigação social, títulos/documental e curso de formação conforme edital.",
+    cfsd: "Curso de Formação de Soldados/Praças Bombeiro Militar conforme edital de ingresso ou seleção temporária.",
+    estagio: "Conforme Estatuto dos Militares Estaduais de MS e edital específico.",
+    validade: "Conforme edital específico.",
+    previsao: "Não publicar novo concurso efetivo aberto sem fonte oficial. Manter destaque para editais vigentes no portal oficial de concursos de MS.",
+    site: "https://www.concursos.ms.gov.br/"
+  },
   pcms: {
     edital: "PCMS — Agente de Polícia Judiciária — Edital SAD/SEJUSP/PCMS/APJ/2025",
     salario: "R$ 6.569,53 para Investigador de Polícia Judiciária e Escrivão de Polícia Judiciária, jornada de 40h, conforme divulgação oficial do concurso APJ/2025.",

@@ -532,6 +532,24 @@ const CONCURSOS = {
     site: "https://www.cbmerj.rj.gov.br/cursos-e-concursos/"
   }
 ,
+
+  bmpr: {
+    edital: 'CBMPR — Concursos 2025: Soldado Bombeiro Militar, Edital nº 01/2025, IBFC, 600 vagas; Cadete Bombeiro Militar, Concurso Público nº 01/2025, Instituto AOCP, 20 vagas.',
+    salario: 'Soldado: página oficial de ingresso informa Soldado 2ª Classe R$ 2.530,12 e Soldado 1ª Classe R$ 5.839,11; tabela Administração/PR julho/2025 mostra Soldado 1ª Classe Classe I em R$ 6.101,87. Cadete 1º ano: R$ 3.994,86; 2º Tenente: R$ 11.163,91 na página oficial de ingresso, com tabela de carreira própria no portal.',
+    vagas: 'Soldado BM 2025: 600 vagas. Cadete BM 2025: 20 vagas. Posse de 851 novos soldados divulgada pelo CBMPR para maio/2026.',
+    cotas: 'Conferir regras de reserva, ampla concorrência e critérios de desempate nos editais IBFC/AOCP e retificações oficiais.',
+    idade: 'Soldado: máximo de 30 anos, curso superior e CNH categoria B, conforme página oficial de ingresso. Cadete: conferir edital AOCP/CBMPR.',
+    escolaridade: 'Nível superior para Soldado BM; Cadete conforme edital do concurso e página oficial de ingresso.',
+    materias: 'Prova objetiva, exames de capacidade física, avaliação psicológica, investigação social, avaliação de saúde, investigação social e demais fases conforme edital IBFC/AOCP.',
+    banca: 'IBFC para Soldado Bombeiro Militar 2025; Instituto AOCP para Cadete Bombeiro Militar 2025.',
+    inscritos: 'Concursos 2025 com páginas oficiais no CBMPR; acompanhar editais, convocações, resultados e posse nos sites das bancas.',
+    etapas: 'Prova objetiva, exame de capacidade física, avaliação psicológica, investigação social, avaliação de saúde, documentação, matrícula e curso de formação, conforme edital.',
+    cfsd: 'Soldado BM realiza curso de formação; Cadete BM realiza CFO/Curso de Formação de Oficiais conforme edital e normas da corporação.',
+    estagio: 'Estágio probatório e evolução funcional conforme Código da Polícia Militar do Paraná, legislação aplicada ao CBMPR e atos da corporação.',
+    validade: 'Conferir edital, homologação e eventual prorrogação oficial.',
+    previsao: 'Não publicar novo concurso aberto sem fonte oficial posterior. Destaque atual: concursos 2025 de Soldado e Cadete Bombeiro Militar.',
+    site: 'https://www.bombeiros.pr.gov.br/Pagina/Concursos'
+  },
   bmmg: {
     edital: "CBMMG — Editais nº 09/2026 (CFO BM 2027) e nº 10/2026 (CFSd BM 2027), publicados em 16/03/2026.",
     salario: "CFO: Cadete R$ 7.506,80; 2º Tenente R$ 11.547,07. CFSd: Soldado 2ª Classe R$ 4.562,30 durante o curso; Soldado 1ª Classe R$ 5.332,60 após formação. Benefícios conforme edital: abono fardamento, assistência médico-hospitalar, psicológica, odontológica e auxílio-alimentação quando devido.",

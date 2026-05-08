@@ -52,6 +52,7 @@ const HEADER_ESTADOS = {
     nome: 'Paraná',
     sigla: 'PR',
     pm: 'pmpr',
+    bm: 'bmpr',
     pc: 'pcpr',
     pp: 'pppr',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Paran%C3%A1.svg'
@@ -114,6 +115,7 @@ const HEADER_INSTITUICOES_INFO = {
   pmba:  { titulo: 'PMBA',  desc: 'Polícia Militar da Bahia' },
   pcba:  { titulo: 'PCBA',  desc: 'Polícia Civil da Bahia' },
   pmpr:  { titulo: 'PMPR',  desc: 'Polícia Militar do Paraná' },
+  bmpr: { titulo: 'CBMPR', desc: 'Corpo de Bombeiros Militar do Paraná' },
   pcpr:  { titulo: 'PCPR',  desc: 'Polícia Civil do Paraná' },
   pmrs:  { titulo: 'PMRS',  desc: 'Brigada Militar do Rio Grande do Sul' },
   pcrs:  { titulo: 'PCRS',  desc: 'Polícia Civil do Rio Grande do Sul' },
@@ -2800,7 +2802,7 @@ const BOMBEIROS_MILITARES_ESTRUTURA = [
   { estado: 'pb', nome: 'Paraíba', sigla: 'PB', inst: 'bmpb', titulo: 'BMPB', desc: 'Corpo de Bombeiros Militar da Paraíba' },
   { estado: 'pe', nome: 'Pernambuco', sigla: 'PE', inst: 'bmpe', titulo: 'BMPE', desc: 'Corpo de Bombeiros Militar de Pernambuco' },
   { estado: 'pi', nome: 'Piauí', sigla: 'PI', inst: 'bmpi', titulo: 'BMPI', desc: 'Corpo de Bombeiros Militar do Piauí' },
-  { estado: 'pr', nome: 'Paraná', sigla: 'PR', inst: 'bmpr', titulo: 'BMPR', desc: 'Corpo de Bombeiros Militar do Paraná' },
+  { estado: 'pr', nome: 'Paraná', sigla: 'PR', inst: 'bmpr', titulo: 'CBMPR', desc: 'Corpo de Bombeiros Militar do Paraná' },
   { estado: 'rj', nome: 'Rio de Janeiro', sigla: 'RJ', inst: 'bmrj', titulo: 'CBMERJ', desc: 'Corpo de Bombeiros Militar do Estado do Rio de Janeiro' },
   { estado: 'rn', nome: 'Rio Grande do Norte', sigla: 'RN', inst: 'bmrn', titulo: 'BMRN', desc: 'Corpo de Bombeiros Militar do Rio Grande do Norte' },
   { estado: 'ro', nome: 'Rondônia', sigla: 'RO', inst: 'bmro', titulo: 'BMRO', desc: 'Corpo de Bombeiros Militar de Rondônia' },
@@ -3696,6 +3698,119 @@ function aplicarDadosEspecificosBmmg() {
   ];
 }
 
+
+function aplicarDadosEspecificosBmpr() {
+  const inst = 'bmpr';
+  const estado = 'pr';
+  const efetivoAtivo = 3146;
+  const populacaoPr = 11890517;
+  const relacaoHab = Math.round(populacaoPr / efetivoAtivo);
+  const relacaoPct = ((efetivoAtivo / populacaoPr) * 100).toFixed(3).replace('.', ',');
+
+  if (!HEADER_ESTADOS[estado]) {
+    HEADER_ESTADOS[estado] = { nome: 'Paraná', sigla: 'PR', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Paran%C3%A1.svg' };
+  }
+  HEADER_ESTADOS[estado].pm = HEADER_ESTADOS[estado].pm || 'pmpr';
+  HEADER_ESTADOS[estado].bm = inst;
+  HEADER_ESTADOS[estado].bombeiro = inst;
+
+  if (typeof INSTITUICOES_VALIDAS !== 'undefined' && Array.isArray(INSTITUICOES_VALIDAS) && !INSTITUICOES_VALIDAS.includes(inst)) {
+    INSTITUICOES_VALIDAS.push(inst);
+  }
+
+  HEADER_INSTITUICOES_INFO[inst] = { titulo: 'CBMPR', desc: 'Corpo de Bombeiros Militar do Paraná' };
+  HEADER_INSTITUICOES_IMAGENS[inst] = 'img/BOMBEIRO/bmpr.webp';
+
+  HEADER_INSTITUICOES_RESUMO[inst] = {
+    nome: 'Corpo de Bombeiros Militar do Paraná',
+    sigla: 'CBMPR',
+    siglaInterna: 'BMPR',
+    estado: 'Paraná',
+    estadoSigla: 'PR',
+    tipo: 'Bombeiro Militar',
+    criacao: '23/03/1912 · Lei PR nº 1.133',
+    ativa: efetivoAtivo,
+    ativaLabel: '3.146 ativos · ref. CBMPR 12/2025',
+    reserva: 0,
+    reservaLabel: 'Dados em breve',
+    femininas: 0,
+    femininasLabel: '5.704 cargos fixados em lei · Lei PR 22.916/2025',
+    efetivoTotalLabel: '5.704 cargos fixados em lei · Lei PR 22.916/2025',
+    populacao: populacaoPr,
+    populacaoTitulo: 'População do Estado',
+    populacaoLabel: '11.890.517 habitantes (estimado IBGE 2025)',
+    relacaoLabel: `1 ativo / ${relacaoHab.toLocaleString('pt-BR')} hab. (estimado) · ${relacaoPct}% (estimado)`,
+    relacaoTitulo: 'Relação ativa/população',
+    governador: 'Carlos Massa Ratinho Junior',
+    comando: 'Cel QOBM Antônio Geraldo Hiller Lino — Comandante-Geral',
+    estrutura: 'Comando-Geral, Subcomando-Geral, Estado-Maior, Coordenadoria Estadual do SIATE, Divisão de Administração e Finanças, Ajudância, Assessoria Jurídica, cinco Comandos Regionais e 20 unidades operacionais.',
+    sede: 'Rua Nunes Machado, nº 100 — Centro, Curitiba/PR — CEP 80.250-000',
+    emergencia: '193',
+    coberturaLabel: 'Cinco Comandos Regionais e 20 unidades operacionais no Estado; atendimento emergencial pelo 193.',
+    ocorrenciasLabel: 'Ocorrências, vistorias, incêndios, salvamentos, SIATE, defesa civil e ações preventivas devem ser atualizadas por relatórios oficiais do CBMPR.',
+    linksOficiais: [
+      'https://www.bombeiros.pr.gov.br/',
+      'https://www.bombeiros.pr.gov.br/Pagina/Comando-Geral-do-Corpo-de-Bombeiros',
+      'https://www.bombeiros.pr.gov.br/Pagina/Historico-do-Corpo-de-Bombeiros-Militar-do-Parana',
+      'https://www.bombeiros.pr.gov.br/Pagina/Concursos',
+      'https://www.administracao.pr.gov.br/Recursos-Humanos/Pagina/Carreiras-e-Tabelas-Salariais'
+    ],
+    fonte: 'CBMPR; Administração/PR — Carreiras e Tabelas Salariais; Legislação/PR; ParanáPrevidência; FASPM; IBGE/AEN; Lei PR 1.133/1912; Lei PR 22.187/2024; Lei PR 22.916/2025; concursos CBMPR 2025.',
+    atualizado: 'CBMPR revisado em 07/05/2026 — população e relação ativa/população marcadas como estimadas; remuneração tabelada conforme Administração/PR e Lei PR 22.187/2024.'
+  };
+
+  if (typeof REMUNERACAO_FONTES_OFICIAIS !== 'undefined') {
+    REMUNERACAO_FONTES_OFICIAIS[inst] = {
+      nome: 'Administração/PR — Carreiras e Tabelas Salariais — Quadro do Bombeiro Militar do Paraná — Lei PR nº 22.187/2024; auxílio-alimentação Lei PR nº 22.208/2024',
+      url: 'https://www.administracao.pr.gov.br/Recursos-Humanos/Pagina/Carreiras-e-Tabelas-Salariais'
+    };
+  }
+
+  if (typeof CARGOS_BMPR !== 'undefined' && Array.isArray(CARGOS_BMPR) && CARGOS_BMPR.length) {
+    CARGOS_ESTRUTURA_GENERICAS[inst] = CARGOS_BMPR;
+  }
+
+  CONFIGS_INSTITUICOES_GENERICAS[inst] = {
+    titulo: 'CBMPR',
+    desc: 'Corpo de Bombeiros Militar do Paraná',
+    cor: '#b91c1c',
+    alertaPrev: 'CBMPR/ParanáPrevidência/FASPM: conferir contribuição militar, FASPM facultativo, auxílio-alimentação, classe, posto/graduação, diárias, indenizações e demais rubricas no contracheque. Não tratar valor de edital como remuneração total individual.'
+  };
+
+  CONCURSOS[inst] = {
+    edital: 'CBMPR — Concursos 2025: Soldado Bombeiro Militar, Edital nº 01/2025, IBFC, 600 vagas; Cadete Bombeiro Militar, Concurso Público nº 01/2025, Instituto AOCP, 20 vagas.',
+    salario: 'Soldado: página oficial de ingresso informa Soldado 2ª Classe R$ 2.530,12 e Soldado 1ª Classe R$ 5.839,11; tabela Administração/PR julho/2025 mostra Soldado 1ª Classe Classe I em R$ 6.101,87. Cadete 1º ano: R$ 3.994,86; 2º Tenente: R$ 11.163,91 na página oficial de ingresso, com tabela de carreira própria no portal.',
+    vagas: 'Soldado BM 2025: 600 vagas. Cadete BM 2025: 20 vagas. Posse de 851 novos soldados divulgada pelo CBMPR para maio/2026.',
+    cotas: 'Conferir regras de reserva, ampla concorrência e critérios de desempate nos editais IBFC/AOCP e retificações oficiais.',
+    idade: 'Soldado: máximo de 30 anos, curso superior e CNH categoria B, conforme página oficial de ingresso. Cadete: conferir edital AOCP/CBMPR.',
+    escolaridade: 'Nível superior para Soldado BM; Cadete conforme edital do concurso e página oficial de ingresso.',
+    materias: 'Prova objetiva, exames de capacidade física, avaliação psicológica, investigação social, avaliação de saúde e demais fases conforme edital IBFC/AOCP.',
+    banca: 'IBFC para Soldado Bombeiro Militar 2025; Instituto AOCP para Cadete Bombeiro Militar 2025.',
+    inscritos: 'Concursos 2025 com páginas oficiais no CBMPR; acompanhar editais, convocações, resultados e posse nos sites das bancas.',
+    etapas: 'Prova objetiva, exame de capacidade física, avaliação psicológica, investigação social, avaliação de saúde, documentação, matrícula e curso de formação, conforme edital.',
+    cfsd: 'Soldado BM realiza curso de formação; Cadete BM realiza CFO/Curso de Formação de Oficiais conforme edital e normas da corporação.',
+    estagio: 'Estágio probatório e evolução funcional conforme Código da Polícia Militar do Paraná, legislação aplicada ao CBMPR e atos da corporação.',
+    validade: 'Conferir edital, homologação e eventual prorrogação oficial.',
+    previsao: 'Não publicar novo concurso aberto sem fonte oficial posterior. Destaque atual: concursos 2025 de Soldado e Cadete Bombeiro Militar.',
+    site: 'https://www.bombeiros.pr.gov.br/Pagina/Concursos'
+  };
+
+  ASSOCIACOES[inst] = [
+    { nome: 'AVM — Associação da Vila Militar', foco: 'Militares estaduais do Paraná, ativos, veteranos, pensionistas e familiares', acao: 'Representação associativa, orientação de classe, comunicação institucional e apoio ao associado.', site: 'https://www.avmpmpr.com.br/', telefone: 'Consultar canais oficiais da entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Atendimento associativo, comunicação, convênios, orientação e apoio conforme regulamento interno.' },
+    { nome: 'AMAI — Associação de Defesa dos Militares Estaduais Ativos, Inativos e Pensionistas do Paraná', foco: 'Militares estaduais do Paraná e pensionistas', acao: 'Atuação associativa em pautas remuneratórias, previdenciárias, administrativas e de carreira.', site: 'Consultar canais oficiais da entidade', telefone: 'Consultar diretamente na entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Representação, orientação associativa e eventual apoio jurídico conforme contrato/estatuto.' },
+    { nome: 'FASPM — Fundo de Atendimento à Saúde dos Policiais Militares e Bombeiros Militares', foco: 'Militares estaduais do Paraná e dependentes elegíveis', acao: 'Assistência à saúde de adesão facultativa, conforme lei estadual e regras do fundo.', site: 'https://www.faspm.pr.gov.br/', telefone: 'Consultar canais oficiais do FASPM', mensalidade: 'Contribuição facultativa conforme Lei PR 17.169/2012', servicos: 'Rede assistencial, atendimento à saúde, orientação de dependentes e regras de contribuição.' },
+    { nome: 'Canais institucionais do CBMPR', foco: 'Bombeiros militares, candidatos e sociedade paranaense', acao: 'Informações oficiais, concursos, prevenção, serviços técnicos, notícias e orientações institucionais.', site: 'https://www.bombeiros.pr.gov.br/', telefone: '193 · contatos administrativos conforme unidade', mensalidade: 'Não se aplica', servicos: 'Concursos, notícias, prevenção, vistorias, atividades técnicas, emergência e comunicação institucional.' }
+  ];
+
+  ACOES_JUDICIAIS[inst] = [
+    { titulo: 'CBMPR — subsídio por classe e enquadramento', status: 'Conferência individual', ano: 'Lei PR 22.187/2024', tipo: 'individual', desc: 'Verificar se posto/graduação, classe, promoção, implantação do subsídio e reflexos foram aplicados corretamente. Não tratar como ganho automático.', base: 'Lei PR 22.187/2024, Anexo I, Tabela I; ficha funcional; atos de promoção; contracheques.', fonte: 'Administração/PR — Carreiras e Tabelas Salariais', fonteUrl: 'https://www.administracao.pr.gov.br/Recursos-Humanos/Pagina/Carreiras-e-Tabelas-Salariais', atualizado: 'Maio/2026' },
+    { titulo: 'CBMPR — auxílio-alimentação', status: 'Conferência individual', ano: 'Lei PR 22.208/2024', tipo: 'individual', desc: 'Conferir elegibilidade, valor mensal de R$ 834,74 e eventual lançamento no contracheque; verba não foi somada automaticamente à tabela de subsídio.', base: 'Lei PR 20.937/2021, alterações da Lei PR 22.208/2024 e tabelas Administração/PR.', fonte: 'Administração/PR / Legislação PR', fonteUrl: 'https://www.administracao.pr.gov.br/Recursos-Humanos/Pagina/Carreiras-e-Tabelas-Salariais', atualizado: 'Maio/2026' },
+    { titulo: 'CBMPR — FASPM facultativo', status: 'Conferência individual', ano: 'Lei PR 17.169/2012', tipo: 'individual', desc: 'Verificar adesão, contribuição de titular/dependentes, limite, cobertura e descontos. O FASPM é facultativo e depende de situação individual.', base: 'Lei PR 17.169/2012, art. 15 e normas do FASPM.', fonte: 'Legislação PR / FASPM', fonteUrl: 'https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=67717&indice=1&totalRegistros=1', atualizado: 'Maio/2026' },
+    { titulo: 'CBMPR — contribuição militar / proteção social', status: 'Possível revisão conforme caso concreto', ano: 'Lei Federal 13.954/2019', tipo: 'individual', desc: 'Conferir base de cálculo e alíquota de contribuição militar, inclusive inatividade e pensão, conforme situação funcional e regras do ParanáPrevidência.', base: 'Lei Federal 13.954/2019; orientações ParanáPrevidência; contracheque e ato de inatividade/pensão.', fonte: 'ParanáPrevidência', fonteUrl: 'https://www.paranaprevidencia.pr.gov.br/', atualizado: 'Maio/2026' },
+    { titulo: 'CBMPR — efetivo, promoções e carreira', status: 'Análise funcional', ano: 'Leis PR 22.916/2025 e 23.103/2026', tipo: 'individual', desc: 'Promoções, interstícios, vagas, quadro de acesso, agregação, reserva/reforma e reenquadramentos dependem de data de ingresso, quadro, cursos, ficha funcional e boletins.', base: 'Lei PR 1.943/1954; Leis PR 5.940/1969 e 5.944/1969; Lei PR 22.916/2025; Lei PR 23.103/2026; atos do CBMPR.', fonte: 'Legislação PR / CBMPR', fonteUrl: 'https://www.legislacao.pr.gov.br/', atualizado: 'Maio/2026' }
+  ];
+}
+
 function aplicarDadosEspecificosBmrj() {
   const inst = 'bmrj';
   const estado = 'rj';
@@ -3911,6 +4026,7 @@ function aplicarDadosEspecificosBmba() {
 
 aplicarDadosEspecificosBmap();
 aplicarDadosEspecificosBmmg();
+aplicarDadosEspecificosBmpr();
 aplicarDadosEspecificosBmrj();
 aplicarDadosEspecificosBmba();
 aplicarEstruturaFederaisDados();
@@ -5319,6 +5435,7 @@ function getCriadorInstitucional(inst, tipo, estadoNome) {
   if (inst === 'pmesp') return 'Brigadeiro Rafael Tobias de Aguiar — então presidente da Província de São Paulo, pela lei provincial de 15/12/1831.';
   if (inst === 'pmerj') return 'D. João VI — criação da Divisão Militar da Guarda Real da Polícia da Corte em 13/05/1809.';
   if (inst === 'bmmg') return 'Júlio Bueno Brandão — Lei MG nº 557, de 31/08/1911, que autorizou a organização da Seção de Bombeiros Profissionais.';
+  if (inst === 'bmpr') return 'Carlos Cavalcanti de Albuquerque — Lei PR nº 1.133, de 23/03/1912, que criou o Corpo de Bombeiros do Estado do Paraná.';
   if (inst === 'bmrj') return 'Dom Pedro II — Decreto Imperial nº 1.775, de 02/07/1856, criou o Corpo Provisório de Bombeiros da Corte.';
   const esfera = getEsferaConsultaInstituicao(inst);
   if (inst === 'pf') return 'União — estrutura federal organizada pela Constituição, legislação federal e atos do Poder Executivo federal.';
@@ -5361,6 +5478,22 @@ function getHistoricoPorTipo(inst, dados) {
         '2016: Lei MG nº 22.415 fixa o efetivo legal do CBMMG em 7.999 cargos.',
         '2025: Cel BM Jordana de Oliveira Filgueiras Daldegan assume o Comando-Geral do CBMMG.',
         '2026: Lei MG nº 25.804 aplica revisão geral de 5,4% e editais CBMMG 09/2026 e 10/2026 abrem novo ciclo de ingresso.'
+      ]
+    };
+  }
+
+
+  if (inst === 'bmpr') {
+    return {
+      origem: `O Corpo de Bombeiros Militar do Paraná tem antecedentes na Lei Provincial nº 679, de 27 de outubro de 1882, e foi criado formalmente pela Lei PR nº 1.133, de 23 de março de 1912. Em 2026, a instituição atua como corporação militar estadual dedicada à prevenção e combate a incêndios, salvamento, atendimento pré-hospitalar, defesa civil e atividades técnicas, sob comando do Cel QOBM Antônio Geraldo Hiller Lino.`,
+      marcos: [
+        '1882: Lei Provincial nº 679 autoriza a organização do serviço de bombeiros na província do Paraná.',
+        '1912: Lei PR nº 1.133 cria o Corpo de Bombeiros do Estado do Paraná.',
+        'Consolidação da atuação estadual em incêndios, salvamento, SIATE, defesa civil, prevenção e segurança contra incêndio e pânico.',
+        'Lei PR nº 22.187/2024: reestrutura a carreira militar estadual e tabela de subsídio do Quadro da Polícia Militar e do Quadro Bombeiro Militar do Paraná.',
+        'Lei PR nº 22.916/2025: fixa o efetivo do CBMPR em 5.704 cargos.',
+        '2025: Cel QOBM Antônio Geraldo Hiller Lino assume o Comando-Geral do CBMPR.',
+        'Concursos 2025: Soldado Bombeiro Militar com 600 vagas e Cadete Bombeiro Militar com 20 vagas.'
       ]
     };
   }
@@ -5565,4 +5698,5 @@ function renderizarBrasoesHistoria() {
 // Reaplica BMBA após as rotinas globais de normalização para preservar os campos estimados e a remuneração detalhada recém-cadastrados.
 if (typeof aplicarDadosEspecificosBmba === 'function') aplicarDadosEspecificosBmba();
 if (typeof aplicarDadosEspecificosBmmg === 'function') aplicarDadosEspecificosBmmg();
+if (typeof aplicarDadosEspecificosBmpr === 'function') aplicarDadosEspecificosBmpr();
 if (typeof aplicarDadosEspecificosBmrj === 'function') aplicarDadosEspecificosBmrj();

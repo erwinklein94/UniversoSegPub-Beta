@@ -85,6 +85,10 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     nome: 'Legislação/PR — Lei nº 22.187/2024 e Lei nº 22.208/2024',
     url: 'https://www.legislacao.pr.gov.br/legislacao/exibirAto.do?action=iniciarProcesso&codAto=344946&codItemAto=2177446'
   },
+  bmpr: {
+    nome: 'Administração/PR — Carreiras e Tabelas Salariais — Quadro PMPR e Quadro Bombeiro Militar PR — Lei PR nº 22.187/2024; auxílio-alimentação Lei PR nº 22.208/2024',
+    url: 'https://www.administracao.pr.gov.br/Recursos-Humanos/Pagina/Carreiras-e-Tabelas-Salariais'
+  },
   pcpr: {
     nome: 'Legislação/PR — Lei Complementar nº 259/2023 e Lei nº 22.208/2024',
     url: 'https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=300584&dt=27.1.2024.16.42.52.571&indice=1&totalRegistros=1'
@@ -318,6 +322,10 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
     return `Regime por subsídio: a remuneração bruta da linha corresponde ao subsídio do cargo/classe. Auxílio-alimentação oficial PR: ${fmt(AUX_ALIM_PR_PADRAO)}. Outras indenizações ou gratificações específicas dependem de previsão própria, escala, local ou situação individual e não foram somadas.`;
   }
 
+  if (inst === 'bmpr') {
+    return `Regime por subsídio do CBMPR: a remuneração bruta da linha corresponde ao subsídio por posto/graduação e classe da Lei PR nº 22.187/2024. Auxílio-alimentação oficial PR: ${fmt(AUX_ALIM_PR_PADRAO)}, não somado automaticamente. FASPM é facultativo; ParanáPrevidência/proteção social militar, diárias, indenizações, serviço extraordinário e parcelas pessoais dependem de vínculo, escala, ato e contracheque.`;
+  }
+
   if (inst === 'pcpr') {
     return `Regime por subsídio: o subsídio pode compreender adicionais como insalubridade, periculosidade e risco de vida, conforme LC PR 259/2023 e aplicação vigente. Auxílio-alimentação oficial PR: ${fmt(AUX_ALIM_PR_PADRAO)}. Verbas específicas/eventuais não foram somadas.`;
   }
@@ -519,7 +527,7 @@ function getTabelaCargosRemuneracao(inst) {
     pmerj: CARGOS_PMERJ, bmrj: CARGOS_BMRJ, pcerj: CARGOS_PCERJ, pprj: CARGOS_PPRJ,
     pmmg: CARGOS_PMMG,   bmmg: CARGOS_BMMG,   pcmg: CARGOS_PCMG,   ppmg: CARGOS_PPMG,
     pmba: CARGOS_PMBA,   bmba: CARGOS_BMBA,   pcba: CARGOS_PCBA,   ppba: CARGOS_PPBA,
-    pmpr: CARGOS_PMPR,   pcpr: CARGOS_PCPR,   pppr: CARGOS_PPPR,
+    pmpr: CARGOS_PMPR,   bmpr: CARGOS_BMPR,   pcpr: CARGOS_PCPR,   pppr: CARGOS_PPPR,
     pmrs: CARGOS_PMRS,   pcrs: CARGOS_PCRS,   pprs: CARGOS_PPRS,
     pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC,   ppsc: CARGOS_PPSC,
     pmes: CARGOS_PMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,
@@ -609,11 +617,11 @@ function calcularRemuneracaoTabelada(inst, cargo) {
       ? 'VB + verba de representação + GHP máxima, conforme tabela SEPOL/RJ.'
       : 'VB + AAP + GHP máxima + GATC quando aplicável, conforme tabela SEPOL/RJ.';
     benefDesc = 'Auxílio alimentação R$ 704,00/mês + auxílio transporte R$ 100,00.';
-  } else if (inst === 'pmpr' || inst === 'pcpr') {
+  } else if (inst === 'pmpr' || inst === 'bmpr' || inst === 'pcpr') {
     remuneracao = padrao;
     beneficios = AUX_ALIM_PR_PADRAO;
-    criterio = 'Subsídio bruto mensal por cargo/classe.';
-    benefDesc = `Auxílio-alimentação oficial PR: ${fmt(AUX_ALIM_PR_PADRAO)}.`;
+    criterio = inst === 'bmpr' ? 'Subsídio bruto mensal do CBMPR por posto/graduação e classe, conforme Lei PR nº 22.187/2024.' : 'Subsídio bruto mensal por cargo/classe.';
+    benefDesc = inst === 'bmpr' ? `Auxílio-alimentação oficial PR: ${fmt(AUX_ALIM_PR_PADRAO)}; FASPM facultativo, contribuição militar, diárias, indenizações e parcelas pessoais não somadas automaticamente.` : `Auxílio-alimentação oficial PR: ${fmt(AUX_ALIM_PR_PADRAO)}.`;
   } else if (inst === 'pmrs') {
     remuneracao = padrao;
     beneficios = AUX_ALIM_RS_BM;

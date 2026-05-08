@@ -355,6 +355,27 @@ const CARGOS_PMPR = [
   { val: "sdaluno3_pr", text: "ALUNO-SOLDADO — 3ª Classe PMPR", padrao: 2530.12, oficial: false, retpFator: 0 }
 ];
 
+const CRITERIO_BMPR_2025 = 'Subsídio bruto mensal do Quadro do Bombeiro Militar do Paraná, por posto/graduação e classe, conforme Lei PR nº 22.187/2024, Anexo I, Tabela I, valores para 01/11/2024, publicados nas tabelas vigentes da Administração/PR em julho/2025.';
+const BENEF_BMPR_2025 = 'Auxílio-alimentação PR de R$ 834,74 não somado automaticamente ao subsídio. FASPM é facultativo; ParanáPrevidência/proteção social militar, diárias, ajuda de custo, indenizações, serviço extraordinário e parcelas pessoais dependem de vínculo, escala, ato e contracheque.';
+const CARGOS_BMPR = CARGOS_PMPR.map(cargo => ({
+  ...cargo,
+  val: cargo.val.replace('_pr', '_bmpr'),
+  text: cargo.text
+    .replace(/ PM —/g, ' BM —')
+    .replace(/PMPR/g, 'CBMPR')
+    .replace('SD 1ª CL —', 'SD 1ª CL BM —')
+    .replace('ASP OF PM', 'ASP OF BM')
+    .replace('CADETE PM', 'CADETE BM')
+    .replace('ALUNO-SOLDADO OPERACIONAL — 2ª Classe CBMPR', 'AL SD OP BM — 2ª Classe CBMPR')
+    .replace('ALUNO-SOLDADO — 3ª Classe CBMPR', 'AL SD BM — 3ª Classe CBMPR'),
+  fonteKey: 'bmpr',
+  criterio: CRITERIO_BMPR_2025,
+  benefDesc: BENEF_BMPR_2025,
+  badge: cargo.val.includes('cad') ? 'CFO CBMPR 2025' : (cargo.val.includes('sdaluno') ? 'Aluno-Soldado CBMPR' : 'Lei PR 22.187/2024'),
+  selected: cargo.val === 'sd1_pr_i'
+}));
+
+
 const CARGOS_PCPR = [
   // PCPR — Lei Complementar PR 259/2023 e tabelas de remuneração 2026.
   // Regime por subsídio. Agente e Papiloscopista são organizados em níveis I a XI; Delegado tem classes.

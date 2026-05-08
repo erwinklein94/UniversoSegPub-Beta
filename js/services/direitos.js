@@ -28,7 +28,7 @@ function analisarDireitos() {
 
   const nomesInst = {
     pmac: 'PMAC', pcac: 'PCAC', ppac: 'PPAC', pmesp: 'PMESP', pcsp: 'PCSP', ppsp: 'PPSP', pmerj: 'PMERJ', bmrj: 'CBMERJ', pcerj: 'PCERJ', pprj: 'PPRJ',
-    pmmg: 'PMMG', bmmg: 'CBMMG', pcmg: 'PCMG', ppmg: 'PPMG', pmba: 'PMBA', pcba: 'PCBA', ppba: 'PPBA', pmpr: 'PMPR', pcpr: 'PCPR', pppr: 'PPPR',
+    pmmg: 'PMMG', bmmg: 'CBMMG', pcmg: 'PCMG', ppmg: 'PPMG', pmba: 'PMBA', pcba: 'PCBA', ppba: 'PPBA', pmpr: 'PMPR', bmpr: 'CBMPR', pcpr: 'PCPR', pppr: 'PPPR',
     pmrs: 'PMRS', pcrs: 'PCRS', pprs: 'PPRS', pmsc: 'PMSC', pcsc: 'PCSC', ppsc: 'PPSC',
     pmes: 'PMES', pces: 'PCES', ppes: 'PPES',
     pmms: 'PMMS', pcms: 'PCMS', ppms: 'PPMS',
@@ -97,6 +97,8 @@ function analisarDireitos() {
     html += direitoItem('SPSM / CBPM / Cruz Azul', 'condicionado',
       'Sistema de proteção social e assistência ligado ao militar paulista, com possíveis benefícios como pensão, auxílio-funeral, assistência e serviços vinculados.',
       'Acesso, contribuição, dependentes e coberturas dependem das normas da PMESP/CBPM/Cruz Azul.');
+  } else if (inst === 'bmpr') {
+    html += direitoItem('FASPM / ParanáPrevidência', 'FASPM é assistência à saúde facultativa para policiais e bombeiros militares do Paraná; contribuição militar e proteção social devem ser conferidas no ParanáPrevidência e no contracheque.');
   } else if (inst === 'pmmg' || inst === 'bmmg') {
     html += direitoItem('IPSM Minas Gerais', 'condicionado',
       'O IPSM é referência para previdência e saúde dos militares mineiros e seus dependentes, conforme regras próprias.',
@@ -298,6 +300,7 @@ function getSaudeTexto(inst) {
     pmba: 'PMBA: assistência pode envolver Planserv e regras estaduais de adesão, contribuição e cobertura.',
     pcba: 'PCBA: assistência pode envolver Planserv e regras estaduais de adesão, contribuição e cobertura.',
     pmpr: 'PMPR: assistência pode envolver FASPM, sistema próprio de saúde militar e regras de adesão/dependentes.',
+    bmpr: 'CBMPR: FASPM facultativo, ParanáPrevidência/proteção social militar, atendimento de saúde e regras de dependentes devem ser conferidos por vínculo, contribuição e contracheque.',
     pcpr: 'PCPR: assistência pode envolver o Sistema de Assistência à Saúde do Paraná e regras administrativas do Estado.',
     pmrs: 'PMRS: assistência pode envolver IPE Saúde, Hospital da Brigada Militar e regras próprias dos militares estaduais do RS.',
     pcrs: 'PCRS: assistência pode envolver IPE Saúde e regras administrativas do Estado do Rio Grande do Sul.',
@@ -321,6 +324,8 @@ function getSaudeBase(inst) {
   if (inst === 'bmrj') return 'Base: SEDEC/CBMERJ, Lei RJ 9.537/2021, normas do SPSMERJ, assistência médica estadual e regras administrativas de dependentes/contribuição.';
   if (inst === 'pmmg' || inst === 'bmmg') return 'IPSM/MG: gestão de benefícios previdenciários e de saúde dos militares mineiros e dependentes; conferir contribuição, dependentes, rede e regras assistenciais.';
   if (inst === 'pmba' || inst === 'pcba') return 'Planserv/BA e legislação estadual aplicável.';
+  if (inst === 'bmpr') return 'FASPM/PR: Lei PR 17.169/2012; ParanáPrevidência/proteção social militar: Lei Federal 13.954/2019 e normas estaduais aplicáveis.';
+  if (inst === 'bmpr') return 'CBMPR/PR: conferir Código da PMPR aplicado ao CBMPR, leis de promoção, Lei PR 22.187/2024, Lei PR 22.916/2025, boletins, classe, posto/graduação e ficha funcional.';
   if (inst === 'pmpr') return 'FASPM/PR: contribuição facultativa de saúde dos militares estaduais, conforme Lei PR 17.169/2012.';
   if (inst === 'pcpr') return 'SAS/Paraná, legislação estadual e normas internas da PCPR/SEAP, conforme vínculo e adesão.';
   if (inst === 'pmrs' || inst === 'pcrs') return 'IPE Saúde/RS, Hospital da Brigada Militar quando aplicável, normas estaduais e regras de adesão/dependentes.';
@@ -342,8 +347,11 @@ function getTempoServicoTexto(inst, tempo) {
   if (inst === 'bmrj') return `No CBMERJ, o triênio/ATS incide sobre soldo + GHP + GRET + GRAM para quem preservou o direito. Pelo tempo informado, há <strong>${Math.floor(tempo / 3)}</strong> período(s) de 3 anos como referência; para ingresso por edital publicado a partir de 01/01/2022, a LC RJ 194/2021 extinguiu o adicional.`;
   if (inst === 'pmerj') return `Na PMERJ, o triênio/ATS incide sobre soldo + GHP + GRET + GRAM para quem preservou o direito. Pelo tempo informado, há <strong>${Math.floor(tempo / 3)}</strong> período(s) de 3 anos como referência; para ingresso por edital publicado a partir de 01/01/2022, a LC RJ 194/2021 extinguiu o adicional.`;
   if (inst === 'pcerj') return `Na PCERJ, a Lei Orgânica vigente prevê adicional por tempo de serviço. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência.`;
+  if (inst === 'bmpr') return `No CBMPR, a referência principal é subsídio por classe, promoção e enquadramento na carreira. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos apenas como referência de conferência; não aplicar quinquênio automaticamente sem base específica.`;
   if (inst === 'pmmg' || inst === 'bmmg' || inst === 'pcmg') return `Em MG, tratar o adicional por tempo de serviço com cautela: pode envolver quinquênio, ADE, VPNI ou regra de transição. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência para conferência.`;
   if (inst === 'pmba' || inst === 'pcba') return `Na Bahia, há referência a anuênios/adicionais por tempo conforme carreira. Pelo tempo informado, a referência inicial é de <strong>${Math.min(35, tempo)}</strong> ano(s) de serviço.`;
+  if (inst === 'bmpr') return 'FASPM/PR: Lei PR 17.169/2012; ParanáPrevidência/proteção social militar: Lei Federal 13.954/2019 e normas estaduais aplicáveis.';
+  if (inst === 'bmpr') return 'CBMPR/PR: conferir Código da PMPR aplicado ao CBMPR, leis de promoção, Lei PR 22.187/2024, Lei PR 22.916/2025, boletins, classe, posto/graduação e ficha funcional.';
   if (inst === 'pmpr') return `Na PMPR, a carreira é estruturada por subsídio, posto/graduação e classes. A progressão/promoção por classe deve ser conferida no enquadramento funcional; o tempo informado indica <strong>${tempo}</strong> ano(s) para análise de interstício.`;
   if (inst === 'pcpr') return `Na PCPR, a carreira é estruturada por subsídio, cargo e níveis/classes. O tempo informado indica <strong>${tempo}</strong> ano(s) para análise de promoção, progressão e regras de titulação.`;
   if (inst === 'pmrs') return `Na PMRS, posto/graduação, promoções, interstícios e eventuais vantagens devem ser conferidos conforme estatuto e ficha funcional. O tempo informado indica <strong>${tempo}</strong> ano(s) para análise.`;
@@ -365,8 +373,11 @@ function getTempoServicoBase(inst) {
   if (inst === 'pcac') return 'Base: Lei AC 2.250/2009, Lei AC 3.228/2017, LC AC 303/2015, Lei AC 3.107/2015, tabelas salariais PCAC, ficha funcional e contracheque.';
   if (inst === 'pmesp' || inst === 'pcsp') return 'Base: Art. 129 da Constituição do Estado de São Paulo; observar exceções para remuneração por subsídio.';
   if (inst === 'pcerj') return 'Base: Lei Orgânica/Reestruturação da Polícia Civil do RJ e normas complementares.';
+  if (inst === 'bmpr') return `No CBMPR, a referência principal é subsídio por classe, promoção e enquadramento na carreira. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos apenas como referência de conferência; não aplicar quinquênio automaticamente sem base específica.`;
   if (inst === 'pmmg' || inst === 'bmmg' || inst === 'pcmg') return 'Revisar no estatuto/plano de carreira atualizado e no demonstrativo de pagamento. Não fixar percentual sem conferência individual.';
   if (inst === 'pmba' || inst === 'pcba') return 'Base: estatuto/lei orgânica e normas remuneratórias do Estado da Bahia.';
+  if (inst === 'bmpr') return 'FASPM/PR: Lei PR 17.169/2012; ParanáPrevidência/proteção social militar: Lei Federal 13.954/2019 e normas estaduais aplicáveis.';
+  if (inst === 'bmpr') return 'CBMPR/PR: conferir Código da PMPR aplicado ao CBMPR, leis de promoção, Lei PR 22.187/2024, Lei PR 22.916/2025, boletins, classe, posto/graduação e ficha funcional.';
   if (inst === 'pmpr') return 'Base: Lei PR 22.187/2024 e Lei PR 17.169/2012, com enquadramento por classes.';
   if (inst === 'pcpr') return 'Base: Lei Complementar PR 259/2023 e alterações posteriores, com estrutura por subsídio e níveis/classes.';
   if (inst === 'pmrs') return 'Base: estatuto dos militares estaduais do RS, normas remuneratórias e ficha funcional.';
@@ -389,6 +400,8 @@ function getInsalubridadeTexto(inst) {
   if (inst === 'pmesp' || inst === 'pcsp') return 'Em SP, pode haver adicional de insalubridade em graus mínimo, médio ou máximo, conforme enquadramento, laudo e legislação. Não é universal para todo servidor em qualquer função.';
   if (inst === 'pcerj') return 'Na PCERJ, a insalubridade aparece entre vantagens possíveis, mas deve ser separada do adicional de atividade perigosa. Depende de previsão legal e enquadramento.';
   if (inst === 'pcpr') return 'Na PCPR, a LC 259/2023 indica que o subsídio compreende adicionais de insalubridade, periculosidade e risco de vida. Não lançar como verba separada sem decisão, rubrica ou tese específica.';
+  if (inst === 'bmpr') return 'FASPM/PR: Lei PR 17.169/2012; ParanáPrevidência/proteção social militar: Lei Federal 13.954/2019 e normas estaduais aplicáveis.';
+  if (inst === 'bmpr') return 'CBMPR/PR: conferir Código da PMPR aplicado ao CBMPR, leis de promoção, Lei PR 22.187/2024, Lei PR 22.916/2025, boletins, classe, posto/graduação e ficha funcional.';
   if (inst === 'pmpr') return 'Na PMPR, a remuneração é por subsídio. Não computar adicional de insalubridade automático sem rubrica específica, laudo, decisão ou previsão expressa aplicável ao caso.';
   if (inst === 'pmrs') return 'Na PMRS, não lançar adicional de insalubridade automático sem rubrica específica, laudo, decisão ou previsão expressa aplicável ao caso.';
   if (inst === 'pcrs') return 'Na PCRS, eventual insalubridade deve ser conferida por legislação, rubrica, laudo, lotação e situação funcional; não é verba universal automática.';
@@ -408,6 +421,8 @@ function getInsalubridadeBase(inst) {
   if (inst === 'pmac' || inst === 'pcac') return 'Base: legislação estadual do Acre, tabela salarial oficial, laudo/ato administrativo, lotação, escala, rubrica e contracheque.';
   if (inst === 'pmesp' || inst === 'pcsp') return 'Conferir grau, base de cálculo, laudo e holerite. Para PMESP, a tabela SGGD/SP informa faixas de adicional, mas valor final depende da classificação oficial. Não confundir com periculosidade.';
   if (inst === 'pcpr') return 'Base: LC PR 259/2023, art. 39, §3º; observar ADI indicada na própria legislação e decisões aplicáveis.';
+  if (inst === 'bmpr') return 'FASPM/PR: Lei PR 17.169/2012; ParanáPrevidência/proteção social militar: Lei Federal 13.954/2019 e normas estaduais aplicáveis.';
+  if (inst === 'bmpr') return 'CBMPR/PR: conferir Código da PMPR aplicado ao CBMPR, leis de promoção, Lei PR 22.187/2024, Lei PR 22.916/2025, boletins, classe, posto/graduação e ficha funcional.';
   if (inst === 'pmpr') return 'Base: regime de subsídio da carreira militar estadual do Paraná; conferir rubrica específica, laudo e legislação aplicável.';
   if (inst === 'pmrs' || inst === 'pcrs') return 'Base: legislação estadual do RS, laudo, rubrica de pagamento e enquadramento do local/função.';
   if (inst === 'pmsc' || inst === 'pcsc') return 'Base: legislação estadual de SC, laudo, rubrica de pagamento e enquadramento do local/função.';
@@ -428,7 +443,7 @@ function getPericulosidadeTexto(inst) {
   if (inst === 'pcrs') return 'Na PCRS, eventual adicional ligado ao risco/atividade deve ser conferido em lei estadual, rubrica e contracheque; não aplicar automaticamente regra de outro Estado.';
   if (inst === 'pcsc') return 'Na PCSC, eventual adicional ligado ao risco/atividade deve ser conferido em lei estadual, rubrica e contracheque; não aplicar automaticamente regra de outro Estado.';
   if (inst === 'pces') return 'Na PCES, eventual adicional ligado ao risco/atividade deve ser conferido em lei estadual, rubrica e contracheque; no OIP e demais carreiras por subsídio, verificar se a vantagem foi absorvida pelo regime legal.';
-  if (inst === 'pmesp' || inst === 'bmrj' || inst === 'pmerj' || inst === 'pmmg' || inst === 'bmmg' || inst === 'pmba' || inst === 'pmpr' || inst === 'pmrs' || inst === 'pmsc' || inst === 'pmes') return 'Para militares estaduais, o risco da atividade costuma estar absorvido no regime remuneratório ou em verbas próprias. Não aplicar automaticamente o modelo da PCERJ.';
+  if (inst === 'pmesp' || inst === 'bmpr' || inst === 'bmrj' || inst === 'pmerj' || inst === 'pmmg' || inst === 'bmmg' || inst === 'pmba' || inst === 'pmpr' || inst === 'pmrs' || inst === 'pmsc' || inst === 'pmes') return 'Para militares estaduais, o risco da atividade costuma estar absorvido no regime remuneratório ou em verbas próprias. Não aplicar automaticamente o modelo da PCERJ.';
   return 'Pode haver gratificação ou adicional ligado ao risco/atividade, mas a regra muda bastante por Estado e carreira. Verificar norma específica.';
 }
 
@@ -443,6 +458,8 @@ function getPericulosidadeBase(inst) {
   if (inst === 'pcac') return 'Base: leis remuneratórias da PCAC, Lei Orgânica Nacional das Polícias Civis, atos administrativos, escalas e contracheque.';
   if (inst === 'pcerj') return 'Base: Lei 11.003/2025/RJ, art. sobre adicional de atividade perigosa e verba de representação.';
   if (inst === 'pcpr') return 'Base: LC PR 259/2023, art. 39, §3º, e decisões judiciais aplicáveis.';
+  if (inst === 'bmpr') return 'FASPM/PR: Lei PR 17.169/2012; ParanáPrevidência/proteção social militar: Lei Federal 13.954/2019 e normas estaduais aplicáveis.';
+  if (inst === 'bmpr') return 'CBMPR/PR: conferir Código da PMPR aplicado ao CBMPR, leis de promoção, Lei PR 22.187/2024, Lei PR 22.916/2025, boletins, classe, posto/graduação e ficha funcional.';
   if (inst === 'pmpr') return 'Base: Lei PR 22.187/2024 e regime de subsídio dos militares estaduais do Paraná.';
   if (inst === 'pmrs') return 'Base: estatuto e normas remuneratórias dos militares estaduais do RS.';
   if (inst === 'pcrs') return 'Base: Lei Estadual RS 12.350/2005, Lei Federal 14.735/2023 e normas remuneratórias estaduais aplicáveis.';
@@ -585,6 +602,19 @@ function getVantagensEspecificas(inst) {
     html += direitoItem('ADE / VPNI / Vantagens de transição', 'condicionado',
       'ADE, VPNI e parcelas de transição podem aparecer conforme avaliação, histórico funcional e regra remuneratória individual.',
       'Conferir ficha financeira, avaliações e legislação mineira atualizada.');
+  } else if (inst === 'bmpr') {
+    html += direitoItem('Subsídio CBMPR por classe', 'verificar',
+      'Lei PR 22.187/2024: carreira militar estadual por subsídio, posto/graduação e classe. Conferir enquadramento, promoção, implantação e contracheque.',
+      'Base: Lei PR 22.187/2024, Anexo I, Tabela I; Administração/PR — Carreiras e Tabelas Salariais.');
+    html += direitoItem('Auxílio-alimentação PR', 'condicionado',
+      'Valor de referência R$ 834,74, não somado automaticamente ao subsídio; conferir elegibilidade e lançamento.',
+      'Base: Lei PR 20.937/2021, Lei PR 22.208/2024 e tabelas Administração/PR.');
+    html += direitoItem('FASPM facultativo', 'condicionado',
+      'Assistência à saúde facultativa, com regras de titular, dependentes, contribuição e limite legal.',
+      'Base: Lei PR 17.169/2012 e normas do FASPM.');
+    html += direitoItem('ParanáPrevidência / proteção social militar', 'verificar',
+      'Conferir contribuição, base de cálculo, inatividade e pensão conforme situação funcional.',
+      'Base: Lei Federal 13.954/2019, ParanáPrevidência e contracheque.');
   } else if (inst === 'bmmg') {
     html += direitoItem('CBMMG — ajuda de custo, abono fardamento e IPSM', 'condicionado',
       'Ajuda de custo para alimentação, abono fardamento, assistência IPSM e verbas ligadas a curso, escala, função ou operação dependem de norma, ato, dias trabalhados e contracheque.',

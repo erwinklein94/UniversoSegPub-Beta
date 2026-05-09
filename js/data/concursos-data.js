@@ -325,6 +325,23 @@ const CONCURSOS = {
     previsao: "Acompanhar a página oficial de concursos da PMSC para novos editais, retificações e convocações.",
     site: "https://www.pm.sc.gov.br/concursos"
   },
+  bmsc: {
+    edital: "CBMSC — Editais 001/2026/DP/CBMSC (CFP/Aluno-Soldado) e 002/2026/DP/CBMSC (CFO/Cadete)",
+    salario: "CFP 2026: Aluno-Soldado/Soldado R$ 8.015,00 + R$ 550,00 de auxílio-alimentação. CFO 2026: Cadete R$ 18.670,37 + R$ 550,00 de auxílio-alimentação; após formação, 2º Tenente R$ 21.284,40. Valores estimados para abr/2026 aparecem na aba de remuneração com '(estimado)'.",
+    vagas: "110 vagas imediatas: 100 para Aluno-Soldado/CFP e 10 para Cadete/Oficial/CFO; cadastros de reserva conforme edital.",
+    cotas: "Reserva legal conforme edital e legislação estadual/federal aplicável; conferir distribuição por ampla concorrência, PcD e demais hipóteses no edital específico.",
+    idade: "18 anos completos e menos de 30 anos até o último dia de inscrição; CNH categoria B; altura mínima de 1,60m para mulheres e 1,65m para homens, conforme editais.",
+    escolaridade: "Nível superior completo. CFP: curso superior de graduação em qualquer área. CFO: bacharelado ou licenciatura plena, conforme edital.",
+    banca: "IDIB",
+    inscritos: "Inscrições previstas de 28/01/2026 a 25/02/2026, conforme divulgação CBMSC/IDIB.",
+    materias: "Conforme edital: Língua Portuguesa, Matemática/Raciocínio Lógico, Informática, Conhecimentos Gerais/Atualidades, Noções de Direito, legislação institucional e conhecimentos específicos do cargo.",
+    etapas: "Prova objetiva, redação quando prevista, avaliação de saúde médico/odontológica, teste de aptidão física, avaliação psicológica, investigação social, exame toxicológico, entrega documental e curso de formação.",
+    cfsd: "CFP para Aluno-Soldado/Soldado BM e CFO para Cadete/Oficial BM, com formação institucional do CBMSC.",
+    estagio: "Estágio probatório e formação conforme estatuto dos militares estaduais de SC, edital, regulamentos internos e atos de matrícula/nomeação.",
+    validade: "Conforme cada edital CBMSC/IDIB e atos posteriores de homologação/prorrogação.",
+    previsao: "Não publicar novo concurso aberto sem ato oficial. Destaque atual: CFP 2026 e CFO 2026 do CBMSC, organizados pelo IDIB.",
+    site: "https://concurso.idib.org.br/"
+  },
   pcsc: {
     edital: "PCSC — Agente e Escrivão — editais 01/2025 e 02/2025",
     salario: "Agente: R$ 7.290,00 de salário-base + R$ 550,00 de vale-alimentação = R$ 7.840,00. Escrivão: R$ 9.720,00 de salário-base + R$ 550,00 de vale-alimentação = R$ 10.270,00, valores previstos para abril/2026.",
@@ -358,6 +375,23 @@ const CONCURSOS = {
     validade: "Conferir edital e publicações posteriores.",
     previsao: "Acompanhar a página oficial de concursos da PMES para novos editais, retificações e convocações.",
     site: "https://pm.es.gov.br/concursos"
+  },
+  bmes: {
+    edital: "CBMES — CFO 2026 — Edital de Abertura nº 001/2026 (Oficial Combatente/QOCBM); CFSd 2022 com convocações/retificações posteriores como histórico de Soldado",
+    salario: "CFO 2026: Aluno-Oficial 1º ano R$ 4.113,27; 2º ano R$ 5.027,34; 3º ano R$ 5.484,36; Aspirante a Oficial R$ 10.221,74. Valores brutos do edital, sem somar auxílio-alimentação e GSE. Tabela PM/CBM 12/2025: Soldado Ref. 1 R$ 5.741,46 e Ref. 15 R$ 7.575,15.",
+    vagas: "CFO 2026: 6 vagas imediatas + 400 cadastro de reserva. Distribuição: 5 ampla concorrência, 0 indígenas e 1 negros; cadastro de reserva com 300 ampla, 20 indígenas e 80 negros.",
+    cotas: "Reservas para candidatos negros e indígenas conforme Lei Estadual nº 12.010/2023, edital e procedimento de heteroidentificação/autodeclaração.",
+    idade: "CFO 2026: mínimo de 18 anos na matrícula e máximo de 28 anos no primeiro dia de inscrição, conforme edital e Lei ES nº 3.196/1978; altura mínima e demais requisitos conforme edital.",
+    escolaridade: "CFO 2026: ensino médio completo ou equivalente; CNH/Permissão para dirigir automóvel no mínimo categoria B; demais cargos conforme edital específico.",
+    banca: "IDECAN",
+    inscritos: "CFO 2026: inscrições pelo IDECAN no período do edital; taxa com pagamento até 06/03/2026. Acompanhar retificações, resultados e convocações no site do CBMES/IDECAN.",
+    materias: "Conforme Anexo IV do edital CFO 2026: conteúdo programático oficial da prova objetiva e redação, além de legislação e conhecimentos previstos no edital consolidado/retificações.",
+    etapas: "Prova objetiva e redação; TAF; inspeção de saúde; avaliação psicológica; exame toxicológico; investigação social; apresentação de documentos/matrícula; Curso de Formação de Oficiais Bombeiro Militar.",
+    cfsd: "CFO-BM previsto com duração de 3 anos, a critério da Academia, na condição de Aluno-Oficial. Soldado/CFSd deve ser acompanhado por edital específico e atos posteriores.",
+    estagio: "Regime militar estadual e progressão após formação conforme Lei ES nº 3.196/1978, LC ES nº 910/2019, LC ES nº 911/2019 e atos do CBMES.",
+    validade: "CFO 2026: validade de 2 anos, prorrogável por igual período, conforme edital.",
+    previsao: "Não publicar novo concurso como aberto sem ato oficial. Destaque atual: CFO 2026 em andamento, com retificações, resultados, provas e convocações no site oficial.",
+    site: "https://cb.es.gov.br/cfo2023"
   },
   pces: {
     edital: "PCES — Oficial Investigador de Polícia — Edital 2025",
@@ -429,6 +463,24 @@ const CONCURSOS = {
     previsao: "Concurso APJ/2025 em andamento/convocações; acompanhar PCMS, Instituto Avalia, Acadepol e Diário Oficial/MS.",
     site: "https://www.pc.ms.gov.br/"
   },
+  bmmt: {
+    edital: "CBMMT — Editais SEPLAG/SESP/CBMMT 2022/UFMT para Aluno-Soldado e Aluno-a-Oficial; convocações 2025/2026 do CFSD e processo seletivo temporário como atualizações operacionais",
+    salario: "CFO 2022: Aluno-a-Oficial R$ 9.000,71 e Aspirante R$ 12.936,44, conforme edital. Soldado/temporário: conferir edital específico, RGA posterior e contracheque; não somar automaticamente etapa alimentação, fardamento, diárias ou indenizações.",
+    vagas: "CFO 2022: cadastro de reserva; CFSD 2022 com convocações posteriores, incluindo 22 aprovados chamados em 2026. Processos temporários: consultar edital vigente e convocações no CBMMT.",
+    cotas: "Edital CFO 2022 indicou 20% de reserva para candidatos negros; demais reservas e heteroidentificação devem ser conferidas no edital específico.",
+    idade: "Conferir edital específico. Requisitos militares podem envolver idade, altura, CNH, aptidão física, saúde, investigação social e demais condições legais.",
+    escolaridade: "CFO 2022: Bacharelado em Direito. Soldado/temporário: conferir escolaridade exigida no edital próprio.",
+    materias: "Conteúdo programático conforme edital da UFMT/SEPLAG/SESP/CBMMT: conhecimentos básicos, específicos, legislação, prova discursiva quando prevista, TAF e demais fases.",
+    banca: "UFMT/SEPLAG-MT nos editais 2022 localizados; confirmar banca em cada edital novo.",
+    inscritos: "Convocações e resultados devem ser acompanhados no site oficial do CBMMT/SESP/SEPLAG e no IOMAT. Não publicar novo concurso aberto sem edital vigente.",
+    etapas: "Prova objetiva, discursiva quando prevista, TAF, avaliação psicológica, exames médicos/odontológicos, investigação social, análise documental, heteroidentificação quando aplicável, matrícula e curso de formação.",
+    cfsd: "Curso de Formação de Soldados para aprovados no CFSD; CFO com formação de oficiais, Aspirantado e estágio probatório/operacional conforme edital e legislação militar estadual.",
+    estagio: "Regime militar estadual, estágio probatório e estágio de aspirante conforme edital, LC MT 541/2014, LC MT 555/2014, LC MT 775/2023 e atos do CBMMT.",
+    validade: "Conforme edital específico, prorrogação e publicações no IOMAT/CBMMT/SEPLAG.",
+    previsao: "Sem edital novo confirmado no cadastro. Destaque atual: convocações remanescentes e temporários; qualquer nova seleção deve aguardar fonte oficial.",
+    site: "https://www.bombeiros.mt.gov.br/concursos-e-seletivos"
+  },
+
   pmmt: {
     edital: "PMMT — Soldado e Oficial — editais nº 003/2022 e nº 004/2022-SEPLAG/SESP/MT; acompanhar novos atos e convocações",
     salario: "Planilha PMMT cadastrada: Aluno-Soldado R$ 3.750,58; Soldado de R$ 5.474,19 a R$ 7.501,13; Aluno-Oficial R$ 9.521,85; 2º Tenente de R$ 15.729,62 a R$ 15.869,72; Coronel de R$ 35.845,70 a R$ 35.985,85. Conferir reajustes posteriores.",

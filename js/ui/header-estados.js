@@ -69,6 +69,7 @@ const HEADER_ESTADOS = {
     nome: 'Santa Catarina',
     sigla: 'SC',
     pm: 'pmsc',
+    bm: 'bmsc',
     pc: 'pcsc',
     pp: 'ppsc',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Santa_Catarina.svg'
@@ -77,6 +78,7 @@ const HEADER_ESTADOS = {
     nome: 'Espírito Santo',
     sigla: 'ES',
     pm: 'pmes',
+    bm: 'bmes',
     pc: 'pces',
     pp: 'ppes',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Esp%C3%ADrito_Santo.svg'
@@ -94,6 +96,7 @@ const HEADER_ESTADOS = {
     nome: 'Mato Grosso',
     sigla: 'MT',
     pm: 'pmmt',
+    bm: 'bmmt',
     pc: 'pcmt',
     pp: 'ppmt',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Mato_Grosso.svg'
@@ -121,8 +124,10 @@ const HEADER_INSTITUICOES_INFO = {
   pmrs:  { titulo: 'PMRS',  desc: 'Brigada Militar do Rio Grande do Sul' },
   pcrs:  { titulo: 'PCRS',  desc: 'Polícia Civil do Rio Grande do Sul' },
   pmsc:  { titulo: 'PMSC',  desc: 'Polícia Militar de Santa Catarina' },
+  bmsc:  { titulo: 'CBMSC', desc: 'Corpo de Bombeiros Militar de Santa Catarina' },
   pcsc:  { titulo: 'PCSC',  desc: 'Polícia Civil de Santa Catarina' },
   pmes:  { titulo: 'PMES',  desc: 'Polícia Militar do Espírito Santo' },
+  bmes:  { titulo: 'CBMES', desc: 'Corpo de Bombeiros Militar do Estado do Espírito Santo' },
   pces:  { titulo: 'PCES',  desc: 'Polícia Civil do Espírito Santo' },
   ppsp: { titulo: 'PPSP', desc: 'Polícia Penal do Estado de São Paulo — PPESP/PPSP' },
   pprj: { titulo: 'PPRJ', desc: 'Polícia Penal do Rio de Janeiro' },
@@ -137,6 +142,7 @@ const HEADER_INSTITUICOES_INFO = {
   pcms: { titulo: 'PCMS', desc: 'Polícia Civil de Mato Grosso do Sul' },
   ppms: { titulo: 'PPMS', desc: 'Polícia Penal de Mato Grosso do Sul' },
   pmmt: { titulo: 'PMMT', desc: 'Polícia Militar de Mato Grosso' },
+  bmmt: { titulo: 'CBMMT', desc: 'Corpo de Bombeiros Militar do Estado de Mato Grosso' },
   pcmt: { titulo: 'PCMT', desc: 'Polícia Judiciária Civil de Mato Grosso' },
   ppmt: { titulo: 'PPMT', desc: 'Polícia Penal de Mato Grosso' }
 };
@@ -857,6 +863,40 @@ const HEADER_INSTITUICOES_RESUMO = {
     "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
     "atualizado": "Base numérica inserida em 01/05/2026"
   },
+  "bmsc": {
+    "nome": "Corpo de Bombeiros Militar de Santa Catarina",
+    "sigla": "CBMSC",
+    "siglaInterna": "BMSC",
+    "estado": "Santa Catarina",
+    "estadoSigla": "SC",
+    "tipo": "Bombeiro Militar",
+    "criacao": "26/09/1926 · Seção de Bombeiros da Força Pública",
+    "ativa": 5000,
+    "ativaLabel": "5.000 profissionais (estimado/projeção centenário)",
+    "reserva": 0,
+    "reservaLabel": "Dados em breve",
+    "femininas": 0,
+    "femininasLabel": "Dados em breve",
+    "efetivoTotalLabel": "5.000 profissionais projetados para 2026 · carreira, temporários e especialistas",
+    "populacao": 8187029,
+    "populacaoTitulo": "População do Estado · IBGE 2025",
+    "relacaoLabel": "1 profissional / 1.637 hab. · 0,061% (estimado)",
+    "relacaoTitulo": "Relação efetivo projetado/população",
+    "governador": "Jorginho Mello",
+    "comando": "Cel BM Fabiano de Souza — Comandante-Geral",
+    "estrutura": "Comando-Geral, Subcomando-Geral, Estado-Maior, diretorias setoriais, Centro de Ensino, batalhões e cinco Regiões Bombeiro Militar, com atuação em prevenção, combate a incêndio, salvamento, atendimento pré-hospitalar, defesa civil e segurança contra incêndio.",
+    "sede": "Centro Administrativo da SSP — Av. Gov. Ivo Silveira, 1521, Bloco A, Capoeiras, Florianópolis/SC, 88085-000",
+    "emergencia": "193",
+    "linksOficiais": [
+      "https://www.cbm.sc.gov.br",
+      "https://www.cbm.sc.gov.br/index.php/sobre-o-cbmsc/historia",
+      "https://concurso.idib.org.br/",
+      "https://leis.alesc.sc.gov.br/ato-normativo/22843",
+      "https://www.transparencia.sc.gov.br/"
+    ],
+    "fonte": "CBMSC; ALESC/SC; IDIB; IBGE Estimativas 2025; Governo de SC; Portal da Transparência/SC",
+    "atualizado": "CBMSC revisado em 09/05/2026 — efetivo ativo sem consolidação pública tratado como estimado/projeção; reserva e efetivo feminino em Dados em breve"
+  },
   "pcsc": {
     "nome": "Polícia Civil de Santa Catarina",
     "sigla": "PCSC",
@@ -922,6 +962,41 @@ const HEADER_INSTITUICOES_RESUMO = {
     "comando": "Cel PM Ríodo Lopes Rubim — Comandante-Geral",
     "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
     "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "bmes": {
+    "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
+    "sigla": "CBMES",
+    "siglaInterna": "BMES",
+    "estado": "Espírito Santo",
+    "estadoSigla": "ES",
+    "tipo": "Bombeiro Militar",
+    "criacao": "26/12/1912 · Lei ES nº 874",
+    "ativa": 1955,
+    "ativaLabel": "1.955 cargos legais (estimado)",
+    "reserva": 0,
+    "reservaLabel": "Dados em breve",
+    "femininas": 0,
+    "femininasLabel": "Dados em breve",
+    "efetivoTotalLabel": "1.955 cargos legais/projetados (estimado); quadro anterior citado em 1.822",
+    "populacao": 4126854,
+    "populacaoTitulo": "População do Estado · IBGE 2025",
+    "relacaoLabel": "1 cargo legal / 2.111 hab. · 0,047% (estimado)",
+    "relacaoTitulo": "Relação quadro legal/população",
+    "governador": "Renato Casagrande",
+    "comando": "Cel BM Alexandre dos Santos Cerqueira — Comandante-Geral",
+    "estrutura": "Comando-Geral, Subcomando-Geral, Estado-Maior, Centro de Atividades Técnicas, Centro de Ensino e Instrução de Bombeiros, batalhões e companhias operacionais, com atuação em defesa civil, prevenção e combate a incêndios, perícia de incêndio e explosões, busca e salvamento, atendimento emergencial e segurança contra incêndio e pânico.",
+    "sede": "Rua Tenente Mário Francisco Brito, 100, Enseada do Suá, Vitória/ES, CEP 29050-555",
+    "emergencia": "193",
+    "linksOficiais": [
+      "https://cb.es.gov.br/",
+      "https://cb.es.gov.br/historia",
+      "https://cb.es.gov.br/comandante-geral",
+      "https://cb.es.gov.br/cfo2023",
+      "https://cb.es.gov.br/organograma",
+      "https://transparencia.es.gov.br/"
+    ],
+    "fonte": "CBMES; Governo do Espírito Santo; PMES/legislação; ALEES; IBGE; CFO 2026/IDECAN; tabela PM/CBM ES 01/12/2025; Lei ES 11.985/2023; Lei ES 12.783/2026; Portal da Transparência/ES",
+    "atualizado": "CBMES revisado em 09/05/2026 — efetivo ativo real não inferido; quadro legal tratado como estimado quando não consolidado em fonte oficial direta"
   },
   "pces": {
     "nome": "Polícia Civil do Espírito Santo",
@@ -1054,6 +1129,40 @@ const HEADER_INSTITUICOES_RESUMO = {
     "comando": "Cel PM Claudio Fernando Carneiro Tinoco — Comandante-Geral",
     "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
     "atualizado": "Base numérica inserida em 01/05/2026"
+  },
+  "bmmt": {
+    "nome": "Corpo de Bombeiros Militar do Estado de Mato Grosso",
+    "sigla": "CBMMT",
+    "siglaInterna": "BMMT",
+    "estado": "Mato Grosso",
+    "estadoSigla": "MT",
+    "tipo": "Bombeiro Militar",
+    "criacao": "19/08/1964 · Lei MT nº 2.184; autonomia em 28/10/1994",
+    "ativa": 1800,
+    "ativaLabel": "1.800+ ativos (estimado)",
+    "reserva": 0,
+    "reservaLabel": "Dados em breve",
+    "femininas": 0,
+    "femininasLabel": "Dados em breve",
+    "efetivoTotalLabel": "Efetivo ativo real: Dados em breve; presença operacional registrada em 31 unidades/UBMs e cobertura aproximada de 70% a 80% da população",
+    "populacao": 3893659,
+    "populacaoTitulo": "População do Estado · IBGE 2025",
+    "relacaoLabel": "1 ativo estimado / 2.163 hab. · 0,046% (estimado)",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Otaviano Pivetta",
+    "comando": "Cel BM Flávio Glêdson Vieira Bezerra — Comandante-Geral",
+    "estrutura": "Comando-Geral, Comando-Geral Adjunto, Corregedoria-Geral, Estado-Maior, diretorias setoriais, Comandos Regionais Bombeiro Militar, batalhões, companhias independentes, pelotões independentes, núcleos bombeiro militar, unidades bombeiro militar e Grupamento de Aviação Bombeiro Militar, conforme LC MT nº 775/2023 e informações institucionais do CBMMT.",
+    "sede": "Quartel do Comando-Geral — Avenida Historiador Rubens de Mendonça, Cuiabá/MT",
+    "emergencia": "193",
+    "linksOficiais": [
+      "https://www.bombeiros.mt.gov.br/",
+      "https://www.bombeiros.mt.gov.br/legislacao",
+      "https://www.bombeiros.mt.gov.br/concursos-e-seletivos",
+      "https://www.transparencia.mt.gov.br/",
+      "https://www.iomat.mt.gov.br/"
+    ],
+    "fonte": "CBMMT; Governo de Mato Grosso; LC MT 541/2014; LC MT 775/2023; Lei MT 13.220/2026; Edital SEPLAG/SESP/CBMMT nº 007/2022; IBGE; IOMAT; Portal da Transparência/MT",
+    "atualizado": "CBMMT revisado em 09/05/2026 — efetivo ativo real não inferido; estimativas marcadas explicitamente"
   },
   "pcmt": {
     "nome": "Polícia Judiciária Civil de Mato Grosso",
@@ -2794,12 +2903,12 @@ const BOMBEIROS_MILITARES_ESTRUTURA = [
   { estado: 'ba', nome: 'Bahia', sigla: 'BA', inst: 'bmba', titulo: 'BMBA', desc: 'Corpo de Bombeiros Militar da Bahia' },
   { estado: 'ce', nome: 'Ceará', sigla: 'CE', inst: 'bmce', titulo: 'BMCE', desc: 'Corpo de Bombeiros Militar do Ceará' },
   { estado: 'df', nome: 'Distrito Federal', sigla: 'DF', inst: 'bmdf', titulo: 'BMDF', desc: 'Corpo de Bombeiros Militar do Distrito Federal' },
-  { estado: 'es', nome: 'Espírito Santo', sigla: 'ES', inst: 'bmes', titulo: 'BMES', desc: 'Corpo de Bombeiros Militar do Espírito Santo' },
+  { estado: 'es', nome: 'Espírito Santo', sigla: 'ES', inst: 'bmes', titulo: 'CBMES', desc: 'Corpo de Bombeiros Militar do Estado do Espírito Santo' },
   { estado: 'go', nome: 'Goiás', sigla: 'GO', inst: 'bmgo', titulo: 'BMGO', desc: 'Corpo de Bombeiros Militar do Estado de Goiás' },
   { estado: 'ma', nome: 'Maranhão', sigla: 'MA', inst: 'bmma', titulo: 'BMMA', desc: 'Corpo de Bombeiros Militar do Maranhão' },
   { estado: 'mg', nome: 'Minas Gerais', sigla: 'MG', inst: 'bmmg', titulo: 'CBMMG', desc: 'Corpo de Bombeiros Militar de Minas Gerais' },
   { estado: 'ms', nome: 'Mato Grosso do Sul', sigla: 'MS', inst: 'bmms', titulo: 'CBMMS', desc: 'Corpo de Bombeiros Militar de Mato Grosso do Sul' },
-  { estado: 'mt', nome: 'Mato Grosso', sigla: 'MT', inst: 'bmmt', titulo: 'BMMT', desc: 'Corpo de Bombeiros Militar de Mato Grosso' },
+  { estado: 'mt', nome: 'Mato Grosso', sigla: 'MT', inst: 'bmmt', titulo: 'CBMMT', desc: 'Corpo de Bombeiros Militar do Estado de Mato Grosso' },
   { estado: 'pa', nome: 'Pará', sigla: 'PA', inst: 'bmpa', titulo: 'BMPA', desc: 'Corpo de Bombeiros Militar do Pará' },
   { estado: 'pb', nome: 'Paraíba', sigla: 'PB', inst: 'bmpb', titulo: 'BMPB', desc: 'Corpo de Bombeiros Militar da Paraíba' },
   { estado: 'pe', nome: 'Pernambuco', sigla: 'PE', inst: 'bmpe', titulo: 'BMPE', desc: 'Corpo de Bombeiros Militar de Pernambuco' },
@@ -4938,8 +5047,10 @@ function mudarInstituicao(novaInstituicao) {
     pmrs:  { titulo: "PMRS",  desc: "Brigada Militar do Rio Grande do Sul",     cor: "#0f3d75", alertaPrev: "IPE Prev/RS e sistema de proteção dos militares estaduais: conferir contribuição previdenciária, rubricas e auxílio-alimentação no contracheque." },
     pcrs:  { titulo: "PCRS",  desc: "Polícia Civil do Rio Grande do Sul",       cor: "#5b6472", alertaPrev: "IPE Prev/RS: contribuição previdenciária conforme regra estadual; adicionais e indenizações dependem de rubrica e situação funcional." },
     pmsc:  { titulo: "PMSC",  desc: "Polícia Militar de Santa Catarina",        cor: "#1b4f8a", alertaPrev: "IPREV/SC e sistema de proteção dos militares estaduais: conferir contribuição previdenciária, subsídio, rubricas e auxílio-alimentação no contracheque." },
+    bmsc:  { titulo: "CBMSC", desc: "Corpo de Bombeiros Militar de Santa Catarina", cor: "#b91c1c", alertaPrev: "CBMSC/SC: conferir IPREV/SC, sistema de proteção social dos militares estaduais, subsídio por posto/graduação, auxílio-alimentação, diárias, indenizações e rubricas pessoais no contracheque." },
     pcsc:  { titulo: "PCSC",  desc: "Polícia Civil de Santa Catarina",          cor: "#4b5563", alertaPrev: "IPREV/SC: contribuição previdenciária conforme regra estadual; classes, subsídios e indenizações dependem de cargo, rubrica e situação funcional." },
     pmes:  { titulo: "PMES",  desc: "Polícia Militar do Espírito Santo",        cor: "#0b5c9e", alertaPrev: "IPAJM/ES e sistema estadual: conferir subsídio, referência, auxílio-alimentação, fardamento, serviço extra e demais rubricas no contracheque." },
+    bmes:  { titulo: "CBMES", desc: "Corpo de Bombeiros Militar do Estado do Espírito Santo", cor: "#b91c1c", alertaPrev: "CBMES/ES: conferir IPAJM/ES, sistema de proteção social militar, subsídio por posto/graduação e referência, auxílio-alimentação, GSE, fardamento, diárias, indenizações e rubricas pessoais no contracheque." },
     pces:  { titulo: "PCES",  desc: "Polícia Civil do Espírito Santo",          cor: "#4b3f72", alertaPrev: "IPAJM/ES: contribuição previdenciária conforme regra estadual; OIP, Delegado e demais carreiras exigem conferência de categoria, referência e rubricas." },
     ppsp: { titulo: "PPSP", desc: POLICIAS_PENAIS_INFO.ppsp.nome, cor: "#6f4e37", alertaPrev: `${POLICIAS_PENAIS_INFO.ppsp.sigla}: ${POLICIAS_PENAIS_INFO.ppsp.previdencia} ${POLICIAS_PENAIS_INFO.ppsp.vantagens}` },
     pprj: { titulo: "PPRJ", desc: POLICIAS_PENAIS_INFO.pprj.nome, cor: "#5a4b81", alertaPrev: `${POLICIAS_PENAIS_INFO.pprj.sigla}: ${POLICIAS_PENAIS_INFO.pprj.previdencia} ${POLICIAS_PENAIS_INFO.pprj.vantagens}` },
@@ -4954,6 +5065,7 @@ function mudarInstituicao(novaInstituicao) {
     pcms: { titulo: "PCMS", desc: "Polícia Civil de Mato Grosso do Sul", cor: "#4b5563", alertaPrev: "PCMS: conferir LC MS 114/2005, LC MS 343/2024, AGEPREV/MS, cargo, classe, referência, tempo em atividade policial e regra de aposentadoria aplicada." },
     ppms: { titulo: "PPMS", desc: POLICIAS_PENAIS_INFO.ppms.nome, cor: "#516b3b", alertaPrev: `${POLICIAS_PENAIS_INFO.ppms.sigla}: ${POLICIAS_PENAIS_INFO.ppms.previdencia} ${POLICIAS_PENAIS_INFO.ppms.vantagens}` },
     pmmt: { titulo: "PMMT", desc: "Polícia Militar de Mato Grosso", cor: "#1f7a4d", alertaPrev: "PMMT: conferir sistema de proteção social dos militares estaduais, MTPREV/MT, regra de ingresso, averbações, reserva remunerada e reforma conforme legislação estadual." },
+    bmmt: { titulo: "CBMMT", desc: "Corpo de Bombeiros Militar do Estado de Mato Grosso", cor: "#b91c1c", alertaPrev: "CBMMT/MT: conferir MTPREV/MT, sistema de proteção social militar, subsídio por posto/graduação e nível, etapa alimentação, fardamento, diárias, indenizações, temporários, PTTC e rubricas pessoais no contracheque." },
     pcmt: { titulo: "PCMT", desc: "Polícia Judiciária Civil de Mato Grosso", cor: "#5b6472", alertaPrev: "PCMT: conferir tabela salarial do Portal do Servidor/SEPLAG-MT, cargo, classe, nível, tempo em atividade policial, MTPREV/MT e regra de aposentadoria aplicada." },
     ppmt: { titulo: "PPMT", desc: POLICIAS_PENAIS_INFO.ppmt.nome, cor: "#6b5f2f", alertaPrev: `${POLICIAS_PENAIS_INFO.ppmt.sigla}: ${POLICIAS_PENAIS_INFO.ppmt.previdencia} ${POLICIAS_PENAIS_INFO.ppmt.vantagens}` }
   };
@@ -5525,6 +5637,9 @@ function getCriadorInstitucional(inst, tipo, estadoNome) {
   if (inst === 'bmms') return 'Governo de Mato Grosso — Lei MT nº 3.322/1973, origem histórica do Comando do Corpo de Bombeiros; Mato Grosso do Sul reorganizou a corporação após a criação do Estado.';
   if (inst === 'bmmg') return 'Júlio Bueno Brandão — Lei MG nº 557, de 31/08/1911, que autorizou a organização da Seção de Bombeiros Profissionais.';
   if (inst === 'bmpr') return 'Carlos Cavalcanti de Albuquerque — Lei PR nº 1.133, de 23/03/1912, que criou o Corpo de Bombeiros do Estado do Paraná.';
+  if (inst === 'bmsc') return 'Antônio Vicente Bulcão Vianna — instalação da Seção de Bombeiros da Força Pública em 26/09/1926; origem autorizada pela Lei SC nº 1.288/1919 no governo Hercílio Luz.';
+  if (inst === 'bmes') return 'Marcondes Alves de Souza — Lei ES nº 874, de 26/12/1912; primeira estrutura efetiva pela Lei ES nº 920, de 13/11/1913.';
+  if (inst === 'bmmt') return 'Fernando Corrêa da Costa — Lei MT nº 2.184, de 19/08/1964; autonomia institucional em 28/10/1994.';
   if (inst === 'bmrj') return 'Dom Pedro II — Decreto Imperial nº 1.775, de 02/07/1856, criou o Corpo Provisório de Bombeiros da Corte.';
   const esfera = getEsferaConsultaInstituicao(inst);
   if (inst === 'pf') return 'União — estrutura federal organizada pela Constituição, legislação federal e atos do Poder Executivo federal.';
@@ -5600,6 +5715,53 @@ function getHistoricoPorTipo(inst, dados) {
         'Lei PR nº 22.916/2025: fixa o efetivo do CBMPR em 5.704 cargos.',
         '2025: Cel QOBM Antônio Geraldo Hiller Lino assume o Comando-Geral do CBMPR.',
         'Concursos 2025: Soldado Bombeiro Militar com 600 vagas e Cadete Bombeiro Militar com 20 vagas.'
+      ]
+    };
+  }
+
+
+  if (inst === 'bmsc') {
+    return {
+      origem: `O ${nome} tem origem operacional na instalação da Seção de Bombeiros da Força Pública de Santa Catarina, em 26 de setembro de 1926, em Florianópolis, após autorização legal anterior para organização do serviço. A corporação tornou-se autônoma com a Emenda Constitucional estadual nº 33/2003 e atua em prevenção, combate a incêndio, salvamento, atendimento pré-hospitalar, defesa civil e segurança contra incêndio e pânico.`,
+      marcos: [
+        '1919: Lei SC nº 1.288 autoriza a criação de uma Seção de Bombeiros vinculada à Força Pública de Santa Catarina.',
+        '1926: instalação da Seção de Bombeiros em Florianópolis, em 26/09/1926, marco histórico da corporação.',
+        '2003: Emenda Constitucional estadual nº 33 concede autonomia administrativa e financeira ao CBMSC.',
+        '2025: nova organização básica amplia a estrutura regional de três para cinco Regiões Bombeiro Militar e cria novas diretorias setoriais.',
+        'LC SC 872/2025: reajuste remuneratório em três etapas, com efeitos em 05/2025, 12/2025 e 04/2026.',
+        'LC SC 880/2025: cria o Serviço Militar Estadual Temporário e o Quadro de Oficiais Especialistas, com impacto estrutural no efetivo projetado.',
+        'Concursos 2026: editais CBMSC/IDIB para 100 vagas de Aluno-Soldado e 10 vagas de Cadete/Oficial, ambos com nível superior.'
+      ]
+    };
+  }
+
+
+  if (inst === 'bmes') {
+    return {
+      origem: `O ${nome} tem origem legal na Lei ES nº 874, de 26 de dezembro de 1912, sancionada por Marcondes Alves de Souza, e teve a primeira estrutura operacional implantada pela Lei ES nº 920, de 13 de novembro de 1913. A corporação se consolidou como instituição militar estadual de prevenção, combate a incêndios, salvamento, defesa civil, perícias de incêndio e segurança contra incêndio e pânico, com autonomia institucional após a Emenda Constitucional estadual nº 12/1997.`,
+      marcos: [
+        '1912: Lei ES nº 874 determina a criação do Corpo de Bombeiros no Espírito Santo.',
+        '1913: Lei ES nº 920 implanta a primeira Seção de Bombeiros, com um cabo, 12 soldados e comando do 1º Ten Ignácio Pinto de Siqueira.',
+        'Treinamento inicial organizado com apoio do 2º Ten Mário Francisco de Brito, oficial do Corpo de Bombeiros do Rio de Janeiro.',
+        '1921 a 1938: evolução nominal e estrutural de Seção para Pelotão, Companhia e Corpo de Bombeiros.',
+        '1997: Emenda Constitucional estadual nº 12 permite a desvinculação da Polícia Militar e consolida o Corpo de Bombeiros Militar como instituição autônoma.',
+        'LC ES 420/2007: remuneração dos militares estaduais por subsídio; LC ES 910/2019 e LC ES 911/2019 tratam de promoções de oficiais e praças.',
+        '2026: CFO CBMES/IDECAN abre 6 vagas imediatas e 400 de cadastro de reserva para Oficial Combatente Bombeiro Militar.'
+      ]
+    };
+  }
+
+  if (inst === 'bmmt') {
+    return {
+      origem: `O ${nome} tem origem legal em 19 de agosto de 1964, com a autorização para organização do serviço de bombeiros em Mato Grosso, e iniciou a operação em fevereiro de 1967 como 1ª Companhia Independente, com 42 homens. A autonomia institucional foi consolidada em 28 de outubro de 1994. Em 2026, a corporação atua como instituição militar estadual de prevenção, combate a incêndios, busca e salvamento, defesa civil, atendimento emergencial e segurança contra incêndio e pânico, sob comando do Cel BM Flávio Glêdson Vieira Bezerra.`,
+      marcos: [
+        '1964: Lei MT nº 2.184 autoriza a organização do serviço de bombeiros no Estado de Mato Grosso.',
+        '1967: início operacional em Cuiabá como 1ª Companhia Independente, com 42 homens.',
+        '1994: autonomia institucional do Corpo de Bombeiros Militar de Mato Grosso em 28/10/1994.',
+        'LC MT 541/2014: estrutura a remuneração/subsídio dos militares estaduais, com referências usadas na aba de remuneração.',
+        'LC MT 775/2023: organiza a estrutura básica do CBMMT, com níveis de direção geral, superior, assessoramento, execução programática e regionalizada.',
+        '2025/2026: publicações institucionais indicam expansão operacional, Grupamento de Aviação Bombeiro Militar e cobertura aproximada de 70% a 80% da população.',
+        'Editais SEPLAG/SESP/CBMMT 2022: referências cadastradas para Aluno-a-Oficial, Aspirante e concursos de ingresso; convocações posteriores devem ser conferidas no site oficial.'
       ]
     };
   }

@@ -13,6 +13,14 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     nome: 'Portal do Estado do Acre e ALEAC — estrutura remuneratória PMAC/CBMAC; LC AC 349/2018, LC AC 164/2006, Lei AC 2.009/2008 e editais CBMAC/IBFC',
     url: 'https://estado.ac.gov.br/servidor-publico/legislacao-e-pccr/legislacao-e-pccr-diretas/'
   },
+  pmal: {
+    nome: 'PMAL — Edital nº 1/2026/Cebraspe para Soldado-Aluno, Soldado, Cadete e Aspirante; Lei AL nº 7.580/2014, Anexo IV, para estimativas por posto/graduação; Lei AL nº 9.852/2026 e SPSM/AL — Lei AL nº 8.671/2022',
+    url: 'https://www.cebraspe.org.br/concursos/pm_al_26'
+  },
+  pcal: {
+    nome: 'PCAL — Leis AL nº 6.276/2001, nº 6.277/2001 e nº 7.602/2014 para Agente/Escrivão; Lei AL nº 8.641/2022 para Delegado; Lei AL nº 9.551/2025 revisão geral; valores sem tabela consolidada 2026 marcados como estimados',
+    url: 'https://gestaointegrada.seplag.al.gov.br/'
+  },
   bmal: {
     nome: 'CBMAL, Transparência/AL e SAPL/ALEAL — Lei AL 7.580/2014, Lei AL 7.581/2014, Lei AL 8.668/2022 e revisões gerais até a Lei AL 9.852/2026; tabela exibida como estimativa técnica de maio/2026',
     url: 'https://www.cbm.al.gov.br/paginas/legislacao'
@@ -238,6 +246,12 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
     return `${detalhesLinha}${info.sigla}: ${info.atribuicoes} ${info.vantagens} Fonte principal: ${info.fonte}.`;
   }
 
+  if (inst === 'pmal') {
+    return linha.benefDesc || 'PMAL: regime de subsídio por posto/graduação e nível. Soldado-Aluno, Soldado, Cadete e Aspirante vêm do edital PMAL 2026; demais linhas marcadas como “estimado” usam projeção técnica a partir da Lei AL 7.580/2014 e devem ser confirmadas no DOE/AL, SEPLAG/AL, transparência e contracheque. SPSM/AL, serviço voluntário, Força Tarefa, diárias, indenizações e parcelas pessoais não foram somados automaticamente.';
+  }
+  if (inst === 'pcal') {
+    return linha.benefDesc || 'PCAL: regime de subsídio por cargo, classe, nível e referência. Delegado segue tabela própria da Lei AL 8.641/2022; Agente e Escrivão usam carreira estruturada pelas Leis AL 6.276/2001, 6.277/2001 e 7.602/2014. Valores marcados como estimado devem ser conferidos no DOE/AL, SEPLAG/AL, Gestão Integrada, transparência e contracheque. Plantões, acúmulo extraordinário, adicionais e parcelas pessoais não foram somados automaticamente.';
+  }
   if (inst === 'bmms') {
     return linha.benefDesc || 'CBMMS: subsídio por posto/graduação e nível; SPSM/MS, AGEPREV/MS, ajuda de custo, fardamento, diárias, indenizações, função, escala e parcelas pessoais dependem da legislação estadual e do contracheque; não foram somados automaticamente.';
   }
@@ -610,7 +624,7 @@ REMUNERACAO_MG_OFICIAL.bmmg = [
 function getTabelaCargosRemuneracao(inst) {
   const map = {
     pmesp: CARGOS_PM,    pcsp: CARGOS_PC,    ppsp: CARGOS_PPSP, pf: CARGOS_PF, prf: CARGOS_PRF,
-    pmac: CARGOS_PMAC,   bmac: CARGOS_BMAC,   bmal: CARGOS_BMAL,   bmam: CARGOS_BMAM,   bmap: CARGOS_BMAP,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,
+    pmac: CARGOS_PMAC,   pmal: CARGOS_PMAL,   pcal: CARGOS_PCAL,   bmac: CARGOS_BMAC,   bmal: CARGOS_BMAL,   bmam: CARGOS_BMAM,   bmap: CARGOS_BMAP,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,
     pmerj: CARGOS_PMERJ, bmrj: CARGOS_BMRJ, pcerj: CARGOS_PCERJ, pprj: CARGOS_PPRJ,
     pmmg: CARGOS_PMMG,   bmmg: CARGOS_BMMG,   pcmg: CARGOS_PCMG,   ppmg: CARGOS_PPMG,
     pmba: CARGOS_PMBA,   bmba: CARGOS_BMBA,   pcba: CARGOS_PCBA,   ppba: CARGOS_PPBA,
@@ -649,7 +663,14 @@ function calcularRemuneracaoTabelada(inst, cargo) {
     benefDesc = cargo.benefDesc || 'Benefícios e indenizações federais não somados automaticamente; dependem da legislação, lotação, exercício, faixa aplicável e situação funcional.';
     fonteKey = cargo.fonteKey || inst;
     badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Federal 2026');
-  } else if (inst === 'pmac' || inst === 'bmac' || inst === 'bmal' || inst === 'bmam' || inst === 'bmap') {
+  } else if (inst === 'pcal') {
+    remuneracao = padrao;
+    beneficios = Number(cargo.beneficios || 0);
+    criterio = cargo.criterio || 'Subsídio bruto mensal de referência da PCAL por cargo/classe/referência; valores estimados devem ser confirmados em tabela oficial, ficha financeira e contracheque.';
+    benefDesc = cargo.benefDesc || 'Plantões, adicional noturno, diárias, acúmulo extraordinário, representação, indenizações, função, retroativos e parcelas pessoais dependem de lei, ato, escala, lotação e contracheque; não foram somados automaticamente.';
+    fonteKey = cargo.fonteKey || 'pcal';
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'PCAL estimado');
+  } else if (inst === 'pmac' || inst === 'pmal' || inst === 'bmac' || inst === 'bmal' || inst === 'bmam' || inst === 'bmap') {
     remuneracao = padrao;
     beneficios = Number(cargo.beneficios || 0);
     criterio = cargo.criterio || 'Total bruto mensal de referência para militares estaduais, conforme tabela remuneratória cadastrada para a instituição.';

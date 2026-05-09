@@ -13,6 +13,70 @@ const ACOES_JUDICIAIS = {
     { titulo: 'PMAC — serviço complementar, localização especial e chefia', status: 'Depende de escala/designação', ano: 'Tema de conferência', tipo: 'individual', desc: 'Pode haver discussão quando houver serviço complementar, lotação especial, designação de chefia ou ato funcional formal com pagamento ausente, incompleto ou calculado em base divergente.', base: 'Tabela PMAC/CBMAC e normas estaduais de vantagens; exige ordem de serviço, boletins, escalas e contracheques.', fonte: 'Portal do Estado do Acre — tabela LC 164', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' },
     { titulo: 'PMAC — reserva, reforma e abono de permanência', status: 'Análise previdenciária individual', ano: 'Tema permanente', tipo: 'individual', desc: 'Conferir regra aplicada, data de ingresso, idade, tempo militar, tempo de contribuição, paridade/integralidade quando cabível, reforma por incapacidade e eventual abono de permanência.', base: 'Constituição Federal, EC 103/2019, normas estaduais, Acreprevidência e ficha funcional.', fonte: 'Acreprevidência / Portal do Estado do Acre', fonteUrl: 'https://estado.ac.gov.br/', atualizado: 'Maio/2026' }
   ],
+  pmal: [
+    {
+      titulo: 'Subsídio PMAL — enquadramento por posto/graduação e nível',
+      status: 'Conferência individual',
+      ano: 'Lei AL 7.580/2014 e revisões posteriores',
+      tipo: 'individual',
+      desc: 'Verificar enquadramento no subsídio, nível I/II, evolução, promoções, revisões e eventuais diferenças. Não tratar como ganho automático.',
+      base: 'Lei AL nº 7.580/2014, Lei AL nº 9.852/2026, atos de promoção/enquadramento, Portal da Transparência/AL e contracheque.',
+      fonte: 'Lei AL 7.580/2014; SAPL/ALEAL; Portal da Transparência/AL',
+      fonteUrl: 'https://sapl.al.al.leg.br/',
+      atualizado: 'Maio/2026'
+    },
+    {
+      titulo: 'SPSM/AL — contribuição, inatividade e pensão militar',
+      status: 'Análise previdenciária/proteção social',
+      ano: '2022 em diante',
+      tipo: 'individual',
+      desc: 'Conferir base de cálculo, alíquota, verbas indenizatórias excluídas, tempo de serviço, reserva/reforma e regras de pensão conforme situação funcional.',
+      base: 'Lei AL nº 8.671/2022, Decreto-Lei 667/1969, Lei Federal 13.954/2019 e atos estaduais.',
+      fonte: 'Lei AL 8.671/2022',
+      fonteUrl: 'https://sapl.al.al.leg.br/norma/2283',
+      atualizado: 'Maio/2026'
+    },
+    {
+      titulo: 'Serviço voluntário remunerado / Força Tarefa / indenizações',
+      status: 'Conferência de escala e rubrica',
+      ano: '2014/2017 em diante',
+      tipo: 'individual/coletivo',
+      desc: 'Possível discussão sobre pagamento, escala, limite, natureza indenizatória e reflexos de rubricas ligadas a serviço extraordinário ou força-tarefa.',
+      base: 'Lei AL nº 7.581/2014, Decreto AL nº 35.142/2014, Lei AL nº 7.952/2017 e atos administrativos aplicáveis.',
+      fonte: 'PMAL/Sislegis; Diário Oficial/AL',
+      fonteUrl: 'https://central.pm.al.gov.br/sistemas/public/sislegis/publico/index/param/2',
+      atualizado: 'Maio/2026'
+    },
+    {
+      titulo: 'Promoção, antiguidade, merecimento e atos de carreira',
+      status: 'Conferência administrativa',
+      ano: 'Conforme ato e quadro',
+      tipo: 'individual',
+      desc: 'Analisar interstício, vaga, quadro, antiguidade, merecimento, curso, ficha funcional, publicação em boletim/DOE e reflexos no subsídio.',
+      base: 'Estatuto dos Policiais Militares de Alagoas, Lei Federal nº 14.751/2023 quando aplicável e atos internos da PMAL.',
+      fonte: 'PMAL/Sislegis e boletins internos/DOE',
+      fonteUrl: 'https://central.pm.al.gov.br/sistemas/public/sislegis/publico/index/param/2',
+      atualizado: 'Maio/2026'
+    },
+    {
+      titulo: 'Concurso PMAL 2026 — etapas, cotas, TAF, saúde e investigação social',
+      status: 'Controle de edital',
+      ano: '2026',
+      tipo: 'individual',
+      desc: 'Demandas podem envolver eliminação em prova, TAF, avaliação de saúde, avaliação psicológica, investigação social, heteroidentificação, documentação e prazos.',
+      base: 'Edital nº 1 — PMAL, de 19/03/2026, Lei AL nº 5.346/1992, Lei AL nº 6.568/2005 e Lei Federal nº 14.751/2023.',
+      fonte: 'Cebraspe PM_AL_26',
+      fonteUrl: 'https://www.cebraspe.org.br/concursos/pm_al_26',
+      atualizado: 'Maio/2026'
+    }
+  ],
+  pcal: [
+    { titulo: 'Subsídio Agente/Escrivão PCAL — enquadramento, progressão e revisões', status: 'Conferência individual', ano: '2001/2014 em diante', tipo: 'individual', desc: 'Verificar classe, nível, referência, progressão, revisão geral, atraso de implantação e diferenças em ficha financeira/contracheque. Não tratar como ganho automático.', base: 'Leis AL nº 6.276/2001, nº 6.277/2001, nº 7.602/2014, nº 9.032/2023, nº 9.551/2025 e atos de progressão/enquadramento.', fonte: 'SEPLAG/AL Gestão Integrada; SAPL/ALEAL; contracheque', fonteUrl: 'https://gestaointegrada.seplag.al.gov.br/', atualizado: 'Maio/2026' },
+    { titulo: 'Delegado PCAL — subsídio, classe DPC-1 a DPC-4 e acúmulo extraordinário', status: 'Conferência individual', ano: '2022/2025 em diante', tipo: 'individual', desc: 'Conferir classe, enquadramento, revisão, designação, acúmulo extraordinário, atos publicados e rubricas do contracheque.', base: 'Lei AL nº 8.641/2022, Lei AL nº 9.592/2025, atos de designação e ficha financeira.', fonte: 'SAPL/ALEAL; Diário Oficial/AL; contracheque', fonteUrl: 'https://sapl.al.al.leg.br/norma/2234', atualizado: 'Maio/2026' },
+    { titulo: 'Aposentadoria policial, abono de permanência e paridade/integralidade', status: 'Análise previdenciária individual', ano: 'EC 103/2019 e regras policiais', tipo: 'individual', desc: 'Exige análise da data de ingresso, idade, tempo policial, tempo total, cargo, regra de transição, ato de aposentadoria, abono de permanência e regime próprio.', base: 'LC nº 51/1985, LC nº 144/2014, EC nº 103/2019, Lei Complementar Estadual nº 52/2019, AL Previdência e registros funcionais.', fonte: 'Legislação previdenciária e AL Previdência', fonteUrl: 'https://alprevidencia.al.gov.br/', atualizado: 'Maio/2026' },
+    { titulo: 'Concurso PCAL 2026 — comissão, edital, etapas, TAF e prova prática', status: 'Controle de edital', ano: '2026', tipo: 'individual/coletivo', desc: 'Demandas podem envolver publicação de edital, banca, requisitos, cotas, TAF, digitação, psicológico, investigação social, curso de formação, cronograma e eliminação em fases.', base: 'Ato de comissão do Governo de Alagoas, edital futuro e legislação da carreira policial civil.', fonte: 'Governo de Alagoas — comissões dos concursos PCAL e Fapeal', fonteUrl: 'https://alagoas.al.gov.br/noticia/governo-de-alagoas-divulga-comissoes-dos-concursos-da-policia-civil-e-fapeal', atualizado: 'Maio/2026' },
+    { titulo: 'Plantões, diárias, adicional noturno, acúmulo e rubricas eventuais', status: 'Conferência de escala e rubrica', ano: 'Caso a caso', tipo: 'individual', desc: 'Verificar escala, ordem de serviço, designação, cumprimento efetivo, natureza indenizatória/remuneratória, reflexos e pagamento no contracheque.', base: 'Leis estaduais, atos da PCAL/SEPLAG, escala, portaria de designação, Diário Oficial e ficha financeira.', fonte: 'PCAL/SEPLAG/DOE-AL', fonteUrl: 'https://pc.al.gov.br/', atualizado: 'Maio/2026' }
+  ],
   pcac: [
     { titulo: 'PCAC — titulação e progressão por classe', status: 'Conferir cargo e classe', ano: 'Tema permanente', tipo: 'individual', desc: 'Verificar enquadramento na classe correta e pagamento de titulação, progressão e vantagens pessoais para Delegado, Perito, Médico-Legista, Agente, Escrivão, Papiloscopista e Auxiliar de Necropsia.', base: 'LC AC 303/2015, Lei AC 3.107/2015, Lei AC 3.228/2017 e tabelas salariais oficiais.', fonte: 'Portal do Estado do Acre — tabelas PCAC', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' },
     { titulo: 'PCAC — serviço complementar e vantagens absorvidas', status: 'Análise por contracheque', ano: 'Tema de conferência', tipo: 'individual', desc: 'As tabelas indicam serviço complementar e regras de absorção de vantagens. A ação só deve ser cogitada após comparar lei, ato funcional, classe, cargo, fichas financeiras e rubricas efetivamente pagas.', base: 'Lei AC 2.250/2009, Lei AC 3.228/2017, LC AC 303/2015 e normas remuneratórias da PCAC.', fonte: 'Portal do Estado do Acre — tabelas salariais', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' },

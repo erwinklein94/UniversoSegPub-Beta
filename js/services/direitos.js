@@ -27,7 +27,7 @@ function analisarDireitos() {
   if (!c) return;
 
   const nomesInst = {
-    pmac: 'PMAC', pcac: 'PCAC', ppac: 'PPAC', pmesp: 'PMESP', pcsp: 'PCSP', ppsp: 'PPSP', pmerj: 'PMERJ', bmrj: 'CBMERJ', pcerj: 'PCERJ', pprj: 'PPRJ',
+    pmac: 'PMAC', pmal: 'PMAL', pcal: 'PCAL', pcac: 'PCAC', ppac: 'PPAC', pmesp: 'PMESP', pcsp: 'PCSP', ppsp: 'PPSP', pmerj: 'PMERJ', bmrj: 'CBMERJ', pcerj: 'PCERJ', pprj: 'PPRJ',
     pmmg: 'PMMG', bmmg: 'CBMMG', pcmg: 'PCMG', ppmg: 'PPMG', pmba: 'PMBA', pcba: 'PCBA', ppba: 'PPBA', pmpr: 'PMPR', bmpr: 'CBMPR', pcpr: 'PCPR', pppr: 'PPPR',
     pmrs: 'PMRS', pcrs: 'PCRS', pprs: 'PPRS', pmsc: 'PMSC', bmsc: 'CBMSC', pcsc: 'PCSC', ppsc: 'PPSC',
     pmes: 'PMES', bmes: 'CBMES', pces: 'PCES', ppes: 'PPES',
@@ -97,6 +97,14 @@ function analisarDireitos() {
     html += direitoItem('SPSM / CBPM / Cruz Azul', 'condicionado',
       'Sistema de proteção social e assistência ligado ao militar paulista, com possíveis benefícios como pensão, auxílio-funeral, assistência e serviços vinculados.',
       'Acesso, contribuição, dependentes e coberturas dependem das normas da PMESP/CBPM/Cruz Azul.');
+  } else if (inst === 'pmal') {
+    html += direitoItem('SPSM/AL — proteção social militar', 'condicionado',
+      'Sistema de proteção social dos militares de Alagoas, com normas próprias para inatividade, pensão, saúde e assistência. Conferir contribuição, dependentes, tempo de serviço, nível, verbas indenizatórias e situação funcional.',
+      'Base: Lei AL nº 8.671/2022; Estatuto dos Policiais Militares de Alagoas; contracheque e atos da PMAL/SEPLAG.');
+  } else if (inst === 'pcal') {
+    html += direitoItem('AL Previdência / IPASEAL Saúde', 'condicionado',
+      'Servidores da PCAL devem conferir RPPS, assistência à saúde, perícia, dependentes, contribuição, abono de permanência, aposentadoria policial, subsídio e rubricas eventuais conforme vínculo e contracheque.',
+      'Base: AL Previdência, IPASEAL Saúde, Lei Orgânica Nacional das Polícias Civis, LC Federal nº 51/1985, LC Federal nº 144/2014, LC Estadual nº 52/2019 e normas estaduais.');
   } else if (inst === 'bmms') {
     html += direitoItem('SPSM/MS / AGEPREV-MS', 'condicionado',
       'Proteção social dos militares estaduais de MS e assistência conforme vínculo, contribuição, dependentes, situação funcional e norma vigente.',
@@ -295,6 +303,8 @@ function getSaudeTexto(inst) {
   }
   const textos = {
     pmac: 'PMAC: assistência à saúde e proteção social devem ser conferidas na PMAC, SEAD/AC, Acreprevidência e normas estaduais; benefício, cobertura e dependentes variam por vínculo, contribuição e ato funcional.',
+    pmal: 'PMAL: assistência institucional, saúde da PMAL, proteção social SPSM/AL, perícia e regras de dependentes devem ser conferidas conforme vínculo, contribuição, situação funcional e contracheque.',
+    pcal: 'PCAL: assistência, perícia, AL Previdência, IPASEAL Saúde, dependentes e aposentadoria policial devem ser conferidos conforme vínculo, cargo, classe, contribuição, situação funcional e contracheque.',
     pcac: 'PCAC: assistência à saúde deve ser conferida na PCAC, SEAD/AC, Acreprevidência e normas estaduais; pode envolver perícia oficial, regras do servidor estadual e normas próprias da carreira.',
     bmap: 'BMAP/CBMAP: assistência, saúde, junta médica e proteção social devem ser conferidas no CBMAP, SEAD/AP, AMPRev e normas estaduais; cobertura, dependentes e descontos variam por vínculo e ato funcional.',
     pmesp: 'PMESP: assistência pode envolver Cruz Azul, FUSAM, CBPM/SPSM e regras próprias para titular e dependentes; a contribuição deve ser conferida na CBPM conforme vínculo, retribuição-base, pensão e dependentes.',
@@ -335,6 +345,8 @@ function getSaudeBase(inst) {
   if (inst === 'pmac' || inst === 'pcac') return 'Base: PMAC/PCAC, SEAD/AC, Acreprevidência, estatutos e normas estaduais. Conferir adesão, contribuição, dependentes, perícia e cobertura vigente.';
   if (inst === 'bmrj') return 'Base: SEDEC/CBMERJ, Lei RJ 9.537/2021, normas do SPSMERJ, assistência médica estadual e regras administrativas de dependentes/contribuição.';
   if (inst === 'bmms') return 'Base: LC MS nº 127/2008, LC MS nº 291/2021, Estatuto dos Militares Estaduais de MS, AGEPREV/MS, normas do CBMMS e contracheque.';
+  if (inst === 'pmal') return 'Base: Lei AL nº 8.671/2022, Decreto AL nº 35.021/1991, Estatuto dos Policiais Militares de Alagoas, normas da PMAL/SEPLAG e contracheque.';
+  if (inst === 'pcal') return 'Base: AL Previdência, IPASEAL Saúde, Lei Orgânica Nacional das Polícias Civis, LC Federal nº 51/1985, LC Federal nº 144/2014, LC Estadual nº 52/2019, leis estaduais da PCAL e contracheque.';
   if (inst === 'bmmt') return 'Base: LC MT nº 555/2014, LC MT nº 541/2014, LC MT nº 775/2023, MTPREV/MT, normas do CBMMT e contracheque.';
   if (inst === 'pmmg' || inst === 'bmmg') return 'IPSM/MG: gestão de benefícios previdenciários e de saúde dos militares mineiros e dependentes; conferir contribuição, dependentes, rede e regras assistenciais.';
   if (inst === 'pmba' || inst === 'pcba') return 'Planserv/BA e legislação estadual aplicável.';
@@ -359,6 +371,8 @@ function getTempoServicoTexto(inst, tempo) {
   if (inst === 'pcac') return `Na PCAC, o tempo de serviço deve ser conferido para adicional temporal, progressão por classe, titulação, aposentadoria policial e vantagens pessoais. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência inicial.`;
   if (inst === 'pmesp' || inst === 'pcsp') return `Em SP, há indicativo de <strong>${Math.floor(tempo / 5)}</strong> quinquênio(s), calculados em regra a cada 5 anos de efetivo exercício, observadas as exceções legais.`;
   if (inst === 'bmms') return `No CBMMS, a carreira usa subsídio por posto/graduação e nível. O tempo informado indica <strong>${tempo}</strong> ano(s) para conferir promoção, interstício, nível, reserva/reforma, licença especial e enquadramento no contracheque.`;
+  if (inst === 'pmal') return `Na PMAL, a carreira usa subsídio por posto/graduação e nível. O tempo informado indica <strong>${tempo}</strong> ano(s) para conferir nível I/II, promoção, interstício, reserva/reforma, inatividade, serviço voluntário, efeitos de revisões e ficha funcional.`;
+  if (inst === 'pcal') return `Na PCAL, o tempo informado indica <strong>${tempo}</strong> ano(s) para conferir classe, nível, referência, progressão, aposentadoria policial, abono de permanência, eventual acúmulo extraordinário e ficha funcional.`;
   if (inst === 'bmmt') return `No CBMMT, a carreira usa subsídio por posto/graduação e nível. O tempo informado indica <strong>${tempo}</strong> ano(s) para conferir promoção, interstício, nível, reserva/reforma, licença especial, enquadramento e eventuais efeitos de RGA no contracheque.`;
   if (inst === 'bmrj') return `No CBMERJ, o triênio/ATS incide sobre soldo + GHP + GRET + GRAM para quem preservou o direito. Pelo tempo informado, há <strong>${Math.floor(tempo / 3)}</strong> período(s) de 3 anos como referência; para ingresso por edital publicado a partir de 01/01/2022, a LC RJ 194/2021 extinguiu o adicional.`;
   if (inst === 'pmerj') return `Na PMERJ, o triênio/ATS incide sobre soldo + GHP + GRET + GRAM para quem preservou o direito. Pelo tempo informado, há <strong>${Math.floor(tempo / 3)}</strong> período(s) de 3 anos como referência; para ingresso por edital publicado a partir de 01/01/2022, a LC RJ 194/2021 extinguiu o adicional.`;
@@ -392,6 +406,8 @@ function getTempoServicoBase(inst) {
   if (inst === 'pmesp' || inst === 'pcsp') return 'Base: Art. 129 da Constituição do Estado de São Paulo; observar exceções para remuneração por subsídio.';
   if (inst === 'pcerj') return 'Base: Lei Orgânica/Reestruturação da Polícia Civil do RJ e normas complementares.';
   if (inst === 'bmms') return 'Base: LC MS nº 127/2008, LC MS nº 188/2014, LC MS nº 291/2021, LC MS nº 354/2025, Lei MS nº 6.562/2026, boletins, ficha funcional e contracheque.';
+  if (inst === 'pmal') return 'Base: Lei AL nº 7.580/2014, Lei AL nº 8.671/2022, Lei AL nº 9.852/2026, Estatuto PMAL, boletins, ficha funcional, atos de promoção/enquadramento e contracheque.';
+  if (inst === 'pcal') return 'Base: Leis AL nº 3.437/1975, nº 6.276/2001, nº 6.277/2001, nº 7.602/2014, nº 8.641/2022, nº 9.551/2025, Lei Orgânica Nacional das Polícias Civis, ficha funcional e contracheque.';
   if (inst === 'bmmt') return 'Base: LC MT nº 541/2014, LC MT nº 555/2014, LC MT nº 775/2023, Lei MT nº 13.220/2026, boletins, ficha funcional, atos de promoção/enquadramento e contracheque.';
   if (inst === 'bmpr') return `No CBMPR, a referência principal é subsídio por classe, promoção e enquadramento na carreira. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos apenas como referência de conferência; não aplicar quinquênio automaticamente sem base específica.`;
   if (inst === 'pmmg' || inst === 'bmmg' || inst === 'pcmg') return 'Revisar no estatuto/plano de carreira atualizado e no demonstrativo de pagamento. Não fixar percentual sem conferência individual.';
@@ -421,6 +437,8 @@ function getInsalubridadeTexto(inst) {
   if (inst === 'pmesp' || inst === 'pcsp') return 'Em SP, pode haver adicional de insalubridade em graus mínimo, médio ou máximo, conforme enquadramento, laudo e legislação. Não é universal para todo servidor em qualquer função.';
   if (inst === 'pcerj') return 'Na PCERJ, a insalubridade aparece entre vantagens possíveis, mas deve ser separada do adicional de atividade perigosa. Depende de previsão legal e enquadramento.';
   if (inst === 'bmms') return 'No CBMMS, não lançar insalubridade/periculosidade automática sem previsão, laudo, rubrica, escala, lotação, decisão ou ato administrativo aplicável ao caso.';
+  if (inst === 'pmal') return 'Na PMAL, não lançar insalubridade, periculosidade ou verba de risco automática sem previsão legal, rubrica específica, escala, lotação, laudo, decisão ou ato administrativo aplicável ao caso.';
+  if (inst === 'pcal') return 'Na PCAL, insalubridade, periculosidade, adicional de risco, plantões e acúmulo extraordinário não devem ser lançados automaticamente; verificar rubrica legal, cargo, lotação, escala, laudo, decisão, ato administrativo e contracheque.';
   if (inst === 'bmmt') return 'No CBMMT, não lançar insalubridade/periculosidade automática sem previsão, laudo, rubrica, escala, lotação, decisão ou ato administrativo aplicável ao caso.';
   if (inst === 'pcpr') return 'Na PCPR, a LC 259/2023 indica que o subsídio compreende adicionais de insalubridade, periculosidade e risco de vida. Não lançar como verba separada sem decisão, rubrica ou tese específica.';
   if (inst === 'bmpr') return 'FASPM/PR: Lei PR 17.169/2012; ParanáPrevidência/proteção social militar: Lei Federal 13.954/2019 e normas estaduais aplicáveis.';
@@ -446,6 +464,8 @@ function getInsalubridadeBase(inst) {
   if (inst === 'pmac' || inst === 'pcac') return 'Base: legislação estadual do Acre, tabela salarial oficial, laudo/ato administrativo, lotação, escala, rubrica e contracheque.';
   if (inst === 'pmesp' || inst === 'pcsp') return 'Conferir grau, base de cálculo, laudo e holerite. Para PMESP, a tabela SGGD/SP informa faixas de adicional, mas valor final depende da classificação oficial. Não confundir com periculosidade.';
   if (inst === 'bmms') return 'Base: Estatuto dos Militares Estaduais de MS, normas internas do CBMMS, laudo quando exigido, ato de designação, ficha funcional e contracheque.';
+  if (inst === 'pmal') return 'Base: Lei AL nº 7.580/2014, Lei AL nº 7.581/2014, Lei AL nº 7.952/2017, normas internas da PMAL, laudo quando exigido, ato de designação, ficha funcional e contracheque.';
+  if (inst === 'pcal') return 'Base: Leis da carreira PCAL, Lei AL nº 9.592/2025 quando houver acúmulo extraordinário de Delegado, atos da PCAL/SEPLAG, escala, laudo quando exigido, ficha financeira e contracheque.';
   if (inst === 'bmmt') return 'Base: LC MT nº 541/2014, LC MT nº 555/2014, LC MT nº 775/2023, normas internas do CBMMT, laudo quando exigido, ato de designação, ficha funcional e contracheque.';
   if (inst === 'bmms') return 'Base: LC MS nº 127/2008, LC MS nº 291/2021, estatuto militar estadual, normas do CBMMS e contracheque.';
   if (inst === 'pcpr') return 'Base: LC PR 259/2023, art. 39, §3º; observar ADI indicada na própria legislação e decisões aplicáveis.';
@@ -472,7 +492,8 @@ function getPericulosidadeTexto(inst) {
   if (inst === 'pcrs') return 'Na PCRS, eventual adicional ligado ao risco/atividade deve ser conferido em lei estadual, rubrica e contracheque; não aplicar automaticamente regra de outro Estado.';
   if (inst === 'pcsc') return 'Na PCSC, eventual adicional ligado ao risco/atividade deve ser conferido em lei estadual, rubrica e contracheque; não aplicar automaticamente regra de outro Estado.';
   if (inst === 'pces') return 'Na PCES, eventual adicional ligado ao risco/atividade deve ser conferido em lei estadual, rubrica e contracheque; no OIP e demais carreiras por subsídio, verificar se a vantagem foi absorvida pelo regime legal.';
-  if (inst === 'pmesp' || inst === 'bmpr' || inst === 'bmsc' || inst === 'bmmt' || inst === 'bmrj' || inst === 'pmerj' || inst === 'pmmg' || inst === 'bmmg' || inst === 'pmba' || inst === 'pmpr' || inst === 'pmrs' || inst === 'pmsc' || inst === 'pmes' || inst === 'bmes') return 'Para militares estaduais, o risco da atividade costuma estar absorvido no regime remuneratório ou em verbas próprias. Não aplicar automaticamente o modelo da PCERJ.';
+  if (inst === 'pcal') return 'Na PCAL, eventual verba de risco/atividade policial deve ser conferida no regime de subsídio e nas rubricas específicas; não aplicar automaticamente modelo de outro Estado.';
+  if (inst === 'pmesp' || inst === 'pmal' || inst === 'bmpr' || inst === 'bmsc' || inst === 'bmmt' || inst === 'bmrj' || inst === 'pmerj' || inst === 'pmmg' || inst === 'bmmg' || inst === 'pmba' || inst === 'pmpr' || inst === 'pmrs' || inst === 'pmsc' || inst === 'pmes' || inst === 'bmes') return 'Para militares estaduais, o risco da atividade costuma estar absorvido no regime remuneratório ou em verbas próprias. Não aplicar automaticamente o modelo da PCERJ.';
   return 'Pode haver gratificação ou adicional ligado ao risco/atividade, mas a regra muda bastante por Estado e carreira. Verificar norma específica.';
 }
 
@@ -485,6 +506,7 @@ function getPericulosidadeBase(inst) {
   if (inst === 'bmap') return 'Base: LC AP nº 113/2018, LC AP nº 173/2025, DOE/AP, CBMAP, SEAD/AP, escalas, boletins, atos de designação e contracheque.';
   if (inst === 'pmac') return 'Base: LC AC 164/2006, LC AC 39/1993, tabelas PMAC/CBMAC, escalas, boletins, atos de designação e contracheque.';
   if (inst === 'pcac') return 'Base: leis remuneratórias da PCAC, Lei Orgânica Nacional das Polícias Civis, atos administrativos, escalas e contracheque.';
+  if (inst === 'pcal') return 'Base: Leis AL nº 3.437/1975, nº 6.276/2001, nº 6.277/2001, nº 7.602/2014, nº 8.641/2022, nº 9.551/2025, Lei Orgânica Nacional das Polícias Civis, atos administrativos, escala e contracheque.';
   if (inst === 'pcerj') return 'Base: Lei 11.003/2025/RJ, art. sobre adicional de atividade perigosa e verba de representação.';
   if (inst === 'bmms') return 'Base: Estatuto dos Militares Estaduais de MS, normas internas do CBMMS, laudo quando exigido, ato de designação, ficha funcional e contracheque.';
   if (inst === 'bmmt') return 'Base: LC MT nº 541/2014, LC MT nº 555/2014, LC MT nº 775/2023, normas remuneratórias dos militares estaduais de MT e atos internos do CBMMT.';
@@ -606,6 +628,32 @@ function getVantagensEspecificas(inst) {
     html += direitoItem('Férias/licenças em pecúnia e assistência', 'condicionado',
       'Férias, licença especial, assistência médica/medicamentos e assistência jurídica dependem de ato, documentação individual, vínculo e norma vigente.',
       'Base: Lei RJ 279/1979, Decreto RJ 48.466/2023, Portarias CBMERJ e Leis RJ 10.845/2025 e 10.850/2025.');
+  } else if (inst === 'pmal') {
+    html += direitoItem('Lei AL 7.580/2014 — subsídio PMAL', 'verificar',
+      'A PMAL usa subsídio por posto/graduação e nível. Soldado-Aluno, Soldado, Cadetes e Aspirante foram cadastrados com valores do edital PMAL 2026; demais postos/graduações aparecem como estimativa quando não houve tabela oficial consolidada localizada para abril/2026.',
+      'Base: Lei AL nº 7.580/2014, Lei AL nº 9.852/2026, edital PMAL 2026, SAPL/ALEAL, Portal da Transparência/AL, ficha funcional e contracheque.');
+    html += direitoItem('Lei AL 8.671/2022 — SPSM/AL', 'condicionado',
+      'O Sistema de Proteção Social dos Militares de Alagoas envolve remuneração, reserva/reforma, pensão, saúde e assistência. Não transformar contribuição, assistência ou indenização em salário fixo sem conferir vínculo e rubrica.',
+      'Base: Lei AL nº 8.671/2022; conferir PMAL, SEPLAG/AL, SPSM/AL, situação funcional e contracheque.');
+    html += direitoItem('Serviço voluntário remunerado / Força Tarefa', 'condicionado',
+      'Parcelas por serviço voluntário, Força Tarefa, diárias, plantões, indenizações ou missões dependem de escala, convocação, autorização, limite mensal, efetivo cumprimento e rubrica específica.',
+      'Base: legislação estadual, atos PMAL/SEPLAG, boletins, escalas, ordem de serviço e demonstrativo de pagamento.');
+    html += direitoItem('Concurso PMAL 2026 — CFO e CFP', 'verificar',
+      'O edital PMAL 2026 traz CFO e CFP com prova objetiva/discursiva, TAF, avaliação médica, psicológica, investigação social, comprovação documental e nota final. Impugnações exigem análise do caso e dos prazos.',
+      'Base: Edital nº 1 — PMAL, de 19/03/2026, Cebraspe/SEPLAG/PMAL, Lei AL nº 5.346/1992, Lei AL nº 6.568/2005 e Lei Federal nº 14.751/2023.');
+  } else if (inst === 'pcal') {
+    html += direitoItem('Subsídio PCAL — classe, nível, referência e revisão geral', 'verificar',
+      'Agente, Escrivão e Delegado devem conferir cargo, classe, nível/referência, progressão, revisão geral, implantação e diferenças em ficha financeira. Valores estimados no simulador não substituem contracheque.',
+      'Base: Leis AL nº 6.276/2001, nº 6.277/2001, nº 7.602/2014, nº 8.641/2022, nº 9.551/2025, Gestão Integrada/SEPLAG e contracheque.');
+    html += direitoItem('Lei AL 8.641/2022 — Delegado DPC-1 a DPC-4', 'condicionado',
+      'A carreira de Delegado possui tabela própria por subsídio. Conferir classe, designação, atos de promoção, acúmulo extraordinário e rubricas pessoais antes de calcular diferenças.',
+      'Base: Lei AL nº 8.641/2022, Lei AL nº 9.592/2025, SAPL/ALEAL, Diário Oficial/AL e ficha financeira.');
+    html += direitoItem('Plantões, acúmulo extraordinário e rubricas eventuais', 'condicionado',
+      'Diárias, plantões, adicional noturno, acúmulo extraordinário, funções, indenizações e retroativos dependem de escala, ato, lotação, cumprimento efetivo e previsão normativa.',
+      'Base: leis estaduais, atos da PCAL/SEPLAG, escala, ordem de serviço, Diário Oficial e contracheque.');
+    html += direitoItem('Concurso PCAL 2026 — Agente e Escrivão', 'verificar',
+      'Há comissão formada e 300 vagas previstas, mas edital e banca ainda dependem de publicação oficial. Não tratar como inscrições abertas sem ato novo.',
+      'Base: Governo de Alagoas, ato de comissão de 2026, futuro edital PCAL e legislação da carreira.');
   } else if (inst === 'bmms') {
     html += direitoItem('Subsídio CBMMS — posto/graduação e nível', 'verificar',
       'Tabela por subsídio e nível. Conferir posto/graduação, nível, enquadramento, RGA 2026 e implantação no contracheque.',

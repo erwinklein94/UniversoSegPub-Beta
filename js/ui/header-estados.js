@@ -14,6 +14,15 @@ const HEADER_ESTADOS = {
     pp: 'ppac',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Acre.svg'
   },
+  al: {
+    nome: 'Alagoas',
+    sigla: 'AL',
+    pm: 'pmal',
+    bm: 'bmal',
+    pc: 'pcal',
+    pp: 'ppal',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Alagoas.svg'
+  },
   sp: {
     nome: 'São Paulo',
     sigla: 'SP',
@@ -105,6 +114,7 @@ const HEADER_ESTADOS = {
 
 const HEADER_INSTITUICOES_INFO = {
   pmac: { titulo: 'PMAC', desc: 'Polícia Militar do Acre' },
+  pmal: { titulo: 'PMAL', desc: 'Polícia Militar do Estado de Alagoas' },
   bmac: { titulo: 'BMAC', desc: 'Corpo de Bombeiros Militar do Acre' },
   pcac: { titulo: 'PCAC', desc: 'Polícia Civil do Acre' },
   ppac: { titulo: 'PPAC', desc: 'Polícia Penal do Acre' },
@@ -1275,26 +1285,36 @@ const HEADER_INSTITUICOES_RESUMO = {
     "atualizado": "Base numérica inserida em 01/05/2026"
   },
   "pmal": {
-    "nome": "Polícia Militar de Alagoas",
+    "nome": "Polícia Militar do Estado de Alagoas",
     "sigla": "PMAL",
     "estado": "Alagoas",
     "estadoSigla": "AL",
     "tipo": "Polícia Militar",
-    "criacao": "03/02/1832",
-    "ativa": 6960,
-    "ativaLabel": "6.960",
+    "criacao": "03/02/1832 · Decisão Imperial nº 52 e Corpo de Guardas Municipais da Província",
+    "ativa": 7493,
+    "ativaLabel": "7.493 ativos · Governo de Alagoas/PMAL 2026",
     "reserva": 7308,
-    "reservaLabel": "7.308 · estimativa técnica",
+    "reservaLabel": "7.308 inativos/reserva · estimado",
     "femininas": 905,
-    "femininasLabel": "905 · estimado",
+    "femininasLabel": "905 mulheres · estimado",
     "populacao": 3220848,
     "populacaoTitulo": "População do Estado",
-    "relacaoLabel": "1 ativo / 463 hab. · 0,216%",
+    "populacaoLabel": "3.220.848 habitantes",
+    "relacaoLabel": "1 ativo / 430 hab. · 0,233%",
     "relacaoTitulo": "Relação ativa/população",
     "governador": "Paulo Dantas",
-    "comando": "Cel PM Paulo Amorim — Comandante-Geral da PMAL",
-    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
-    "atualizado": "Base numérica inserida em 01/05/2026"
+    "comando": "Cel QOC PM Paulo Amorim Feitosa Filho — Comandante-Geral",
+    "estrutura": "Sete grandes comandos de região, batalhões, companhias, unidades administrativas, de ensino, diretorias, seções e setores, com policiamento ostensivo e preservação da ordem pública nos 102 municípios alagoanos.",
+    "sede": "Avenida Assis Chateaubriand, s/n, Trapiche da Barra, Maceió/AL, CEP 57020-410",
+    "emergencia": "190",
+    "linksOficiais": [
+      "https://www.pm.al.gov.br/",
+      "https://www.cebraspe.org.br/concursos/pm_al_26",
+      "https://central.pm.al.gov.br/sistemas/public/sislegis/publico/index/param/2",
+      "https://transparencia.al.gov.br/pessoal/servidores-ativos/?codigo_orgao=12442570000110"
+    ],
+    "fonte": "PMAL; Governo de Alagoas; Cebraspe PM_AL_26; SAPL/ALEAL; Portal da Transparência/AL; Lei AL 7.580/2014; Lei AL 8.671/2022; Lei AL 9.852/2026; IBGE 2025",
+    "atualizado": "PMAL revisada em 09/05/2026 — efetivo ativo oficial; reserva, feminino e postos sem tabela consolidada de 2026 marcados como estimados"
   },
   "pcal": {
     "nome": "Polícia Civil de Alagoas",
@@ -3443,6 +3463,324 @@ function aplicarEstruturaEstadosFaltantesDados() {
   });
 }
 
+function aplicarDadosEspecificosPmal() {
+  const inst = 'pmal';
+  const estado = 'al';
+  if (!INSTITUICOES_VALIDAS.includes(inst)) INSTITUICOES_VALIDAS.push(inst);
+
+  HEADER_ESTADOS[estado] = {
+    nome: 'Alagoas',
+    sigla: 'AL',
+    pm: inst,
+    bm: 'bmal',
+    pc: 'pcal',
+    pp: 'ppal',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Alagoas.svg'
+  };
+  HEADER_INSTITUICOES_INFO[inst] = { titulo: 'PMAL', desc: 'Polícia Militar do Estado de Alagoas' };
+  HEADER_INSTITUICOES_IMAGENS[inst] = 'img/MILITAR/pmal.webp';
+  HEADER_INSTITUICOES_RESUMO[inst] = {
+    nome: 'Polícia Militar do Estado de Alagoas',
+    sigla: 'PMAL',
+    estado: 'Alagoas',
+    estadoSigla: 'AL',
+    tipo: 'Polícia Militar',
+    criacao: '03/02/1832 · Decisão Imperial nº 52 e Corpo de Guardas Municipais da Província',
+    ativa: 7493,
+    ativaLabel: '7.493 ativos · Governo de Alagoas/PMAL 2026',
+    reserva: 7308,
+    reservaLabel: '7.308 inativos/reserva · estimado',
+    femininas: 905,
+    femininasLabel: '905 mulheres · estimado',
+    populacao: 3220848,
+    populacaoTitulo: 'População do Estado',
+    populacaoLabel: '3.220.848 habitantes',
+    relacaoLabel: '1 ativo / 430 hab. · 0,233%',
+    relacaoTitulo: 'Relação ativa/população',
+    governador: 'Paulo Dantas',
+    comando: 'Cel QOC PM Paulo Amorim Feitosa Filho — Comandante-Geral',
+    estrutura: 'Sete grandes comandos de região, batalhões, companhias, unidades administrativas, de ensino, diretorias, seções e setores, com policiamento ostensivo e preservação da ordem pública nos 102 municípios alagoanos.',
+    sede: 'Avenida Assis Chateaubriand, s/n, Trapiche da Barra, Maceió/AL, CEP 57020-410',
+    emergencia: '190',
+    linksOficiais: [
+      'https://www.pm.al.gov.br/',
+      'https://www.cebraspe.org.br/concursos/pm_al_26',
+      'https://central.pm.al.gov.br/sistemas/public/sislegis/publico/index/param/2',
+      'https://transparencia.al.gov.br/pessoal/servidores-ativos/?codigo_orgao=12442570000110'
+    ],
+    fonte: 'PMAL; Governo de Alagoas; Cebraspe PM_AL_26; SAPL/ALEAL; Portal da Transparência/AL; Lei AL 7.580/2014; Lei AL 8.671/2022; Lei AL 9.852/2026; IBGE 2025',
+    atualizado: 'PMAL revisada em 09/05/2026 — efetivo ativo oficial; reserva, feminino e postos sem tabela consolidada de 2026 marcados como estimados'
+  };
+  if (typeof REMUNERACAO_FONTES_OFICIAIS !== 'undefined') {
+    REMUNERACAO_FONTES_OFICIAIS[inst] = {
+      nome: 'PMAL — Edital nº 1/2026/Cebraspe para Soldado-Aluno, Soldado, Cadete e Aspirante; Lei AL nº 7.580/2014, Anexo IV, para estimativas por posto/graduação; Lei AL nº 9.852/2026 e SPSM/AL — Lei AL nº 8.671/2022',
+      url: 'https://www.cebraspe.org.br/concursos/pm_al_26'
+    };
+  }
+  if (typeof CARGOS_PMAL !== 'undefined') {
+    CARGOS_ESTRUTURA_GENERICAS[inst] = CARGOS_PMAL;
+  }
+  CONFIGS_INSTITUICOES_GENERICAS[inst] = {
+    titulo: 'PMAL',
+    desc: 'Polícia Militar do Estado de Alagoas',
+    cor: '#1f4f7a',
+    alertaPrev: 'PMAL/SPSM-AL: conferir contribuição de 10,5%, base de cálculo, subsídio, nível, serviço voluntário, indenizações e rubricas pessoais no contracheque e na Lei AL 8.671/2022.'
+  };
+  CONCURSOS[inst] = CONCURSOS[inst] || {
+    edital: 'PMAL 2026 — Edital nº 1/PMAL, de 19/03/2026, para admissão ao CFO e CFP, executado pelo Cebraspe, SEPLAG/AL e PMAL.',
+    salario: 'CFO: Cadete 1º ano R$ 3.874,43; Cadete 2º ano R$ 4.163,78; Cadete 3º ano R$ 4.716,51; Aspirante após CFO R$ 11.563,77. CFP: Soldado-Aluno R$ 2.354,67; Soldado após CFP R$ 6.067,51.',
+    vagas: '530 vagas imediatas + cadastro de reserva: Oficial 30 imediatas + 30 CR; Soldado 500 imediatas + 500 CR.',
+    cotas: 'Distribuição por ampla concorrência e reserva para pessoas pretas, pardas, indígenas ou quilombolas conforme edital PMAL 2026.',
+    idade: '18 anos completos na matrícula e máximo de 30 anos até a data limite de inscrição, com exceção prevista no edital para integrante da PMAL no QOEM.',
+    escolaridade: 'Ensino médio completo, CNH categoria B, nacionalidade, altura mínima, aptidão física, sanidade física/mental, idoneidade e demais requisitos do edital.',
+    materias: 'Provas objetivas e discursiva com conhecimentos básicos, específicos e legislação pertinente ao policial militar de Alagoas, conforme conteúdo programático do edital.',
+    banca: 'Cebraspe.',
+    inscritos: 'Inscrições de 30/03/2026 a 30/04/2026, taxa R$ 150,00, pagamento até 05/05/2026; provas objetivas e discursiva previstas para 19/07/2026 em Arapiraca/AL e Maceió/AL.',
+    etapas: 'Provas objetivas, prova discursiva, teste de aptidão física, avaliação médica, avaliação psicológica, comprovação documental, investigação social, exame toxicológico e procedimento de heteroidentificação/verificação quando aplicável.',
+    cfsd: 'CFO para Oficial de Estado-Maior e CFP para Soldado do Quadro de Praças, em regime de dedicação integral, conforme edital e normas da Diretoria de Ensino/PMAL.',
+    estagio: 'Curso de formação, nomeação, estágio probatório e desenvolvimento na carreira seguem edital, Estatuto dos Policiais Militares de Alagoas e atos da PMAL/SEPLAG.',
+    validade: 'Conforme edital PMAL 2026 e atos de homologação/prorrogação que forem publicados.',
+    previsao: 'Há edital PMAL 2026 em andamento; não publicar novo concurso aberto sem fonte oficial posterior.',
+    site: 'https://www.cebraspe.org.br/concursos/pm_al_26'
+  };
+  ASSOCIACOES[inst] = ASSOCIACOES[inst] || [
+    {
+      nome: 'AMEAL — Associação dos Militares do Estado de Alagoas',
+      foco: 'Policiais e bombeiros militares de Alagoas, ativos, veteranos e pensionistas, conforme regras de associação.',
+      acao: 'Representação associativa, orientação institucional, pautas remuneratórias, apoio administrativo/jurídico e comunicação de interesse da classe.',
+      site: 'https://ameal.org.br',
+      telefone: 'Consultar diretamente na entidade',
+      mensalidade: 'Consultar diretamente na entidade',
+      servicos: 'Jurídico, notícias de classe, convênios, orientação ao associado e acompanhamento de temas de carreira.'
+    },
+    {
+      nome: 'Entidades representativas de praças e oficiais da PMAL',
+      foco: 'Militares estaduais de Alagoas por posto, graduação, quadro ou situação funcional.',
+      acao: 'Acompanhamento de demandas administrativas, remuneratórias, previdenciárias e de valorização profissional.',
+      site: 'https://www.pm.al.gov.br/',
+      telefone: 'Consultar canais oficiais e entidades locais',
+      mensalidade: 'Consultar diretamente na entidade',
+      servicos: 'Orientação, comunicação institucional, convênios e encaminhamento de demandas coletivas.'
+    }
+  ];
+  ACOES_JUDICIAIS[inst] = ACOES_JUDICIAIS[inst] || [
+    {
+      titulo: 'Subsídio PMAL — enquadramento por posto/graduação e nível',
+      status: 'Conferência individual',
+      ano: 'Lei AL 7.580/2014 e revisões posteriores',
+      tipo: 'individual',
+      desc: 'Verificar enquadramento no subsídio, nível I/II, evolução, promoções e diferenças remuneratórias. Não tratar como ganho automático.',
+      base: 'Lei AL nº 7.580/2014, leis de revisão remuneratória e atos de promoção/enquadramento.',
+      fonte: 'Lei AL 7.580/2014; SAPL/ALEAL; Portal da Transparência/AL; contracheque',
+      fonteUrl: 'https://sapl.al.al.leg.br/',
+      atualizado: 'Maio/2026'
+    },
+    {
+      titulo: 'SPSM/AL — contribuição, inatividade e pensão militar',
+      status: 'Análise previdenciária/proteção social',
+      ano: '2022 em diante',
+      tipo: 'individual',
+      desc: 'Conferir base de cálculo, alíquota, verbas indenizatórias excluídas, tempo de serviço, reserva/reforma e regras de pensão conforme situação funcional.',
+      base: 'Lei AL nº 8.671/2022, Decreto-Lei 667/1969, Lei Federal 13.954/2019 e atos estaduais.',
+      fonte: 'Lei AL 8.671/2022',
+      fonteUrl: 'https://sapl.al.al.leg.br/norma/2283',
+      atualizado: 'Maio/2026'
+    },
+    {
+      titulo: 'Serviço voluntário remunerado / Força Tarefa / indenizações',
+      status: 'Conferência de escala e rubrica',
+      ano: '2014/2017 em diante',
+      tipo: 'individual/coletivo',
+      desc: 'Possível discussão sobre pagamento, escala, limite, natureza indenizatória e reflexos de rubricas vinculadas a serviço extraordinário ou força-tarefa.',
+      base: 'Lei AL nº 7.581/2014, Decreto AL nº 35.142/2014, Lei AL nº 7.952/2017 e atos administrativos aplicáveis.',
+      fonte: 'PMAL/Sislegis; Diário Oficial/AL',
+      fonteUrl: 'https://central.pm.al.gov.br/sistemas/public/sislegis/publico/index/param/2',
+      atualizado: 'Maio/2026'
+    },
+    {
+      titulo: 'Concurso PMAL 2026 — etapas, cotas, TAF, saúde e investigação social',
+      status: 'Controle de edital',
+      ano: '2026',
+      tipo: 'individual',
+      desc: 'Demandas podem envolver eliminação em fase objetiva/discursiva, TAF, saúde, psicológico, investigação social, heteroidentificação, documentação e prazos.',
+      base: 'Edital nº 1 — PMAL, de 19/03/2026, Lei AL nº 5.346/1992, Lei AL nº 6.568/2005 e Lei Federal nº 14.751/2023.',
+      fonte: 'Cebraspe PM_AL_26',
+      fonteUrl: 'https://www.cebraspe.org.br/concursos/pm_al_26',
+      atualizado: 'Maio/2026'
+    }
+  ];
+}
+
+
+function aplicarDadosEspecificosPcal() {
+  const inst = 'pcal';
+  const estado = 'al';
+  if (!INSTITUICOES_VALIDAS.includes(inst)) INSTITUICOES_VALIDAS.push(inst);
+
+  HEADER_ESTADOS[estado] = {
+    nome: 'Alagoas',
+    sigla: 'AL',
+    pm: 'pmal',
+    bm: 'bmal',
+    pc: inst,
+    pp: 'ppal',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Alagoas.svg'
+  };
+  HEADER_INSTITUICOES_INFO[inst] = { titulo: 'PCAL', desc: 'Polícia Civil do Estado de Alagoas' };
+  HEADER_INSTITUICOES_IMAGENS[inst] = 'img/CIVIL/pcal.webp';
+  HEADER_INSTITUICOES_RESUMO[inst] = {
+    nome: 'Polícia Civil do Estado de Alagoas',
+    sigla: 'PCAL',
+    estado: 'Alagoas',
+    estadoSigla: 'AL',
+    tipo: 'Polícia Civil',
+    criacao: '25/06/1975 · Lei AL nº 3.437 estrutura cargos da Polícia Civil; origem administrativa anterior na Guarda Civil de 1912',
+    ativa: 2000,
+    ativaLabel: 'cerca de 2.000 integrantes (estimado) · portal PCAL',
+    reserva: 0,
+    reservaLabel: 'Dados em breve',
+    femininas: 0,
+    femininasLabel: 'Dados em breve',
+    populacao: 3220848,
+    populacaoTitulo: 'População do Estado',
+    populacaoLabel: '3.220.848 habitantes',
+    relacaoLabel: '1 ativo / 1.610 hab. · 0,062% (estimado)',
+    relacaoTitulo: 'Relação ativa/população',
+    governador: 'Paulo Dantas',
+    comando: 'Delegado Thales Silva Araújo — Delegado-Geral interino',
+    estrutura: 'Delegacia-Geral, Delegado-Geral Adjunto, diretorias de polícia judiciária, DRACCO, corregedoria, diretoria administrativa, unidades metropolitanas/interior, delegacias especializadas, regionais, Academia de Polícia de Alagoas e serviços de apoio.',
+    sede: 'Avenida General de França Albuquerque (AL-101 Norte), Jacarecica, Maceió/AL, CEP 57038-640',
+    emergencia: '197 · Delegacia Virtual/SINESP e canais PCAL',
+    linksOficiais: [
+      'https://pc.al.gov.br/',
+      'https://pc.al.gov.br/institucional',
+      'https://pc.al.gov.br/delegacias-e-contatos',
+      'https://gestaointegrada.seplag.al.gov.br/',
+      'https://alagoas.al.gov.br/noticia/governo-de-alagoas-divulga-comissoes-dos-concursos-da-policia-civil-e-fapeal'
+    ],
+    fonte: 'PCAL; Governo de Alagoas; SEPLAG/AL Gestão Integrada; SAPL/ALEAL; Diário Oficial/AL; Lei AL 3.437/1975; Lei AL 6.441/2003; Lei AL 7.602/2014; Lei AL 8.641/2022; Lei AL 9.551/2025; IBGE 2025',
+    atualizado: 'PCAL revisada em 09/05/2026 — efetivo ativo como ordem de grandeza institucional; reserva, gênero e tabela sem fonte direta marcados como Dados em breve/estimados'
+  };
+  if (typeof REMUNERACAO_FONTES_OFICIAIS !== 'undefined') {
+    REMUNERACAO_FONTES_OFICIAIS[inst] = {
+      nome: 'PCAL — Leis AL nº 6.276/2001, nº 6.277/2001 e nº 7.602/2014 para Agente/Escrivão; Lei AL nº 8.641/2022 para Delegado; Lei AL nº 9.551/2025 revisão geral; valores sem tabela consolidada 2026 marcados como estimados',
+      url: 'https://gestaointegrada.seplag.al.gov.br/'
+    };
+  }
+  if (typeof CARGOS_PCAL !== 'undefined') {
+    CARGOS_ESTRUTURA_GENERICAS[inst] = CARGOS_PCAL;
+  }
+  CONFIGS_INSTITUICOES_GENERICAS[inst] = {
+    titulo: 'PCAL',
+    desc: 'Polícia Civil do Estado de Alagoas',
+    cor: '#4b5563',
+    alertaPrev: 'PCAL/AL Previdência/IPASEAL Saúde: conferir RPPS, contribuição, abono de permanência, aposentadoria policial, subsídio, plantões, acúmulo extraordinário e rubricas pessoais no contracheque e na norma vigente.'
+  };
+  CONCURSOS[inst] = CONCURSOS[inst] || {
+    edital: 'PCAL 2026 — comissão formada para novo concurso de Agente e Escrivão; 300 vagas previstas, sendo 150 imediatas e 150 cadastro de reserva; edital e banca em definição.',
+    salario: 'Agente/Escrivão: referência inicial R$ 5.318,61 e final até R$ 15.065,12 (estimado por tabela de carreira/revisões). Delegado: tabela específica pela Lei AL 8.641/2022; novo edital de Delegado não publicado nesta revisão.',
+    vagas: '300 vagas previstas para Agente e Escrivão: 150 imediatas + 150 cadastro de reserva.',
+    cotas: 'A definir em edital, observadas a legislação estadual/federal e eventuais regras de reserva.',
+    idade: 'A definir no edital. Não fixar limite sem edital publicado.',
+    escolaridade: 'Agente/Escrivão: nível superior; Agente costuma exigir CNH B conforme legislação/edital; Delegado exige bacharelado em Direito nos certames próprios.',
+    materias: 'Estrutura esperada: Português, Raciocínio Lógico, Informática/segurança cibernética, Direitos Humanos, Atualidades/Ética, Direito Penal, Processo Penal, Constitucional, Administrativo, legislação estadual e legislação penal especial.',
+    banca: 'A definir; último concurso Agente/Escrivão 2021 foi Cebraspe.',
+    inscritos: 'Sem inscrições abertas nesta revisão; comissão formada em janeiro/2026 e banca em definição.',
+    etapas: 'Objetivas, discursiva, TAF, prova prática de digitação quando aplicável, exames médicos/laboratoriais, psicológica, investigação social, curso de formação; Delegado pode ter prova oral/títulos conforme edital.',
+    cfsd: 'Curso de Formação Policial na Academia de Polícia de Alagoas/APOCAL.',
+    estagio: 'Estágio probatório, posse e exercício conforme estatuto estadual, Lei Orgânica Nacional das Polícias Civis e edital.',
+    validade: 'A definir no edital.',
+    previsao: 'Concurso autorizado/comissão formada; não publicar como edital aberto até sair ato oficial.',
+    site: 'https://pc.al.gov.br/'
+  };
+  ASSOCIACOES[inst] = ASSOCIACOES[inst] || [
+    {
+      nome: 'SINDPOL-AL — Sindicato dos Policiais Civis de Alagoas',
+      foco: 'Agentes, escrivães e demais policiais civis de Alagoas conforme base sindical.',
+      acao: 'Representação sindical, pautas remuneratórias, condições de trabalho, defesa institucional, comunicação e apoio jurídico/sindical.',
+      site: 'https://sindpolalagoas.com.br/',
+      telefone: 'Consultar site/canais da entidade',
+      mensalidade: 'Consultar diretamente na entidade',
+      servicos: 'Jurídico, notícias de classe, mobilização, convênios, atendimento ao filiado e acompanhamento de legislação.'
+    },
+    {
+      nome: 'ADEPOL-AL — Associação dos Delegados de Polícia de Alagoas',
+      foco: 'Delegados de Polícia Civil de Alagoas.',
+      acao: 'Representação associativa, defesa institucional da carreira, comunicação, apoio jurídico e acompanhamento de pautas de delegados.',
+      site: 'https://adepol-al.com.br/portal/',
+      telefone: 'Consultar diretamente na entidade',
+      mensalidade: 'Consultar diretamente na entidade',
+      servicos: 'Notícias, representação institucional, apoio jurídico, convênios e orientação ao associado.'
+    },
+    {
+      nome: 'PCAL — canais institucionais',
+      foco: 'Cidadãos, servidores e unidades da Polícia Civil de Alagoas.',
+      acao: 'Atendimento institucional, localização de delegacias, contatos oficiais e informações públicas.',
+      site: 'https://pc.al.gov.br/',
+      telefone: '(82) 3315-7722 / (82) 3315-2625',
+      mensalidade: 'Não se aplica',
+      servicos: 'Delegacias e contatos, delegacia virtual, notícias, serviços digitais e orientação pública.'
+    }
+  ];
+  ACOES_JUDICIAIS[inst] = ACOES_JUDICIAIS[inst] || [
+    {
+      titulo: 'Subsídio Agente/Escrivão PCAL — enquadramento, progressão e revisões',
+      status: 'Conferência individual',
+      ano: '2001/2014 em diante',
+      tipo: 'individual',
+      desc: 'Verificar classe, nível, referência, progressão, revisão geral, atraso de implantação e diferenças em ficha financeira/contracheque. Não tratar como ganho automático.',
+      base: 'Leis AL nº 6.276/2001, nº 6.277/2001, nº 7.602/2014, nº 9.032/2023, nº 9.551/2025 e atos de progressão/enquadramento.',
+      fonte: 'SEPLAG/AL Gestão Integrada; SAPL/ALEAL; contracheque',
+      fonteUrl: 'https://gestaointegrada.seplag.al.gov.br/',
+      atualizado: 'Maio/2026'
+    },
+    {
+      titulo: 'Delegado PCAL — subsídio, classe DPC-1 a DPC-4 e acúmulo extraordinário',
+      status: 'Conferência individual',
+      ano: '2022/2025 em diante',
+      tipo: 'individual',
+      desc: 'Conferir classe, enquadramento, revisão, designação, acúmulo extraordinário, atos publicados e rubricas do contracheque.',
+      base: 'Lei AL nº 8.641/2022, Lei AL nº 9.592/2025, atos de designação e ficha financeira.',
+      fonte: 'SAPL/ALEAL; Diário Oficial/AL; contracheque',
+      fonteUrl: 'https://sapl.al.al.leg.br/norma/2234',
+      atualizado: 'Maio/2026'
+    },
+    {
+      titulo: 'Aposentadoria policial, abono de permanência e paridade/integralidade',
+      status: 'Análise previdenciária individual',
+      ano: 'EC 103/2019 e regras policiais',
+      tipo: 'individual',
+      desc: 'Exige análise da data de ingresso, idade, tempo policial, tempo total, cargo, regra de transição, ato de aposentadoria, abono de permanência e regime próprio.',
+      base: 'LC nº 51/1985, LC nº 144/2014, EC nº 103/2019, Lei Complementar Estadual nº 52/2019, AL Previdência e registros funcionais.',
+      fonte: 'Legislação previdenciária e AL Previdência',
+      fonteUrl: 'https://alprevidencia.al.gov.br/',
+      atualizado: 'Maio/2026'
+    },
+    {
+      titulo: 'Concurso PCAL 2026 — comissão, edital, etapas, TAF e prova prática',
+      status: 'Controle de edital',
+      ano: '2026',
+      tipo: 'individual/coletivo',
+      desc: 'Demandas podem envolver publicação de edital, banca, requisitos, cotas, TAF, digitação, psicológico, investigação social, curso de formação, cronograma e eliminação em fases.',
+      base: 'Ato de comissão do Governo de Alagoas, edital futuro e legislação da carreira policial civil.',
+      fonte: 'Governo de Alagoas — comissões dos concursos PCAL e Fapeal',
+      fonteUrl: 'https://alagoas.al.gov.br/noticia/governo-de-alagoas-divulga-comissoes-dos-concursos-da-policia-civil-e-fapeal',
+      atualizado: 'Maio/2026'
+    },
+    {
+      titulo: 'Plantões, diárias, adicional noturno, acúmulo e rubricas eventuais',
+      status: 'Conferência de escala e rubrica',
+      ano: 'Caso a caso',
+      tipo: 'individual',
+      desc: 'Verificar escala, ordem de serviço, designação, cumprimento efetivo, natureza indenizatória/remuneratória, reflexos e pagamento no contracheque.',
+      base: 'Leis estaduais, atos da PCAL/SEPLAG, escala, portaria de designação, Diário Oficial e ficha financeira.',
+      fonte: 'PCAL/SEPLAG/DOE-AL',
+      fonteUrl: 'https://pc.al.gov.br/',
+      atualizado: 'Maio/2026'
+    }
+  ];
+}
+
 function criarOptionInstituicao(inst, texto) {
   const opt = document.createElement('option');
   opt.value = inst;
@@ -3694,6 +4032,8 @@ function aplicarRevisaoResumosInstitucionais() {
 }
 
 aplicarEstruturaEstadosFaltantesDados();
+aplicarDadosEspecificosPmal();
+aplicarDadosEspecificosPcal();
 aplicarEstruturaBombeirosMilitaresDados();
 aplicarDadosEspecificosBmac();
 aplicarDadosEspecificosBmal();
@@ -5633,6 +5973,8 @@ function imagemPrincipalBrasaoInstituicao(inst) {
 
 function getCriadorInstitucional(inst, tipo, estadoNome) {
   if (inst === 'pmesp') return 'Brigadeiro Rafael Tobias de Aguiar — então presidente da Província de São Paulo, pela lei provincial de 15/12/1831.';
+  if (inst === 'pmal') return 'Presidência da Província de Alagoas e Ministério da Justiça do Império — Decisão Imperial nº 52, de 03/02/1832, aprovando o Corpo de Guardas Municipais da província.';
+  if (inst === 'pcal') return 'Estado de Alagoas — Lei AL nº 3.437, de 25/06/1975, estrutura cargos da Polícia Civil; Lei AL nº 6.441/2003 concede autonomia administrativa e financeira.';
   if (inst === 'pmerj') return 'D. João VI — criação da Divisão Militar da Guarda Real da Polícia da Corte em 13/05/1809.';
   if (inst === 'bmms') return 'Governo de Mato Grosso — Lei MT nº 3.322/1973, origem histórica do Comando do Corpo de Bombeiros; Mato Grosso do Sul reorganizou a corporação após a criação do Estado.';
   if (inst === 'bmmg') return 'Júlio Bueno Brandão — Lei MG nº 557, de 31/08/1911, que autorizou a organização da Seção de Bombeiros Profissionais.';
@@ -5670,6 +6012,37 @@ function getHistoricoPorTipo(inst, dados) {
     };
   }
 
+  if (inst === 'pmal') {
+    return {
+      origem: `A ${nome} tem origem oficial reconhecida em 3 de fevereiro de 1832, quando a Decisão Imperial nº 52 aprovou o plano do Corpo de Guardas Municipais da Província de Alagoas. Em 2026, a PMAL aparece como corporação quase bicentenária, com atuação de policiamento ostensivo e preservação da ordem pública nos 102 municípios alagoanos, efetivo ativo informado de 7.493 integrantes e Comando-Geral exercido pelo Cel QOC PM Paulo Amorim Feitosa Filho.`,
+      marcos: [
+        '1832: Decisão Imperial nº 52 aprova o plano do Corpo de Guardas Municipais da Província de Alagoas, marco reconhecido da origem da PMAL.',
+        '1851: criação da Banda de Música da PMAL, posteriormente reconhecida como patrimônio histórico, artístico e cultural imaterial do povo alagoano.',
+        '1912: extinção e reativação da Força Pública/Batalhão de Polícia no mesmo ano, marco de reorganização institucional.',
+        '1947/1993: criação da Formação de Bombeiros dentro da PM e posterior autonomia do Corpo de Bombeiros Militar de Alagoas.',
+        '1991: Decreto nº 35.021 passa a regular assistência médico-hospitalar do policial militar e dependentes.',
+        '2014: Lei AL nº 7.580 fixa subsídios dos militares estaduais; usar tabela por posto/graduação com cautela em atualizações posteriores.',
+        '2022: Lei AL nº 8.671 disciplina o Sistema de Proteção Social dos Militares do Estado de Alagoas — SPSM/AL.',
+        '2026: edital PMAL/Cebraspe para CFO e CFP, com 530 vagas imediatas e cadastro de reserva.'
+      ]
+    };
+  }
+
+  if (inst === 'pcal') {
+    return {
+      origem: `A ${nome} é a polícia judiciária estadual de Alagoas, com raízes administrativas na reorganização da Força Pública e da Guarda Civil em 1912 e estrutura policial civil consolidada pela Lei AL nº 3.437/1975. A Lei AL nº 6.441/2003 marcou a autonomia administrativa e financeira da instituição, e em 2026 o Governo de Alagoas formou comissão para novo concurso de Agente e Escrivão, com 300 vagas previstas.`,
+      marcos: [
+        '1808: criação da Intendência Geral de Polícia da Corte e do Brasil, marco nacional de organização policial que antecede as polícias civis estaduais.',
+        '1912: reorganização das forças estaduais em Alagoas e criação da Guarda Civil, junto à Polícia Militar, formando a Força Pública estadual.',
+        '1975: Lei AL nº 3.437 institui cargos e estrutura a Polícia Civil do Estado de Alagoas.',
+        '1982: criação da Escola de Polícia Civil de Alagoas — EPOCA, depois Academia de Polícia de Alagoas/APOCAL.',
+        '1987: carreira de Delegado de Polícia Civil e departamentos de polícia judiciária ganham desenho próprio.',
+        '2003: Lei AL nº 6.441 concede autonomia administrativa e financeira à Polícia Civil e organiza a Direção-Geral.',
+        '2007: Lei Delegada nº 43 reorganiza a estrutura, incluindo Delegado-Geral e diretorias.',
+        '2026: Governo de Alagoas divulga comissão para concurso PCAL de Agente e Escrivão, com 150 vagas imediatas e 150 cadastro de reserva.'
+      ]
+    };
+  }
 
 
   if (inst === 'bmms') {

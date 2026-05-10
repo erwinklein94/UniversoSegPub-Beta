@@ -23,6 +23,15 @@ const HEADER_ESTADOS = {
     pp: 'ppal',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Alagoas.svg'
   },
+  am: {
+    nome: 'Amazonas',
+    sigla: 'AM',
+    pm: 'pmam',
+    bm: 'bmam',
+    pc: 'pcam',
+    pp: 'ppam',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amazonas.svg'
+  },
   sp: {
     nome: 'São Paulo',
     sigla: 'SP',
@@ -115,6 +124,7 @@ const HEADER_ESTADOS = {
 const HEADER_INSTITUICOES_INFO = {
   pmac: { titulo: 'PMAC', desc: 'Polícia Militar do Acre' },
   pmal: { titulo: 'PMAL', desc: 'Polícia Militar do Estado de Alagoas' },
+  pmam: { titulo: 'PMAM', desc: 'Polícia Militar do Estado do Amazonas' },
   pcal: { titulo: 'PCAL', desc: 'Polícia Civil do Estado de Alagoas' },
   ppal: { titulo: 'PPAL', desc: 'Polícia Penal do Estado de Alagoas' },
   bmac: { titulo: 'BMAC', desc: 'Corpo de Bombeiros Militar do Acre' },
@@ -1373,26 +1383,36 @@ const HEADER_INSTITUICOES_RESUMO = {
     ]
   },
   "pmam": {
-    "nome": "Polícia Militar do Amazonas",
+    "nome": "Polícia Militar do Estado do Amazonas",
     "sigla": "PMAM",
     "estado": "Amazonas",
     "estadoSigla": "AM",
     "tipo": "Polícia Militar",
-    "criacao": "04/04/1837",
+    "criacao": "04/04/1837 · Guarda Policial da Província do Amazonas",
     "ativa": 8250,
-    "ativaLabel": "8.250",
+    "ativaLabel": "8.250 (estimado)",
     "reserva": 8662,
-    "reservaLabel": "8.662 · estimativa técnica",
+    "reservaLabel": "8.662 inativos/reserva (estimado)",
     "femininas": 1072,
-    "femininasLabel": "1.072 · estimado",
+    "femininasLabel": "1.072 mulheres (estimado)",
     "populacao": 4321616,
     "populacaoTitulo": "População do Estado",
-    "relacaoLabel": "1 ativo / 524 hab. · 0,191%",
+    "relacaoLabel": "1 ativo / 524 hab. · 0,191% (estimado)",
     "relacaoTitulo": "Relação ativa/população",
-    "governador": "Roberto Cidade — Governador em exercício",
-    "comando": "Comandante-Geral da PMAM — nome a confirmar em fonte oficial",
-    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
-    "atualizado": "Base numérica inserida em 01/05/2026"
+    "governador": "Roberto Cidade",
+    "comando": "Cel PM Klinger Paiva — Comandante-Geral",
+    "fonte": "PMAM; Governo do Amazonas; FGV/PMAM 2021; Lei AM nº 3.725/2012; Lei AM nº 7.445/2025; IBGE 2025; FBSP/SENASP quando aplicável",
+    "atualizado": "PMAM revisada em 09/05/2026 — efetivo ativo, reserva/inativos e efetivo feminino mantidos como estimativa quando não localizados em fonte oficial consolidada",
+    "estrutura": "Polícia Militar estadual subordinada ao Governador do Amazonas, com Comando-Geral, Estado-Maior, diretorias, comandos de policiamento, unidades operacionais, unidades especializadas, ensino e apoio administrativo.",
+    "sede": "Rua Benjamin Constant, 2150, Petrópolis, Manaus/AM, CEP 69063-010",
+    "emergencia": "190",
+    "linksOficiais": [
+      "https://www.pm.am.gov.br/",
+      "https://www.pm.am.gov.br/historia/",
+      "https://www.pm.am.gov.br/editais/",
+      "https://conhecimento.fgv.br/concursos/pmam21",
+      "https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/13902/7445.pdf"
+    ]
   },
   "pcam": {
     "nome": "Polícia Civil do Amazonas",
@@ -3929,7 +3949,7 @@ const RESUMO_GOVERNADORES_UF_2026 = {
   ac: 'Mailza Assis',
   al: 'Paulo Dantas',
   ap: 'Clécio Luís',
-  am: 'Roberto Cidade (interino)',
+  am: 'Roberto Cidade',
   ba: 'Jerônimo Rodrigues',
   ce: 'Elmano de Freitas',
   df: 'Celina Leão',
@@ -5382,6 +5402,7 @@ function mudarInstituicao(novaInstituicao) {
 
   const configs = {
     pmac: { titulo: 'PMAC', desc: 'Polícia Militar do Acre', cor: '#006b3f', alertaPrev: 'PMAC: conferir Acreprevidência, LC AC 164/2006, tabela remuneratória, adicionais por tempo, serviço complementar, localização especial e contracheque.' },
+    pmam: { titulo: "PMAM", desc: "Polícia Militar do Estado do Amazonas", cor: "#0b5d3b", alertaPrev: "PMAM/Amazonprev/Sistema de Proteção Social Militar AM: conferir contribuição, base de cálculo, posto/graduação, reserva/reforma, pensão, GAMS, gratificação de tropa, indenizações técnicas, escalas e rubricas pessoais diretamente na lei vigente e no contracheque." },
     pcac: { titulo: 'PCAC', desc: 'Polícia Civil do Acre', cor: '#5b6472', alertaPrev: 'PCAC: conferir Acreprevidência, cargo, classe, titulação, serviço complementar, tabela oficial e regra de aposentadoria policial aplicada ao caso concreto.' },
     ppac: { titulo: 'PPAC', desc: POLICIAS_PENAIS_INFO.ppac.nome, cor: '#536b2f', alertaPrev: `${POLICIAS_PENAIS_INFO.ppac.sigla}: ${POLICIAS_PENAIS_INFO.ppac.previdencia} ${POLICIAS_PENAIS_INFO.ppac.vantagens}` },
     ppal: { titulo: 'PPAL', desc: POLICIAS_PENAIS_INFO.ppal.nome, cor: '#6b5b2f', alertaPrev: `${POLICIAS_PENAIS_INFO.ppal.sigla}: ${POLICIAS_PENAIS_INFO.ppal.previdencia} ${POLICIAS_PENAIS_INFO.ppal.vantagens}` },
@@ -5986,6 +6007,7 @@ function imagemPrincipalBrasaoInstituicao(inst) {
 
 function getCriadorInstitucional(inst, tipo, estadoNome) {
   if (inst === 'pmesp') return 'Brigadeiro Rafael Tobias de Aguiar — então presidente da Província de São Paulo, pela lei provincial de 15/12/1831.';
+  if (inst === 'pmam') return 'Província do Amazonas — criação da Guarda Policial em 04/04/1837; a denominação Polícia Militar do Amazonas foi consolidada em 14/11/1938.';
   if (inst === 'pmal') return 'Presidência da Província de Alagoas e Ministério da Justiça do Império — Decisão Imperial nº 52, de 03/02/1832, aprovando o Corpo de Guardas Municipais da província.';
   if (inst === 'pcal') return 'Estado de Alagoas — Lei AL nº 3.437, de 25/06/1975, estrutura cargos da Polícia Civil; Lei AL nº 6.441/2003 concede autonomia administrativa e financeira.';
   if (inst === 'ppal') return 'Estado de Alagoas — Lei AL nº 7.993/2018 reestruturou a carreira; Lei AL nº 8.650/2022 redenominou Agentes Penitenciários para Policiais Penais; Lei AL nº 9.849/2026 atualizou jornada e subsídios.';
@@ -6022,6 +6044,21 @@ function getHistoricoPorTipo(inst, dados) {
         'Lei SP 18.442/2026: efetivo legal de 93.802 cargos, com quadros QOEM, QOE, QOS, QOM, QORR e QP e regras gerais de promoção.',
         'Lei SP 18.441/2026: vencimentos-base reclassificados a partir de 01/04/2026; remuneração total deve ser conferida em tabela oficial posterior quando disponível.',
         '2026: Cel PM Glauce Anselmo Cavalli assume o Comando-Geral, primeira mulher a comandar a PMESP.'
+      ]
+    };
+  }
+
+  if (inst === 'pmam') {
+    return {
+      origem: `A ${nome} tem origem histórica em 4 de abril de 1837, com a criação da Guarda Policial da então Província do Amazonas, e passou por reorganizações como Corpo Policial, Regimento Militar do Estado e Força Pública até adotar a denominação Polícia Militar do Amazonas em 14 de novembro de 1938. Em 2026, a PMAM segue como força militar estadual de policiamento ostensivo e preservação da ordem pública, com convocações do concurso FGV/2021 e tabela remuneratória atualizada pela Lei AM nº 7.445/2025.`,
+      marcos: [
+        '1837: criação da Guarda Policial da Província do Amazonas, marco histórico de origem da PMAM.',
+        '1887: Lei nº 761 reorganiza a força como Corpo Policial; em 1890, o Decreto nº 2 reorganiza a força pública estadual.',
+        '1935: Lei nº 55 muda a denominação para Força Policial do Estado; em 14/11/1938, a instituição passa a ser denominada Polícia Militar do Amazonas.',
+        '1983: marco de comando com primeiro oficial da ativa da própria PMAM no Comando-Geral, conforme histórico institucional.',
+        '2021/2022: edital FGV PMAM com 1.350 vagas para Aluno Soldado, Aluno Oficial e Oficial de Saúde.',
+        '2025: Lei AM nº 7.445 atualiza a remuneração dos policiais e bombeiros militares do Amazonas, com efeitos principais em 01/12/2025.',
+        '2026: Governo do Amazonas informa formação de 500 novos policiais e ampliação das convocações do concurso de 2021.'
       ]
     };
   }

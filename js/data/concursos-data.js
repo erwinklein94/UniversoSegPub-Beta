@@ -53,6 +53,23 @@ const CONCURSOS = {
     previsao: 'Edital PMAL 2026 em andamento; não publicar novo concurso aberto sem fonte oficial posterior.',
     site: 'https://www.cebraspe.org.br/concursos/pm_al_26'
   },
+  pmam: {
+    edital: 'PMAM — Concurso Público 2021/2022 FGV; em 2026 segue em convocações e apresentação documental por portarias DPA-1. Edital original com 1.350 vagas.',
+    salario: 'Edital 2021: Aluno Soldado R$ 2.657,28; Aluno Oficial/Oficial de Saúde R$ 7.180,34. Tabela legal vigente da Lei AM nº 7.445/2025: Aluno Soldado R$ 3.149,12; Soldado R$ 5.725,66; Aluno Oficial 1º ano R$ 8.509,34; Aspirante R$ 11.345,79; sem somar indenizações ou rubricas pessoais.',
+    vagas: '1.350 vagas: 1.000 Aluno Soldado, 320 Aluno Oficial e 30 Aluno Oficial de Saúde. Governo informou 2.348 convocados até março/2026.',
+    cotas: 'Edital 2021: 10% das vagas de Aluno Oficial e Aluno Soldado reservadas para candidatas do sexo feminino; demais reservas conforme edital e retificações.',
+    idade: '18 a 35 anos completos no ato da inscrição, conforme edital 2021; conferir edital vigente para novos certames.',
+    escolaridade: 'Aluno Soldado: ensino médio completo. Aluno Oficial e Oficial de Saúde: nível superior conforme cargo/especialidade.',
+    materias: 'Conteúdo programático do Anexo I do edital FGV, com provas objetivas por nível/cargo e disciplinas específicas do edital.',
+    banca: 'FGV.',
+    inscritos: 'Inscrições históricas de 08/12/2021 a 04/01/2022; em 2026 há convocações e apresentação documental publicadas pela PMAM/FGV/DOE-AM.',
+    etapas: 'Prova objetiva, títulos quando aplicável, avaliação médica, exame físico, investigação social, exame psicotécnico, entrega de documentos e curso de formação.',
+    cfsd: 'CFSD/PM com 10 meses; CFO/PM com 36 meses; CFOS/PM com 4 meses, conforme página de editais da PMAM.',
+    estagio: 'Matrícula, formação, nomeação, estágio e lotação conforme estatuto militar estadual, edital, boletins e atos da PMAM.',
+    validade: 'Edital 2021: validade de 2 anos contados da homologação; conferir homologação, prorrogação e convocações no DOE/AM, PMAM e FGV.',
+    previsao: 'Não publicar novo concurso aberto sem edital posterior. A revisão mantém o concurso 2021/2026 como vigente/histórico com convocações.',
+    site: 'https://conhecimento.fgv.br/concursos/pmam21'
+  },
   pcal: {
     edital: 'PCAL 2026 — comissão formada para novo concurso de Agente e Escrivão; 300 vagas previstas, sendo 150 imediatas e 150 cadastro de reserva; edital e banca em definição.',
     salario: 'Agente/Escrivão: referência inicial R$ 5.318,61 e final até R$ 15.065,12 (estimado por tabela de carreira/revisões). Delegado: tabela específica pela Lei AL nº 8.641/2022; novo edital de Delegado não publicado nesta revisão.',

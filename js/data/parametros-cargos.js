@@ -1247,6 +1247,30 @@ const CARGOS_BMAM = [
 ];
 
 
+/* === AMAZONAS — Polícia Militar do Amazonas ===================== */
+const CRITERIO_PMAM_2025 = 'Total bruto mensal legal da tabela de remuneração dos policiais e bombeiros militares do Amazonas. Base: Lei AM nº 3.725/2012, atualizada pela Lei AM nº 7.445/2025. A referência principal do portal usa o Anexo III, com efeitos financeiros a partir de 01/12/2025, composto por soldo, gratificação de tropa e GAMS quando prevista. Conferir DOE/AM, Portal da Transparência, SEAD/AM, ficha financeira e contracheque antes de uso administrativo, jurídico ou financeiro.';
+const BENEF_PMAM_2025 = 'Não somar automaticamente indenização de compensação orgânica e atividade técnica, função gratificada, adicional por serviço extraordinário, diárias, ajuda de custo, fardamento, etapa/auxílio alimentação, saúde, retroativos da data-base, parcelas pessoais, VPNI, decisões judiciais ou vantagens de lotação. O Anexo IV da Lei AM nº 7.445/2025 lista indenizações técnicas por atividade, mas cada rubrica depende de habilitação, escala, ato, lotação, exercício efetivo e contracheque.';
+const CARGOS_PMAM = [
+  { val: 'coronel_pmam', text: 'CEL PMAM — Coronel PM', padrao: 37322.89, gratif: 0, oficial: true, retpFator: 0, selected: false, fonteKey: 'pmam', criterio: CRITERIO_PMAM_2025, benefDesc: BENEF_PMAM_2025, badge: 'Lei AM 7.445/2025 · 12/2025' },
+  { val: 'ten_cel_pmam', text: 'TEN CEL PMAM — Tenente-Coronel PM', padrao: 32604.45, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pmam', criterio: CRITERIO_PMAM_2025, benefDesc: BENEF_PMAM_2025, badge: 'Lei AM 7.445/2025 · 12/2025' },
+  { val: 'major_pmam', text: 'MAJ PMAM — Major PM', padrao: 28920.78, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pmam', criterio: CRITERIO_PMAM_2025, benefDesc: BENEF_PMAM_2025, badge: 'Lei AM 7.445/2025 · 12/2025' },
+  { val: 'capitao_pmam', text: 'CAP PMAM — Capitão PM', padrao: 18733.74, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pmam', criterio: CRITERIO_PMAM_2025, benefDesc: BENEF_PMAM_2025, badge: 'Lei AM 7.445/2025 · 12/2025' },
+  { val: '1ten_pmam', text: '1º TEN PMAM — 1º Tenente PM', padrao: 16886.73, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pmam', criterio: CRITERIO_PMAM_2025, benefDesc: BENEF_PMAM_2025, badge: 'Lei AM 7.445/2025 · 12/2025' },
+  { val: '2ten_pmam', text: '2º TEN PMAM — 2º Tenente PM', padrao: 14775.89, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pmam', criterio: CRITERIO_PMAM_2025, benefDesc: BENEF_PMAM_2025, badge: 'Lei AM 7.445/2025 · 12/2025' },
+  { val: 'asp_of_pmam', text: 'ASP OF PMAM — Aspirante a Oficial PM', padrao: 11345.79, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pmam', criterio: CRITERIO_PMAM_2025, benefDesc: BENEF_PMAM_2025, badge: 'Lei AM 7.445/2025 · 12/2025' },
+  { val: 'al_of_4_pmam', text: 'AL OF PMAM — Aluno Oficial 4º Ano', padrao: 8589.14, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmam', criterio: CRITERIO_PMAM_2025, benefDesc: BENEF_PMAM_2025, badge: 'Lei AM 7.445/2025 · 12/2025' },
+  { val: 'al_of_3_pmam', text: 'AL OF PMAM — Aluno Oficial 3º Ano', padrao: 8562.53, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmam', criterio: CRITERIO_PMAM_2025, benefDesc: BENEF_PMAM_2025, badge: 'Lei AM 7.445/2025 · 12/2025' },
+  { val: 'al_of_2_pmam', text: 'AL OF PMAM — Aluno Oficial 2º Ano', padrao: 8541.97, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmam', criterio: CRITERIO_PMAM_2025, benefDesc: BENEF_PMAM_2025, badge: 'Lei AM 7.445/2025 · 12/2025' },
+  { val: 'al_of_1_pmam', text: 'AL OF PMAM — Aluno Oficial 1º Ano', padrao: 8509.34, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmam', criterio: CRITERIO_PMAM_2025, benefDesc: BENEF_PMAM_2025, badge: 'Lei AM 7.445/2025 · 12/2025' },
+  { val: 'subten_pmam', text: 'SUBTEN PMAM — Subtenente PM', padrao: 10818.07, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmam', criterio: CRITERIO_PMAM_2025, benefDesc: BENEF_PMAM_2025, badge: 'Lei AM 7.445/2025 · 12/2025' },
+  { val: '1sgt_pmam', text: '1º SGT PMAM — 1º Sargento PM', padrao: 9498.81, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmam', criterio: CRITERIO_PMAM_2025, benefDesc: BENEF_PMAM_2025, badge: 'Lei AM 7.445/2025 · 12/2025' },
+  { val: '2sgt_pmam', text: '2º SGT PMAM — 2º Sargento PM', padrao: 9234.95, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmam', criterio: CRITERIO_PMAM_2025, benefDesc: BENEF_PMAM_2025, badge: 'Lei AM 7.445/2025 · 12/2025' },
+  { val: '3sgt_pmam', text: '3º SGT PMAM — 3º Sargento PM', padrao: 8971.08, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmam', criterio: CRITERIO_PMAM_2025, benefDesc: BENEF_PMAM_2025, badge: 'Lei AM 7.445/2025 · 12/2025' },
+  { val: 'cabo_pmam', text: 'CB PMAM — Cabo PM', padrao: 7387.91, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmam', criterio: CRITERIO_PMAM_2025, benefDesc: BENEF_PMAM_2025, badge: 'Lei AM 7.445/2025 · 12/2025' },
+  { val: 'soldado_pmam', text: 'SD PMAM — Soldado PM', padrao: 5725.66, gratif: 0, oficial: false, selected: true, retpFator: 0, fonteKey: 'pmam', criterio: CRITERIO_PMAM_2025, benefDesc: BENEF_PMAM_2025, badge: 'Lei AM 7.445/2025 · 12/2025' },
+  { val: 'al_soldado_pmam', text: 'AL SD PMAM — Aluno Soldado PM', padrao: 3149.12, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmam', criterio: CRITERIO_PMAM_2025, benefDesc: BENEF_PMAM_2025, badge: 'Lei AM 7.445/2025 · 12/2025' }
+];
+
 
 /* === AMAPÁ — Corpo de Bombeiros Militar do Amapá ===================== */
 const CRITERIO_BMAP_2026 = 'Subsídio bruto mensal dos militares estaduais do Amapá, conforme Lei Complementar AP nº 113/2018, alterada pela Lei Complementar AP nº 173/2025. A tabela principal do portal usa o Anexo III — Tabela de Progressão Horizontal 2026 I, com efeitos a partir de 01/04/2026. Os valores variam por posto/graduação e por tempo de efetivo serviço, em níveis de 30 meses. Conferir DOE/AP, SEAD/AP, Portal da Transparência, ficha funcional, ato de promoção/progressão e contracheque antes de uso administrativo, financeiro ou jurídico.';

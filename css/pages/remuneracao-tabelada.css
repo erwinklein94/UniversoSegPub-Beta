@@ -257,6 +257,15 @@
   opacity: .55;
 }
 
+
+.remuneracao-consulta-detalhada[hidden] {
+  display: none !important;
+}
+
+.remuneracao-consulta-detalhada--ativa {
+  display: block;
+}
+
 .remuneracao-consulta-detalhada {
   scroll-margin-top: 24px;
 }

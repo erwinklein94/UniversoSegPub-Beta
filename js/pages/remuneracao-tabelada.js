@@ -22,10 +22,23 @@
     const btnLimpar = document.getElementById('remu-limpar-filtros');
     const contador = document.getElementById('remu-contador-cards');
     const paginacao = document.getElementById('remu-paginacao');
+    const consultaDetalhada = document.getElementById('consulta-remuneracao-detalhada');
 
     if (!cards.length || !seletorEsfera || !seletorInstituicao || !paginacao) return;
 
     let paginaAtual = 1;
+
+    function ocultarConsultaDetalhada() {
+      if (!consultaDetalhada) return;
+      consultaDetalhada.hidden = true;
+      consultaDetalhada.classList.remove('remuneracao-consulta-detalhada--ativa');
+    }
+
+    function exibirConsultaDetalhada() {
+      if (!consultaDetalhada) return;
+      consultaDetalhada.hidden = false;
+      consultaDetalhada.classList.add('remuneracao-consulta-detalhada--ativa');
+    }
 
     function atualizarOpcoesInstituicao() {
       const esfera = normalizarTexto(seletorEsfera.value);
@@ -93,10 +106,13 @@
 
     function selecionarTabelaDetalhada(inst) {
       if (!inst) {
+        ocultarConsultaDetalhada();
         if (typeof window.aplicarHeaderInicialPortal === 'function') window.aplicarHeaderInicialPortal();
         if (typeof window.mostrarAvisoSelecaoInstituicao === 'function') window.mostrarAvisoSelecaoInstituicao('remuneracao');
         return;
       }
+
+      exibirConsultaDetalhada();
 
       if (typeof window.mudarInstituicao === 'function') {
         window.mudarInstituicao(inst);
@@ -172,6 +188,7 @@
       if (destino) destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
 
+    ocultarConsultaDetalhada();
     renderizar();
   });
 })();

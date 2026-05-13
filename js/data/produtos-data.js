@@ -1588,12 +1588,12 @@
                 "wrapClasses": [
                     "produto-imagem"
                 ],
-                "src": "img/HOTMART/escrivãopf.webp",
+                "src": "img/HOTMART/combo-escrivao-pf.webp",
                 "alt": "Combo Escrivão PF - Polícia Federal (Reta Final)",
                 "decoding": "async",
                 "loading": "lazy",
                 "dataAttrs": {
-                    "data-img-base": "img/HOTMART/escrivãopf"
+                    "data-img-base": "img/HOTMART/combo-escrivao-pf"
                 }
             },
             "badges": [

@@ -28,7 +28,7 @@
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
 <link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260515produtos-sem-rolagem" rel="stylesheet"/>
-<link href="css/pages/concursos-conteudo-estatico.css?v=20260511adsense1" rel="stylesheet"/>
+<link href="css/pages/concursos-conteudo-estatico.css?v=20260515buscadorcarreira1" rel="stylesheet"/>
 <!-- BLOCO SEO GERADO --
      Canonical absoluto, Open Graph, Twitter Card e JSON-LD.
      Gerado na revisão de manutenção.
@@ -513,6 +513,36 @@
 <!-- BLOCO 07 — PÁGINA CONCURSOS -->
 <main class="page-section active" id="page-concursos" role="main">
   <div class="concursos-page-shell">
+    <section class="card concursos-buscador-carreira" id="buscador-carreira-concursos" aria-labelledby="buscador-carreira-titulo">
+      <div class="concursos-buscador-carreira__topo">
+        <span class="concursos-hero-kicker">Buscador de carreira</span>
+        <h1 id="buscador-carreira-titulo">Encontre concursos compatíveis com seu perfil</h1>
+        <p>Informe sua idade e se você já tem curso superior. A ferramenta lista concursos da segurança pública cadastrados no portal como <strong>em aberto</strong> ou <strong>em pedido/planejamento de abertura</strong>.</p>
+      </div>
+
+      <form class="concursos-buscador-form" id="form-buscador-carreira" autocomplete="off">
+        <label>
+          <span>Quantos anos você tem?</span>
+          <input id="buscador_carreira_idade" name="idade" type="number" min="16" max="75" inputmode="numeric" placeholder="Ex.: 24" required aria-describedby="buscador-carreira-ajuda" />
+        </label>
+        <label>
+          <span>Você tem curso superior completo?</span>
+          <select id="buscador_carreira_superior" name="superior" required>
+            <option value="">Selecione</option>
+            <option value="sim">Sim, tenho superior completo</option>
+            <option value="nao">Não tenho superior completo</option>
+          </select>
+        </label>
+        <div class="concursos-buscador-form__acoes">
+          <button type="submit">Buscar concursos</button>
+          <button type="button" data-buscador-carreira-limpar>Limpar</button>
+        </div>
+      </form>
+
+      <p class="concursos-buscador-ajuda" id="buscador-carreira-ajuda">Resultado inicial para triagem. Confirme idade, escolaridade, CNH, altura, datas, cotas e demais exigências no edital e na fonte oficial antes de decidir.</p>
+      <div class="concursos-buscador-resultado" id="buscador-carreira-resultado" aria-live="polite"></div>
+    </section>
+
     <section class="card concursos-hero-card" aria-labelledby="concursos-titulo">
       <span class="concursos-hero-kicker">Consulta por instituição</span>
       <h1 id="concursos-titulo">Concursos</h1>
@@ -2099,7 +2129,7 @@
 <script defer="" src="js/data/header-brasoes-config.js?v=20260504headerbrasoes1"></script>
 <script defer="" src="js/ui/header-estados.js?v=20260510brasoes1"></script>
 <script defer="" src="js/pages/concursos-comparador.js?v=20260506comparador4"></script>
-<script defer="" src="js/pages/concursos-conteudo-estatico.js?v=20260511adsense1"></script>
+<script defer="" src="js/pages/concursos-conteudo-estatico.js?v=20260515buscadorcarreira1"></script>
 <script defer="" src="js/pages/contato-init.js?v=20260503homeinst1"></script>
 <script defer="" src="js/data/produtos-data.js?v=20260513escrivaopfimg1"></script>
 <script defer="" src="js/pages/produtos-laterais.js?v=20260515produtos-sem-rolagem"></script>

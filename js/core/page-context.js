@@ -7,9 +7,6 @@
   const PAGE_URLS = {
     principal: 'index.html',
     remuneracao: 'remuneracao.html',
-    direitos: 'direitos.html',
-    poderes: 'poderes-deveres.html',
-    baselegal: 'base-legal.html',
     brasoes: 'brasoes.html',
     guia: 'guia-instituicoes.html',
     concursos: 'concursos.html',
@@ -23,9 +20,6 @@
   const PAGE_NAMES = {
     principal: 'Principal',
     remuneracao: 'Remuneração Tabelada',
-    direitos: 'Direitos e Vantagens',
-    poderes: 'Poderes e Deveres',
-    baselegal: 'Base Legal',
     brasoes: 'Brasões e história',
     guia: 'Guia das instituições',
     concursos: 'Concursos',
@@ -44,10 +38,8 @@
     home_meio_produtos: 'Página principal, antes de conteúdos e produtos',
     menu_lateral: 'Menu lateral',
     remuneracao_antes_tabela: 'Página de remuneração, antes da tabela',
-    direitos_entre_formulario_parecer: 'Página de direitos, entre formulário e parecer',
     concursos_antes_lista: 'Página de concursos, antes da lista',
     comparador_antes_resultado: 'Página de comparação, antes dos resultados',
-    base_legal_antes_resultado: 'Página de base legal, antes dos resultados',
     produtos_topo: 'Topo da página de produtos',
     acoes_antes_lista: 'Página de ações judiciais, antes da lista',
     associacoes_antes_lista: 'Página de associações, antes da lista',
@@ -102,17 +94,13 @@
       window.atualizarHeaderDesc(PAGE_NAMES[page] || PAGE_NAMES.principal);
     }
 
-    const institutionalPages = ['remuneracao', 'direitos', 'poderes', 'brasoes', 'concursos', 'acoes', 'associacoes'];
+    const institutionalPages = ['remuneracao', 'brasoes', 'concursos', 'acoes', 'associacoes'];
     if (institutionalPages.includes(page) && typeof window.prepararPaginaComSelecaoInstituicao === 'function') {
       window.prepararPaginaComSelecaoInstituicao(page);
     }
 
     if (page === 'comparar' && typeof window.inicializarComparadorCarreiras === 'function') {
       window.inicializarComparadorCarreiras();
-    }
-
-    if (page === 'baselegal' && typeof window.inicializarBaseLegal === 'function') {
-      window.inicializarBaseLegal();
     }
 
     fillAdContactFormFromUrl();

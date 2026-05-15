@@ -2980,10 +2980,6 @@ body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-p
 }
 
 
-/* ============================================================
-   Ajuste 2026-05-06E — Nova aba Base Legal
-   ============================================================ */
-
 #page-baselegal {
   max-width: min(1180px, 100%) !important;
   margin: clamp(18px, 3vw, 34px) auto !important;

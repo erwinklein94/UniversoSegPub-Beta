@@ -5762,7 +5762,6 @@ function mudarInstituicao(novaInstituicao) {
     const el = document.getElementById(id);
     if (el) el.textContent = valor;
   };
-  atualizarTexto('txt-inst-dir', config.titulo);
   atualizarTexto('txt-inst-concursos', config.titulo);
   atualizarTexto('txt-inst-comparar', config.titulo);
   atualizarTexto('txt-inst-produtos', config.titulo);
@@ -5775,7 +5774,6 @@ function mudarInstituicao(novaInstituicao) {
   // Portanto, funções de outras páginas precisam ser opcionais para não travar
   // a seleção de instituição quando o usuário estiver, por exemplo, em remuneração.
   if (typeof popularCargos === 'function') popularCargos(inst);
-  if (typeof analisarDireitos === 'function') analisarDireitos();
   if (typeof carregarConcursos === 'function') carregarConcursos();
   if (typeof carregarAcoes === 'function') carregarAcoes();
   if (typeof carregarAssociacoes === 'function') carregarAssociacoes();
@@ -5793,16 +5791,6 @@ const PAGINAS_COM_SELECAO_INSTITUICAO = {
     titulo: 'Consultar remuneração por instituição',
     subtitulo: 'Escolha a esfera e depois a instituição para carregar a tabela correspondente.',
     destino: 'lista-remuneracao'
-  },
-  direitos: {
-    titulo: 'Consultar direitos por instituição',
-    subtitulo: 'A análise usa a instituição escolhida nesta aba e os dados funcionais preenchidos abaixo.',
-    destino: 'resultados_dir'
-  },
-  poderes: {
-    titulo: 'Consultar poderes e deveres por instituição',
-    subtitulo: 'Escolha a esfera e a instituição para ver competências, deveres, limites, fontes e entendimentos aplicáveis.',
-    destino: 'poderes_resultado'
   },
   brasoes: {
     titulo: 'Consultar brasão e história por instituição',
@@ -6009,11 +5997,6 @@ function getInstituicoesParaConsulta(esfera) {
     });
 }
 
-function removerSeletorAntigoPoderes() {
-  const antigo = document.getElementById('poderes_instituicao');
-  const bloco = antigo?.closest('.poderes-form-grid');
-  if (bloco) bloco.remove();
-}
 
 function criarHtmlSeletorConsulta(page, config) {
   const idEsfera = `consulta_esfera_${page}`;
@@ -6052,8 +6035,6 @@ function inserirSeletorConsultaNaPagina(page) {
   const pageEl = document.getElementById(`page-${page}`);
   const card = pageEl?.querySelector('.card');
   if (!card || card.querySelector(`[data-consulta-selector="${page}"]`)) return;
-
-  if (page === 'poderes') removerSeletorAntigoPoderes();
 
   const h2 = card.querySelector('h2');
   const temp = document.createElement('div');
@@ -6154,8 +6135,6 @@ function selecionarInstituicaoConsulta(page, inst) {
 function avisoSelecaoInstituicaoHtml(page) {
   const nomes = {
     remuneracao: 'a tabela de remuneração',
-    direitos: 'a análise de direitos',
-    poderes: 'os poderes e deveres',
     brasoes: 'o brasão e a história institucional',
     concursos: 'os dados de concursos',
     acoes: 'as ações judiciais',
@@ -6171,9 +6150,7 @@ function avisoSelecaoInstituicaoHtml(page) {
 
 function atualizarTitulosConsultaSemInstituicao() {
   [
-    'txt-inst-dir',
     'txt-inst-concursos',
-    'txt-inst-poderes',
     'txt-inst-brasoes',
     'txt-inst-remuneracao',
     'txt-inst-acoes',
@@ -6200,14 +6177,6 @@ function mostrarAvisoSelecaoInstituicao(page = '') {
     return;
   }
 
-  if (page === 'direitos') {
-    const cargo = document.getElementById('cargo_dir');
-    if (cargo && !instituicaoConsultaFoiSelecionada()) cargo.innerHTML = '<option value="">Selecione uma instituição primeiro</option>';
-    const cont = document.getElementById('resultados_dir');
-    if (cont) cont.innerHTML = avisoSelecaoInstituicaoHtml(page);
-    return;
-  }
-
   const destino = PAGINAS_COM_SELECAO_INSTITUICAO[page]?.destino;
   const cont = destino ? document.getElementById(destino) : null;
   if (cont) cont.innerHTML = avisoSelecaoInstituicaoHtml(page);
@@ -6226,507 +6195,6 @@ function renderizarConteudoPaginaInstitucional(page) {
   }
 
   sincronizarSeletoresConsulta(page);
-
-  if (page === 'direitos') {
-    popularCargos(currInst);
-    analisarDireitos();
-  } else if (page === 'concursos') {
-    carregarConcursos();
-  } else if (page === 'poderes') {
-    inicializarPoderesDeveres();
-  } else if (page === 'brasoes') {
-    renderizarBrasoesHistoria();
-  } else if (page === 'acoes') {
-    carregarAcoes();
-  } else if (page === 'associacoes') {
-    carregarAssociacoes();
-  } else if (page === 'remuneracao') {
-    carregarRemuneracaoTabelada();
-  }
-}
-
-function prepararPaginaComSelecaoInstituicao(page) {
-  if (!PAGINAS_COM_SELECAO_INSTITUICAO[page]) return false;
-  montarSeletoresConsultaInstituicao();
-  if (!instituicaoConsultaFoiSelecionada()) {
-    mostrarAvisoSelecaoInstituicao(page);
-    return true;
-  }
-  renderizarConteudoPaginaInstitucional(page);
-  return true;
-}
-
-
-
-function obterResumoInstituicaoCompleto(inst) {
-  const info = HEADER_INSTITUICOES_INFO[inst] || {};
-  const resumo = HEADER_INSTITUICOES_RESUMO[inst] || {};
-  const estadoChave = getEstadoDaInstituicao(inst);
-  const estado = HEADER_ESTADOS[estadoChave] || {};
-  const sigla = resumo.sigla || info.titulo || String(inst || '').toUpperCase();
-  const nome = resumo.nome || info.desc || sigla;
-  const tipo = resumo.tipo || resumoInferirTipo(inst, resumo);
-  const uf = resumo.estadoSigla || estado.sigla || (getEsferaConsultaInstituicao(inst) === 'federal' ? 'BR' : '—');
-  const estadoNome = resumo.estado || estado.nome || (getEsferaConsultaInstituicao(inst) === 'federal' ? 'Brasil' : 'Municípios');
-  return { info, resumo, estadoChave, estado, sigla, nome, tipo, uf, estadoNome };
-}
-
-function valorHistoriaOuNaoDeclarado(valor, alternativo = 'Informação específica a confirmar em fonte oficial') {
-  if (typeof resumoEhDadoPendente === 'function' && resumoEhDadoPendente(valor)) return alternativo;
-  const texto = String(valor || '').trim();
-  if (!texto || texto === RESUMO_DADOS_EM_BREVE || /dados em breve/i.test(texto)) return alternativo;
-  return texto;
-}
-
-function imagemPrincipalBrasaoInstituicao(inst) {
-  const caminho = HEADER_INSTITUICOES_IMAGENS?.[inst] || '';
-  const candidatos = montarCandidatosImagemInstituicao(inst, caminho);
-  return candidatos[0] || caminho || 'img/LOGO/logoleao.webp';
-}
-
-function getCriadorInstitucional(inst, tipo, estadoNome) {
-  if (inst === 'pmesp') return 'Brigadeiro Rafael Tobias de Aguiar — Presidente da Província de São Paulo, em cumprimento à Lei Imperial de 10/10/1831 do Regente Padre Diogo Antônio Feijó; ato de criação em 15/12/1831.';
-  if (inst === 'pmam') return 'Província do Amazonas — criação da Guarda Policial em 04/04/1837; a denominação Polícia Militar do Amazonas foi consolidada em 14/11/1938.';
-  if (inst === 'pcam') return 'Estado do Amazonas — organização histórica da Polícia Judiciária de carreira em 1922; Decreto AM nº 2.291/1972 regulamentou a estrutura orgânica da Polícia Civil.';
-  if (inst === 'pcap') return 'Estado do Amapá — Lei AP nº 637, de 14/12/2001, estruturou a organização básica da Polícia Civil; Lei AP nº 883/2005 consolidou órgãos de direção superior como a Delegacia-Geral.';
-  if (inst === 'pcce') return 'Príncipe Regente D. João — Alvará de 10/05/1808, origem histórica da polícia judiciária brasileira; no Ceará, carreira organizada pelo Estatuto da Polícia Civil, Lei CE nº 12.124/1993, e normas posteriores.';
-  if (inst === 'pmap') return 'Presidência da República — Lei Federal nº 6.270, de 26/11/1975, sancionada por Ernesto Geisel, criou a Polícia Militar do Território Federal do Amapá; antecedente histórico: Guarda Territorial do Amapá.';
-  if (inst === 'pmal') return 'Presidência da Província de Alagoas e Ministério da Justiça do Império — Decisão Imperial nº 52, de 03/02/1832, aprovando o Corpo de Guardas Municipais da província.';
-  if (inst === 'pcal') return 'Estado de Alagoas — Lei AL nº 3.437, de 25/06/1975, estrutura cargos da Polícia Civil; Lei AL nº 6.441/2003 concede autonomia administrativa e financeira.';
-  if (inst === 'ppal') return 'Estado de Alagoas — Lei AL nº 7.993/2018 reestruturou a carreira; Lei AL nº 8.650/2022 redenominou Agentes Penitenciários para Policiais Penais; Lei AL nº 9.849/2026 atualizou jornada e subsídios.';
-  if (inst === 'pmerj') return 'D. João VI — criação da Divisão Militar da Guarda Real da Polícia da Corte em 13/05/1809.';
-  if (inst === 'bmms') return 'Governo de Mato Grosso — Lei MT nº 3.322/1973, origem histórica do Comando do Corpo de Bombeiros; Mato Grosso do Sul reorganizou a corporação após a criação do Estado.';
-  if (inst === 'bmmg') return 'Júlio Bueno Brandão — Lei MG nº 557, de 31/08/1911, que autorizou a organização da Seção de Bombeiros Profissionais.';
-  if (inst === 'bmpr') return 'Carlos Cavalcanti de Albuquerque — Lei PR nº 1.133, de 23/03/1912, que criou o Corpo de Bombeiros do Estado do Paraná.';
-  if (inst === 'bmsc') return 'Antônio Vicente Bulcão Vianna — instalação da Seção de Bombeiros da Força Pública em 26/09/1926; origem autorizada pela Lei SC nº 1.288/1919 no governo Hercílio Luz.';
-  if (inst === 'bmes') return 'Marcondes Alves de Souza — Lei ES nº 874, de 26/12/1912; primeira estrutura efetiva pela Lei ES nº 920, de 13/11/1913.';
-  if (inst === 'bmmt') return 'Fernando Corrêa da Costa — Lei MT nº 2.184, de 19/08/1964; autonomia institucional em 28/10/1994.';
-  if (inst === 'bmrj') return 'Dom Pedro II — Decreto Imperial nº 1.775, de 02/07/1856, criou o Corpo Provisório de Bombeiros da Corte.';
-  const esfera = getEsferaConsultaInstituicao(inst);
-  if (inst === 'pf') return 'União — estrutura federal organizada pela Constituição, legislação federal e atos do Poder Executivo federal.';
-  if (inst === 'prf') return 'Presidente Washington Luís — Decreto nº 18.323/1928 criou a Polícia das Estradas, origem histórica da PRF.';
-  if (esfera === 'municipal') return 'Município — criada por lei municipal e organizada pela prefeitura/secretaria competente.';
-  if (/Polícia Penal/i.test(tipo)) return `${estadoNome} — carreira constitucionalizada pela EC 104/2019 e estruturada por normas estaduais/distritais.`;
-  if (/Bombeiro/i.test(tipo)) return `${estadoNome} — poder público estadual/distrital, com organização militar e comando próprio conforme legislação local.`;
-  if (/Polícia Civil/i.test(tipo)) return `${estadoNome} — poder público estadual/distrital, com organização da polícia judiciária conforme legislação local.`;
-  return `${estadoNome} — poder público estadual/distrital, por ato legal de organização da força pública local.`;
-}
-
-function getHistoricoPorTipo(inst, dados) {
-  const { sigla, nome, tipo, estadoNome, resumo } = dados;
-  const criacao = valorHistoriaOuNaoDeclarado(resumo.criacao, 'origem histórica organizada pela legislação própria da instituição');
-  const esfera = getEsferaConsultaInstituicao(inst);
-
-  if (inst === 'pmesp') {
-    return {
-      origem: `A ${nome} é uma das mais antigas corporações policiais militares do Brasil. Sua origem está ligada ao período regencial: em 10 de outubro de 1831, a lei imperial assinada pelo Regente Padre Diogo Antônio Feijó determinou que as províncias organizassem corpos policiais permanentes. Em São Paulo, o Brigadeiro Rafael Tobias de Aguiar, então Presidente da Província, reuniu o Conselho da Presidência em 15 de dezembro de 1831 e criou o Corpo de Guardas Municipais Permanentes, com 100 praças a pé e 30 a cavalo — os "cento e trinta de trinta e um". A corporação passou por denominações como Corpo Policial Permanente e Força Pública do Estado de São Paulo até assumir, em 9 de abril de 1970, a denominação Polícia Militar do Estado de São Paulo, após a unificação da Força Pública com a Guarda Civil paulista.`,
-      denominacoes: [
-        'Corpo de Guardas Municipais Permanentes / Guarda Municipal Permanente — origem em 1831.',
-        'Corpo Policial Permanente — denominação associada ao período imperial e às reorganizações posteriores.',
-        'Força Policial / Força Pública do Estado de São Paulo — reorganização republicana a partir da Lei nº 17, de 14/11/1891.',
-        'Polícia Militar do Estado de São Paulo — PMESP — denominação em vigor desde 09/04/1970.'
-      ],
-      simbolos: [
-        'Escudo português perfilado em ouro, com bordadura vermelha e 18 estrelas de cinco pontas em prata.',
-        'As 18 estrelas representam marcos históricos da corporação, conforme o Decreto Estadual nº 17.069/1981.',
-        'No centro do escudo aparecem listras verticais e horizontais nas cores da Bandeira do Estado de São Paulo, também perfiladas em ouro.',
-        'O timbre apresenta leão rampante em ouro, sobre virol vermelho e prata, empunhando gládio com punho em ouro e lâmina em prata.',
-        'Como tenentes, o brasão traz um Bandeirante com bacamarte e espada e um soldado da época da criação da Milícia com fuzil e baioneta.',
-        'Ao pé, o listel azul traz o lema institucional "Lealdade e Constância" em letras de prata.'
-      ],
-      chefias: [
-        'Primeiro comandante: José Gomes de Almeida, alferes comissionado capitão, de 01/03/1832 a 30/11/1832.',
-        'Comandante-Geral atual: Coronel PM Glauce Anselmo Cavalli, empossada em 29/04/2026 como primeira mulher a comandar a PMESP.',
-        'Subcomandante informado no levantamento: Coronel PM Mário Kitsuwa.'
-      ],
-      marcos: [
-        '1831: em 10 de outubro, Lei Imperial do Regente Padre Diogo Antônio Feijó determina a organização de corpos policiais permanentes; em 15 de dezembro, Rafael Tobias de Aguiar cria o Corpo de Guardas Municipais Permanentes em São Paulo.',
-        '1832: a partir de 1º de março, a corporação é instalada na ala térrea do Convento do Carmo; José Gomes de Almeida assume como primeiro comandante.',
-        '1865–1870: participação na Guerra do Paraguai como Corpo Policial Permanente.',
-        '1891: Lei nº 17, de 14 de novembro, reorganiza a milícia paulista como Força Pública do Estado de São Paulo; em 1º de dezembro, é inaugurado o Quartel da Luz, na Avenida Tiradentes.',
-        '1906: chegada da Missão Militar Francesa, contratada pelo Governador Jorge Tibiriçá para modernizar a instrução da tropa.',
-        '1910: Lei nº 1.244 cria a Companhia da Força Pública, embrião da atual Academia de Polícia Militar do Barro Branco.',
-        '1913: criação oficial da aviação policial no Campo de Marte, em uma das primeiras experiências de aviação militar policial na América Latina.',
-        '1932: a Força Pública lidera a mobilização paulista na Revolução Constitucionalista.',
-        '1944–1945: integrantes da Guarda Civil de São Paulo compõem pelotão de Polícia do Exército da Força Expedicionária Brasileira na Itália.',
-        '1970: em 9 de abril, a Força Pública é unificada à Guarda Civil de São Paulo e passa a denominar-se Polícia Militar do Estado de São Paulo.',
-        '1974: Lei Estadual nº 616 dispõe sobre a Organização Básica da Polícia Militar do Estado de São Paulo.',
-        '1981: Decreto Estadual nº 17.069 fixa a configuração atual do Brasão de Armas, com escudo português, 18 estrelas e lema "Lealdade e Constância".',
-        '1984: entrega do helicóptero Águia Uno e criação do Grupamento de Radiopatrulha Aérea — GRPAe.',
-        '1988: Constituição Federal recepciona as polícias militares estaduais como polícia ostensiva, de preservação da ordem pública, força auxiliar e reserva do Exército.',
-        '2023: Lei Federal nº 14.751 institui a Lei Orgânica Nacional das Polícias Militares e Corpos de Bombeiros Militares.',
-        '2026: em 29 de abril, Coronel PM Glauce Anselmo Cavalli toma posse como primeira mulher comandante-geral da corporação.'
-      ]
-    };
-  }
-
-  if (inst === 'pmam') {
-    return {
-      origem: `A ${nome} tem origem histórica em 4 de abril de 1837, com a criação da Guarda Policial da então Província do Amazonas, e passou por reorganizações como Corpo Policial, Regimento Militar do Estado e Força Pública até adotar a denominação Polícia Militar do Amazonas em 14 de novembro de 1938. Em 2026, a PMAM segue como força militar estadual de policiamento ostensivo e preservação da ordem pública, com convocações do concurso FGV/2021 e tabela remuneratória atualizada pela Lei AM nº 7.445/2025.`,
-      marcos: [
-        '1837: criação da Guarda Policial da Província do Amazonas, marco histórico de origem da PMAM.',
-        '1887: Lei nº 761 reorganiza a força como Corpo Policial; em 1890, o Decreto nº 2 reorganiza a força pública estadual.',
-        '1935: Lei nº 55 muda a denominação para Força Policial do Estado; em 14/11/1938, a instituição passa a ser denominada Polícia Militar do Amazonas.',
-        '1983: marco de comando com primeiro oficial da ativa da própria PMAM no Comando-Geral, conforme histórico institucional.',
-        '2021/2022: edital FGV PMAM com 1.350 vagas para Aluno Soldado, Aluno Oficial e Oficial de Saúde.',
-        '2025: Lei AM nº 7.445 atualiza a remuneração dos policiais e bombeiros militares do Amazonas, com efeitos principais em 01/12/2025.',
-        '2026: Governo do Amazonas informa formação de 500 novos policiais e ampliação das convocações do concurso de 2021.'
-      ]
-    };
-  }
-
-  if (inst === 'pcam') {
-    return {
-      origem: `A ${nome} tem raízes na polícia judiciária brasileira organizada a partir do Alvará Régio de 10 de maio de 1808 e na estrutura provincial do Amazonas. No Estado, a página histórica da instituição registra a criação da Polícia Judiciária de carreira em 1922, a organização da Polícia Civil com carreiras funcionais em 1971 e a regulamentação da estrutura orgânica pelo Decreto nº 2.291, de 12 de maio de 1972. Em 2026, a PCAM segue dirigida pelo Delegado Bruno de Paula Fraga, com remuneração atualizada pela Lei AM nº 7.446/2025 e reforço de efetivo oriundo do concurso FGV 2021/2022.`,
-      marcos: [
-        '1808: marco nacional da polícia judiciária com a Intendência Geral de Polícia da Corte e do Brasil, referência histórica das Polícias Civis brasileiras.',
-        '1854: criação do cargo de Chefe de Polícia para a Província do Amazonas; Policarpo Nunes Leão é registrado como primeiro chefe de polícia nomeado no período imperial.',
-        '1871: Lei nº 2.033 separa funções policiais e judiciais e consolida o inquérito policial como instrumento central da investigação criminal.',
-        '1922: o Estado do Amazonas cria a Polícia Judiciária de carreira, formalizando a Polícia Civil e suas carreiras no plano estadual.',
-        '1971/1972: Emenda Constitucional Estadual nº 03/1971 organiza carreiras funcionais e o Decreto AM nº 2.291/1972 regulamenta a Delegacia-Geral, delegacias especializadas, distritos, regionais e apoio técnico.',
-        '2004: Lei AM nº 2.875 institui plano de classificação, cargos, carreiras e remuneração dos servidores da Polícia Civil do Amazonas.',
-        '2025: Lei AM nº 7.446 atualiza a remuneração dos servidores da Polícia Civil, com implementação principal a partir de 01/12/2025 e pagamento de diferenças em 2026.',
-        '2026: posse de 97 novos policiais aprovados no concurso PCAM/FGV 2021/2022, incluindo delegados, escrivães, investigadores e peritos.'
-      ]
-    };
-  }
-
-
-  if (inst === 'pcap') {
-    return {
-      origem: `A ${nome} é a polícia judiciária estadual do Amapá, com trajetória ligada à organização administrativa do antigo Território Federal e à consolidação do Estado do Amapá. A página histórica institucional registra a Lei AP nº 637, de 14 de dezembro de 2001, como marco da estrutura organizacional básica da Polícia Civil, e a Lei AP nº 883/2005 posiciona a Delegacia-Geral entre os órgãos de direção superior. Em 2026, a PCAP segue dirigida pelo Delegado Victor Crispim Vinagre e utiliza tabela de subsídios do Grupo Polícia Civil com vigência de 01/04/2024, sem somar rubricas pessoais automaticamente.`,
-      marcos: [
-        'Antecedentes territoriais: organização da polícia judiciária no antigo Território Federal do Amapá, antes da consolidação da estrutura estadual própria.',
-        '14/12/2001: Lei AP nº 637 aprova a estrutura organizacional básica da Polícia Civil do Estado do Amapá, marco institucional citado no histórico oficial.',
-        '2005: Lei AP nº 883 organiza a Delegacia-Geral de Polícia Civil como órgão de direção superior, com papel de coordenação da instituição.',
-        '2017/2026: concurso PCAP 2017 segue com convocações, matrículas em curso de formação e atos administrativos publicados pela SEAD/AP.',
-        '2024: Lei AP nº 3.037 atualiza a tabela de subsídios do Grupo Polícia Civil, com vigência informada a partir de 01/04/2024.',
-        '2026: Diário Oficial registra Victor Crispim Vinagre como Delegado-Geral de Polícia Civil e Presidente do Conselho Superior da Polícia Civil.',
-        '2026: novo concurso para Delegado e Oficial Investigador aparece em planejamento público, mas não deve ser tratado como edital aberto até publicação oficial da SEAD/AP.'
-      ]
-    };
-  }
-
-  if (inst === 'pcce') {
-    return {
-      origem: `A ${nome} é a polícia judiciária estadual do Ceará e sua origem histórica é vinculada ao Alvará de 10 de maio de 1808, que criou a Intendência Geral de Polícia da Corte e do Brasil. No plano estadual, a carreira foi estruturada pelo Estatuto da Polícia Civil do Ceará e por leis posteriores que modernizaram direção, cargos e remuneração. Em 2026, a PCCE está sob comando do Delegado Márcio Rodrigo Gutiérrez Rocha, com concursos recentes para Delegado e Oficial Investigador e ampliação legal de cargos pela Lei CE nº 19.706/2026.`,
-      marcos: [
-        '10/05/1808: marco histórico nacional da polícia judiciária, com a criação da Intendência Geral de Polícia da Corte e do Brasil por alvará do Príncipe Regente D. João.',
-        '1841: Lei nº 261 reorganiza a polícia no Império e consolida delegados e subdelegados sob a autoridade do Chefe de Polícia, referência histórica das polícias civis estaduais.',
-        '1969: publicação do primeiro Estatuto da Polícia Civil de Carreira do Estado do Ceará, marco de profissionalização citado no histórico institucional.',
-        '1993: Lei CE nº 12.124 institui o Estatuto da Polícia Civil de Carreira do Estado do Ceará, base funcional da carreira.',
-        '2011: Lei CE nº 14.868 muda a nomenclatura para Delegado-Geral e Delegado-Geral Adjunto, aproximando a estrutura do modelo atual.',
-        '2024/2025: Lei CE nº 19.128/2024 e Lei CE nº 19.186/2025 reorganizam a carreira de Oficial Investigador de Polícia e o curso de formação.',
-        '2025/2026: concursos para Delegado e Oficial Investigador seguem em andamento por Cebraspe e CEV/UECE/FUNECE, com etapas, resultados e convocações publicadas oficialmente.',
-        '2026: Lei CE nº 19.706 cria 2.000 cargos de Oficial Investigador de Polícia e amplia o aproveitamento de candidatos aprovados, sem dispensar leitura de edital, ato de nomeação e disponibilidade orçamentária.'
-      ]
-    };
-  }
-  if (inst === 'pmap') {
-    return {
-      origem: `A ${nome} tem origem formal na Lei Federal nº 6.270, de 26 de novembro de 1975, que criou a Polícia Militar do Território Federal do Amapá, a partir da transformação histórica da Guarda Territorial. Em 2026, a PMAP segue como força militar estadual de policiamento ostensivo e preservação da ordem pública, com comando atualizado para o Cel PM Márcio Allan e tabela remuneratória estadual organizada por subsídio e progressão horizontal pela LC AP nº 173/2025.`,
-      marcos: [
-        'Antecedente histórico: Guarda Territorial do Amapá, sediada na Fortaleza de São José de Macapá, com mais de três décadas de atuação no antigo Território Federal.',
-        '1969: o Decreto-Lei nº 411 previu a transformação das Guardas Territoriais em Polícias Militares nos territórios federais.',
-        '26/11/1975: Lei Federal nº 6.270 cria a Polícia Militar do Território Federal do Amapá, com missão de manutenção da ordem pública e policiamento ostensivo fardado.',
-        'Após a estadualização do Amapá, a PMAP consolidou-se como polícia militar estadual, força auxiliar e reserva do Exército, com atuação ostensiva, preventiva e especializada.',
-        '2022/2026: concurso de Soldado PMAP/FCC com cadastro de reserva e convocações sucessivas publicadas pela SEAD/AP.',
-        '2025: LC AP nº 173 altera a remuneração dos militares estaduais e fixa subsídio por posto/graduação e tempo de efetivo serviço, com tabelas de 2025 a 2028.',
-        '2026: Governo do Amapá oficializa passagem de comando da PMAP para o Cel PM Márcio Allan.'
-      ]
-    };
-  }
-
-  if (inst === 'pmal') {
-    return {
-      origem: `A ${nome} tem origem oficial reconhecida em 3 de fevereiro de 1832, quando a Decisão Imperial nº 52 aprovou o plano do Corpo de Guardas Municipais da Província de Alagoas. Em 2026, a PMAL aparece como corporação quase bicentenária, com atuação de policiamento ostensivo e preservação da ordem pública nos 102 municípios alagoanos, efetivo ativo informado de 7.493 integrantes e Comando-Geral exercido pelo Cel QOC PM Paulo Amorim Feitosa Filho.`,
-      marcos: [
-        '1832: Decisão Imperial nº 52 aprova o plano do Corpo de Guardas Municipais da Província de Alagoas, marco reconhecido da origem da PMAL.',
-        '1851: criação da Banda de Música da PMAL, posteriormente reconhecida como patrimônio histórico, artístico e cultural imaterial do povo alagoano.',
-        '1912: extinção e reativação da Força Pública/Batalhão de Polícia no mesmo ano, marco de reorganização institucional.',
-        '1947/1993: criação da Formação de Bombeiros dentro da PM e posterior autonomia do Corpo de Bombeiros Militar de Alagoas.',
-        '1991: Decreto nº 35.021 passa a regular assistência médico-hospitalar do policial militar e dependentes.',
-        '2014: Lei AL nº 7.580 fixa subsídios dos militares estaduais; usar tabela por posto/graduação com cautela em atualizações posteriores.',
-        '2022: Lei AL nº 8.671 disciplina o Sistema de Proteção Social dos Militares do Estado de Alagoas — SPSM/AL.',
-        '2026: edital PMAL/Cebraspe para CFO e CFP, com 530 vagas imediatas e cadastro de reserva.'
-      ]
-    };
-  }
-
-  if (inst === 'pcal') {
-    return {
-      origem: `A ${nome} é a polícia judiciária estadual de Alagoas, com raízes administrativas na reorganização da Força Pública e da Guarda Civil em 1912 e estrutura policial civil consolidada pela Lei AL nº 3.437/1975. A Lei AL nº 6.441/2003 marcou a autonomia administrativa e financeira da instituição, e em 2026 o Governo de Alagoas formou comissão para novo concurso de Agente e Escrivão, com 300 vagas previstas.`,
-      marcos: [
-        '1808: criação da Intendência Geral de Polícia da Corte e do Brasil, marco nacional de organização policial que antecede as polícias civis estaduais.',
-        '1912: reorganização das forças estaduais em Alagoas e criação da Guarda Civil, junto à Polícia Militar, formando a Força Pública estadual.',
-        '1975: Lei AL nº 3.437 institui cargos e estrutura a Polícia Civil do Estado de Alagoas.',
-        '1982: criação da Escola de Polícia Civil de Alagoas — EPOCA, depois Academia de Polícia de Alagoas/APOCAL.',
-        '1987: carreira de Delegado de Polícia Civil e departamentos de polícia judiciária ganham desenho próprio.',
-        '2003: Lei AL nº 6.441 concede autonomia administrativa e financeira à Polícia Civil e organiza a Direção-Geral.',
-        '2007: Lei Delegada nº 43 reorganiza a estrutura, incluindo Delegado-Geral e diretorias.',
-        '2026: Governo de Alagoas divulga comissão para concurso PCAL de Agente e Escrivão, com 150 vagas imediatas e 150 cadastro de reserva.'
-      ]
-    };
-  }
-
-
-  if (inst === 'ppal') {
-    return {
-      origem: `A ${nome} integra a segurança pública estadual como carreira constitucionalizada pela EC 104/2019. Em Alagoas, a base funcional vem da carreira de Agente Penitenciário reestruturada pela Lei AL nº 7.993/2018 e redenominada pela Lei AL nº 8.650/2022 como carreira de Policiais Penais. A gestão do sistema prisional é executada pela SERIS/AL, responsável pela administração das unidades, custódia, disciplina, ressocialização e programas de inclusão social. Em 2026, a Lei AL nº 9.849 atualizou a jornada de 40h, a escala 24x72 em regime de plantão e a tabela de subsídios da carreira.`,
-      marcos: [
-        '1995: Lei AL nº 5.676 cria a Secretaria de Justiça, marco da gestão penitenciária estadual especializada.',
-        '2004: Lei AL nº 6.448 cria a Secretaria Executiva de Ressocialização, com foco na execução penal e administração prisional.',
-        '2015: Lei Delegada nº 47 estrutura a SERIS no modelo contemporâneo de ressocialização e inclusão social.',
-        '2018: Lei AL nº 7.993 reestrutura a carreira de Agente Penitenciário do serviço civil estadual.',
-        '2019/2022: EC 104/2019 constitucionaliza a Polícia Penal; Lei AL nº 8.650/2022 redenomina a carreira para Policiais Penais.',
-        '2021/2022: concurso SERIS/AL Cebraspe oferta 300 vagas e reforça o quadro de policiais penais.',
-        '2026: Lei AL nº 9.849 fixa jornada de 40h, escala 24x72 quando em plantão e subsídios de R$ 7.200,00 a R$ 17.734,04.',
-        '2026: mapa SERIS indica 6.386 presos recolhidos nas unidades prisionais em abril/maio de 2026.'
-      ]
-    };
-  }
-
-  if (inst === 'bmms') {
-    return {
-      origem: `O ${nome} tem origem histórica no Comando do Corpo de Bombeiros Militar criado em 16 de abril de 1973 pela Lei MT nº 3.322, ainda no antigo Estado de Mato Grosso, com destacamentos em Campo Grande e Corumbá. Com a criação de Mato Grosso do Sul, consolidou-se como corporação militar estadual de prevenção, combate a incêndios, salvamento, atendimento emergencial, defesa civil e segurança contra incêndio e pânico.`,
-      marcos: [
-        '1971: inauguração do quartel em Campo Grande, marco operacional anterior à criação formal do comando.',
-        '1973: Lei MT nº 3.322 cria o Comando do Corpo de Bombeiros Militar no antigo Mato Grosso.',
-        '1974: Lei MT nº 3.539 organiza o Comando e o Estado-Maior do Corpo de Bombeiros Militar.',
-        '1979: com a criação de Mato Grosso do Sul, o serviço passa a integrar a estrutura militar estadual sul-mato-grossense.',
-        '2008: LC MS nº 127 institui o sistema remuneratório por subsídio para PMMS e CBMMS.',
-        '2014: LC MS nº 188 dispõe sobre a organização básica do CBMMS.',
-        '2025: LC MS nº 354 fixa o efetivo legal do CBMMS em 3.978 integrantes.',
-        '2026: Lei MS nº 6.562 aplica RGA de 3,81% ao subsídio dos servidores estaduais.'
-      ]
-    };
-  }
-
-  if (inst === 'bmmg') {
-    return {
-      origem: `O ${nome} tem origem na Lei MG nº 557, de 31 de agosto de 1911, que autorizou a organização da Seção de Bombeiros Profissionais em Minas Gerais. A corporação consolidou-se como instituição militar estadual voltada à prevenção e combate a incêndios, salvamento, atendimento pré-hospitalar, defesa civil e segurança contra incêndio e pânico, com autonomia institucional e presença operacional em dezenas de municípios mineiros.`,
-      marcos: [
-        '1911: Lei MG nº 557 autoriza a organização da Seção de Bombeiros Profissionais em Minas Gerais.',
-        '1913: registros históricos apontam os primeiros grandes atendimentos operacionais do serviço de bombeiros em Belo Horizonte.',
-        'Décadas seguintes: expansão de pelotões, batalhões e unidades operacionais no interior do Estado.',
-        '1999: consolidação da autonomia institucional do Corpo de Bombeiros Militar de Minas Gerais.',
-        '2016: Lei MG nº 22.415 fixa o efetivo legal do CBMMG em 7.999 cargos.',
-        '2025: Cel BM Jordana de Oliveira Filgueiras Daldegan assume o Comando-Geral do CBMMG.',
-        '2026: Lei MG nº 25.804 aplica revisão geral de 5,4% e editais CBMMG 09/2026 e 10/2026 abrem novo ciclo de ingresso.'
-      ]
-    };
-  }
-
-
-  if (inst === 'bmpr') {
-    return {
-      origem: `O Corpo de Bombeiros Militar do Paraná tem antecedentes na Lei Provincial nº 679, de 27 de outubro de 1882, e foi criado formalmente pela Lei PR nº 1.133, de 23 de março de 1912. Em 2026, a instituição atua como corporação militar estadual dedicada à prevenção e combate a incêndios, salvamento, atendimento pré-hospitalar, defesa civil e atividades técnicas, sob comando do Cel QOBM Antônio Geraldo Hiller Lino.`,
-      marcos: [
-        '1882: Lei Provincial nº 679 autoriza a organização do serviço de bombeiros na província do Paraná.',
-        '1912: Lei PR nº 1.133 cria o Corpo de Bombeiros do Estado do Paraná.',
-        'Consolidação da atuação estadual em incêndios, salvamento, SIATE, defesa civil, prevenção e segurança contra incêndio e pânico.',
-        'Lei PR nº 22.187/2024: reestrutura a carreira militar estadual e tabela de subsídio do Quadro da Polícia Militar e do Quadro Bombeiro Militar do Paraná.',
-        'Lei PR nº 22.916/2025: fixa o efetivo do CBMPR em 5.704 cargos.',
-        '2025: Cel QOBM Antônio Geraldo Hiller Lino assume o Comando-Geral do CBMPR.',
-        'Concursos 2025: Soldado Bombeiro Militar com 600 vagas e Cadete Bombeiro Militar com 20 vagas.'
-      ]
-    };
-  }
-
-
-  if (inst === 'bmsc') {
-    return {
-      origem: `O ${nome} tem origem operacional na instalação da Seção de Bombeiros da Força Pública de Santa Catarina, em 26 de setembro de 1926, em Florianópolis, após autorização legal anterior para organização do serviço. A corporação tornou-se autônoma com a Emenda Constitucional estadual nº 33/2003 e atua em prevenção, combate a incêndio, salvamento, atendimento pré-hospitalar, defesa civil e segurança contra incêndio e pânico.`,
-      marcos: [
-        '1919: Lei SC nº 1.288 autoriza a criação de uma Seção de Bombeiros vinculada à Força Pública de Santa Catarina.',
-        '1926: instalação da Seção de Bombeiros em Florianópolis, em 26/09/1926, marco histórico da corporação.',
-        '2003: Emenda Constitucional estadual nº 33 concede autonomia administrativa e financeira ao CBMSC.',
-        '2025: nova organização básica amplia a estrutura regional de três para cinco Regiões Bombeiro Militar e cria novas diretorias setoriais.',
-        'LC SC 872/2025: reajuste remuneratório em três etapas, com efeitos em 05/2025, 12/2025 e 04/2026.',
-        'LC SC 880/2025: cria o Serviço Militar Estadual Temporário e o Quadro de Oficiais Especialistas, com impacto estrutural no efetivo projetado.',
-        'Concursos 2026: editais CBMSC/IDIB para 100 vagas de Aluno-Soldado e 10 vagas de Cadete/Oficial, ambos com nível superior.'
-      ]
-    };
-  }
-
-
-  if (inst === 'bmes') {
-    return {
-      origem: `O ${nome} tem origem legal na Lei ES nº 874, de 26 de dezembro de 1912, sancionada por Marcondes Alves de Souza, e teve a primeira estrutura operacional implantada pela Lei ES nº 920, de 13 de novembro de 1913. A corporação se consolidou como instituição militar estadual de prevenção, combate a incêndios, salvamento, defesa civil, perícias de incêndio e segurança contra incêndio e pânico, com autonomia institucional após a Emenda Constitucional estadual nº 12/1997.`,
-      marcos: [
-        '1912: Lei ES nº 874 determina a criação do Corpo de Bombeiros no Espírito Santo.',
-        '1913: Lei ES nº 920 implanta a primeira Seção de Bombeiros, com um cabo, 12 soldados e comando do 1º Ten Ignácio Pinto de Siqueira.',
-        'Treinamento inicial organizado com apoio do 2º Ten Mário Francisco de Brito, oficial do Corpo de Bombeiros do Rio de Janeiro.',
-        '1921 a 1938: evolução nominal e estrutural de Seção para Pelotão, Companhia e Corpo de Bombeiros.',
-        '1997: Emenda Constitucional estadual nº 12 permite a desvinculação da Polícia Militar e consolida o Corpo de Bombeiros Militar como instituição autônoma.',
-        'LC ES 420/2007: remuneração dos militares estaduais por subsídio; LC ES 910/2019 e LC ES 911/2019 tratam de promoções de oficiais e praças.',
-        '2026: CFO CBMES/IDECAN abre 6 vagas imediatas e 400 de cadastro de reserva para Oficial Combatente Bombeiro Militar.'
-      ]
-    };
-  }
-
-  if (inst === 'bmmt') {
-    return {
-      origem: `O ${nome} tem origem legal em 19 de agosto de 1964, com a autorização para organização do serviço de bombeiros em Mato Grosso, e iniciou a operação em fevereiro de 1967 como 1ª Companhia Independente, com 42 homens. A autonomia institucional foi consolidada em 28 de outubro de 1994. Em 2026, a corporação atua como instituição militar estadual de prevenção, combate a incêndios, busca e salvamento, defesa civil, atendimento emergencial e segurança contra incêndio e pânico, sob comando do Cel BM Flávio Glêdson Vieira Bezerra.`,
-      marcos: [
-        '1964: Lei MT nº 2.184 autoriza a organização do serviço de bombeiros no Estado de Mato Grosso.',
-        '1967: início operacional em Cuiabá como 1ª Companhia Independente, com 42 homens.',
-        '1994: autonomia institucional do Corpo de Bombeiros Militar de Mato Grosso em 28/10/1994.',
-        'LC MT 541/2014: estrutura a remuneração/subsídio dos militares estaduais, com referências usadas na aba de remuneração.',
-        'LC MT 775/2023: organiza a estrutura básica do CBMMT, com níveis de direção geral, superior, assessoramento, execução programática e regionalizada.',
-        '2025/2026: publicações institucionais indicam expansão operacional, Grupamento de Aviação Bombeiro Militar e cobertura aproximada de 70% a 80% da população.',
-        'Editais SEPLAG/SESP/CBMMT 2022: referências cadastradas para Aluno-a-Oficial, Aspirante e concursos de ingresso; convocações posteriores devem ser conferidas no site oficial.'
-      ]
-    };
-  }
-
-  if (inst === 'bmrj') {
-    return {
-      origem: `O ${nome} tem origem no Corpo Provisório de Bombeiros da Corte, criado pelo Decreto Imperial nº 1.775, de 2 de julho de 1856, no período de Dom Pedro II. Reconhecido como o primeiro corpo de bombeiros do Brasil, o CBMERJ atua em prevenção, combate a incêndios, salvamento, atendimento pré-hospitalar, defesa civil e respostas emergenciais no Estado do Rio de Janeiro, vinculado à SEDEC/RJ.`,
-      marcos: [
-        '1856: criação do Corpo Provisório de Bombeiros da Corte pelo Decreto Imperial nº 1.775, de 2 de julho.',
-        'Consolidação histórica como referência nacional em combate a incêndios, salvamento e resposta a emergências urbanas.',
-        '1979: Lei RJ nº 279 organiza a remuneração dos militares estaduais do RJ, incluindo o Corpo de Bombeiros.',
-        '1985: Lei RJ nº 880 estabelece o Estatuto dos Bombeiros Militares do Estado do Rio de Janeiro.',
-        '2021: Lei RJ nº 9.537 organiza o Sistema de Proteção Social dos Militares do Estado do Rio de Janeiro.',
-        '2024: Cel BM Tarciso Antonio de Salles Junior assume a SEDEC/RJ e o Comando-Geral do CBMERJ.',
-        '2026: tabela SEDEC/GESPERJ de janeiro/2026 passa a ser usada no portal para remuneração bruta oficial por posto/graduação.'
-      ]
-    };
-  }
-
-  if (inst === 'pf') {
-    return {
-      origem: `A ${nome} é órgão permanente da União e atua como polícia judiciária federal, responsável por investigar crimes de competência federal, proteger interesses da União e executar atribuições especializadas em fronteiras, migração, polícia marítima, aeroportuária e de combate a crimes interestaduais ou internacionais.`,
-      marcos: [
-        'Consolidação constitucional como órgão da segurança pública federal no art. 144 da Constituição.',
-        'Atuação em investigações federais, cooperação internacional, controle migratório e repressão a crimes contra bens, serviços e interesses da União.',
-        'Ampliação de capacidades técnicas em perícia, inteligência, operações especiais, crimes cibernéticos e enfrentamento de organizações criminosas.'
-      ]
-    };
-  }
-
-  if (inst === 'prf') {
-    return {
-      origem: `A Polícia Rodoviária Federal tem origem histórica em 24 de julho de 1928, quando foi criada a Polícia das Estradas no governo do Presidente Washington Luís. A instituição foi denominada Polícia Rodoviária Federal em 1945 e, com a Constituição de 1988, consolidou-se como órgão permanente de segurança pública federal, responsável pelo patrulhamento ostensivo das rodovias federais e por ações de segurança viária, mobilidade, fiscalização e enfrentamento qualificado ao crime em mais de 75 mil quilômetros de rodovias federais.`,
-      marcos: [
-        '1928: criação da Polícia das Estradas, origem histórica da PRF, por ato do Presidente Washington Luís.',
-        '1945: adoção da denominação Polícia Rodoviária Federal.',
-        '1988: constitucionalização da PRF como órgão permanente de segurança pública no art. 144 da Constituição Federal.',
-        '1995/1997/1998: Decreto nº 1.655/1995, Código de Trânsito Brasileiro e Lei nº 9.654/1998 consolidam competências, carreira e regime jurídico.',
-        '2023: Decreto nº 11.759/2023 atualiza a estrutura regimental no Ministério da Justiça e Segurança Pública.',
-        '2025: documento institucional PRF Rotas de Integração registra presença nos 26 estados e DF, 13 mil+ servidores ativos, 27 Superintendências, 152 Delegacias e cerca de 500 UOPs.',
-        '2026: Lei nº 14.875/2024, Anexo XXVII, fixa a tabela de subsídio da carreira PRF com efeitos a partir de 01/05/2026.'
-      ]
-    };
-  }
-
-  if (inst === 'pmce') {
-    return {
-      origem: `A ${nome} nasceu em 24 de maio de 1835, com a criação da Força Pública do Ceará pela Resolução Provincial nº 13. A instituição passou por diferentes denominações e reorganizações ao longo da formação do Estado e, desde 4 de janeiro de 1947, consolidou a denominação Polícia Militar do Ceará. Em 2026, atua no policiamento ostensivo e na preservação da ordem pública nos 184 municípios cearenses, sob comando do Cel PM Sinval da Silveira Sampaio.`,
-      marcos: [
-        '24/05/1835: criação da Força Pública do Ceará pela Resolução Provincial nº 13.',
-        '1835–1839: comando inicial atribuído ao Tenente Tomaz Lourenço da Silva Castro, conforme histórico institucional.',
-        '1889: reorganizações no período republicano e evolução da estrutura de segurança estadual.',
-        '04/01/1947: consolidação da denominação Polícia Militar do Ceará.',
-        '26/06/1994: marco institucional da primeira turma feminina conforme histórico divulgado pela PMCE.',
-        '2025: Cel PM Sinval da Silveira Sampaio assume o Comando-Geral da PMCE.'
-      ]
-    };
-  }
-
-  if (inst === 'pmerj') {
-    return {
-      origem: `A ${nome} tem origem oficial em 13 de maio de 1809, com a criação da Divisão Militar da Guarda Real da Polícia da Corte. Hoje, a SEPM/PMERJ atua no policiamento ostensivo e na preservação da ordem pública no Estado do Rio de Janeiro, sob comando de Secretário de Estado que acumula o Comando-Geral da Corporação.`,
-      marcos: [
-        '1809: criação da Divisão Militar da Guarda Real da Polícia da Corte por D. João VI.',
-        '2019: Decreto 46.600 organiza a SEPM com Subsecretaria-Geral, Gestão Administrativa, Gestão Operacional, Comando e Controle, Inteligência, Corregedoria-Geral e Estado-Maior Geral.',
-        '2025: Lei 11.041/2025 readequa o efetivo legal da PMERJ para 60.445 integrantes, distribuídos entre postos e graduações.',
-        'Folha GESPERJ fev/2026: 43.866 vínculos ativos na SEPM e 26.087 inativos/aposentados.',
-        'Carreira militar organizada entre oficiais e praças, com postos e graduações de Coronel a Soldado, conforme hierarquia oficial.',
-        '2026: Cel PM Sylvio Ricardo Ciuffo Guerra assume como Secretário de Estado de Polícia Militar e Comandante-Geral da PMERJ.'
-      ]
-    };
-  }
-
-  if (esfera === 'municipal') {
-    return {
-      origem: 'A Guarda Municipal é organizada por lei local e atua na proteção de bens, serviços e instalações municipais, com papel preventivo e comunitário. A história concreta varia conforme o município, sua lei de criação, estatuto, plano de carreira e estrutura administrativa.',
-      marcos: [
-        'Previsão constitucional das guardas municipais no art. 144 da Constituição.',
-        'Fortalecimento nacional com o Estatuto Geral das Guardas Municipais, que definiu princípios mínimos de atuação, proteção municipal e cooperação institucional.',
-        'Integração crescente com políticas de prevenção, ordenamento urbano, proteção escolar, videomonitoramento e defesa civil local.'
-      ]
-    };
-  }
-
-  if (/Bombeiro/i.test(tipo)) {
-    return {
-      origem: `O ${nome} integra a segurança pública e a defesa civil do ${estadoNome}. Sua trajetória é ligada ao combate a incêndios, salvamento, resgate, prevenção, vistoria técnica e resposta a emergências, com organização militar estadual/distrital. Registro de criação/origem usado nesta base: ${criacao}.`,
-      marcos: [
-        'Formação ou consolidação como estrutura bombeiro militar estadual/distrital.',
-        'Expansão das atividades de prevenção contra incêndio, salvamento, atendimento pré-hospitalar e defesa civil.',
-        'Adoção de normas técnicas, formação especializada e integração com sistemas estaduais de gestão de riscos e desastres.'
-      ]
-    };
-  }
-
-  if (/Polícia Civil/i.test(tipo)) {
-    return {
-      origem: `A ${nome} é a polícia judiciária do ${estadoNome}. Sua história está ligada à investigação criminal, apuração de infrações penais, formalização de procedimentos, apoio à Justiça criminal e especialização de delegacias. Registro de criação/origem usado nesta base: ${criacao}.`,
-      marcos: [
-        'Consolidação das delegacias e da carreira policial civil como estrutura de investigação estadual/distrital.',
-        'Especialização de unidades investigativas para homicídios, patrimônio, drogas, crimes cibernéticos, violência contra a mulher e outras áreas.',
-        'Integração progressiva com perícia, inteligência, bancos de dados e cooperação operacional com outras forças.'
-      ]
-    };
-  }
-
-  if (/Polícia Penal/i.test(tipo)) {
-    return {
-      origem: `A ${nome} representa a carreira voltada à segurança dos estabelecimentos penais no ${estadoNome}. A Polícia Penal foi inserida no texto constitucional pela Emenda Constitucional 104/2019, e cada ente federativo organiza sua estrutura, cargos, atribuições e identidade institucional por normas próprias.`,
-      marcos: [
-        'Constitucionalização da Polícia Penal pela EC 104/2019.',
-        'Transição de estruturas penitenciárias para carreira policial penal estadual/distrital.',
-        'Fortalecimento da segurança prisional, escoltas, inteligência penitenciária e controle interno dos estabelecimentos penais.'
-      ]
-    };
-  }
-
-  return {
-    origem: `A ${nome} é força policial militar do ${estadoNome}, com trajetória ligada à preservação da ordem pública, policiamento ostensivo, disciplina militar e proteção da sociedade. Registro de criação/origem usado nesta base: ${criacao}.`,
-    marcos: [
-      'Criação ou organização histórica como força pública estadual/provincial.',
-      'Consolidação do policiamento ostensivo e da preservação da ordem pública como atribuições centrais.',
-      'Modernização de formação, radiopatrulhamento, policiamento especializado, corregedoria, inteligência e atendimento comunitário.'
-    ]
-  };
-}
-
-function montarCamposResumoHistoria(inst, dados) {
-  const { resumo, tipo, uf, estadoNome } = dados;
-  const populacaoTitulo = resumo.populacaoTitulo || (/Polícia Penal/i.test(tipo) ? 'Presos atendidos' : 'População atendida');
-  return [
-    { rotulo: 'Natureza', valor: tipo },
-    { rotulo: 'Jurisdição', valor: `${uf} · ${estadoNome}` },
-    { rotulo: 'Criação/origem', valor: valorHistoriaOuNaoDeclarado(resumo.criacao, 'Registro histórico específico a confirmar') },
-    { rotulo: 'Criador/ato de origem', valor: getCriadorInstitucional(inst, tipo, estadoNome) },
-    { rotulo: 'Efetivo total', valor: valorHistoriaOuNaoDeclarado(resumo.efetivoTotalLabel || calcularEfetivoTotalResumoHeader(resumo), 'Efetivo específico a confirmar') },
-    { rotulo: /Bombeiro|Polícia Militar/i.test(tipo) ? 'Reserva/reforma' : 'Aposentados/inativos', valor: valorHistoriaOuNaoDeclarado(resumo.reservaLabel || resumo.reserva, 'Inativos específicos a confirmar') },
-    { rotulo: 'Mulheres no efetivo', valor: valorHistoriaOuNaoDeclarado(resumo.femininasLabel || resumo.femininas, 'Dado específico a confirmar') },
-    { rotulo: populacaoTitulo, valor: valorHistoriaOuNaoDeclarado(resumo.populacaoLabel || (resumo.populacao ? formatarNumeroHeader(resumo.populacao) : ''), 'Abrangência específica a confirmar') },
-    { rotulo: resumo.relacaoTitulo || 'Relação institucional', valor: valorHistoriaOuNaoDeclarado(resumo.relacaoLabel, 'Relação específica a confirmar') },
-    { rotulo: /Polícia Federal|Rodoviária Federal/i.test(tipo) ? 'Direção-Geral' : (/Polícia Civil/i.test(tipo) ? 'Chefia/Direção' : 'Comando/Direção'), valor: valorHistoriaOuNaoDeclarado(resumo.comando, 'Chefia atual a confirmar') }
-  ];
-}
-
-function renderizarBrasoesHistoria() {
-  const cont = document.getElementById('brasoes_historia_resultado');
-  if (!cont) return;
-  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
-    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('brasoes');
-    return;
-  }
 
   const inst = currInst;
   const dados = obterResumoInstituicaoCompleto(inst);

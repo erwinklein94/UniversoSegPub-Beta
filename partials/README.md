@@ -8,7 +8,6 @@ Para uma futura etapa de componentização completa, a divisão recomendada é:
 - `sidebar.html`
 - `pages/home.html`
 - `pages/remuneracao.html`
-- `pages/direitos.html`
 - `pages/concursos.html`
 - `pages/comparador.html`
 - `pages/produtos.html`

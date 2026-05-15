@@ -27,7 +27,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
-<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260514contexto-produtos-fix2" rel="stylesheet"/>
+<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260515menu-superior1" rel="stylesheet"/>
 <!-- BLOCO SEO GERADO --
      Canonical absoluto, Open Graph, Twitter Card e JSON-LD.
      Gerado na revisão de manutenção.
@@ -67,7 +67,7 @@
 
 <!-- =======================================================
      BLOCO 03 — HTML / ESTRUTURA VISÍVEL DO SITE
-     Cabeçalho, menu lateral, páginas/abas, formulários e rodapé.
+     Cabeçalho, menu superior, páginas/abas, formulários e rodapé.
      ======================================================= -->
 <!-- BLOCO 03.1 — Cabeçalho institucional premium com seletor, estado e carreira -->
 <header class="site-header" role="banner">
@@ -299,10 +299,10 @@
 <div class="stripe-white"></div>
 <div class="stripe-black"></div>
 </div>
-<!-- BLOCO 03.3 — Overlay escuro do menu lateral -->
+<!-- BLOCO 03.3 — Overlay escuro do menu superior -->
 <div aria-hidden="true" class="menu-overlay" id="menuOverlay"></div>
-<!-- BLOCO 03.4 — Menu lateral: navegação institucional, grupos de consulta, Instagram e parceiros -->
-<aside aria-label="Menu principal" class="sidebar" id="sidebar" role="navigation">
+<!-- BLOCO 03.4 — Menu superior: navegação institucional, grupos de consulta, Instagram e parceiros -->
+<aside aria-label="Menu principal superior" class="sidebar" id="sidebar" role="navigation">
 <div class="sidebar-header">
 <div aria-label="Identidade da navegação" class="sidebar-brand">
 <strong>Universo Segurança Pública</strong>
@@ -310,7 +310,7 @@
 </div>
 <button aria-label="Fechar menu" class="close-btn" type="button"><span aria-hidden="true">✕</span></button>
 </div>
-<!-- BLOCO 03.4.1 — Seletor de instituição do menu lateral -->
+<!-- BLOCO 03.4.1 — Seletor de instituição do menu superior -->
 <div class="inst-selector sidebar-inst-panel">
 <label for="instituicao">Instituição selecionada</label>
 <select aria-label="Selecione a instituição" id="instituicao">
@@ -352,10 +352,10 @@
 <span class="sidebar-link-text">Produtos</span>
 <small>Cursos, livros e equipamentos</small>
 </a>
-<a href="anuncie.html" id="menu-parceiros" role="link" tabindex="0">
+<a href="parceiros.html" id="menu-parceiros" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">📣</span>
 <span class="sidebar-link-text">Parceiros</span>
-<small>Anuncie ou fale conosco</small>
+<small>Parcerias e contato</small>
 </a>
 </div>
 <div aria-label="Informações de carreira" class="sidebar-nav-group">
@@ -420,7 +420,7 @@
 <strong>Seguir no Instagram</strong>
 </a>
 </div>
-<!-- BLOCO 03.4.3A — Produtos da vitrine no menu lateral -->
+<!-- BLOCO 03.4.3A — Produtos da vitrine no menu superior -->
 <section aria-label="Produtos" class="sidebar-products-vitrine">
 <div class="sidebar-products-title">
 <strong>Produtos</strong>
@@ -528,14 +528,6 @@
 <a class="principal-btn secundario" href="concursos.html">Ver Concursos</a>
 </div>
 </section>
-<!-- BLOCO 04.1A — Espaço comercial de topo da página principal -->
-<aside aria-label="Espaço de anúncio: Topo da página principal" class="ad-slot ad-slot--hero" data-ad-area="home_topo">
-<a class="ad-placeholder-link" href="anuncie.html?area=home_topo">
-<span class="ad-label">Publicidade</span>
-<strong>Anuncie aqui</strong>
-<small>Destaque acima das consultas para anunciante que deseja ser visto logo na entrada do portal.</small>
-</a>
-</aside>
 <!-- BLOCO 04.2 — Indicadores de autoridade e cobertura do portal -->
 <section aria-label="Resumo de cobertura do site" class="principal-stats">
 <div class="principal-stat">
@@ -633,23 +625,6 @@
 </a>
 </div>
 </section>
-<!-- BLOCO 04.4A — Espaços comerciais entre consultas e conteúdos -->
-<section aria-label="Espaços de anúncio na página principal" class="ad-grid ad-grid--duo">
-<aside aria-label="Espaço de anúncio: Meio da página principal" class="ad-slot ad-slot--card" data-ad-area="home_meio_consultas">
-<a class="ad-placeholder-link" href="anuncie.html?area=home_meio_consultas">
-<span class="ad-label">Publicidade</span>
-<strong>Anuncie aqui</strong>
-<small>Ideal para cursos, planos de saúde, seguros, equipamentos ou serviços voltados à carreira policial.</small>
-</a>
-</aside>
-<aside aria-label="Espaço de anúncio: Chamada comercial antes de produtos" class="ad-slot ad-slot--card" data-ad-area="home_meio_produtos">
-<a class="ad-placeholder-link" href="anuncie.html?area=home_meio_produtos">
-<span class="ad-label">Publicidade</span>
-<strong>Anuncie aqui</strong>
-<small>Boa posição para ofertas que complementam estudo, preparo físico, operação ou vida profissional.</small>
-</a>
-</aside>
-</section>
 <!-- BLOCO 04.5 — Conteúdos complementares e parceiros -->
 <section aria-labelledby="conteudos-parceiros-titulo" class="principal-area">
 <div class="principal-section-title">
@@ -665,13 +640,13 @@
 <p>Cursos, livros, e-books, produtos físicos e outras indicações reunidos em uma única aba.</p>
 <span class="principal-tag">Ver produtos</span>
 </a>
-<a aria-label="Abrir parceiros" class="principal-card" href="anuncie.html">
+<a aria-label="Abrir parceiros" class="principal-card" href="parceiros.html">
 <div class="principal-card-header">
 <span aria-hidden="true" class="principal-card-icon">🤝</span>
 <h3>Parceiros</h3>
 </div>
-<p>Espaço para empresas anunciarem, sugerirem parcerias e apresentarem soluções ao público da segurança pública.</p>
-<span class="principal-tag">Anunciar aqui</span>
+<p>Canal para contatos, correções, sugestões e propostas de parceria alinhadas ao público da segurança pública.</p>
+<span class="principal-tag">Falar conosco</span>
 </a>
 </div>
 </section>
@@ -689,14 +664,6 @@
 <!-- BLOCO 09 — PÁGINA AÇÕES JUDICIAIS -->
 <!-- BLOCO 10 — PÁGINA ASSOCIAÇÕES E SINDICATOS -->
 <!-- BLOCO 11 — PÁGINA PARCEIROS E CONTATO -->
-<!-- BLOCO 12.5 — Espaço comercial antes do rodapé -->
-<aside aria-label="Espaço de anúncio antes do rodapé" class="ad-slot ad-slot--footer" data-ad-area="rodape_geral">
-<a class="ad-placeholder-link" href="anuncie.html?area=rodape_geral">
-<span class="ad-label">Publicidade</span>
-<strong>Anuncie aqui</strong>
-<small>Espaço final para reforço de marca, campanhas institucionais e chamadas comerciais gerais.</small>
-</a>
-</aside>
 <!-- BLOCO 13 — RODAPÉ DO SITE -->
 <footer role="contentinfo">
 <div aria-label="Aviso institucional do portal" class="footer-disclaimer">
@@ -705,7 +672,7 @@
 <a href="privacidade.html">Política de Privacidade</a>
 <a href="termos.html">Termos de Uso</a>
 <a href="cookies.html">Política de Cookies</a>
-<a href="anuncie.html">Contato e Anúncios</a>
+<a href="parceiros.html">Contato e Parcerias</a>
 </nav>
 <p class="small-note footer-credit">Desenvolvido por <strong>LOCKSTAGE</strong>.</p>
 </div>
@@ -729,7 +696,7 @@
 <script defer="" src="js/data/concursos-data.js"></script>
 <script defer="" src="js/data/portal-config.js?v=20260506bmba1"></script>
 <script defer="" src="js/data/bases-conteudo.js"></script>
-<script defer="" src="js/ui/navegacao-ui.js?v=20260503homeinst1"></script>
+<script defer="" src="js/ui/navegacao-ui.js?v=20260515menu-superior1"></script>
 <script defer="" src="js/services/remuneracao.js?v=20260506bmba1"></script>
 <script defer="" src="js/data/header-brasoes-config.js?v=20260504headerbrasoes1"></script>
 <script defer="" src="js/ui/header-estados.js?v=20260510brasoes1"></script>

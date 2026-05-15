@@ -52,7 +52,6 @@ PUBLIC_PAGES = [
     "acoes-judiciais.html",
     "associacoes-sindicatos.html",
     "produtos.html",
-    "anuncie.html",
     "parceiros.html",
     "404.html",
 ]
@@ -67,7 +66,7 @@ APP_PAGES = [
     "acoes-judiciais.html",
     "associacoes-sindicatos.html",
     "produtos.html",
-    "anuncie.html",
+    "parceiros.html",
 ]
 
 EXPECTED_DATA_PAGE = {
@@ -80,7 +79,7 @@ EXPECTED_DATA_PAGE = {
     "acoes-judiciais.html": "acoes",
     "associacoes-sindicatos.html": "associacoes",
     "produtos.html": "produtos",
-    "anuncie.html": "parceiros",
+    "parceiros.html": "parceiros",
     "404.html": "404",
 }
 
@@ -94,7 +93,7 @@ MENU_ROUTES = {
     "acoes-judiciais.html": ("menu-acoes", "acoes-judiciais.html"),
     "associacoes-sindicatos.html": ("menu-associacoes", "associacoes-sindicatos.html"),
     "produtos.html": ("menu-produtos", "produtos.html"),
-    "anuncie.html": ("menu-parceiros", "anuncie.html"),
+    "parceiros.html": ("menu-parceiros", "parceiros.html"),
 }
 
 PAGE_TARGETS = {
@@ -157,7 +156,7 @@ PAGE_TARGETS = {
         "page-produtos",
         "txt-inst-produtos",
     ],
-    "anuncie.html": [
+    "parceiros.html": [
         "page-parceiros",
         "contato_nome",
         "contato_email",
@@ -332,8 +331,6 @@ def test_html_metadata_and_data_page() -> None:
         assert_true('rel="canonical"' in html or "rel='canonical'" in html, f"{page}: canonical ausente")
 
     for page, expected in EXPECTED_DATA_PAGE.items():
-        if page == "parceiros.html":
-            continue
         html = read_text(page)
         assert_true(f'data-page="{expected}"' in html, f"{page}: data-page esperado não encontrado: {expected}")
 

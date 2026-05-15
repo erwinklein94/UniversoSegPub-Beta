@@ -67,7 +67,10 @@ function toggleMenu(forceOpen) {
 
   sidebar.classList.toggle('active', shouldOpen);
   overlay.classList.toggle('active', shouldOpen);
-  btn.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+  document.documentElement.classList.toggle('menu-superior-aberto', shouldOpen);
+  document.querySelectorAll('.menu-btn').forEach(menuBtn => {
+    menuBtn.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+  });
 }
 
 function closeMenu() {
@@ -156,7 +159,7 @@ function getNomeAbaAtual() {
     comparar: 'Comparar Carreiras',
     produtos: 'Produtos',
     direitos: 'Direitos e Vantagens',
-    parceiros: 'Parceiros - Anuncie aqui!'
+    parceiros: 'Parceiros e Contato'
   };
   return nomes[page] || 'Principal';
 }

@@ -133,21 +133,6 @@
       });
     });
 
-    bindClick('.ad-slot .ad-placeholder-link', event => {
-      const link = event.currentTarget;
-      const href = link.getAttribute('href') || '';
-
-      // Produtos/anúncios com link externo devem abrir o afiliado diretamente.
-      if (link.classList.contains('ad-placeholder-link--product') || /^https?:\/\//i.test(href)) {
-        return;
-      }
-
-      const area = link.closest('[data-ad-area]')?.dataset.adArea;
-      if (!area) return;
-      event.preventDefault();
-      safeCall('abrirContatoAnuncio', [area]);
-    });
-
     bindInput('#idade_dir, #renda_dir', () => safeCall('analisarDireitos'));
     bindChange('#idade_dir, #renda_dir, #sexo_dir, #ingresso_dir, #dependente_dir, #local_especial_dir, #requisitos_apos_dir', () => safeCall('analisarDireitos'));
 

@@ -15,7 +15,7 @@
     produtos: 'produtos.html',
     acoes: 'acoes-judiciais.html',
     associacoes: 'associacoes-sindicatos.html',
-    parceiros: 'anuncie.html'
+    parceiros: 'parceiros.html'
   };
 
   const PAGE_NAMES = {
@@ -29,25 +29,10 @@
     produtos: 'Produtos',
     acoes: 'Ações Judiciais',
     associacoes: 'Associações e Sindicatos',
-    parceiros: 'Parceiros - Anuncie aqui!'
+    parceiros: 'Parceiros e Contato'
   };
 
 
-
-  const AD_AREA_LABELS = {
-    home_topo: 'Topo da página principal',
-    home_meio_consultas: 'Meio da página principal, após consultas principais',
-    home_meio_produtos: 'Página principal, antes de conteúdos e produtos',
-    menu_lateral: 'Menu lateral',
-    remuneracao_antes_tabela: 'Página de remuneração, antes da tabela',
-    direitos_entre_formulario_parecer: 'Página de direitos, entre formulário e parecer',
-    concursos_antes_lista: 'Página de concursos, antes da lista',
-    comparador_antes_resultado: 'Página de comparação, antes dos resultados',
-    produtos_topo: 'Topo da página de produtos',
-    acoes_antes_lista: 'Página de ações judiciais, antes da lista',
-    associacoes_antes_lista: 'Página de associações, antes da lista',
-    rodape_geral: 'Antes do rodapé'
-  };
 
   window.UNISEGPUB_PAGE_URLS = Object.assign({}, PAGE_URLS);
   window.UNISEGPUB_PAGE_NAMES = Object.assign({}, PAGE_NAMES);
@@ -69,24 +54,6 @@
     });
   }
 
-  function fillAdContactFormFromUrl() {
-    const page = getCurrentPage();
-    if (page !== 'parceiros') return;
-
-    const params = new URLSearchParams(window.location.search);
-    const area = params.get('area') || '';
-    if (!area) return;
-
-    const areaNome = AD_AREA_LABELS[area] || 'Espaço de anúncio do portal';
-    const assunto = document.getElementById('contato_assunto');
-    const mensagem = document.getElementById('contato_mensagem');
-
-    if (assunto) assunto.value = 'Parceria Comercial / Anúncio';
-    if (mensagem && !mensagem.value.trim()) {
-      mensagem.value = `Olá, tenho interesse em anunciar no Universo Segurança Pública.\n\nÁrea de interesse: ${areaNome}.\n\nGostaria de receber informações sobre disponibilidade, valores, formatos e próximos passos.`;
-      if (typeof window.atualizarContador === 'function') window.atualizarContador();
-    }
-  }
 
   function initPageSpecificContent(page) {
     if (typeof window.atualizarVisibilidadeResumoInstitucional === 'function') {
@@ -106,7 +73,6 @@
       window.inicializarComparadorCarreiras();
     }
 
-    fillAdContactFormFromUrl();
   }
 
   document.addEventListener('DOMContentLoaded', () => {

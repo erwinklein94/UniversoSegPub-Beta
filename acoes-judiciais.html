@@ -27,7 +27,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
-<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260514contexto-produtos-fix2" rel="stylesheet"/>
+<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260515menu-superior1" rel="stylesheet"/>
 <!-- BLOCO SEO GERADO --
      Canonical absoluto, Open Graph, Twitter Card e JSON-LD.
      Gerado na revisão de manutenção.
@@ -67,7 +67,7 @@
 
 <!-- =======================================================
      BLOCO 03 — HTML / ESTRUTURA VISÍVEL DO SITE
-     Cabeçalho, menu lateral, páginas/abas, formulários e rodapé.
+     Cabeçalho, menu superior, páginas/abas, formulários e rodapé.
      ======================================================= -->
 <!-- BLOCO 03.1 — Cabeçalho institucional premium com seletor, estado e carreira -->
 <header class="site-header" role="banner">
@@ -286,10 +286,10 @@
 <div class="stripe-white"></div>
 <div class="stripe-black"></div>
 </div>
-<!-- BLOCO 03.3 — Overlay escuro do menu lateral -->
+<!-- BLOCO 03.3 — Overlay escuro do menu superior -->
 <div aria-hidden="true" class="menu-overlay" id="menuOverlay"></div>
-<!-- BLOCO 03.4 — Menu lateral: navegação institucional, grupos de consulta, Instagram e parceiros -->
-<aside aria-label="Menu principal" class="sidebar" id="sidebar" role="navigation">
+<!-- BLOCO 03.4 — Menu superior: navegação institucional, grupos de consulta, Instagram e parceiros -->
+<aside aria-label="Menu principal superior" class="sidebar" id="sidebar" role="navigation">
 <div class="sidebar-header">
 <div aria-label="Identidade da navegação" class="sidebar-brand">
 <strong>Universo Segurança Pública</strong>
@@ -297,7 +297,7 @@
 </div>
 <button aria-label="Fechar menu" class="close-btn" type="button"><span aria-hidden="true">✕</span></button>
 </div>
-<!-- BLOCO 03.4.1 — Seletor de instituição do menu lateral -->
+<!-- BLOCO 03.4.1 — Seletor de instituição do menu superior -->
 <div class="inst-selector sidebar-inst-panel">
 <label for="instituicao">Instituição selecionada</label>
 <select aria-label="Selecione a instituição" id="instituicao">
@@ -339,10 +339,10 @@
 <span class="sidebar-link-text">Produtos</span>
 <small>Cursos, livros e equipamentos</small>
 </a>
-<a href="anuncie.html" id="menu-parceiros" role="link" tabindex="0">
+<a href="parceiros.html" id="menu-parceiros" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">📣</span>
 <span class="sidebar-link-text">Parceiros</span>
-<small>Anuncie ou fale conosco</small>
+<small>Parcerias e contato</small>
 </a>
 </div>
 <div aria-label="Informações de carreira" class="sidebar-nav-group">
@@ -407,7 +407,7 @@
 <strong>Seguir no Instagram</strong>
 </a>
 </div>
-<!-- BLOCO 03.4.3A — Produtos da vitrine no menu lateral -->
+<!-- BLOCO 03.4.3A — Produtos da vitrine no menu superior -->
 <section aria-label="Produtos" class="sidebar-products-vitrine">
 <div class="sidebar-products-title">
 <strong>Produtos</strong>
@@ -508,27 +508,11 @@
 <div class="alerta legal" style="margin-top: 0; margin-bottom: 24px;">
 <strong>Aviso legal:</strong> conteúdo meramente informativo. As teses abaixo dependem de análise individual, documentos funcionais, holerites, data de ingresso, situação ativa/inativa e entendimento judicial atualizado. Em regra, pretensões contra a Fazenda Pública observam prescrição quinquenal, sem prejuízo de regras específicas. Consulte advogado, associação ou sindicato antes de tomar decisão.
     </div>
-<!-- BLOCO 09.0A — Espaço comercial contextual de ações judiciais -->
-<aside aria-label="Espaço de anúncio: Ações judiciais antes da lista" class="ad-slot ad-slot--inline" data-ad-area="acoes_antes_lista">
-<a class="ad-placeholder-link" href="anuncie.html?area=acoes_antes_lista">
-<span class="ad-label">Publicidade</span>
-<strong>Anuncie aqui</strong>
-<small>Local indicado para escritórios, assessorias, associações e serviços de orientação jurídica.</small>
-</a>
-</aside>
 <div class="result-list" id="lista-acoes"></div>
 </div>
 </main>
 <!-- BLOCO 10 — PÁGINA ASSOCIAÇÕES E SINDICATOS -->
 <!-- BLOCO 11 — PÁGINA PARCEIROS E CONTATO -->
-<!-- BLOCO 12.5 — Espaço comercial antes do rodapé -->
-<aside aria-label="Espaço de anúncio antes do rodapé" class="ad-slot ad-slot--footer" data-ad-area="rodape_geral">
-<a class="ad-placeholder-link" href="anuncie.html?area=rodape_geral">
-<span class="ad-label">Publicidade</span>
-<strong>Anuncie aqui</strong>
-<small>Espaço final para reforço de marca, campanhas institucionais e chamadas comerciais gerais.</small>
-</a>
-</aside>
 <!-- BLOCO 13 — RODAPÉ DO SITE -->
 <footer role="contentinfo">
 <div aria-label="Aviso institucional do portal" class="footer-disclaimer">
@@ -537,7 +521,7 @@
 <a href="privacidade.html">Política de Privacidade</a>
 <a href="termos.html">Termos de Uso</a>
 <a href="cookies.html">Política de Cookies</a>
-<a href="anuncie.html">Contato e Anúncios</a>
+<a href="parceiros.html">Contato e Parcerias</a>
 </nav>
 <p class="small-note footer-credit">Desenvolvido por <strong>LOCKSTAGE</strong>.</p>
 </div>
@@ -561,7 +545,7 @@
 <script defer="" src="js/data/concursos-data.js"></script>
 <script defer="" src="js/data/portal-config.js?v=20260506bmba1"></script>
 <script defer="" src="js/data/bases-conteudo.js"></script>
-<script defer="" src="js/ui/navegacao-ui.js?v=20260503homeinst1"></script>
+<script defer="" src="js/ui/navegacao-ui.js?v=20260515menu-superior1"></script>
 <script defer="" src="js/services/remuneracao.js?v=20260506bmba1"></script>
 <script defer="" src="js/data/header-brasoes-config.js?v=20260504headerbrasoes1"></script>
 <script defer="" src="js/ui/header-estados.js?v=20260510brasoes1"></script>

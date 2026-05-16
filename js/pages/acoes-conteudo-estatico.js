@@ -87,6 +87,21 @@
     if (span) span.textContent = sigla;
   }
 
+
+  function classeTipoAcaoFallback(tipo) {
+    const normalizado = String(tipo || '').toLowerCase();
+    if (normalizado.includes('coletiva') && !normalizado.includes('individual')) return 'coletiva';
+    if (normalizado.includes('híbrida') || normalizado.includes('hibrida') || normalizado.includes('individual/coletivo')) return 'coletiva';
+    return 'individual';
+  }
+
+  function textoTipoAcaoFallback(tipo) {
+    const normalizado = String(tipo || '').toLowerCase();
+    if (normalizado.includes('híbrida') || normalizado.includes('hibrida') || normalizado.includes('individual/coletivo')) return '⚖👤 Ação Híbrida';
+    if (normalizado.includes('coletiva') && !normalizado.includes('individual')) return '⚖ Ação Coletiva';
+    return '👤 Ação Individual';
+  }
+
   function acaoFallbackHtml(inst) {
     if (typeof ACOES_JUDICIAIS === 'undefined' || !ACOES_JUDICIAIS[inst]) return '';
     const lista = ACOES_JUDICIAIS[inst] || [];
@@ -95,7 +110,7 @@
         <span class="direito-nome">${textoSeguro(a.titulo || 'Tema jurídico em conferência')}</span>
         <span class="direito-status" style="color: var(--vermelho);">${textoSeguro(a.status || 'Conferência individual')}</span>
         <div>
-          <span class="badge-info ${a.tipo === 'coletiva' ? 'coletiva' : 'individual'}">${a.tipo === 'coletiva' ? '⚖ Ação Coletiva' : '👤 Ação Individual'}</span>
+          <span class="badge-info ${classeTipoAcaoFallback(a.tipo)}">${textoTipoAcaoFallback(a.tipo)}</span>
           <span class="badge-info ativa">${textoSeguro(a.ano || 'Caso a caso')}</span>
         </div>
         <span class="direito-desc">${textoSeguro(a.desc || 'Tema dependente de documentos individuais e conferência jurídica.')}</span>

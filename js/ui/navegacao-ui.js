@@ -58,8 +58,8 @@ function escapeHtml(str = '') {
 function toggleMenu(forceOpen) {
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('menuOverlay');
-  const btn = document.querySelector('.menu-btn');
-  if (!sidebar || !overlay || !btn) return;
+  const buttons = document.querySelectorAll('.menu-btn');
+  if (!sidebar || !overlay || !buttons.length) return;
 
   const shouldOpen = typeof forceOpen === 'boolean'
     ? forceOpen
@@ -67,7 +67,8 @@ function toggleMenu(forceOpen) {
 
   sidebar.classList.toggle('active', shouldOpen);
   overlay.classList.toggle('active', shouldOpen);
-  btn.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+  document.body.classList.toggle('menu-open', shouldOpen);
+  buttons.forEach(btn => btn.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false'));
 }
 
 function closeMenu() {
@@ -106,7 +107,7 @@ function switchPage(page) {
   atualizarHeaderDesc();
   atualizarVisibilidadeResumoInstitucional(page);
 
-  // Fecha a sidebar automaticamente após escolher uma aba, liberando a área principal da página.
+  // Fecha o menu automaticamente após escolher uma aba, liberando a área principal da página.
   closeMenu();
 
   // As páginas institucionais agora exigem escolha dentro da própria aba.

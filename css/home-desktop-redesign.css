@@ -501,3 +501,157 @@ body.usp-home img { display: block; max-width: 100%; }
   .usp-concurso-guide-grid.usp-card-grid { grid-template-columns: 1fr; }
   .taf-produto-card { grid-template-columns: 1fr; }
 }
+
+/* ======================================================
+   Página Remuneração — extensão desktop elegante
+   ====================================================== */
+.usp-breadcrumb {
+  border-bottom: 1px solid var(--usp-line);
+  background: #fbfcfe;
+  color: #536276;
+  font-family: var(--usp-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+}
+.usp-breadcrumb .usp-container { min-height: 43px; display: flex; align-items: center; gap: 13px; }
+.usp-breadcrumb a { color: #58677a; }
+.usp-breadcrumb a:hover { color: var(--usp-gold-dark); }
+.usp-breadcrumb strong { color: #172437; font-weight: 700; }
+
+.usp-remuneracao .usp-remu-hero { padding: 58px 0 28px; }
+.usp-remu-hero__grid { grid-template-columns: minmax(0, .98fr) minmax(420px, .78fr); align-items: end; gap: 94px; }
+.usp-remuneracao .usp-remu-hero h1 { max-width: 760px; font-size: clamp(37px, 3.7vw, 50px); line-height: 1.05; }
+.usp-remuneracao .usp-hero__lead { max-width: 650px; margin-bottom: 0; }
+.usp-remu-selected { padding: 25px 24px 22px; }
+.usp-remu-current { display: flex; align-items: center; gap: 14px; margin: 8px 0 18px; }
+.usp-remu-current__mark {
+  flex: 0 0 auto;
+  width: 48px;
+  min-height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #dce4ed;
+  border-radius: 5px;
+  color: #06101f;
+  background: #fff;
+  font-family: var(--usp-mono);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
+}
+.usp-remu-current h2 { margin: 0; color: var(--usp-ink); font-size: 17px; line-height: 1.28; letter-spacing: -.02em; }
+.usp-remu-current p { margin: 5px 0 0; color: #526176; font-size: 12px; }
+.usp-remu-stats { grid-template-columns: repeat(4, 1fr); }
+.usp-remu-stats .usp-stat { min-height: 96px; }
+.usp-remu-stats .usp-stat > span {
+  display: block;
+  margin-bottom: 10px;
+  color: #5b697b;
+  font-family: var(--usp-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+}
+.usp-remu-stats .usp-stat strong { font-size: 25px; }
+.usp-remu-stats .usp-stat small { display: block; margin-top: 8px; color: #536276; font-size: 12px; }
+.usp-remu-stats #remu-maior-total { color: #9b7c0d; }
+
+.usp-remu-table-section { padding-top: 64px; background: #fff; }
+.usp-remu-toolbar { display: grid; grid-template-columns: minmax(240px, 280px) 1fr auto; align-items: center; gap: 8px; margin-bottom: 18px; }
+.usp-remu-search {
+  height: 39px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 12px;
+  border: 1px solid #d2dbe5;
+  border-radius: 3px;
+  color: #607085;
+  background: #fff;
+}
+.usp-remu-search span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.usp-remu-search input { width: 100%; min-width: 0; border: 0; outline: 0; color: #06101f; background: transparent; font-size: 13px; }
+.usp-remu-search input::placeholder { color: #68788c; }
+.usp-remu-chip-group, .usp-remu-sort { display: flex; align-items: center; gap: 7px; }
+.usp-remu-chip-group button, .usp-remu-sort button {
+  height: 36px;
+  border: 1px solid #d6dee8;
+  border-radius: 2px;
+  padding: 0 14px;
+  color: #233349;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+.usp-remu-chip-group button small { margin-left: 6px; color: #8490a1; }
+.usp-remu-chip-group button.is-active, .usp-remu-sort button.is-active { border-color: var(--usp-navy); color: #fff; background: var(--usp-navy); }
+.usp-remu-chip-group button.is-active small { color: #dbe3ee; }
+.usp-remu-sort { justify-content: flex-end; }
+.usp-remu-sort span { color: #5c697b; font-size: 13px; }
+.usp-remu-table-wrap { box-shadow: 0 18px 45px rgba(6,16,31,.035); }
+.usp-remu-table { min-width: 1060px; }
+.usp-remu-table th { white-space: nowrap; }
+.usp-remu-table td { padding-top: 18px; padding-bottom: 18px; }
+.usp-remu-table td:nth-child(1) { width: 34%; }
+.usp-remu-table td:nth-child(2) { width: 16%; }
+.usp-remu-table td:nth-child(3) { width: 34%; }
+.usp-remu-table td:nth-child(4) { width: 16%; }
+.usp-remu-cargo { display: grid; grid-template-columns: 36px 1fr; align-items: center; gap: 12px; }
+.usp-remu-badge {
+  width: 36px;
+  min-height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #dbe3ec;
+  border-radius: 3px;
+  color: #34445a;
+  background: #fbfcfe;
+  font-family: var(--usp-mono);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.usp-remu-badge.is-command { border-color: var(--usp-navy); color: #fff; background: var(--usp-navy); }
+.usp-remu-badge.is-gold { border-color: #e2c454; color: #876d0d; background: #fff9e4; }
+.usp-remu-cargo strong { margin: 0; font-size: 14px; line-height: 1.22; }
+.usp-remu-cargo small { font-family: var(--usp-mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.usp-remu-value strong { font-size: 16px; letter-spacing: -.025em; }
+.usp-remu-value small { color: #0d7252; font-family: var(--usp-mono); font-size: 10px; letter-spacing: .12em; }
+.usp-remu-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.usp-remu-chip {
+  min-height: 25px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 9px;
+  border: 1px solid #dce3ec;
+  color: #29384d;
+  background: #fbfcfe;
+  font-size: 11px;
+  line-height: 1;
+}
+.usp-remu-chip.is-gold { border-color: #e4ca64; color: #79600c; background: #fff9e5; }
+.usp-remu-source a { display: inline-block; border-bottom: 1px solid var(--usp-gold); color: #06101f; font-size: 13px; }
+.usp-remu-source small { max-width: 250px; color: #526176; line-height: 1.45; }
+.usp-remu-pagination { display: flex; align-items: center; justify-content: center; gap: 7px; margin: 34px 0 0; }
+.usp-remu-pagination[hidden] { display: none !important; }
+.usp-remu-pagination button { min-width: 38px; height: 36px; border: 1px solid #d4dce6; border-radius: 3px; color: #06101f; background: #fff; font: 700 12px var(--usp-sans); cursor: pointer; }
+.usp-remu-pagination button[aria-current="page"] { border-color: var(--usp-navy); color: #fff; background: var(--usp-navy); }
+.usp-remu-pagination button:disabled { opacity: .42; cursor: not-allowed; }
+.usp-remu-empty { padding: 34px !important; color: #55657a; text-align: center; }
+.usp-remu-warning { padding: 56px 0; color: #fff; background: var(--usp-navy); border-top: 3px solid var(--usp-gold); }
+.usp-remu-warning p:last-child { max-width: 1130px; margin: 0; color: #f3f6fb; font-size: 14px; line-height: 1.65; }
+
+@media (max-width: 1180px) {
+  .usp-remu-hero__grid { grid-template-columns: 1fr; gap: 42px; }
+  .usp-remu-toolbar { grid-template-columns: 1fr; align-items: stretch; }
+  .usp-remu-sort { justify-content: flex-start; flex-wrap: wrap; }
+  .usp-remu-chip-group { flex-wrap: wrap; }
+}
+@media (max-width: 760px) {
+  .usp-remuneracao .usp-remu-hero h1 { font-size: 36px; }
+  .usp-remu-stats { grid-template-columns: 1fr; }
+  .usp-remu-current { align-items: flex-start; }
+}

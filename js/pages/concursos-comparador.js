@@ -200,7 +200,7 @@ function popularInstituicoesComparadorPorEsfera(esfera, valorPreferido = '') {
   itens.forEach(item => {
     const grupo = esferaNormalizada === 'estadual'
       ? `${item.estadoNome} (${item.uf})`
-      : (esferaNormalizada === 'federal' ? 'União' : 'Municípios');
+      : 'União';
     if (grupo !== grupoAtual) {
       if (grupoAtual) html += '</optgroup>';
       html += `<optgroup label="${escapeHtml(grupo)}">`;
@@ -655,7 +655,7 @@ function carregarAcoes() {
           <span class="badge-info ativa">${textoConteudoSeguro(a.ano)}</span>
         </div>
         <span class="direito-desc">${textoConteudoSeguro(a.desc)}</span>
-        <span class="direito-desc"><strong>Base legal/jurisprudência:</strong> ${textoConteudoSeguro(a.base)}</span>
+        <span class="direito-desc"><strong>Fundamento jurídico/jurisprudência:</strong> ${textoConteudoSeguro(a.base)}</span>
         ${fonteHtml}
         ${atualizadoHtml}
       </div>

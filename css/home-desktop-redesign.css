@@ -1984,3 +1984,103 @@ body.usp-home .usp-header .usp-nav a.is-active {
 
 /* Correção global: remove o atalho visual "⌘ K"/"K" da busca do cabeçalho. */
 .usp-search kbd, .usp-search .search-shortcut, .usp-search .shortcut { display: none !important; }
+
+/* ==========================================================
+   FIX GLOBAL — Molduras de brasões no tamanho real da imagem
+   Evita brasões altos vazarem de caixas quadradas fixas.
+   ========================================================== */
+body.usp-home .brasoes-card-topo {
+  grid-template-columns: minmax(126px, auto) minmax(0, 1fr) !important;
+  align-items: start !important;
+}
+
+body.usp-home .brasoes-card-imgbox {
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: 150px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  justify-self: start !important;
+  align-self: start !important;
+  padding: 8px !important;
+  overflow: visible !important;
+  line-height: 0 !important;
+}
+
+body.usp-home .brasoes-card-imgbox > img {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 118px !important;
+  max-height: 146px !important;
+  object-fit: contain !important;
+}
+
+body.usp-home .brasoes-historia-resultado .brasoes-hero {
+  align-items: start !important;
+}
+
+body.usp-home .brasoes-imagem-wrap {
+  width: auto !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: 276px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  justify-self: start !important;
+  align-self: start !important;
+  padding: 12px !important;
+  overflow: visible !important;
+  line-height: 0 !important;
+}
+
+body.usp-home .brasoes-imagem-wrap > img,
+body.usp-home img.brasoes-imagem {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 220px !important;
+  max-height: 260px !important;
+  object-fit: contain !important;
+}
+
+body.usp-home img.usp-noticia-card__brasao,
+body.usp-home img.noticias-brasao,
+body.usp-home img.guia-artigo-brasao {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 96px !important;
+  max-height: 126px !important;
+  object-fit: contain !important;
+  box-sizing: border-box !important;
+}
+
+body.usp-home .usp-noticia-card__header {
+  grid-template-columns: minmax(0, 1fr) auto !important;
+}
+
+@media (max-width: 720px) {
+  body.usp-home .brasoes-card-topo {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.usp-home .brasoes-card-imgbox,
+  body.usp-home .brasoes-imagem-wrap {
+    justify-self: start !important;
+  }
+
+  body.usp-home .brasoes-card-imgbox > img {
+    max-width: 132px !important;
+    max-height: 158px !important;
+  }
+
+  body.usp-home .usp-noticia-card__header {
+    grid-template-columns: 1fr !important;
+  }
+}

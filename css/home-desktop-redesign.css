@@ -968,3 +968,109 @@ body.usp-home img { display: block; max-width: 100%; }
   .usp-produtos-grid { grid-template-columns: 1fr; }
   .usp-produtos-grid .produto-imagem { aspect-ratio: 1 / .72; }
 }
+
+/* ======================================================
+   Página Brasões — acervo institucional desktop
+   ====================================================== */
+.usp-brasoes .usp-brasoes-hero { padding: 58px 0 34px; }
+.usp-brasoes-hero__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(420px, .72fr); align-items: end; gap: 88px; }
+.usp-brasoes .usp-brasoes-hero h1 { max-width: 900px; font-size: clamp(38px, 4.1vw, 56px); line-height: 1.02; letter-spacing: -.06em; }
+.usp-brasoes-filter-card p { margin: -4px 0 18px; color: #526176; font-size: 13px; line-height: 1.58; }
+.usp-brasoes-form-grid { grid-template-columns: 1fr; margin-bottom: 16px; }
+.usp-brasoes-form-grid label span { position: static; width: auto; height: auto; overflow: visible; clip-path: none; display: block; margin: 0 0 8px; color: #526176; font-family: var(--usp-mono); font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; white-space: normal; }
+.usp-brasoes-form-grid select { height: 46px; }
+.usp-brasoes-filter-actions { display: grid; grid-template-columns: 160px 1fr; align-items: center; gap: 12px; margin-top: 14px; padding-top: 16px; border-top: 1px solid #e0e6ed; }
+.usp-brasoes-filter-actions .usp-btn { min-height: 42px; padding: 0 16px; border-radius: 3px; font-size: 13px; cursor: pointer; }
+.usp-brasoes-filter-actions #brasoes-contador-cards { color: #4f5f73; font-family: var(--usp-mono); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.usp-brasoes-stats .usp-stat strong { font-size: 24px; }
+.usp-brasoes-intro { padding: 70px 0 54px; }
+.usp-brasoes-method-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--usp-line); border-left: 1px solid var(--usp-line); }
+.usp-brasoes-method-grid article { min-height: 205px; padding: 28px 23px 24px; border-right: 1px solid var(--usp-line); border-bottom: 1px solid var(--usp-line); background: #fff; }
+.usp-brasoes-method-grid article span { display: block; margin-bottom: 24px; color: #64748a; font-family: var(--usp-mono); font-size: 10px; font-weight: 700; letter-spacing: .14em; }
+.usp-brasoes-method-grid article h3 { margin: 0 0 12px; color: var(--usp-ink); font-size: 17px; line-height: 1.2; letter-spacing: -.035em; }
+.usp-brasoes-method-grid article p { margin: 0; color: #506176; font-size: 13px; line-height: 1.58; }
+.usp-brasoes-list-section { background: #fbfcfe; }
+.brasoes-conteudo-lista { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: stretch; }
+.brasoes-conteudo-card { min-width: 0; display: flex; flex-direction: column; border: 1px solid var(--usp-line); border-radius: 7px; background: #fff; box-shadow: 0 16px 42px rgba(6,16,31,.045); overflow: hidden; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+.brasoes-conteudo-card:hover { transform: translateY(-2px); border-color: #c9d4e1; box-shadow: 0 24px 58px rgba(6,16,31,.085); }
+.brasoes-conteudo-card[hidden] { display: none !important; }
+.brasoes-card-topo { display: grid; grid-template-columns: 118px minmax(0, 1fr); gap: 20px; padding: 22px 22px 18px; border-bottom: 1px solid #edf1f5; }
+.brasoes-card-imgbox { width: 118px; height: 118px; display: grid; place-items: center; padding: 12px; border: 1px solid #dce3ec; border-radius: 6px; background: repeating-linear-gradient(135deg, #f6f8fb 0, #f6f8fb 9px, #eef2f6 9px, #eef2f6 18px); }
+.brasoes-card-imgbox img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 8px 14px rgba(6,16,31,.08)); }
+.brasoes-card-copy { min-width: 0; }
+.brasoes-card-kicker { display: block; margin: 0 0 9px; color: #6b5a12; font-family: var(--usp-mono); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; line-height: 1.45; }
+.brasoes-card-copy h2 { margin: 0; color: var(--usp-ink); font-size: 20px; line-height: 1.14; letter-spacing: -.045em; }
+.brasoes-card-copy p { margin: 11px 0 0; color: #44556a; font-size: 13px; line-height: 1.58; }
+.brasoes-card-indicadores { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-bottom: 1px solid #edf1f5; }
+.brasoes-card-indicadores div { min-height: 74px; padding: 15px 14px 13px; border-right: 1px solid #edf1f5; background: #fbfcfe; }
+.brasoes-card-indicadores div:last-child { border-right: 0; }
+.brasoes-card-indicadores span { display: block; color: #637288; font-family: var(--usp-mono); font-size: 9px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.brasoes-card-indicadores strong { display: block; margin-top: 6px; color: var(--usp-ink); font-size: 12px; line-height: 1.28; }
+.brasoes-card-corpo { padding: 20px 22px 2px; }
+.brasoes-card-corpo p { margin: 0 0 14px; color: #42546a; font-size: 13px; line-height: 1.62; }
+.brasoes-card-corpo strong { color: var(--usp-ink); }
+.brasoes-card-rodape { margin-top: auto; padding: 17px 22px 20px; border-top: 1px dashed #d8e0e9; }
+.brasoes-card-rodape p { margin: 0 0 14px; color: #64748a; font-size: 12px; line-height: 1.52; }
+.brasoes-card-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.brasoes-card-links button,
+.brasoes-card-links a { min-height: 38px; display: inline-flex; align-items: center; justify-content: center; padding: 0 13px; border: 1px solid #d4dde7; border-radius: 3px; color: var(--usp-ink); background: #fff; font-size: 12px; font-weight: 800; cursor: pointer; transition: background .18s ease, border-color .18s ease, transform .18s ease; }
+.brasoes-card-links button { color: #fff; border-color: var(--usp-navy); background: var(--usp-navy); }
+.brasoes-card-links button::after { content: "→"; margin-left: 8px; color: var(--usp-gold); }
+.brasoes-card-links a:hover,
+.brasoes-card-links button:hover { transform: translateY(-1px); border-color: var(--usp-gold-dark); }
+.brasoes-paginacao { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 34px 0 0; }
+.brasoes-paginacao[hidden] { display: none !important; }
+.brasoes-paginacao button { min-width: 44px; height: 38px; border: 1px solid #cfd8e3; border-radius: 3px; color: #06101f; background: #fff; font: 700 12px var(--usp-sans); cursor: pointer; }
+.brasoes-paginacao button[aria-current="page"] { border-color: var(--usp-navy); color: #fff; background: var(--usp-navy); }
+.brasoes-paginacao button:disabled { opacity: .42; cursor: not-allowed; }
+.usp-brasoes-detail-section { padding: 54px 0 84px; background: #fff; }
+.usp-brasoes-detail[hidden] { display: none !important; }
+.usp-brasoes-detail { border: 1px solid var(--usp-line); border-top: 3px solid var(--usp-gold); border-radius: 7px; padding: 34px; background: #fbfcfe; box-shadow: 0 18px 50px rgba(6,16,31,.06); }
+.usp-brasoes-detail h2 { margin: 0; color: var(--usp-ink); font-size: clamp(25px, 2.5vw, 34px); line-height: 1.12; letter-spacing: -.05em; }
+.usp-brasoes-detail h2 mark { color: var(--usp-gold-dark); background: transparent; }
+.usp-brasoes-detail-intro { max-width: 820px; margin: 14px 0 26px; color: #42546a; font-size: 14px; line-height: 1.6; }
+.brasoes-historia-resultado { display: grid; gap: 18px; }
+.brasoes-historia-resultado .brasoes-hero { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 28px; align-items: center; padding: 26px; border: 1px solid #dfe6ee; border-radius: 7px; background: #fff; }
+.brasoes-imagem-wrap { width: 220px; min-height: 220px; display: grid; place-items: center; padding: 20px; border: 1px solid #dce3ec; border-radius: 6px; background: repeating-linear-gradient(135deg, #f6f8fb 0, #f6f8fb 9px, #eef2f6 9px, #eef2f6 18px); }
+.brasoes-imagem { width: 100%; max-height: 180px; object-fit: contain; filter: drop-shadow(0 12px 18px rgba(6,16,31,.1)); }
+.brasoes-hero-copy .brasoes-kicker { display: inline-flex; width: max-content; max-width: 100%; margin: 0 0 12px; padding: 5px 9px; border: 1px solid #e4ca64; color: #7d640f; background: #fff9e5; font-family: var(--usp-mono); font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.brasoes-hero-copy h3 { margin: 0; color: var(--usp-ink); font-size: clamp(24px, 2.7vw, 38px); line-height: 1.08; letter-spacing: -.055em; }
+.brasoes-hero-copy p { margin: 12px 0 0; color: #3f5065; font-size: 15px; }
+.brasoes-hero-copy small { display: block; margin-top: 10px; color: #637288; font-family: var(--usp-mono); font-size: 11px; }
+.brasoes-resumo-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.brasoes-resumo-item { min-height: 82px; padding: 16px 14px; border: 1px solid #dfe6ee; border-radius: 5px; background: #fff; }
+.brasoes-resumo-item span { display: block; color: #64748a; font-family: var(--usp-mono); font-size: 9px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+.brasoes-resumo-item strong { display: block; margin-top: 7px; color: var(--usp-ink); font-size: 13px; line-height: 1.28; }
+.brasoes-historia-card { padding: 22px 24px; border: 1px solid #dfe6ee; border-radius: 7px; background: #fff; }
+.brasoes-section-title span { display: block; margin-bottom: 8px; color: #6b5a12; font-family: var(--usp-mono); font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+.brasoes-section-title h3 { margin: 0 0 14px; color: var(--usp-ink); font-size: 21px; line-height: 1.2; letter-spacing: -.04em; }
+.brasoes-historia-card p { margin: 0 0 12px; color: #405166; font-size: 14px; line-height: 1.68; }
+.brasoes-historia-card p:last-child { margin-bottom: 0; }
+.brasoes-marcos { margin: 0; padding-left: 18px; color: #405166; font-size: 14px; line-height: 1.68; }
+.brasoes-marcos li { margin: 0 0 8px; }
+.brasoes-observacao { border-left: 3px solid var(--usp-gold); background: #fffdf3; }
+.brasoes-observacao strong { display: block; margin-bottom: 8px; color: var(--usp-ink); }
+.brasoes-observacao small { display: block; margin-top: 8px; color: #6b7280; font-size: 12px; line-height: 1.58; }
+.usp-brasoes-warning { border-top: 3px solid var(--usp-gold); }
+.usp-toast { position: fixed; right: 22px; bottom: 22px; z-index: 50; max-width: 360px; padding: 12px 14px; border: 1px solid rgba(215,182,46,.4); border-radius: 6px; color: #fff; background: rgba(6,16,31,.94); font-size: 13px; line-height: 1.45; box-shadow: 0 18px 40px rgba(6,16,31,.25); opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity .18s ease, transform .18s ease; }
+.usp-toast.show,
+.usp-toast.is-visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 1180px) {
+  .usp-brasoes-hero__grid { grid-template-columns: 1fr; gap: 42px; }
+  .usp-brasoes-method-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .brasoes-conteudo-lista { grid-template-columns: 1fr; }
+  .brasoes-resumo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .usp-brasoes .usp-brasoes-hero h1 { font-size: 36px; }
+  .usp-brasoes-filter-actions { grid-template-columns: 1fr; }
+  .usp-brasoes-method-grid { grid-template-columns: 1fr; }
+  .brasoes-card-topo { grid-template-columns: 1fr; }
+  .brasoes-card-imgbox { width: 100%; height: 160px; }
+  .brasoes-card-indicadores { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .brasoes-historia-resultado .brasoes-hero { grid-template-columns: 1fr; }
+  .brasoes-imagem-wrap { width: 100%; min-height: 190px; }
+  .brasoes-resumo-grid { grid-template-columns: 1fr; }
+  .usp-brasoes-detail { padding: 24px 18px; }
+}

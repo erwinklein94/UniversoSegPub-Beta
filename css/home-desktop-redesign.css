@@ -1876,3 +1876,108 @@ body.usp-home .associacoes-card-links button {
   }
 }
 
+
+/* =======================================================
+   AJUSTE GLOBAL — MENU PRINCIPAL COMPLETO NO CABEÇALHO
+   Mostra todas as abas principais em texto legível, sem
+   esconder itens atrás do hover ou da busca.
+   ======================================================= */
+body.usp-home .usp-header__inner {
+  min-height: auto !important;
+  padding: 14px 0 15px !important;
+  display: grid !important;
+  grid-template-columns: minmax(260px, auto) minmax(220px, 360px) !important;
+  grid-template-areas:
+    "brand search"
+    "nav nav" !important;
+  align-items: center !important;
+  gap: 12px 28px !important;
+}
+
+body.usp-home .usp-brand {
+  grid-area: brand !important;
+  min-width: 0 !important;
+}
+
+body.usp-home .usp-search {
+  grid-area: search !important;
+  justify-self: end !important;
+  width: min(360px, 100%) !important;
+  flex: initial !important;
+  margin-left: 0 !important;
+}
+
+body.usp-home .usp-nav {
+  grid-area: nav !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin-left: 0 !important;
+  padding-top: 11px !important;
+  border-top: 1px solid rgba(255,255,255,.09) !important;
+  display: flex !important;
+  flex: initial !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 4px 8px !important;
+  overflow: visible !important;
+}
+
+body.usp-home .usp-header .usp-nav a,
+body.usp-home .usp-header .usp-nav a:link,
+body.usp-home .usp-header .usp-nav a:visited,
+body.usp-home .usp-header .usp-nav a:active {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 34px !important;
+  line-height: 1 !important;
+  padding: 0 10px !important;
+  border-radius: 3px !important;
+  color: #f6f9fd !important;
+  -webkit-text-fill-color: #f6f9fd !important;
+  font-size: 13px !important;
+  font-weight: 650 !important;
+  letter-spacing: -.01em !important;
+  white-space: nowrap !important;
+}
+
+body.usp-home .usp-header .usp-nav a:hover,
+body.usp-home .usp-header .usp-nav a.is-active,
+body.usp-home .usp-header .usp-nav a.is-active:link,
+body.usp-home .usp-header .usp-nav a.is-active:visited {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  background: rgba(255,255,255,.055) !important;
+}
+
+body.usp-home .usp-header .usp-nav a::after {
+  display: none !important;
+}
+
+body.usp-home .usp-header .usp-nav a.is-active {
+  box-shadow: inset 0 -2px 0 var(--usp-gold) !important;
+}
+
+@media (max-width: 920px) {
+  body.usp-home .usp-header__inner {
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "brand"
+      "search"
+      "nav" !important;
+    gap: 12px !important;
+  }
+
+  body.usp-home .usp-search {
+    justify-self: stretch !important;
+    width: 100% !important;
+  }
+
+  body.usp-home .usp-nav {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    padding-bottom: 2px !important;
+    scrollbar-width: thin !important;
+  }
+}

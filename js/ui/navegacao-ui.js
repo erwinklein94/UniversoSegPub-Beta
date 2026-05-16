@@ -54,7 +54,7 @@ function escapeHtml(str = '') {
 /* ============================================================ */
 /* === UI: MENU, TEMA, TROCA DE PÁGINA ======================== */
 /* ============================================================ */
-/* BLOCO 15.8 — Menu lateral, navegação por abas e tema */
+/* BLOCO 15.8 — Menu superior, navegação por abas e tema */
 function toggleMenu(forceOpen) {
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('menuOverlay');

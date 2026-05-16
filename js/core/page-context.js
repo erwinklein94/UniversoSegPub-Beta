@@ -38,7 +38,7 @@
     home_topo: 'Topo da página principal',
     home_meio_consultas: 'Meio da página principal, após consultas principais',
     home_meio_produtos: 'Página principal, antes de conteúdos e produtos',
-    menu_lateral: 'Menu lateral',
+    menu_lateral: 'Menu superior',
     remuneracao_antes_tabela: 'Página de remuneração, antes da tabela',
     direitos_entre_formulario_parecer: 'Página de direitos, entre formulário e parecer',
     concursos_antes_lista: 'Página de concursos, antes da lista',

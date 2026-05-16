@@ -1847,3 +1847,32 @@ body.usp-home .associacoes-card-links button {
     flex: 0 0 240px !important;
   }
 }
+
+/* =======================================================
+   AJUSTE GLOBAL — LOGOTIPO OFICIAL NO CABEÇALHO
+   Substitui o marcador textual antigo pelo logoleão real.
+   ======================================================= */
+.usp-brand__mark {
+  width: 56px !important;
+  height: 56px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(215,182,46,.58) !important;
+  background: #050912 !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.07), 0 8px 22px rgba(0,0,0,.18) !important;
+}
+.usp-brand__logo {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+@media (max-width: 760px) {
+  .usp-brand__mark {
+    width: 48px !important;
+    height: 48px !important;
+  }
+}
+

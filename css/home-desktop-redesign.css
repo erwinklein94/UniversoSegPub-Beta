@@ -1715,3 +1715,135 @@ body.usp-404 { background: #fff; }
   .usp-404-grid.usp-card-grid { grid-template-columns: 1fr; }
 }
 
+
+/* =====================================================
+   CORREÇÃO GLOBAL DE LEGIBILIDADE — 2026-05-16
+   Garante contraste fixo no cabeçalho, links visitados
+   e botões escuros em todas as páginas do redesign.
+   ===================================================== */
+body.usp-home .usp-header .usp-nav a,
+body.usp-home .usp-header .usp-nav a:link,
+body.usp-home .usp-header .usp-nav a:visited,
+body.usp-home .usp-header .usp-nav a:active {
+  color: #f6f9fd !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-shadow: none !important;
+  -webkit-text-fill-color: #f6f9fd !important;
+}
+
+body.usp-home .usp-header .usp-nav a:hover,
+body.usp-home .usp-header .usp-nav a.is-active,
+body.usp-home .usp-header .usp-nav a.is-active:link,
+body.usp-home .usp-header .usp-nav a.is-active:visited {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+body.usp-home .usp-topline a,
+body.usp-home .usp-topline a:link,
+body.usp-home .usp-topline a:visited,
+body.usp-home .usp-footer a,
+body.usp-home .usp-footer a:link,
+body.usp-home .usp-footer a:visited {
+  color: #f2f6fb !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: #f2f6fb !important;
+}
+
+body.usp-home .usp-topline a:hover,
+body.usp-home .usp-footer a:hover {
+  color: var(--usp-gold) !important;
+  -webkit-text-fill-color: var(--usp-gold) !important;
+}
+
+body.usp-home .usp-btn--dark,
+body.usp-home a.usp-btn--dark,
+body.usp-home a.usp-btn--dark:link,
+body.usp-home a.usp-btn--dark:visited,
+body.usp-home a.usp-btn--dark:active,
+body.usp-home button.usp-btn--dark,
+body.usp-home .principal-btn,
+body.usp-home a.principal-btn,
+body.usp-home a.principal-btn:link,
+body.usp-home a.principal-btn:visited {
+  color: #ffffff !important;
+  background: var(--usp-navy) !important;
+  border-color: var(--usp-navy) !important;
+  opacity: 1 !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+body.usp-home .usp-btn--dark:hover,
+body.usp-home a.usp-btn--dark:hover,
+body.usp-home button.usp-btn--dark:hover,
+body.usp-home .principal-btn:hover,
+body.usp-home a.principal-btn:hover {
+  color: #ffffff !important;
+  background: #0d1b2c !important;
+  border-color: #0d1b2c !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+body.usp-home .usp-btn--dark *,
+body.usp-home .principal-btn * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+body.usp-home .usp-btn--gold,
+body.usp-home a.usp-btn--gold,
+body.usp-home a.usp-btn--gold:link,
+body.usp-home a.usp-btn--gold:visited,
+body.usp-home button.usp-btn--gold,
+body.usp-home .usp-quick-card .usp-btn--gold {
+  color: #06101f !important;
+  background: var(--usp-gold) !important;
+  border-color: var(--usp-gold) !important;
+  -webkit-text-fill-color: #06101f !important;
+}
+
+body.usp-home .usp-remu-chip-group button.is-active,
+body.usp-home .usp-remu-sort button.is-active,
+body.usp-home .usp-remu-pagination button[aria-current="page"],
+body.usp-home .concursos-paginacao button[aria-current="page"],
+body.usp-home .usp-noticias-pagination button[aria-current="page"],
+body.usp-home .brasoes-paginacao button[aria-current="page"],
+body.usp-home .direitos-paginacao button[aria-current="page"],
+body.usp-home .guia-paginacao button[aria-current="page"],
+body.usp-home .acoes-paginacao button[aria-current="page"],
+body.usp-home .associacoes-paginacao button[aria-current="page"],
+body.usp-home .concursos-card-links button,
+body.usp-home .brasoes-card-links button,
+body.usp-home .direitos-card-links button,
+body.usp-home .acoes-card-links button,
+body.usp-home .associacoes-card-links button {
+  color: #ffffff !important;
+  background: var(--usp-navy) !important;
+  border-color: var(--usp-navy) !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+@media (min-width: 901px) {
+  body.usp-home .usp-header__inner {
+    gap: 24px !important;
+  }
+
+  body.usp-home .usp-nav {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    justify-content: center !important;
+    gap: clamp(14px, 1.55vw, 24px) !important;
+    overflow: visible !important;
+  }
+
+  body.usp-home .usp-nav a {
+    display: inline-flex !important;
+    align-items: center !important;
+    min-width: max-content !important;
+  }
+
+  body.usp-home .usp-search {
+    flex: 0 0 240px !important;
+  }
+}

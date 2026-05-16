@@ -1,5 +1,68 @@
-/* Módulo organizado por responsabilidade — Contato, contador e inicialização.
+/* Módulo organizado por responsabilidade — Contato, anúncios, contador e inicialização.
    Mantém a ordem original para preservar compatibilidade. */
+
+/* === ESPAÇOS DE ANÚNCIO / LINK PARA PARCEIROS =============== */
+/* ============================================================ */
+/* BLOCO 15.13A — Direciona interessados em anúncios para o formulário */
+const ANUNCIO_AREAS_LABELS = {
+  home_topo: 'Topo da página principal',
+  home_meio_consultas: 'Meio da página principal, após consultas principais',
+  home_meio_produtos: 'Página principal, antes de conteúdos e produtos',
+  menu_lateral: 'Menu lateral',
+  remuneracao_antes_tabela: 'Aba Remuneração, antes da tabela',
+  direitos_entre_formulario_parecer: 'Aba Direitos, entre formulário e parecer',
+  concursos_antes_lista: 'Aba Concursos, antes da lista',
+  comparador_antes_resultado: 'Aba Comparar Carreiras, antes dos resultados',
+  produtos_topo: 'Topo da aba Produtos',
+  acoes_antes_lista: 'Aba Ações Judiciais, antes da lista',
+  associacoes_antes_lista: 'Aba Associações, antes da lista',
+  rodape_geral: 'Antes do rodapé'
+};
+
+function abrirContatoAnuncio(area = '') {
+  const areaNome = ANUNCIO_AREAS_LABELS[area] || 'Espaço de anúncio do portal';
+  const paginaAtual = document.body?.dataset?.page || '';
+
+  if (paginaAtual && paginaAtual !== 'parceiros') {
+    const destino = (window.UNISEGPUB_PAGE_URLS && window.UNISEGPUB_PAGE_URLS.parceiros) || 'anuncie.html';
+    const query = area ? `?area=${encodeURIComponent(area)}` : '';
+    window.location.href = `${destino}${query}`;
+    return;
+  }
+
+  if (!paginaAtual && typeof switchPage === 'function') {
+    switchPage('parceiros');
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, '', '#parceiros');
+    }
+  }
+
+  window.setTimeout(() => {
+    const assunto = document.getElementById('contato_assunto');
+    const mensagem = document.getElementById('contato_mensagem');
+    const nome = document.getElementById('contato_nome');
+    const form = document.querySelector('#page-parceiros form');
+
+    if (assunto) assunto.value = 'Parceria Comercial / Anúncio';
+
+    if (mensagem && !mensagem.value.trim()) {
+      mensagem.value = `Olá, tenho interesse em anunciar no Universo Segurança Pública.\n\nÁrea de interesse: ${areaNome}.\n\nGostaria de receber informações sobre disponibilidade, valores, formatos e próximos passos.`;
+      atualizarContador();
+    }
+
+    if (form) {
+      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    if (nome) {
+      try {
+        nome.focus({ preventScroll: true });
+      } catch (e) {
+        nome.focus();
+      }
+    }
+  }, 0);
+}
 
 /* ============================================================ */
 /* === CONTADOR DE CARACTERES (CONTATO) ======================= */

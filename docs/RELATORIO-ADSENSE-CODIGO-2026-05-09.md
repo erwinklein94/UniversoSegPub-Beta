@@ -17,6 +17,7 @@ Foi inserido o snippet oficial do Google AdSense dentro da tag `<head>` das pág
 - acoes-judiciais.html
 - anuncie.html
 - associacoes-sindicatos.html
+- base-legal.html
 - brasoes.html
 - comparar-carreiras.html
 - concursos.html
@@ -27,15 +28,18 @@ Foi inserido o snippet oficial do Google AdSense dentro da tag `<head>` das pág
 - partials/pages/404/head.html
 - partials/pages/acoes-judiciais/head.html
 - partials/pages/associacoes-sindicatos/head.html
+- partials/pages/base-legal/head.html
 - partials/pages/brasoes/head.html
 - partials/pages/comparar-carreiras/head.html
 - partials/pages/concursos/head.html
 - partials/pages/direitos/head.html
 - partials/pages/index/head.html
 - partials/pages/parceiros/head.html
+- partials/pages/poderes-deveres/head.html
 - partials/pages/produtos/head.html
 - partials/pages/remuneracao/head.html
 - partials/pilot/anuncie/head.html
+- poderes-deveres.html
 - privacidade.html
 - produtos.html
 - remuneracao.html

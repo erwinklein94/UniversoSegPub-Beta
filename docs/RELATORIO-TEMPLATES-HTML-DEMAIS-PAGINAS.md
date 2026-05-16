@@ -11,6 +11,7 @@ Foram criados templates e partials para estas páginas:
 - `index.html`
 - `remuneracao.html`
 - `direitos.html`
+- `poderes-deveres.html`
 - `brasoes.html`
 - `concursos.html`
 - `comparar-carreiras.html`

@@ -31,6 +31,18 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://universosegpub.com.br/poderes-deveres.html</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://universosegpub.com.br/base-legal.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://universosegpub.com.br/brasoes.html</loc>
     <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -67,7 +79,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://universosegpub.com.br/parceiros.html</loc>
+    <loc>https://universosegpub.com.br/anuncie.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

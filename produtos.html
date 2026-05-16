@@ -27,7 +27,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
-<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260515menu-sem-vazios" rel="stylesheet"/>
+<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260515produtos-sem-rolagem" rel="stylesheet"/>
 <!-- BLOCO 01.6 — Ajuste da vitrine da aba Produtos -->
 <style>
   .page-produtos #page-produtos {
@@ -40,22 +40,6 @@
     gap: 18px !important;
     align-items: stretch !important;
     margin-bottom: 24px;
-  }
-
-  .page-produtos #page-produtos .curso-pmesp-only.produtos-vitrine,
-  .page-produtos #page-produtos .curso-pcsp-only.produtos-vitrine,
-  .page-produtos #page-produtos .curso-pmto-only.produtos-vitrine {
-    display: none !important;
-  }
-
-  body[data-inst="pmesp"] #page-produtos .curso-pmesp-only.produtos-vitrine,
-  body[data-inst="pcsp"] #page-produtos .curso-pcsp-only.produtos-vitrine,
-  body[data-inst="pmto"] #page-produtos .curso-pmto-only.produtos-vitrine {
-    display: grid !important;
-  }
-
-  body[data-inst="pmto"] #page-produtos .curso-outra-inst-only {
-    display: none !important;
   }
 
   .page-produtos #page-produtos .produtos-vitrine .produto-card {
@@ -158,6 +142,84 @@
     margin-top: 0;
   }
 
+  .page-produtos .produtos-filter-panel {
+    max-width: min(1480px, calc(100% - 40px));
+    margin: 18px auto 26px;
+  }
+
+  .page-produtos .produtos-filter-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(260px, .6fr);
+    gap: 18px;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid var(--border-card);
+    border-radius: 24px;
+    background: var(--bg-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  .page-produtos .produtos-filter-kicker {
+    display: inline-flex;
+    width: fit-content;
+    margin-bottom: 8px;
+    padding: 6px 10px;
+    border: 1px solid var(--border-input);
+    border-radius: 999px;
+    color: var(--text-muted);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .9px;
+    text-transform: uppercase;
+  }
+
+  .page-produtos .produtos-filter-copy h2 {
+    margin: 0 0 8px;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(22px, 3vw, 34px);
+    line-height: 1.05;
+    text-transform: uppercase;
+  }
+
+  .page-produtos .produtos-filter-copy p {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .page-produtos .produtos-filter-control {
+    display: grid;
+    gap: 8px;
+  }
+
+  .page-produtos .produtos-filter-control label {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 800;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+  }
+
+  .page-produtos .produtos-filter-control select {
+    width: 100%;
+    min-height: 46px;
+    padding: 0 14px;
+    border: 1px solid var(--border-input);
+    border-radius: 14px;
+    background: var(--bg-input);
+    color: var(--text-main);
+    font: inherit;
+  }
+
+  .page-produtos .produtos-filter-control small {
+    color: var(--text-muted);
+    line-height: 1.35;
+  }
+
+  .page-produtos #page-produtos .produtos-vitrine[hidden] {
+    display: none !important;
+  }
+
   @media (max-width: 1280px) {
     .page-produtos #page-produtos .produtos-vitrine,
     .page-produtos #page-produtos .cursos-preparatorios-geral {
@@ -177,7 +239,29 @@
       max-width: calc(100% - 18px) !important;
     }
 
+    .page-produtos .produtos-filter-panel {
+      max-width: calc(100% - 18px);
+      margin: 12px auto 18px;
+    }
+
+    .page-produtos .produtos-filter-shell {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding: 14px;
+      border-radius: 18px;
+    }
+
+    .page-produtos .produtos-filter-copy h2 {
+      font-size: 22px;
+    }
+
+    .page-produtos .produtos-filter-copy p,
+    .page-produtos .produtos-filter-control small {
+      font-size: 12px;
+    }
+
     .page-produtos #page-produtos .produtos-vitrine,
+
     .page-produtos #page-produtos .cursos-preparatorios-geral {
       grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
       gap: 10px !important;
@@ -266,9 +350,6 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4280112532471663"
      crossorigin="anonymous"></script>
 <!-- /BLOCO ADSENSE -->
-
-  <!-- Redesign institucional importado do standalone preservando lógica de brasões/bandeiras -->
-  <link rel="stylesheet" href="css/redesign-institucional.css?v=20260516fix1">
 </head>
 <body class="app-soft-theme" data-inst="portal" data-page="produtos">
 <div aria-label="Controles rápidos do visual app" class="app-floating-actions">
@@ -284,7 +365,7 @@
 </nav>
 <!-- =======================================================
      BLOCO 03 — HTML / ESTRUTURA VISÍVEL DO SITE
-     Cabeçalho, menu superior, páginas/abas, formulários e rodapé.
+     Cabeçalho, menu lateral, páginas/abas, formulários e rodapé.
      ======================================================= -->
 <!-- BLOCO 03.1 — Cabeçalho institucional premium com seletor, estado e carreira -->
 <header class="site-header" role="banner">
@@ -365,14 +446,6 @@
 <div class="header-leadership-item header-command-item is-hidden" hidden>
 <span id="header-label-comando">Comando/Direção</span>
 <strong id="header-resumo-comando">—</strong>
-</div>
-</div>
-<div class="header-controls-grid header-controls-grid--summary">
-<div aria-label="Escolha rápida de instituição" class="header-inst-selector">
-<label for="instituicao_header">Consultar instituição</label>
-<select aria-label="Selecione a instituição no topo do site" id="instituicao_header">
-<option disabled="" selected="" value="">Escolha uma instituição</option>
-</select>
 </div>
 </div>
 </aside>
@@ -505,10 +578,26 @@
 <div class="stripe-white"></div>
 <div class="stripe-black"></div>
 </div>
-<!-- BLOCO 03.3 — Overlay escuro do menu superior -->
+<section aria-label="Filtro de produtos por instituição" class="produtos-filter-panel">
+<div class="produtos-filter-shell">
+<div class="produtos-filter-copy">
+<span class="produtos-filter-kicker">Filtro da vitrine</span>
+<h2>Produtos por instituição</h2>
+<p>Escolha uma instituição para exibir os itens gerais da vitrine e também os produtos compatíveis com a UF ou instituição selecionada.</p>
+</div>
+<div class="produtos-filter-control">
+<label for="produtos_instituicao">Filtrar por instituição</label>
+<select aria-label="Filtrar produtos por instituição" id="produtos_instituicao">
+<option selected="" value="">Todos os produtos</option>
+</select>
+<small id="produtos-filtro-status">Mostrando todos os produtos da vitrine.</small>
+</div>
+</div>
+</section>
+<!-- BLOCO 03.3 — Overlay escuro do menu lateral -->
 <div aria-hidden="true" class="menu-overlay" id="menuOverlay"></div>
-<!-- BLOCO 03.4 — Menu superior: navegação institucional, grupos de consulta, Instagram e parceiros -->
-<aside aria-label="Menu principal superior" class="sidebar" id="sidebar" role="navigation">
+<!-- BLOCO 03.4 — Menu lateral: navegação institucional, grupos de consulta, Instagram e parceiros -->
+<aside aria-label="Menu principal" class="sidebar" id="sidebar" role="navigation">
 <div class="sidebar-header">
 <div aria-label="Identidade da navegação" class="sidebar-brand">
 <strong>Universo Segurança Pública</strong>
@@ -516,7 +605,7 @@
 </div>
 <button aria-label="Fechar menu" class="close-btn" type="button"><span aria-hidden="true">✕</span></button>
 </div>
-<!-- BLOCO 03.4.1 — Seletor de instituição do menu superior -->
+<!-- BLOCO 03.4.1 — Seletor de instituição do menu lateral -->
 <div class="inst-selector sidebar-inst-panel">
 <label for="instituicao">Instituição selecionada</label>
 <select aria-label="Selecione a instituição" id="instituicao">
@@ -550,24 +639,24 @@
 </div>
 <div aria-label="Produtos, conteúdos e parceiros" class="sidebar-nav-group">
 <div class="sidebar-nav-title">
-<span>Produtos e parcerias</span>
-<small>Produtos, cursos e parcerias</small>
+<span>Loja e parcerias</span>
+<small>Produtos, cursos e contato comercial</small>
 </div>
 <a aria-current="page" class="active" href="produtos.html" id="menu-produtos" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">🛒</span>
 <span class="sidebar-link-text">Produtos</span>
 <small>Cursos, livros e equipamentos</small>
 </a>
-<a href="parceiros.html" id="menu-parceiros" role="link" tabindex="0">
+<a href="anuncie.html" id="menu-parceiros" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">📣</span>
 <span class="sidebar-link-text">Parceiros</span>
-<small>Parcerias e contato</small>
+<small>Anuncie ou fale conosco</small>
 </a>
 </div>
-<div aria-label="Informações de carreira" class="sidebar-nav-group">
+<div aria-label="Informações de carreira e legislação" class="sidebar-nav-group">
 <div class="sidebar-nav-title">
-<span>Carreira</span>
-<small>Dados funcionais e benefícios</small>
+<span>Carreira e legislação</span>
+<small>Dados funcionais, normas e benefícios</small>
 </div>
 <a href="remuneracao.html" id="menu-remuneracao" role="link" tabindex="0">
 <span aria-hidden="true" class="sidebar-link-icon">💰</span>
@@ -578,6 +667,16 @@
 <span aria-hidden="true" class="sidebar-link-icon">⚖️</span>
 <span class="sidebar-link-text">Direitos e Vantagens</span>
 <small>Benefícios, adicionais e alertas</small>
+</a>
+<a href="poderes-deveres.html" id="menu-poderes" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">📜</span>
+<span class="sidebar-link-text">Poderes e Deveres</span>
+<small>Competências, limites e deveres</small>
+</a>
+<a href="base-legal.html" id="menu-baselegal" role="link" tabindex="0">
+<span aria-hidden="true" class="sidebar-link-icon">🏛️</span>
+<span class="sidebar-link-text">Base Legal</span>
+<small>Leis, decretos e enquadramentos</small>
 </a>
 </div>
 <div aria-label="Pesquisa, concursos e comparação" class="sidebar-nav-group">
@@ -626,7 +725,7 @@
 <strong>Seguir no Instagram</strong>
 </a>
 </div>
-<!-- BLOCO 03.4.3A — Produtos da vitrine no menu superior -->
+<!-- BLOCO 03.4.3A — Produtos da vitrine no menu lateral -->
 <section aria-label="Produtos" class="sidebar-products-vitrine">
 <div class="sidebar-products-title">
 <strong>Produtos</strong>
@@ -716,6 +815,7 @@
 <!-- BLOCO 04 — PÁGINA PRINCIPAL / RESUMO DO SITE -->
 <!-- BLOCO 04.3 — PÁGINA REMUNERAÇÃO TABELADA -->
 <!-- BLOCO 06 — PÁGINA DIREITOS E VANTAGENS -->
+<!-- BLOCO 06.5 — PÁGINA PODERES E DEVERES -->
 <!-- BLOCO 06.6 — PÁGINA BRASÕES E HISTÓRIA -->
 <!-- BLOCO 07 — PÁGINA CONCURSOS -->
 <!-- BLOCO 07.1 — PÁGINA COMPARAR CARREIRAS -->
@@ -763,6 +863,14 @@
 <!-- BLOCO 09 — PÁGINA AÇÕES JUDICIAIS -->
 <!-- BLOCO 10 — PÁGINA ASSOCIAÇÕES E SINDICATOS -->
 <!-- BLOCO 11 — PÁGINA PARCEIROS E CONTATO -->
+<!-- BLOCO 12.5 — Espaço comercial antes do rodapé -->
+<aside aria-label="Espaço de anúncio antes do rodapé" class="ad-slot ad-slot--footer" data-ad-area="rodape_geral">
+<a class="ad-placeholder-link" href="anuncie.html?area=rodape_geral">
+<span class="ad-label">Publicidade</span>
+<strong>Anuncie aqui</strong>
+<small>Espaço final para reforço de marca, campanhas institucionais e chamadas comerciais gerais.</small>
+</a>
+</aside>
 <!-- BLOCO 13 — RODAPÉ DO SITE -->
 <footer role="contentinfo">
 <div aria-label="Aviso institucional do portal" class="footer-disclaimer">
@@ -771,7 +879,7 @@
 <a href="privacidade.html">Política de Privacidade</a>
 <a href="termos.html">Termos de Uso</a>
 <a href="cookies.html">Política de Cookies</a>
-<a href="parceiros.html">Contato e Parcerias</a>
+<a href="anuncie.html">Contato e Anúncios</a>
 </nav>
 <p class="small-note footer-credit">Desenvolvido por <strong>LOCKSTAGE</strong>.</p>
 </div>
@@ -795,15 +903,15 @@
 <script defer="" src="js/data/concursos-data.js"></script>
 <script defer="" src="js/data/portal-config.js?v=20260506bmba1"></script>
 <script defer="" src="js/data/bases-conteudo.js"></script>
-<script defer="" src="js/ui/navegacao-ui.js?v=20260515menu-sem-vazios"></script>
+<script defer="" src="js/ui/navegacao-ui.js?v=20260503homeinst1"></script>
 <script defer="" src="js/services/remuneracao.js?v=20260506bmba1"></script>
 <script defer="" src="js/data/header-brasoes-config.js?v=20260504headerbrasoes1"></script>
 <script defer="" src="js/ui/header-estados.js?v=20260510brasoes1"></script>
 <script defer="" src="js/pages/contato-init.js?v=20260503homeinst1"></script>
 <script defer="" src="js/data/produtos-data.js?v=20260513escrivaopfimg1"></script>
-<script defer="" src="js/pages/produtos-render.js?v=20260503produtosrender1"></script>
+<script defer="" src="js/pages/produtos-render.js?v=20260512produtosfiltro1"></script>
 <script defer="" src="js/ui/event-bindings.js?v=20260506comparador4"></script>
-<script defer="" src="js/core/page-context.js?v=20260515sem-abas-removidas1"></script>
+<script defer="" src="js/core/page-context.js?v=20260506baselegal1"></script>
 <script defer="" src="js/brasao-lightbox.js?v=20260501"></script>
 <script defer="" src="js/ui/cookie-consent.js?v=20260509adsense1"></script>
 </body>

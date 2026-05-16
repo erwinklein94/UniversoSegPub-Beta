@@ -67,10 +67,7 @@ function toggleMenu(forceOpen) {
 
   sidebar.classList.toggle('active', shouldOpen);
   overlay.classList.toggle('active', shouldOpen);
-  document.documentElement.classList.toggle('menu-superior-aberto', shouldOpen);
-  document.querySelectorAll('.menu-btn').forEach(menuBtn => {
-    menuBtn.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
-  });
+  btn.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
 }
 
 function closeMenu() {
@@ -121,6 +118,7 @@ function switchPage(page) {
   if (page === 'direitos') analisarDireitos();
   else if (page === 'concursos') carregarConcursos();
   else if (page === 'comparar') inicializarComparadorCarreiras();
+  else if (page === 'poderes') inicializarPoderesDeveres();
   else if (page === 'brasoes') renderizarBrasoesHistoria();
   else if (page === 'acoes') carregarAcoes();
   else if (page === 'associacoes') carregarAssociacoes();
@@ -154,12 +152,13 @@ function getNomeAbaAtual() {
     associacoes: 'Associações e Sindicatos',
     remuneracao: 'Remuneração Tabelada',
     concursos: 'Concursos',
+    poderes: 'Poderes e Deveres',
     brasoes: 'Brasões e história',
     guia: 'Guia das instituições',
     comparar: 'Comparar Carreiras',
     produtos: 'Produtos',
     direitos: 'Direitos e Vantagens',
-    parceiros: 'Parceiros e Contato'
+    parceiros: 'Parceiros - Anuncie aqui!'
   };
   return nomes[page] || 'Principal';
 }

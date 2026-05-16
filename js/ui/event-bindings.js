@@ -55,6 +55,9 @@
       safeCall('selecionarInstituicaoPaginaInicial', [event.currentTarget.value]);
     });
 
+    bindChange('#poderes_instituicao', event => {
+      safeCall('mudarInstituicaoPoderes', [event.currentTarget.value]);
+    });
 
     // Os seletores internos de cada página são inseridos dinamicamente por page-context.js.
     // Por isso, eles precisam de delegação de evento; bindChange() só pegaria elementos
@@ -131,6 +134,21 @@
           safeCall('switchPage', [event.currentTarget.dataset.page]);
         }
       });
+    });
+
+    bindClick('.ad-slot .ad-placeholder-link', event => {
+      const link = event.currentTarget;
+      const href = link.getAttribute('href') || '';
+
+      // Produtos/anúncios com link externo devem abrir o afiliado diretamente.
+      if (link.classList.contains('ad-placeholder-link--product') || /^https?:\/\//i.test(href)) {
+        return;
+      }
+
+      const area = link.closest('[data-ad-area]')?.dataset.adArea;
+      if (!area) return;
+      event.preventDefault();
+      safeCall('abrirContatoAnuncio', [area]);
     });
 
     bindInput('#idade_dir, #renda_dir', () => safeCall('analisarDireitos'));

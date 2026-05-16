@@ -22,6 +22,7 @@ python scripts/test-basic-behaviors.py
   - home;
   - remuneração;
   - direitos;
+  - poderes e deveres;
   - brasões;
   - concursos;
   - comparador;

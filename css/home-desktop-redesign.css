@@ -2084,3 +2084,12 @@ body.usp-home .usp-noticia-card__header {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* Correção global: imagens institucionais clicáveis para lightbox */
+.usp-image-clickable,
+.usp-brand img,
+.brasoes-card-imgbox img,
+.brasoes-imagem-wrap img,
+.current-flag-frame img {
+  cursor: zoom-in !important;
+}

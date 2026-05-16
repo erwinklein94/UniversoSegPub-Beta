@@ -1,361 +1,231 @@
 /*
-  Lightbox global para imagens institucionais.
-  - Permite ampliar brasões e o logoleão em qualquer página.
-  - Fecha pelo X, clique fora da imagem ou tecla ESC.
-  - Usa delegação de eventos para funcionar também com conteúdo renderizado por JS.
+  Lightbox global simples e robusto para brasões e logoleão.
+  Corrige o comportamento anterior em que o clique podia disparar carregamento/navegação
+  em vez de abrir a imagem ampliada na própria página.
 */
 (function () {
   'use strict';
 
-  const LIGHTBOX_ID = 'usp-image-lightbox';
-  const STYLE_ID = 'usp-image-lightbox-style';
-  const IMAGE_SELECTOR = [
+  var LIGHTBOX_ID = 'usp-media-lightbox';
+  var STYLE_ID = 'usp-media-lightbox-style';
+  var IMG_SELECTOR = [
+    '.usp-brand img',
+    '.usp-brand__mark img',
     'img.usp-brand__logo',
     '#header-active-flag',
-    'img.brasoes-imagem',
+    '.current-flag-frame img',
+    '.brand-logo-frame img',
     '.brasoes-card-imgbox img',
     '.brasoes-imagem-wrap img',
-    '.usp-noticia-card__brasao',
-    'img.noticias-brasao',
+    '.brasoes-imagem img',
+    'img.brasoes-imagem',
     'img.guia-artigo-brasao',
-    'img[src*="img/LOGO/logoleao"]',
-    'img[src*="/LOGO/logoleao"]',
-    'img[src*="img/FEDERAL/"]',
+    'img.noticias-brasao',
+    '.usp-noticia-card__brasao',
+    '.usp-footer img',
+    'img[src*="logoleao"]',
+    'img[src*="/LOGO/"]',
+    'img[src*="img/LOGO/"]',
     'img[src*="/FEDERAL/"]',
-    'img[src*="img/MILITAR/"]',
+    'img[src*="img/FEDERAL/"]',
     'img[src*="/MILITAR/"]',
-    'img[src*="img/CIVIL/"]',
+    'img[src*="img/MILITAR/"]',
     'img[src*="/CIVIL/"]',
-    'img[src*="img/BOMBEIRO/"]',
+    'img[src*="img/CIVIL/"]',
     'img[src*="/BOMBEIRO/"]',
-    'img[src*="img/PENAL/"]',
-    'img[src*="/PENAL/"]'
+    'img[src*="img/BOMBEIRO/"]',
+    'img[src*="/PENAL/"]',
+    'img[src*="img/PENAL/"]'
   ].join(',');
 
-  let ultimoFocoAntesDoLightbox = null;
+  var lastFocus = null;
 
-  function injetarEstilo() {
+  function injectStyle() {
     if (document.getElementById(STYLE_ID)) return;
 
-    const style = document.createElement('style');
+    var style = document.createElement('style');
     style.id = STYLE_ID;
-    style.textContent = `
-      body.usp-image-lightbox-open,
-      body.brasao-lightbox-open {
-        overflow: hidden !important;
-      }
+    style.textContent = [
+      'body.usp-media-lightbox-open{overflow:hidden!important;}',
+      IMG_SELECTOR + '{cursor:zoom-in!important;}',
+      '.usp-media-lightbox{position:fixed;inset:0;z-index:2147483646;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(2,8,18,.88);backdrop-filter:blur(8px);}',
+      '.usp-media-lightbox.is-open{display:flex!important;}',
+      '.usp-media-lightbox__panel{position:relative;width:auto;max-width:min(94vw,980px);max-height:92vh;display:flex;flex-direction:column;align-items:center;gap:12px;padding:18px;border:1px solid rgba(216,184,58,.45);border-radius:18px;background:#08111d;box-shadow:0 30px 90px rgba(0,0,0,.5);}',
+      '.usp-media-lightbox__close{position:absolute;right:12px;top:12px;z-index:2;width:42px;height:42px;border:1px solid rgba(216,184,58,.5);border-radius:999px;background:#fff;color:#07101d;font:800 28px/1 Arial,sans-serif;cursor:pointer;}',
+      '.usp-media-lightbox__close:hover,.usp-media-lightbox__close:focus-visible{outline:none;box-shadow:0 0 0 4px rgba(216,184,58,.22);}',
+      '.usp-media-lightbox__frame{max-width:min(88vw,860px);max-height:76vh;margin-top:42px;display:flex;align-items:center;justify-content:center;padding:18px;border-radius:16px;background:#f8fafc;border:1px solid rgba(226,232,240,.95);overflow:hidden;}',
+      '.usp-media-lightbox__img{display:block;width:auto!important;height:auto!important;max-width:min(82vw,780px)!important;max-height:70vh!important;object-fit:contain!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;}',
+      '.usp-media-lightbox__caption{max-width:min(82vw,780px);margin:0;color:rgba(255,255,255,.84);text-align:center;font:500 13px/1.5 Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;}',
+      '@media(max-width:640px){.usp-media-lightbox{padding:10px}.usp-media-lightbox__panel{width:100%;max-width:calc(100vw - 20px);padding:12px;border-radius:14px}.usp-media-lightbox__frame{max-width:calc(100vw - 44px);max-height:72vh;padding:12px}.usp-media-lightbox__img{max-width:calc(100vw - 68px)!important;max-height:64vh!important}}'
+    ].join('\n');
 
-      ${IMAGE_SELECTOR} {
-        cursor: zoom-in;
-      }
-
-      .brasao-header-clickable,
-      .usp-image-clickable {
-        cursor: zoom-in;
-      }
-
-      .usp-image-lightbox,
-      .brasao-lightbox {
-        position: fixed;
-        inset: 0;
-        z-index: 2147483000;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        padding: clamp(16px, 4vw, 44px);
-      }
-
-      .usp-image-lightbox.is-open,
-      .brasao-lightbox.is-open {
-        display: flex;
-      }
-
-      .usp-image-lightbox__backdrop,
-      .brasao-lightbox__backdrop {
-        position: absolute;
-        inset: 0;
-        background: rgba(2, 8, 18, .84);
-        backdrop-filter: blur(8px);
-      }
-
-      .usp-image-lightbox__content,
-      .brasao-lightbox__content {
-        position: relative;
-        z-index: 1;
-        max-width: min(94vw, 980px);
-        max-height: 92vh;
-        display: grid;
-        grid-template-rows: auto minmax(0, 1fr) auto;
-        gap: 12px;
-        justify-items: center;
-        padding: clamp(14px, 2vw, 22px);
-        border: 1px solid rgba(216, 184, 58, .38);
-        border-radius: 18px;
-        background: #08111d;
-        box-shadow: 0 28px 90px rgba(0, 0, 0, .45);
-      }
-
-      .usp-image-lightbox__close,
-      .brasao-lightbox__close {
-        justify-self: end;
-        width: 42px;
-        height: 42px;
-        border: 1px solid rgba(216, 184, 58, .42);
-        border-radius: 999px;
-        background: #ffffff;
-        color: #08111d;
-        font-size: 28px;
-        line-height: 1;
-        font-weight: 700;
-        cursor: pointer;
-      }
-
-      .usp-image-lightbox__close:hover,
-      .usp-image-lightbox__close:focus-visible,
-      .brasao-lightbox__close:hover,
-      .brasao-lightbox__close:focus-visible {
-        outline: none;
-        border-color: #d8b83a;
-        box-shadow: 0 0 0 4px rgba(216, 184, 58, .18);
-      }
-
-      .usp-image-lightbox__image-frame,
-      .brasao-lightbox__image-frame {
-        max-width: min(88vw, 860px);
-        max-height: 74vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: clamp(12px, 2vw, 26px);
-        border-radius: 16px;
-        background: #f8fafc;
-        border: 1px solid rgba(226, 232, 240, .95);
-        overflow: auto;
-      }
-
-      .usp-image-lightbox__img,
-      .brasao-lightbox__img {
-        display: block;
-        width: auto;
-        height: auto;
-        max-width: min(82vw, 760px);
-        max-height: 68vh;
-        object-fit: contain;
-        image-rendering: auto;
-      }
-
-      .usp-image-lightbox__caption,
-      .brasao-lightbox__caption {
-        max-width: min(82vw, 760px);
-        margin: 0;
-        color: rgba(255, 255, 255, .82);
-        font: 500 13px/1.5 Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        text-align: center;
-      }
-
-      @media (max-width: 640px) {
-        .usp-image-lightbox,
-        .brasao-lightbox {
-          padding: 10px;
-        }
-
-        .usp-image-lightbox__content,
-        .brasao-lightbox__content {
-          width: 100%;
-          max-width: calc(100vw - 20px);
-          padding: 12px;
-          border-radius: 14px;
-        }
-
-        .usp-image-lightbox__image-frame,
-        .brasao-lightbox__image-frame {
-          max-width: calc(100vw - 44px);
-          max-height: 72vh;
-        }
-
-        .usp-image-lightbox__img,
-        .brasao-lightbox__img {
-          max-width: calc(100vw - 76px);
-          max-height: 64vh;
-        }
-      }
-    `;
     document.head.appendChild(style);
   }
 
-  function ehImagemAmpliavel(elemento) {
-    return Boolean(elemento && elemento.matches && elemento.matches(IMAGE_SELECTOR));
+  function closestElement(target, selector) {
+    if (!target) return null;
+    var element = target.nodeType === 1 ? target : target.parentElement;
+    if (!element || !element.closest) return null;
+    return element.closest(selector);
   }
 
-  function closestSeguro(alvo, seletor) {
-    if (!alvo) return null;
-    const elemento = alvo.nodeType === 1 ? alvo : alvo.parentElement;
-    return elemento && elemento.closest ? elemento.closest(seletor) : null;
+  function isValidImage(img) {
+    if (!img || !img.matches || !img.matches(IMG_SELECTOR)) return false;
+    if (img.closest && img.closest('.usp-media-lightbox')) return false;
+    var src = img.currentSrc || img.getAttribute('src') || img.src;
+    if (!src) return false;
+    return true;
   }
 
-  function encontrarImagemAmpliavel(alvo) {
-    const img = closestSeguro(alvo, 'img');
-    return ehImagemAmpliavel(img) ? img : null;
+  function findImage(target) {
+    var img = closestElement(target, 'img');
+    return isValidImage(img) ? img : null;
   }
 
-  function garantirLightbox() {
-    let lightbox = document.getElementById(LIGHTBOX_ID);
+  function absoluteSrc(src) {
+    try {
+      return new URL(src, document.baseURI).href;
+    } catch (error) {
+      return src;
+    }
+  }
+
+  function getLabel(img) {
+    var text = (img.getAttribute('alt') || img.getAttribute('title') || '').trim();
+    if (!text) text = 'Imagem institucional ampliada';
+    return text.replace(/\s+/g, ' ');
+  }
+
+  function buildLightbox() {
+    var lightbox = document.getElementById(LIGHTBOX_ID);
     if (lightbox) return lightbox;
 
     lightbox = document.createElement('div');
     lightbox.id = LIGHTBOX_ID;
-    lightbox.className = 'usp-image-lightbox brasao-lightbox';
+    lightbox.className = 'usp-media-lightbox';
     lightbox.setAttribute('aria-hidden', 'true');
     lightbox.setAttribute('role', 'dialog');
     lightbox.setAttribute('aria-modal', 'true');
     lightbox.setAttribute('aria-label', 'Imagem ampliada');
-
     lightbox.innerHTML = [
-      '<div class="usp-image-lightbox__backdrop brasao-lightbox__backdrop" data-usp-image-close="true"></div>',
-      '<div class="usp-image-lightbox__content brasao-lightbox__content" role="document">',
-      '  <button type="button" class="usp-image-lightbox__close brasao-lightbox__close" data-usp-image-close="true" aria-label="Fechar imagem ampliada">×</button>',
-      '  <div class="usp-image-lightbox__image-frame brasao-lightbox__image-frame">',
-      '    <img class="usp-image-lightbox__img brasao-lightbox__img" alt="Imagem ampliada">',
+      '<div class="usp-media-lightbox__panel" role="document">',
+      '  <button class="usp-media-lightbox__close" type="button" aria-label="Fechar imagem ampliada">×</button>',
+      '  <div class="usp-media-lightbox__frame">',
+      '    <img class="usp-media-lightbox__img" alt="Imagem ampliada">',
       '  </div>',
-      '  <p class="usp-image-lightbox__caption brasao-lightbox__caption">Clique fora da imagem, aperte ESC ou use o botão × para fechar.</p>',
+      '  <p class="usp-media-lightbox__caption">Clique fora da imagem, aperte ESC ou use o botão × para fechar.</p>',
       '</div>'
     ].join('');
+
+    lightbox.addEventListener('click', function (event) {
+      var clickedPanel = closestElement(event.target, '.usp-media-lightbox__panel');
+      var clickedClose = closestElement(event.target, '.usp-media-lightbox__close');
+      if (clickedClose || !clickedPanel) {
+        event.preventDefault();
+        closeLightbox();
+      }
+    });
 
     document.body.appendChild(lightbox);
     return lightbox;
   }
 
-  function textoLegenda(imgOrigem) {
-    const alt = (imgOrigem.getAttribute('alt') || '').trim();
-    const title = (imgOrigem.getAttribute('title') || '').trim();
-    const legenda = alt || title || 'Imagem institucional ampliada';
-    return legenda.replace(/\s+/g, ' ');
-  }
+  function openLightbox(img) {
+    var rawSrc = img.currentSrc || img.getAttribute('src') || img.src;
+    if (!rawSrc) return;
 
-  function abrirLightbox(imgOrigem) {
-    if (!imgOrigem) return;
+    var lightbox = buildLightbox();
+    var preview = lightbox.querySelector('.usp-media-lightbox__img');
+    var caption = lightbox.querySelector('.usp-media-lightbox__caption');
+    var close = lightbox.querySelector('.usp-media-lightbox__close');
+    var label = getLabel(img);
 
-    const src = imgOrigem.currentSrc || imgOrigem.getAttribute('src');
-    if (!src) return;
+    lastFocus = document.activeElement;
 
-    const lightbox = garantirLightbox();
-    const imgAmpliada = lightbox.querySelector('.usp-image-lightbox__img');
-    const legenda = lightbox.querySelector('.usp-image-lightbox__caption');
-    const botaoFechar = lightbox.querySelector('.usp-image-lightbox__close');
-    const texto = textoLegenda(imgOrigem);
+    preview.removeAttribute('src');
+    preview.alt = label;
+    if (caption) caption.textContent = label + ' — clique fora da imagem, aperte ESC ou use o botão × para fechar.';
 
-    imgAmpliada.src = src;
-    imgAmpliada.alt = texto;
-    if (legenda) legenda.textContent = `${texto} — clique fora da imagem, aperte ESC ou use o botão × para fechar.`;
-
-    ultimoFocoAntesDoLightbox = document.activeElement;
     lightbox.classList.add('is-open');
     lightbox.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('usp-image-lightbox-open', 'brasao-lightbox-open');
+    document.body.classList.add('usp-media-lightbox-open');
 
-    if (botaoFechar) botaoFechar.focus({ preventScroll: true });
+    preview.src = absoluteSrc(rawSrc);
+
+    if (close && close.focus) close.focus({ preventScroll: true });
   }
 
-  function fecharLightbox() {
-    const lightbox = document.getElementById(LIGHTBOX_ID);
-    if (!lightbox || !lightbox.classList.contains('is-open')) return;
+  function closeLightbox() {
+    var lightbox = document.getElementById(LIGHTBOX_ID);
+    if (!lightbox) return;
 
     lightbox.classList.remove('is-open');
     lightbox.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('usp-image-lightbox-open', 'brasao-lightbox-open');
+    document.body.classList.remove('usp-media-lightbox-open');
 
-    const imgAmpliada = lightbox.querySelector('.usp-image-lightbox__img');
-    if (imgAmpliada) imgAmpliada.removeAttribute('src');
+    var img = lightbox.querySelector('.usp-media-lightbox__img');
+    if (img) img.removeAttribute('src');
 
-    if (ultimoFocoAntesDoLightbox && typeof ultimoFocoAntesDoLightbox.focus === 'function') {
-      ultimoFocoAntesDoLightbox.focus({ preventScroll: true });
+    if (lastFocus && typeof lastFocus.focus === 'function') {
+      try { lastFocus.focus({ preventScroll: true }); } catch (error) { lastFocus.focus(); }
     }
-    ultimoFocoAntesDoLightbox = null;
+    lastFocus = null;
   }
 
-  function prepararImagem(img) {
-    if (!ehImagemAmpliavel(img)) return;
-
-    img.classList.add('usp-image-clickable');
-    img.setAttribute('role', 'button');
-    img.setAttribute('tabindex', '0');
-
-    const alt = (img.getAttribute('alt') || '').trim();
-    const nome = alt ? `: ${alt}` : '';
-    img.setAttribute('aria-label', `Ampliar imagem${nome}`);
-    img.setAttribute('title', 'Clique para ampliar a imagem');
-
-    const moldura = img.closest('.current-flag-frame, .usp-brand__mark, .brasoes-card-imgbox, .brasoes-imagem-wrap');
-    if (moldura) {
-      moldura.classList.add('usp-image-clickable');
-      moldura.removeAttribute('aria-hidden');
-    }
+  function markImages(root) {
+    var scope = root && root.querySelectorAll ? root : document;
+    scope.querySelectorAll(IMG_SELECTOR).forEach(function (img) {
+      if (!isValidImage(img)) return;
+      img.classList.add('usp-image-clickable');
+      if (!img.hasAttribute('tabindex')) img.setAttribute('tabindex', '0');
+      if (!img.hasAttribute('role')) img.setAttribute('role', 'button');
+      img.setAttribute('title', 'Clique para ampliar a imagem');
+    });
   }
 
-  function prepararTodasAsImagens(raiz) {
-    const escopo = raiz && raiz.querySelectorAll ? raiz : document;
-    escopo.querySelectorAll(IMAGE_SELECTOR).forEach(prepararImagem);
+  function handleOpenEvent(event) {
+    var img = findImage(event.target);
+    if (!img) return;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    openLightbox(img);
   }
 
-  function iniciar() {
-    injetarEstilo();
-    garantirLightbox();
-    prepararTodasAsImagens(document);
+  function init() {
+    injectStyle();
+    buildLightbox();
+    markImages(document);
 
-    document.addEventListener('click', function (event) {
-      if (closestSeguro(event.target, '[data-usp-image-close="true"], [data-brasao-fechar="true"]')) {
-        event.preventDefault();
-        fecharLightbox();
-        return;
-      }
-
-      const img = encontrarImagemAmpliavel(event.target);
-      if (!img) return;
-
-      event.preventDefault();
-      event.stopPropagation();
-      abrirLightbox(img);
-    }, true);
+    document.addEventListener('click', handleOpenEvent, true);
+    document.addEventListener('auxclick', handleOpenEvent, true);
 
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape') {
-        fecharLightbox();
+        closeLightbox();
         return;
       }
 
       if (event.key !== 'Enter' && event.key !== ' ') return;
-      const img = encontrarImagemAmpliavel(event.target);
+      var img = findImage(event.target);
       if (!img) return;
-
       event.preventDefault();
-      abrirLightbox(img);
-    });
+      openLightbox(img);
+    }, true);
 
-    const observer = new MutationObserver(function (mutations) {
+    var observer = new MutationObserver(function (mutations) {
       mutations.forEach(function (mutation) {
         mutation.addedNodes.forEach(function (node) {
-          if (node.nodeType !== 1) return;
-          if (ehImagemAmpliavel(node)) prepararImagem(node);
-          prepararTodasAsImagens(node);
+          if (node.nodeType === 1) markImages(node);
         });
-
-        if (mutation.type === 'attributes' && mutation.target && mutation.target.tagName === 'IMG') {
-          prepararImagem(mutation.target);
-        }
       });
     });
-
-    observer.observe(document.documentElement, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: ['src', 'srcset', 'class', 'alt']
-    });
+    observer.observe(document.documentElement, { childList: true, subtree: true });
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', iniciar, { once: true });
+    document.addEventListener('DOMContentLoaded', init, { once: true });
   } else {
-    iniciar();
+    init();
   }
 }());

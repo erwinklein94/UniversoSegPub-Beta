@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pcap",
+  "instituicao_nome": "Polícia Civil do Estado do Amapá",
+  "sigla": "PCAP",
+  "uf": "AP",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PCAP: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PCAP com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "PCAP — Concurso Polícia Civil 2017/SEAD-AP em fase de convocações e curso de formação, com atos recentes em 2026; novo concurso 2026 em planejamento para Delegado e Oficial Investigador, sem edital aberto até publicação oficial da SEAD/AP.",
+  "salario": "Tabela SEAD/AP Grupo Polícia Civil vigente em 01/04/2024: Oficial Investigador/Agente/Oficial de Polícia Civil de R$ 6.067,95 a R$ 21.941,28; Delegado de Polícia de R$ 16.650,89 a R$ 37.733,13. Valores de subsídio, sem somar plantões, funções, adicionais, diárias, retroativos ou rubricas pessoais.",
+  "vagas": "Concurso 2017: acompanhar convocações, matrícula e formação pela página oficial SEAD/AP. Novo concurso 2026: notícias públicas indicam 295 vagas em cadastro de reserva, sendo 250 para Oficial Investigador e 45 para Delegado; não tratar como edital aberto até confirmação no portal oficial.",
+  "cotas": "Reserva de vagas e critérios de concorrência conforme edital PCAP/SEAD vigente, retificações e legislação aplicável; confirmar no edital específico.",
+  "idade": "Requisitos de idade, nacionalidade, idoneidade, aptidão física/mental, CNH quando exigida e demais condições devem ser conferidos no edital vigente; não aplicar regra militar.",
+  "escolaridade": "Delegado: bacharelado em Direito e requisitos do edital. Oficial Investigador/Agente/Oficial: nível superior conforme edital e legislação vigente da carreira.",
+  "materias": "Conteúdo programático conforme edital PCAP/SEAD: disciplinas jurídicas, língua portuguesa, conhecimentos específicos, informática/raciocínio quando previstos e legislação institucional.",
+  "banca": "Concurso PCAP 2017 organizado pela FCC; novo concurso 2026 com banca em definição até publicação oficial.",
+  "inscritos": "Página SEAD/AP mantém atos do concurso Polícia Civil 2017, incluindo Editais nº 328, 329 e 330/2026 sobre matrícula no Curso de Formação Policial Profissional.",
+  "etapas": "Provas objetiva/discursiva conforme cargo, exame de aptidão física quando previsto, exames documental e médico, avaliação psicológica, investigação social, curso de formação e demais fases do edital.",
+  "cfsd": "Curso de Formação Policial Profissional da PCAP, com matrícula, frequência, disciplina e avaliação conforme atos da SEAD/AP, Academia/Escola de Polícia e Delegacia-Geral.",
+  "estagio": "Posse, exercício, estágio probatório e lotação conforme Estatuto/lei estadual, edital, atos de nomeação e normas da Delegacia-Geral.",
+  "validade": "Conferir edital de abertura, homologação, prorrogações e atos de convocação na SEAD/AP e Diário Oficial do Estado do Amapá.",
+  "previsao": "Novo concurso PCAP 2026 deve permanecer como previsão/planejamento até publicação oficial. Não anunciar inscrições abertas sem edital da SEAD/AP.",
+  "site": "https://sead.portal.ap.gov.br/concursos/vigentes/3736",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PCAP",
+      "url": "https://sead.portal.ap.gov.br/concursos/vigentes/3736",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

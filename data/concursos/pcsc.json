@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pcsc",
+  "instituicao_nome": "Polícia Civil de Santa Catarina",
+  "sigla": "PCSC",
+  "uf": "SC",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PCSC: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PCSC com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "PCSC — Agente e Escrivão — editais 01/2025 e 02/2025",
+  "salario": "Agente: R$ 7.290,00 de salário-base + R$ 550,00 de vale-alimentação = R$ 7.840,00. Escrivão: R$ 9.720,00 de salário-base + R$ 550,00 de vale-alimentação = R$ 10.270,00, valores previstos para abril/2026.",
+  "vagas": "300 vagas: 200 para Agente de Polícia Civil e 100 para Escrivão de Polícia Civil, ambas de nível superior.",
+  "cotas": "Agente: 190 ampla concorrência e 10 PcD. Escrivão: 95 ampla concorrência e 5 PcD, conforme divulgação oficial.",
+  "idade": "Conferir edital. Exige cumprimento dos requisitos legais até a posse/matrícula conforme regra do certame.",
+  "escolaridade": "Nível superior completo para Agente e Escrivão, conforme editais 2025.",
+  "materias": "Noções de Direito Penal, Processo Penal, Constitucional, Administrativo, Direitos Humanos, Legislação Institucional, TI, Segurança Cibernética, Crimes Digitais, Contabilidade, Português e Raciocínio Lógico-Matemático.",
+  "banca": "IDECAN",
+  "inscritos": "Consultar IDECAN e atos oficiais da PCSC.",
+  "etapas": "Prova objetiva, prova de capacidade física, avaliação psicológica, investigação social, exame toxicológico de larga janela de detecção e avaliação de títulos.",
+  "cfsd": "Curso/formação conforme regras da ACADEPOL/PCSC e edital.",
+  "estagio": "Estágio probatório conforme regime estatutário estadual.",
+  "validade": "Conferir edital e atos posteriores.",
+  "previsao": "Editais 2025 publicados; acompanhar PCSC, DOE/SC e IDECAN para atos posteriores.",
+  "site": "https://pc.sc.gov.br/?p=35166",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PCSC",
+      "url": "https://pc.sc.gov.br/?p=35166",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

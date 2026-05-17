@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "bmes",
+  "instituicao_nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
+  "sigla": "CBMES",
+  "uf": "ES",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "CBMES: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da CBMES com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "CBMES — CFO 2026 — Edital de Abertura nº 001/2026 (Oficial Combatente/QOCBM); CFSd 2022 com convocações/retificações posteriores como histórico de Soldado",
+  "salario": "CFO 2026: Aluno-Oficial 1º ano R$ 4.113,27; 2º ano R$ 5.027,34; 3º ano R$ 5.484,36; Aspirante a Oficial R$ 10.221,74. Valores brutos do edital, sem somar auxílio-alimentação e GSE. Tabela PM/CBM 12/2025: Soldado Ref. 1 R$ 5.741,46 e Ref. 15 R$ 7.575,15.",
+  "vagas": "CFO 2026: 6 vagas imediatas + 400 cadastro de reserva. Distribuição: 5 ampla concorrência, 0 indígenas e 1 negros; cadastro de reserva com 300 ampla, 20 indígenas e 80 negros.",
+  "cotas": "Reservas para candidatos negros e indígenas conforme Lei Estadual nº 12.010/2023, edital e procedimento de heteroidentificação/autodeclaração.",
+  "idade": "CFO 2026: mínimo de 18 anos na matrícula e máximo de 28 anos no primeiro dia de inscrição, conforme edital e Lei ES nº 3.196/1978; altura mínima e demais requisitos conforme edital.",
+  "escolaridade": "CFO 2026: ensino médio completo ou equivalente; CNH/Permissão para dirigir automóvel no mínimo categoria B; demais cargos conforme edital específico.",
+  "materias": "Conforme Anexo IV do edital CFO 2026: conteúdo programático oficial da prova objetiva e redação, além de legislação e conhecimentos previstos no edital consolidado/retificações.",
+  "banca": "IDECAN",
+  "inscritos": "CFO 2026: inscrições pelo IDECAN no período do edital; taxa com pagamento até 06/03/2026. Acompanhar retificações, resultados e convocações no site do CBMES/IDECAN.",
+  "etapas": "Prova objetiva e redação; TAF; inspeção de saúde; avaliação psicológica; exame toxicológico; investigação social; apresentação de documentos/matrícula; Curso de Formação de Oficiais Bombeiro Militar.",
+  "cfsd": "CFO-BM previsto com duração de 3 anos, a critério da Academia, na condição de Aluno-Oficial. Soldado/CFSd deve ser acompanhado por edital específico e atos posteriores.",
+  "estagio": "Regime militar estadual e progressão após formação conforme Lei ES nº 3.196/1978, LC ES nº 910/2019, LC ES nº 911/2019 e atos do CBMES.",
+  "validade": "CFO 2026: validade de 2 anos, prorrogável por igual período, conforme edital.",
+  "previsao": "Não publicar novo concurso como aberto sem ato oficial. Destaque atual: CFO 2026 em andamento, com retificações, resultados, provas e convocações no site oficial.",
+  "site": "https://cb.es.gov.br/cfo2023",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — CBMES",
+      "url": "https://cb.es.gov.br/cfo2023",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

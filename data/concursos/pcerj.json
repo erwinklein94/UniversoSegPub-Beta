@@ -1,20 +1,20 @@
 {
   "instituicao_id": "pcerj",
-  "instituicao_nome": "Polícia Civil do Estado do Rio de Janeiro",
+  "instituicao_nome": "Polícia Civil do Rio de Janeiro",
   "sigla": "PCERJ",
   "uf": "RJ",
   "tema": "concursos",
   "status": "conteúdo inicial protegido",
-  "titulo": "PCERJ: concursos (FGV 2021)",
-  "resumo": "Informações do concurso público da Polícia Civil do RJ (página FGV Conhecimento do certame PCERJ21) com links para editais por cargo (Inspetor, Investigador, Auxiliar de Necropsia, Perito Criminal, Perito Legista e Técnico Policial de Necropsia).",
-  "edital": "FGV PCERJ21 (links para Edital nº 01 Inspetor de Polícia; Edital nº 02 Investigador Policial; Edital nº 03 Auxiliar Policial de Necropsia; Edital nº 04 Perito Criminal; Edital nº 05 Perito Legista; Edital nº 06 Técnico Policial de Necropsia).",
-  "salario": "A definir no edital.",
-  "vagas": "A definir no edital.",
-  "cotas": "A definir no edital.",
-  "idade": "A definir no edital.",
-  "escolaridade": "A definir no edital.",
-  "materias": "A definir no edital.",
-  "banca": "FGV Conhecimento (PCERJ21).",
+  "titulo": "PCERJ: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PCERJ com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "Novo concurso PCERJ 2026 anunciado/autorizado — 414 vagas previstas",
+  "salario": "A definir no edital; último concurso de Inspetor/Investigador teve remuneração inicial na faixa de R$ 5.800 a R$ 6.300",
+  "vagas": "414 vagas previstas para Delegado, Perito Criminal, Perito Legista e Piloto Policial",
+  "cotas": "Reserva de vagas conforme legislação estadual e regras do edital",
+  "idade": "A definir no novo edital; último concurso exigia idade mínima de 18 anos",
+  "escolaridade": "A definir por cargo; tendência de nível superior para os cargos previstos",
+  "materias": "A definir no edital. Últimos concursos cobraram Língua Portuguesa, Direito Penal, Direito Processual Penal, Direito Administrativo, Direito Constitucional, Informática e conhecimentos específicos.",
+  "banca": "A definir",
   "inscritos": "Ainda sem inscrições abertas para o novo concurso",
   "etapas": "A definir no edital; últimos certames tiveram prova objetiva, discursiva, TAF, exames médicos, avaliação psicológica, investigação social e curso de formação.",
   "cfsd": "Curso de Formação Profissional na Acadepol-RJ, conforme cargo e edital.",
@@ -24,25 +24,21 @@
   "site": "https://www.policiacivil.rj.gov.br",
   "fontes": [
     {
-      "titulo": "FGV - Concurso Polícia Civil RJ 2021",
-      "url": "https://conhecimento.fgv.br/concursos/pcrj21",
-      "tipo": "banca organizadora",
+      "titulo": "Página de referência de concursos — PCERJ",
+      "url": "https://www.policiacivil.rj.gov.br",
+      "tipo": "fonte oficial ou página institucional",
       "data_consulta": "2026-05-17"
     }
   ],
   "ultima_pesquisa": "2026-05-17",
   "nivel_confianca": "médio",
   "precisa_revisao_humana": true,
-  "alertas": [
-    "Atualização baseada apenas na página oficial da FGV (PCERJ21), que traz somente a indicação de editais por cargo; campos como etapas, requisitos, vagas e cronograma não constam no texto extraído e exigem conferência nos editais completos.",
-    "Campo inscritos mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.",
-    "Campo etapas mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.",
-    "Campo cfsd mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.",
-    "Campo estagio mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.",
-    "Campo validade mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.",
-    "Campo previsao mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente."
-  ],
   "qualidade_publicacao": "alta",
-  "score_publicacao": 95,
-  "bloquear_publicacao": false
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
 }

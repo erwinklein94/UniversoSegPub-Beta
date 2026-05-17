@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pcac",
+  "instituicao_nome": "Polícia Civil do Acre",
+  "sigla": "PCAC",
+  "uf": "AC",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PCAC: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PCAC com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "PCAC — concurso anunciado em 2026 para Delegado, Oficial Investigador de Polícia e Perito",
+  "salario": "Edital pendente; o simulador usa as tabelas oficiais cadastradas para Delegado, Perito/Médico-Legista e carreiras operacionais.",
+  "vagas": "139 vagas anunciadas",
+  "cotas": "A definir no edital",
+  "idade": "A definir no edital",
+  "escolaridade": "A definir no edital; cargos policiais civis normalmente exigem formação específica conforme carreira.",
+  "materias": "A definir no edital; preparar base em Direito Penal, Processo Penal, Constitucional, Administrativo, Legislação Especial, Português e específicas do cargo.",
+  "banca": "A definir",
+  "inscritos": "Ainda não divulgado",
+  "etapas": "A definir no edital; acompanhar SEAD/AC, PCAC e Diário Oficial do Acre.",
+  "cfsd": "A definir no edital e normas da Academia de Polícia Civil.",
+  "estagio": "Conferir estatuto e edital.",
+  "validade": "A definir no edital.",
+  "previsao": "Governo anunciou novo concurso PCAC em abril de 2026; edital e banca ainda devem ser acompanhados nos canais oficiais.",
+  "site": "https://agencia.ac.gov.br/governadora-mailza-assis-empossa-novo-delegado-geral-e-anuncia-concurso-publico-da-policia-civil/",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PCAC",
+      "url": "https://agencia.ac.gov.br/governadora-mailza-assis-empossa-novo-delegado-geral-e-anuncia-concurso-publico-da-policia-civil/",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

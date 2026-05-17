@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       instituicao:
-        description: 'Qual instituição atualizar? Comece uma por vez para controlar custos.'
+        description: 'Qual instituição atualizar? Use uma por vez ou prioridade_1/prioridade_2 para lote.'
         required: true
         default: 'pmesp'
         type: choice
@@ -13,16 +13,54 @@ on:
           - 'pcsp'
           - 'prf'
           - 'pf'
-          - 'pmerj'
-          - 'pcerj'
+          - 'prioridade_1'
+          - 'prioridade_2'
+          - 'todas_configuradas'
+          - 'pcdf'
+          - 'bmsp'
+          - 'ppsp'
+          - 'pmal'
+          - 'pcal'
+          - 'ppal'
+          - 'bmmg'
+          - 'ppmg'
           - 'pmmg'
           - 'pcmg'
+          - 'bmpr'
+          - 'pmpr'
+          - 'pcpr'
+          - 'pmam'
+          - 'pcam'
+          - 'pmerj'
+          - 'bmrj'
+          - 'pcerj'
           - 'pmba'
           - 'pcba'
-          - 'prioridade_1'
-          - 'todas_configuradas'
+          - 'pmrs'
+          - 'pcrs'
+          - 'pmsc'
+          - 'bmsc'
+          - 'pcsc'
+          - 'pmes'
+          - 'bmes'
+          - 'pces'
+          - 'pmms'
+          - 'bmms'
+          - 'pcms'
+          - 'ppms'
+          - 'pmmt'
+          - 'bmmt'
+          - 'pcmt'
+          - 'ppmt'
+          - 'pmac'
+          - 'pcac'
+          - 'ppac'
+          - 'pmap'
+          - 'pcap'
+          - 'bmap'
+          - 'pcce'
       limite:
-        description: 'Limite de instituições quando usar prioridade_1 ou todas_configuradas'
+        description: 'Limite de instituições quando usar prioridade_1, prioridade_2 ou todas_configuradas'
         required: false
         default: '1'
         type: choice
@@ -32,6 +70,9 @@ on:
           - '3'
           - '5'
           - '10'
+          - '20'
+          - '30'
+          - '50'
       forcar_atualizacao:
         description: 'Forçar chamada da OpenAI mesmo sem mudança detectada?'
         required: false
@@ -50,7 +91,7 @@ on:
           - 'true'
   schedule:
     # 07h00 de Brasília, segunda-feira. GitHub Actions usa UTC.
-    # Roda só a prioridade 1 com limite 1 por padrão; aumente depois que validar custos.
+    # Mantido conservador: prioridade_1 com limite 1 por padrão.
     - cron: '0 10 * * 1'
 
 permissions:

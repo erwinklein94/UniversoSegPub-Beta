@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pmap",
+  "instituicao_nome": "Polícia Militar do Estado do Amapá",
+  "sigla": "PMAP",
+  "uf": "AP",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PMAP: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PMAP com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "PMAP — Concurso Público CFSD/QPPMC/PMAP 2022, organizado pela Fundação Carlos Chagas, para cadastro de reserva de Soldado do Quadro de Praças Policiais Militares Combatentes; em 2026 há convocações e resultados de fases pela SEAD/AP.",
+  "salario": "Edital 2022: Soldado PM 2ª Classe em curso de formação R$ 2.827,00 e Soldado PM 1ª Classe R$ 5.313,18. Tabela legal vigente: LC AP nº 173/2025, Anexo III, com Soldado Base R$ 6.039,13 e Aluno Soldado Base R$ 3.213,26 em 01/04/2026; conferir nível, descontos e rubricas pessoais.",
+  "vagas": "2.500 vagas em cadastro de reserva para Soldado PMAP, conforme edital 2022; nomeações, convocações e matrículas dependem de atos da SEAD/AP, PMAP e DOE/AP.",
+  "cotas": "Conferir ampla concorrência, reserva por sexo quando aplicável, cotas legais, classificação, cadastro de reserva e retificações do edital.",
+  "idade": "Requisitos de idade, altura, CNH, saúde, aptidão física e investigação social devem ser conferidos no edital e retificações; não aplicar regra de outro estado.",
+  "escolaridade": "Ensino médio completo para Soldado PM, além de requisitos de nacionalidade, CNH, altura, idoneidade, aptidão física, psicológica e saúde conforme edital.",
+  "materias": "Conhecimentos Gerais, Língua Portuguesa, Matemática, História e Geografia do Amapá, Noções de Direito e legislação específica conforme edital FCC/SEAD/AP.",
+  "banca": "Fundação Carlos Chagas — FCC.",
+  "inscritos": "Certame em acompanhamento pela SEAD/AP, com editais de convocação, avaliação das capacidades físicas, avaliação psicológica, exame de saúde, investigação social e matrícula publicados em 2025/2026.",
+  "etapas": "Prova objetiva, exame documental, avaliação das capacidades físicas, avaliação psicológica, exame de saúde, investigação social, entrega documental, matrícula e Curso de Formação de Soldados conforme edital e convocações.",
+  "cfsd": "Curso de Formação de Soldados QPPMC/PMAP, com regime e regras próprias da carreira militar estadual; promoção/graduação depende de conclusão, classificação e ato administrativo.",
+  "estagio": "Exercício inicial, estágio probatório/adaptação, lotação e promoções dependem de legislação militar estadual, boletins, necessidade operacional e atos da PMAP.",
+  "validade": "Conferir validade, prorrogação, homologação e convocações no DOE/AP, SEAD/AP e PMAP. Não tratar como novo edital aberto sem ato posterior.",
+  "previsao": "Sem novo edital aberto identificado nesta revisão; manter o concurso Soldado 2022/2026 como certame vigente/histórico com convocações e monitorar futuras autorizações oficiais.",
+  "site": "https://sead.portal.ap.gov.br/concursos/vigentes/24027",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PMAP",
+      "url": "https://sead.portal.ap.gov.br/concursos/vigentes/24027",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

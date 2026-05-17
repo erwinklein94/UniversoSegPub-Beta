@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "bmsp",
+  "instituicao_nome": "Corpo de Bombeiros da Polícia Militar do Estado de São Paulo",
+  "sigla": "CBPMESP",
+  "uf": "SP",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "CBPMESP: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da CBPMESP com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "Ingresso regular pela PMESP; destaque para Soldado PM 2ª Classe PMES2502 e processos temporários de guarda-vidas GVTD/GBMar quando publicados",
+  "salario": "Soldado PMES2502: R$ 5.055,53. Guarda-vidas por tempo determinado GBMar 2025/2026: R$ 1.850,00 + vale-transporte e vale-refeição. Remuneração dos bombeiros militares efetivos segue tabela PMESP/SGGD julho/2025 por posto/graduação; Lei 18.441/2026 atualizou vencimentos-base desde 01/04/2026.",
+  "vagas": "Soldado PMES2502: 2.200 vagas na PMESP; GVTD/GBMar 2025/2026: 600 vagas temporárias. Atuação no Corpo de Bombeiros depende de classificação, formação, especialização, designação e necessidade administrativa.",
+  "cotas": "Reserva de vagas conforme edital e legislação aplicável; verificar regra específica de cada certame.",
+  "idade": "Soldado: 17 a 30 anos, conforme edital e exceções legais. Guarda-vidas temporário e demais seleções: conferir edital específico.",
+  "escolaridade": "Soldado: Ensino Médio completo e CNH categoria B ou superior. Guarda-vidas temporário: requisitos próprios do edital GBMar. Quadros de oficiais e saúde seguem edital específico da PMESP.",
+  "materias": "Soldado: Língua Portuguesa, Matemática, Conhecimentos Gerais, Noções Básicas de Informática e Noções de Administração Pública. Processos de guarda-vidas e especializações possuem etapas próprias.",
+  "banca": "Vunesp nos certames PMESP localizados; GBMar/Corpo de Bombeiros para processo temporário de guarda-vidas. Sempre confirmar no edital específico.",
+  "inscritos": "Soldado PMES2502: inscrições encerradas e certame em fases posteriores. GVTD/GBMar 2025/2026: processo temporário sazonal conforme edital publicado no DOE/SP.",
+  "etapas": "Soldado: prova objetiva, redação quando prevista, exames de saúde, TAF, avaliação psicológica, avaliação social/investigação social, análise documental e curso de formação. Guarda-vidas temporário: seleção e capacitação conforme edital GBMar.",
+  "cfsd": "Ingresso efetivo ocorre pela formação da PMESP; atuação no Corpo de Bombeiros exige formação/designação e cursos próprios. GVTD é temporário e não equivale a carreira militar efetiva.",
+  "estagio": "Militares efetivos seguem estágio probatório e normas da PMESP; temporários seguem o contrato/edital correspondente.",
+  "validade": "Conforme cada edital: verificar PMES2502, Aluno-Oficial, Médico PM, CFS interno e editais GBMar/GVTD quando aplicáveis.",
+  "previsao": "Não publicar como concurso exclusivo do CBPMESP sem fonte oficial. O portal deve tratar ingresso efetivo como PMESP e separar processos temporários de guarda-vidas.",
+  "site": "https://concursos.policiamilitar.sp.gov.br",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — CBPMESP",
+      "url": "https://concursos.policiamilitar.sp.gov.br",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

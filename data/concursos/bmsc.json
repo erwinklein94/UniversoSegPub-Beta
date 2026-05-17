@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "bmsc",
+  "instituicao_nome": "Corpo de Bombeiros Militar de Santa Catarina",
+  "sigla": "CBMSC",
+  "uf": "SC",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "CBMSC: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da CBMSC com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "CBMSC — Editais 001/2026/DP/CBMSC (CFP/Aluno-Soldado) e 002/2026/DP/CBMSC (CFO/Cadete)",
+  "salario": "CFP 2026: Aluno-Soldado/Soldado R$ 8.015,00 + R$ 550,00 de auxílio-alimentação. CFO 2026: Cadete R$ 18.670,37 + R$ 550,00 de auxílio-alimentação; após formação, 2º Tenente R$ 21.284,40. Valores estimados para abr/2026 aparecem na aba de remuneração com '(estimado)'.",
+  "vagas": "110 vagas imediatas: 100 para Aluno-Soldado/CFP e 10 para Cadete/Oficial/CFO; cadastros de reserva conforme edital.",
+  "cotas": "Reserva legal conforme edital e legislação estadual/federal aplicável; conferir distribuição por ampla concorrência, PcD e demais hipóteses no edital específico.",
+  "idade": "18 anos completos e menos de 30 anos até o último dia de inscrição; CNH categoria B; altura mínima de 1,60m para mulheres e 1,65m para homens, conforme editais.",
+  "escolaridade": "Nível superior completo. CFP: curso superior de graduação em qualquer área. CFO: bacharelado ou licenciatura plena, conforme edital.",
+  "materias": "Conforme edital: Língua Portuguesa, Matemática/Raciocínio Lógico, Informática, Conhecimentos Gerais/Atualidades, Noções de Direito, legislação institucional e conhecimentos específicos do cargo.",
+  "banca": "IDIB",
+  "inscritos": "Inscrições previstas de 28/01/2026 a 25/02/2026, conforme divulgação CBMSC/IDIB.",
+  "etapas": "Prova objetiva, redação quando prevista, avaliação de saúde médico/odontológica, teste de aptidão física, avaliação psicológica, investigação social, exame toxicológico, entrega documental e curso de formação.",
+  "cfsd": "CFP para Aluno-Soldado/Soldado BM e CFO para Cadete/Oficial BM, com formação institucional do CBMSC.",
+  "estagio": "Estágio probatório e formação conforme estatuto dos militares estaduais de SC, edital, regulamentos internos e atos de matrícula/nomeação.",
+  "validade": "Conforme cada edital CBMSC/IDIB e atos posteriores de homologação/prorrogação.",
+  "previsao": "Não publicar novo concurso aberto sem ato oficial. Destaque atual: CFP 2026 e CFO 2026 do CBMSC, organizados pelo IDIB.",
+  "site": "https://concurso.idib.org.br/",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — CBMSC",
+      "url": "https://concurso.idib.org.br/",
+      "tipo": "banca organizadora ou página do concurso",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

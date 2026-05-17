@@ -6,7 +6,7 @@
   "tema": "concursos",
   "status": "conteúdo inicial protegido",
   "titulo": "PMMG: concursos, requisitos e etapas",
-  "resumo": "Guia de concursos da PMMG com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes oficiais de conferência.",
+  "resumo": "Guia de concursos da PMMG com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
   "edital": "Soldado PMMG (2024/2025) — CFSd 2025",
   "salario": "R$ 4.360,83 (Soldado 2ª Classe, conforme edital do CFSd 2025)",
   "vagas": "3.102 vagas",
@@ -24,9 +24,9 @@
   "site": "https://www.policiamilitar.mg.gov.br",
   "fontes": [
     {
-      "titulo": "Polícia Militar de Minas Gerais",
-      "url": "https://www.policiamilitar.mg.gov.br/",
-      "tipo": "fonte oficial",
+      "titulo": "Página de referência de concursos — PMMG",
+      "url": "https://www.policiamilitar.mg.gov.br",
+      "tipo": "fonte oficial ou página institucional",
       "data_consulta": "2026-05-17"
     }
   ],
@@ -37,7 +37,8 @@
   "score_publicacao": 85,
   "bloquear_publicacao": false,
   "alertas": [
-    "Arquivo inicial criado para expansão controlada do motor genérico de concursos.",
-    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade."
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
   ]
 }

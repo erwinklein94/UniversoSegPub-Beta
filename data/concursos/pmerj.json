@@ -1,12 +1,12 @@
 {
   "instituicao_id": "pmerj",
-  "instituicao_nome": "Polícia Militar do Estado do Rio de Janeiro",
+  "instituicao_nome": "Polícia Militar do Rio de Janeiro",
   "sigla": "PMERJ",
   "uf": "RJ",
   "tema": "concursos",
   "status": "conteúdo inicial protegido",
   "titulo": "PMERJ: concursos, requisitos e etapas",
-  "resumo": "Guia de concursos da PMERJ com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes oficiais de conferência.",
+  "resumo": "Guia de concursos da PMERJ com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
   "edital": "PMERJ — últimos certames oficiais FGV: Edital nº 001/2023 para Curso de Formação de Soldados e Edital nº 001/2024 para Curso de Formação de Oficiais; novo concurso de Soldado em tramitação oficial",
   "salario": "Referência GESPERJ jan/2026: Soldado-Aluno R$ 2.956,40; Soldado A/B/C R$ 5.233,88; Aluno EsFO R$ 4.127,16. A remuneração bruta combina soldo, GRET, GHP quando aplicável e GRAM; auxílio-transporte de R$ 100,00/mês e alimentação são tratados como parcelas próprias.",
   "vagas": "Último edital de Soldado: 2.500 vagas. A PMERJ informou em 06/04/2026 que o processo para novo concurso está em tramitação entre Governo do Estado e SEPM, ainda sem inscrições abertas.",
@@ -24,15 +24,9 @@
   "site": "https://concursos.sepm.rj.gov.br",
   "fontes": [
     {
-      "titulo": "SEPM/DRSP - Concursos PMERJ",
-      "url": "https://concursos.sepm.rj.gov.br/cfsd.php",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "FGV - PMERJ Curso de Formação de Soldados",
-      "url": "https://conhecimento.fgv.br/concursos/pmerj24/soldados",
-      "tipo": "banca organizadora",
+      "titulo": "Página de referência de concursos — PMERJ",
+      "url": "https://concursos.sepm.rj.gov.br",
+      "tipo": "fonte oficial ou página institucional",
       "data_consulta": "2026-05-17"
     }
   ],
@@ -43,7 +37,8 @@
   "score_publicacao": 85,
   "bloquear_publicacao": false,
   "alertas": [
-    "Arquivo inicial criado para expansão controlada do motor genérico de concursos.",
-    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade."
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
   ]
 }

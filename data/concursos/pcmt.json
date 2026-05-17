@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pcmt",
+  "instituicao_nome": "Polícia Judiciária Civil de Mato Grosso",
+  "sigla": "PCMT",
+  "uf": "MT",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PCMT: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PCMT com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "PCMT — Polícia Judiciária Civil de Mato Grosso — último concurso 2022 para Escrivão e Investigador; acompanhar comissão/novo edital 2026",
+  "salario": "Tabela PCMT 2025 cadastrada: Escrivão de Polícia de R$ 7.023,44 no Nível 001/A a R$ 21.134,03 no Nível 010/E; Delegado de R$ 30.961,87 a R$ 42.471,66; Delegado Substituto R$ 27.865,69. Investigador depende de tabela própria/edital vigente.",
+  "vagas": "Último edital: cadastro de reserva para Escrivão e Investigador; em 2026 houve convocação pública de novos profissionais de segurança, incluindo Polícia Civil.",
+  "cotas": "Reserva de vagas conforme edital e legislação estadual vigente.",
+  "idade": "Conferir edital; requisitos podem envolver nível superior, CNH, aptidão física, investigação social e demais condições legais.",
+  "escolaridade": "Escrivão e Investigador: conferir edital vigente; Delegado exige Bacharelado em Direito e demais requisitos específicos.",
+  "materias": "Conforme edital: Língua Portuguesa, Informática, Raciocínio Lógico, Direito Constitucional, Administrativo, Penal, Processual Penal, legislação especial e conhecimentos específicos.",
+  "banca": "UFMT no último concurso PCMT.",
+  "inscritos": "Sem edital novo aberto cadastrado nesta versão; acompanhar PJC-MT, SEPLAG/MT, SESP/MT e Diário Oficial/MT.",
+  "etapas": "Prova objetiva, prova discursiva quando prevista, TAF, avaliação psicológica, exame médico, investigação social, curso de formação e demais fases do edital.",
+  "cfsd": "Curso de Formação pela Academia da Polícia Judiciária Civil de Mato Grosso.",
+  "estagio": "Estágio probatório e evolução funcional conforme carreira e legislação estadual.",
+  "validade": "Conferir edital, homologação, prorrogação, convocações e atos posteriores no DOE/MT.",
+  "previsao": "Acompanhar PJC-MT, SEPLAG/MT, SESP/MT, UFMT e Diário Oficial/MT para novo edital e convocações.",
+  "site": "https://www.pjc.mt.gov.br/",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PCMT",
+      "url": "https://www.pjc.mt.gov.br/",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

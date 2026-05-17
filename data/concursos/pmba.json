@@ -6,7 +6,7 @@
   "tema": "concursos",
   "status": "conteúdo inicial protegido",
   "titulo": "PMBA: concursos, requisitos e etapas",
-  "resumo": "Guia de concursos da PMBA com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes oficiais de conferência.",
+  "resumo": "Guia de concursos da PMBA com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
   "edital": "Soldado PMBA e CBMBA (2022) — último edital oficial localizado",
   "salario": "R$ 4.012,11 (Soldo + GAP, conforme referência do último edital)",
   "vagas": "2.500 vagas",
@@ -24,15 +24,9 @@
   "site": "https://www.pm.ba.gov.br",
   "fontes": [
     {
-      "titulo": "Polícia Militar da Bahia - Concursos",
-      "url": "https://www.pm.ba.gov.br/category/concurso/",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "FCC - Concurso PMBA/CBMBA 2022",
-      "url": "https://www.concursosfcc.com.br/concursos/govba222/index.html",
-      "tipo": "banca organizadora",
+      "titulo": "Página de referência de concursos — PMBA",
+      "url": "https://www.pm.ba.gov.br",
+      "tipo": "fonte oficial ou página institucional",
       "data_consulta": "2026-05-17"
     }
   ],
@@ -43,7 +37,8 @@
   "score_publicacao": 85,
   "bloquear_publicacao": false,
   "alertas": [
-    "Arquivo inicial criado para expansão controlada do motor genérico de concursos.",
-    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade."
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
   ]
 }

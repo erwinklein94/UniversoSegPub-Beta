@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pmms",
+  "instituicao_nome": "Polícia Militar de Mato Grosso do Sul",
+  "sigla": "PMMS",
+  "uf": "MS",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PMMS: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PMMS com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "PMMS — Soldado e Oficial — último ciclo SAD/SEJUSP/PMMS 2022 e acompanhamento de atos posteriores",
+  "salario": "Tabela militar MS 05/2025 cadastrada na remuneração: Soldado PMMS Nível I R$ 5.727,10; Cabo Nível I R$ 6.872,52; 3º Sargento Nível I R$ 8.247,02; Coronel Nível VII R$ 39.426,84. Linhas de curso/formação dependem do edital vigente.",
+  "vagas": "Último ciclo PMMS/2022: vagas para Soldado e Oficial; acompanhar novos editais, convocações e prorrogações no portal Concursos MS e PMMS.",
+  "cotas": "Reserva de vagas conforme edital e legislação estadual vigente.",
+  "idade": "Conferir edital; requisitos podem envolver idade, altura, CNH, aptidão física, escolaridade e investigação social.",
+  "escolaridade": "Conferir edital vigente; requisitos variam para Soldado, Oficial e demais quadros.",
+  "materias": "Conforme edital: Língua Portuguesa, Raciocínio Lógico, Noções de Direito, legislação/institucional, atualidades, conhecimentos específicos e demais disciplinas previstas.",
+  "banca": "IDECAN no último ciclo PMMS/2022.",
+  "inscritos": "Sem edital novo aberto cadastrado nesta versão; acompanhar Concursos MS, PMMS e Diário Oficial/MS.",
+  "etapas": "Prova objetiva, TAF, avaliação psicológica, exame de saúde, investigação social, entrega de documentos, curso de formação e demais fases do edital.",
+  "cfsd": "Curso de Formação de Soldados ou Curso de Formação de Oficiais, conforme cargo.",
+  "estagio": "Estágio/probatório e regras da carreira militar estadual conforme legislação e atos da corporação.",
+  "validade": "Conferir edital, atos de homologação, prorrogação e publicações no DOE/MS.",
+  "previsao": "Acompanhar PMMS, Concursos MS, SEJUSP/MS e Diário Oficial/MS para novos editais e convocações.",
+  "site": "https://www.pm.ms.gov.br/",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PMMS",
+      "url": "https://www.pm.ms.gov.br/",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

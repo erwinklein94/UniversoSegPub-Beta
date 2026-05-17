@@ -4,9 +4,9 @@
   "sigla": "PCSP",
   "uf": "SP",
   "tema": "concursos",
-  "status": "conteúdo restaurado e protegido",
+  "status": "conteúdo inicial protegido",
   "titulo": "PCSP: concursos, requisitos e etapas",
-  "resumo": "Guia de concursos da PCSP com dados estruturados de edital, requisitos, vagas, banca, etapas e fonte oficial de conferência.",
+  "resumo": "Guia de concursos da PCSP com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
   "edital": "PCSP 2023 — Delegado, Investigador, Escrivão, Médico Legista e Perito Criminal — concursos recentes/em acompanhamento",
   "salario": "Delegado: R$ 15.037,99 no edital 2023; Investigador/Escrivão: R$ 5.879,68; Médico Legista/Perito: R$ 12.954,40. Tabela total SGGD/SP julho/2025 já mostra valores superiores por classe; Lei 18.441/2026 alterou vencimentos-base desde 01/04/2026.",
   "vagas": "Delegado: 552; Investigador: 1.250; Escrivão: 1.333; Médico Legista: 116; Perito Criminal: 249",
@@ -24,9 +24,9 @@
   "site": "https://www.policiacivil.sp.gov.br",
   "fontes": [
     {
-      "titulo": "Fonte oficial PCSP",
+      "titulo": "Página de referência de concursos — PCSP",
       "url": "https://www.policiacivil.sp.gov.br",
-      "tipo": "fonte oficial",
+      "tipo": "fonte oficial ou página institucional",
       "data_consulta": "2026-05-17"
     }
   ],
@@ -37,7 +37,8 @@
   "score_publicacao": 85,
   "bloquear_publicacao": false,
   "alertas": [
-    "Conteúdo restaurado a partir da base estática do site após teste de automação que gerou campos sem informação suficiente.",
-    "A automação foi ajustada para não sobrescrever o JSON principal quando a atualização vier com baixa qualidade."
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
   ]
 }

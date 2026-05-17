@@ -6,7 +6,7 @@
   "tema": "concursos",
   "status": "conteúdo inicial protegido",
   "titulo": "PCBA: concursos, requisitos e etapas",
-  "resumo": "Guia de concursos da PCBA com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes oficiais de conferência.",
+  "resumo": "Guia de concursos da PCBA com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
   "edital": "Novo concurso PCBA 2026 anunciado — Delegado, Escrivão e Investigador",
   "salario": "A definir no edital; último concurso de 2022 informava remuneração inicial de R$ 4.873,18",
   "vagas": "Mais de 750 vagas anunciadas para Delegado, Escrivão e Investigador",
@@ -24,15 +24,9 @@
   "site": "https://www.policiacivil.ba.gov.br",
   "fontes": [
     {
-      "titulo": "PCBA - Editais",
-      "url": "https://www.ba.gov.br/policiacivil/editais",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Polícia Civil da Bahia",
-      "url": "https://www.policiacivil.ba.gov.br/",
-      "tipo": "fonte oficial",
+      "titulo": "Página de referência de concursos — PCBA",
+      "url": "https://www.policiacivil.ba.gov.br",
+      "tipo": "fonte oficial ou página institucional",
       "data_consulta": "2026-05-17"
     }
   ],
@@ -43,7 +37,8 @@
   "score_publicacao": 85,
   "bloquear_publicacao": false,
   "alertas": [
-    "Arquivo inicial criado para expansão controlada do motor genérico de concursos.",
-    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade."
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
   ]
 }

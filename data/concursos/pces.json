@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pces",
+  "instituicao_nome": "Polícia Civil do Espírito Santo",
+  "sigla": "PCES",
+  "uf": "ES",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PCES: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PCES com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "PCES — Oficial Investigador de Polícia — Edital 2025",
+  "salario": "OIP: subsídio inicial de R$ 8.539,00 + R$ 800,00 de auxílio-alimentação, podendo chegar a aproximadamente R$ 17 mil no topo da carreira. Delegado, OIP e carreiras periciais possuem tabelas próprias por categoria/referência.",
+  "vagas": "1.052 vagas para Oficial Investigador de Polícia, conforme divulgação oficial da PCES.",
+  "cotas": "Conferir edital; reservas e regras específicas dependem do certame.",
+  "idade": "Divulgação oficial informa que não há limite de idade para o concurso OIP; demais cargos dependem do edital específico.",
+  "escolaridade": "OIP: curso superior de bacharelado e CNH categoria B. Delegado: bacharelado em Direito quando houver edital específico. Perícia oficial: requisitos próprios da PCIES/Perícia Oficial.",
+  "materias": "Conforme edital OIP 2025 e banca; conteúdos gerais, jurídicos, institucionais e específicos do cargo.",
+  "banca": "IBADE para o concurso OIP 2025.",
+  "inscritos": "Consultar PCES, IBADE e atos oficiais posteriores.",
+  "etapas": "Prova objetiva, exame de aptidão física, exame de saúde, exame psicotécnico, investigação criminal e social e curso de formação profissional pela Acadepol.",
+  "cfsd": "Curso de Formação Profissional pela Academia de Polícia Civil — Acadepol.",
+  "estagio": "Estágio probatório conforme regime estatutário e legislação da carreira.",
+  "validade": "Conferir edital e atos posteriores.",
+  "previsao": "Concurso OIP 2025 em andamento; acompanhar publicações da PCES e IBADE para cronograma, convocações e resultados.",
+  "site": "https://pc.es.gov.br/",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PCES",
+      "url": "https://pc.es.gov.br/",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

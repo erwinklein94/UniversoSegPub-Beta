@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pcpr",
+  "instituicao_nome": "Polícia Civil do Paraná",
+  "sigla": "PCPR",
+  "uf": "PR",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PCPR: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PCPR com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "Novo concurso PCPR 2026 autorizado/comissão formada — Delegado, Agente de Polícia Judiciária e Papiloscopista",
+  "salario": "Agente/Papiloscopista: inicial de R$ 7.818,45. Delegado: inicial de R$ 24.247,12. Valores por subsídio conforme estrutura da LC 259/2023 e tabelas de 2026.",
+  "vagas": "A definir no novo edital. Último concurso PCPR ofertou 400 vagas: 300 para Investigador/Agente, 50 para Papiloscopista e 50 para Delegado.",
+  "cotas": "Reserva de vagas conforme legislação e regras do edital.",
+  "idade": "A definir no edital. Requisitos gerais costumam incluir idade mínima de 18 anos e demais condições legais.",
+  "escolaridade": "Agente de Polícia Judiciária e Papiloscopista: nível superior; Delegado: Bacharelado em Direito. CNH categoria B ou superior conforme cargo/edital.",
+  "materias": "A definir no edital. Últimos certames cobraram Língua Portuguesa, Informática, Raciocínio Lógico, Direito Constitucional, Administrativo, Penal, Processual Penal e conhecimentos específicos.",
+  "banca": "A definir oficialmente no edital.",
+  "inscritos": "Ainda sem inscrições abertas para o novo certame.",
+  "etapas": "A definir no edital; tradicionalmente envolve prova objetiva, prova discursiva/peças quando previstas, TAF, avaliação psicológica, investigação social, exames médicos e curso de formação.",
+  "cfsd": "Curso de Formação Técnico-Profissional pela Escola Superior de Polícia Civil/PCPR, conforme cargo e edital.",
+  "estagio": "Estágio probatório de 3 anos.",
+  "validade": "A definir no edital.",
+  "previsao": "Novo certame previsto para 2026; tratar informações de banca, vagas e cronograma como previsão até publicação do edital oficial.",
+  "site": "https://www.pcpr.pr.gov.br/Pagina/Concursos",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PCPR",
+      "url": "https://www.pcpr.pr.gov.br/Pagina/Concursos",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

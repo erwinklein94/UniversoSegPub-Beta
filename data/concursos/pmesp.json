@@ -4,9 +4,9 @@
   "sigla": "PMESP",
   "uf": "SP",
   "tema": "concursos",
-  "status": "conteúdo restaurado e protegido",
+  "status": "conteúdo inicial protegido",
   "titulo": "PMESP: concursos, requisitos e etapas",
-  "resumo": "Guia de concursos da PMESP com dados estruturados de edital, requisitos, vagas, banca, etapas e fonte oficial de conferência.",
+  "resumo": "Guia de concursos da PMESP com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
   "edital": "Soldado PM 2ª Classe — PMES2502 em andamento; 2º Tenente Médico PM Estagiário 2026; Aluno-Oficial PM 2025 encerrado; CFS 2026 interno",
   "salario": "Soldado PMES2502: R$ 5.055,53. 2º Tenente Médico PM Estagiário: R$ 9.832,41. Remuneração total PMESP segue tabela SGGD/SP julho/2025 até nova tabela total; Lei 18.441/2026 atualizou vencimentos-base desde 01/04/2026.",
   "vagas": "Soldado PMES2502: 2.200 vagas; Médico PM 2026: 36 vagas; Aluno-Oficial PM 2025: 165 vagas; CFS 2026 interno: 500 vagas.",
@@ -24,45 +24,21 @@
   "site": "https://concursos.policiamilitar.sp.gov.br",
   "fontes": [
     {
-      "titulo": "Fonte oficial PMESP (site institucional)",
-      "url": "https://www.policiamilitar.sp.gov.br/",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Fonte oficial PMESP (Canal de Imprensa)",
-      "url": "https://www.policiamilitar.sp.gov.br/Pmesp.CanalImprensaExterno/",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Fonte oficial PMESP (página de concursos)",
+      "titulo": "Página de referência de concursos — PMESP",
       "url": "https://concursos.policiamilitar.sp.gov.br",
-      "tipo": "fonte oficial",
+      "tipo": "fonte oficial ou página institucional",
       "data_consulta": "2026-05-17"
     }
   ],
   "ultima_pesquisa": "2026-05-17",
-  "nivel_confianca": "baixo",
+  "nivel_confianca": "médio",
   "precisa_revisao_humana": true,
-  "alertas": [
-    "Nenhum dado específico de concursos (editais, vagas, salários, bancas, etapas, datas ou status por certame) foi extraído das fontes oficiais fornecidas no prompt (site institucional e canal de imprensa não trazem informações detalhadas de concursos).",
-    "Campo edital mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente nas fontes oficiais fornecidas.",
-    "Campo salario mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente nas fontes oficiais fornecidas.",
-    "Campo vagas mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente nas fontes oficiais fornecidas.",
-    "Campo cotas mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente nas fontes oficiais fornecidas.",
-    "Campo idade mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente nas fontes oficiais fornecidas.",
-    "Campo escolaridade mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente nas fontes oficiais fornecidas.",
-    "Campo materias mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente nas fontes oficiais fornecidas.",
-    "Campo banca mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente nas fontes oficiais fornecidas.",
-    "Campo inscritos mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente nas fontes oficiais fornecidas.",
-    "Campo etapas mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente nas fontes oficiais fornecidas.",
-    "Campo cfsd mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente nas fontes oficiais fornecidas.",
-    "Campo estagio mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente nas fontes oficiais fornecidas.",
-    "Campo validade mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente nas fontes oficiais fornecidas.",
-    "Campo previsao mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente nas fontes oficiais fornecidas."
-  ],
   "qualidade_publicacao": "alta",
-  "score_publicacao": 80,
-  "bloquear_publicacao": false
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
 }

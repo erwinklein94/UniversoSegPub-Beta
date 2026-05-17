@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pmrs",
+  "instituicao_nome": "Brigada Militar do Rio Grande do Sul",
+  "sigla": "PMRS",
+  "uf": "RS",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PMRS: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PMRS com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "Brigada Militar RS — Soldado 1ª Classe e Oficialato 2025",
+  "salario": "Soldado: R$ 5.944,85 + auxílio-alimentação de R$ 400,00. Oficialato: durante o CSPM, bolsa de 50% da remuneração de Capitão; após o curso, Capitão com remuneração de R$ 21.513,44 + auxílio-alimentação de R$ 400,00.",
+  "vagas": "Soldado: 1.200 vagas. Oficialato: 120 vagas.",
+  "cotas": "Conforme editais: ampla concorrência e reservas para pessoas com deficiência, pessoas negras, trans e indígenas; conferir distribuição por cargo.",
+  "idade": "Soldado: idade máxima de 25 anos; Oficialato: idade máxima de 29 anos, com regra específica para militares estaduais do RS.",
+  "escolaridade": "Soldado: ensino médio completo e CNH B. Oficialato: curso superior em Direito, além dos demais requisitos do edital.",
+  "materias": "Soldado: Língua Portuguesa, Legislação Específica, Conhecimentos Gerais, Matemática, Direitos Humanos e Cidadania e Informática. Oficialato: disciplinas jurídicas e institucionais conforme edital.",
+  "banca": "Soldado: FUNDATEC. Oficialato: IBADE.",
+  "inscritos": "Consultar banca/edital e atos posteriores.",
+  "etapas": "Prova escrita/intelectual, exames de saúde, teste de aptidão física e avaliação psicológica. Oficialato também prevê etapas específicas como prova discursiva, prova oral e avaliação de títulos, conforme edital.",
+  "cfsd": "Soldado: Curso Básico de Formação Policial Militar (CBFPM). Oficialato: Curso Superior Policial Militar (CSPM), com bolsa de 50% da remuneração de Capitão durante o curso.",
+  "estagio": "Estágio/probatório e inclusão conforme estatuto e edital.",
+  "validade": "Soldado: 2 anos, prorrogável uma vez por igual período. Oficialato: conferir edital específico.",
+  "previsao": "Concursos 2025 publicados; acompanhar página oficial de concursos da Brigada Militar para novos atos, convocações e retificações.",
+  "site": "https://www.brigadamilitar.rs.gov.br/concursos-2025",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PMRS",
+      "url": "https://www.brigadamilitar.rs.gov.br/concursos-2025",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

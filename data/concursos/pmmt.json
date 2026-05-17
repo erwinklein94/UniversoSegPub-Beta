@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pmmt",
+  "instituicao_nome": "Polícia Militar de Mato Grosso",
+  "sigla": "PMMT",
+  "uf": "MT",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PMMT: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PMMT com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "PMMT — Soldado e Oficial — editais nº 003/2022 e nº 004/2022-SEPLAG/SESP/MT; acompanhar novos atos e convocações",
+  "salario": "Planilha PMMT cadastrada: Aluno-Soldado R$ 3.750,58; Soldado de R$ 5.474,19 a R$ 7.501,13; Aluno-Oficial R$ 9.521,85; 2º Tenente de R$ 15.729,62 a R$ 15.869,72; Coronel de R$ 35.845,70 a R$ 35.985,85. Conferir reajustes posteriores.",
+  "vagas": "Último ciclo PMMT/2022: cadastro de reserva/vagas conforme edital; em 2026 houve convocação pública de novos profissionais de segurança, incluindo PMMT.",
+  "cotas": "Reserva de vagas conforme edital e legislação estadual vigente.",
+  "idade": "Conferir edital; requisitos podem envolver idade, altura, CNH, escolaridade, aptidão física e investigação social.",
+  "escolaridade": "Soldado e Oficial possuem requisitos próprios; conferir edital vigente da SEPLAG/SESP/MT.",
+  "materias": "Conforme edital: Língua Portuguesa, Raciocínio Lógico, Noções de Direito, História e Geografia de Mato Grosso, legislação, atualidades e conhecimentos específicos quando previstos.",
+  "banca": "UFMT no último ciclo PMMT/2022.",
+  "inscritos": "Sem edital novo aberto cadastrado nesta versão; acompanhar SEPLAG/MT, PMMT, SESP/MT e Diário Oficial/MT.",
+  "etapas": "Prova objetiva/discursiva quando prevista, TAF, avaliação psicológica, exame de saúde, investigação social, entrega de documentos, curso de formação e demais fases do edital.",
+  "cfsd": "Curso de Formação de Soldados ou Curso de Formação de Oficiais, conforme cargo.",
+  "estagio": "Estágio/probatório e regras da carreira militar estadual conforme legislação e atos da corporação.",
+  "validade": "Conferir edital, atos de homologação, prorrogação e publicações no DOE/MT.",
+  "previsao": "Acompanhar PMMT, SEPLAG/MT, SESP/MT, UFMT e Diário Oficial/MT para novos editais, convocações e nomeações.",
+  "site": "https://www.pm.mt.gov.br/",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PMMT",
+      "url": "https://www.pm.mt.gov.br/",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

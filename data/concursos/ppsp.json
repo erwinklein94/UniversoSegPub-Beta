@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "ppsp",
+  "instituicao_nome": "Polícia Penal do Estado de São Paulo",
+  "sigla": "PPSP",
+  "uf": "SP",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PPSP: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PPSP com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "SAP/SP — Polícia Penal — concurso público para Policial Penal — edital CCP nº 004/2025, com reabertura/retificação em 2026",
+  "salario": "Subsídio inicial: R$ 4.695,60 para Policial Penal Nível I / Categoria Ingresso. Tabela SGGD/SP julho/2025: carreira de R$ 4.695,60 a R$ 10.502,23, conforme nível e categoria.",
+  "vagas": "1.100 vagas para Policial Penal, com participação de mulheres e homens após reabertura/retificação em 2026.",
+  "cotas": "Reserva de vagas conforme edital e legislação estadual aplicável.",
+  "idade": "18 a 35 anos na inscrição, conforme LC SP 1.416/2024 e edital.",
+  "escolaridade": "Nível superior completo, CNH categoria B e demais requisitos legais do cargo.",
+  "materias": "Conteúdo programático do edital SAP/AOCP: áreas de conhecimentos gerais, legislação, execução penal, direitos humanos, noções jurídicas, raciocínio lógico, informática e temas específicos do cargo.",
+  "banca": "Instituto AOCP.",
+  "inscritos": "Concurso em andamento em 2026, com inscrições reabertas após retificação.",
+  "etapas": "Provas ou provas e títulos, aptidão física, aferição de estatura, aptidão psicológica, comprovação de idoneidade e investigação social, análise documental, curso de formação e demais fases do edital.",
+  "cfsd": "Curso de formação técnico-profissional da Polícia Penal/SP, vinculado à SAP/SP.",
+  "estagio": "Estágio probatório de 3 anos, com permanência na Categoria Ingresso do Nível I durante o período e enquadramento na Categoria A do Nível I após confirmação no cargo.",
+  "validade": "Validade conforme edital SAP/SP e atos oficiais de homologação.",
+  "previsao": "Prova objetiva prevista para 31/05/2026 segundo notícia oficial da SAP e cronograma AOCP vigente na reabertura.",
+  "site": "https://www.institutoaocp.org.br/concursos/664",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PPSP",
+      "url": "https://www.institutoaocp.org.br/concursos/664",
+      "tipo": "banca organizadora ou página do concurso",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

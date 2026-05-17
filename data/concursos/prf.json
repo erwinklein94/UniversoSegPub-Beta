@@ -4,9 +4,9 @@
   "sigla": "PRF",
   "uf": "BR",
   "tema": "concursos",
-  "status": "conteúdo restaurado e protegido",
+  "status": "conteúdo inicial protegido",
   "titulo": "PRF: concursos, requisitos e etapas",
-  "resumo": "Guia de concursos da PRF com dados estruturados de edital, requisitos, vagas, banca, etapas e fonte oficial de conferência.",
+  "resumo": "Guia de concursos da PRF com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
   "edital": "PRF — Concurso Policial Rodoviário Federal 2021 · 1.500 vagas · validade prorrogada até junho/2026; sem novo concurso aberto na revisão de 04/05/2026",
   "salario": "Inicial 2026: R$ 12.253,84 · 3ª Classe, Padrão I; final da carreira: R$ 23.000,00 · Classe Especial, Padrão III. Valores de subsídio conforme Lei nº 14.875/2024, Anexo XXVII, com efeitos em 01/05/2026.",
   "vagas": "1.500 vagas no concurso PRF 2021; o portal mantém o certame como vigente/histórico enquanto houver validade e convocações oficiais.",
@@ -24,9 +24,9 @@
   "site": "https://www.gov.br/prf/pt-br/servicos/concurso-prf-2021",
   "fontes": [
     {
-      "titulo": "Fonte oficial PRF",
+      "titulo": "Página de referência de concursos — PRF",
       "url": "https://www.gov.br/prf/pt-br/servicos/concurso-prf-2021",
-      "tipo": "fonte oficial",
+      "tipo": "fonte oficial ou página institucional",
       "data_consulta": "2026-05-17"
     }
   ],
@@ -37,7 +37,8 @@
   "score_publicacao": 85,
   "bloquear_publicacao": false,
   "alertas": [
-    "Conteúdo restaurado a partir da base estática do site após teste de automação que gerou campos sem informação suficiente.",
-    "A automação foi ajustada para não sobrescrever o JSON principal quando a atualização vier com baixa qualidade."
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
   ]
 }

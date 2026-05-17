@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pcms",
+  "instituicao_nome": "Polícia Civil de Mato Grosso do Sul",
+  "sigla": "PCMS",
+  "uf": "MS",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PCMS: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PCMS com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "PCMS — Agente de Polícia Judiciária — Edital SAD/SEJUSP/PCMS/APJ/2025",
+  "salario": "R$ 6.569,53 para Investigador de Polícia Judiciária e Escrivão de Polícia Judiciária, jornada de 40h, conforme divulgação oficial do concurso APJ/2025.",
+  "vagas": "400 vagas imediatas: 300 para Investigador de Polícia Judiciária e 100 para Escrivão de Polícia Judiciária.",
+  "cotas": "Vagas em ampla concorrência e reservas conforme edital, incluindo negros, indígenas e pessoas com deficiência.",
+  "idade": "Requisitos divulgados: 21 a 45 anos, nível superior, CNH categoria B ou superior e demais exigências do edital.",
+  "escolaridade": "Nível superior completo em qualquer área para APJ, com CNH B ou superior; demais carreiras exigem requisitos próprios.",
+  "materias": "Conforme edital APJ/2025: conteúdos gerais, jurídicos, legislação, raciocínio lógico/informática quando previstos, conhecimentos institucionais e específicos.",
+  "banca": "Instituto Avalia.",
+  "inscritos": "Inscrições divulgadas de 16/07/2025 a 07/08/2025; prova objetiva prevista para 14/09/2025 em Campo Grande.",
+  "etapas": "Prova objetiva, avaliação de títulos, investigação social, exames de saúde, avaliação psicológica, TAF e curso de formação, conforme edital.",
+  "cfsd": "Curso de Formação Profissional pela Acadepol/PCMS.",
+  "estagio": "Estágio probatório conforme LC MS 114/2005, alterações e regras estaduais aplicáveis.",
+  "validade": "Conferir edital, homologação, convocações e atos posteriores no DOE/MS e nos canais oficiais.",
+  "previsao": "Concurso APJ/2025 em andamento/convocações; acompanhar PCMS, Instituto Avalia, Acadepol e Diário Oficial/MS.",
+  "site": "https://www.pc.ms.gov.br/",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PCMS",
+      "url": "https://www.pc.ms.gov.br/",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

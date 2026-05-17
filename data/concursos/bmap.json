@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "bmap",
+  "instituicao_nome": "Corpo de Bombeiros Militar do Amapá",
+  "sigla": "CBMAP",
+  "uf": "AP",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "CBMAP: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da CBMAP com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "BMAP/CBMAP — QOCBM/CBMAP 2025 para Oficial Combatente, cadastro de reserva, Fundação Carlos Chagas; CFSD/BM/CBMAP 2022 com convocações posteriores",
+  "salario": "LC AP nº 173/2025, Anexo III, referência 01/04/2026: Aluno Soldado BM Base R$ 3.213,26; Soldado BM Base R$ 6.039,13; Aluno Oficial 1º ano Base R$ 8.592,24; 2º Tenente Base R$ 11.660,90. Valores como subsídio/vencimento legal, sem somar indenizações ou rubricas pessoais.",
+  "vagas": "QOCBM/CBMAP 2025: 180 vagas em cadastro de reserva para Oficial Combatente. CFSD/BM/CBMAP 2022/2026: histórico de convocações; governo informou expectativa de até 1.500 aprovados em ciclos de convocação.",
+  "cotas": "Conferir ampla concorrência, cotas, sexo, cadastro de reserva, PCD quando houver e retificações no edital da FCC, SEAD/AP e DOE/AP.",
+  "idade": "Conferir edital vigente; requisitos podem envolver idade, altura, diploma, CNH, aptidão física, avaliação psicológica, exame de saúde e investigação social.",
+  "escolaridade": "QOCBM/CBMAP 2025 exige diploma de curso superior. CFSD/Soldado deve seguir edital próprio e retificações.",
+  "materias": "Conforme edital da banca; publicar disciplinas e pesos apenas após conferir versão vigente e retificações.",
+  "banca": "Fundação Carlos Chagas no edital QOCBM/CBMAP 2025; confirmar banca em cada certame.",
+  "inscritos": "Conferir FCC, SEAD/AP, Diário Oficial/AP e portal CBMAP para inscrições, homologações, resultados e convocações.",
+  "etapas": "Prova objetiva, exame documental, avaliação de capacidades físicas, avaliação psicológica, exame de saúde, investigação social, curso de formação e demais fases do edital.",
+  "cfsd": "Curso de Formação de Soldados ou Curso de Formação de Oficiais conforme cargo, matrícula, regime militar e atos do CBMAP/SEAD.",
+  "estagio": "Exercício inicial, estágio supervisionado e lotação operacional dependem de ato do CBMAP e necessidade da corporação na capital/interior.",
+  "validade": "Conferir edital, homologação, prorrogação, convocações e matrículas no DOE/AP, SEAD/AP, CBMAP e banca.",
+  "previsao": "Manter acompanhamento do QOCBM/CBMAP 2025, CFSD/BM 2022/2026 e novas autorizações; não afirmar concurso aberto sem publicação oficial.",
+  "site": "https://bombeiros.portal.ap.gov.br/",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — CBMAP",
+      "url": "https://bombeiros.portal.ap.gov.br/",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

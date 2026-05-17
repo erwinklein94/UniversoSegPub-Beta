@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "bmmg",
+  "instituicao_nome": "Corpo de Bombeiros Militar de Minas Gerais",
+  "sigla": "CBMMG",
+  "uf": "MG",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "CBMMG: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da CBMMG com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "CBMMG — Editais nº 09/2026 (CFO BM 2027) e nº 10/2026 (CFSd BM 2027), publicados em 16/03/2026.",
+  "salario": "CFO: Cadete R$ 7.506,80; 2º Tenente R$ 11.547,07. CFSd: Soldado 2ª Classe R$ 4.562,30 durante o curso; Soldado 1ª Classe R$ 5.332,60 após formação. Benefícios conforme edital: abono fardamento, assistência médico-hospitalar, psicológica, odontológica e auxílio-alimentação quando devido.",
+  "vagas": "342 vagas: 321 CFSd e 21 CFO.",
+  "cotas": "Conferir reserva de vagas, ampla concorrência e critérios nos editais e retificações oficiais.",
+  "idade": "18 a 30 anos, observada a data e regra específica do edital.",
+  "escolaridade": "Nível superior: bacharelado, licenciatura, tecnólogo ou curso sequencial, conforme cargo/edital.",
+  "materias": "Conforme edital IDECAN/CBMMG: conteúdos gerais, legislação, conhecimentos específicos, redação/prova discursiva quando prevista e anexos de conteúdo programático.",
+  "banca": "IDECAN.",
+  "inscritos": "Inscrições previstas de 18/05/2026 a 17/06/2026.",
+  "etapas": "Prova objetiva/discursiva conforme cargo, TCF/TAF, habilidades natatórias, exames de saúde, avaliação psicológica, investigação social/documental e matrícula no curso.",
+  "cfsd": "CFSd BM 2027 para Soldado; CFO BM 2027 para Oficial, com formação na Academia de Bombeiros Militar.",
+  "estagio": "Estágio probatório e evolução funcional conforme Estatuto dos Militares de Minas Gerais e atos do CBMMG.",
+  "validade": "Conferir edital, homologação e eventual prorrogação oficial.",
+  "previsao": "Há editais oficiais 2026 para ingresso 2027. Não publicar novo edital aberto sem fonte oficial posterior.",
+  "site": "https://www.bombeiros.mg.gov.br/concursos",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — CBMMG",
+      "url": "https://www.bombeiros.mg.gov.br/concursos",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

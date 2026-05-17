@@ -6,7 +6,7 @@
   "tema": "concursos",
   "status": "conteúdo inicial protegido",
   "titulo": "PCMG: concursos, requisitos e etapas",
-  "resumo": "Guia de concursos da PCMG com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes oficiais de conferência.",
+  "resumo": "Guia de concursos da PCMG com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
   "edital": "Investigador de Polícia (Edital PCMG nº 04/2024)",
   "salario": "R$ 5.332,62 (vencimento inicial informado no edital)",
   "vagas": "165 vagas para Investigador de Polícia",
@@ -24,15 +24,9 @@
   "site": "https://www.policiacivil.mg.gov.br",
   "fontes": [
     {
-      "titulo": "Acadepol/PCMG - Concursos",
-      "url": "https://acadepol.policiacivil.mg.gov.br/concurso/listar",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "FGV - PCMG Investigador 2024",
-      "url": "https://conhecimento.fgv.br/concursos/pcmg24/04",
-      "tipo": "banca organizadora",
+      "titulo": "Página de referência de concursos — PCMG",
+      "url": "https://www.policiacivil.mg.gov.br",
+      "tipo": "fonte oficial ou página institucional",
       "data_consulta": "2026-05-17"
     }
   ],
@@ -43,7 +37,8 @@
   "score_publicacao": 85,
   "bloquear_publicacao": false,
   "alertas": [
-    "Arquivo inicial criado para expansão controlada do motor genérico de concursos.",
-    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade."
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
   ]
 }

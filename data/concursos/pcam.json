@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pcam",
+  "instituicao_nome": "Polícia Civil do Estado do Amazonas",
+  "sigla": "PCAM",
+  "uf": "AM",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PCAM: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PCAM com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "PCAM — Concurso Público FGV 2021/2022, com resultado final/homologação e posses/convocações acompanhadas em 2025/2026; manter como certame vigente/histórico, sem tratar como novo edital aberto.",
+  "salario": "Tabela legal vigente da Lei AM nº 7.446/2025, com efeitos em 01/12/2025: Delegado IV R$ 24.417,49 a Especial R$ 37.221,83; Comissário Classe Única R$ 28.397,17; Perito IV R$ 19.481,73 a Especial R$ 29.697,78; Investigador/Escrivão IV R$ 16.765,69 a Especial R$ 25.557,47. Valores brutos de tabela, sem somar rubricas pessoais.",
+  "vagas": "362 vagas no edital original: Delegado, Escrivão, Investigador, Perito Criminal, Perito Legista e Perito Odontolegista; em 2026 houve posse de novos aprovados, incluindo 16 delegados, 25 escrivães, 48 investigadores e 8 peritos em ato noticiado oficialmente.",
+  "cotas": "Reserva de vagas e critérios de concorrência conforme editais FGV PCAM 2021, retificações, legislação de cotas e atos de convocação.",
+  "idade": "Requisitos de idade, nacionalidade, aptidão, idoneidade, CNH quando exigida e demais condições devem ser conferidos no edital de cada cargo; não aplicar regra de PM/BM.",
+  "escolaridade": "Nível superior conforme cargo: Delegado exige bacharelado em Direito; Escrivão e Investigador exigem nível superior; Peritos exigem formação específica por área, conforme edital.",
+  "materias": "Provas objetivas e discursivas por cargo, com Língua Portuguesa, Direito Constitucional, Administrativo, Penal, Processual Penal, Legislação Penal Especial, Criminologia/Medicina Legal/conhecimentos específicos e demais disciplinas previstas nos editais.",
+  "banca": "FGV — Fundação Getulio Vargas.",
+  "inscritos": "Inscrições históricas de 2022; em 2026, acompanhar apenas convocações, posse, nomeação e atos oficiais da PCAM, Governo do Amazonas, DOE/AM e FGV.",
+  "etapas": "Prova objetiva, prova discursiva, prova prática quando prevista, avaliação médica, teste de aptidão física quando previsto para o cargo, avaliação psicológica, investigação social, avaliação de títulos, curso de formação e posse conforme edital.",
+  "cfsd": "Curso de Formação Profissional/Academia de Polícia conforme edital, cargo, convocação e normas da PCAM.",
+  "estagio": "Posse, exercício, estágio probatório e lotação conforme Lei AM nº 2.875/2004, estatuto estadual, Lei Orgânica Nacional das Polícias Civis, edital e atos da PCAM.",
+  "validade": "Conferir homologação, prorrogação, convocações e atos de nomeação em PCAM, FGV, SEAD/AM, Casa Civil e DOE/AM.",
+  "previsao": "Não publicar novo concurso PCAM aberto sem edital posterior. A revisão mantém o concurso FGV 2021/2022 como histórico/convocações 2026.",
+  "site": "https://conhecimento.fgv.br/concursos/pcam21",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PCAM",
+      "url": "https://conhecimento.fgv.br/concursos/pcam21",
+      "tipo": "banca organizadora ou página do concurso",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

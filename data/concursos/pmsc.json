@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pmsc",
+  "instituicao_nome": "Polícia Militar de Santa Catarina",
+  "sigla": "PMSC",
+  "uf": "SC",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PMSC: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PMSC com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "PMSC — concursos e processos seletivos oficiais da Polícia Militar de Santa Catarina",
+  "salario": "Carreira PMSC em regime de subsídio. Referência atual da tabela: Soldado PMSC R$ 8.505,00, Cabo R$ 9.720,00 e demais postos/graduações conforme LC 765/2020, LC 776/2021, LC 872/2025 e LC 880/2025.",
+  "vagas": "Conferir edital vigente na página oficial da PMSC. A instituição mantém páginas específicas para concursos de Oficiais, Soldados e processos seletivos temporários.",
+  "cotas": "Conferir edital específico; reservas e critérios dependem do concurso publicado.",
+  "idade": "Conferir edital vigente; requisitos de idade podem variar conforme cargo, quadro e concurso.",
+  "escolaridade": "Conferir edital vigente. Em regra, cargos de carreira exigem escolaridade compatível com Soldado, Oficial ou quadro específico.",
+  "materias": "Conforme edital: disciplinas gerais, legislação, conhecimentos específicos e demais conteúdos previstos para o cargo.",
+  "banca": "Conferir edital vigente",
+  "inscritos": "Consultar atos oficiais da PMSC e da banca organizadora.",
+  "etapas": "Prova objetiva, exames/avaliações, teste físico, investigação social, curso de formação e demais etapas conforme edital específico.",
+  "cfsd": "Curso de Formação de Praças ou Curso de Formação de Oficiais, conforme o cargo.",
+  "estagio": "Estágio probatório e regras de carreira conforme legislação estadual.",
+  "validade": "Conferir edital e atos posteriores.",
+  "previsao": "Acompanhar a página oficial de concursos da PMSC para novos editais, retificações e convocações.",
+  "site": "https://www.pm.sc.gov.br/concursos",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PMSC",
+      "url": "https://www.pm.sc.gov.br/concursos",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

@@ -292,9 +292,12 @@ function selecionarInstituicoes(config) {
       .slice(0, Math.max(1, LIMITE_INSTITUICOES));
   }
 
-  if (INSTITUICAO_ID === 'prioridade_1') {
+  const prioridadeMatch = INSTITUICAO_ID.match(/^prioridade_(\d+)$/);
+  if (prioridadeMatch) {
+    const prioridade = Number(prioridadeMatch[1]);
     return config
-      .filter((item) => Number(item.prioridade || 99) === 1)
+      .filter((item) => Number(item.prioridade || 99) === prioridade)
+      .sort((a, b) => String(a.id).localeCompare(String(b.id)))
       .slice(0, Math.max(1, LIMITE_INSTITUICOES));
   }
 

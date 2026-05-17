@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pcal",
+  "instituicao_nome": "Polícia Civil do Estado de Alagoas",
+  "sigla": "PCAL",
+  "uf": "AL",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PCAL: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PCAL com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "PCAL 2026 — comissão formada para novo concurso de Agente e Escrivão; 300 vagas previstas, sendo 150 imediatas e 150 cadastro de reserva; edital e banca em definição.",
+  "salario": "Agente/Escrivão: referência inicial R$ 5.318,61 e final até R$ 15.065,12 (estimado por tabela de carreira/revisões). Delegado: tabela específica pela Lei AL nº 8.641/2022; novo edital de Delegado não publicado nesta revisão.",
+  "vagas": "300 vagas previstas para Agente e Escrivão: 150 imediatas + 150 cadastro de reserva.",
+  "cotas": "A definir em edital, observadas a legislação estadual/federal e eventuais regras de reserva.",
+  "idade": "A definir no edital. Não fixar limite sem edital publicado.",
+  "escolaridade": "Agente/Escrivão: nível superior; Agente costuma exigir CNH B conforme legislação/edital; Delegado exige bacharelado em Direito nos certames próprios.",
+  "materias": "Estrutura esperada: Português, Raciocínio Lógico, Informática/segurança cibernética, Direitos Humanos, Atualidades/Ética, Direito Penal, Processo Penal, Constitucional, Administrativo, legislação estadual e legislação penal especial.",
+  "banca": "A definir; último concurso Agente/Escrivão 2021 foi Cebraspe.",
+  "inscritos": "Sem inscrições abertas nesta revisão; comissão formada em janeiro/2026 e banca em definição.",
+  "etapas": "Objetivas, discursiva, TAF, prova prática de digitação quando aplicável, exames médicos/laboratoriais, psicológica, investigação social, curso de formação; Delegado pode ter prova oral/títulos conforme edital.",
+  "cfsd": "Curso de Formação Policial na Academia de Polícia de Alagoas/APOCAL.",
+  "estagio": "Estágio probatório, posse e exercício conforme estatuto estadual, Lei Orgânica Nacional das Polícias Civis e edital.",
+  "validade": "A definir no edital.",
+  "previsao": "Concurso autorizado/comissão formada; não publicar como edital aberto até sair ato oficial.",
+  "site": "https://pc.al.gov.br/",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PCAL",
+      "url": "https://pc.al.gov.br/",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

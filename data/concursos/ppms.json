@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "ppms",
+  "instituicao_nome": "Polícia Penal de Mato Grosso do Sul",
+  "sigla": "PPMS",
+  "uf": "MS",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PPMS: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PPMS com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "PPMS/AGEPEN-MS — sem novo edital aberto cadastrado nesta revisão; usar histórico da carreira penal e monitorar SEJUSP/MS, AGEPEN/MS e Diário Oficial/MS",
+  "salario": "Tabela Subsídio AGEPEN/MS 2026: Classe Inicial/Nível I R$ 5.517,66; Classe Especial/Nível VIII R$ 13.132,02. Valores de subsídio legal, sem somar adicionais, auxílios, indenizações ou rubricas pessoais.",
+  "vagas": "Conferir autorização, edital e atos oficiais; quando houver edital, separar vagas imediatas, cadastro de reserva, cotas, sexo e lotação.",
+  "cotas": "A definir no edital vigente; conferir ampla concorrência, PCD, negros, indígenas e demais reservas legais quando publicadas.",
+  "idade": "A definir no edital; requisitos de idade, CNH, aptidão física, saúde, investigação social e conduta devem ser conferidos na publicação oficial.",
+  "escolaridade": "Conferir edital vigente da AGEPEN/MS/SEJUSP/MS e legislação da carreira policial penal.",
+  "materias": "A definir no edital; normalmente envolve Língua Portuguesa, Raciocínio, Informática, Direito Constitucional, Penal, Processo Penal, Execução Penal, Direitos Humanos e legislação local.",
+  "banca": "A definir conforme edital vigente.",
+  "inscritos": "Sem inscrição aberta cadastrada nesta revisão; acompanhar AGEPEN/MS, SEJUSP/MS, Concursos MS e Diário Oficial/MS.",
+  "etapas": "Quando publicado, conferir prova objetiva, TAF, avaliação psicológica, exame médico, investigação social, curso de formação e análise documental.",
+  "cfsd": "Curso de formação profissional/penitenciária conforme edital e atos da AGEPEN/MS.",
+  "estagio": "Estágio probatório e exercício inicial conforme estatuto estadual e normas da AGEPEN/MS.",
+  "validade": "A definir no edital e atos de homologação/prorrogação.",
+  "previsao": "Não tratar como concurso aberto sem edital publicado; manter monitoramento de SEJUSP/MS, AGEPEN/MS e DOE/MS.",
+  "site": "https://www.agepen.ms.gov.br/",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PPMS",
+      "url": "https://www.agepen.ms.gov.br/",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

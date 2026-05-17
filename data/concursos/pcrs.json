@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pcrs",
+  "instituicao_nome": "Polícia Civil do Rio Grande do Sul",
+  "sigla": "PCRS",
+  "uf": "RS",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PCRS: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PCRS com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "Polícia Civil RS — Editais 2025: Escrivão, Inspetor e Delegado",
+  "salario": "Escrivão/Inspetor: R$ 7.299,54. Delegado: R$ 23.334,43.",
+  "vagas": "Escrivão: 360 vagas. Inspetor: 360 vagas. Delegado: 30 vagas.",
+  "cotas": "Reserva para pessoas com deficiência, pessoas negras, trans e indígenas conforme editais.",
+  "idade": "Mínimo de 18 anos até a matrícula no Curso de Formação Profissional; demais requisitos conforme edital.",
+  "escolaridade": "Escrivão/Inspetor: nível superior completo e CNH B. Delegado: bacharelado em Direito e requisitos próprios do edital.",
+  "materias": "Conforme edital do cargo: prova de capacitação intelectual, redação/discursiva e disciplinas específicas da carreira policial.",
+  "banca": "FUNDATEC",
+  "inscritos": "Consultar atos de homologação da FUNDATEC/ACADEPOL.",
+  "etapas": "Prova de capacitação intelectual, teste de aptidão física, avaliação psicológica/psiquiátrica, exame de saúde, sindicância de vida pregressa e Curso de Formação. Delegado possui etapas próprias como prova discursiva, prova oral e títulos, conforme edital.",
+  "cfsd": "Curso de Formação Profissional pela ACADEPOL/RS.",
+  "estagio": "Estágio probatório conforme regime estatutário.",
+  "validade": "Conferir edital e atos posteriores.",
+  "previsao": "Editais 2025 publicados e acompanhados por atos no site oficial da Polícia Civil/RS.",
+  "site": "https://www.pc.rs.gov.br/concurso-publico-para-escrivao-e-inspetor-2025",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PCRS",
+      "url": "https://www.pc.rs.gov.br/concurso-publico-para-escrivao-e-inspetor-2025",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

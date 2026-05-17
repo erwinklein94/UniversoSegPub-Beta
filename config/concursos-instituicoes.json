@@ -1,87 +1,5 @@
 [
   {
-    "id": "pmesp",
-    "nome": "Polícia Militar do Estado de São Paulo",
-    "sigla": "PMESP",
-    "uf": "SP",
-    "tema": "concursos",
-    "prioridade": 1,
-    "frequencia": "semanal",
-    "arquivo_saida": "data/concursos/pmesp.json",
-    "arquivo_monitoramento": "data/concursos/pmesp-monitor.json",
-    "site_principal": "https://concursos.policiamilitar.sp.gov.br/",
-    "fontes_base": [
-      "https://concursos.policiamilitar.sp.gov.br/",
-      "https://www.policiamilitar.sp.gov.br/",
-      "https://www.vunesp.com.br/"
-    ],
-    "dominios_oficiais": [
-      "concursos.policiamilitar.sp.gov.br",
-      "policiamilitar.sp.gov.br",
-      "vunesp.com.br",
-      "doe.sp.gov.br",
-      "imprensaoficial.com.br",
-      "saopaulo.sp.gov.br",
-      "al.sp.gov.br"
-    ],
-    "termos_relevantes": [
-      "concurso",
-      "pmesp",
-      "polícia militar",
-      "policia militar",
-      "soldado",
-      "oficial",
-      "médico",
-      "medico",
-      "vunesp",
-      "edital",
-      "inscrição",
-      "inscricao"
-    ]
-  },
-  {
-    "id": "pcsp",
-    "nome": "Polícia Civil do Estado de São Paulo",
-    "sigla": "PCSP",
-    "uf": "SP",
-    "tema": "concursos",
-    "prioridade": 1,
-    "frequencia": "semanal",
-    "arquivo_saida": "data/concursos/pcsp.json",
-    "arquivo_monitoramento": "data/concursos/pcsp-monitor.json",
-    "site_principal": "https://www.policiacivil.sp.gov.br/",
-    "fontes_base": [
-      "https://www.policiacivil.sp.gov.br/",
-      "https://www.vunesp.com.br/",
-      "https://www.saopaulo.sp.gov.br/"
-    ],
-    "dominios_oficiais": [
-      "policiacivil.sp.gov.br",
-      "vunesp.com.br",
-      "doe.sp.gov.br",
-      "imprensaoficial.com.br",
-      "saopaulo.sp.gov.br",
-      "al.sp.gov.br"
-    ],
-    "termos_relevantes": [
-      "concurso",
-      "pcsp",
-      "polícia civil",
-      "policia civil",
-      "delegado",
-      "investigador",
-      "escrivão",
-      "escrivao",
-      "perito",
-      "médico legista",
-      "medico legista",
-      "vunesp",
-      "edital",
-      "inscrição",
-      "inscricao"
-    ]
-  },
-  {
     "id": "prf",
     "nome": "Polícia Rodoviária Federal",
     "sigla": "PRF",
@@ -94,29 +12,21 @@
     "site_principal": "https://www.gov.br/prf/pt-br/servicos/concurso-prf-2021",
     "fontes_base": [
       "https://www.gov.br/prf/pt-br/servicos/concurso-prf-2021",
-      "https://www.gov.br/prf/pt-br/assuntos/noticias",
       "https://www.cebraspe.org.br/concursos/PRF_21"
     ],
     "dominios_oficiais": [
-      "gov.br",
-      "prf.gov.br",
       "cebraspe.org.br",
-      "in.gov.br",
-      "planalto.gov.br"
+      "gov.br"
     ],
     "termos_relevantes": [
       "concurso",
-      "prf",
-      "polícia rodoviária federal",
-      "policia rodoviaria federal",
-      "policial rodoviário federal",
-      "policial rodoviario federal",
-      "cebraspe",
       "edital",
       "inscrição",
       "inscricao",
-      "convocação",
-      "convocacao"
+      "prf",
+      "policial federal",
+      "federal",
+      "cebraspe"
     ]
   },
   {
@@ -132,116 +42,336 @@
     "site_principal": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos",
     "fontes_base": [
       "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos",
-      "https://www.gov.br/pf/pt-br/assuntos/noticias",
       "https://www.cebraspe.org.br/concursos/PF_25"
     ],
     "dominios_oficiais": [
-      "gov.br",
-      "pf.gov.br",
       "cebraspe.org.br",
-      "in.gov.br",
-      "planalto.gov.br"
+      "gov.br"
     ],
     "termos_relevantes": [
       "concurso",
-      "polícia federal",
-      "policia federal",
-      "delegado",
-      "perito",
-      "escrivão",
-      "escrivao",
-      "agente",
-      "papiloscopista",
-      "cebraspe",
       "edital",
       "inscrição",
       "inscricao",
-      "convocação",
-      "convocacao"
+      "pf",
+      "policial federal",
+      "federal",
+      "cebraspe"
     ]
   },
   {
-    "id": "pmerj",
-    "nome": "Polícia Militar do Estado do Rio de Janeiro",
-    "sigla": "PMERJ",
-    "uf": "RJ",
+    "id": "pcdf",
+    "nome": "Polícia Civil do Distrito Federal",
+    "sigla": "PCDF",
+    "uf": "DF",
     "tema": "concursos",
-    "prioridade": 1,
-    "frequencia": "semanal",
-    "arquivo_saida": "data/concursos/pmerj.json",
-    "arquivo_monitoramento": "data/concursos/pmerj-monitor.json",
-    "site_principal": "https://concursos.sepm.rj.gov.br/cfsd.php",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pcdf.json",
+    "arquivo_monitoramento": "data/concursos/pcdf-monitor.json",
+    "site_principal": "https://www.cebraspe.org.br/concursos/pc_df_26_delegado",
     "fontes_base": [
-      "https://concursos.sepm.rj.gov.br/cfsd.php",
-      "https://sepm.rj.gov.br/",
-      "https://conhecimento.fgv.br/concursos/pmerj24/soldados",
-      "https://conhecimento.fgv.br/concursos/pmerjsaude/3"
+      "https://www.cebraspe.org.br/concursos/pc_df_26_delegado"
     ],
     "dominios_oficiais": [
-      "concursos.sepm.rj.gov.br",
-      "sepm.rj.gov.br",
-      "pmerj.rj.gov.br",
-      "rj.gov.br",
-      "fgv.br",
-      "conhecimento.fgv.br"
-    ],
-    "termos_relevantes": [
-      "concurso",
-      "pmerj",
-      "polícia militar",
-      "policia militar",
-      "soldado",
-      "oficial",
-      "saúde",
-      "saude",
-      "fgv",
-      "edital",
-      "inscrição",
-      "inscricao",
-      "convocação",
-      "convocacao"
-    ]
-  },
-  {
-    "id": "pcerj",
-    "nome": "Polícia Civil do Estado do Rio de Janeiro",
-    "sigla": "PCERJ",
-    "uf": "RJ",
-    "tema": "concursos",
-    "prioridade": 1,
-    "frequencia": "semanal",
-    "arquivo_saida": "data/concursos/pcerj.json",
-    "arquivo_monitoramento": "data/concursos/pcerj-monitor.json",
-    "site_principal": "https://www.policiacivil.rj.gov.br/",
-    "fontes_base": [
-      "https://www.policiacivil.rj.gov.br/",
-      "https://conhecimento.fgv.br/concursos/pcrj21",
-      "https://www.cebraspe.org.br/concursos/pc_rj_21_delegado"
-    ],
-    "dominios_oficiais": [
-      "policiacivil.rj.gov.br",
-      "rj.gov.br",
-      "fgv.br",
-      "conhecimento.fgv.br",
       "cebraspe.org.br"
     ],
     "termos_relevantes": [
       "concurso",
-      "pcerj",
-      "pc-rj",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcdf",
       "polícia civil",
       "policia civil",
       "delegado",
-      "inspetor",
       "investigador",
-      "perito",
-      "legista",
-      "papiloscopista",
-      "fgv",
-      "cebraspe",
+      "escrivão",
+      "escrivao",
+      "perito"
+    ]
+  },
+  {
+    "id": "pmesp",
+    "nome": "Polícia Militar do Estado de São Paulo",
+    "sigla": "PMESP",
+    "uf": "SP",
+    "tema": "concursos",
+    "prioridade": 1,
+    "frequencia": "semanal",
+    "arquivo_saida": "data/concursos/pmesp.json",
+    "arquivo_monitoramento": "data/concursos/pmesp-monitor.json",
+    "site_principal": "https://concursos.policiamilitar.sp.gov.br",
+    "fontes_base": [
+      "https://concursos.policiamilitar.sp.gov.br"
+    ],
+    "dominios_oficiais": [
+      "concursos.policiamilitar.sp.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
       "edital",
       "inscrição",
-      "inscricao"
+      "inscricao",
+      "pmesp",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "praça",
+      "praca"
+    ]
+  },
+  {
+    "id": "bmsp",
+    "nome": "Corpo de Bombeiros da Polícia Militar do Estado de São Paulo",
+    "sigla": "CBPMESP",
+    "uf": "SP",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/bmsp.json",
+    "arquivo_monitoramento": "data/concursos/bmsp-monitor.json",
+    "site_principal": "https://concursos.policiamilitar.sp.gov.br",
+    "fontes_base": [
+      "https://concursos.policiamilitar.sp.gov.br"
+    ],
+    "dominios_oficiais": [
+      "concursos.policiamilitar.sp.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "bmsp",
+      "cbpmesp",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "praça",
+      "praca",
+      "bombeiro",
+      "bombeiros",
+      "cfsd"
+    ]
+  },
+  {
+    "id": "pcsp",
+    "nome": "Polícia Civil do Estado de São Paulo",
+    "sigla": "PCSP",
+    "uf": "SP",
+    "tema": "concursos",
+    "prioridade": 1,
+    "frequencia": "semanal",
+    "arquivo_saida": "data/concursos/pcsp.json",
+    "arquivo_monitoramento": "data/concursos/pcsp-monitor.json",
+    "site_principal": "https://www.policiacivil.sp.gov.br",
+    "fontes_base": [
+      "https://www.policiacivil.sp.gov.br"
+    ],
+    "dominios_oficiais": [
+      "policiacivil.sp.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcsp",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito"
+    ]
+  },
+  {
+    "id": "ppsp",
+    "nome": "Polícia Penal do Estado de São Paulo",
+    "sigla": "PPSP",
+    "uf": "SP",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/ppsp.json",
+    "arquivo_monitoramento": "data/concursos/ppsp-monitor.json",
+    "site_principal": "https://www.institutoaocp.org.br/concursos/664",
+    "fontes_base": [
+      "https://www.institutoaocp.org.br/concursos/664"
+    ],
+    "dominios_oficiais": [
+      "institutoaocp.org.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "ppsp",
+      "polícia penal",
+      "policia penal",
+      "agente penal",
+      "policial penal"
+    ]
+  },
+  {
+    "id": "pmal",
+    "nome": "Polícia Militar do Estado de Alagoas",
+    "sigla": "PMAL",
+    "uf": "AL",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pmal.json",
+    "arquivo_monitoramento": "data/concursos/pmal-monitor.json",
+    "site_principal": "https://www.cebraspe.org.br/concursos/pm_al_26",
+    "fontes_base": [
+      "https://www.cebraspe.org.br/concursos/pm_al_26"
+    ],
+    "dominios_oficiais": [
+      "cebraspe.org.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmal",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "praça",
+      "praca"
+    ]
+  },
+  {
+    "id": "pcal",
+    "nome": "Polícia Civil do Estado de Alagoas",
+    "sigla": "PCAL",
+    "uf": "AL",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pcal.json",
+    "arquivo_monitoramento": "data/concursos/pcal-monitor.json",
+    "site_principal": "https://pc.al.gov.br/",
+    "fontes_base": [
+      "https://pc.al.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "pc.al.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcal",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito"
+    ]
+  },
+  {
+    "id": "ppal",
+    "nome": "Polícia Penal do Estado de Alagoas",
+    "sigla": "PPAL",
+    "uf": "AL",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/ppal.json",
+    "arquivo_monitoramento": "data/concursos/ppal-monitor.json",
+    "site_principal": "https://www.seris.al.gov.br/",
+    "fontes_base": [
+      "https://www.seris.al.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "seris.al.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "ppal",
+      "polícia penal",
+      "policia penal",
+      "agente penal",
+      "policial penal"
+    ]
+  },
+  {
+    "id": "bmmg",
+    "nome": "Corpo de Bombeiros Militar de Minas Gerais",
+    "sigla": "CBMMG",
+    "uf": "MG",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/bmmg.json",
+    "arquivo_monitoramento": "data/concursos/bmmg-monitor.json",
+    "site_principal": "https://www.bombeiros.mg.gov.br/concursos",
+    "fontes_base": [
+      "https://www.bombeiros.mg.gov.br/concursos"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.mg.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "bmmg",
+      "cbmmg",
+      "bombeiro",
+      "bombeiros",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd"
+    ]
+  },
+  {
+    "id": "ppmg",
+    "nome": "Polícia Penal de Minas Gerais",
+    "sigla": "PPMG",
+    "uf": "MG",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/ppmg.json",
+    "arquivo_monitoramento": "data/concursos/ppmg-monitor.json",
+    "site_principal": "https://www.seguranca.mg.gov.br/",
+    "fontes_base": [
+      "https://www.seguranca.mg.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "seguranca.mg.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "ppmg",
+      "polícia penal",
+      "policia penal",
+      "agente penal",
+      "policial penal"
     ]
   },
   {
@@ -254,29 +384,26 @@
     "frequencia": "semanal",
     "arquivo_saida": "data/concursos/pmmg.json",
     "arquivo_monitoramento": "data/concursos/pmmg-monitor.json",
-    "site_principal": "https://www.policiamilitar.mg.gov.br/",
+    "site_principal": "https://www.policiamilitar.mg.gov.br",
     "fontes_base": [
-      "https://www.policiamilitar.mg.gov.br/",
-      "https://www.policiamilitar.mg.gov.br/portal-pm/crs"
+      "https://www.policiamilitar.mg.gov.br"
     ],
     "dominios_oficiais": [
-      "policiamilitar.mg.gov.br",
-      "mg.gov.br"
+      "policiamilitar.mg.gov.br"
     ],
     "termos_relevantes": [
       "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
       "pmmg",
       "polícia militar",
       "policia militar",
       "soldado",
       "oficial",
-      "cadete",
-      "crs",
-      "edital",
-      "inscrição",
-      "inscricao",
-      "convocação",
-      "convocacao"
+      "cfo",
+      "praça",
+      "praca"
     ]
   },
   {
@@ -289,33 +416,284 @@
     "frequencia": "semanal",
     "arquivo_saida": "data/concursos/pcmg.json",
     "arquivo_monitoramento": "data/concursos/pcmg-monitor.json",
-    "site_principal": "https://acadepol.policiacivil.mg.gov.br/concurso/listar",
+    "site_principal": "https://www.policiacivil.mg.gov.br",
     "fontes_base": [
-      "https://acadepol.policiacivil.mg.gov.br/concurso/listar",
-      "https://www.policiacivil.mg.gov.br/",
-      "https://conhecimento.fgv.br/concursos/pcmg24/04"
+      "https://www.policiacivil.mg.gov.br"
     ],
     "dominios_oficiais": [
-      "policiacivil.mg.gov.br",
-      "acadepol.policiacivil.mg.gov.br",
-      "mg.gov.br",
-      "fgv.br",
-      "conhecimento.fgv.br"
+      "policiacivil.mg.gov.br"
     ],
     "termos_relevantes": [
       "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
       "pcmg",
       "polícia civil",
       "policia civil",
       "delegado",
       "investigador",
-      "perito",
-      "médico legista",
-      "medico legista",
-      "fgv",
+      "escrivão",
+      "escrivao",
+      "perito"
+    ]
+  },
+  {
+    "id": "bmpr",
+    "nome": "Corpo de Bombeiros Militar do Paraná",
+    "sigla": "CBMPR",
+    "uf": "PR",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/bmpr.json",
+    "arquivo_monitoramento": "data/concursos/bmpr-monitor.json",
+    "site_principal": "https://www.bombeiros.pr.gov.br/Pagina/Concursos",
+    "fontes_base": [
+      "https://www.bombeiros.pr.gov.br/Pagina/Concursos"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.pr.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
       "edital",
       "inscrição",
-      "inscricao"
+      "inscricao",
+      "bmpr",
+      "cbmpr",
+      "bombeiro",
+      "bombeiros",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd"
+    ]
+  },
+  {
+    "id": "pmpr",
+    "nome": "Polícia Militar do Paraná",
+    "sigla": "PMPR",
+    "uf": "PR",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pmpr.json",
+    "arquivo_monitoramento": "data/concursos/pmpr-monitor.json",
+    "site_principal": "https://www.pmpr.pr.gov.br/Pagina/Concursos-em-Andamento",
+    "fontes_base": [
+      "https://www.pmpr.pr.gov.br/Pagina/Concursos-em-Andamento"
+    ],
+    "dominios_oficiais": [
+      "pmpr.pr.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmpr",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "praça",
+      "praca"
+    ]
+  },
+  {
+    "id": "pcpr",
+    "nome": "Polícia Civil do Paraná",
+    "sigla": "PCPR",
+    "uf": "PR",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pcpr.json",
+    "arquivo_monitoramento": "data/concursos/pcpr-monitor.json",
+    "site_principal": "https://www.pcpr.pr.gov.br/Pagina/Concursos",
+    "fontes_base": [
+      "https://www.pcpr.pr.gov.br/Pagina/Concursos"
+    ],
+    "dominios_oficiais": [
+      "pcpr.pr.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcpr",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito"
+    ]
+  },
+  {
+    "id": "pmam",
+    "nome": "Polícia Militar do Estado do Amazonas",
+    "sigla": "PMAM",
+    "uf": "AM",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pmam.json",
+    "arquivo_monitoramento": "data/concursos/pmam-monitor.json",
+    "site_principal": "https://conhecimento.fgv.br/concursos/pmam21",
+    "fontes_base": [
+      "https://conhecimento.fgv.br/concursos/pmam21"
+    ],
+    "dominios_oficiais": [
+      "conhecimento.fgv.br",
+      "fgv.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmam",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "praça",
+      "praca"
+    ]
+  },
+  {
+    "id": "pcam",
+    "nome": "Polícia Civil do Estado do Amazonas",
+    "sigla": "PCAM",
+    "uf": "AM",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pcam.json",
+    "arquivo_monitoramento": "data/concursos/pcam-monitor.json",
+    "site_principal": "https://conhecimento.fgv.br/concursos/pcam21",
+    "fontes_base": [
+      "https://conhecimento.fgv.br/concursos/pcam21"
+    ],
+    "dominios_oficiais": [
+      "conhecimento.fgv.br",
+      "fgv.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcam",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito"
+    ]
+  },
+  {
+    "id": "pmerj",
+    "nome": "Polícia Militar do Rio de Janeiro",
+    "sigla": "PMERJ",
+    "uf": "RJ",
+    "tema": "concursos",
+    "prioridade": 1,
+    "frequencia": "semanal",
+    "arquivo_saida": "data/concursos/pmerj.json",
+    "arquivo_monitoramento": "data/concursos/pmerj-monitor.json",
+    "site_principal": "https://concursos.sepm.rj.gov.br",
+    "fontes_base": [
+      "https://concursos.sepm.rj.gov.br"
+    ],
+    "dominios_oficiais": [
+      "concursos.sepm.rj.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmerj",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "praça",
+      "praca"
+    ]
+  },
+  {
+    "id": "bmrj",
+    "nome": "Corpo de Bombeiros Militar do Estado do Rio de Janeiro",
+    "sigla": "CBMERJ",
+    "uf": "RJ",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/bmrj.json",
+    "arquivo_monitoramento": "data/concursos/bmrj-monitor.json",
+    "site_principal": "https://www.cbmerj.rj.gov.br/cursos-e-concursos/",
+    "fontes_base": [
+      "https://www.cbmerj.rj.gov.br/cursos-e-concursos/"
+    ],
+    "dominios_oficiais": [
+      "cbmerj.rj.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "bmrj",
+      "cbmerj",
+      "bombeiro",
+      "bombeiros",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd"
+    ]
+  },
+  {
+    "id": "pcerj",
+    "nome": "Polícia Civil do Rio de Janeiro",
+    "sigla": "PCERJ",
+    "uf": "RJ",
+    "tema": "concursos",
+    "prioridade": 1,
+    "frequencia": "semanal",
+    "arquivo_saida": "data/concursos/pcerj.json",
+    "arquivo_monitoramento": "data/concursos/pcerj-monitor.json",
+    "site_principal": "https://www.policiacivil.rj.gov.br",
+    "fontes_base": [
+      "https://www.policiacivil.rj.gov.br"
+    ],
+    "dominios_oficiais": [
+      "policiacivil.rj.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcerj",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito"
     ]
   },
   {
@@ -328,30 +706,26 @@
     "frequencia": "semanal",
     "arquivo_saida": "data/concursos/pmba.json",
     "arquivo_monitoramento": "data/concursos/pmba-monitor.json",
-    "site_principal": "https://www.pm.ba.gov.br/category/concurso/",
+    "site_principal": "https://www.pm.ba.gov.br",
     "fontes_base": [
-      "https://www.pm.ba.gov.br/category/concurso/",
-      "https://www.pm.ba.gov.br/",
-      "https://www.concursosfcc.com.br/concursos/govba222/index.html"
+      "https://www.pm.ba.gov.br"
     ],
     "dominios_oficiais": [
-      "pm.ba.gov.br",
-      "ba.gov.br",
-      "concursosfcc.com.br"
+      "pm.ba.gov.br"
     ],
     "termos_relevantes": [
       "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
       "pmba",
       "polícia militar",
       "policia militar",
       "soldado",
       "oficial",
-      "fcc",
-      "edital",
-      "inscrição",
-      "inscricao",
-      "convocação",
-      "convocacao"
+      "cfo",
+      "praça",
+      "praca"
     ]
   },
   {
@@ -364,18 +738,18 @@
     "frequencia": "semanal",
     "arquivo_saida": "data/concursos/pcba.json",
     "arquivo_monitoramento": "data/concursos/pcba-monitor.json",
-    "site_principal": "https://www.ba.gov.br/policiacivil/editais",
+    "site_principal": "https://www.policiacivil.ba.gov.br",
     "fontes_base": [
-      "https://www.ba.gov.br/policiacivil/editais",
-      "https://www.policiacivil.ba.gov.br/",
-      "https://www.ba.gov.br/"
+      "https://www.policiacivil.ba.gov.br"
     ],
     "dominios_oficiais": [
-      "ba.gov.br",
       "policiacivil.ba.gov.br"
     ],
     "termos_relevantes": [
       "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
       "pcba",
       "polícia civil",
       "policia civil",
@@ -383,10 +757,735 @@
       "investigador",
       "escrivão",
       "escrivao",
-      "aocp",
+      "perito"
+    ]
+  },
+  {
+    "id": "pmrs",
+    "nome": "Brigada Militar do Rio Grande do Sul",
+    "sigla": "PMRS",
+    "uf": "RS",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pmrs.json",
+    "arquivo_monitoramento": "data/concursos/pmrs-monitor.json",
+    "site_principal": "https://www.brigadamilitar.rs.gov.br/concursos-2025",
+    "fontes_base": [
+      "https://www.brigadamilitar.rs.gov.br/concursos-2025"
+    ],
+    "dominios_oficiais": [
+      "brigadamilitar.rs.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
       "edital",
       "inscrição",
-      "inscricao"
+      "inscricao",
+      "pmrs",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "praça",
+      "praca"
+    ]
+  },
+  {
+    "id": "pcrs",
+    "nome": "Polícia Civil do Rio Grande do Sul",
+    "sigla": "PCRS",
+    "uf": "RS",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pcrs.json",
+    "arquivo_monitoramento": "data/concursos/pcrs-monitor.json",
+    "site_principal": "https://www.pc.rs.gov.br/concurso-publico-para-escrivao-e-inspetor-2025",
+    "fontes_base": [
+      "https://www.pc.rs.gov.br/concurso-publico-para-escrivao-e-inspetor-2025"
+    ],
+    "dominios_oficiais": [
+      "pc.rs.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcrs",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito"
+    ]
+  },
+  {
+    "id": "pmsc",
+    "nome": "Polícia Militar de Santa Catarina",
+    "sigla": "PMSC",
+    "uf": "SC",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pmsc.json",
+    "arquivo_monitoramento": "data/concursos/pmsc-monitor.json",
+    "site_principal": "https://www.pm.sc.gov.br/concursos",
+    "fontes_base": [
+      "https://www.pm.sc.gov.br/concursos"
+    ],
+    "dominios_oficiais": [
+      "pm.sc.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmsc",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "praça",
+      "praca"
+    ]
+  },
+  {
+    "id": "bmsc",
+    "nome": "Corpo de Bombeiros Militar de Santa Catarina",
+    "sigla": "CBMSC",
+    "uf": "SC",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/bmsc.json",
+    "arquivo_monitoramento": "data/concursos/bmsc-monitor.json",
+    "site_principal": "https://concurso.idib.org.br/",
+    "fontes_base": [
+      "https://concurso.idib.org.br/"
+    ],
+    "dominios_oficiais": [
+      "concurso.idib.org.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "bmsc",
+      "cbmsc",
+      "bombeiro",
+      "bombeiros",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd"
+    ]
+  },
+  {
+    "id": "pcsc",
+    "nome": "Polícia Civil de Santa Catarina",
+    "sigla": "PCSC",
+    "uf": "SC",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pcsc.json",
+    "arquivo_monitoramento": "data/concursos/pcsc-monitor.json",
+    "site_principal": "https://pc.sc.gov.br/?p=35166",
+    "fontes_base": [
+      "https://pc.sc.gov.br/?p=35166"
+    ],
+    "dominios_oficiais": [
+      "pc.sc.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcsc",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito"
+    ]
+  },
+  {
+    "id": "pmes",
+    "nome": "Polícia Militar do Espírito Santo",
+    "sigla": "PMES",
+    "uf": "ES",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pmes.json",
+    "arquivo_monitoramento": "data/concursos/pmes-monitor.json",
+    "site_principal": "https://pm.es.gov.br/concursos",
+    "fontes_base": [
+      "https://pm.es.gov.br/concursos"
+    ],
+    "dominios_oficiais": [
+      "pm.es.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmes",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "praça",
+      "praca"
+    ]
+  },
+  {
+    "id": "bmes",
+    "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
+    "sigla": "CBMES",
+    "uf": "ES",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/bmes.json",
+    "arquivo_monitoramento": "data/concursos/bmes-monitor.json",
+    "site_principal": "https://cb.es.gov.br/cfo2023",
+    "fontes_base": [
+      "https://cb.es.gov.br/cfo2023"
+    ],
+    "dominios_oficiais": [
+      "cb.es.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "bmes",
+      "cbmes",
+      "bombeiro",
+      "bombeiros",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd"
+    ]
+  },
+  {
+    "id": "pces",
+    "nome": "Polícia Civil do Espírito Santo",
+    "sigla": "PCES",
+    "uf": "ES",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pces.json",
+    "arquivo_monitoramento": "data/concursos/pces-monitor.json",
+    "site_principal": "https://pc.es.gov.br/",
+    "fontes_base": [
+      "https://pc.es.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "pc.es.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pces",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito"
+    ]
+  },
+  {
+    "id": "pmms",
+    "nome": "Polícia Militar de Mato Grosso do Sul",
+    "sigla": "PMMS",
+    "uf": "MS",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pmms.json",
+    "arquivo_monitoramento": "data/concursos/pmms-monitor.json",
+    "site_principal": "https://www.pm.ms.gov.br/",
+    "fontes_base": [
+      "https://www.pm.ms.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "pm.ms.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmms",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "praça",
+      "praca"
+    ]
+  },
+  {
+    "id": "bmms",
+    "nome": "Corpo de Bombeiros Militar de Mato Grosso do Sul",
+    "sigla": "CBMMS",
+    "uf": "MS",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/bmms.json",
+    "arquivo_monitoramento": "data/concursos/bmms-monitor.json",
+    "site_principal": "https://www.concursos.ms.gov.br/",
+    "fontes_base": [
+      "https://www.concursos.ms.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "concursos.ms.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "bmms",
+      "cbmms",
+      "bombeiro",
+      "bombeiros",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd"
+    ]
+  },
+  {
+    "id": "pcms",
+    "nome": "Polícia Civil de Mato Grosso do Sul",
+    "sigla": "PCMS",
+    "uf": "MS",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pcms.json",
+    "arquivo_monitoramento": "data/concursos/pcms-monitor.json",
+    "site_principal": "https://www.pc.ms.gov.br/",
+    "fontes_base": [
+      "https://www.pc.ms.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "pc.ms.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcms",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito"
+    ]
+  },
+  {
+    "id": "ppms",
+    "nome": "Polícia Penal de Mato Grosso do Sul",
+    "sigla": "PPMS",
+    "uf": "MS",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/ppms.json",
+    "arquivo_monitoramento": "data/concursos/ppms-monitor.json",
+    "site_principal": "https://www.agepen.ms.gov.br/",
+    "fontes_base": [
+      "https://www.agepen.ms.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "agepen.ms.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "ppms",
+      "polícia penal",
+      "policia penal",
+      "agente penal",
+      "policial penal"
+    ]
+  },
+  {
+    "id": "pmmt",
+    "nome": "Polícia Militar de Mato Grosso",
+    "sigla": "PMMT",
+    "uf": "MT",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pmmt.json",
+    "arquivo_monitoramento": "data/concursos/pmmt-monitor.json",
+    "site_principal": "https://www.pm.mt.gov.br/",
+    "fontes_base": [
+      "https://www.pm.mt.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "pm.mt.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmmt",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "praça",
+      "praca"
+    ]
+  },
+  {
+    "id": "bmmt",
+    "nome": "Corpo de Bombeiros Militar do Estado de Mato Grosso",
+    "sigla": "CBMMT",
+    "uf": "MT",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/bmmt.json",
+    "arquivo_monitoramento": "data/concursos/bmmt-monitor.json",
+    "site_principal": "https://www.bombeiros.mt.gov.br/concursos-e-seletivos",
+    "fontes_base": [
+      "https://www.bombeiros.mt.gov.br/concursos-e-seletivos"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.mt.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "bmmt",
+      "cbmmt",
+      "bombeiro",
+      "bombeiros",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd"
+    ]
+  },
+  {
+    "id": "pcmt",
+    "nome": "Polícia Judiciária Civil de Mato Grosso",
+    "sigla": "PCMT",
+    "uf": "MT",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pcmt.json",
+    "arquivo_monitoramento": "data/concursos/pcmt-monitor.json",
+    "site_principal": "https://www.pjc.mt.gov.br/",
+    "fontes_base": [
+      "https://www.pjc.mt.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "pjc.mt.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcmt",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito"
+    ]
+  },
+  {
+    "id": "ppmt",
+    "nome": "Polícia Penal de Mato Grosso",
+    "sigla": "PPMT",
+    "uf": "MT",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/ppmt.json",
+    "arquivo_monitoramento": "data/concursos/ppmt-monitor.json",
+    "site_principal": "https://www.sejus.mt.gov.br/",
+    "fontes_base": [
+      "https://www.sejus.mt.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "sejus.mt.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "ppmt",
+      "polícia penal",
+      "policia penal",
+      "agente penal",
+      "policial penal"
+    ]
+  },
+  {
+    "id": "pmac",
+    "nome": "Polícia Militar do Acre",
+    "sigla": "PMAC",
+    "uf": "AC",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pmac.json",
+    "arquivo_monitoramento": "data/concursos/pmac-monitor.json",
+    "site_principal": "https://conhecimento.fgv.br/concursos/pmac23",
+    "fontes_base": [
+      "https://conhecimento.fgv.br/concursos/pmac23"
+    ],
+    "dominios_oficiais": [
+      "conhecimento.fgv.br",
+      "fgv.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmac",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "praça",
+      "praca"
+    ]
+  },
+  {
+    "id": "pcac",
+    "nome": "Polícia Civil do Acre",
+    "sigla": "PCAC",
+    "uf": "AC",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pcac.json",
+    "arquivo_monitoramento": "data/concursos/pcac-monitor.json",
+    "site_principal": "https://agencia.ac.gov.br/governadora-mailza-assis-empossa-novo-delegado-geral-e-anuncia-concurso-publico-da-policia-civil/",
+    "fontes_base": [
+      "https://agencia.ac.gov.br/governadora-mailza-assis-empossa-novo-delegado-geral-e-anuncia-concurso-publico-da-policia-civil/"
+    ],
+    "dominios_oficiais": [
+      "agencia.ac.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcac",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito"
+    ]
+  },
+  {
+    "id": "ppac",
+    "nome": "Polícia Penal do Acre",
+    "sigla": "PPAC",
+    "uf": "AC",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/ppac.json",
+    "arquivo_monitoramento": "data/concursos/ppac-monitor.json",
+    "site_principal": "https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/",
+    "fontes_base": [
+      "https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/"
+    ],
+    "dominios_oficiais": [
+      "sead.ac.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "ppac",
+      "polícia penal",
+      "policia penal",
+      "agente penal",
+      "policial penal"
+    ]
+  },
+  {
+    "id": "pmap",
+    "nome": "Polícia Militar do Estado do Amapá",
+    "sigla": "PMAP",
+    "uf": "AP",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pmap.json",
+    "arquivo_monitoramento": "data/concursos/pmap-monitor.json",
+    "site_principal": "https://sead.portal.ap.gov.br/concursos/vigentes/24027",
+    "fontes_base": [
+      "https://sead.portal.ap.gov.br/concursos/vigentes/24027"
+    ],
+    "dominios_oficiais": [
+      "sead.portal.ap.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pmap",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "praça",
+      "praca"
+    ]
+  },
+  {
+    "id": "pcap",
+    "nome": "Polícia Civil do Estado do Amapá",
+    "sigla": "PCAP",
+    "uf": "AP",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pcap.json",
+    "arquivo_monitoramento": "data/concursos/pcap-monitor.json",
+    "site_principal": "https://sead.portal.ap.gov.br/concursos/vigentes/3736",
+    "fontes_base": [
+      "https://sead.portal.ap.gov.br/concursos/vigentes/3736"
+    ],
+    "dominios_oficiais": [
+      "sead.portal.ap.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcap",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito"
+    ]
+  },
+  {
+    "id": "bmap",
+    "nome": "Corpo de Bombeiros Militar do Amapá",
+    "sigla": "CBMAP",
+    "uf": "AP",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/bmap.json",
+    "arquivo_monitoramento": "data/concursos/bmap-monitor.json",
+    "site_principal": "https://bombeiros.portal.ap.gov.br/",
+    "fontes_base": [
+      "https://bombeiros.portal.ap.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.portal.ap.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "bmap",
+      "cbmap",
+      "bombeiro",
+      "bombeiros",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd"
+    ]
+  },
+  {
+    "id": "pcce",
+    "nome": "Polícia Civil do Estado do Ceará",
+    "sigla": "PCCE",
+    "uf": "CE",
+    "tema": "concursos",
+    "prioridade": 2,
+    "frequencia": "quinzenal",
+    "arquivo_saida": "data/concursos/pcce.json",
+    "arquivo_monitoramento": "data/concursos/pcce-monitor.json",
+    "site_principal": "https://www.cev.uece.br/oippcce/",
+    "fontes_base": [
+      "https://www.cev.uece.br/oippcce/"
+    ],
+    "dominios_oficiais": [
+      "cev.uece.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pcce",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito"
     ]
   }
 ]

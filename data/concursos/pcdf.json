@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pcdf",
+  "instituicao_nome": "Polícia Civil do Distrito Federal",
+  "sigla": "PCDF",
+  "uf": "DF",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PCDF: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PCDF com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "Edital nº 1 PCDF Delegado, de 3 de fevereiro de 2026, publicado no DODF nº 23, de 4 de fevereiro de 2026, págs. 60 a 87; retificado pelo Edital nº 4 PCDF Delegado (nova janela de inscrição e novo cronograma de provas)",
+  "salario": "R$ 26.690,15 (subsídio inicial, 3ª Classe, após Lei de reajuste de 12,82% sancionada em 1º de dezembro de 2025); topo da carreira em Classe Especial R$ 38.872,66; jornada de 40 horas semanais em regime de dedicação exclusiva",
+  "vagas": "150 no total — 50 imediatas e 100 em cadastro de reserva. Distribuição: 81 ampla concorrência, 38 negros, 8 PCD, 5 indígenas, 3 quilombolas, 15 hipossuficientes",
+  "cotas": "30% para negros, indígenas e quilombolas (Lei nº 15.142, de 3 de junho de 2025, e Decreto nº 12.536, de 27 de junho de 2025); 5% para pessoas com deficiência (Lei nº 8.112/1990, Lei nº 13.146/2015, Decreto Federal nº 9.508/2018, IN Conjunta MGI/MDHC nº 260/2025); reserva específica para hipossuficientes conforme Lei Distrital nº 4.949/2012, alterada pela Lei Distrital nº 7.248/2023",
+  "idade": "Mínima de 18 anos completos; sem limite máximo definido em edital",
+  "escolaridade": "Diploma de bacharel em Direito reconhecido pelo MEC; comprovação de três anos de atividade jurídica ou policial; Carteira Nacional de Habilitação (CNH) categoria 'B' ou superior",
+  "materias": "Conhecimentos comuns: Língua Portuguesa; Direito Constitucional; Direito Administrativo (com Lei nº 14.133/2021); Direito Civil; Direito Processual Civil; Direito Tributário; Direito Ambiental; Direitos Humanos | Conhecimentos específicos: Direito Penal; Direito Processual Penal (com Pacote Anticrime — Lei nº 13.964/2019); Legislação Penal Especial; Criminologia; Medicina Legal; Lei nº 14.735/2023 (Lei Orgânica Nacional das Polícias Civis); Lei nº 13.675/2018 (Sistema Único de Segurança Pública — SUSP); Lei Complementar DF nº 840/2011 (Regime Jurídico dos servidores do DF); Regime Disciplinar da PCDF; Noções de Primeiros Socorros; Conhecimentos do Distrito Federal e geopolítica do DF | Discursiva/oral: Prova discursiva (P2) composta por questões dissertativas e prova de peça profissional (P3) sobre atividade de polícia judiciária — aplicadas no mesmo dia da objetiva, no turno da tarde. Prova oral (P4) gravada em áudio e vídeo, eliminatória e classificatória.",
+  "banca": "Cebraspe — Centro Brasileiro de Pesquisa em Avaliação e Seleção e de Promoção de Eventos",
+  "inscritos": "Total: Dados em breve · Taxa: R$ 310,00 · Período: 07/05/2026 a 25/05/2026 (janela retificada pelo Edital nº 4); pagamento até 27/05/2026 · Locais de prova: Distrito Federal",
+  "etapas": "Primeira etapa: prova objetiva (120 itens 'certo/errado', 3h30, manhã); prova discursiva (P2) e peça profissional (P3) (tarde); prova oral (P4) gravada; exames biométricos e avaliação médica; prova de capacidade física (TAF); avaliação psicológica; sindicância de vida pregressa e investigação social. Procedimento de heteroidentificação complementar à autodeclaração para candidatos negros, indígenas e quilombolas. Avaliação biopsicossocial para PCD. Segunda etapa: curso de formação profissional (eliminatório e classificatório) e avaliação de títulos (classificatória)",
+  "cfsd": "Curso de Formação Profissional (CFP) na Escola Superior de Polícia Civil (ESPC), no Distrito Federal, sob responsabilidade do Cebraspe; eliminatório e classificatório",
+  "estagio": "Estágio probatório de três anos, conforme regulamento da PCDF e Lei nº 8.112/1990",
+  "validade": "Dois anos a partir da homologação do resultado final, prorrogável uma única vez por igual período",
+  "previsao": "Concurso vigente, com inscrições abertas de 7 a 25 de maio de 2026. Provas objetiva e discursiva em 5 de julho de 2026; prova oral entre 8 e 11 de outubro de 2026. Todas as fases presenciais no Distrito Federal.",
+  "site": "https://www.cebraspe.org.br/concursos/pc_df_26_delegado",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PCDF",
+      "url": "https://www.cebraspe.org.br/concursos/pc_df_26_delegado",
+      "tipo": "banca organizadora ou página do concurso",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pmes",
+  "instituicao_nome": "Polícia Militar do Espírito Santo",
+  "sigla": "PMES",
+  "uf": "ES",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PMES: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PMES com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "PMES — Curso de Formação de Oficiais 2024/2025 e concursos de Soldado conforme página oficial",
+  "salario": "CFO retificado: Aluno-Oficial 1º ano R$ 4.536,14, 2º ano R$ 5.410,85, 3º ano R$ 5.848,19; Aspirante a Oficial R$ 10.381,57. Tabela PM/CBM 12/2025: Soldado Ref. 1 R$ 5.741,46 e Ref. 15 R$ 7.575,15.",
+  "vagas": "CFO 2024 retificado: 37 ampla concorrência, 10 negros e 3 indígenas. Para Soldado e demais quadros, conferir edital vigente na página oficial da PMES.",
+  "cotas": "Reserva de vagas conforme edital, legislação estadual e regras específicas do certame.",
+  "idade": "Conferir edital vigente; requisitos podem variar por cargo, quadro, ingresso e legislação específica.",
+  "escolaridade": "CFO 2024: nível médio completo conforme edital; demais cargos conforme certame específico.",
+  "materias": "Conforme edital: conteúdos gerais, legislação, conhecimentos específicos, história/geografia do ES quando previstas, além das demais disciplinas do cargo.",
+  "banca": "IDECAN no CFO 2024; demais certames conforme edital.",
+  "inscritos": "Consultar atos oficiais da PMES e da banca organizadora.",
+  "etapas": "Prova objetiva, prova discursiva/redação quando prevista, TAF, avaliação psicológica, investigação social, exame de saúde, entrega de documentação e curso de formação, conforme edital.",
+  "cfsd": "Curso de Formação de Soldados ou Curso de Formação de Oficiais, conforme o cargo.",
+  "estagio": "Estágio/probatório e regras de carreira conforme legislação estadual e atos da corporação.",
+  "validade": "Conferir edital e publicações posteriores.",
+  "previsao": "Acompanhar a página oficial de concursos da PMES para novos editais, retificações e convocações.",
+  "site": "https://pm.es.gov.br/concursos",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PMES",
+      "url": "https://pm.es.gov.br/concursos",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

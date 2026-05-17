@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pmac",
+  "instituicao_nome": "Polícia Militar do Acre",
+  "sigla": "PMAC",
+  "uf": "AC",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PMAC: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PMAC com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "PMAC — Edital nº 001/2023 SEAD/PMAC — Aluno Oficial e 2º Tenente Estagiário de Saúde",
+  "salario": "Aluno Oficial: R$ 8.129,55; 2º Tenente Estagiário de Saúde: R$ 10.423,73, conforme edital.",
+  "vagas": "36 vagas: Aluno Oficial Combatente e cargos de 2º Tenente Estagiário de Saúde",
+  "cotas": "Conferir regras do edital FGV/SEAD/PMAC 2023",
+  "idade": "Conferir limite etário e requisitos específicos do edital.",
+  "escolaridade": "Nível superior conforme cargo; requisitos específicos no edital.",
+  "materias": "Língua Portuguesa, conhecimentos jurídicos, conhecimentos específicos, redação/discursiva, raciocínio e legislação conforme cargo.",
+  "banca": "FGV",
+  "inscritos": "Conferir página oficial da FGV",
+  "etapas": "Prova objetiva, prova discursiva/redação, TAF, avaliação psicológica, avaliação médica/toxicológica, investigação social e curso de formação.",
+  "cfsd": "Curso de formação/estágio conforme cargo e edital PMAC 2023.",
+  "estagio": "Conferir estatuto militar estadual e edital.",
+  "validade": "Conferir edital e atos de homologação/prorrogação.",
+  "previsao": "Concurso PMAC 2023 já publicado; acompanhar convocações e atos oficiais da SEAD/PMAC/FGV.",
+  "site": "https://conhecimento.fgv.br/concursos/pmac23",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PMAC",
+      "url": "https://conhecimento.fgv.br/concursos/pmac23",
+      "tipo": "banca organizadora ou página do concurso",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

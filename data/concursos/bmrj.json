@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "bmrj",
+  "instituicao_nome": "Corpo de Bombeiros Militar do Estado do Rio de Janeiro",
+  "sigla": "CBMERJ",
+  "uf": "RJ",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "CBMERJ: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da CBMERJ com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "ABMDPII/CFO 2026 em andamento/finalização; Soldado BM QBMP 1 — Busca e Salvamento, edital BMRJ-QBMP 01/2025, em andamento no IDECAN/CBMERJ.",
+  "salario": "CFO 2026: aluno R$ 4.227,16; aspirante após formação R$ 9.313,32 (estimado). Soldado QBMP 1: R$ 2.956,40 durante formação e R$ 5.233,38 após curso; tabela SEDEC jan/2026 indica Soldado A/B/C em R$ 5.233,88.",
+  "vagas": "CFO 2026: 50 vagas. Soldado BM QBMP 1: 144 vagas, sendo 101 ampla concorrência, 29 negros/indígenas e 14 hipossuficientes.",
+  "cotas": "Soldado QBMP 1: 10% hipossuficiência econômica e 20% negros/indígenas; conferir edital do CFO.",
+  "idade": "Conforme legislação estadual e edital específico do CBMERJ.",
+  "escolaridade": "Ensino médio completo nos editais localizados.",
+  "materias": "CFO: prova objetiva e redação. Soldado QBMP 1: prova objetiva conforme edital IDECAN.",
+  "banca": "UERJ no CFO 2026; IDECAN no Soldado BM QBMP 1.",
+  "inscritos": "CFO 2026: 06/01/2026 a 18/01/2026. Soldado QBMP 1: 11/06/2025 a 07/07/2025.",
+  "etapas": "Provas, TAF, THE, exame de saúde, documental, pesquisa social e títulos conforme edital.",
+  "cfsd": "Soldado QBMP 1 realiza curso de formação. CFO realiza curso na ABMDPII.",
+  "estagio": "Dados em breve.",
+  "validade": "Soldado QBMP 1: 2 anos, prorrogável por igual período. CFO: conferir edital.",
+  "previsao": "Não publicar novo concurso aberto sem fonte oficial; manter CFO/2026 e Soldado QBMP 1 como destaques atuais.",
+  "site": "https://www.cbmerj.rj.gov.br/cursos-e-concursos/",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — CBMERJ",
+      "url": "https://www.cbmerj.rj.gov.br/cursos-e-concursos/",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

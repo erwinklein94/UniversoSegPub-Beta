@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "bmms",
+  "instituicao_nome": "Corpo de Bombeiros Militar de Mato Grosso do Sul",
+  "sigla": "CBMMS",
+  "uf": "MS",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "CBMMS: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da CBMMS com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "CBMMS — Processo Seletivo Simplificado SAD/SEJUSP/CBMMS/QPTBM/2025 para Quadro de Praças Temporárias; concursos efetivos anteriores/homologados devem ser conferidos no portal oficial de concursos e no DOE/MS.",
+  "salario": "Remuneração no portal pela tabela de subsídio do CBMMS com RGA 2026 aplicada. Valores de edital de formação devem ser conferidos no edital específico.",
+  "vagas": "QPTBM/2025: conferir editais complementares. Efetivo legal do CBMMS: 3.978 cargos pela LC MS nº 354/2025.",
+  "cotas": "Conforme edital específico e legislação estadual aplicável.",
+  "idade": "Conforme edital específico, Lei MS nº 3.808/2009 e alterações.",
+  "escolaridade": "Conforme edital específico.",
+  "materias": "Conforme conteúdo programático do edital específico.",
+  "banca": "Portal oficial de concursos do Governo de Mato Grosso do Sul; banca/organizadora conforme edital.",
+  "inscritos": "Acompanhar cronograma no portal concursos.ms.gov.br e publicações do DOE/MS.",
+  "etapas": "Prova quando prevista, TAF, avaliação psicológica, exame médico, investigação social, títulos/documental e curso de formação conforme edital.",
+  "cfsd": "Curso de Formação de Soldados/Praças Bombeiro Militar conforme edital de ingresso ou seleção temporária.",
+  "estagio": "Conforme Estatuto dos Militares Estaduais de MS e edital específico.",
+  "validade": "Conforme edital específico.",
+  "previsao": "Não publicar novo concurso efetivo aberto sem fonte oficial. Manter destaque para editais vigentes no portal oficial de concursos de MS.",
+  "site": "https://www.concursos.ms.gov.br/",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — CBMMS",
+      "url": "https://www.concursos.ms.gov.br/",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

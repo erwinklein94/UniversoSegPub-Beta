@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pmpr",
+  "instituicao_nome": "Polícia Militar do Paraná",
+  "sigla": "PMPR",
+  "uf": "PR",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PMPR: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PMPR com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "Soldado PMPR 2025 e Cadete PMPR 2025 — concursos oficiais em acompanhamento",
+  "salario": "Soldado 1ª Classe: R$ 6.101,87 + R$ 834,74 de auxílio-alimentação; Aluno-Soldado 3ª Classe: R$ 2.530,12 + auxílio; Cadete 1º ano: R$ 3.994,86 + auxílio; 2º Tenente: R$ 13.731,61 + auxílio.",
+  "vagas": "Soldado PMPR 2025: 2.000 vagas. Cadete PMPR 2025: acompanhar página oficial do certame.",
+  "cotas": "Reserva de vagas conforme legislação estadual e regras do edital.",
+  "idade": "Soldado: máximo de 30 anos, conforme página oficial de formas de ingresso. Cadete e demais quadros: conferir edital específico.",
+  "escolaridade": "Soldado: curso superior completo. Cadete CFO: regras do edital próprio. Saúde/Capelão: formação específica exigida.",
+  "materias": "Conforme edital e banca do certame. Para Soldado/Cadete, conferir conteúdo programático da página oficial e do IBFC.",
+  "banca": "IBFC para o certame de Soldado PMPR 2025 informado na página oficial.",
+  "inscritos": "Acompanhar convocações, resultados e publicações na página de concursos da PMPR.",
+  "etapas": "Prova objetiva, avaliações específicas previstas no edital, investigação social, exames médicos, avaliação psicológica, TAF e curso de formação, conforme cargo.",
+  "cfsd": "Curso de Formação de Praças para Soldado; CFO na Academia Policial Militar do Guatupê para Cadete.",
+  "estagio": "Estágio/progressão conforme estrutura da carreira e regras da Lei 22.187/2024.",
+  "validade": "Conforme edital e publicações oficiais.",
+  "previsao": "PMPR possui concursos recentes para Soldado e Cadete. Usar a página oficial de Concursos em Andamento para cronograma, resultados e convocações.",
+  "site": "https://www.pmpr.pr.gov.br/Pagina/Concursos-em-Andamento",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PMPR",
+      "url": "https://www.pmpr.pr.gov.br/Pagina/Concursos-em-Andamento",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

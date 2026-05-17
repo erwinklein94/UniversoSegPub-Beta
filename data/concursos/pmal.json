@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "pmal",
+  "instituicao_nome": "Polícia Militar do Estado de Alagoas",
+  "sigla": "PMAL",
+  "uf": "AL",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PMAL: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PMAL com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "PMAL 2026 — Edital nº 1/PMAL, de 19/03/2026, para admissão ao Curso de Formação de Oficiais (CFO) e ao Curso de Formação de Praças (CFP), executado pelo Cebraspe, SEPLAG/AL e PMAL.",
+  "salario": "CFO: Cadete 1º ano R$ 3.874,43; Cadete 2º ano R$ 4.163,78; Cadete 3º ano R$ 4.716,51; Aspirante após CFO R$ 11.563,77. CFP: Soldado-Aluno R$ 2.354,67 e Soldado após CFP R$ 6.067,51.",
+  "vagas": "530 vagas imediatas + cadastro de reserva: Oficial de Estado-Maior 30 imediatas + 30 CR; Soldado do Quadro de Praças 500 imediatas + 500 CR.",
+  "cotas": "Reserva para pessoas pretas, pardas, indígenas ou quilombolas conforme distribuição do edital PMAL 2026.",
+  "idade": "18 anos completos na matrícula e máximo de 30 anos completos até a data limite de inscrição, com exceção editalícia para integrante da PMAL no QOEM.",
+  "escolaridade": "Ensino médio completo, CNH categoria B, altura mínima, nacionalidade, aptidão física/intelectual, sanidade física e mental, idoneidade e demais requisitos do edital.",
+  "materias": "Conhecimentos básicos, conhecimentos específicos e legislação pertinente ao policial militar de Alagoas, além de prova discursiva, conforme conteúdo programático do edital.",
+  "banca": "Cebraspe.",
+  "inscritos": "Inscrições de 30/03/2026 a 30/04/2026; taxa de R$ 150,00; pagamento até 05/05/2026; provas objetivas e discursiva previstas para 19/07/2026 em Arapiraca/AL e Maceió/AL.",
+  "etapas": "Provas objetivas, prova discursiva, teste de aptidão física, avaliação médica, avaliação psicológica, comprovação documental, investigação social, exame toxicológico e procedimento de verificação/heteroidentificação quando aplicável.",
+  "cfsd": "CFO para Oficial de Estado-Maior e CFP para Soldado do Quadro de Praças, em regime de dedicação integral, conforme edital, Diretoria de Ensino e normas internas da PMAL.",
+  "estagio": "Curso de formação, nomeação e estágio probatório seguem edital, Estatuto dos Policiais Militares de Alagoas e atos PMAL/SEPLAG.",
+  "validade": "Conforme edital PMAL 2026 e atos de homologação ou prorrogação publicados oficialmente.",
+  "previsao": "Edital PMAL 2026 em andamento; não publicar novo concurso aberto sem fonte oficial posterior.",
+  "site": "https://www.cebraspe.org.br/concursos/pm_al_26",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PMAL",
+      "url": "https://www.cebraspe.org.br/concursos/pm_al_26",
+      "tipo": "banca organizadora ou página do concurso",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

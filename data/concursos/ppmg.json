@@ -1,0 +1,44 @@
+{
+  "instituicao_id": "ppmg",
+  "instituicao_nome": "Polícia Penal de Minas Gerais",
+  "sigla": "PPMG",
+  "uf": "MG",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PPMG: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PPMG com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "edital": "PPMG — Edital SEJUSP/MG 01/2025 para Policial Penal; provas aplicadas em 25/01/2026 e resultados/etapas acompanhados pelo Instituto AOCP e SEJUSP/MG",
+  "salario": "Remuneração inicial de edital: R$ 5.332,64 para Policial Penal, jornada de 40h, com ajuda de custo para alimentação por dia efetivamente trabalhado quando prevista. Não somar benefícios como remuneração permanente.",
+  "vagas": "1.178 vagas para Policial Penal: 907 masculinas, incluindo 91 PcD, e 271 femininas, incluindo 27 PcD, conforme notícia institucional sobre as provas.",
+  "cotas": "Reserva PcD e demais regras conforme edital SEJUSP/MG 01/2025, retificações e convocações oficiais.",
+  "idade": "Conferir edital; requisitos de idade, escolaridade, aptidão física, exame médico, psicológico, investigação social e documentos são próprios do certame.",
+  "escolaridade": "Nível médio para o edital PPMG 2025, sem prejuízo de requisitos adicionais do edital.",
+  "materias": "Conforme edital SEJUSP/MG 01/2025 e retificações: conteúdos gerais, legislação, direitos humanos, execução penal e conhecimentos específicos.",
+  "banca": "Instituto AOCP.",
+  "inscritos": "146.321 candidatos inscritos disputaram as 1.178 vagas nas provas de 25/01/2026, conforme notícia institucional do DEPEN/SEJUSP-MG.",
+  "etapas": "Prova objetiva, redação, TAF, exames médicos, avaliação psicológica, investigação social, curso de formação e demais fases previstas no edital.",
+  "cfsd": "Curso de formação técnico-profissional conforme edital e atos da SEJUSP/MG.",
+  "estagio": "Estágio probatório e exercício inicial conforme estatuto estadual e normas da Polícia Penal/MG.",
+  "validade": "Conferir edital, homologação, convocações, prorrogações e atos do Instituto AOCP/SEJUSP-MG.",
+  "previsao": "Concurso 2025/2026 em andamento por etapas; não publicar novo edital aberto sem fonte oficial.",
+  "site": "https://www.seguranca.mg.gov.br/",
+  "fontes": [
+    {
+      "titulo": "Página de referência de concursos — PPMG",
+      "url": "https://www.seguranca.mg.gov.br/",
+      "tipo": "fonte oficial ou página institucional",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
+    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+  ]
+}

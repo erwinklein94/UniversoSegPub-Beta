@@ -19,7 +19,7 @@
     "revisar": 43,
     "rodar_economico": 0,
     "ok": 0,
-    "fonte_falhou": 52,
+    "fonte_falhou": 53,
     "com_rascunho": 8
   },
   "fila_acoes": [
@@ -811,40 +811,6 @@
       "monitor": null
     },
     {
-      "id": "ppse",
-      "sigla": "PPSE",
-      "nome": "Polícia Penal de Sergipe",
-      "uf": "SE",
-      "prioridade_config": 3,
-      "score": 51,
-      "qualidade": "baixa",
-      "acao": "rodar_qualificado",
-      "prioridade_operacional": "media",
-      "motivos": [
-        "score muito baixo (51)",
-        "muito desatualizado: Infinity dias"
-      ],
-      "workflow_sugerido": {
-        "instituicao": "ppse",
-        "limite": "1",
-        "forcar_atualizacao": "true",
-        "usar_web_search": "true",
-        "modo_qualidade": "qualificado"
-      },
-      "idade_dias": null,
-      "campos_ruins": [],
-      "campos_genericos": [],
-      "campos_concretos": [],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": null,
-      "monitor": null
-    },
-    {
       "id": "ppto",
       "sigla": "PPTO",
       "nome": "Polícia Penal de Tocantins",
@@ -1277,6 +1243,49 @@
       "campos_ruins": [],
       "campos_genericos": [],
       "campos_concretos": [],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": true,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": true,
+      "publicacao_forcada_por_credito_openai": true,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": true,
+        "publicacao_bloqueada": false,
+        "motivo": "Atualização forçada manualmente."
+      }
+    },
+    {
+      "id": "ppse",
+      "sigla": "PPSE",
+      "nome": "Polícia Penal de Sergipe",
+      "uf": "SE",
+      "prioridade_config": 3,
+      "score": 77,
+      "qualidade": "baixa",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
+      "motivos": [
+        "fonte direta falhou ou não trouxe texto suficiente",
+        "score abaixo do mínimo (77)",
+        "foi publicado por modo qualificado; recomenda revisão visual"
+      ],
+      "workflow_sugerido": {
+        "instituicao": "ppse",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital"
+      ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
       "fonte_falhou": true,
@@ -5691,40 +5700,6 @@
         "monitor": null
       },
       {
-        "id": "ppse",
-        "sigla": "PPSE",
-        "nome": "Polícia Penal de Sergipe",
-        "uf": "SE",
-        "prioridade_config": 3,
-        "score": 51,
-        "qualidade": "baixa",
-        "acao": "rodar_qualificado",
-        "prioridade_operacional": "media",
-        "motivos": [
-          "score muito baixo (51)",
-          "muito desatualizado: Infinity dias"
-        ],
-        "workflow_sugerido": {
-          "instituicao": "ppse",
-          "limite": "1",
-          "forcar_atualizacao": "true",
-          "usar_web_search": "true",
-          "modo_qualidade": "qualificado"
-        },
-        "idade_dias": null,
-        "campos_ruins": [],
-        "campos_genericos": [],
-        "campos_concretos": [],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": null,
-        "monitor": null
-      },
-      {
         "id": "ppto",
         "sigla": "PPTO",
         "nome": "Polícia Penal de Tocantins",
@@ -6157,6 +6132,49 @@
         "campos_ruins": [],
         "campos_genericos": [],
         "campos_concretos": [],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": true,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": true,
+        "publicacao_forcada_por_credito_openai": true,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": true,
+          "publicacao_bloqueada": false,
+          "motivo": "Atualização forçada manualmente."
+        }
+      },
+      {
+        "id": "ppse",
+        "sigla": "PPSE",
+        "nome": "Polícia Penal de Sergipe",
+        "uf": "SE",
+        "prioridade_config": 3,
+        "score": 77,
+        "qualidade": "baixa",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
+        "motivos": [
+          "fonte direta falhou ou não trouxe texto suficiente",
+          "score abaixo do mínimo (77)",
+          "foi publicado por modo qualificado; recomenda revisão visual"
+        ],
+        "workflow_sugerido": {
+          "instituicao": "ppse",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital"
+        ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
         "fonte_falhou": true,

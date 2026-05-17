@@ -3,192 +3,12 @@
   "modelo_operacional": "simples",
   "resumo": {
     "total": 110,
-    "pendentes": 18,
-    "fracas": 33,
-    "fortes": 59
+    "pendentes": 14,
+    "fracas": 35,
+    "fortes": 61
   },
   "grupos": {
     "pendentes": [
-      {
-        "id": "ppro",
-        "sigla": "PPRO",
-        "nome": "Polícia Penal de Rondônia",
-        "uf": "RO",
-        "score": 0,
-        "classe": "pendente",
-        "qualidade": "pendente",
-        "motivos": [
-          "precisa primeira atualização",
-          "campos críticos sem dado: salario, vagas, banca, etapas"
-        ],
-        "campos_ruins": [
-          "salario",
-          "vagas",
-          "idade",
-          "materias",
-          "banca",
-          "inscritos",
-          "etapas",
-          "estagio",
-          "validade",
-          "previsao"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "escolaridade",
-          "cfsd"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pprs",
-        "sigla": "PPRS",
-        "nome": "Polícia Penal do Rio Grande do Sul",
-        "uf": "RS",
-        "score": 0,
-        "classe": "pendente",
-        "qualidade": "pendente",
-        "motivos": [
-          "precisa primeira atualização",
-          "campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas"
-        ],
-        "campos_ruins": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "etapas",
-          "cfsd",
-          "estagio",
-          "validade",
-          "previsao"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppsc",
-        "sigla": "PPSC",
-        "nome": "Polícia Penal de Santa Catarina",
-        "uf": "SC",
-        "score": 0,
-        "classe": "pendente",
-        "qualidade": "pendente",
-        "motivos": [
-          "precisa primeira atualização",
-          "campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas"
-        ],
-        "campos_ruins": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "etapas",
-          "cfsd",
-          "estagio",
-          "validade",
-          "previsao"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppse",
-        "sigla": "PPSE",
-        "nome": "Polícia Penal de Sergipe",
-        "uf": "SE",
-        "score": 0,
-        "classe": "pendente",
-        "qualidade": "pendente",
-        "motivos": [
-          "precisa primeira atualização",
-          "campos críticos sem dado: salario, vagas, escolaridade, banca, etapas"
-        ],
-        "campos_ruins": [
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "etapas",
-          "cfsd",
-          "estagio",
-          "validade"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppto",
-        "sigla": "PPTO",
-        "nome": "Polícia Penal de Tocantins",
-        "uf": "TO",
-        "score": 0,
-        "classe": "pendente",
-        "qualidade": "pendente",
-        "motivos": [
-          "precisa primeira atualização",
-          "campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas"
-        ],
-        "campos_ruins": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "etapas",
-          "cfsd",
-          "estagio",
-          "validade",
-          "previsao"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
       {
         "id": "pmrr",
         "sigla": "PMRR",
@@ -422,6 +242,41 @@
           "edital",
           "idade",
           "materias"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppro",
+        "sigla": "PPRO",
+        "nome": "Polícia Penal de Rondônia",
+        "uf": "RO",
+        "score": 24,
+        "classe": "pendente",
+        "qualidade": "pendente",
+        "motivos": [
+          "precisa primeira atualização",
+          "campos críticos sem dado: salario, etapas"
+        ],
+        "campos_ruins": [
+          "salario",
+          "materias",
+          "inscritos",
+          "etapas",
+          "estagio",
+          "validade"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "vagas",
+          "idade",
+          "escolaridade",
+          "cfsd",
+          "previsao"
         ],
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
@@ -755,6 +610,37 @@
           "edital",
           "salario",
           "vagas",
+          "escolaridade"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppto",
+        "sigla": "PPTO",
+        "nome": "Polícia Penal de Tocantins",
+        "uf": "TO",
+        "score": 56,
+        "classe": "fraca",
+        "qualidade": "fraca",
+        "motivos": [
+          "conteúdo fraco ou genérico"
+        ],
+        "campos_ruins": [
+          "idade",
+          "inscritos",
+          "estagio",
+          "previsao"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
           "escolaridade"
         ],
         "workflow_sugerido": {
@@ -1545,6 +1431,41 @@
         }
       },
       {
+        "id": "pprs",
+        "sigla": "PPRS",
+        "nome": "Polícia Penal do Rio Grande do Sul",
+        "uf": "RS",
+        "score": 76,
+        "classe": "fraca",
+        "qualidade": "fraca",
+        "motivos": [
+          "conteúdo fraco ou genérico"
+        ],
+        "campos_ruins": [
+          "inscritos",
+          "cfsd",
+          "estagio"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "etapas",
+          "previsao"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
         "id": "pmsc",
         "sigla": "PMSC",
         "nome": "Polícia Militar de Santa Catarina",
@@ -2100,6 +2021,70 @@
           "escolaridade",
           "materias",
           "cfsd"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fortes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppsc",
+        "sigla": "PPSC",
+        "nome": "Polícia Penal de Santa Catarina",
+        "uf": "SC",
+        "score": 84,
+        "classe": "forte",
+        "qualidade": "forte",
+        "motivos": [
+          "conteúdo bom"
+        ],
+        "campos_ruins": [
+          "inscritos",
+          "previsao"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "materias",
+          "banca",
+          "cfsd"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fortes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppse",
+        "sigla": "PPSE",
+        "nome": "Polícia Penal de Sergipe",
+        "uf": "SE",
+        "score": 84,
+        "classe": "forte",
+        "qualidade": "forte",
+        "motivos": [
+          "conteúdo bom"
+        ],
+        "campos_ruins": [
+          "inscritos",
+          "estagio"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "previsao"
         ],
         "workflow_sugerido": {
           "grupo_atualizacao": "fortes",
@@ -3538,186 +3523,6 @@
   },
   "fila_acoes": [
     {
-      "id": "ppro",
-      "sigla": "PPRO",
-      "nome": "Polícia Penal de Rondônia",
-      "uf": "RO",
-      "score": 0,
-      "classe": "pendente",
-      "qualidade": "pendente",
-      "motivos": [
-        "precisa primeira atualização",
-        "campos críticos sem dado: salario, vagas, banca, etapas"
-      ],
-      "campos_ruins": [
-        "salario",
-        "vagas",
-        "idade",
-        "materias",
-        "banca",
-        "inscritos",
-        "etapas",
-        "estagio",
-        "validade",
-        "previsao"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "escolaridade",
-        "cfsd"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pprs",
-      "sigla": "PPRS",
-      "nome": "Polícia Penal do Rio Grande do Sul",
-      "uf": "RS",
-      "score": 0,
-      "classe": "pendente",
-      "qualidade": "pendente",
-      "motivos": [
-        "precisa primeira atualização",
-        "campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas"
-      ],
-      "campos_ruins": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "etapas",
-        "cfsd",
-        "estagio",
-        "validade",
-        "previsao"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppsc",
-      "sigla": "PPSC",
-      "nome": "Polícia Penal de Santa Catarina",
-      "uf": "SC",
-      "score": 0,
-      "classe": "pendente",
-      "qualidade": "pendente",
-      "motivos": [
-        "precisa primeira atualização",
-        "campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas"
-      ],
-      "campos_ruins": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "etapas",
-        "cfsd",
-        "estagio",
-        "validade",
-        "previsao"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppse",
-      "sigla": "PPSE",
-      "nome": "Polícia Penal de Sergipe",
-      "uf": "SE",
-      "score": 0,
-      "classe": "pendente",
-      "qualidade": "pendente",
-      "motivos": [
-        "precisa primeira atualização",
-        "campos críticos sem dado: salario, vagas, escolaridade, banca, etapas"
-      ],
-      "campos_ruins": [
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "etapas",
-        "cfsd",
-        "estagio",
-        "validade"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppto",
-      "sigla": "PPTO",
-      "nome": "Polícia Penal de Tocantins",
-      "uf": "TO",
-      "score": 0,
-      "classe": "pendente",
-      "qualidade": "pendente",
-      "motivos": [
-        "precisa primeira atualização",
-        "campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas"
-      ],
-      "campos_ruins": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "etapas",
-        "cfsd",
-        "estagio",
-        "validade",
-        "previsao"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
       "id": "pmrr",
       "sigla": "PMRR",
       "nome": "Polícia Militar de Roraima",
@@ -3950,6 +3755,41 @@
         "edital",
         "idade",
         "materias"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppro",
+      "sigla": "PPRO",
+      "nome": "Polícia Penal de Rondônia",
+      "uf": "RO",
+      "score": 24,
+      "classe": "pendente",
+      "qualidade": "pendente",
+      "motivos": [
+        "precisa primeira atualização",
+        "campos críticos sem dado: salario, etapas"
+      ],
+      "campos_ruins": [
+        "salario",
+        "materias",
+        "inscritos",
+        "etapas",
+        "estagio",
+        "validade"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "vagas",
+        "idade",
+        "escolaridade",
+        "cfsd",
+        "previsao"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "pendentes",
@@ -4281,6 +4121,37 @@
         "edital",
         "salario",
         "vagas",
+        "escolaridade"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppto",
+      "sigla": "PPTO",
+      "nome": "Polícia Penal de Tocantins",
+      "uf": "TO",
+      "score": 56,
+      "classe": "fraca",
+      "qualidade": "fraca",
+      "motivos": [
+        "conteúdo fraco ou genérico"
+      ],
+      "campos_ruins": [
+        "idade",
+        "inscritos",
+        "estagio",
+        "previsao"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
         "escolaridade"
       ],
       "workflow_sugerido": {
@@ -5071,6 +4942,41 @@
       }
     },
     {
+      "id": "pprs",
+      "sigla": "PPRS",
+      "nome": "Polícia Penal do Rio Grande do Sul",
+      "uf": "RS",
+      "score": 76,
+      "classe": "fraca",
+      "qualidade": "fraca",
+      "motivos": [
+        "conteúdo fraco ou genérico"
+      ],
+      "campos_ruins": [
+        "inscritos",
+        "cfsd",
+        "estagio"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "etapas",
+        "previsao"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
       "id": "bmpb",
       "sigla": "BMPB",
       "nome": "Corpo de Bombeiros Militar da Paraíba",
@@ -5560,6 +5466,70 @@
         "escolaridade",
         "materias",
         "cfsd"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fortes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppsc",
+      "sigla": "PPSC",
+      "nome": "Polícia Penal de Santa Catarina",
+      "uf": "SC",
+      "score": 84,
+      "classe": "forte",
+      "qualidade": "forte",
+      "motivos": [
+        "conteúdo bom"
+      ],
+      "campos_ruins": [
+        "inscritos",
+        "previsao"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "materias",
+        "banca",
+        "cfsd"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fortes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppse",
+      "sigla": "PPSE",
+      "nome": "Polícia Penal de Sergipe",
+      "uf": "SE",
+      "score": 84,
+      "classe": "forte",
+      "qualidade": "forte",
+      "motivos": [
+        "conteúdo bom"
+      ],
+      "campos_ruins": [
+        "inscritos",
+        "estagio"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "previsao"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "fortes",

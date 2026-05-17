@@ -5,9 +5,9 @@ Gerado em: 2026-05-17
 ## Resumo
 
 - Total: 110
-- Pendentes: 18
-- Atualização fraca: 33
-- Atualização forte: 59
+- Pendentes: 14
+- Atualização fraca: 35
+- Atualização forte: 61
 
 ## Como atualizar
 
@@ -41,11 +41,6 @@ modelo_openai: gpt-5.4-mini
 
 | Sigla | Instituição | UF | Classe | Score | Motivos |
 |---|---|---:|---|---:|---|
-| PPRO | Polícia Penal de Rondônia | RO | pendente | 0 | precisa primeira atualização; campos críticos sem dado: salario, vagas, banca, etapas |
-| PPRS | Polícia Penal do Rio Grande do Sul | RS | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
-| PPSC | Polícia Penal de Santa Catarina | SC | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
-| PPSE | Polícia Penal de Sergipe | SE | pendente | 0 | precisa primeira atualização; campos críticos sem dado: salario, vagas, escolaridade, banca, etapas |
-| PPTO | Polícia Penal de Tocantins | TO | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
 | PMRR | Polícia Militar de Roraima | RR | pendente | 8 | precisa primeira atualização; campos críticos sem dado: salario, escolaridade |
 | PMRO | Polícia Militar de Rondônia | RO | pendente | 12 | precisa primeira atualização; campos críticos sem dado: salario, banca |
 | PPAM | Polícia Penal de Amazonas | AM | pendente | 12 | precisa primeira atualização; campos críticos sem dado: vagas, banca |
@@ -53,6 +48,7 @@ modelo_openai: gpt-5.4-mini
 | PMPI | Polícia Militar de Piauí | PI | pendente | 16 | precisa primeira atualização; campos críticos sem dado: salario, escolaridade |
 | PCRN | Polícia Civil de Rio Grande do Norte | RN | pendente | 18 | precisa primeira atualização; campos críticos sem dado: salario |
 | PPMA | Polícia Penal de Maranhão | MA | pendente | 20 | precisa primeira atualização; campos críticos sem dado: salario, vagas |
+| PPRO | Polícia Penal de Rondônia | RO | pendente | 24 | precisa primeira atualização; campos críticos sem dado: salario, etapas |
 | CBMMS | Corpo de Bombeiros Militar de Mato Grosso do Sul | MS | pendente | 27 | precisa primeira atualização; campos genéricos: salario, cotas, idade, escolaridade; campos críticos genéricos: salario, escolaridade |
 | BMRO | Corpo de Bombeiros Militar de Rondônia | RO | pendente | 28 | precisa primeira atualização; campos críticos sem dado: salario, banca |
 | PMDF | Polícia Militar de Distrito Federal | DF | pendente | 30 | precisa primeira atualização; campos críticos sem dado: etapas |
@@ -68,6 +64,7 @@ modelo_openai: gpt-5.4-mini
 | PPPB | Polícia Penal de Paraíba | PB | fraca | 48 | conteúdo fraco ou genérico |
 | PPRN | Polícia Penal de Rio Grande do Norte | RN | fraca | 52 | conteúdo fraco ou genérico |
 | PMCE | Polícia Militar de Ceará | CE | fraca | 56 | conteúdo fraco ou genérico |
+| PPTO | Polícia Penal de Tocantins | TO | fraca | 56 | conteúdo fraco ou genérico |
 | PPPA | Polícia Penal de Pará | PA | fraca | 60 | conteúdo fraco ou genérico |
 | PPPE | Polícia Penal de Pernambuco | PE | fraca | 60 | conteúdo fraco ou genérico |
 | PPRJ | Polícia Penal do Rio de Janeiro | RJ | fraca | 60 | conteúdo fraco ou genérico |
@@ -92,6 +89,7 @@ modelo_openai: gpt-5.4-mini
 | PCPE | Polícia Civil de Pernambuco | PE | fraca | 76 | conteúdo fraco ou genérico |
 | PCPI | Polícia Civil de Piauí | PI | fraca | 76 | conteúdo fraco ou genérico |
 | PCSE | Polícia Civil de Sergipe | SE | fraca | 76 | conteúdo fraco ou genérico |
+| PPRS | Polícia Penal do Rio Grande do Sul | RS | fraca | 76 | conteúdo fraco ou genérico |
 | PMSC | Polícia Militar de Santa Catarina | SC | fraca | 79 | conteúdo fraco ou genérico; campos genéricos: cotas, idade, estagio |
 | CBMMT | Corpo de Bombeiros Militar do Estado de Mato Grosso | MT | fraca | 81 | conteúdo fraco ou genérico; campos genéricos: etapas; campos críticos genéricos: etapas |
 | PPMT | Polícia Penal de Mato Grosso | MT | fraca | 81 | conteúdo fraco ou genérico; campos genéricos: banca; campos críticos genéricos: banca |
@@ -114,6 +112,8 @@ modelo_openai: gpt-5.4-mini
 | PMPA | Polícia Militar de Pará | PA | forte | 84 | conteúdo bom |
 | PMRN | Polícia Militar de Rio Grande do Norte | RN | forte | 84 | conteúdo bom |
 | PPAP | Polícia Penal de Amapá | AP | forte | 84 | conteúdo bom |
+| PPSC | Polícia Penal de Santa Catarina | SC | forte | 84 | conteúdo bom |
+| PPSE | Polícia Penal de Sergipe | SE | forte | 84 | conteúdo bom |
 | PCAP | Polícia Civil do Estado do Amapá | AP | forte | 86 | campos genéricos: cotas, materias |
 | PMES | Polícia Militar do Espírito Santo | ES | forte | 86 | campos genéricos: inscritos, validade |
 | PMMS | Polícia Militar de Mato Grosso do Sul | MS | forte | 86 | campos genéricos: cotas, validade |

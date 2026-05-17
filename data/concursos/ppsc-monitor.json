@@ -1,6 +1,6 @@
 {
   "atualizado_em": "2026-05-17",
-  "instituicao_id": "ppse",
+  "instituicao_id": "ppsc",
   "grupo_atualizacao": "pendentes",
   "modelo": "gpt-5.4",
   "usou_openai": true,
@@ -14,14 +14,14 @@
     "score": 84
   },
   "usage": {
-    "input_tokens": 35581,
+    "input_tokens": 40009,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1934,
+    "output_tokens": 1765,
     "output_tokens_details": {
-      "reasoning_tokens": 766
+      "reasoning_tokens": 790
     },
-    "total_tokens": 37515
+    "total_tokens": 41774
   }
 }

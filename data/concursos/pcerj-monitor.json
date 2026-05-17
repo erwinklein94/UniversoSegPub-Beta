@@ -1,0 +1,66 @@
+{
+  "atualizado_em": "2026-05-17",
+  "instituicao_id": "pcerj",
+  "modelo": "gpt-5.4-nano",
+  "usou_openai": true,
+  "usou_web_search_openai": false,
+  "publicacao_bloqueada": false,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 95,
+  "motivo": "Mudança detectada nas fontes oficiais monitoradas.",
+  "usage": {
+    "input_tokens": 5485,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 497,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 5982
+  },
+  "fontes_monitoradas": [
+    {
+      "url": "https://www.policiacivil.rj.gov.br/",
+      "ok": false,
+      "status": 403,
+      "hash": "3804b4ddc5736c4df033e3257f47cc7ec05ca0e6ae4f036be86727d8ca9169d2",
+      "tamanho_texto": 56
+    },
+    {
+      "url": "https://conhecimento.fgv.br/concursos/pcrj21",
+      "ok": true,
+      "status": 200,
+      "hash": "fa528fb09c533bd0d24d0b57b941e2a286d10a010527875712ca03d9a1a46336",
+      "tamanho_texto": 1697
+    },
+    {
+      "url": "https://www.cebraspe.org.br/concursos/pc_rj_21_delegado",
+      "ok": true,
+      "status": 200,
+      "hash": "87c799727e8f6124c9ffecd63dac2f641d5bd76bde00466f3eff6e1fa3c129b8",
+      "tamanho_texto": 43
+    },
+    {
+      "url": "https://conhecimento.fgv.br/sites/default/files/css/css_9LU_bceQ5__xIXPrmjTDg4RrtURjOtKExhkvSLA9-sU.css?delta=0&amp;language=pt-br&amp;theme=fgv_conhecimento&amp;include=eJyFUdFyAyEI_CGrn-SgcoYcSkZIk_Tray6XNtM89IlddhlhhW6UxAI8ql9kNAeqaJH6EbPJCFnVw_GshhorDiB1Cc1wRLyeRLHEhXhSDRX71NnlFQvN0Qg5yygkPfwgvwzphr38uqgX7JZY8hpesMs8N7mFBIpP3FAVKuqTdylTk4ETjQZMX-jwakx9DWWcT8B-p26pnzHBGBCV5inhbMRbM0s_YKY235VQWRLwh9ptDtVN53oqu3tuDhdUaRhesL9gulP1aUAv-r9Phak4vc1M2-O-TRot7HUGDte3JjLet_QFDYjVm9TK77NP2x7Wm7598t-mHeaQf8T6Deww0Z4",
+      "ok": true,
+      "status": 200,
+      "hash": "e808f73ea67612128bb90b461d0daed01a50459788e1f950df7909a5349fc6fb",
+      "tamanho_texto": 114272
+    },
+    {
+      "url": "https://conhecimento.fgv.br/sites/default/files/css/css_ScJLB1QzXGrAnTWXiHhuRaHJ8R4j0VmLmq1R0s-0FiY.css?delta=1&amp;language=pt-br&amp;theme=fgv_conhecimento&amp;include=eJyFUdFyAyEI_CGrn-SgcoYcSkZIk_Tray6XNtM89IlddhlhhW6UxAI8ql9kNAeqaJH6EbPJCFnVw_GshhorDiB1Cc1wRLyeRLHEhXhSDRX71NnlFQvN0Qg5yygkPfwgvwzphr38uqgX7JZY8hpesMs8N7mFBIpP3FAVKuqTdylTk4ETjQZMX-jwakx9DWWcT8B-p26pnzHBGBCV5inhbMRbM0s_YKY235VQWRLwh9ptDtVN53oqu3tuDhdUaRhesL9gulP1aUAv-r9Phak4vc1M2-O-TRot7HUGDte3JjLet_QFDYjVm9TK77NP2x7Wm7598t-mHeaQf8T6Deww0Z4",
+      "ok": true,
+      "status": 200,
+      "hash": "336e9a2181b6656391597ca4a6fdaf7e7db39a750e4b8407e8513b239fc4fc0c",
+      "tamanho_texto": 238385
+    },
+    {
+      "url": "https://conhecimento.fgv.br/sites/default/files/css/css_HgOhTnmw3UbGwjE9cCAddwXNosvNjbNLVSf7CL5Dls8.css?delta=2&amp;language=pt-br&amp;theme=fgv_conhecimento&amp;include=eJyFUdFyAyEI_CGrn-SgcoYcSkZIk_Tray6XNtM89IlddhlhhW6UxAI8ql9kNAeqaJH6EbPJCFnVw_GshhorDiB1Cc1wRLyeRLHEhXhSDRX71NnlFQvN0Qg5yygkPfwgvwzphr38uqgX7JZY8hpesMs8N7mFBIpP3FAVKuqTdylTk4ETjQZMX-jwakx9DWWcT8B-p26pnzHBGBCV5inhbMRbM0s_YKY235VQWRLwh9ptDtVN53oqu3tuDhdUaRhesL9gulP1aUAv-r9Phak4vc1M2-O-TRot7HUGDte3JjLet_QFDYjVm9TK77NP2x7Wm7598t-mHeaQf8T6Deww0Z4",
+      "ok": true,
+      "status": 200,
+      "hash": "21969403f4764dbe7da6b7710c054aaedb2691e79113430e77fd56bb7d20e054",
+      "tamanho_texto": 259
+    }
+  ]
+}

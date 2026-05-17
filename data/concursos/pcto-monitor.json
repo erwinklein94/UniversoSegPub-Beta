@@ -1,49 +1,27 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "pcto",
-  "modo_qualidade": "qualificado",
-  "modelo": "gpt-5.4-mini",
+  "grupo_atualizacao": "pendentes",
+  "modelo": "gpt-5.4",
   "usou_openai": true,
   "usou_web_search_openai": true,
-  "publicacao_bloqueada": false,
-  "publicado_por_modo_qualificado": true,
-  "forcar_exibicao_site": true,
-  "publicacao_forcada_por_credito_openai": true,
-  "qualidade_publicacao": "baixa",
-  "score_publicacao": 75,
-  "motivo": "Atualização forçada manualmente.",
+  "antes": {
+    "classe": "pendente",
+    "score": 0
+  },
+  "depois": {
+    "classe": "pendente",
+    "score": 16
+  },
   "usage": {
-    "input_tokens": 15334,
+    "input_tokens": 30876,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 877,
+    "output_tokens": 1393,
     "output_tokens_details": {
-      "reasoning_tokens": 196
+      "reasoning_tokens": 457
     },
-    "total_tokens": 16211
-  },
-  "fontes_monitoradas": [
-    {
-      "url": "https://www.to.gov.br",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
-    },
-    {
-      "url": "https://www.pc.to.gov.br",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
-    },
-    {
-      "url": "https://www.policiacivil.to.gov.br",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
-    }
-  ]
+    "total_tokens": 32269
+  }
 }

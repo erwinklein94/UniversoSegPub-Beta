@@ -1,70 +1,27 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "pcma",
-  "modo_qualidade": "qualificado",
-  "modelo": "gpt-5.4-mini",
+  "grupo_atualizacao": "pendentes",
+  "modelo": "gpt-5.4",
   "usou_openai": true,
   "usou_web_search_openai": true,
-  "publicacao_bloqueada": false,
-  "publicado_por_modo_qualificado": true,
-  "forcar_exibicao_site": true,
-  "publicacao_forcada_por_credito_openai": true,
-  "qualidade_publicacao": "alta",
-  "score_publicacao": 87,
-  "motivo": "Atualização forçada manualmente.",
+  "antes": {
+    "classe": "pendente",
+    "score": 0
+  },
+  "depois": {
+    "classe": "forte",
+    "score": 84
+  },
   "usage": {
-    "input_tokens": 19045,
+    "input_tokens": 39370,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 783,
+    "output_tokens": 2215,
     "output_tokens_details": {
-      "reasoning_tokens": 87
+      "reasoning_tokens": 791
     },
-    "total_tokens": 19828
-  },
-  "fontes_monitoradas": [
-    {
-      "url": "https://www.policiacivil.ma.gov.br",
-      "ok": true,
-      "status": 200,
-      "hash": "e17b3ebf90e32049522450a5cc7f83efcb0f1536fcffbafb4bc2b200750e57a2",
-      "tamanho_texto": 5174
-    },
-    {
-      "url": "https://www.policiacivil.ma.gov.br/biopisicossocial-pcma/",
-      "ok": true,
-      "status": 200,
-      "hash": "9f2af44bba202e9d19a1e3c8aeed4c0fac1850886f50cca44636f61969884d3c",
-      "tamanho_texto": 1239
-    },
-    {
-      "url": "https://www.policiacivil.ma.gov.br/delegado-geral-augusto-barros-neto-participa-do-lancamento-do-programa-brasil-contra-o-crime-organizado-em-brasilia/",
-      "ok": true,
-      "status": 200,
-      "hash": "d04015df6b3239ce086cbe7ecdad7d2fac0fa4cfde396329fd9e4ff2dbb7f293",
-      "tamanho_texto": 3492
-    },
-    {
-      "url": "https://www.policiacivil.ma.gov.br/delegado-geral-augusto-barro-neto-participa-de-audiencia-publica-sobre-seguranca-em-caxias/",
-      "ok": true,
-      "status": 200,
-      "hash": "eaabed9411478bd8cb16659884e39a69e39432781fddddcf65f9aa4989f7b1c5",
-      "tamanho_texto": 3222
-    },
-    {
-      "url": "https://www.policiacivil.ma.gov.br/category/concursos-editais-e-seletivos/",
-      "ok": true,
-      "status": 200,
-      "hash": "a8ae97cb3758682cea6a2a8f6db5f181892827542b3e8217606c9ddc742df4b8",
-      "tamanho_texto": 2525
-    },
-    {
-      "url": "https://www.policiacivil.ma.gov.br/wp-content/uploads/2023/02/OFC.-CIRC.-09-2023-DG-PCMA-COM-ANEXO.pdf",
-      "ok": true,
-      "status": 200,
-      "hash": "b28b3648dd23b74bcb1dabba481b158643b8f187ec07f9744b22e63a4930d2b8",
-      "tamanho_texto": 214808
-    }
-  ]
+    "total_tokens": 41585
+  }
 }

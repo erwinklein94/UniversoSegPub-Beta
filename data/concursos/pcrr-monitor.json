@@ -1,49 +1,27 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "pcrr",
-  "modo_qualidade": "qualificado",
-  "modelo": "gpt-5.4-mini",
+  "grupo_atualizacao": "pendentes",
+  "modelo": "gpt-5.4",
   "usou_openai": true,
   "usou_web_search_openai": true,
-  "publicacao_bloqueada": false,
-  "publicado_por_modo_qualificado": true,
-  "forcar_exibicao_site": true,
-  "publicacao_forcada_por_credito_openai": true,
-  "qualidade_publicacao": "baixa",
-  "score_publicacao": 75,
-  "motivo": "Atualização forçada manualmente.",
+  "antes": {
+    "classe": "pendente",
+    "score": 0
+  },
+  "depois": {
+    "classe": "forte",
+    "score": 84
+  },
   "usage": {
-    "input_tokens": 19441,
+    "input_tokens": 51459,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1261,
+    "output_tokens": 2426,
     "output_tokens_details": {
-      "reasoning_tokens": 242
+      "reasoning_tokens": 901
     },
-    "total_tokens": 20702
-  },
-  "fontes_monitoradas": [
-    {
-      "url": "https://www.rr.gov.br",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
-    },
-    {
-      "url": "https://www.pc.rr.gov.br",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
-    },
-    {
-      "url": "https://www.policiacivil.rr.gov.br",
-      "ok": true,
-      "status": 200,
-      "hash": "4a6faab28a510ba14be4b4944af337bff3251f3de55c2fddf96d0376a05f651d",
-      "tamanho_texto": 26
-    }
-  ]
+    "total_tokens": 53885
+  }
 }

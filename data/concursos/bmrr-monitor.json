@@ -1,56 +1,27 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "bmrr",
-  "modo_qualidade": "qualificado",
-  "modelo": "gpt-5.4-mini",
+  "grupo_atualizacao": "pendentes",
+  "modelo": "gpt-5.4",
   "usou_openai": true,
   "usou_web_search_openai": true,
-  "publicacao_bloqueada": false,
-  "publicado_por_modo_qualificado": true,
-  "forcar_exibicao_site": true,
-  "publicacao_forcada_por_credito_openai": true,
-  "qualidade_publicacao": "alta",
-  "score_publicacao": 87,
-  "motivo": "Atualização forçada manualmente.",
-  "usage": {
-    "input_tokens": 11975,
-    "input_tokens_details": {
-      "cached_tokens": 4736
-    },
-    "output_tokens": 864,
-    "output_tokens_details": {
-      "reasoning_tokens": 154
-    },
-    "total_tokens": 12839
+  "antes": {
+    "classe": "pendente",
+    "score": 0
   },
-  "fontes_monitoradas": [
-    {
-      "url": "https://www.rr.gov.br",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
+  "depois": {
+    "classe": "fraca",
+    "score": 68
+  },
+  "usage": {
+    "input_tokens": 22718,
+    "input_tokens_details": {
+      "cached_tokens": 4608
     },
-    {
-      "url": "https://www.cbm.rr.gov.br",
-      "ok": true,
-      "status": 200,
-      "hash": "c5694b44de85d89ff0299d90b832812883b33db15d057e8a081a1fcb0510ba95",
-      "tamanho_texto": 2936
+    "output_tokens": 1248,
+    "output_tokens_details": {
+      "reasoning_tokens": 370
     },
-    {
-      "url": "https://www.cbmrr.gov.br",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
-    },
-    {
-      "url": "https://www.bombeiros.rr.gov.br",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
-    }
-  ]
+    "total_tokens": 23966
+  }
 }

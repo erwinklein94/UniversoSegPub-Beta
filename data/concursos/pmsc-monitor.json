@@ -5,52 +5,21 @@
   "modelo": "gpt-5.4-mini",
   "usou_openai": true,
   "usou_web_search_openai": true,
-  "publicacao_bloqueada": true,
-  "motivo": "Atualização bloqueada: qualidade baixa, score 63, campos críticos genéricos: etapas, campos críticos sem confirmação: nenhum.",
-  "avaliacao": {
-    "score": 63,
-    "qualidade": "baixa",
-    "ruins": [
-      "inscritos"
-    ],
-    "genericos": [
-      "cotas",
-      "idade",
-      "etapas"
-    ],
-    "concretos": [
-      "edital",
-      "salario",
-      "vagas",
-      "escolaridade",
-      "banca",
-      "cfsd",
-      "validade",
-      "previsao"
-    ],
-    "criticosRuins": [],
-    "criticosGenericos": [
-      "etapas"
-    ],
-    "criticosConcretos": [
-      "edital",
-      "salario",
-      "vagas",
-      "escolaridade",
-      "banca"
-    ],
-    "podePublicar": false
-  },
+  "publicacao_bloqueada": false,
+  "publicado_por_modo_qualificado": true,
+  "qualidade_publicacao": "baixa",
+  "score_publicacao": 75,
+  "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 16251,
+    "input_tokens": 13858,
     "input_tokens_details": {
-      "cached_tokens": 0
+      "cached_tokens": 5760
     },
-    "output_tokens": 1628,
+    "output_tokens": 1327,
     "output_tokens_details": {
-      "reasoning_tokens": 363
+      "reasoning_tokens": 273
     },
-    "total_tokens": 17879
+    "total_tokens": 15185
   },
   "fontes_monitoradas": [
     {

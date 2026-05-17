@@ -1,132 +1,28 @@
-name: Atualizar Concursos - Motor Genérico
+name: Atualizar Concursos - Simples
 
 on:
   workflow_dispatch:
     inputs:
-      instituicao:
-        description: 'Qual instituição atualizar? Use uma por vez ou prioridade_1/prioridade_2/prioridade_3 para lote.'
+      grupo_atualizacao:
+        description: 'Qual fila atualizar? Pendentes = primeira pesquisa; Fracas = conteúdo ruim; Fortes = manutenção; Instituição = ID específico.'
         required: true
-        default: 'pmesp'
+        default: 'pendentes'
         type: choice
         options:
-          - 'pmesp'
-          - 'pcsp'
-          - 'prf'
-          - 'pf'
-          - 'prioridade_1'
-          - 'prioridade_2'
-          - 'prioridade_3'
-          - 'todas_configuradas'
-          - 'pcdf'
-          - 'bmsp'
-          - 'ppsp'
-          - 'pmal'
-          - 'pcal'
-          - 'ppal'
-          - 'bmmg'
-          - 'ppmg'
-          - 'pmmg'
-          - 'pcmg'
-          - 'bmpr'
-          - 'pmpr'
-          - 'pcpr'
-          - 'pmam'
-          - 'pcam'
-          - 'pmerj'
-          - 'bmrj'
-          - 'pcerj'
-          - 'pmba'
-          - 'pcba'
-          - 'pmrs'
-          - 'pcrs'
-          - 'pmsc'
-          - 'bmsc'
-          - 'pcsc'
-          - 'pmes'
-          - 'bmes'
-          - 'pces'
-          - 'pmms'
-          - 'bmms'
-          - 'pcms'
-          - 'ppms'
-          - 'pmmt'
-          - 'bmmt'
-          - 'pcmt'
-          - 'ppmt'
-          - 'pmac'
-          - 'pcac'
-          - 'ppac'
-          - 'pmap'
-          - 'pcap'
-          - 'bmap'
-          - 'pcce'
-          - 'ppam'
-          - 'ppap'
-          - 'pmce'
-          - 'ppce'
-          - 'pmdf'
-          - 'ppdf'
-          - 'pmgo'
-          - 'pcgo'
-          - 'ppgo'
-          - 'pmma'
-          - 'pcma'
-          - 'ppma'
-          - 'pmpa'
-          - 'pcpa'
-          - 'pppa'
-          - 'pmpb'
-          - 'pcpb'
-          - 'pppb'
-          - 'pmpe'
-          - 'pcpe'
-          - 'pppe'
-          - 'pmpi'
-          - 'pcpi'
-          - 'pppi'
-          - 'pmrn'
-          - 'pcrn'
-          - 'pprn'
-          - 'pmro'
-          - 'pcro'
-          - 'ppro'
-          - 'pmrr'
-          - 'pcrr'
-          - 'pprr'
-          - 'pmse'
-          - 'pcse'
-          - 'ppse'
-          - 'pmto'
-          - 'pcto'
-          - 'ppto'
-          - 'bmac'
-          - 'bmal'
-          - 'bmam'
-          - 'bmba'
-          - 'bmce'
-          - 'bmdf'
-          - 'bmgo'
-          - 'bmma'
-          - 'bmpa'
-          - 'bmpb'
-          - 'bmpe'
-          - 'bmpi'
-          - 'bmrn'
-          - 'bmro'
-          - 'bmrr'
-          - 'bmrs'
-          - 'bmse'
-          - 'bmto'
-          - 'pprj'
-          - 'ppba'
-          - 'pppr'
-          - 'pprs'
-          - 'ppsc'
-          - 'ppes'
-      limite:
-        description: 'Limite de instituições quando usar prioridade_1, prioridade_2, prioridade_3 ou todas_configuradas'
+          - 'pendentes'
+          - 'fracas'
+          - 'fortes'
+          - 'todas'
+          - 'instituicao'
+      instituicao:
+        description: 'Use somente se grupo_atualizacao = instituicao. Ex.: pmesp, pcdf, bmac.'
         required: false
-        default: '1'
+        default: ''
+        type: string
+      quantidade:
+        description: 'Quantas instituições atualizar nesta execução?'
+        required: true
+        default: '5'
         type: choice
         options:
           - '1'
@@ -135,43 +31,15 @@ on:
           - '5'
           - '10'
           - '20'
-          - '30'
-          - '50'
-      forcar_atualizacao:
-        description: 'Forçar chamada da OpenAI mesmo sem mudança detectada?'
-        required: false
-        default: 'false'
-        type: choice
-        options:
-          - 'false'
-          - 'true'
-      usar_web_search:
-        description: 'Usar web_search da OpenAI? Mais caro. Deixe false no modo econômico.'
-        required: false
-        default: 'false'
-        type: choice
-        options:
-          - 'false'
-          - 'true'
-      modo_qualidade:
-        description: 'economico preserva dados; qualificado usa modelo melhor e web_search mesmo quando fonte direta falhar.'
-        required: false
-        default: 'economico'
-        type: choice
-        options:
-          - 'economico'
-          - 'qualificado'
-      modelo_qualificado:
-        description: 'Modelo OpenAI usado quando modo_qualidade=qualificado. gpt-5.5 é a opção mais avançada/cara.'
-        required: false
+      modelo_openai:
+        description: 'Modelo para pesquisa. Mini é mais barato; 5.5 é mais caro e deve ser usado em lotes pequenos.'
+        required: true
         default: 'gpt-5.4-mini'
         type: choice
         options:
           - 'gpt-5.4-mini'
           - 'gpt-5.4'
           - 'gpt-5.5'
-  schedule:
-    - cron: '0 10 * * 1'
 
 permissions:
   contents: write
@@ -182,45 +50,34 @@ jobs:
     steps:
       - name: Baixar repositório
         uses: actions/checkout@v4
+
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Rodar motor genérico de concursos
+
+      - name: Atualizar concursos
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-nano' }}
-          OPENAI_MODEL_QUALIDADE: ${{ github.event.inputs.modelo_qualificado || vars.OPENAI_MODEL_QUALIDADE || 'gpt-5.4-mini' }}
-          INSTITUICAO_ID: ${{ github.event.inputs.instituicao || 'prioridade_1' }}
-          LIMITE_INSTITUICOES: ${{ github.event.inputs.limite || '1' }}
-          FORCAR_ATUALIZACAO: ${{ github.event.inputs.forcar_atualizacao || 'false' }}
-          USAR_WEB_SEARCH: ${{ github.event.inputs.usar_web_search || 'false' }}
-          MODO_QUALIDADE: ${{ github.event.inputs.modo_qualidade || 'economico' }}
-          DIAS_REVALIDACAO_COMPLETA: '14'
-          MAX_PAGINAS_OFICIAIS: '6'
-          MAX_CARACTERES_POR_PAGINA: '4500'
-          MIN_SCORE_PUBLICACAO: '78'
-          MAX_CRITICOS_GENERICOS: '2'
-          PERMITIR_PUBLICAR_SE_PIORA: 'false'
-          PUBLICAR_RESULTADO_QUALIFICADO_COM_OPENAI: 'true'
-          WEB_SEARCH_CONTEXT_QUALIDADE: 'high'
-          PERMITIR_FONTES_AUXILIARES_QUALIFICADAS: 'true'
+          GRUPO_ATUALIZACAO: ${{ github.event.inputs.grupo_atualizacao }}
+          INSTITUICAO_ID: ${{ github.event.inputs.instituicao }}
+          QUANTIDADE: ${{ github.event.inputs.quantidade }}
+          MODELO_OPENAI: ${{ github.event.inputs.modelo_openai }}
+          SEARCH_CONTEXT_SIZE: 'high'
         run: node scripts/atualizar-concursos.mjs
-      - name: Gerar relatório de qualidade após atualização
-        env:
-          SCORE_MINIMO_QUALIFICADO: '78'
-          DIAS_ALERTA_DESATUALIZADO: '30'
-          DIAS_ALERTA_MUITO_DESATUALIZADO: '60'
+
+      - name: Gerar relatório simples
         run: node scripts/gerar-relatorio-concursos.mjs
 
       - name: Salvar alterações no repositório
         run: |
-          if [ -z "$(git status --porcelain data/concursos docs/RELATORIO-CONCURSOS.md relatorio-concursos.html)" ]; then
-            echo "Nenhuma alteração detectada em concursos ou relatório."
+          if [ -z "$(git status --porcelain data/concursos docs/RELATORIO-CONCURSOS.md)" ]; then
+            echo "Nenhuma alteração detectada."
             exit 0
           fi
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/concursos docs/RELATORIO-CONCURSOS.md relatorio-concursos.html
-          git commit -m "Atualiza concursos e relatório de qualidade"
+          git add data/concursos docs/RELATORIO-CONCURSOS.md
+          git commit -m "Atualiza concursos pelo motor simples"
           git push

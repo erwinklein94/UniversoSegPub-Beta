@@ -6,7 +6,7 @@
     "uf": "BR",
     "tema": "concursos",
     "prioridade": 1,
-    "frequencia": "semanal",
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/prf.json",
     "arquivo_monitoramento": "data/concursos/prf-monitor.json",
     "site_principal": "https://www.gov.br/prf/pt-br/servicos/concurso-prf-2021",
@@ -38,7 +38,8 @@
       "PRF resultado homologação concurso",
       "PRF concurso oficial site governo"
     ],
-    "tipo": "Polícia Rodoviária Federal"
+    "tipo": "Polícia Rodoviária Federal",
+    "fila_unificada": true
   },
   {
     "id": "pcdf",
@@ -46,8 +47,8 @@
     "sigla": "PCDF",
     "uf": "DF",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcdf.json",
     "arquivo_monitoramento": "data/concursos/pcdf-monitor.json",
     "site_principal": "https://www.cebraspe.org.br/concursos/pc_df_26_delegado",
@@ -82,7 +83,8 @@
       "PCDF resultado homologação concurso",
       "PCDF concurso oficial site governo"
     ],
-    "tipo": "Polícia Civil"
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
   },
   {
     "id": "pmesp",
@@ -91,7 +93,7 @@
     "uf": "SP",
     "tema": "concursos",
     "prioridade": 1,
-    "frequencia": "semanal",
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmesp.json",
     "arquivo_monitoramento": "data/concursos/pmesp-monitor.json",
     "site_principal": "https://concursos.policiamilitar.sp.gov.br",
@@ -127,7 +129,8 @@
       "PMESP resultado homologação concurso",
       "PMESP concurso oficial site governo"
     ],
-    "tipo": "Polícia Militar"
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
   },
   {
     "id": "bmsp",
@@ -135,8 +138,8 @@
     "sigla": "CBPMESP",
     "uf": "SP",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmsp.json",
     "arquivo_monitoramento": "data/concursos/bmsp-monitor.json",
     "site_principal": "https://concursos.policiamilitar.sp.gov.br",
@@ -177,7 +180,8 @@
     ],
     "tipo": "Bombeiro Militar / órgão da PMESP",
     "concurso_compartilhado_com": "pmesp",
-    "observacao_automacao": "CBPMESP normalmente usa ingresso/carreira vinculada à PMESP; o motor pode reaproveitar dados da PMESP no modo econômico."
+    "observacao_automacao": "CBPMESP normalmente usa ingresso/carreira vinculada à PMESP; o motor pode reaproveitar dados da PMESP no modo econômico.",
+    "fila_unificada": true
   },
   {
     "id": "pcsp",
@@ -186,7 +190,7 @@
     "uf": "SP",
     "tema": "concursos",
     "prioridade": 1,
-    "frequencia": "semanal",
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcsp.json",
     "arquivo_monitoramento": "data/concursos/pcsp-monitor.json",
     "site_principal": "https://www.policiacivil.sp.gov.br",
@@ -222,7 +226,8 @@
       "PCSP resultado homologação concurso",
       "PCSP concurso oficial site governo"
     ],
-    "tipo": "Polícia Civil"
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
   },
   {
     "id": "ppsp",
@@ -230,8 +235,8 @@
     "sigla": "PPSP",
     "uf": "SP",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/ppsp.json",
     "arquivo_monitoramento": "data/concursos/ppsp-monitor.json",
     "site_principal": "https://www.institutoaocp.org.br/concursos/664",
@@ -262,7 +267,8 @@
       "PPSP resultado homologação concurso",
       "PPSP concurso oficial site governo"
     ],
-    "tipo": "Polícia Penal"
+    "tipo": "Polícia Penal",
+    "fila_unificada": true
   },
   {
     "id": "pmal",
@@ -270,8 +276,8 @@
     "sigla": "PMAL",
     "uf": "AL",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmal.json",
     "arquivo_monitoramento": "data/concursos/pmal-monitor.json",
     "site_principal": "https://www.cebraspe.org.br/concursos/pm_al_26",
@@ -306,7 +312,8 @@
       "PMAL resultado homologação concurso",
       "PMAL concurso oficial site governo"
     ],
-    "tipo": "Polícia Militar"
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
   },
   {
     "id": "pcal",
@@ -314,8 +321,8 @@
     "sigla": "PCAL",
     "uf": "AL",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcal.json",
     "arquivo_monitoramento": "data/concursos/pcal-monitor.json",
     "site_principal": "https://pc.al.gov.br/",
@@ -351,7 +358,8 @@
       "PCAL resultado homologação concurso",
       "PCAL concurso oficial site governo"
     ],
-    "tipo": "Polícia Civil"
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
   },
   {
     "id": "ppal",
@@ -359,8 +367,8 @@
     "sigla": "PPAL",
     "uf": "AL",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/ppal.json",
     "arquivo_monitoramento": "data/concursos/ppal-monitor.json",
     "site_principal": "https://www.seris.al.gov.br/",
@@ -392,7 +400,8 @@
       "PPAL resultado homologação concurso",
       "PPAL concurso oficial site governo"
     ],
-    "tipo": "Polícia Penal"
+    "tipo": "Polícia Penal",
+    "fila_unificada": true
   },
   {
     "id": "bmmg",
@@ -400,8 +409,8 @@
     "sigla": "CBMMG",
     "uf": "MG",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmmg.json",
     "arquivo_monitoramento": "data/concursos/bmmg-monitor.json",
     "site_principal": "https://www.bombeiros.mg.gov.br/concursos",
@@ -436,7 +445,8 @@
       "CBMMG resultado homologação concurso",
       "CBMMG concurso oficial site governo"
     ],
-    "tipo": "Bombeiro Militar"
+    "tipo": "Bombeiro Militar",
+    "fila_unificada": true
   },
   {
     "id": "ppmg",
@@ -444,8 +454,8 @@
     "sigla": "PPMG",
     "uf": "MG",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/ppmg.json",
     "arquivo_monitoramento": "data/concursos/ppmg-monitor.json",
     "site_principal": "https://www.seguranca.mg.gov.br/",
@@ -477,7 +487,8 @@
       "PPMG resultado homologação concurso",
       "PPMG concurso oficial site governo"
     ],
-    "tipo": "Polícia Penal"
+    "tipo": "Polícia Penal",
+    "fila_unificada": true
   },
   {
     "id": "pmmg",
@@ -486,7 +497,7 @@
     "uf": "MG",
     "tema": "concursos",
     "prioridade": 1,
-    "frequencia": "semanal",
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmmg.json",
     "arquivo_monitoramento": "data/concursos/pmmg-monitor.json",
     "site_principal": "https://www.policiamilitar.mg.gov.br",
@@ -522,7 +533,8 @@
       "PMMG resultado homologação concurso",
       "PMMG concurso oficial site governo"
     ],
-    "tipo": "Polícia Militar"
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
   },
   {
     "id": "pcmg",
@@ -531,7 +543,7 @@
     "uf": "MG",
     "tema": "concursos",
     "prioridade": 1,
-    "frequencia": "semanal",
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcmg.json",
     "arquivo_monitoramento": "data/concursos/pcmg-monitor.json",
     "site_principal": "https://www.policiacivil.mg.gov.br",
@@ -567,7 +579,8 @@
       "PCMG resultado homologação concurso",
       "PCMG concurso oficial site governo"
     ],
-    "tipo": "Polícia Civil"
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
   },
   {
     "id": "bmpr",
@@ -575,8 +588,8 @@
     "sigla": "CBMPR",
     "uf": "PR",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmpr.json",
     "arquivo_monitoramento": "data/concursos/bmpr-monitor.json",
     "site_principal": "https://www.bombeiros.pr.gov.br/Pagina/Concursos",
@@ -611,7 +624,8 @@
       "CBMPR resultado homologação concurso",
       "CBMPR concurso oficial site governo"
     ],
-    "tipo": "Bombeiro Militar"
+    "tipo": "Bombeiro Militar",
+    "fila_unificada": true
   },
   {
     "id": "pmpr",
@@ -619,8 +633,8 @@
     "sigla": "PMPR",
     "uf": "PR",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmpr.json",
     "arquivo_monitoramento": "data/concursos/pmpr-monitor.json",
     "site_principal": "https://www.pmpr.pr.gov.br/Pagina/Concursos-em-Andamento",
@@ -656,7 +670,8 @@
       "PMPR resultado homologação concurso",
       "PMPR concurso oficial site governo"
     ],
-    "tipo": "Polícia Militar"
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
   },
   {
     "id": "pcpr",
@@ -664,8 +679,8 @@
     "sigla": "PCPR",
     "uf": "PR",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcpr.json",
     "arquivo_monitoramento": "data/concursos/pcpr-monitor.json",
     "site_principal": "https://www.pcpr.pr.gov.br/Pagina/Concursos",
@@ -701,7 +716,8 @@
       "PCPR resultado homologação concurso",
       "PCPR concurso oficial site governo"
     ],
-    "tipo": "Polícia Civil"
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
   },
   {
     "id": "pmam",
@@ -709,8 +725,8 @@
     "sigla": "PMAM",
     "uf": "AM",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmam.json",
     "arquivo_monitoramento": "data/concursos/pmam-monitor.json",
     "site_principal": "https://conhecimento.fgv.br/concursos/pmam21",
@@ -746,7 +762,8 @@
       "PMAM resultado homologação concurso",
       "PMAM concurso oficial site governo"
     ],
-    "tipo": "Polícia Militar"
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
   },
   {
     "id": "pcam",
@@ -754,8 +771,8 @@
     "sigla": "PCAM",
     "uf": "AM",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcam.json",
     "arquivo_monitoramento": "data/concursos/pcam-monitor.json",
     "site_principal": "https://conhecimento.fgv.br/concursos/pcam21",
@@ -791,7 +808,8 @@
       "PCAM resultado homologação concurso",
       "PCAM concurso oficial site governo"
     ],
-    "tipo": "Polícia Civil"
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
   },
   {
     "id": "pmerj",
@@ -800,7 +818,7 @@
     "uf": "RJ",
     "tema": "concursos",
     "prioridade": 1,
-    "frequencia": "semanal",
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmerj.json",
     "arquivo_monitoramento": "data/concursos/pmerj-monitor.json",
     "site_principal": "https://concursos.sepm.rj.gov.br",
@@ -836,7 +854,8 @@
       "PMERJ resultado homologação concurso",
       "PMERJ concurso oficial site governo"
     ],
-    "tipo": "Polícia Militar"
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
   },
   {
     "id": "bmrj",
@@ -844,8 +863,8 @@
     "sigla": "CBMERJ",
     "uf": "RJ",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmrj.json",
     "arquivo_monitoramento": "data/concursos/bmrj-monitor.json",
     "site_principal": "https://www.cbmerj.rj.gov.br/cursos-e-concursos/",
@@ -880,7 +899,8 @@
       "CBMERJ resultado homologação concurso",
       "CBMERJ concurso oficial site governo"
     ],
-    "tipo": "Bombeiro Militar"
+    "tipo": "Bombeiro Militar",
+    "fila_unificada": true
   },
   {
     "id": "pcerj",
@@ -889,7 +909,7 @@
     "uf": "RJ",
     "tema": "concursos",
     "prioridade": 1,
-    "frequencia": "semanal",
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcerj.json",
     "arquivo_monitoramento": "data/concursos/pcerj-monitor.json",
     "site_principal": "https://www.policiacivil.rj.gov.br",
@@ -925,7 +945,8 @@
       "PCERJ resultado homologação concurso",
       "PCERJ concurso oficial site governo"
     ],
-    "tipo": "Polícia Civil"
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
   },
   {
     "id": "pmba",
@@ -934,7 +955,7 @@
     "uf": "BA",
     "tema": "concursos",
     "prioridade": 1,
-    "frequencia": "semanal",
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmba.json",
     "arquivo_monitoramento": "data/concursos/pmba-monitor.json",
     "site_principal": "https://www.pm.ba.gov.br",
@@ -970,7 +991,8 @@
       "PMBA resultado homologação concurso",
       "PMBA concurso oficial site governo"
     ],
-    "tipo": "Polícia Militar"
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
   },
   {
     "id": "pcba",
@@ -979,7 +1001,7 @@
     "uf": "BA",
     "tema": "concursos",
     "prioridade": 1,
-    "frequencia": "semanal",
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcba.json",
     "arquivo_monitoramento": "data/concursos/pcba-monitor.json",
     "site_principal": "https://www.policiacivil.ba.gov.br",
@@ -1015,7 +1037,8 @@
       "PCBA resultado homologação concurso",
       "PCBA concurso oficial site governo"
     ],
-    "tipo": "Polícia Civil"
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
   },
   {
     "id": "pmrs",
@@ -1023,8 +1046,8 @@
     "sigla": "PMRS",
     "uf": "RS",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmrs.json",
     "arquivo_monitoramento": "data/concursos/pmrs-monitor.json",
     "site_principal": "https://www.brigadamilitar.rs.gov.br/concursos-2025",
@@ -1060,7 +1083,8 @@
       "PMRS resultado homologação concurso",
       "PMRS concurso oficial site governo"
     ],
-    "tipo": "Polícia Militar"
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
   },
   {
     "id": "pcrs",
@@ -1068,8 +1092,8 @@
     "sigla": "PCRS",
     "uf": "RS",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcrs.json",
     "arquivo_monitoramento": "data/concursos/pcrs-monitor.json",
     "site_principal": "https://www.pc.rs.gov.br/concurso-publico-para-escrivao-e-inspetor-2025",
@@ -1105,7 +1129,8 @@
       "PCRS resultado homologação concurso",
       "PCRS concurso oficial site governo"
     ],
-    "tipo": "Polícia Civil"
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
   },
   {
     "id": "pmsc",
@@ -1113,8 +1138,8 @@
     "sigla": "PMSC",
     "uf": "SC",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmsc.json",
     "arquivo_monitoramento": "data/concursos/pmsc-monitor.json",
     "site_principal": "https://www.pm.sc.gov.br/concursos",
@@ -1150,7 +1175,8 @@
       "PMSC resultado homologação concurso",
       "PMSC concurso oficial site governo"
     ],
-    "tipo": "Polícia Militar"
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
   },
   {
     "id": "bmsc",
@@ -1158,8 +1184,8 @@
     "sigla": "CBMSC",
     "uf": "SC",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmsc.json",
     "arquivo_monitoramento": "data/concursos/bmsc-monitor.json",
     "site_principal": "https://concurso.idib.org.br/",
@@ -1193,7 +1219,8 @@
       "CBMSC resultado homologação concurso",
       "CBMSC concurso oficial site governo"
     ],
-    "tipo": "Bombeiro Militar"
+    "tipo": "Bombeiro Militar",
+    "fila_unificada": true
   },
   {
     "id": "pcsc",
@@ -1201,8 +1228,8 @@
     "sigla": "PCSC",
     "uf": "SC",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcsc.json",
     "arquivo_monitoramento": "data/concursos/pcsc-monitor.json",
     "site_principal": "https://pc.sc.gov.br/?p=35166",
@@ -1238,7 +1265,8 @@
       "PCSC resultado homologação concurso",
       "PCSC concurso oficial site governo"
     ],
-    "tipo": "Polícia Civil"
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
   },
   {
     "id": "pmes",
@@ -1246,8 +1274,8 @@
     "sigla": "PMES",
     "uf": "ES",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmes.json",
     "arquivo_monitoramento": "data/concursos/pmes-monitor.json",
     "site_principal": "https://pm.es.gov.br/concursos",
@@ -1283,7 +1311,8 @@
       "PMES resultado homologação concurso",
       "PMES concurso oficial site governo"
     ],
-    "tipo": "Polícia Militar"
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
   },
   {
     "id": "bmes",
@@ -1291,8 +1320,8 @@
     "sigla": "CBMES",
     "uf": "ES",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmes.json",
     "arquivo_monitoramento": "data/concursos/bmes-monitor.json",
     "site_principal": "https://cb.es.gov.br/cfo2023",
@@ -1327,7 +1356,8 @@
       "CBMES resultado homologação concurso",
       "CBMES concurso oficial site governo"
     ],
-    "tipo": "Bombeiro Militar"
+    "tipo": "Bombeiro Militar",
+    "fila_unificada": true
   },
   {
     "id": "pces",
@@ -1335,8 +1365,8 @@
     "sigla": "PCES",
     "uf": "ES",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pces.json",
     "arquivo_monitoramento": "data/concursos/pces-monitor.json",
     "site_principal": "https://pc.es.gov.br/",
@@ -1372,7 +1402,8 @@
       "PCES resultado homologação concurso",
       "PCES concurso oficial site governo"
     ],
-    "tipo": "Polícia Civil"
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
   },
   {
     "id": "pmms",
@@ -1380,8 +1411,8 @@
     "sigla": "PMMS",
     "uf": "MS",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmms.json",
     "arquivo_monitoramento": "data/concursos/pmms-monitor.json",
     "site_principal": "https://www.pm.ms.gov.br/",
@@ -1417,7 +1448,8 @@
       "PMMS resultado homologação concurso",
       "PMMS concurso oficial site governo"
     ],
-    "tipo": "Polícia Militar"
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
   },
   {
     "id": "bmms",
@@ -1425,8 +1457,8 @@
     "sigla": "CBMMS",
     "uf": "MS",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmms.json",
     "arquivo_monitoramento": "data/concursos/bmms-monitor.json",
     "site_principal": "https://www.concursos.ms.gov.br/",
@@ -1461,7 +1493,8 @@
       "CBMMS resultado homologação concurso",
       "CBMMS concurso oficial site governo"
     ],
-    "tipo": "Bombeiro Militar"
+    "tipo": "Bombeiro Militar",
+    "fila_unificada": true
   },
   {
     "id": "pcms",
@@ -1469,8 +1502,8 @@
     "sigla": "PCMS",
     "uf": "MS",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcms.json",
     "arquivo_monitoramento": "data/concursos/pcms-monitor.json",
     "site_principal": "https://www.pc.ms.gov.br/",
@@ -1506,7 +1539,8 @@
       "PCMS resultado homologação concurso",
       "PCMS concurso oficial site governo"
     ],
-    "tipo": "Polícia Civil"
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
   },
   {
     "id": "ppms",
@@ -1514,8 +1548,8 @@
     "sigla": "PPMS",
     "uf": "MS",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/ppms.json",
     "arquivo_monitoramento": "data/concursos/ppms-monitor.json",
     "site_principal": "https://www.agepen.ms.gov.br/",
@@ -1547,7 +1581,8 @@
       "PPMS resultado homologação concurso",
       "PPMS concurso oficial site governo"
     ],
-    "tipo": "Polícia Penal"
+    "tipo": "Polícia Penal",
+    "fila_unificada": true
   },
   {
     "id": "pmmt",
@@ -1555,8 +1590,8 @@
     "sigla": "PMMT",
     "uf": "MT",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmmt.json",
     "arquivo_monitoramento": "data/concursos/pmmt-monitor.json",
     "site_principal": "https://www.pm.mt.gov.br/",
@@ -1592,7 +1627,8 @@
       "PMMT resultado homologação concurso",
       "PMMT concurso oficial site governo"
     ],
-    "tipo": "Polícia Militar"
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
   },
   {
     "id": "bmmt",
@@ -1600,8 +1636,8 @@
     "sigla": "CBMMT",
     "uf": "MT",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmmt.json",
     "arquivo_monitoramento": "data/concursos/bmmt-monitor.json",
     "site_principal": "https://www.bombeiros.mt.gov.br/concursos-e-seletivos",
@@ -1636,7 +1672,8 @@
       "CBMMT resultado homologação concurso",
       "CBMMT concurso oficial site governo"
     ],
-    "tipo": "Bombeiro Militar"
+    "tipo": "Bombeiro Militar",
+    "fila_unificada": true
   },
   {
     "id": "pcmt",
@@ -1644,8 +1681,8 @@
     "sigla": "PCMT",
     "uf": "MT",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcmt.json",
     "arquivo_monitoramento": "data/concursos/pcmt-monitor.json",
     "site_principal": "https://www.pjc.mt.gov.br/",
@@ -1681,7 +1718,8 @@
       "PCMT resultado homologação concurso",
       "PCMT concurso oficial site governo"
     ],
-    "tipo": "Polícia Civil"
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
   },
   {
     "id": "ppmt",
@@ -1689,8 +1727,8 @@
     "sigla": "PPMT",
     "uf": "MT",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/ppmt.json",
     "arquivo_monitoramento": "data/concursos/ppmt-monitor.json",
     "site_principal": "https://www.sejus.mt.gov.br/",
@@ -1722,7 +1760,8 @@
       "PPMT resultado homologação concurso",
       "PPMT concurso oficial site governo"
     ],
-    "tipo": "Polícia Penal"
+    "tipo": "Polícia Penal",
+    "fila_unificada": true
   },
   {
     "id": "pmac",
@@ -1730,8 +1769,8 @@
     "sigla": "PMAC",
     "uf": "AC",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmac.json",
     "arquivo_monitoramento": "data/concursos/pmac-monitor.json",
     "site_principal": "https://conhecimento.fgv.br/concursos/pmac23",
@@ -1767,7 +1806,8 @@
       "PMAC resultado homologação concurso",
       "PMAC concurso oficial site governo"
     ],
-    "tipo": "Polícia Militar"
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
   },
   {
     "id": "pcac",
@@ -1775,8 +1815,8 @@
     "sigla": "PCAC",
     "uf": "AC",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcac.json",
     "arquivo_monitoramento": "data/concursos/pcac-monitor.json",
     "site_principal": "https://agencia.ac.gov.br/governadora-mailza-assis-empossa-novo-delegado-geral-e-anuncia-concurso-publico-da-policia-civil/",
@@ -1812,7 +1852,8 @@
       "PCAC resultado homologação concurso",
       "PCAC concurso oficial site governo"
     ],
-    "tipo": "Polícia Civil"
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
   },
   {
     "id": "ppac",
@@ -1820,8 +1861,8 @@
     "sigla": "PPAC",
     "uf": "AC",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/ppac.json",
     "arquivo_monitoramento": "data/concursos/ppac-monitor.json",
     "site_principal": "https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/",
@@ -1853,7 +1894,8 @@
       "PPAC resultado homologação concurso",
       "PPAC concurso oficial site governo"
     ],
-    "tipo": "Polícia Penal"
+    "tipo": "Polícia Penal",
+    "fila_unificada": true
   },
   {
     "id": "pmap",
@@ -1861,8 +1903,8 @@
     "sigla": "PMAP",
     "uf": "AP",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmap.json",
     "arquivo_monitoramento": "data/concursos/pmap-monitor.json",
     "site_principal": "https://sead.portal.ap.gov.br/concursos/vigentes/24027",
@@ -1898,7 +1940,8 @@
       "PMAP resultado homologação concurso",
       "PMAP concurso oficial site governo"
     ],
-    "tipo": "Polícia Militar"
+    "tipo": "Polícia Militar",
+    "fila_unificada": true
   },
   {
     "id": "pcap",
@@ -1906,8 +1949,8 @@
     "sigla": "PCAP",
     "uf": "AP",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcap.json",
     "arquivo_monitoramento": "data/concursos/pcap-monitor.json",
     "site_principal": "https://sead.portal.ap.gov.br/concursos/vigentes/3736",
@@ -1943,7 +1986,8 @@
       "PCAP resultado homologação concurso",
       "PCAP concurso oficial site governo"
     ],
-    "tipo": "Polícia Civil"
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
   },
   {
     "id": "bmap",
@@ -1951,8 +1995,8 @@
     "sigla": "CBMAP",
     "uf": "AP",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmap.json",
     "arquivo_monitoramento": "data/concursos/bmap-monitor.json",
     "site_principal": "https://bombeiros.portal.ap.gov.br/",
@@ -1987,7 +2031,8 @@
       "CBMAP resultado homologação concurso",
       "CBMAP concurso oficial site governo"
     ],
-    "tipo": "Bombeiro Militar"
+    "tipo": "Bombeiro Militar",
+    "fila_unificada": true
   },
   {
     "id": "pcce",
@@ -1995,8 +2040,8 @@
     "sigla": "PCCE",
     "uf": "CE",
     "tema": "concursos",
-    "prioridade": 2,
-    "frequencia": "quinzenal",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcce.json",
     "arquivo_monitoramento": "data/concursos/pcce-monitor.json",
     "site_principal": "https://www.cev.uece.br/oippcce/",
@@ -2031,7 +2076,8 @@
       "PCCE resultado homologação concurso",
       "PCCE concurso oficial site governo"
     ],
-    "tipo": "Polícia Civil"
+    "tipo": "Polícia Civil",
+    "fila_unificada": true
   },
   {
     "id": "pf",
@@ -2040,7 +2086,7 @@
     "uf": "BR",
     "tema": "concursos",
     "prioridade": 1,
-    "frequencia": "semanal",
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pf.json",
     "arquivo_monitoramento": "data/concursos/pf-monitor.json",
     "site_principal": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos",
@@ -2072,7 +2118,8 @@
       "PF resultado homologação concurso",
       "PF concurso oficial site governo"
     ],
-    "tipo": "Polícia Federal / Polícia Judiciária da União"
+    "tipo": "Polícia Federal / Polícia Judiciária da União",
+    "fila_unificada": true
   },
   {
     "id": "ppam",
@@ -2081,8 +2128,8 @@
     "uf": "AM",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/ppam.json",
     "arquivo_monitoramento": "data/concursos/ppam-monitor.json",
     "site_principal": "https://www.am.gov.br",
@@ -2125,7 +2172,8 @@
       "PPAM edital PDF concurso Amazonas",
       "PPAM concurso resultado final nomeação convocação",
       "PPAM concurso oficial site governo AM"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "ppap",
@@ -2134,8 +2182,8 @@
     "uf": "AP",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/ppap.json",
     "arquivo_monitoramento": "data/concursos/ppap-monitor.json",
     "site_principal": "https://www.ap.gov.br",
@@ -2178,7 +2226,8 @@
       "PPAP edital PDF concurso Amapá",
       "PPAP concurso resultado final nomeação convocação",
       "PPAP concurso oficial site governo AP"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pmce",
@@ -2187,8 +2236,8 @@
     "uf": "CE",
     "tipo": "Polícia Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmce.json",
     "arquivo_monitoramento": "data/concursos/pmce-monitor.json",
     "site_principal": "https://www.pm.ce.gov.br",
@@ -2231,7 +2280,8 @@
       "PMCE edital PDF concurso Ceará",
       "PMCE concurso resultado final nomeação convocação",
       "PMCE concurso oficial site governo CE"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "ppce",
@@ -2240,8 +2290,8 @@
     "uf": "CE",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/ppce.json",
     "arquivo_monitoramento": "data/concursos/ppce-monitor.json",
     "site_principal": "https://www.ce.gov.br",
@@ -2284,7 +2334,8 @@
       "PPCE edital PDF concurso Ceará",
       "PPCE concurso resultado final nomeação convocação",
       "PPCE concurso oficial site governo CE"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pmdf",
@@ -2293,8 +2344,8 @@
     "uf": "DF",
     "tipo": "Polícia Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmdf.json",
     "arquivo_monitoramento": "data/concursos/pmdf-monitor.json",
     "site_principal": "https://www.pmdf.df.gov.br",
@@ -2337,7 +2388,8 @@
       "PMDF edital PDF concurso Distrito Federal",
       "PMDF concurso resultado final nomeação convocação",
       "PMDF concurso oficial site governo DF"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "ppdf",
@@ -2346,8 +2398,8 @@
     "uf": "DF",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/ppdf.json",
     "arquivo_monitoramento": "data/concursos/ppdf-monitor.json",
     "site_principal": "https://www.seape.df.gov.br",
@@ -2387,7 +2439,8 @@
       "PPDF edital PDF concurso Distrito Federal",
       "PPDF concurso resultado final nomeação convocação",
       "PPDF concurso oficial site governo DF"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pmgo",
@@ -2396,8 +2449,8 @@
     "uf": "GO",
     "tipo": "Polícia Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmgo.json",
     "arquivo_monitoramento": "data/concursos/pmgo-monitor.json",
     "site_principal": "https://www.pm.go.gov.br",
@@ -2440,7 +2493,8 @@
       "PMGO edital PDF concurso Goiás",
       "PMGO concurso resultado final nomeação convocação",
       "PMGO concurso oficial site governo GO"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pcgo",
@@ -2449,8 +2503,8 @@
     "uf": "GO",
     "tipo": "Polícia Civil",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcgo.json",
     "arquivo_monitoramento": "data/concursos/pcgo-monitor.json",
     "site_principal": "https://www.policiacivil.go.gov.br",
@@ -2493,7 +2547,8 @@
       "PCGO edital PDF concurso Goiás",
       "PCGO concurso resultado final nomeação convocação",
       "PCGO concurso oficial site governo GO"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "ppgo",
@@ -2502,8 +2557,8 @@
     "uf": "GO",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/ppgo.json",
     "arquivo_monitoramento": "data/concursos/ppgo-monitor.json",
     "site_principal": "https://www.go.gov.br",
@@ -2546,7 +2601,8 @@
       "PPGO edital PDF concurso Goiás",
       "PPGO concurso resultado final nomeação convocação",
       "PPGO concurso oficial site governo GO"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pmma",
@@ -2555,8 +2611,8 @@
     "uf": "MA",
     "tipo": "Polícia Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmma.json",
     "arquivo_monitoramento": "data/concursos/pmma-monitor.json",
     "site_principal": "https://www.pm.ma.gov.br",
@@ -2599,7 +2655,8 @@
       "PMMA edital PDF concurso Maranhão",
       "PMMA concurso resultado final nomeação convocação",
       "PMMA concurso oficial site governo MA"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pcma",
@@ -2608,8 +2665,8 @@
     "uf": "MA",
     "tipo": "Polícia Civil",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcma.json",
     "arquivo_monitoramento": "data/concursos/pcma-monitor.json",
     "site_principal": "https://www.policiacivil.ma.gov.br",
@@ -2652,7 +2709,8 @@
       "PCMA edital PDF concurso Maranhão",
       "PCMA concurso resultado final nomeação convocação",
       "PCMA concurso oficial site governo MA"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "ppma",
@@ -2661,8 +2719,8 @@
     "uf": "MA",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/ppma.json",
     "arquivo_monitoramento": "data/concursos/ppma-monitor.json",
     "site_principal": "https://www.ma.gov.br",
@@ -2705,7 +2763,8 @@
       "PPMA edital PDF concurso Maranhão",
       "PPMA concurso resultado final nomeação convocação",
       "PPMA concurso oficial site governo MA"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pmpa",
@@ -2714,8 +2773,8 @@
     "uf": "PA",
     "tipo": "Polícia Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmpa.json",
     "arquivo_monitoramento": "data/concursos/pmpa-monitor.json",
     "site_principal": "https://www.pm.pa.gov.br",
@@ -2758,7 +2817,8 @@
       "PMPA edital PDF concurso Pará",
       "PMPA concurso resultado final nomeação convocação",
       "PMPA concurso oficial site governo PA"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pcpa",
@@ -2767,8 +2827,8 @@
     "uf": "PA",
     "tipo": "Polícia Civil",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcpa.json",
     "arquivo_monitoramento": "data/concursos/pcpa-monitor.json",
     "site_principal": "https://www.policiacivil.pa.gov.br",
@@ -2811,7 +2871,8 @@
       "PCPA edital PDF concurso Pará",
       "PCPA concurso resultado final nomeação convocação",
       "PCPA concurso oficial site governo PA"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pppa",
@@ -2820,8 +2881,8 @@
     "uf": "PA",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pppa.json",
     "arquivo_monitoramento": "data/concursos/pppa-monitor.json",
     "site_principal": "https://www.pa.gov.br",
@@ -2864,7 +2925,8 @@
       "PPPA edital PDF concurso Pará",
       "PPPA concurso resultado final nomeação convocação",
       "PPPA concurso oficial site governo PA"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pmpb",
@@ -2873,8 +2935,8 @@
     "uf": "PB",
     "tipo": "Polícia Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmpb.json",
     "arquivo_monitoramento": "data/concursos/pmpb-monitor.json",
     "site_principal": "https://www.pb.gov.br",
@@ -2920,7 +2982,8 @@
       "PMPB edital PDF concurso Paraíba",
       "PMPB concurso resultado final nomeação convocação",
       "PMPB concurso oficial site governo PB"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pcpb",
@@ -2929,8 +2992,8 @@
     "uf": "PB",
     "tipo": "Polícia Civil",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcpb.json",
     "arquivo_monitoramento": "data/concursos/pcpb-monitor.json",
     "site_principal": "https://www.pb.gov.br",
@@ -2976,7 +3039,8 @@
       "PCPB edital PDF concurso Paraíba",
       "PCPB concurso resultado final nomeação convocação",
       "PCPB concurso oficial site governo PB"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pppb",
@@ -2985,8 +3049,8 @@
     "uf": "PB",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pppb.json",
     "arquivo_monitoramento": "data/concursos/pppb-monitor.json",
     "site_principal": "https://www.pb.gov.br",
@@ -3029,7 +3093,8 @@
       "PPPB edital PDF concurso Paraíba",
       "PPPB concurso resultado final nomeação convocação",
       "PPPB concurso oficial site governo PB"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pmpe",
@@ -3038,8 +3103,8 @@
     "uf": "PE",
     "tipo": "Polícia Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmpe.json",
     "arquivo_monitoramento": "data/concursos/pmpe-monitor.json",
     "site_principal": "https://www.pm.pe.gov.br",
@@ -3082,7 +3147,8 @@
       "PMPE edital PDF concurso Pernambuco",
       "PMPE concurso resultado final nomeação convocação",
       "PMPE concurso oficial site governo PE"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pcpe",
@@ -3091,8 +3157,8 @@
     "uf": "PE",
     "tipo": "Polícia Civil",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcpe.json",
     "arquivo_monitoramento": "data/concursos/pcpe-monitor.json",
     "site_principal": "https://www.policiacivil.pe.gov.br",
@@ -3135,7 +3201,8 @@
       "PCPE edital PDF concurso Pernambuco",
       "PCPE concurso resultado final nomeação convocação",
       "PCPE concurso oficial site governo PE"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pppe",
@@ -3144,8 +3211,8 @@
     "uf": "PE",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pppe.json",
     "arquivo_monitoramento": "data/concursos/pppe-monitor.json",
     "site_principal": "https://www.pe.gov.br",
@@ -3188,7 +3255,8 @@
       "PPPE edital PDF concurso Pernambuco",
       "PPPE concurso resultado final nomeação convocação",
       "PPPE concurso oficial site governo PE"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pmpi",
@@ -3197,8 +3265,8 @@
     "uf": "PI",
     "tipo": "Polícia Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmpi.json",
     "arquivo_monitoramento": "data/concursos/pmpi-monitor.json",
     "site_principal": "https://www.pi.gov.br",
@@ -3244,7 +3312,8 @@
       "PMPI edital PDF concurso Piauí",
       "PMPI concurso resultado final nomeação convocação",
       "PMPI concurso oficial site governo PI"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pcpi",
@@ -3253,8 +3322,8 @@
     "uf": "PI",
     "tipo": "Polícia Civil",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcpi.json",
     "arquivo_monitoramento": "data/concursos/pcpi-monitor.json",
     "site_principal": "https://www.pi.gov.br",
@@ -3300,7 +3369,8 @@
       "PCPI edital PDF concurso Piauí",
       "PCPI concurso resultado final nomeação convocação",
       "PCPI concurso oficial site governo PI"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pppi",
@@ -3309,8 +3379,8 @@
     "uf": "PI",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pppi.json",
     "arquivo_monitoramento": "data/concursos/pppi-monitor.json",
     "site_principal": "https://www.pi.gov.br",
@@ -3353,7 +3423,8 @@
       "PPPI edital PDF concurso Piauí",
       "PPPI concurso resultado final nomeação convocação",
       "PPPI concurso oficial site governo PI"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pmrn",
@@ -3362,8 +3433,8 @@
     "uf": "RN",
     "tipo": "Polícia Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmrn.json",
     "arquivo_monitoramento": "data/concursos/pmrn-monitor.json",
     "site_principal": "https://www.rn.gov.br",
@@ -3409,7 +3480,8 @@
       "PMRN edital PDF concurso Rio Grande do Norte",
       "PMRN concurso resultado final nomeação convocação",
       "PMRN concurso oficial site governo RN"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pcrn",
@@ -3418,8 +3490,8 @@
     "uf": "RN",
     "tipo": "Polícia Civil",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcrn.json",
     "arquivo_monitoramento": "data/concursos/pcrn-monitor.json",
     "site_principal": "https://www.rn.gov.br",
@@ -3465,7 +3537,8 @@
       "PCRN edital PDF concurso Rio Grande do Norte",
       "PCRN concurso resultado final nomeação convocação",
       "PCRN concurso oficial site governo RN"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pprn",
@@ -3474,8 +3547,8 @@
     "uf": "RN",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pprn.json",
     "arquivo_monitoramento": "data/concursos/pprn-monitor.json",
     "site_principal": "https://www.rn.gov.br",
@@ -3518,7 +3591,8 @@
       "PPRN edital PDF concurso Rio Grande do Norte",
       "PPRN concurso resultado final nomeação convocação",
       "PPRN concurso oficial site governo RN"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pmro",
@@ -3527,8 +3601,8 @@
     "uf": "RO",
     "tipo": "Polícia Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmro.json",
     "arquivo_monitoramento": "data/concursos/pmro-monitor.json",
     "site_principal": "https://www.ro.gov.br",
@@ -3574,7 +3648,8 @@
       "PMRO edital PDF concurso Rondônia",
       "PMRO concurso resultado final nomeação convocação",
       "PMRO concurso oficial site governo RO"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pcro",
@@ -3583,8 +3658,8 @@
     "uf": "RO",
     "tipo": "Polícia Civil",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcro.json",
     "arquivo_monitoramento": "data/concursos/pcro-monitor.json",
     "site_principal": "https://www.ro.gov.br",
@@ -3630,7 +3705,8 @@
       "PCRO edital PDF concurso Rondônia",
       "PCRO concurso resultado final nomeação convocação",
       "PCRO concurso oficial site governo RO"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "ppro",
@@ -3639,8 +3715,8 @@
     "uf": "RO",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/ppro.json",
     "arquivo_monitoramento": "data/concursos/ppro-monitor.json",
     "site_principal": "https://www.ro.gov.br",
@@ -3683,7 +3759,8 @@
       "PPRO edital PDF concurso Rondônia",
       "PPRO concurso resultado final nomeação convocação",
       "PPRO concurso oficial site governo RO"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pmrr",
@@ -3692,8 +3769,8 @@
     "uf": "RR",
     "tipo": "Polícia Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmrr.json",
     "arquivo_monitoramento": "data/concursos/pmrr-monitor.json",
     "site_principal": "https://www.rr.gov.br",
@@ -3739,7 +3816,8 @@
       "PMRR edital PDF concurso Roraima",
       "PMRR concurso resultado final nomeação convocação",
       "PMRR concurso oficial site governo RR"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pcrr",
@@ -3748,8 +3826,8 @@
     "uf": "RR",
     "tipo": "Polícia Civil",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcrr.json",
     "arquivo_monitoramento": "data/concursos/pcrr-monitor.json",
     "site_principal": "https://www.rr.gov.br",
@@ -3795,7 +3873,8 @@
       "PCRR edital PDF concurso Roraima",
       "PCRR concurso resultado final nomeação convocação",
       "PCRR concurso oficial site governo RR"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pprr",
@@ -3804,8 +3883,8 @@
     "uf": "RR",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pprr.json",
     "arquivo_monitoramento": "data/concursos/pprr-monitor.json",
     "site_principal": "https://www.rr.gov.br",
@@ -3848,7 +3927,8 @@
       "PPRR edital PDF concurso Roraima",
       "PPRR concurso resultado final nomeação convocação",
       "PPRR concurso oficial site governo RR"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pmse",
@@ -3857,8 +3937,8 @@
     "uf": "SE",
     "tipo": "Polícia Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmse.json",
     "arquivo_monitoramento": "data/concursos/pmse-monitor.json",
     "site_principal": "https://www.se.gov.br",
@@ -3904,7 +3984,8 @@
       "PMSE edital PDF concurso Sergipe",
       "PMSE concurso resultado final nomeação convocação",
       "PMSE concurso oficial site governo SE"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pcse",
@@ -3913,8 +3994,8 @@
     "uf": "SE",
     "tipo": "Polícia Civil",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcse.json",
     "arquivo_monitoramento": "data/concursos/pcse-monitor.json",
     "site_principal": "https://www.se.gov.br",
@@ -3960,7 +4041,8 @@
       "PCSE edital PDF concurso Sergipe",
       "PCSE concurso resultado final nomeação convocação",
       "PCSE concurso oficial site governo SE"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "ppse",
@@ -3969,8 +4051,8 @@
     "uf": "SE",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/ppse.json",
     "arquivo_monitoramento": "data/concursos/ppse-monitor.json",
     "site_principal": "https://www.se.gov.br",
@@ -4013,7 +4095,8 @@
       "PPSE edital PDF concurso Sergipe",
       "PPSE concurso resultado final nomeação convocação",
       "PPSE concurso oficial site governo SE"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pmto",
@@ -4022,8 +4105,8 @@
     "uf": "TO",
     "tipo": "Polícia Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pmto.json",
     "arquivo_monitoramento": "data/concursos/pmto-monitor.json",
     "site_principal": "https://www.to.gov.br",
@@ -4069,7 +4152,8 @@
       "PMTO edital PDF concurso Tocantins",
       "PMTO concurso resultado final nomeação convocação",
       "PMTO concurso oficial site governo TO"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pcto",
@@ -4078,8 +4162,8 @@
     "uf": "TO",
     "tipo": "Polícia Civil",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pcto.json",
     "arquivo_monitoramento": "data/concursos/pcto-monitor.json",
     "site_principal": "https://www.to.gov.br",
@@ -4125,7 +4209,8 @@
       "PCTO edital PDF concurso Tocantins",
       "PCTO concurso resultado final nomeação convocação",
       "PCTO concurso oficial site governo TO"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "ppto",
@@ -4134,8 +4219,8 @@
     "uf": "TO",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/ppto.json",
     "arquivo_monitoramento": "data/concursos/ppto-monitor.json",
     "site_principal": "https://www.to.gov.br",
@@ -4178,7 +4263,8 @@
       "PPTO edital PDF concurso Tocantins",
       "PPTO concurso resultado final nomeação convocação",
       "PPTO concurso oficial site governo TO"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "bmac",
@@ -4187,8 +4273,8 @@
     "uf": "AC",
     "tipo": "Bombeiro Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmac.json",
     "arquivo_monitoramento": "data/concursos/bmac-monitor.json",
     "site_principal": "https://www.ac.gov.br",
@@ -4235,7 +4321,8 @@
       "BMAC edital PDF concurso Acre",
       "BMAC concurso resultado final nomeação convocação",
       "BMAC concurso oficial site governo AC"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "bmal",
@@ -4244,8 +4331,8 @@
     "uf": "AL",
     "tipo": "Bombeiro Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmal.json",
     "arquivo_monitoramento": "data/concursos/bmal-monitor.json",
     "site_principal": "https://www.al.gov.br",
@@ -4292,7 +4379,8 @@
       "BMAL edital PDF concurso Alagoas",
       "BMAL concurso resultado final nomeação convocação",
       "BMAL concurso oficial site governo AL"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "bmam",
@@ -4301,8 +4389,8 @@
     "uf": "AM",
     "tipo": "Bombeiro Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmam.json",
     "arquivo_monitoramento": "data/concursos/bmam-monitor.json",
     "site_principal": "https://www.am.gov.br",
@@ -4349,7 +4437,8 @@
       "BMAM edital PDF concurso Amazonas",
       "BMAM concurso resultado final nomeação convocação",
       "BMAM concurso oficial site governo AM"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "bmba",
@@ -4358,8 +4447,8 @@
     "uf": "BA",
     "tipo": "Bombeiro Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmba.json",
     "arquivo_monitoramento": "data/concursos/bmba-monitor.json",
     "site_principal": "https://www.cbm.ba.gov.br",
@@ -4401,7 +4490,8 @@
       "BMBA edital PDF concurso Bahia",
       "BMBA concurso resultado final nomeação convocação",
       "BMBA concurso oficial site governo BA"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "bmce",
@@ -4410,8 +4500,8 @@
     "uf": "CE",
     "tipo": "Bombeiro Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmce.json",
     "arquivo_monitoramento": "data/concursos/bmce-monitor.json",
     "site_principal": "https://www.bombeiros.ce.gov.br",
@@ -4453,7 +4543,8 @@
       "BMCE edital PDF concurso Ceará",
       "BMCE concurso resultado final nomeação convocação",
       "BMCE concurso oficial site governo CE"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "bmdf",
@@ -4462,8 +4553,8 @@
     "uf": "DF",
     "tipo": "Bombeiro Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmdf.json",
     "arquivo_monitoramento": "data/concursos/bmdf-monitor.json",
     "site_principal": "https://www.cbm.df.gov.br",
@@ -4505,7 +4596,8 @@
       "BMDF edital PDF concurso Distrito Federal",
       "BMDF concurso resultado final nomeação convocação",
       "BMDF concurso oficial site governo DF"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "bmgo",
@@ -4514,8 +4606,8 @@
     "uf": "GO",
     "tipo": "Bombeiro Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmgo.json",
     "arquivo_monitoramento": "data/concursos/bmgo-monitor.json",
     "site_principal": "https://www.bombeiros.go.gov.br",
@@ -4557,7 +4649,8 @@
       "BMGO edital PDF concurso Goiás",
       "BMGO concurso resultado final nomeação convocação",
       "BMGO concurso oficial site governo GO"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "bmma",
@@ -4566,8 +4659,8 @@
     "uf": "MA",
     "tipo": "Bombeiro Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmma.json",
     "arquivo_monitoramento": "data/concursos/bmma-monitor.json",
     "site_principal": "https://www.ma.gov.br",
@@ -4614,7 +4707,8 @@
       "BMMA edital PDF concurso Maranhão",
       "BMMA concurso resultado final nomeação convocação",
       "BMMA concurso oficial site governo MA"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "bmpa",
@@ -4623,8 +4717,8 @@
     "uf": "PA",
     "tipo": "Bombeiro Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmpa.json",
     "arquivo_monitoramento": "data/concursos/bmpa-monitor.json",
     "site_principal": "https://www.pa.gov.br",
@@ -4671,7 +4765,8 @@
       "BMPA edital PDF concurso Pará",
       "BMPA concurso resultado final nomeação convocação",
       "BMPA concurso oficial site governo PA"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "bmpb",
@@ -4680,8 +4775,8 @@
     "uf": "PB",
     "tipo": "Bombeiro Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmpb.json",
     "arquivo_monitoramento": "data/concursos/bmpb-monitor.json",
     "site_principal": "https://www.pb.gov.br",
@@ -4728,7 +4823,8 @@
       "BMPB edital PDF concurso Paraíba",
       "BMPB concurso resultado final nomeação convocação",
       "BMPB concurso oficial site governo PB"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "bmpe",
@@ -4737,8 +4833,8 @@
     "uf": "PE",
     "tipo": "Bombeiro Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmpe.json",
     "arquivo_monitoramento": "data/concursos/bmpe-monitor.json",
     "site_principal": "https://www.pe.gov.br",
@@ -4785,7 +4881,8 @@
       "BMPE edital PDF concurso Pernambuco",
       "BMPE concurso resultado final nomeação convocação",
       "BMPE concurso oficial site governo PE"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "bmpi",
@@ -4794,8 +4891,8 @@
     "uf": "PI",
     "tipo": "Bombeiro Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmpi.json",
     "arquivo_monitoramento": "data/concursos/bmpi-monitor.json",
     "site_principal": "https://www.pi.gov.br",
@@ -4842,7 +4939,8 @@
       "BMPI edital PDF concurso Piauí",
       "BMPI concurso resultado final nomeação convocação",
       "BMPI concurso oficial site governo PI"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "bmrn",
@@ -4851,8 +4949,8 @@
     "uf": "RN",
     "tipo": "Bombeiro Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmrn.json",
     "arquivo_monitoramento": "data/concursos/bmrn-monitor.json",
     "site_principal": "https://www.rn.gov.br",
@@ -4899,7 +4997,8 @@
       "BMRN edital PDF concurso Rio Grande do Norte",
       "BMRN concurso resultado final nomeação convocação",
       "BMRN concurso oficial site governo RN"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "bmro",
@@ -4908,8 +5007,8 @@
     "uf": "RO",
     "tipo": "Bombeiro Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmro.json",
     "arquivo_monitoramento": "data/concursos/bmro-monitor.json",
     "site_principal": "https://www.ro.gov.br",
@@ -4956,7 +5055,8 @@
       "BMRO edital PDF concurso Rondônia",
       "BMRO concurso resultado final nomeação convocação",
       "BMRO concurso oficial site governo RO"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "bmrr",
@@ -4965,8 +5065,8 @@
     "uf": "RR",
     "tipo": "Bombeiro Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmrr.json",
     "arquivo_monitoramento": "data/concursos/bmrr-monitor.json",
     "site_principal": "https://www.rr.gov.br",
@@ -5013,7 +5113,8 @@
       "BMRR edital PDF concurso Roraima",
       "BMRR concurso resultado final nomeação convocação",
       "BMRR concurso oficial site governo RR"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "bmrs",
@@ -5022,8 +5123,8 @@
     "uf": "RS",
     "tipo": "Bombeiro Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmrs.json",
     "arquivo_monitoramento": "data/concursos/bmrs-monitor.json",
     "site_principal": "https://www.bombeiros.rs.gov.br",
@@ -5065,7 +5166,8 @@
       "BMRS edital PDF concurso Rio Grande do Sul",
       "BMRS concurso resultado final nomeação convocação",
       "BMRS concurso oficial site governo RS"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "bmse",
@@ -5074,8 +5176,8 @@
     "uf": "SE",
     "tipo": "Bombeiro Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmse.json",
     "arquivo_monitoramento": "data/concursos/bmse-monitor.json",
     "site_principal": "https://www.se.gov.br",
@@ -5122,7 +5224,8 @@
       "BMSE edital PDF concurso Sergipe",
       "BMSE concurso resultado final nomeação convocação",
       "BMSE concurso oficial site governo SE"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "bmto",
@@ -5131,8 +5234,8 @@
     "uf": "TO",
     "tipo": "Bombeiro Militar",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/bmto.json",
     "arquivo_monitoramento": "data/concursos/bmto-monitor.json",
     "site_principal": "https://www.to.gov.br",
@@ -5179,7 +5282,8 @@
       "BMTO edital PDF concurso Tocantins",
       "BMTO concurso resultado final nomeação convocação",
       "BMTO concurso oficial site governo TO"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pprj",
@@ -5188,8 +5292,8 @@
     "uf": "RJ",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pprj.json",
     "arquivo_monitoramento": "data/concursos/pprj-monitor.json",
     "site_principal": "https://www.rj.gov.br",
@@ -5232,7 +5336,8 @@
       "PPRJ edital PDF concurso Rio de Janeiro",
       "PPRJ concurso resultado final nomeação convocação",
       "PPRJ concurso oficial site governo RJ"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "ppba",
@@ -5241,8 +5346,8 @@
     "uf": "BA",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/ppba.json",
     "arquivo_monitoramento": "data/concursos/ppba-monitor.json",
     "site_principal": "https://www.ba.gov.br",
@@ -5285,7 +5390,8 @@
       "PPBA edital PDF concurso Bahia",
       "PPBA concurso resultado final nomeação convocação",
       "PPBA concurso oficial site governo BA"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pppr",
@@ -5294,8 +5400,8 @@
     "uf": "PR",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pppr.json",
     "arquivo_monitoramento": "data/concursos/pppr-monitor.json",
     "site_principal": "https://www.pr.gov.br",
@@ -5338,7 +5444,8 @@
       "PPPR edital PDF concurso Paraná",
       "PPPR concurso resultado final nomeação convocação",
       "PPPR concurso oficial site governo PR"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "pprs",
@@ -5347,8 +5454,8 @@
     "uf": "RS",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/pprs.json",
     "arquivo_monitoramento": "data/concursos/pprs-monitor.json",
     "site_principal": "https://www.rs.gov.br",
@@ -5391,7 +5498,8 @@
       "PPRS edital PDF concurso Rio Grande do Sul",
       "PPRS concurso resultado final nomeação convocação",
       "PPRS concurso oficial site governo RS"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "ppsc",
@@ -5400,8 +5508,8 @@
     "uf": "SC",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/ppsc.json",
     "arquivo_monitoramento": "data/concursos/ppsc-monitor.json",
     "site_principal": "https://www.sc.gov.br",
@@ -5444,7 +5552,8 @@
       "PPSC edital PDF concurso Santa Catarina",
       "PPSC concurso resultado final nomeação convocação",
       "PPSC concurso oficial site governo SC"
-    ]
+    ],
+    "fila_unificada": true
   },
   {
     "id": "ppes",
@@ -5453,8 +5562,8 @@
     "uf": "ES",
     "tipo": "Polícia Penal",
     "tema": "concursos",
-    "prioridade": 3,
-    "frequencia": "manual_inicial",
+    "prioridade": 1,
+    "frequencia": "sob demanda",
     "arquivo_saida": "data/concursos/ppes.json",
     "arquivo_monitoramento": "data/concursos/ppes-monitor.json",
     "site_principal": "https://www.es.gov.br",
@@ -5497,6 +5606,7 @@
       "PPES edital PDF concurso Espírito Santo",
       "PPES concurso resultado final nomeação convocação",
       "PPES concurso oficial site governo ES"
-    ]
+    ],
+    "fila_unificada": true
   }
 ]

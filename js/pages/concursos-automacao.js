@@ -262,14 +262,8 @@
       ? '<a href="' + escapar(concurso.site) + '" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>'
       : '<span class="direito-desc">Fonte oficial em atualização</span>';
 
-    const metadados = concurso.automacao.ultima_pesquisa || concurso.automacao.nivel_confianca || concurso.automacao.score_publicacao
-      ? '<span class="direito-desc"><strong>Atualização automática:</strong> ' +
-          escapar(concurso.automacao.ultima_pesquisa || 'sem data') +
-          ' · confiança: ' + escapar(concurso.automacao.nivel_confianca || 'não informada') +
-          (concurso.automacao.score_publicacao ? ' · score: ' + escapar(concurso.automacao.score_publicacao) : '') +
-          (concurso.automacao.publicado_por_modo_qualificado ? ' · modo qualificado' : '') +
-        '</span>'
-      : '';
+    // Metadados técnicos da automação não devem aparecer para o usuário final.
+    const metadados = '';
 
     lista.innerHTML = `
       <div class="direito-item acao">
@@ -440,7 +434,7 @@
         <p><strong>Próximo edital e acompanhamento:</strong> ${escapar(concurso.previsao)}</p>
       </div>
       <div class="concursos-card-rodape">
-        <p><strong>Status da automação:</strong> ${escapar(concurso.automacao.qualidade_publicacao || 'em acompanhamento')}${concurso.automacao.score_publicacao ? ' · score ' + escapar(concurso.automacao.score_publicacao) : ''}</p>
+        <p><strong>Orientação:</strong> dados organizados para consulta rápida. Revise sempre quando houver novo edital, retificação ou convocação.</p>
         <div class="concursos-card-links">
           ${fonteLink}
           <button type="button" data-concurso-load="${escapar(instId)}">Consultar dados completos</button>

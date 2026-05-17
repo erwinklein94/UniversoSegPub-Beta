@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Relatório de qualidade — Concursos</title>
+  <style>
+    body{font-family:Arial, sans-serif;margin:0;background:#f6f7f9;color:#111827}
+    header{background:#07111f;color:white;padding:28px 36px;border-bottom:4px solid #c8a400}
+    main{padding:28px 36px;max-width:1400px;margin:auto}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-bottom:24px}
+    .card{background:white;border:1px solid #d7dce3;border-radius:12px;padding:18px;box-shadow:0 4px 18px rgba(0,0,0,.04)}
+    .card span{display:block;color:#64748b;font-size:13px;margin-bottom:6px}.card strong{font-size:30px}
+    .toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.toolbar button{border:1px solid #cbd5e1;background:white;border-radius:999px;padding:8px 14px;cursor:pointer}.toolbar button:hover{background:#eef2ff}
+    table{width:100%;border-collapse:collapse;background:white;border:1px solid #d7dce3;border-radius:12px;overflow:hidden}
+    th,td{padding:12px;border-bottom:1px solid #e5e7eb;text-align:left;vertical-align:top}th{background:#f1f5f9;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:#475569}
+    tr.danger{border-left:6px solid #dc2626}tr.warn{border-left:6px solid #f59e0b}tr.info{border-left:6px solid #2563eb}tr.ok{border-left:6px solid #16a34a}
+    pre{margin:0;white-space:pre-wrap;font-size:12px;background:#f8fafc;padding:8px;border-radius:8px;border:1px solid #e2e8f0}
+    small{color:#64748b}
+  </style>
+</head>
+<body>
+<header>
+  <h1>Relatório de qualidade — Concursos</h1>
+  <p>Gerado em 2026-05-17. Use esta fila para decidir quais instituições precisam de pesquisa qualificada.</p>
+</header>
+<main>
+  <section class="cards">
+    <div class="card"><span>Total</span><strong>47</strong></div>
+    <div class="card"><span>Rodar qualificado</span><strong>5</strong></div>
+    <div class="card"><span>Revisar</span><strong>2</strong></div>
+    <div class="card"><span>OK</span><strong>40</strong></div>
+  </section>
+  <div class="toolbar">
+    <button onclick="filtrar('')">Todos</button>
+    <button onclick="filtrar('rodar_qualificado')">Rodar qualificado</button>
+    <button onclick="filtrar('revisar_rascunho_ou_site')">Revisar</button>
+    <button onclick="filtrar('ok')">OK</button>
+  </div>
+  <table>
+    <thead><tr><th>Ação</th><th>Instituição</th><th>Nome</th><th>Prioridade</th><th>Score</th><th>Motivos</th><th>Workflow sugerido</th></tr></thead>
+    <tbody><tr class="danger" data-acao="rodar_qualificado">
+      <td>rodar_qualificado</td>
+      <td><strong>PMMG</strong><br><small>pmmg</small></td>
+      <td>Polícia Militar de Minas Gerais</td>
+      <td>alta</td>
+      <td><strong>90</strong></td>
+      <td>fonte direta falhou ou não trouxe texto suficiente</td>
+      <td><pre>instituicao: pmmg
+limite: 1
+forcar_atualizacao: true
+usar_web_search: true
+modo_qualidade: qualificado</pre></td>
+    </tr>
+<tr class="danger" data-acao="rodar_qualificado">
+      <td>rodar_qualificado</td>
+      <td><strong>CBMMS</strong><br><small>bmms</small></td>
+      <td>Corpo de Bombeiros Militar de Mato Grosso do Sul</td>
+      <td>media</td>
+      <td><strong>64</strong></td>
+      <td>score muito baixo (64); campos críticos genéricos: escolaridade, etapas; muitos campos genéricos: cotas, escolaridade, materias, etapas, estagio, validade</td>
+      <td><pre>instituicao: bmms
+limite: 1
+forcar_atualizacao: true
+usar_web_search: true
+modo_qualidade: qualificado</pre></td>
+    </tr>
+<tr class="danger" data-acao="rodar_qualificado">
+      <td>rodar_qualificado</td>
+      <td><strong>PPMS</strong><br><small>ppms</small></td>
+      <td>Polícia Penal de Mato Grosso do Sul</td>
+      <td>media</td>
+      <td><strong>70</strong></td>
+      <td>score abaixo do mínimo (70); campos críticos genéricos: vagas, banca</td>
+      <td><pre>instituicao: ppms
+limite: 1
+forcar_atualizacao: true
+usar_web_search: true
+modo_qualidade: qualificado</pre></td>
+    </tr>
+<tr class="danger" data-acao="rodar_qualificado">
+      <td>rodar_qualificado</td>
+      <td><strong>PMSC</strong><br><small>pmsc</small></td>
+      <td>Polícia Militar de Santa Catarina</td>
+      <td>media</td>
+      <td><strong>75</strong></td>
+      <td>fonte direta falhou ou não trouxe texto suficiente; existe rascunho gerado para revisão; score abaixo do mínimo (75); foi publicado por modo qualificado; recomenda revisão visual</td>
+      <td><pre>instituicao: pmsc
+limite: 1
+forcar_atualizacao: true
+usar_web_search: true
+modo_qualidade: qualificado</pre></td>
+    </tr>
+<tr class="danger" data-acao="rodar_qualificado">
+      <td>rodar_qualificado</td>
+      <td><strong>PPMT</strong><br><small>ppmt</small></td>
+      <td>Polícia Penal de Mato Grosso</td>
+      <td>media</td>
+      <td><strong>77</strong></td>
+      <td>score abaixo do mínimo (77); campos críticos genéricos: vagas, banca</td>
+      <td><pre>instituicao: ppmt
+limite: 1
+forcar_atualizacao: true
+usar_web_search: true
+modo_qualidade: qualificado</pre></td>
+    </tr>
+<tr class="danger" data-acao="revisar_ou_rodar_qualificado">
+      <td>revisar_ou_rodar_qualificado</td>
+      <td><strong>PMES</strong><br><small>pmes</small></td>
+      <td>Polícia Militar do Espírito Santo</td>
+      <td>baixa</td>
+      <td><strong>69</strong></td>
+      <td>score abaixo do mínimo (69); muitos campos genéricos: cotas, idade, materias, inscritos, etapas, validade</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="danger" data-acao="revisar_ou_rodar_qualificado">
+      <td>revisar_ou_rodar_qualificado</td>
+      <td><strong>CBMMT</strong><br><small>bmmt</small></td>
+      <td>Corpo de Bombeiros Militar do Estado de Mato Grosso</td>
+      <td>baixa</td>
+      <td><strong>75</strong></td>
+      <td>score abaixo do mínimo (75)</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PCAP</strong><br><small>pcap</small></td>
+      <td>Polícia Civil do Estado do Amapá</td>
+      <td>baixa</td>
+      <td><strong>79</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PCMS</strong><br><small>pcms</small></td>
+      <td>Polícia Civil de Mato Grosso do Sul</td>
+      <td>baixa</td>
+      <td><strong>79</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>CBMERJ</strong><br><small>bmrj</small></td>
+      <td>Corpo de Bombeiros Militar do Estado do Rio de Janeiro</td>
+      <td>baixa</td>
+      <td><strong>82</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PCAM</strong><br><small>pcam</small></td>
+      <td>Polícia Civil do Estado do Amazonas</td>
+      <td>baixa</td>
+      <td><strong>82</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PMAP</strong><br><small>pmap</small></td>
+      <td>Polícia Militar do Estado do Amapá</td>
+      <td>baixa</td>
+      <td><strong>82</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PMESP</strong><br><small>pmesp</small></td>
+      <td>Polícia Militar do Estado de São Paulo</td>
+      <td>baixa</td>
+      <td><strong>82</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PCES</strong><br><small>pces</small></td>
+      <td>Polícia Civil do Espírito Santo</td>
+      <td>baixa</td>
+      <td><strong>84</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PCRS</strong><br><small>pcrs</small></td>
+      <td>Polícia Civil do Rio Grande do Sul</td>
+      <td>baixa</td>
+      <td><strong>84</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>CBMPR</strong><br><small>bmpr</small></td>
+      <td>Corpo de Bombeiros Militar do Paraná</td>
+      <td>baixa</td>
+      <td><strong>85</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PMAL</strong><br><small>pmal</small></td>
+      <td>Polícia Militar do Estado de Alagoas</td>
+      <td>baixa</td>
+      <td><strong>85</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PMAM</strong><br><small>pmam</small></td>
+      <td>Polícia Militar do Estado do Amazonas</td>
+      <td>baixa</td>
+      <td><strong>85</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PMRS</strong><br><small>pmrs</small></td>
+      <td>Brigada Militar do Rio Grande do Sul</td>
+      <td>baixa</td>
+      <td><strong>85</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PRF</strong><br><small>prf</small></td>
+      <td>Polícia Rodoviária Federal</td>
+      <td>baixa</td>
+      <td><strong>85</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>CBMAP</strong><br><small>bmap</small></td>
+      <td>Corpo de Bombeiros Militar do Amapá</td>
+      <td>baixa</td>
+      <td><strong>87</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PCMG</strong><br><small>pcmg</small></td>
+      <td>Polícia Civil de Minas Gerais</td>
+      <td>baixa</td>
+      <td><strong>87</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PCMT</strong><br><small>pcmt</small></td>
+      <td>Polícia Judiciária Civil de Mato Grosso</td>
+      <td>baixa</td>
+      <td><strong>87</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PCSC</strong><br><small>pcsc</small></td>
+      <td>Polícia Civil de Santa Catarina</td>
+      <td>baixa</td>
+      <td><strong>87</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PCSP</strong><br><small>pcsp</small></td>
+      <td>Polícia Civil do Estado de São Paulo</td>
+      <td>baixa</td>
+      <td><strong>87</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PMMS</strong><br><small>pmms</small></td>
+      <td>Polícia Militar de Mato Grosso do Sul</td>
+      <td>baixa</td>
+      <td><strong>87</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PMMT</strong><br><small>pmmt</small></td>
+      <td>Polícia Militar de Mato Grosso</td>
+      <td>baixa</td>
+      <td><strong>87</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PPMG</strong><br><small>ppmg</small></td>
+      <td>Polícia Penal de Minas Gerais</td>
+      <td>baixa</td>
+      <td><strong>87</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PPSP</strong><br><small>ppsp</small></td>
+      <td>Polícia Penal do Estado de São Paulo</td>
+      <td>baixa</td>
+      <td><strong>87</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>CBMSC</strong><br><small>bmsc</small></td>
+      <td>Corpo de Bombeiros Militar de Santa Catarina</td>
+      <td>baixa</td>
+      <td><strong>90</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>CBPMESP</strong><br><small>bmsp</small></td>
+      <td>Corpo de Bombeiros da Polícia Militar do Estado de São Paulo</td>
+      <td>baixa</td>
+      <td><strong>90</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PCCE</strong><br><small>pcce</small></td>
+      <td>Polícia Civil do Estado do Ceará</td>
+      <td>baixa</td>
+      <td><strong>90</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PMAC</strong><br><small>pmac</small></td>
+      <td>Polícia Militar do Acre</td>
+      <td>baixa</td>
+      <td><strong>90</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PMBA</strong><br><small>pmba</small></td>
+      <td>Polícia Militar da Bahia</td>
+      <td>baixa</td>
+      <td><strong>90</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PMERJ</strong><br><small>pmerj</small></td>
+      <td>Polícia Militar do Rio de Janeiro</td>
+      <td>baixa</td>
+      <td><strong>90</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PMPR</strong><br><small>pmpr</small></td>
+      <td>Polícia Militar do Paraná</td>
+      <td>baixa</td>
+      <td><strong>90</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PPAC</strong><br><small>ppac</small></td>
+      <td>Polícia Penal do Acre</td>
+      <td>baixa</td>
+      <td><strong>90</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PPAL</strong><br><small>ppal</small></td>
+      <td>Polícia Penal do Estado de Alagoas</td>
+      <td>baixa</td>
+      <td><strong>90</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>CBMES</strong><br><small>bmes</small></td>
+      <td>Corpo de Bombeiros Militar do Estado do Espírito Santo</td>
+      <td>baixa</td>
+      <td><strong>93</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>CBMMG</strong><br><small>bmmg</small></td>
+      <td>Corpo de Bombeiros Militar de Minas Gerais</td>
+      <td>baixa</td>
+      <td><strong>93</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PCAC</strong><br><small>pcac</small></td>
+      <td>Polícia Civil do Acre</td>
+      <td>baixa</td>
+      <td><strong>93</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PCAL</strong><br><small>pcal</small></td>
+      <td>Polícia Civil do Estado de Alagoas</td>
+      <td>baixa</td>
+      <td><strong>93</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PCBA</strong><br><small>pcba</small></td>
+      <td>Polícia Civil da Bahia</td>
+      <td>baixa</td>
+      <td><strong>93</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PCDF</strong><br><small>pcdf</small></td>
+      <td>Polícia Civil do Distrito Federal</td>
+      <td>baixa</td>
+      <td><strong>93</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PCERJ</strong><br><small>pcerj</small></td>
+      <td>Polícia Civil do Rio de Janeiro</td>
+      <td>baixa</td>
+      <td><strong>93</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PCPR</strong><br><small>pcpr</small></td>
+      <td>Polícia Civil do Paraná</td>
+      <td>baixa</td>
+      <td><strong>93</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
+      <td><strong>PF</strong><br><small>pf</small></td>
+      <td>Polícia Federal</td>
+      <td>baixa</td>
+      <td><strong>93</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr></tbody>
+  </table>
+</main>
+<script>
+function filtrar(acao){document.querySelectorAll('tbody tr').forEach(tr=>{tr.style.display=!acao||tr.dataset.acao===acao?'':'none'})}
+</script>
+</body>
+</html>

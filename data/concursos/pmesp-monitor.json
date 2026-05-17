@@ -1,19 +1,20 @@
 {
   "atualizado_em": "2026-05-17",
+  "instituicao_id": "pmesp",
   "modelo": "gpt-5.4-nano",
   "usou_openai": true,
   "usou_web_search_openai": false,
   "motivo": "Mudança detectada nas fontes oficiais monitoradas.",
   "usage": {
-    "input_tokens": 8882,
+    "input_tokens": 2837,
     "input_tokens_details": {
       "cached_tokens": 0
     },
-    "output_tokens": 387,
+    "output_tokens": 352,
     "output_tokens_details": {
       "reasoning_tokens": 0
     },
-    "total_tokens": 9269
+    "total_tokens": 3189
   },
   "fontes_monitoradas": [
     {
@@ -34,43 +35,29 @@
       "url": "https://www.vunesp.com.br/",
       "ok": false,
       "status": 403,
-      "hash": "21772ac68f0086339822511e98eab086e88c01b16b67882e11b976aff56fcd85",
-      "tamanho_texto": 295
+      "hash": "e8ebbc04194e596beac3fdb9751ce90398f14e0bd08fdd287400be0475a5699c",
+      "tamanho_texto": 293
     },
     {
-      "url": "https://www.policiamilitar.sp.gov.br/servico-ao-pm/login",
+      "url": "https://www.policiamilitar.sp.gov.br/Pmesp.CanalImprensaExterno/",
       "ok": true,
       "status": 200,
-      "hash": "ca6ffad151a2e5764c0e3e01c88d366d078e36fec15c0ef3bdafbe7b3b8cc4d8",
-      "tamanho_texto": 621
+      "hash": "08d8779370f53bfa0949afcec6ff0085b9678eb7781d7f365e9b424489300be8",
+      "tamanho_texto": 606
     },
     {
-      "url": "https://portaldenoticias.policiamilitar.sp.gov.br/",
-      "ok": true,
-      "status": 200,
-      "hash": "004c81fa11f198899a6dc08950e1ecd82a81e4e09848ead141504164dcefaa78",
-      "tamanho_texto": 4216
+      "url": "https://www.concursos.policiamilitar.sp.gov.br/",
+      "ok": false,
+      "status": 0,
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tamanho_texto": 0
     },
     {
-      "url": "https://www.policiamilitar.sp.gov.br/institucional/capacitacao-treinamento",
-      "ok": true,
-      "status": 200,
-      "hash": "c37035adc020314256aa6344159fa465ded9b99fa506df8aadd66d4ae00d90c2",
-      "tamanho_texto": 9056
-    },
-    {
-      "url": "https://www.policiamilitar.sp.gov.br/diariodocomandante/",
-      "ok": true,
-      "status": 200,
-      "hash": "8eb86ff836372c16d898211c17971c80ad8a8b008dea5b24dcb0b558856f1891",
-      "tamanho_texto": 342
-    },
-    {
-      "url": "https://www.policiamilitar.sp.gov.br/institucional/herois-da-pm",
-      "ok": true,
-      "status": 200,
-      "hash": "384ca179bc38a652d9c085b4415d1f60d109bb3840ae862aab824e71ef2b0333",
-      "tamanho_texto": 2813
+      "url": "https://www.policiamilitar.sp.gov.br/Pmesp.CanalImprensaExterno/www.policiamilitar.sp.gov.br/jornalista/login",
+      "ok": false,
+      "status": 404,
+      "hash": "0d3e7bb75849f114a61f979fa0ea2e265b92647c307e3338f664232e0c8a3e2e",
+      "tamanho_texto": 538
     }
   ]
 }

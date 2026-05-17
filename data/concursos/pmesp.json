@@ -5,34 +5,35 @@
   "uf": "SP",
   "tema": "concursos",
   "status": "rascunho",
-  "titulo": "PMESP: concursos, requisitos e etapas",
-  "resumo": "O guia de concursos da PMESP reúne informações sobre o ingresso na Polícia Militar do Estado de São Paulo, com foco em edital, requisitos, etapas, formação e fontes oficiais de conferência.",
-  "edital": "Soldado PM 2ª Classe — PMES2502 em andamento; 2º Tenente Médico PM Estagiário 2026; Aluno-Oficial PM 2025 encerrado; CFS 2026 interno",
-  "salario": "Soldado PMES2502: R$ 5.055,53. 2º Tenente Médico PM Estagiário: R$ 9.832,41. Remuneração total PMESP segue tabela SGGD/SP julho/2025 até nova tabela total; Lei 18.441/2026 atualizou vencimentos-base desde 01/04/2026.",
-  "vagas": "Soldado PMES2502: 2.200 vagas; Médico PM 2026: 36 vagas; Aluno-Oficial PM 2025: 165 vagas; CFS 2026 interno: 500 vagas.",
-  "cotas": "Reserva de vagas conforme edital e legislação aplicável; verificar regra específica de cada certame.",
-  "idade": "Soldado: 17 a 30 anos, conforme edital e exceções legais para integrantes da PMESP. Demais carreiras: seguir edital específico e LC SP 1.291/2016 atualizada.",
-  "escolaridade": "Soldado: Ensino Médio completo e CNH categoria B ou superior. Aluno-Oficial, Médico PM e concursos internos possuem requisitos próprios de escolaridade, formação, quadro e situação funcional.",
-  "materias": "Soldado: Língua Portuguesa, Matemática, Conhecimentos Gerais, Noções Básicas de Informática e Noções de Administração Pública. Demais certames: conteúdo programático próprio do edital.",
-  "banca": "Vunesp nos certames PMESP localizados; sempre confirmar no edital específico.",
-  "inscritos": "Soldado PMES2502: inscrições encerradas e certame em fases posteriores. Médico PM 2026: inscrições previstas de 16/03/2026 a 07/05/2026. Aluno-Oficial 2025 e CFS interno 2026: inscrições encerradas.",
-  "etapas": "Prova objetiva, redação quando prevista, exames de saúde, exame de aptidão física, avaliação psicológica, avaliação social/investigação social, análise documental, títulos quando aplicável e demais fases do edital.",
-  "cfsd": "Soldado: Curso de Formação de Praças/Soldados após aprovação nas fases. Aluno-Oficial: CFO. Médico PM: estágio/adaptação conforme edital. CFS 2026: curso interno de formação de sargentos.",
-  "estagio": "Estágio probatório de 3 anos, observadas regras constitucionais, legislação estadual e normas internas da PMESP.",
-  "validade": "Conforme cada edital: verificar PMES2502, Médico PM Estagiário, Aluno-Oficial e CFS interno nas páginas oficiais.",
-  "previsao": "Não publicar como novo edital aberto sem fonte oficial. O destaque atual deve ser PMES2502 em andamento e Médico PM 2026 dentro do cronograma oficial; os demais ficam como concursos recentes/histórico ou internos.",
-  "site": "https://concursos.policiamilitar.sp.gov.br",
+  "titulo": "PMESP: concursos, páginas oficiais",
+  "resumo": "Não encontrado em fonte oficial (para atualização do resumo específico de concursos).",
+  "edital": "não encontrado em fonte oficial",
+  "salario": "não encontrado em fonte oficial",
+  "vagas": "não encontrado em fonte oficial",
+  "cotas": "não encontrado em fonte oficial",
+  "idade": "não encontrado em fonte oficial",
+  "escolaridade": "não encontrado em fonte oficial",
+  "materias": "não encontrado em fonte oficial",
+  "banca": "não encontrado em fonte oficial",
+  "inscritos": "não encontrado em fonte oficial",
+  "etapas": "não encontrado em fonte oficial",
+  "cfsd": "não encontrado em fonte oficial",
+  "estagio": "não encontrado em fonte oficial",
+  "validade": "não encontrado em fonte oficial",
+  "previsao": "não encontrado em fonte oficial",
+  "site": "https://www.policiamilitar.sp.gov.br/",
   "fontes": [
     {
-      "titulo": "Portal de Concursos da Polícia Militar do Estado de São Paulo",
-      "url": "https://concursos.policiamilitar.sp.gov.br",
-      "tipo": "fonte oficial"
+      "titulo": "Página institucional da Polícia Militar do Estado de São Paulo (acesso ao menu “Concursos”)",
+      "url": "https://www.policiamilitar.sp.gov.br/",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
     }
   ],
-  "ultima_pesquisa": null,
+  "ultima_pesquisa": "2026-05-17",
   "nivel_confianca": "baixo",
   "precisa_revisao_humana": true,
   "alertas": [
-    "Arquivo inicial criado a partir dos dados já existentes no site. Ainda não foi atualizado por automação."
+    "Fontes oficiais fornecidas no prompt não trazem texto/links de editais e informações de concursos; apenas conteúdo institucional e indicação de menu “Concursos”."
   ]
 }

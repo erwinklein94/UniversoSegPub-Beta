@@ -161,6 +161,15 @@ on:
         options:
           - 'economico'
           - 'qualificado'
+      modelo_qualificado:
+        description: 'Modelo OpenAI usado quando modo_qualidade=qualificado. gpt-5.5 é a opção mais avançada/cara.'
+        required: false
+        default: 'gpt-5.4-mini'
+        type: choice
+        options:
+          - 'gpt-5.4-mini'
+          - 'gpt-5.4'
+          - 'gpt-5.5'
   schedule:
     - cron: '0 10 * * 1'
 
@@ -181,7 +190,7 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-nano' }}
-          OPENAI_MODEL_QUALIDADE: ${{ vars.OPENAI_MODEL_QUALIDADE || 'gpt-5.4-mini' }}
+          OPENAI_MODEL_QUALIDADE: ${{ github.event.inputs.modelo_qualificado || vars.OPENAI_MODEL_QUALIDADE || 'gpt-5.4-mini' }}
           INSTITUICAO_ID: ${{ github.event.inputs.instituicao || 'prioridade_1' }}
           LIMITE_INSTITUICOES: ${{ github.event.inputs.limite || '1' }}
           FORCAR_ATUALIZACAO: ${{ github.event.inputs.forcar_atualizacao || 'false' }}

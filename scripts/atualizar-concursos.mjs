@@ -19,6 +19,7 @@ const PERMITIR_PUBLICAR_SE_PIORA = String(process.env.PERMITIR_PUBLICAR_SE_PIORA
 const PUBLICAR_RESULTADO_QUALIFICADO_COM_OPENAI = String(process.env.PUBLICAR_RESULTADO_QUALIFICADO_COM_OPENAI || 'true').toLowerCase() === 'true';
 const WEB_SEARCH_CONTEXT_QUALIDADE = process.env.WEB_SEARCH_CONTEXT_QUALIDADE || 'high';
 const PERMITIR_FONTES_AUXILIARES_QUALIFICADAS = String(process.env.PERMITIR_FONTES_AUXILIARES_QUALIFICADAS || 'true').toLowerCase() === 'true';
+const MODELOS_QUALIFICADOS_CONHECIDOS = ['gpt-5.4-mini', 'gpt-5.4', 'gpt-5.5'];
 const HOJE = new Date().toISOString().slice(0, 10);
 
 const camposObrigatorios = ['instituicao_id','instituicao_nome','sigla','uf','tema','status','titulo','resumo','edital','salario','vagas','cotas','idade','escolaridade','materias','banca','inscritos','etapas','cfsd','estagio','validade','previsao','site','fontes','ultima_pesquisa','nivel_confianca','precisa_revisao_humana','alertas'];

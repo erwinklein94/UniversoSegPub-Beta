@@ -15,11 +15,11 @@
   },
   "resumo": {
     "total": 47,
-    "rodar_qualificado": 5,
+    "rodar_qualificado": 6,
     "revisar": 2,
     "rodar_economico": 0,
-    "ok": 40,
-    "fonte_falhou": 2,
+    "ok": 39,
+    "fonte_falhou": 3,
     "com_rascunho": 1
   },
   "fila_acoes": [
@@ -289,6 +289,60 @@
       "publicacao_forcada_por_credito_openai": false,
       "ultima_pesquisa": "2026-05-17",
       "monitor": null
+    },
+    {
+      "id": "bmap",
+      "sigla": "CBMAP",
+      "nome": "Corpo de Bombeiros Militar do Amapá",
+      "uf": "AP",
+      "prioridade_config": 2,
+      "score": 92,
+      "qualidade": "alta",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
+      "motivos": [
+        "fonte direta falhou ou não trouxe texto suficiente",
+        "foi publicado por modo qualificado; recomenda revisão visual"
+      ],
+      "workflow_sugerido": {
+        "instituicao": "bmap",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [
+        "idade",
+        "validade"
+      ],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "escolaridade",
+        "materias",
+        "inscritos",
+        "etapas",
+        "cfsd",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": true,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": true,
+      "publicacao_forcada_por_credito_openai": true,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": true,
+        "publicacao_bloqueada": false,
+        "motivo": "Atualização forçada manualmente."
+      }
     },
     {
       "id": "pmes",
@@ -946,46 +1000,6 @@
         "publicacao_bloqueada": false,
         "motivo": "Mudança detectada nas fontes oficiais monitoradas."
       }
-    },
-    {
-      "id": "bmap",
-      "sigla": "CBMAP",
-      "nome": "Corpo de Bombeiros Militar do Amapá",
-      "uf": "AP",
-      "prioridade_config": 2,
-      "score": 87,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "materias",
-        "validade"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "banca",
-        "inscritos",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
     },
     {
       "id": "pcmg",
@@ -2287,6 +2301,60 @@
         "publicacao_forcada_por_credito_openai": false,
         "ultima_pesquisa": "2026-05-17",
         "monitor": null
+      },
+      {
+        "id": "bmap",
+        "sigla": "CBMAP",
+        "nome": "Corpo de Bombeiros Militar do Amapá",
+        "uf": "AP",
+        "prioridade_config": 2,
+        "score": 92,
+        "qualidade": "alta",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
+        "motivos": [
+          "fonte direta falhou ou não trouxe texto suficiente",
+          "foi publicado por modo qualificado; recomenda revisão visual"
+        ],
+        "workflow_sugerido": {
+          "instituicao": "bmap",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [
+          "idade",
+          "validade"
+        ],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "escolaridade",
+          "materias",
+          "inscritos",
+          "etapas",
+          "cfsd",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": true,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": true,
+        "publicacao_forcada_por_credito_openai": true,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": true,
+          "publicacao_bloqueada": false,
+          "motivo": "Atualização forçada manualmente."
+        }
       }
     ],
     "revisar": [
@@ -2949,46 +3017,6 @@
           "publicacao_bloqueada": false,
           "motivo": "Mudança detectada nas fontes oficiais monitoradas."
         }
-      },
-      {
-        "id": "bmap",
-        "sigla": "CBMAP",
-        "nome": "Corpo de Bombeiros Militar do Amapá",
-        "uf": "AP",
-        "prioridade_config": 2,
-        "score": 87,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "materias",
-          "validade"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "banca",
-          "inscritos",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
       },
       {
         "id": "pcmg",

@@ -27,9 +27,9 @@
 <main>
   <section class="cards">
     <div class="card"><span>Total</span><strong>47</strong></div>
-    <div class="card"><span>Rodar qualificado</span><strong>5</strong></div>
+    <div class="card"><span>Rodar qualificado</span><strong>6</strong></div>
     <div class="card"><span>Revisar</span><strong>2</strong></div>
-    <div class="card"><span>OK</span><strong>40</strong></div>
+    <div class="card"><span>OK</span><strong>39</strong></div>
   </section>
   <div class="toolbar">
     <button onclick="filtrar('')">Todos</button>
@@ -99,6 +99,19 @@ modo_qualidade: qualificado</pre></td>
       <td><strong>77</strong></td>
       <td>score abaixo do mínimo (77); campos críticos genéricos: vagas, banca</td>
       <td><pre>instituicao: ppmt
+limite: 1
+forcar_atualizacao: true
+usar_web_search: true
+modo_qualidade: qualificado</pre></td>
+    </tr>
+<tr class="danger" data-acao="rodar_qualificado">
+      <td>rodar_qualificado</td>
+      <td><strong>CBMAP</strong><br><small>bmap</small></td>
+      <td>Corpo de Bombeiros Militar do Amapá</td>
+      <td>media</td>
+      <td><strong>92</strong></td>
+      <td>fonte direta falhou ou não trouxe texto suficiente; foi publicado por modo qualificado; recomenda revisão visual</td>
+      <td><pre>instituicao: bmap
 limite: 1
 forcar_atualizacao: true
 usar_web_search: true
@@ -236,15 +249,6 @@ modo_qualidade: qualificado</pre></td>
       <td>Polícia Rodoviária Federal</td>
       <td>baixa</td>
       <td><strong>85</strong></td>
-      <td>sem ação necessária</td>
-      <td><pre>Sem workflow sugerido</pre></td>
-    </tr>
-<tr class="ok" data-acao="ok">
-      <td>ok</td>
-      <td><strong>CBMAP</strong><br><small>bmap</small></td>
-      <td>Corpo de Bombeiros Militar do Amapá</td>
-      <td>baixa</td>
-      <td><strong>87</strong></td>
       <td>sem ação necessária</td>
       <td><pre>Sem workflow sugerido</pre></td>
     </tr>

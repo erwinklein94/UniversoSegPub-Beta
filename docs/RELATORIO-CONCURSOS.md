@@ -3,9 +3,9 @@
 Gerado em: **2026-05-17**
 
 Total de instituições avaliadas: **47**
-Precisam de modo qualificado: **5**
+Precisam de modo qualificado: **6**
 Precisam de revisão: **2**
-OK: **40**
+OK: **39**
 
 ## Fila de ações
 
@@ -16,6 +16,7 @@ OK: **40**
 | rodar_qualificado | `ppms` | PPMS | media | 70 | score abaixo do mínimo (70); campos críticos genéricos: vagas, banca | instituicao=ppms; modo=qualificado; web=true; forcar=true |
 | rodar_qualificado | `pmsc` | PMSC | media | 75 | fonte direta falhou ou não trouxe texto suficiente; existe rascunho gerado para revisão; score abaixo do mínimo (75); foi publicado por modo qualificado; recomenda revisão visual | instituicao=pmsc; modo=qualificado; web=true; forcar=true |
 | rodar_qualificado | `ppmt` | PPMT | media | 77 | score abaixo do mínimo (77); campos críticos genéricos: vagas, banca | instituicao=ppmt; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmap` | CBMAP | media | 92 | fonte direta falhou ou não trouxe texto suficiente; foi publicado por modo qualificado; recomenda revisão visual | instituicao=bmap; modo=qualificado; web=true; forcar=true |
 | revisar_ou_rodar_qualificado | `pmes` | PMES | baixa | 69 | score abaixo do mínimo (69); muitos campos genéricos: cotas, idade, materias, inscritos, etapas, validade |  |
 | revisar_ou_rodar_qualificado | `bmmt` | CBMMT | baixa | 75 | score abaixo do mínimo (75) |  |
 | ok | `pcap` | PCAP | baixa | 79 | sem ação necessária |  |
@@ -31,7 +32,6 @@ OK: **40**
 | ok | `pmam` | PMAM | baixa | 85 | sem ação necessária |  |
 | ok | `pmrs` | PMRS | baixa | 85 | sem ação necessária |  |
 | ok | `prf` | PRF | baixa | 85 | sem ação necessária |  |
-| ok | `bmap` | CBMAP | baixa | 87 | sem ação necessária |  |
 | ok | `pcmg` | PCMG | baixa | 87 | sem ação necessária |  |
 | ok | `pcmt` | PCMT | baixa | 87 | sem ação necessária |  |
 | ok | `pcsc` | PCSC | baixa | 87 | sem ação necessária |  |

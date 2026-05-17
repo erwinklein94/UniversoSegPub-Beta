@@ -6,54 +6,102 @@ Esta automação atualiza o arquivo:
 data/concursos/pmesp.json
 ```
 
-A página `concursos.html` já lê esse arquivo por meio de:
+A página `concursos.html` lê esse arquivo por meio de:
 
 ```text
 js/pages/concursos-automacao-pmesp.js
 ```
 
-## Como ativar
+## Modo econômico
 
-1. Abra o repositório no GitHub.
-2. Vá em **Settings → Secrets and variables → Actions**.
-3. Em **Repository secrets**, crie o segredo:
+A automação foi ajustada para reduzir custo antes de replicar para outras instituições.
 
-```text
-OPENAI_API_KEY
-```
-
-4. Cole sua chave da OpenAI nesse segredo.
-5. Vá na aba **Actions**.
-6. Abra o workflow **Atualizar PMESP - Concursos**.
-7. Clique em **Run workflow**.
-
-## Quando roda automaticamente
-
-O workflow está configurado para rodar:
+Agora ela faz assim:
 
 ```text
-segunda, quarta e sexta às 07h00 de Brasília
+1. O GitHub Actions busca páginas oficiais da PMESP/Vunesp sem usar OpenAI.
+2. O script gera um hash das fontes oficiais monitoradas.
+3. Se nada mudou e a última pesquisa completa ainda está dentro do prazo, a OpenAI não é chamada.
+4. Se houver mudança, ou se vencer o prazo de revalidação, a OpenAI é chamada com modelo barato.
+5. Por padrão, a automação NÃO usa web_search da OpenAI.
 ```
 
-O GitHub Actions usa horário UTC, por isso o cron está como:
+Isso reduz custo porque a maior parte das execuções recorrentes vira apenas uma checagem de fontes, sem gasto na API.
 
-```text
-0 10 * * 1,3,5
-```
-
-## O que ele faz
-
-1. Pesquisa dados atuais sobre concursos da PMESP.
-2. Prioriza fontes oficiais.
-3. Gera JSON estruturado.
-4. Atualiza `data/concursos/pmesp.json`.
-5. Faz commit automático no repositório.
-6. O site passa a exibir os novos dados quando publicado.
-
-## Arquivos criados nesta etapa
+## Arquivos principais
 
 ```text
 .github/workflows/atualizar-pmesp-concursos.yml
 scripts/atualizar-pmesp-concursos.mjs
-docs/AUTOMACAO-PMESP-CONCURSOS.md
+data/concursos/pmesp.json
+data/concursos/pmesp-monitor.json
+```
+
+`pmesp-monitor.json` é criado automaticamente na primeira execução após esta atualização. Ele guarda os hashes das fontes monitoradas e ajuda a decidir se vale chamar a IA.
+
+## Como rodar manualmente
+
+1. Abra o repositório no GitHub.
+2. Vá na aba **Actions**.
+3. Abra o workflow **Atualizar PMESP - Concursos**.
+4. Clique em **Run workflow**.
+5. Use as opções:
+
+```text
+forcar_atualizacao: false
+usar_web_search: false
+```
+
+Essas são as opções econômicas.
+
+Use `forcar_atualizacao: true` apenas quando quiser obrigar uma nova pesquisa com IA.
+
+Use `usar_web_search: true` apenas quando a coleta das fontes oficiais não for suficiente, porque isso pode aumentar o custo.
+
+## Frequência automática
+
+O workflow agora roda automaticamente apenas:
+
+```text
+segunda-feira às 07h00 de Brasília
+```
+
+O GitHub Actions usa UTC, por isso o cron está como:
+
+```text
+0 10 * * 1
+```
+
+Mesmo nessa execução semanal, a OpenAI só será chamada se:
+
+```text
+- houver mudança nas fontes oficiais monitoradas; ou
+- a última pesquisa completa tiver mais de 14 dias; ou
+- você rodar manualmente com forcar_atualizacao = true.
+```
+
+## Variáveis opcionais do GitHub
+
+Em **Settings → Secrets and variables → Actions → Variables**, você pode ajustar:
+
+```text
+OPENAI_MODEL
+```
+
+Valor econômico recomendado:
+
+```text
+gpt-5.4-nano
+```
+
+Valor mais seguro, mas mais caro:
+
+```text
+gpt-5.4-mini
+```
+
+O segredo obrigatório continua sendo:
+
+```text
+OPENAI_API_KEY
 ```

@@ -9,15 +9,15 @@
   "score_publicacao": 80,
   "motivo": "Mudança detectada nas fontes oficiais monitoradas.",
   "usage": {
-    "input_tokens": 2955,
+    "input_tokens": 3362,
     "input_tokens_details": {
       "cached_tokens": 0
     },
-    "output_tokens": 493,
+    "output_tokens": 1283,
     "output_tokens_details": {
       "reasoning_tokens": 0
     },
-    "total_tokens": 3448
+    "total_tokens": 4645
   },
   "fontes_monitoradas": [
     {
@@ -38,8 +38,8 @@
       "url": "https://www.vunesp.com.br/",
       "ok": false,
       "status": 403,
-      "hash": "2233e92538d31c25505e1ec178ca1ee4851771373c8eac98a2d9c2257c8ec29c",
-      "tamanho_texto": 293
+      "hash": "387f6af76b2ff8e684338cbfb4d146d001e7159b4e5434ef3f780a53bce8c744",
+      "tamanho_texto": 295
     },
     {
       "url": "https://www.policiamilitar.sp.gov.br/Pmesp.CanalImprensaExterno/",

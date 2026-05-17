@@ -1,6 +1,6 @@
 {
   "atualizado_em": "2026-05-17",
-  "instituicao_id": "ppap",
+  "instituicao_id": "pppb",
   "grupo_atualizacao": "pendentes",
   "modelo": "gpt-5.4",
   "usou_openai": true,
@@ -10,18 +10,18 @@
     "score": 0
   },
   "depois": {
-    "classe": "forte",
-    "score": 84
+    "classe": "fraca",
+    "score": 48
   },
   "usage": {
-    "input_tokens": 30977,
+    "input_tokens": 42769,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1609,
+    "output_tokens": 1584,
     "output_tokens_details": {
-      "reasoning_tokens": 579
+      "reasoning_tokens": 573
     },
-    "total_tokens": 32586
+    "total_tokens": 44353
   }
 }

@@ -1,49 +1,27 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "pmrr",
-  "modo_qualidade": "qualificado",
-  "modelo": "gpt-5.4-mini",
+  "grupo_atualizacao": "pendentes",
+  "modelo": "gpt-5.4",
   "usou_openai": true,
   "usou_web_search_openai": true,
-  "publicacao_bloqueada": false,
-  "publicado_por_modo_qualificado": true,
-  "forcar_exibicao_site": true,
-  "publicacao_forcada_por_credito_openai": true,
-  "qualidade_publicacao": "baixa",
-  "score_publicacao": 75,
-  "motivo": "Atualização forçada manualmente.",
+  "antes": {
+    "classe": "pendente",
+    "score": 0
+  },
+  "depois": {
+    "classe": "pendente",
+    "score": 8
+  },
   "usage": {
-    "input_tokens": 10827,
+    "input_tokens": 26680,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 698,
+    "output_tokens": 1430,
     "output_tokens_details": {
-      "reasoning_tokens": 149
+      "reasoning_tokens": 430
     },
-    "total_tokens": 11525
-  },
-  "fontes_monitoradas": [
-    {
-      "url": "https://www.rr.gov.br",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
-    },
-    {
-      "url": "https://www.pm.rr.gov.br",
-      "ok": true,
-      "status": 200,
-      "hash": "4a6faab28a510ba14be4b4944af337bff3251f3de55c2fddf96d0376a05f651d",
-      "tamanho_texto": 26
-    },
-    {
-      "url": "https://www.pmrr.gov.br",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
-    }
-  ]
+    "total_tokens": 28110
+  }
 }

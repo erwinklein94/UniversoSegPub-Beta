@@ -5,9 +5,9 @@ Gerado em: 2026-05-17
 ## Resumo
 
 - Total: 110
-- Pendentes: 29
-- Atualização fraca: 27
-- Atualização forte: 54
+- Pendentes: 22
+- Atualização fraca: 30
+- Atualização forte: 58
 
 ## Como atualizar
 
@@ -41,16 +41,6 @@ modelo_openai: gpt-5.4-mini
 
 | Sigla | Instituição | UF | Classe | Score | Motivos |
 |---|---|---:|---|---:|---|
-| PMPE | Polícia Militar de Pernambuco | PE | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, etapas |
-| PMRR | Polícia Militar de Roraima | RR | pendente | 0 | precisa primeira atualização; campos críticos sem dado: salario, escolaridade, banca, etapas |
-| PPAM | Polícia Penal de Amazonas | AM | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
-| PPAP | Polícia Penal de Amapá | AP | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
-| PPBA | Polícia Penal da Bahia | BA | pendente | 0 | precisa primeira atualização; campos críticos sem dado: salario, escolaridade, banca |
-| PPMA | Polícia Penal de Maranhão | MA | pendente | 0 | precisa primeira atualização; campos críticos sem dado: salario, vagas, escolaridade, banca, etapas |
-| PPPA | Polícia Penal de Pará | PA | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
-| PPPB | Polícia Penal de Paraíba | PB | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
-| PPPE | Polícia Penal de Pernambuco | PE | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
-| PPPI | Polícia Penal de Piauí | PI | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
 | PPPR | Polícia Penal do Paraná | PR | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
 | PPRJ | Polícia Penal do Rio de Janeiro | RJ | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
 | PPRN | Polícia Penal de Rio Grande do Norte | RN | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
@@ -60,10 +50,13 @@ modelo_openai: gpt-5.4-mini
 | PPSC | Polícia Penal de Santa Catarina | SC | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
 | PPSE | Polícia Penal de Sergipe | SE | pendente | 0 | precisa primeira atualização; campos críticos sem dado: salario, vagas, escolaridade, banca, etapas |
 | PPTO | Polícia Penal de Tocantins | TO | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
+| PMRR | Polícia Militar de Roraima | RR | pendente | 8 | precisa primeira atualização; campos críticos sem dado: salario, escolaridade |
 | PMRO | Polícia Militar de Rondônia | RO | pendente | 12 | precisa primeira atualização; campos críticos sem dado: salario, banca |
+| PPAM | Polícia Penal de Amazonas | AM | pendente | 12 | precisa primeira atualização; campos críticos sem dado: vagas, banca |
 | PCTO | Polícia Civil de Tocantins | TO | pendente | 16 | precisa primeira atualização; campos críticos sem dado: escolaridade, etapas |
 | PMPI | Polícia Militar de Piauí | PI | pendente | 16 | precisa primeira atualização; campos críticos sem dado: salario, escolaridade |
 | PCRN | Polícia Civil de Rio Grande do Norte | RN | pendente | 18 | precisa primeira atualização; campos críticos sem dado: salario |
+| PPMA | Polícia Penal de Maranhão | MA | pendente | 20 | precisa primeira atualização; campos críticos sem dado: salario, vagas |
 | CBMMS | Corpo de Bombeiros Militar de Mato Grosso do Sul | MS | pendente | 27 | precisa primeira atualização; campos genéricos: salario, cotas, idade, escolaridade; campos críticos genéricos: salario, escolaridade |
 | BMRO | Corpo de Bombeiros Militar de Rondônia | RO | pendente | 28 | precisa primeira atualização; campos críticos sem dado: salario, banca |
 | PMDF | Polícia Militar de Distrito Federal | DF | pendente | 30 | precisa primeira atualização; campos críticos sem dado: etapas |
@@ -76,7 +69,10 @@ modelo_openai: gpt-5.4-mini
 | Sigla | Instituição | UF | Classe | Score | Motivos |
 |---|---|---:|---|---:|---|
 | PPGO | Polícia Penal de Goiás | GO | fraca | 48 | conteúdo fraco ou genérico |
+| PPPB | Polícia Penal de Paraíba | PB | fraca | 48 | conteúdo fraco ou genérico |
 | PMCE | Polícia Militar de Ceará | CE | fraca | 56 | conteúdo fraco ou genérico |
+| PPPA | Polícia Penal de Pará | PA | fraca | 60 | conteúdo fraco ou genérico |
+| PPPE | Polícia Penal de Pernambuco | PE | fraca | 60 | conteúdo fraco ou genérico |
 | BMMA | Corpo de Bombeiros Militar do Maranhão | MA | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PCPB | Polícia Civil de Paraíba | PB | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PMMA | Polícia Militar de Maranhão | MA | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
@@ -118,6 +114,7 @@ modelo_openai: gpt-5.4-mini
 | PMGO | Polícia Militar de Goiás | GO | forte | 84 | conteúdo bom |
 | PMPA | Polícia Militar de Pará | PA | forte | 84 | conteúdo bom |
 | PMRN | Polícia Militar de Rio Grande do Norte | RN | forte | 84 | conteúdo bom |
+| PPAP | Polícia Penal de Amapá | AP | forte | 84 | conteúdo bom |
 | PCAP | Polícia Civil do Estado do Amapá | AP | forte | 86 | campos genéricos: cotas, materias |
 | PMES | Polícia Militar do Espírito Santo | ES | forte | 86 | campos genéricos: inscritos, validade |
 | PMMS | Polícia Militar de Mato Grosso do Sul | MS | forte | 86 | campos genéricos: cotas, validade |
@@ -126,8 +123,11 @@ modelo_openai: gpt-5.4-mini
 | BMAL | Corpo de Bombeiros Militar de Alagoas | AL | forte | 92 | conteúdo bom |
 | BMCE | Corpo de Bombeiros Militar do Ceará | CE | forte | 92 | conteúdo bom |
 | PCSC | Polícia Civil de Santa Catarina | SC | forte | 92 | conteúdo bom |
+| PMPE | Polícia Militar de Pernambuco | PE | forte | 92 | conteúdo bom |
 | PMPR | Polícia Militar do Paraná | PR | forte | 92 | conteúdo bom |
 | PMSE | Polícia Militar de Sergipe | SE | forte | 92 | conteúdo bom |
+| PPBA | Polícia Penal da Bahia | BA | forte | 92 | conteúdo bom |
+| PPPI | Polícia Penal de Piauí | PI | forte | 92 | conteúdo bom |
 | CBMAP | Corpo de Bombeiros Militar do Amapá | AP | forte | 93 | campos genéricos: validade |
 | CBMMG | Corpo de Bombeiros Militar de Minas Gerais | MG | forte | 93 | campos genéricos: validade |
 | CBMSC | Corpo de Bombeiros Militar de Santa Catarina | SC | forte | 93 | campos genéricos: cotas |

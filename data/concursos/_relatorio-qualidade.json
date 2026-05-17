@@ -3,365 +3,12 @@
   "modelo_operacional": "simples",
   "resumo": {
     "total": 110,
-    "pendentes": 29,
-    "fracas": 27,
-    "fortes": 54
+    "pendentes": 22,
+    "fracas": 30,
+    "fortes": 58
   },
   "grupos": {
     "pendentes": [
-      {
-        "id": "pmpe",
-        "sigla": "PMPE",
-        "nome": "Polícia Militar de Pernambuco",
-        "uf": "PE",
-        "score": 0,
-        "classe": "pendente",
-        "qualidade": "pendente",
-        "motivos": [
-          "precisa primeira atualização",
-          "campos críticos sem dado: edital, salario, vagas, escolaridade, etapas"
-        ],
-        "campos_ruins": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "inscritos",
-          "etapas",
-          "estagio",
-          "validade"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "banca",
-          "cfsd",
-          "previsao"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pmrr",
-        "sigla": "PMRR",
-        "nome": "Polícia Militar de Roraima",
-        "uf": "RR",
-        "score": 0,
-        "classe": "pendente",
-        "qualidade": "pendente",
-        "motivos": [
-          "precisa primeira atualização",
-          "campos críticos sem dado: salario, escolaridade, banca, etapas"
-        ],
-        "campos_ruins": [
-          "salario",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "etapas",
-          "cfsd",
-          "estagio",
-          "validade"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "vagas"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppam",
-        "sigla": "PPAM",
-        "nome": "Polícia Penal de Amazonas",
-        "uf": "AM",
-        "score": 0,
-        "classe": "pendente",
-        "qualidade": "pendente",
-        "motivos": [
-          "precisa primeira atualização",
-          "campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas"
-        ],
-        "campos_ruins": [
-          "edital",
-          "salario",
-          "vagas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "etapas",
-          "cfsd",
-          "estagio",
-          "validade"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppap",
-        "sigla": "PPAP",
-        "nome": "Polícia Penal de Amapá",
-        "uf": "AP",
-        "score": 0,
-        "classe": "pendente",
-        "qualidade": "pendente",
-        "motivos": [
-          "precisa primeira atualização",
-          "campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas"
-        ],
-        "campos_ruins": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "etapas",
-          "estagio",
-          "validade"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppba",
-        "sigla": "PPBA",
-        "nome": "Polícia Penal da Bahia",
-        "uf": "BA",
-        "score": 0,
-        "classe": "pendente",
-        "qualidade": "pendente",
-        "motivos": [
-          "precisa primeira atualização",
-          "campos críticos sem dado: salario, escolaridade, banca"
-        ],
-        "campos_ruins": [
-          "salario",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "banca",
-          "inscritos",
-          "estagio",
-          "validade"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "vagas",
-          "materias"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppma",
-        "sigla": "PPMA",
-        "nome": "Polícia Penal de Maranhão",
-        "uf": "MA",
-        "score": 0,
-        "classe": "pendente",
-        "qualidade": "pendente",
-        "motivos": [
-          "precisa primeira atualização",
-          "campos críticos sem dado: salario, vagas, escolaridade, banca, etapas"
-        ],
-        "campos_ruins": [
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "etapas",
-          "cfsd",
-          "estagio",
-          "validade"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pppa",
-        "sigla": "PPPA",
-        "nome": "Polícia Penal de Pará",
-        "uf": "PA",
-        "score": 0,
-        "classe": "pendente",
-        "qualidade": "pendente",
-        "motivos": [
-          "precisa primeira atualização",
-          "campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas"
-        ],
-        "campos_ruins": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "etapas",
-          "cfsd",
-          "estagio",
-          "validade",
-          "previsao"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pppb",
-        "sigla": "PPPB",
-        "nome": "Polícia Penal de Paraíba",
-        "uf": "PB",
-        "score": 0,
-        "classe": "pendente",
-        "qualidade": "pendente",
-        "motivos": [
-          "precisa primeira atualização",
-          "campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas"
-        ],
-        "campos_ruins": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "etapas",
-          "cfsd",
-          "estagio",
-          "validade",
-          "previsao"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pppe",
-        "sigla": "PPPE",
-        "nome": "Polícia Penal de Pernambuco",
-        "uf": "PE",
-        "score": 0,
-        "classe": "pendente",
-        "qualidade": "pendente",
-        "motivos": [
-          "precisa primeira atualização",
-          "campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas"
-        ],
-        "campos_ruins": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "etapas",
-          "cfsd",
-          "estagio",
-          "validade",
-          "previsao"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pppi",
-        "sigla": "PPPI",
-        "nome": "Polícia Penal de Piauí",
-        "uf": "PI",
-        "score": 0,
-        "classe": "pendente",
-        "qualidade": "pendente",
-        "motivos": [
-          "precisa primeira atualização",
-          "campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas"
-        ],
-        "campos_ruins": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "etapas",
-          "cfsd",
-          "estagio",
-          "validade",
-          "previsao"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
       {
         "id": "pppr",
         "sigla": "PPPR",
@@ -687,6 +334,43 @@
         }
       },
       {
+        "id": "pmrr",
+        "sigla": "PMRR",
+        "nome": "Polícia Militar de Roraima",
+        "uf": "RR",
+        "score": 8,
+        "classe": "pendente",
+        "qualidade": "pendente",
+        "motivos": [
+          "precisa primeira atualização",
+          "campos críticos sem dado: salario, escolaridade"
+        ],
+        "campos_ruins": [
+          "salario",
+          "cotas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "inscritos",
+          "estagio",
+          "validade"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "vagas",
+          "banca",
+          "etapas",
+          "cfsd",
+          "previsao"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
         "id": "pmro",
         "sigla": "PMRO",
         "nome": "Polícia Militar de Rondônia",
@@ -712,6 +396,39 @@
           "vagas",
           "inscritos",
           "cfsd"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppam",
+        "sigla": "PPAM",
+        "nome": "Polícia Penal de Amazonas",
+        "uf": "AM",
+        "score": 12,
+        "classe": "pendente",
+        "qualidade": "pendente",
+        "motivos": [
+          "precisa primeira atualização",
+          "campos críticos sem dado: vagas, banca"
+        ],
+        "campos_ruins": [
+          "vagas",
+          "materias",
+          "banca",
+          "inscritos",
+          "estagio",
+          "validade"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "salario",
+          "cotas",
+          "idade",
+          "escolaridade"
         ],
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
@@ -818,6 +535,37 @@
           "vagas",
           "escolaridade",
           "banca"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "pendentes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppma",
+        "sigla": "PPMA",
+        "nome": "Polícia Penal de Maranhão",
+        "uf": "MA",
+        "score": 20,
+        "classe": "pendente",
+        "qualidade": "pendente",
+        "motivos": [
+          "precisa primeira atualização",
+          "campos críticos sem dado: salario, vagas"
+        ],
+        "campos_ruins": [
+          "salario",
+          "vagas",
+          "cotas",
+          "inscritos",
+          "estagio"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "idade",
+          "materias"
         ],
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
@@ -1064,6 +812,37 @@
         }
       },
       {
+        "id": "pppb",
+        "sigla": "PPPB",
+        "nome": "Polícia Penal de Paraíba",
+        "uf": "PB",
+        "score": 48,
+        "classe": "fraca",
+        "qualidade": "fraca",
+        "motivos": [
+          "conteúdo fraco ou genérico"
+        ],
+        "campos_ruins": [
+          "cotas",
+          "inscritos",
+          "cfsd",
+          "estagio",
+          "validade"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "idade",
+          "previsao"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
         "id": "pmce",
         "sigla": "PMCE",
         "nome": "Polícia Militar de Ceará",
@@ -1086,6 +865,72 @@
           "salario",
           "vagas",
           "escolaridade"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pppa",
+        "sigla": "PPPA",
+        "nome": "Polícia Penal de Pará",
+        "uf": "PA",
+        "score": 60,
+        "classe": "fraca",
+        "qualidade": "fraca",
+        "motivos": [
+          "conteúdo fraco ou genérico"
+        ],
+        "campos_ruins": [
+          "cotas",
+          "inscritos",
+          "estagio",
+          "validade",
+          "previsao"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "escolaridade",
+          "cfsd"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pppe",
+        "sigla": "PPPE",
+        "nome": "Polícia Penal de Pernambuco",
+        "uf": "PE",
+        "score": 60,
+        "classe": "fraca",
+        "qualidade": "fraca",
+        "motivos": [
+          "conteúdo fraco ou genérico"
+        ],
+        "campos_ruins": [
+          "cotas",
+          "idade",
+          "inscritos",
+          "estagio",
+          "previsao"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "escolaridade",
+          "materias",
+          "banca"
         ],
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
@@ -2274,6 +2119,37 @@
         }
       },
       {
+        "id": "ppap",
+        "sigla": "PPAP",
+        "nome": "Polícia Penal de Amapá",
+        "uf": "AP",
+        "score": 84,
+        "classe": "forte",
+        "qualidade": "forte",
+        "motivos": [
+          "conteúdo bom"
+        ],
+        "campos_ruins": [
+          "inscritos",
+          "estagio"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "cfsd"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fortes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
         "id": "pcap",
         "sigla": "PCAP",
         "nome": "Polícia Civil do Estado do Amapá",
@@ -2517,6 +2393,39 @@
         }
       },
       {
+        "id": "pmpe",
+        "sigla": "PMPE",
+        "nome": "Polícia Militar de Pernambuco",
+        "uf": "PE",
+        "score": 92,
+        "classe": "forte",
+        "qualidade": "forte",
+        "motivos": [
+          "conteúdo bom"
+        ],
+        "campos_ruins": [
+          "inscritos"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "cfsd",
+          "estagio",
+          "previsao"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fortes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
         "id": "pmpr",
         "sigla": "PMPR",
         "nome": "Polícia Militar do Paraná",
@@ -2571,6 +2480,68 @@
           "escolaridade",
           "materias",
           "cfsd"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fortes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppba",
+        "sigla": "PPBA",
+        "nome": "Polícia Penal da Bahia",
+        "uf": "BA",
+        "score": 92,
+        "classe": "forte",
+        "qualidade": "forte",
+        "motivos": [
+          "conteúdo bom"
+        ],
+        "campos_ruins": [
+          "inscritos"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "cfsd"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fortes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pppi",
+        "sigla": "PPPI",
+        "nome": "Polícia Penal de Piauí",
+        "uf": "PI",
+        "score": 92,
+        "classe": "forte",
+        "qualidade": "forte",
+        "motivos": [
+          "conteúdo bom"
+        ],
+        "campos_ruins": [
+          "estagio"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "materias",
+          "inscritos",
+          "cfsd",
+          "previsao"
         ],
         "workflow_sugerido": {
           "grupo_atualizacao": "fortes",
@@ -3578,359 +3549,6 @@
   },
   "fila_acoes": [
     {
-      "id": "pmpe",
-      "sigla": "PMPE",
-      "nome": "Polícia Militar de Pernambuco",
-      "uf": "PE",
-      "score": 0,
-      "classe": "pendente",
-      "qualidade": "pendente",
-      "motivos": [
-        "precisa primeira atualização",
-        "campos críticos sem dado: edital, salario, vagas, escolaridade, etapas"
-      ],
-      "campos_ruins": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "inscritos",
-        "etapas",
-        "estagio",
-        "validade"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "banca",
-        "cfsd",
-        "previsao"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pmrr",
-      "sigla": "PMRR",
-      "nome": "Polícia Militar de Roraima",
-      "uf": "RR",
-      "score": 0,
-      "classe": "pendente",
-      "qualidade": "pendente",
-      "motivos": [
-        "precisa primeira atualização",
-        "campos críticos sem dado: salario, escolaridade, banca, etapas"
-      ],
-      "campos_ruins": [
-        "salario",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "etapas",
-        "cfsd",
-        "estagio",
-        "validade"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "vagas"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppam",
-      "sigla": "PPAM",
-      "nome": "Polícia Penal de Amazonas",
-      "uf": "AM",
-      "score": 0,
-      "classe": "pendente",
-      "qualidade": "pendente",
-      "motivos": [
-        "precisa primeira atualização",
-        "campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas"
-      ],
-      "campos_ruins": [
-        "edital",
-        "salario",
-        "vagas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "etapas",
-        "cfsd",
-        "estagio",
-        "validade"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppap",
-      "sigla": "PPAP",
-      "nome": "Polícia Penal de Amapá",
-      "uf": "AP",
-      "score": 0,
-      "classe": "pendente",
-      "qualidade": "pendente",
-      "motivos": [
-        "precisa primeira atualização",
-        "campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas"
-      ],
-      "campos_ruins": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "etapas",
-        "estagio",
-        "validade"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppba",
-      "sigla": "PPBA",
-      "nome": "Polícia Penal da Bahia",
-      "uf": "BA",
-      "score": 0,
-      "classe": "pendente",
-      "qualidade": "pendente",
-      "motivos": [
-        "precisa primeira atualização",
-        "campos críticos sem dado: salario, escolaridade, banca"
-      ],
-      "campos_ruins": [
-        "salario",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "banca",
-        "inscritos",
-        "estagio",
-        "validade"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "vagas",
-        "materias"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppma",
-      "sigla": "PPMA",
-      "nome": "Polícia Penal de Maranhão",
-      "uf": "MA",
-      "score": 0,
-      "classe": "pendente",
-      "qualidade": "pendente",
-      "motivos": [
-        "precisa primeira atualização",
-        "campos críticos sem dado: salario, vagas, escolaridade, banca, etapas"
-      ],
-      "campos_ruins": [
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "etapas",
-        "cfsd",
-        "estagio",
-        "validade"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pppa",
-      "sigla": "PPPA",
-      "nome": "Polícia Penal de Pará",
-      "uf": "PA",
-      "score": 0,
-      "classe": "pendente",
-      "qualidade": "pendente",
-      "motivos": [
-        "precisa primeira atualização",
-        "campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas"
-      ],
-      "campos_ruins": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "etapas",
-        "cfsd",
-        "estagio",
-        "validade",
-        "previsao"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pppb",
-      "sigla": "PPPB",
-      "nome": "Polícia Penal de Paraíba",
-      "uf": "PB",
-      "score": 0,
-      "classe": "pendente",
-      "qualidade": "pendente",
-      "motivos": [
-        "precisa primeira atualização",
-        "campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas"
-      ],
-      "campos_ruins": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "etapas",
-        "cfsd",
-        "estagio",
-        "validade",
-        "previsao"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pppe",
-      "sigla": "PPPE",
-      "nome": "Polícia Penal de Pernambuco",
-      "uf": "PE",
-      "score": 0,
-      "classe": "pendente",
-      "qualidade": "pendente",
-      "motivos": [
-        "precisa primeira atualização",
-        "campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas"
-      ],
-      "campos_ruins": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "etapas",
-        "cfsd",
-        "estagio",
-        "validade",
-        "previsao"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pppi",
-      "sigla": "PPPI",
-      "nome": "Polícia Penal de Piauí",
-      "uf": "PI",
-      "score": 0,
-      "classe": "pendente",
-      "qualidade": "pendente",
-      "motivos": [
-        "precisa primeira atualização",
-        "campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas"
-      ],
-      "campos_ruins": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "etapas",
-        "cfsd",
-        "estagio",
-        "validade",
-        "previsao"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
       "id": "pppr",
       "sigla": "PPPR",
       "nome": "Polícia Penal do Paraná",
@@ -4255,6 +3873,43 @@
       }
     },
     {
+      "id": "pmrr",
+      "sigla": "PMRR",
+      "nome": "Polícia Militar de Roraima",
+      "uf": "RR",
+      "score": 8,
+      "classe": "pendente",
+      "qualidade": "pendente",
+      "motivos": [
+        "precisa primeira atualização",
+        "campos críticos sem dado: salario, escolaridade"
+      ],
+      "campos_ruins": [
+        "salario",
+        "cotas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "inscritos",
+        "estagio",
+        "validade"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "vagas",
+        "banca",
+        "etapas",
+        "cfsd",
+        "previsao"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
       "id": "pmro",
       "sigla": "PMRO",
       "nome": "Polícia Militar de Rondônia",
@@ -4280,6 +3935,39 @@
         "vagas",
         "inscritos",
         "cfsd"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppam",
+      "sigla": "PPAM",
+      "nome": "Polícia Penal de Amazonas",
+      "uf": "AM",
+      "score": 12,
+      "classe": "pendente",
+      "qualidade": "pendente",
+      "motivos": [
+        "precisa primeira atualização",
+        "campos críticos sem dado: vagas, banca"
+      ],
+      "campos_ruins": [
+        "vagas",
+        "materias",
+        "banca",
+        "inscritos",
+        "estagio",
+        "validade"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "salario",
+        "cotas",
+        "idade",
+        "escolaridade"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "pendentes",
@@ -4386,6 +4074,37 @@
         "vagas",
         "escolaridade",
         "banca"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "pendentes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppma",
+      "sigla": "PPMA",
+      "nome": "Polícia Penal de Maranhão",
+      "uf": "MA",
+      "score": 20,
+      "classe": "pendente",
+      "qualidade": "pendente",
+      "motivos": [
+        "precisa primeira atualização",
+        "campos críticos sem dado: salario, vagas"
+      ],
+      "campos_ruins": [
+        "salario",
+        "vagas",
+        "cotas",
+        "inscritos",
+        "estagio"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "idade",
+        "materias"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "pendentes",
@@ -4630,6 +4349,37 @@
       }
     },
     {
+      "id": "pppb",
+      "sigla": "PPPB",
+      "nome": "Polícia Penal de Paraíba",
+      "uf": "PB",
+      "score": 48,
+      "classe": "fraca",
+      "qualidade": "fraca",
+      "motivos": [
+        "conteúdo fraco ou genérico"
+      ],
+      "campos_ruins": [
+        "cotas",
+        "inscritos",
+        "cfsd",
+        "estagio",
+        "validade"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "idade",
+        "previsao"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
       "id": "pmce",
       "sigla": "PMCE",
       "nome": "Polícia Militar de Ceará",
@@ -4652,6 +4402,72 @@
         "salario",
         "vagas",
         "escolaridade"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pppa",
+      "sigla": "PPPA",
+      "nome": "Polícia Penal de Pará",
+      "uf": "PA",
+      "score": 60,
+      "classe": "fraca",
+      "qualidade": "fraca",
+      "motivos": [
+        "conteúdo fraco ou genérico"
+      ],
+      "campos_ruins": [
+        "cotas",
+        "inscritos",
+        "estagio",
+        "validade",
+        "previsao"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "escolaridade",
+        "cfsd"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pppe",
+      "sigla": "PPPE",
+      "nome": "Polícia Penal de Pernambuco",
+      "uf": "PE",
+      "score": 60,
+      "classe": "fraca",
+      "qualidade": "fraca",
+      "motivos": [
+        "conteúdo fraco ou genérico"
+      ],
+      "campos_ruins": [
+        "cotas",
+        "idade",
+        "inscritos",
+        "estagio",
+        "previsao"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "escolaridade",
+        "materias",
+        "banca"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
@@ -5774,6 +5590,37 @@
       }
     },
     {
+      "id": "ppap",
+      "sigla": "PPAP",
+      "nome": "Polícia Penal de Amapá",
+      "uf": "AP",
+      "score": 84,
+      "classe": "forte",
+      "qualidade": "forte",
+      "motivos": [
+        "conteúdo bom"
+      ],
+      "campos_ruins": [
+        "inscritos",
+        "estagio"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "cfsd"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fortes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
       "id": "pcap",
       "sigla": "PCAP",
       "nome": "Polícia Civil do Estado do Amapá",
@@ -6081,6 +5928,39 @@
       }
     },
     {
+      "id": "pmpe",
+      "sigla": "PMPE",
+      "nome": "Polícia Militar de Pernambuco",
+      "uf": "PE",
+      "score": 92,
+      "classe": "forte",
+      "qualidade": "forte",
+      "motivos": [
+        "conteúdo bom"
+      ],
+      "campos_ruins": [
+        "inscritos"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "cfsd",
+        "estagio",
+        "previsao"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fortes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
       "id": "pmpr",
       "sigla": "PMPR",
       "nome": "Polícia Militar do Paraná",
@@ -6135,6 +6015,68 @@
         "escolaridade",
         "materias",
         "cfsd"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fortes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppba",
+      "sigla": "PPBA",
+      "nome": "Polícia Penal da Bahia",
+      "uf": "BA",
+      "score": 92,
+      "classe": "forte",
+      "qualidade": "forte",
+      "motivos": [
+        "conteúdo bom"
+      ],
+      "campos_ruins": [
+        "inscritos"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "cfsd"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fortes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pppi",
+      "sigla": "PPPI",
+      "nome": "Polícia Penal de Piauí",
+      "uf": "PI",
+      "score": 92,
+      "classe": "forte",
+      "qualidade": "forte",
+      "motivos": [
+        "conteúdo bom"
+      ],
+      "campos_ruins": [
+        "estagio"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "materias",
+        "inscritos",
+        "cfsd",
+        "previsao"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "fortes",

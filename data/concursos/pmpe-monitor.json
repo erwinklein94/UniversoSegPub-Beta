@@ -1,70 +1,27 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "pmpe",
-  "modo_qualidade": "qualificado",
-  "modelo": "gpt-5.4-mini",
+  "grupo_atualizacao": "pendentes",
+  "modelo": "gpt-5.4",
   "usou_openai": true,
   "usou_web_search_openai": true,
-  "publicacao_bloqueada": false,
-  "publicado_por_modo_qualificado": true,
-  "forcar_exibicao_site": true,
-  "publicacao_forcada_por_credito_openai": true,
-  "qualidade_publicacao": "baixa",
-  "score_publicacao": 75,
-  "motivo": "Atualização forçada manualmente.",
+  "antes": {
+    "classe": "pendente",
+    "score": 0
+  },
+  "depois": {
+    "classe": "forte",
+    "score": 92
+  },
   "usage": {
-    "input_tokens": 15447,
+    "input_tokens": 49989,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 708,
+    "output_tokens": 2390,
     "output_tokens_details": {
-      "reasoning_tokens": 0
+      "reasoning_tokens": 935
     },
-    "total_tokens": 16155
-  },
-  "fontes_monitoradas": [
-    {
-      "url": "https://www.pm.pe.gov.br",
-      "ok": true,
-      "status": 200,
-      "hash": "0e5d45cecfa03048d304b4c85fcc5f9cb868b905bb8395dd2ff63f7642034796",
-      "tamanho_texto": 17603
-    },
-    {
-      "url": "http://www.pm.pe.gov.br/legislacao_pmpe/",
-      "ok": true,
-      "status": 200,
-      "hash": "a73d0498df6c050bb7cb0346f6c6281dd6abaaef14ef38c6c40b0b684a75bb7e",
-      "tamanho_texto": 15300
-    },
-    {
-      "url": "http://www.pm.pe.gov.br/cancao-da-pmpe/",
-      "ok": true,
-      "status": 200,
-      "hash": "3f250450e63cdfb4f3f75ca29ecf5947a5acc12ca7fb3e61448a81f60e8cdbf7",
-      "tamanho_texto": 15795
-    },
-    {
-      "url": "http://www.pm.pe.gov.br/sistemas_pmpe/",
-      "ok": true,
-      "status": 200,
-      "hash": "93e569db826cf27bb01efc81c3a32c36b0ffa5d42f08796e7b66ff959ebaaa14",
-      "tamanho_texto": 15298
-    },
-    {
-      "url": "https://www.pm.pe.gov.br/legislacao_pmpe/",
-      "ok": true,
-      "status": 200,
-      "hash": "a73d0498df6c050bb7cb0346f6c6281dd6abaaef14ef38c6c40b0b684a75bb7e",
-      "tamanho_texto": 15300
-    },
-    {
-      "url": "http://www.pm.pe.gov.br/blog/category/noticias-pmpe/",
-      "ok": true,
-      "status": 200,
-      "hash": "bcc35b1c6cc173518e3d44cb70fa1da164d8ab44c5b4a0b36477bd7032106cf5",
-      "tamanho_texto": 16991
-    }
-  ]
+    "total_tokens": 52379
+  }
 }

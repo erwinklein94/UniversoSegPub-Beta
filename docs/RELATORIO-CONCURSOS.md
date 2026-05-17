@@ -12,7 +12,7 @@ OK: **40**
 | Ação | ID | Sigla | Prioridade | Score | Motivos | Workflow sugerido |
 |---|---:|---:|---:|---:|---|---|
 | rodar_qualificado | `pmmg` | PMMG | alta | 87 | fonte direta falhou ou não trouxe texto suficiente; foi publicado por modo qualificado; recomenda revisão visual | instituicao=pmmg; modo=qualificado; web=true; forcar=true |
-| rodar_qualificado | `bmms` | CBMMS | media | 64 | score muito baixo (64); campos críticos genéricos: escolaridade, etapas; muitos campos genéricos: cotas, escolaridade, materias, etapas, estagio, validade | instituicao=bmms; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmms` | CBMMS | media | 29 | score muito baixo (29); campos críticos genéricos: salario, escolaridade, etapas; muitos campos genéricos: salario, cotas, idade, escolaridade, materias, etapas; foi publicado por modo qualificado; recomenda revisão visual | instituicao=bmms; modo=qualificado; web=true; forcar=true |
 | rodar_qualificado | `ppms` | PPMS | media | 70 | score abaixo do mínimo (70); campos críticos genéricos: vagas, banca | instituicao=ppms; modo=qualificado; web=true; forcar=true |
 | rodar_qualificado | `pmsc` | PMSC | media | 75 | fonte direta falhou ou não trouxe texto suficiente; existe rascunho gerado para revisão; score abaixo do mínimo (75); foi publicado por modo qualificado; recomenda revisão visual | instituicao=pmsc; modo=qualificado; web=true; forcar=true |
 | rodar_qualificado | `ppmt` | PPMT | media | 77 | score abaixo do mínimo (77); campos críticos genéricos: vagas, banca | instituicao=ppmt; modo=qualificado; web=true; forcar=true |

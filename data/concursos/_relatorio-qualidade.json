@@ -79,14 +79,15 @@
       "nome": "Corpo de Bombeiros Militar de Mato Grosso do Sul",
       "uf": "MS",
       "prioridade_config": 2,
-      "score": 64,
+      "score": 29,
       "qualidade": "baixa",
       "acao": "rodar_qualificado",
       "prioridade_operacional": "media",
       "motivos": [
-        "score muito baixo (64)",
-        "campos críticos genéricos: escolaridade, etapas",
-        "muitos campos genéricos: cotas, escolaridade, materias, etapas, estagio, validade"
+        "score muito baixo (29)",
+        "campos críticos genéricos: salario, escolaridade, etapas",
+        "muitos campos genéricos: salario, cotas, idade, escolaridade, materias, etapas",
+        "foi publicado por modo qualificado; recomenda revisão visual"
       ],
       "workflow_sugerido": {
         "instituicao": "bmms",
@@ -98,7 +99,9 @@
       "idade_dias": 0,
       "campos_ruins": [],
       "campos_genericos": [
+        "salario",
         "cotas",
+        "idade",
         "escolaridade",
         "materias",
         "etapas",
@@ -107,24 +110,30 @@
       ],
       "campos_concretos": [
         "edital",
-        "salario",
         "vagas",
-        "idade",
         "banca",
+        "inscritos",
         "cfsd",
         "previsao"
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [
+        "salario",
         "escolaridade",
         "etapas"
       ],
       "fonte_falhou": false,
       "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
+      "publicado_por_modo_qualificado": true,
+      "publicacao_forcada_por_credito_openai": true,
       "ultima_pesquisa": "2026-05-17",
-      "monitor": null
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": true,
+        "publicacao_bloqueada": false,
+        "motivo": "Atualização forçada manualmente."
+      }
     },
     {
       "id": "ppms",
@@ -2068,14 +2077,15 @@
         "nome": "Corpo de Bombeiros Militar de Mato Grosso do Sul",
         "uf": "MS",
         "prioridade_config": 2,
-        "score": 64,
+        "score": 29,
         "qualidade": "baixa",
         "acao": "rodar_qualificado",
         "prioridade_operacional": "media",
         "motivos": [
-          "score muito baixo (64)",
-          "campos críticos genéricos: escolaridade, etapas",
-          "muitos campos genéricos: cotas, escolaridade, materias, etapas, estagio, validade"
+          "score muito baixo (29)",
+          "campos críticos genéricos: salario, escolaridade, etapas",
+          "muitos campos genéricos: salario, cotas, idade, escolaridade, materias, etapas",
+          "foi publicado por modo qualificado; recomenda revisão visual"
         ],
         "workflow_sugerido": {
           "instituicao": "bmms",
@@ -2087,7 +2097,9 @@
         "idade_dias": 0,
         "campos_ruins": [],
         "campos_genericos": [
+          "salario",
           "cotas",
+          "idade",
           "escolaridade",
           "materias",
           "etapas",
@@ -2096,24 +2108,30 @@
         ],
         "campos_concretos": [
           "edital",
-          "salario",
           "vagas",
-          "idade",
           "banca",
+          "inscritos",
           "cfsd",
           "previsao"
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [
+          "salario",
           "escolaridade",
           "etapas"
         ],
         "fonte_falhou": false,
         "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
+        "publicado_por_modo_qualificado": true,
+        "publicacao_forcada_por_credito_openai": true,
         "ultima_pesquisa": "2026-05-17",
-        "monitor": null
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": true,
+          "publicacao_bloqueada": false,
+          "motivo": "Atualização forçada manualmente."
+        }
       },
       {
         "id": "ppms",

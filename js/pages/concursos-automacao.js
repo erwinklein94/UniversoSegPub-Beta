@@ -10,6 +10,44 @@
     return String(valor == null ? '' : valor).replace(/\s+/g, ' ').trim();
   }
 
+
+  function limparTextoPublico(valor) {
+    let limpo = texto(valor);
+    if (!limpo) return limpo;
+
+    limpo = limpo.replace(/\[([^\]]{1,120})\]\((https?:\/\/[^\s)]+)\)/gi, '$1');
+    limpo = limpo.replace(/https?:\/\/\S+/gi, '');
+    limpo = limpo.replace(/www\.\S+/gi, '');
+    limpo = limpo.replace(/utm_source=[a-z0-9_-]+/gi, '');
+    limpo = limpo.replace(/\[[^\]]*(?:\.gov|\.br|openai|http|fonte)[^\]]*\]/gi, '');
+    limpo = limpo.replace(/\(\s*\)/g, '');
+
+    const substituicoes = [
+      [/o trecho coletado não traz/gi, 'não foi localizado'],
+      [/não veio detalhado no trecho coletado/gi, 'não foi localizado'],
+      [/no trecho coletado/gi, 'nas fontes consultadas'],
+      [/conteúdo-base anterior menciona/gi, 'referência anterior indica'],
+      [/conteudo-base anterior menciona/gi, 'referência anterior indica'],
+      [/porém esse valor não foi revalidado nesta pesquisa atual/gi, 'valor não revalidado nesta pesquisa'],
+      [/porem esse valor nao foi revalidado nesta pesquisa atual/gi, 'valor não revalidado nesta pesquisa'],
+      [/nas fontes oficiais consultadas/gi, 'nas fontes consultadas'],
+      [/a partir das fontes consultadas/gi, 'nas fontes consultadas'],
+      [/fonte oficial alternativa/gi, 'fonte consultada']
+    ];
+
+    substituicoes.forEach(function (par) {
+      limpo = limpo.replace(par[0], par[1]);
+    });
+
+    limpo = limpo.replace(/Não foi localizado[^.;]*?(?:;|\.)/gi, 'Não localizado nas fontes consultadas. ');
+    limpo = limpo.replace(/Nao foi localizado[^.;]*?(?:;|\.)/gi, 'Não localizado nas fontes consultadas. ');
+    limpo = limpo.replace(/\s+([,.;:])/g, '$1');
+    limpo = limpo.replace(/([,.;:]){2,}/g, '$1');
+    limpo = limpo.replace(/\s{2,}/g, ' ');
+    limpo = limpo.replace(/^[-–—:;,.\s]+|[-–—:;,.\s]+$/g, '');
+    return limpo;
+  }
+
   function escapar(valor) {
     return texto(valor).replace(/[&<>"']/g, function (char) {
       return {
@@ -90,20 +128,20 @@
   function normalizarParaConcursos(dados, itemConfig) {
     const id = texto(dados.instituicao_id || itemConfig.id).toLowerCase();
     return {
-      edital: texto(dados.edital || dados.titulo || 'Dados em atualização'),
-      salario: texto(dados.salario || dados.remuneracao || 'Dados em atualização'),
-      vagas: texto(dados.vagas || 'Dados em atualização'),
-      cotas: texto(dados.cotas || 'Dados em atualização'),
-      idade: texto(dados.idade || 'Dados em atualização'),
-      escolaridade: texto(dados.escolaridade || 'Dados em atualização'),
-      materias: texto(dados.materias || 'Dados em atualização'),
-      banca: texto(dados.banca || 'Dados em atualização'),
-      inscritos: texto(dados.inscritos || dados.inscricoes || 'Dados em atualização'),
-      etapas: texto(dados.etapas || 'Dados em atualização'),
-      cfsd: texto(dados.cfsd || 'Dados em atualização'),
-      estagio: texto(dados.estagio || 'Dados em atualização'),
-      validade: texto(dados.validade || 'Dados em atualização'),
-      previsao: texto(dados.previsao || 'Dados em atualização'),
+      edital: limparTextoPublico(dados.edital || dados.titulo || 'Dados em atualização'),
+      salario: limparTextoPublico(dados.salario || dados.remuneracao || 'Dados em atualização'),
+      vagas: limparTextoPublico(dados.vagas || 'Dados em atualização'),
+      cotas: limparTextoPublico(dados.cotas || 'Dados em atualização'),
+      idade: limparTextoPublico(dados.idade || 'Dados em atualização'),
+      escolaridade: limparTextoPublico(dados.escolaridade || 'Dados em atualização'),
+      materias: limparTextoPublico(dados.materias || 'Dados em atualização'),
+      banca: limparTextoPublico(dados.banca || 'Dados em atualização'),
+      inscritos: limparTextoPublico(dados.inscritos || dados.inscricoes || 'Dados em atualização'),
+      etapas: limparTextoPublico(dados.etapas || 'Dados em atualização'),
+      cfsd: limparTextoPublico(dados.cfsd || 'Dados em atualização'),
+      estagio: limparTextoPublico(dados.estagio || 'Dados em atualização'),
+      validade: limparTextoPublico(dados.validade || 'Dados em atualização'),
+      previsao: limparTextoPublico(dados.previsao || 'Dados em atualização'),
       site: texto(dados.site || primeiraFonteValida(dados.fontes) || itemConfig.site_principal || ''),
       automacao: {
         origem: texto(itemConfig.arquivo_saida || ('data/concursos/' + id + '.json')),
@@ -135,8 +173,8 @@
     const corpo = card.querySelectorAll('.concursos-card-corpo p');
     const fonte = card.querySelector('.concursos-card-links a');
 
-    if (titulo && dados.titulo) titulo.textContent = texto(dados.titulo);
-    if (resumo && dados.resumo) resumo.textContent = texto(dados.resumo);
+    if (titulo && dados.titulo) titulo.textContent = limparTextoPublico(dados.titulo);
+    if (resumo && dados.resumo) resumo.textContent = limparTextoPublico(dados.resumo);
 
     if (indicadores[0]) indicadores[0].textContent = encurtar(concurso.edital, 190);
     if (indicadores[1]) indicadores[1].textContent = encurtar(concurso.vagas, 170);

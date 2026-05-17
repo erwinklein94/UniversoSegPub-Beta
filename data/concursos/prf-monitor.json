@@ -1,0 +1,63 @@
+{
+  "atualizado_em": "2026-05-17",
+  "instituicao_id": "prf",
+  "modelo": "gpt-5.4-nano",
+  "usou_openai": true,
+  "usou_web_search_openai": false,
+  "motivo": "Mudança detectada nas fontes oficiais monitoradas.",
+  "usage": {
+    "input_tokens": 5868,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 427,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 6295
+  },
+  "fontes_monitoradas": [
+    {
+      "url": "https://www.gov.br/prf/pt-br/servicos/concurso-prf-2021",
+      "ok": false,
+      "status": 404,
+      "hash": "bc83e7269d17b676280d35ab8086856cc2a836257b63bb2b9e3bbb1731c26e15",
+      "tamanho_texto": 3633
+    },
+    {
+      "url": "https://www.gov.br/prf/pt-br/assuntos/noticias",
+      "ok": true,
+      "status": 200,
+      "hash": "6499abdce4d530a231ffa76907615dfff8fcf9653b6945dd764ca66e4e66418d",
+      "tamanho_texto": 20742
+    },
+    {
+      "url": "https://www.cebraspe.org.br/concursos/PRF_21",
+      "ok": true,
+      "status": 200,
+      "hash": "87c799727e8f6124c9ffecd63dac2f641d5bd76bde00466f3eff6e1fa3c129b8",
+      "tamanho_texto": 43
+    },
+    {
+      "url": "https://www.gov.br/prf/pt-br/noticias/",
+      "ok": true,
+      "status": 200,
+      "hash": "6499abdce4d530a231ffa76907615dfff8fcf9653b6945dd764ca66e4e66418d",
+      "tamanho_texto": 20742
+    },
+    {
+      "url": "https://www.gov.br/prf/pt-br",
+      "ok": true,
+      "status": 200,
+      "hash": "51c139bf4e6a8e8e918e3ce04341153272f864676d165b47e9eb98b4ee304700",
+      "tamanho_texto": 16357
+    },
+    {
+      "url": "https://www.gov.br/prf/pt-br/noticias",
+      "ok": true,
+      "status": 200,
+      "hash": "6499abdce4d530a231ffa76907615dfff8fcf9653b6945dd764ca66e4e66418d",
+      "tamanho_texto": 20742
+    }
+  ]
+}

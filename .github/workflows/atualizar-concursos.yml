@@ -131,14 +131,21 @@ jobs:
           PERMITIR_PUBLICAR_SE_PIORA: 'false'
           PUBLICAR_RESULTADO_QUALIFICADO_COM_OPENAI: 'true'
         run: node scripts/atualizar-concursos.mjs
+      - name: Gerar relatório de qualidade após atualização
+        env:
+          SCORE_MINIMO_QUALIFICADO: '78'
+          DIAS_ALERTA_DESATUALIZADO: '30'
+          DIAS_ALERTA_MUITO_DESATUALIZADO: '60'
+        run: node scripts/gerar-relatorio-concursos.mjs
+
       - name: Salvar alterações no repositório
         run: |
-          if [ -z "$(git status --porcelain data/concursos)" ]; then
-            echo "Nenhuma alteração detectada em data/concursos."
+          if [ -z "$(git status --porcelain data/concursos docs/RELATORIO-CONCURSOS.md relatorio-concursos.html)" ]; then
+            echo "Nenhuma alteração detectada em concursos ou relatório."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/concursos
-          git commit -m "Atualiza concursos pelo motor genérico"
+          git add data/concursos docs/RELATORIO-CONCURSOS.md relatorio-concursos.html
+          git commit -m "Atualiza concursos e relatório de qualidade"
           git push

@@ -1,0 +1,43 @@
+name: Relatório de Qualidade - Concursos
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 08h00 de Brasília, terça-feira. GitHub Actions usa UTC.
+    - cron: '0 11 * * 2'
+
+permissions:
+  contents: write
+
+jobs:
+  relatorio-concursos:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Gerar relatório de qualidade
+        env:
+          SCORE_MINIMO_QUALIFICADO: '78'
+          DIAS_ALERTA_DESATUALIZADO: '30'
+          DIAS_ALERTA_MUITO_DESATUALIZADO: '60'
+        run: node scripts/gerar-relatorio-concursos.mjs
+
+      - name: Salvar relatório no repositório
+        run: |
+          if [ -z "$(git status --porcelain data/concursos/_relatorio-qualidade.json docs/RELATORIO-CONCURSOS.md relatorio-concursos.html)" ]; then
+            echo "Relatório sem alterações."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/concursos/_relatorio-qualidade.json docs/RELATORIO-CONCURSOS.md relatorio-concursos.html
+          git commit -m "Atualiza relatório de qualidade dos concursos"
+          git push

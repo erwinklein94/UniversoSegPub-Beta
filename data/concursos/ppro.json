@@ -3,64 +3,87 @@
   "instituicao_nome": "Polícia Penal de Rondônia",
   "sigla": "PPRO",
   "uf": "RO",
-  "tipo": "Polícia Penal",
   "tema": "concursos",
-  "status": "cobertura inicial pendente",
-  "titulo": "PPRO: pesquisa inicial de concursos pendente",
-  "resumo": "A instituição PPRO foi incluída na automação de concursos e aguarda primeira pesquisa qualificada para preencher dados completos.",
-  "edital": "Pesquisa inicial pendente. Rode o workflow em modo qualificado para levantar edital, cargo, situação e cronograma.",
-  "salario": "Pesquisa inicial pendente.",
-  "vagas": "Pesquisa inicial pendente.",
-  "cotas": "Pesquisa inicial pendente.",
-  "idade": "Pesquisa inicial pendente.",
-  "escolaridade": "Pesquisa inicial pendente.",
-  "materias": "Pesquisa inicial pendente.",
-  "banca": "Pesquisa inicial pendente.",
-  "inscritos": "Pesquisa inicial pendente.",
-  "etapas": "Pesquisa inicial pendente.",
-  "cfsd": "Pesquisa inicial pendente.",
-  "estagio": "Pesquisa inicial pendente.",
-  "validade": "Pesquisa inicial pendente.",
-  "previsao": "Pesquisa inicial pendente.",
+  "status": "Pesquisa pendente",
+  "titulo": "PPRO: último concurso é o da antiga SEJUS, hoje carreira de Polícia Penal, com homologação e convocações já publicadas",
+  "resumo": "A Polícia Penal de Rondônia aproveita o concurso público da antiga SEJUS, regido pelo Edital nº 367/GDRH/GAB/SEAD, de 29 de outubro de 2010, para o cargo de Agente Penitenciário, carreira depois transformada em Policial Penal. Em 2022 houve homologação de resultado final por decisões judiciais e novas convocações para posse. A carreira atual da Polícia Penal estadual foi organizada como cargo único de nível superior.",
+  "edital": "Edital nº 367/GDRH/GAB/SEAD, de 29 de outubro de 2010, para Agente Penitenciário da SEJUS. Situação atual: concurso antigo homologado, com atos de resultado final e convocações para posse publicados em 2022 por decisões judiciais. A carreira foi transformada em Policial Penal.",
+  "salario": "Não localizado nas fontes consultadas.",
+  "vagas": "Não localizado nas fontes consultadas.",
+  "cotas": "Há registro de vagas para pessoas com deficiência no resultado final publicado. Demais regras de cotas não localizadas nas fontes consultadas.",
+  "idade": "Não localizado nas fontes consultadas.",
+  "escolaridade": "No concurso de 2010, nível médio para Agente Penitenciário. Para a carreira atual da Polícia Penal de Rondônia, a estrutura legal passou a prever cargo único de nível superior.",
+  "materias": "Não localizado nas fontes consultadas.",
+  "banca": "Não localizado nas fontes consultadas.",
+  "inscritos": "Não localizado nas fontes consultadas.",
+  "etapas": "Não localizado nas fontes consultadas.",
+  "cfsd": "Curso de formação com registro de resultado da 4ª Academia de Formação de Policial Penal publicado em 2022.",
+  "estagio": "Não localizado nas fontes consultadas.",
+  "validade": "Não localizado nas fontes consultadas.",
+  "previsao": "Não localizado nas fontes consultadas.",
   "site": "https://www.ro.gov.br",
   "fontes": [
     {
-      "titulo": "Fonte inicial sugerida — PPRO",
-      "url": "https://www.ro.gov.br",
-      "tipo": "fonte oficial provável ou portal institucional",
+      "titulo": "Governo de Rondônia sanciona lei que regulamenta a Polícia Penal no Estado",
+      "url": "https://rondonia.ro.gov.br/governo-de-rondonia-sanciona-lei-que-regulamenta-a-policia-penal-no-estado/",
+      "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Fonte inicial sugerida — PPRO",
-      "url": "https://www.policiapenal.ro.gov.br",
-      "tipo": "fonte oficial provável ou portal institucional",
+      "titulo": "8/4/2022 - Edital n. 78/2022/SEGEP-GCP - Homologação Resultado Final Concurso Público SEJUS - Policial Penal - Decisão Judicial",
+      "url": "https://rondonia.ro.gov.br/publicacao/8-4-2022-edital-n-78-2022-segep-gcp-homologacao-resultado-final-concurso-publico-sejus-policial-penal-decisao-judicial/",
+      "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Fonte inicial sugerida — PPRO",
-      "url": "https://www.seap.ro.gov.br",
-      "tipo": "fonte oficial provável ou portal institucional",
+      "titulo": "Edital nº 80/2022/SEGEP-GCP - DOE 08.04.2022",
+      "url": "https://rondonia.ro.gov.br/wp-content/uploads/2022/04/Edital-No-80-2022-SEGEP-GCP-DOE-08.04.2022.pdf",
+      "tipo": "diário oficial / pdf oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "2/5/2022 - Edital n. 101/2022/SEGEP-GCP - Convocação Posse Concurso Público SEJUS/2010 Policial Penal - Decisões Judiciais",
+      "url": "https://rondonia.ro.gov.br/publicacao/2-5-2022-edital-n-101-2022-segep-gcp-convocacao-posse-concurso-publico-sejus-2010-policial-penal-decioes-judiciais/",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Edital n. 101.2022.SEGEP-GCP - Convocação Posse Concurso Público SEJUS/2010 Policial Penal - Decisões Judiciais",
+      "url": "https://rondonia.ro.gov.br/wp-content/uploads/2022/05/Edital-n.-101.2022.SEGEP-GCP-Convocacao-Posse-Concurso-Publico-SEJUS-2010-Policial-Penal-Decioes-Judiciais.pdf",
+      "tipo": "pdf oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "22/3/2022 - Edital n. 64/2022/SEGEP-GCP - Resultado Curso de Formação Policial Penal 4ª Academia Concurso Público SEJUS",
+      "url": "https://rondonia.ro.gov.br/publicacao/22-3-2022-edital-n-64-2022-segep-gcp-resultado-curso-de-formacao-policial-penal-4a-academia-concurso-publico-sejus-decisao-judicial/",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Diário Oficial de Rondônia - DOE 20.03.2012",
+      "url": "https://diof.ro.gov.br/doe/doe_20_03_12.pdf",
+      "tipo": "diário oficial / pdf oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Diário Oficial de Rondônia - DOE 11.10.2012",
+      "url": "https://diof.ro.gov.br/doe/doe_11_10_2012-02.pdf",
+      "tipo": "diário oficial / pdf oficial",
       "data_consulta": "2026-05-17"
     }
   ],
-  "ultima_pesquisa": null,
-  "nivel_confianca": "pendente",
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
   "precisa_revisao_humana": true,
-  "qualidade_publicacao": "sem_pesquisa",
-  "score_publicacao": 0,
-  "primeira_pesquisa_pendente": true,
-  "bloquear_publicacao": false,
-  "forcar_exibicao_site": true,
   "alertas": [
-    "Arquivo inicial criado para completar a cobertura total da aba Concursos.",
-    "Rode o workflow em modo qualificado para preencher informações concretas antes de considerar o conteúdo completo.",
-    "O modo qualificado deve buscar fontes oficiais, banca organizadora, diário oficial e fontes auxiliares confiáveis para entregar respostas objetivas."
+    "Não foi localizado, nas fontes consultadas, um novo edital próprio da Polícia Penal de Rondônia após a reorganização legal da carreira.",
+    "Os dados objetivos encontrados se concentram no concurso da antiga SEJUS de 2010 e em publicações oficiais de 2022 ligadas a homologação, curso de formação e posse por decisões judiciais.",
+    "Salário atual, banca, idade, matérias e previsão de novo concurso não apareceram de forma objetiva nas fontes consultadas.",
+    "Classificação automática: Pesquisa pendente (0/100)."
   ],
-  "workflow_sugerido_primeira_pesquisa": {
-    "instituicao": "ppro",
-    "limite": "1",
-    "forcar_atualizacao": "true",
-    "usar_web_search": "true",
-    "modo_qualidade": "qualificado"
-  }
+  "classe_atualizacao": "pendente",
+  "qualidade_publicacao": "pendente",
+  "score_publicacao": "0",
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true
 }

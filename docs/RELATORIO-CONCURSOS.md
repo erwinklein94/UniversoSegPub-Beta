@@ -5,9 +5,9 @@ Gerado em: 2026-05-17
 ## Resumo
 
 - Total: 110
-- Pendentes: 22
-- Atualização fraca: 30
-- Atualização forte: 58
+- Pendentes: 18
+- Atualização fraca: 33
+- Atualização forte: 59
 
 ## Como atualizar
 
@@ -41,11 +41,7 @@ modelo_openai: gpt-5.4-mini
 
 | Sigla | Instituição | UF | Classe | Score | Motivos |
 |---|---|---:|---|---:|---|
-| PPPR | Polícia Penal do Paraná | PR | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
-| PPRJ | Polícia Penal do Rio de Janeiro | RJ | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
-| PPRN | Polícia Penal de Rio Grande do Norte | RN | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
-| PPRO | Polícia Penal de Rondônia | RO | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
-| PPRR | Polícia Penal de Roraima | RR | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
+| PPRO | Polícia Penal de Rondônia | RO | pendente | 0 | precisa primeira atualização; campos críticos sem dado: salario, vagas, banca, etapas |
 | PPRS | Polícia Penal do Rio Grande do Sul | RS | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
 | PPSC | Polícia Penal de Santa Catarina | SC | pendente | 0 | precisa primeira atualização; campos críticos sem dado: edital, salario, vagas, escolaridade, banca, etapas |
 | PPSE | Polícia Penal de Sergipe | SE | pendente | 0 | precisa primeira atualização; campos críticos sem dado: salario, vagas, escolaridade, banca, etapas |
@@ -70,9 +66,11 @@ modelo_openai: gpt-5.4-mini
 |---|---|---:|---|---:|---|
 | PPGO | Polícia Penal de Goiás | GO | fraca | 48 | conteúdo fraco ou genérico |
 | PPPB | Polícia Penal de Paraíba | PB | fraca | 48 | conteúdo fraco ou genérico |
+| PPRN | Polícia Penal de Rio Grande do Norte | RN | fraca | 52 | conteúdo fraco ou genérico |
 | PMCE | Polícia Militar de Ceará | CE | fraca | 56 | conteúdo fraco ou genérico |
 | PPPA | Polícia Penal de Pará | PA | fraca | 60 | conteúdo fraco ou genérico |
 | PPPE | Polícia Penal de Pernambuco | PE | fraca | 60 | conteúdo fraco ou genérico |
+| PPRJ | Polícia Penal do Rio de Janeiro | RJ | fraca | 60 | conteúdo fraco ou genérico |
 | BMMA | Corpo de Bombeiros Militar do Maranhão | MA | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PCPB | Polícia Civil de Paraíba | PB | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PMMA | Polícia Militar de Maranhão | MA | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
@@ -84,6 +82,7 @@ modelo_openai: gpt-5.4-mini
 | BMSE | Corpo de Bombeiros Militar de Sergipe | SE | fraca | 68 | conteúdo fraco ou genérico |
 | BMTO | Corpo de Bombeiros Militar do Tocantins | TO | fraca | 68 | conteúdo fraco ou genérico |
 | PCPA | Polícia Civil de Pará | PA | fraca | 68 | conteúdo fraco ou genérico |
+| PPRR | Polícia Penal de Roraima | RR | fraca | 68 | conteúdo fraco ou genérico |
 | PMPB | Polícia Militar de Paraíba | PB | fraca | 70 | conteúdo fraco ou genérico; campos críticos sem dado: banca |
 | PMESP | Polícia Militar do Estado de São Paulo | SP | fraca | 74 | conteúdo fraco ou genérico; campos genéricos: cotas, etapas; campos críticos genéricos: etapas |
 | BMDF | Corpo de Bombeiros Militar do Distrito Federal | DF | fraca | 76 | conteúdo fraco ou genérico |
@@ -128,6 +127,7 @@ modelo_openai: gpt-5.4-mini
 | PMSE | Polícia Militar de Sergipe | SE | forte | 92 | conteúdo bom |
 | PPBA | Polícia Penal da Bahia | BA | forte | 92 | conteúdo bom |
 | PPPI | Polícia Penal de Piauí | PI | forte | 92 | conteúdo bom |
+| PPPR | Polícia Penal do Paraná | PR | forte | 92 | conteúdo bom |
 | CBMAP | Corpo de Bombeiros Militar do Amapá | AP | forte | 93 | campos genéricos: validade |
 | CBMMG | Corpo de Bombeiros Militar de Minas Gerais | MG | forte | 93 | campos genéricos: validade |
 | CBMSC | Corpo de Bombeiros Militar de Santa Catarina | SC | forte | 93 | campos genéricos: cotas |

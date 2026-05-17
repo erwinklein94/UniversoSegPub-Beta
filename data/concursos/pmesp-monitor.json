@@ -4,17 +4,20 @@
   "modelo": "gpt-5.4-nano",
   "usou_openai": true,
   "usou_web_search_openai": false,
+  "publicacao_bloqueada": false,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 80,
   "motivo": "Mudança detectada nas fontes oficiais monitoradas.",
   "usage": {
-    "input_tokens": 2837,
+    "input_tokens": 2955,
     "input_tokens_details": {
       "cached_tokens": 0
     },
-    "output_tokens": 352,
+    "output_tokens": 493,
     "output_tokens_details": {
       "reasoning_tokens": 0
     },
-    "total_tokens": 3189
+    "total_tokens": 3448
   },
   "fontes_monitoradas": [
     {
@@ -35,7 +38,7 @@
       "url": "https://www.vunesp.com.br/",
       "ok": false,
       "status": 403,
-      "hash": "e8ebbc04194e596beac3fdb9751ce90398f14e0bd08fdd287400be0475a5699c",
+      "hash": "2233e92538d31c25505e1ec178ca1ee4851771373c8eac98a2d9c2257c8ec29c",
       "tamanho_texto": 293
     },
     {

@@ -24,20 +24,45 @@
   "site": "https://concursos.policiamilitar.sp.gov.br",
   "fontes": [
     {
-      "titulo": "Fonte oficial PMESP",
+      "titulo": "Fonte oficial PMESP (site institucional)",
+      "url": "https://www.policiamilitar.sp.gov.br/",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Fonte oficial PMESP (Canal de Imprensa)",
+      "url": "https://www.policiamilitar.sp.gov.br/Pmesp.CanalImprensaExterno/",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Fonte oficial PMESP (página de concursos)",
       "url": "https://concursos.policiamilitar.sp.gov.br",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     }
   ],
   "ultima_pesquisa": "2026-05-17",
-  "nivel_confianca": "médio",
+  "nivel_confianca": "baixo",
   "precisa_revisao_humana": true,
-  "qualidade_publicacao": "alta",
-  "score_publicacao": 85,
-  "bloquear_publicacao": false,
   "alertas": [
-    "Conteúdo restaurado a partir da base estática do site após teste de automação que gerou campos sem informação suficiente.",
-    "A automação foi ajustada para não sobrescrever o JSON principal quando a atualização vier com baixa qualidade."
-  ]
+    "As fontes oficiais fornecidas nesta atualização (site institucional e canal de imprensa) não trazem dados específicos de concursos (editais, vagas, salário, bancas, etapas). Manter/ajustar os campos detalhados depende de consulta direta à página oficial de concursos: https://concursos.policiamilitar.sp.gov.br.",
+    "Campo edital mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.",
+    "Campo salario mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.",
+    "Campo vagas mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.",
+    "Campo cotas mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.",
+    "Campo idade mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.",
+    "Campo escolaridade mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.",
+    "Campo materias mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.",
+    "Campo banca mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.",
+    "Campo inscritos mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.",
+    "Campo etapas mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.",
+    "Campo cfsd mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.",
+    "Campo estagio mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.",
+    "Campo validade mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.",
+    "Campo previsao mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente."
+  ],
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 80,
+  "bloquear_publicacao": false
 }

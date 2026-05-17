@@ -1,6 +1,6 @@
 {
   "atualizado_em": "2026-05-17",
-  "instituicao_id": "pcerj",
+  "instituicao_id": "pmerj",
   "modo_qualidade": "economico",
   "usou_openai": false,
   "publicacao_bloqueada": true,
@@ -8,11 +8,11 @@
   "recomendacao": "Rode com modo_qualidade=qualificado e usar_web_search=true para tentar pesquisa profunda.",
   "fontes_monitoradas": [
     {
-      "url": "https://www.policiacivil.rj.gov.br",
+      "url": "https://concursos.sepm.rj.gov.br",
       "ok": false,
       "status": 403,
-      "hash": "3804b4ddc5736c4df033e3257f47cc7ec05ca0e6ae4f036be86727d8ca9169d2",
-      "tamanho_texto": 56
+      "hash": "301dc171e5fa8c5fdeb69592a92a5c378f5f758f68d2338200235d60eb04b9ad",
+      "tamanho_texto": 16
     }
   ]
 }

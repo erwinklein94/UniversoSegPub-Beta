@@ -1,42 +1,18 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "pcsp",
-  "modelo": "gpt-5.4-nano",
-  "usou_openai": true,
-  "usou_web_search_openai": false,
-  "motivo": "Mudança detectada nas fontes oficiais monitoradas.",
-  "usage": {
-    "input_tokens": 2773,
-    "input_tokens_details": {
-      "cached_tokens": 0
-    },
-    "output_tokens": 416,
-    "output_tokens_details": {
-      "reasoning_tokens": 0
-    },
-    "total_tokens": 3189
-  },
+  "modo_qualidade": "economico",
+  "usou_openai": false,
+  "publicacao_bloqueada": true,
+  "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico.",
+  "recomendacao": "Rode com modo_qualidade=qualificado e usar_web_search=true para tentar pesquisa profunda.",
   "fontes_monitoradas": [
     {
-      "url": "https://www.policiacivil.sp.gov.br/",
+      "url": "https://www.policiacivil.sp.gov.br",
       "ok": true,
       "status": 200,
       "hash": "2c3ed1d994b89ea55ccd36470eb763eb1f410b04fde5bf6b5c8818511925717e",
       "tamanho_texto": 11
-    },
-    {
-      "url": "https://www.vunesp.com.br/",
-      "ok": false,
-      "status": 403,
-      "hash": "781758aef7f96b6f5144169f3663780ebcf7e7b440313b92fe38df5d2dba36fd",
-      "tamanho_texto": 293
-    },
-    {
-      "url": "https://www.saopaulo.sp.gov.br/",
-      "ok": true,
-      "status": 200,
-      "hash": "2f411e97e5038e821c6b59ecd1bbec527c64512a2f68b209b6de59856db66865",
-      "tamanho_texto": 4623
     }
   ]
 }

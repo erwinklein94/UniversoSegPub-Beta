@@ -1,66 +1,18 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "pmesp",
-  "modelo": "gpt-5.4-nano",
-  "usou_openai": true,
-  "usou_web_search_openai": false,
-  "publicacao_bloqueada": false,
-  "qualidade_publicacao": "alta",
-  "score_publicacao": 80,
-  "motivo": "Mudança detectada nas fontes oficiais monitoradas.",
-  "usage": {
-    "input_tokens": 3362,
-    "input_tokens_details": {
-      "cached_tokens": 0
-    },
-    "output_tokens": 1283,
-    "output_tokens_details": {
-      "reasoning_tokens": 0
-    },
-    "total_tokens": 4645
-  },
+  "modo_qualidade": "economico",
+  "usou_openai": false,
+  "publicacao_bloqueada": true,
+  "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico.",
+  "recomendacao": "Rode com modo_qualidade=qualificado e usar_web_search=true para tentar pesquisa profunda.",
   "fontes_monitoradas": [
     {
-      "url": "https://concursos.policiamilitar.sp.gov.br/",
+      "url": "https://concursos.policiamilitar.sp.gov.br",
       "ok": false,
       "status": 0,
       "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "tamanho_texto": 0
-    },
-    {
-      "url": "https://www.policiamilitar.sp.gov.br/",
-      "ok": true,
-      "status": 200,
-      "hash": "3c46b0873411d5267faa77a445a88bcfb484587370f3067995369ca9e1ad4436",
-      "tamanho_texto": 4076
-    },
-    {
-      "url": "https://www.vunesp.com.br/",
-      "ok": false,
-      "status": 403,
-      "hash": "387f6af76b2ff8e684338cbfb4d146d001e7159b4e5434ef3f780a53bce8c744",
-      "tamanho_texto": 295
-    },
-    {
-      "url": "https://www.policiamilitar.sp.gov.br/Pmesp.CanalImprensaExterno/",
-      "ok": true,
-      "status": 200,
-      "hash": "08d8779370f53bfa0949afcec6ff0085b9678eb7781d7f365e9b424489300be8",
-      "tamanho_texto": 606
-    },
-    {
-      "url": "https://www.concursos.policiamilitar.sp.gov.br/",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
-    },
-    {
-      "url": "https://www.policiamilitar.sp.gov.br/Pmesp.CanalImprensaExterno/www.policiamilitar.sp.gov.br/jornalista/login",
-      "ok": false,
-      "status": 404,
-      "hash": "0d3e7bb75849f114a61f979fa0ea2e265b92647c307e3338f664232e0c8a3e2e",
-      "tamanho_texto": 538
     }
   ]
 }

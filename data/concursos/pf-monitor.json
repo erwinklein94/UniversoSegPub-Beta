@@ -1,23 +1,52 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "pf",
+  "modo_qualidade": "economico",
   "modelo": "gpt-5.4-nano",
   "usou_openai": true,
   "usou_web_search_openai": false,
-  "publicacao_bloqueada": false,
-  "qualidade_publicacao": "alta",
-  "score_publicacao": 80,
-  "motivo": "Mudança detectada nas fontes oficiais monitoradas.",
+  "publicacao_bloqueada": true,
+  "motivo": "Atualização bloqueada: a nova versão (85/100) ficou pior que a versão publicada (97/100).",
+  "avaliacao": {
+    "score": 85,
+    "qualidade": "alta",
+    "ruins": [],
+    "genericos": [],
+    "concretos": [
+      "edital",
+      "salario",
+      "vagas",
+      "idade",
+      "escolaridade",
+      "materias",
+      "banca",
+      "inscritos",
+      "etapas",
+      "cfsd",
+      "validade"
+    ],
+    "criticosRuins": [],
+    "criticosGenericos": [],
+    "criticosConcretos": [
+      "edital",
+      "salario",
+      "vagas",
+      "escolaridade",
+      "banca",
+      "etapas"
+    ],
+    "podePublicar": true
+  },
   "usage": {
-    "input_tokens": 6921,
+    "input_tokens": 7568,
     "input_tokens_details": {
       "cached_tokens": 0
     },
-    "output_tokens": 471,
+    "output_tokens": 454,
     "output_tokens_details": {
       "reasoning_tokens": 0
     },
-    "total_tokens": 7392
+    "total_tokens": 8022
   },
   "fontes_monitoradas": [
     {
@@ -26,13 +55,6 @@
       "status": 200,
       "hash": "6c1f277740987e5fed1b1f67b668cb060f191b61aa24928a1a7564c5f4133be0",
       "tamanho_texto": 8866
-    },
-    {
-      "url": "https://www.gov.br/pf/pt-br/assuntos/noticias",
-      "ok": true,
-      "status": 200,
-      "hash": "f5172e3bc0ba7411b5635ac60afd42a614b5ba08377421751fbc16e2b1093a4d",
-      "tamanho_texto": 10698
     },
     {
       "url": "https://www.cebraspe.org.br/concursos/PF_25",
@@ -57,6 +79,13 @@
     },
     {
       "url": "https://www.gov.br/pf/pt-br/@@search",
+      "ok": true,
+      "status": 200,
+      "hash": "301f4f4e0ea00b78512e5d0a6d8982bf050685c3d8eb9d5d3a4eb756a2ccf348",
+      "tamanho_texto": 7579
+    },
+    {
+      "url": "https://www.gov.br/pf/pt-br/search?origem=termos&amp;SearchableText=imposto%20de%20renda",
       "ok": true,
       "status": 200,
       "hash": "301f4f4e0ea00b78512e5d0a6d8982bf050685c3d8eb9d5d3a4eb756a2ccf348",

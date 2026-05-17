@@ -27,9 +27,9 @@
 <main>
   <section class="cards">
     <div class="card"><span>Total</span><strong>47</strong></div>
-    <div class="card"><span>Rodar qualificado</span><strong>7</strong></div>
-    <div class="card"><span>Revisar</span><strong>3</strong></div>
-    <div class="card"><span>OK</span><strong>37</strong></div>
+    <div class="card"><span>Rodar qualificado</span><strong>13</strong></div>
+    <div class="card"><span>Revisar</span><strong>5</strong></div>
+    <div class="card"><span>OK</span><strong>29</strong></div>
   </section>
   <div class="toolbar">
     <button onclick="filtrar('')">Todos</button>
@@ -41,12 +41,90 @@
     <thead><tr><th>Ação</th><th>Instituição</th><th>Nome</th><th>Prioridade</th><th>Score</th><th>Motivos</th><th>Workflow sugerido</th></tr></thead>
     <tbody><tr class="danger" data-acao="rodar_qualificado">
       <td>rodar_qualificado</td>
+      <td><strong>PMESP</strong><br><small>pmesp</small></td>
+      <td>Polícia Militar do Estado de São Paulo</td>
+      <td>alta</td>
+      <td><strong>82</strong></td>
+      <td>fonte direta falhou ou não trouxe texto suficiente</td>
+      <td><pre>instituicao: pmesp
+limite: 1
+forcar_atualizacao: true
+usar_web_search: true
+modo_qualidade: qualificado</pre></td>
+    </tr>
+<tr class="danger" data-acao="rodar_qualificado">
+      <td>rodar_qualificado</td>
+      <td><strong>PRF</strong><br><small>prf</small></td>
+      <td>Polícia Rodoviária Federal</td>
+      <td>alta</td>
+      <td><strong>85</strong></td>
+      <td>fonte direta falhou ou não trouxe texto suficiente</td>
+      <td><pre>instituicao: prf
+limite: 1
+forcar_atualizacao: true
+usar_web_search: true
+modo_qualidade: qualificado</pre></td>
+    </tr>
+<tr class="danger" data-acao="rodar_qualificado">
+      <td>rodar_qualificado</td>
+      <td><strong>PCSP</strong><br><small>pcsp</small></td>
+      <td>Polícia Civil do Estado de São Paulo</td>
+      <td>alta</td>
+      <td><strong>87</strong></td>
+      <td>fonte direta falhou ou não trouxe texto suficiente</td>
+      <td><pre>instituicao: pcsp
+limite: 1
+forcar_atualizacao: true
+usar_web_search: true
+modo_qualidade: qualificado</pre></td>
+    </tr>
+<tr class="danger" data-acao="rodar_qualificado">
+      <td>rodar_qualificado</td>
       <td><strong>PMMG</strong><br><small>pmmg</small></td>
       <td>Polícia Militar de Minas Gerais</td>
       <td>alta</td>
       <td><strong>87</strong></td>
       <td>fonte direta falhou ou não trouxe texto suficiente; foi publicado por modo qualificado; recomenda revisão visual</td>
       <td><pre>instituicao: pmmg
+limite: 1
+forcar_atualizacao: true
+usar_web_search: true
+modo_qualidade: qualificado</pre></td>
+    </tr>
+<tr class="danger" data-acao="rodar_qualificado">
+      <td>rodar_qualificado</td>
+      <td><strong>PMBA</strong><br><small>pmba</small></td>
+      <td>Polícia Militar da Bahia</td>
+      <td>alta</td>
+      <td><strong>90</strong></td>
+      <td>fonte direta falhou ou não trouxe texto suficiente</td>
+      <td><pre>instituicao: pmba
+limite: 1
+forcar_atualizacao: true
+usar_web_search: true
+modo_qualidade: qualificado</pre></td>
+    </tr>
+<tr class="danger" data-acao="rodar_qualificado">
+      <td>rodar_qualificado</td>
+      <td><strong>PMERJ</strong><br><small>pmerj</small></td>
+      <td>Polícia Militar do Rio de Janeiro</td>
+      <td>alta</td>
+      <td><strong>90</strong></td>
+      <td>fonte direta falhou ou não trouxe texto suficiente</td>
+      <td><pre>instituicao: pmerj
+limite: 1
+forcar_atualizacao: true
+usar_web_search: true
+modo_qualidade: qualificado</pre></td>
+    </tr>
+<tr class="danger" data-acao="rodar_qualificado">
+      <td>rodar_qualificado</td>
+      <td><strong>PCERJ</strong><br><small>pcerj</small></td>
+      <td>Polícia Civil do Rio de Janeiro</td>
+      <td>alta</td>
+      <td><strong>93</strong></td>
+      <td>fonte direta falhou ou não trouxe texto suficiente</td>
+      <td><pre>instituicao: pcerj
 limite: 1
 forcar_atualizacao: true
 usar_web_search: true
@@ -132,6 +210,24 @@ modo_qualidade: qualificado</pre></td>
     </tr>
 <tr class="warn" data-acao="revisar_rascunho_ou_site">
       <td>revisar_rascunho_ou_site</td>
+      <td><strong>PCMG</strong><br><small>pcmg</small></td>
+      <td>Polícia Civil de Minas Gerais</td>
+      <td>alta</td>
+      <td><strong>87</strong></td>
+      <td>existe rascunho gerado para revisão</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="warn" data-acao="revisar_rascunho_ou_site">
+      <td>revisar_rascunho_ou_site</td>
+      <td><strong>PF</strong><br><small>pf</small></td>
+      <td>Polícia Federal</td>
+      <td>alta</td>
+      <td><strong>93</strong></td>
+      <td>existe rascunho gerado para revisão</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="warn" data-acao="revisar_rascunho_ou_site">
+      <td>revisar_rascunho_ou_site</td>
       <td><strong>CBMES</strong><br><small>bmes</small></td>
       <td>Corpo de Bombeiros Militar do Estado do Espírito Santo</td>
       <td>media</td>
@@ -204,15 +300,6 @@ modo_qualidade: qualificado</pre></td>
     </tr>
 <tr class="ok" data-acao="ok">
       <td>ok</td>
-      <td><strong>PMESP</strong><br><small>pmesp</small></td>
-      <td>Polícia Militar do Estado de São Paulo</td>
-      <td>baixa</td>
-      <td><strong>82</strong></td>
-      <td>sem ação necessária</td>
-      <td><pre>Sem workflow sugerido</pre></td>
-    </tr>
-<tr class="ok" data-acao="ok">
-      <td>ok</td>
       <td><strong>PCES</strong><br><small>pces</small></td>
       <td>Polícia Civil do Espírito Santo</td>
       <td>baixa</td>
@@ -267,24 +354,6 @@ modo_qualidade: qualificado</pre></td>
     </tr>
 <tr class="ok" data-acao="ok">
       <td>ok</td>
-      <td><strong>PRF</strong><br><small>prf</small></td>
-      <td>Polícia Rodoviária Federal</td>
-      <td>baixa</td>
-      <td><strong>85</strong></td>
-      <td>sem ação necessária</td>
-      <td><pre>Sem workflow sugerido</pre></td>
-    </tr>
-<tr class="ok" data-acao="ok">
-      <td>ok</td>
-      <td><strong>PCMG</strong><br><small>pcmg</small></td>
-      <td>Polícia Civil de Minas Gerais</td>
-      <td>baixa</td>
-      <td><strong>87</strong></td>
-      <td>sem ação necessária</td>
-      <td><pre>Sem workflow sugerido</pre></td>
-    </tr>
-<tr class="ok" data-acao="ok">
-      <td>ok</td>
       <td><strong>PCMT</strong><br><small>pcmt</small></td>
       <td>Polícia Judiciária Civil de Mato Grosso</td>
       <td>baixa</td>
@@ -296,15 +365,6 @@ modo_qualidade: qualificado</pre></td>
       <td>ok</td>
       <td><strong>PCSC</strong><br><small>pcsc</small></td>
       <td>Polícia Civil de Santa Catarina</td>
-      <td>baixa</td>
-      <td><strong>87</strong></td>
-      <td>sem ação necessária</td>
-      <td><pre>Sem workflow sugerido</pre></td>
-    </tr>
-<tr class="ok" data-acao="ok">
-      <td>ok</td>
-      <td><strong>PCSP</strong><br><small>pcsp</small></td>
-      <td>Polícia Civil do Estado de São Paulo</td>
       <td>baixa</td>
       <td><strong>87</strong></td>
       <td>sem ação necessária</td>
@@ -348,6 +408,15 @@ modo_qualidade: qualificado</pre></td>
     </tr>
 <tr class="ok" data-acao="ok">
       <td>ok</td>
+      <td><strong>PCBA</strong><br><small>pcba</small></td>
+      <td>Polícia Civil da Bahia</td>
+      <td>baixa</td>
+      <td><strong>89</strong></td>
+      <td>sem ação necessária</td>
+      <td><pre>Sem workflow sugerido</pre></td>
+    </tr>
+<tr class="ok" data-acao="ok">
+      <td>ok</td>
       <td><strong>CBMSC</strong><br><small>bmsc</small></td>
       <td>Corpo de Bombeiros Militar de Santa Catarina</td>
       <td>baixa</td>
@@ -377,24 +446,6 @@ modo_qualidade: qualificado</pre></td>
       <td>ok</td>
       <td><strong>PMAC</strong><br><small>pmac</small></td>
       <td>Polícia Militar do Acre</td>
-      <td>baixa</td>
-      <td><strong>90</strong></td>
-      <td>sem ação necessária</td>
-      <td><pre>Sem workflow sugerido</pre></td>
-    </tr>
-<tr class="ok" data-acao="ok">
-      <td>ok</td>
-      <td><strong>PMBA</strong><br><small>pmba</small></td>
-      <td>Polícia Militar da Bahia</td>
-      <td>baixa</td>
-      <td><strong>90</strong></td>
-      <td>sem ação necessária</td>
-      <td><pre>Sem workflow sugerido</pre></td>
-    </tr>
-<tr class="ok" data-acao="ok">
-      <td>ok</td>
-      <td><strong>PMERJ</strong><br><small>pmerj</small></td>
-      <td>Polícia Militar do Rio de Janeiro</td>
       <td>baixa</td>
       <td><strong>90</strong></td>
       <td>sem ação necessária</td>
@@ -447,15 +498,6 @@ modo_qualidade: qualificado</pre></td>
     </tr>
 <tr class="ok" data-acao="ok">
       <td>ok</td>
-      <td><strong>PCBA</strong><br><small>pcba</small></td>
-      <td>Polícia Civil da Bahia</td>
-      <td>baixa</td>
-      <td><strong>93</strong></td>
-      <td>sem ação necessária</td>
-      <td><pre>Sem workflow sugerido</pre></td>
-    </tr>
-<tr class="ok" data-acao="ok">
-      <td>ok</td>
       <td><strong>PCDF</strong><br><small>pcdf</small></td>
       <td>Polícia Civil do Distrito Federal</td>
       <td>baixa</td>
@@ -465,26 +507,8 @@ modo_qualidade: qualificado</pre></td>
     </tr>
 <tr class="ok" data-acao="ok">
       <td>ok</td>
-      <td><strong>PCERJ</strong><br><small>pcerj</small></td>
-      <td>Polícia Civil do Rio de Janeiro</td>
-      <td>baixa</td>
-      <td><strong>93</strong></td>
-      <td>sem ação necessária</td>
-      <td><pre>Sem workflow sugerido</pre></td>
-    </tr>
-<tr class="ok" data-acao="ok">
-      <td>ok</td>
       <td><strong>PCPR</strong><br><small>pcpr</small></td>
       <td>Polícia Civil do Paraná</td>
-      <td>baixa</td>
-      <td><strong>93</strong></td>
-      <td>sem ação necessária</td>
-      <td><pre>Sem workflow sugerido</pre></td>
-    </tr>
-<tr class="ok" data-acao="ok">
-      <td>ok</td>
-      <td><strong>PF</strong><br><small>pf</small></td>
-      <td>Polícia Federal</td>
       <td>baixa</td>
       <td><strong>93</strong></td>
       <td>sem ação necessária</td>

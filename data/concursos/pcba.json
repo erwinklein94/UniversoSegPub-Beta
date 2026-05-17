@@ -6,25 +6,25 @@
   "tema": "concursos",
   "status": "conteúdo inicial protegido",
   "titulo": "PCBA: concursos, requisitos e etapas",
-  "resumo": "Guia de concursos da PCBA com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
+  "resumo": "Guia de concursos da PCBA com dados estruturados (cargos, requisitos e etapas), com status de atualização em andamento",
   "edital": "Novo concurso PCBA 2026 anunciado — Delegado, Escrivão e Investigador",
   "salario": "A definir no edital; último concurso de 2022 informava remuneração inicial de R$ 4.873,18",
   "vagas": "Mais de 750 vagas anunciadas para Delegado, Escrivão e Investigador",
-  "cotas": "30% negros / 5% PCD, conforme legislação e regras do edital",
+  "cotas": "30% negros/5% PCD, conforme legislação e regras do edital",
   "idade": "A definir no edital; último concurso exigia idade mínima de 18 anos",
   "escolaridade": "Nível superior, conforme cargo e edital",
-  "materias": "A definir no edital. Último concurso cobrou Língua Portuguesa, Raciocínio Lógico, Informática, Atualidades e Conhecimentos Específicos de Direito.",
+  "materias": "A definir no edital. Último concurso cobrou: Língua Portuguesa; Raciocínio Lógico; Informática; Atualidades; Conhecimentos Específicos de Direito",
   "banca": "A definir oficialmente no edital",
   "inscritos": "Ainda sem inscrições abertas",
-  "etapas": "A definir no edital; último certame teve prova objetiva, discursiva, TAF, avaliação psicológica, exames médicos, investigação social e curso de formação.",
-  "cfsd": "Curso de Formação na ACADEPOL-BA, conforme cargo e edital.",
-  "estagio": "Estágio probatório de 3 anos.",
-  "validade": "A definir no edital.",
-  "previsao": "Governo da Bahia anunciou novo concurso da Polícia Civil em 2026 com mais de 750 vagas para Delegado, Escrivão e Investigador. Aguardar edital oficial.",
+  "etapas": "A definir no edital; último certame teve prova objetiva, discursiva, TAF, avaliação psicológica, exames médicos, investigação social e curso de formação",
+  "cfsd": "Curso de Formação na ACADEPOL-BA, conforme cargo e edital",
+  "estagio": "Estágio probatório de 3 anos",
+  "validade": "A definir no edital",
+  "previsao": "Sem novo edital com detalhes (banca, inscrições e cronograma) localizado nas fontes consultadas nesta atualização",
   "site": "https://www.policiacivil.ba.gov.br",
   "fontes": [
     {
-      "titulo": "Página de referência de concursos — PCBA",
+      "titulo": "Página institucional da Polícia Civil do Estado da Bahia (PCBA)",
       "url": "https://www.policiacivil.ba.gov.br",
       "tipo": "fonte oficial ou página institucional",
       "data_consulta": "2026-05-17"
@@ -33,11 +33,16 @@
   "ultima_pesquisa": "2026-05-17",
   "nivel_confianca": "médio",
   "precisa_revisao_humana": true,
-  "qualidade_publicacao": "alta",
-  "score_publicacao": 85,
-  "bloquear_publicacao": false,
   "alertas": [
-    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
-    "Automação protegida: não sobrescreve JSON principal quando atualização vier genérica ou ruim."
-  ]
+    "As fontes consultadas nesta atualização não trouxeram dados objetivos do edital (banca, inscrições, valor exato e número de vagas por cargo).",
+    "Preservados os dados anteriores já publicados (quando mais específicos) e mantidos como “A definir” quando não localizado nas fontes consultadas.",
+    "Campo edital mantido da versão anterior porque a atualização automática veio genérica ou sem confirmação suficiente.",
+    "Qualidade calculada: alta (87/100). Campos concretos: 4/14."
+  ],
+  "texto_final_limpo": true,
+  "padrao_editorial": "usuario-final-sem-links-nos-campos",
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 87,
+  "modo_qualidade": "economico",
+  "bloquear_publicacao": false
 }

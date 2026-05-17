@@ -6,21 +6,21 @@
   "tema": "concursos",
   "status": "concurso de Soldado QPBM 2025 com convocações e formação em andamento",
   "titulo": "Concurso de Soldado QPBM 2025 segue com formação dos aprovados",
-  "resumo": "O concurso de Soldado QPBM do CBMCE teve edital publicado em 28/04/2025, ofertou 450 vagas imediatas e 900 de cadastro de reserva, e já está na fase de formação dos aprovados",
+  "resumo": "O concurso de Soldado QPBM do CBMCE teve edital publicado em 28/04/2025, ofertou 450 vagas imediatas e 900 de cadastro de reserva, e a formação dos aprovados já foi iniciada",
   "edital": "Edital nº 001/2025 – SSPDS/AESP – Soldado QPBM/CBMCE, publicado em 28/04/2025",
   "salario": "Aluno-Soldado: R$ 2.935,04; Soldado QPBM: R$ 5.893,30",
-  "vagas": "450 vagas imediatas para Soldado QPBM e 900 vagas de cadastro de reserva",
-  "cotas": "90 vagas imediatas para pessoas pretas ou pardas e 180 vagas no cadastro de reserva; há reserva prevista de 15% para candidatas do sexo feminino",
-  "idade": "Mínimo de 18 anos no ingresso; máximo de 29 anos, 11 meses e 29 dias na inscrição; altura mínima de 1,62 m para homens e 1,57 m para mulheres; CNH categoria B válida",
+  "vagas": "450 vagas imediatas para Soldado QPBM; 900 vagas de cadastro de reserva",
+  "cotas": "90 vagas imediatas para PPP e 180 vagas de cadastro de reserva PPP; há reserva mínima de 15% das vagas para candidatas do sexo feminino",
+  "idade": "Idade mínima de 18 anos no ingresso; idade máxima de 29 anos, 11 meses e 29 dias na inscrição; altura mínima de 1,62 m para homens e 1,57 m para mulheres; CNH categoria B válida",
   "escolaridade": "Ensino médio completo",
   "materias": "Língua Portuguesa/Interpretação de texto; Matemática/Raciocínio lógico; Atualidades/História do Ceará; Noções de Administração pública/Ética no serviço público; Física; Química; Biologia/Primeiros Socorros",
   "banca": "Funece, por intermédio da CEV/UECE",
   "inscritos": "Inscrições encerradas; 200 candidatos foram convocados na 1ª chamada para admissão",
   "etapas": "Prova objetiva; inspeção de saúde; avaliação psicológica; avaliação de capacidade física; investigação social",
-  "cfsd": "Há Curso de Formação de Soldados Bombeiros Militares (CFSD BM), sob coordenação do CBMCE e realizado pela AESP/CE",
+  "cfsd": "Houve Curso de Formação de Soldados Bombeiros Militares sob coordenação do CBMCE e execução da AESP/CE; o aluno-soldado recebe remuneração de R$ 2.935,04 durante o curso",
   "estagio": "Pesquisa inicial pendente",
-  "validade": "Pesquisa inicial pendente",
-  "previsao": "Prosseguimento das convocações, da admissão e do curso de formação",
+  "validade": "2 anos a partir da homologação do resultado final, prorrogável uma única vez por igual período",
+  "previsao": "Prosseguimento das convocações e da formação dos aprovados",
   "site": "https://www.bombeiros.ce.gov.br",
   "fontes": [
     {
@@ -30,32 +30,32 @@
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Edital do concurso Soldado QPBM/CBMCE 2025",
-      "url": "https://www.sspds.ce.gov.br/wp-content/uploads/sites/24/2025/04/Concurso-CBMCE-2025.pdf",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Concursos CBMCE na AESP/CE",
+      "titulo": "Página de concursos CBMCE na AESP/CE",
       "url": "https://www.aesp.ce.gov.br/concursosbmce/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Aprovados no concurso do Corpo de Bombeiros Militar do Estado do Ceará iniciam formação",
+      "titulo": "Edital nº 001/2025 – Soldado QPBM/CBMCE",
+      "url": "https://www.aesp.ce.gov.br/wp-content/uploads/sites/29/2025/04/edital-concurso-cbmce-para-pracas.pdf",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Publicação do edital pelo Governo do Ceará",
+      "url": "https://www.ce.gov.br/2025/04/29/publicado-o-edital-para-concurso-do-corpo-de-bombeiros-do-ceara-confira-informacoes-do-certame/",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Resultado da prova objetiva QPBM 2025",
+      "url": "https://www2.cev.uece.br",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Aprovados no concurso iniciam formação",
       "url": "https://www.sspds.ce.gov.br/2026/04/27/aprovados-no-concurso-do-corpo-de-bombeiros-militar-do-estado-do-ceara-iniciam-formacao/",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Comunicado nº 05/2026 – Soldado QPBM/CBMCE",
-      "url": "https://www.bombeiros.ce.gov.br/wp-content/uploads/sites/27/2026/03/Comunicado-05-Soldado_18-03-2026.pdf",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Comunicado nº 01/2026 – Soldado QPBM/CBMCE",
-      "url": "https://www.bombeiros.ce.gov.br/wp-content/uploads/sites/27/2026/03/Comunicado-01-Soldado_1-convocacao_06-03-2026.pdf",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     }
@@ -65,13 +65,11 @@
   "precisa_revisao_humana": true,
   "alertas": [
     "O certame localizado é o Concurso de Soldado QPBM/CBMCE 2025.",
-    "A formação dos 250 aprovados foi iniciada em 27/04/2026; 200 para alunos-soldados e 50 para cadetes, em conjunto com a AESP/CE.",
-    "O edital informa 450 vagas imediatas e 900 de cadastro de reserva para Soldado QPBM.",
-    "O edital traz 90 vagas imediatas para PPP e 180 no cadastro de reserva PPP; o percentual de 15% para candidatas do sexo feminino foi preservado da base anterior e não foi confirmado neste recorte de pesquisa.",
-    "Não foi localizado prazo de validade do certame nas fontes consultadas.",
-    "Não foi localizado estágio probatório nas fontes consultadas.",
-    "O campo de inscritos não traz quantitativo total oficial; foi informado o status operacional encontrado.",
-    "O curso de formação aparece como etapa posterior à admissão, sob coordenação do CBMCE e execução da AESP/CE.",
+    "A formação dos aprovados foi iniciada em 27/04/2026.",
+    "O edital traz 450 vagas imediatas e 900 de cadastro de reserva para Soldado QPBM.",
+    "O edital traz 90 vagas imediatas para PPP e 180 no cadastro de reserva PPP; a reserva mínima de 15% para candidatas do sexo feminino foi confirmada no edital.",
+    "Não foi localizado quantitativo oficial de inscritos nas fontes consultadas.",
+    "Não foi localizado prazo de estágio probatório nas fontes consultadas.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario atualizado/priorizado pelo modo qualificado pago.",
     "Campo vagas atualizado/priorizado pelo modo qualificado pago.",
@@ -80,21 +78,19 @@
     "Campo escolaridade atualizado/priorizado pelo modo qualificado pago.",
     "Campo materias atualizado/priorizado pelo modo qualificado pago.",
     "Campo banca atualizado/priorizado pelo modo qualificado pago.",
-    "Campo inscritos atualizado/priorizado pelo modo qualificado pago.",
+    "Campo inscritos preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo etapas atualizado/priorizado pelo modo qualificado pago.",
     "Campo cfsd atualizado/priorizado pelo modo qualificado pago.",
     "Campo estagio preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo validade preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
+    "Campo validade atualizado/priorizado pelo modo qualificado pago.",
     "Campo previsao atualizado/priorizado pelo modo qualificado pago.",
-    "Qualidade calculada: alta (90/100). Campos concretos: 5/14.",
-    "Publicação permitida em modo qualificado porque houve uso de OpenAI/web_search. Score 90/100, qualidade alta. Revisão humana recomendada.",
-    "Resultado pago da OpenAI priorizado no JSON principal para evitar gasto sem alteração visível no site.",
+    "Qualidade calculada: alta (97/100). Campos concretos: 6/14.",
     "Resultado do modo qualificado pago aplicado no JSON principal."
   ],
   "texto_final_limpo": true,
   "padrao_editorial": "usuario-final-sem-links-nos-campos",
   "qualidade_publicacao": "alta",
-  "score_publicacao": 90,
+  "score_publicacao": 97,
   "modo_qualidade": "qualificado",
   "bloquear_publicacao": false,
   "publicado_por_modo_qualificado": true,

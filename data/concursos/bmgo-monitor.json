@@ -13,23 +13,23 @@
   "score_publicacao": 75,
   "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 32207,
+    "input_tokens": 32429,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1052,
+    "output_tokens": 1043,
     "output_tokens_details": {
-      "reasoning_tokens": 161
+      "reasoning_tokens": 217
     },
-    "total_tokens": 33259
+    "total_tokens": 33472
   },
   "fontes_monitoradas": [
     {
       "url": "https://www.bombeiros.go.gov.br",
       "ok": true,
       "status": 200,
-      "hash": "4d071aa68e583ae4245290c91c104493fa293b07e96342d753b3e656cee54841",
-      "tamanho_texto": 12697
+      "hash": "d19ff6194a77989e5954fa671c69cbced53e266ead632c3f594fd7a5c0a6b3f5",
+      "tamanho_texto": 12713
     },
     {
       "url": "https://www.bombeiros.go.gov.br/wp-content/themes/bombeiros/assets/fonts/tielabs-fonticon/tielabs-fonticon.woff",

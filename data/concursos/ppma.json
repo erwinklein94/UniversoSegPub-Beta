@@ -4,9 +4,9 @@
   "sigla": "PPMA",
   "uf": "MA",
   "tema": "concursos",
-  "status": "cobertura inicial atualizada",
-  "titulo": "PPMA: novo concurso em preparação",
-  "resumo": "Há comissão formada para novo concurso da Polícia Penal do Maranhão, mas sem edital publicado até o momento",
+  "status": "novo concurso em preparação",
+  "titulo": "PPMA: concurso novo em preparação, sem edital publicado",
+  "resumo": "Há movimentação oficial para novo concurso da Polícia Penal do Maranhão, mas sem edital publicado nas fontes consultadas",
   "edital": "Novo concurso em preparação; comissão setorial formada e edital ainda não publicado nas fontes consultadas",
   "salario": "Pesquisa inicial pendente",
   "vagas": "Pesquisa inicial pendente",
@@ -20,35 +20,29 @@
   "cfsd": "Pesquisa inicial pendente",
   "estagio": "Pesquisa inicial pendente",
   "validade": "Pesquisa inicial pendente",
-  "previsao": "Aguardar publicação do edital e definição da banca organizadora",
+  "previsao": "Aguardando avanço dos trâmites internos e definição da banca organizadora",
   "site": "https://www.seap.ma.gov.br",
   "fontes": [
     {
-      "titulo": "SEAP Maranhão - notícia sobre a criação da Polícia Penal no estado",
-      "url": "https://seap.ma.gov.br/noticias/governador-sanciona-lei-que-institui-a-policia-penal-no-sistema-penitenciario-do-maranhao",
+      "titulo": "Portal SEAP Maranhão",
+      "url": "https://www.seap.ma.gov.br",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "SEAP Maranhão - página institucional da AGPEN",
-      "url": "https://seap.ma.gov.br/programas-ou-campanhas/agpen",
+      "titulo": "Notícia SEAP sobre curso para Inspetores de Polícia Penal",
+      "url": "https://www.seap.ma.gov.br/noticias/seap-abre-inscricoes-para-curso-sobre-crime-organizado-e-sistema-penitenciario",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "STC Maranhão - legislação estadual com referência à Polícia Penal",
-      "url": "https://app.stc.ma.gov.br/legisla/consulta/publicacao/4374",
+      "titulo": "Portal Governo do Maranhão",
+      "url": "https://www.ma.gov.br",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "SEAP Maranhão - notícias recentes",
-      "url": "https://seap.ma.gov.br/noticias",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Folha Dirigida/Qconcursos - comissão do concurso Polícia Penal MA",
+      "titulo": "Folha Dirigida/Qconcursos sobre comissão do concurso",
       "url": "https://folha.qconcursos.com/n/concurso-policia-penal-ma-2025-comissao",
       "tipo": "fonte auxiliar",
       "data_consulta": "2026-05-17"
@@ -58,10 +52,11 @@
   "nivel_confianca": "médio",
   "precisa_revisao_humana": true,
   "alertas": [
-    "Comissão setorial do concurso foi localizada em fonte auxiliar, mas sem edital ou banca confirmados.",
-    "Não foram localizados dados oficiais suficientes para salário, vagas, escolaridade, idade, etapas e validade.",
-    "Preservado apenas o status de preparação; demais campos permanecem sem confirmação oficial.",
-    "Campo edital atualizado/priorizado pelo modo qualificado pago.",
+    "Não foram localizados dados oficiais suficientes para salário, vagas, cotas, idade, escolaridade, matérias, banca, inscritos, etapas, CFSd, estágio probatório e validade.",
+    "Há indício de comissão setorial em fonte auxiliar, mas sem confirmação oficial de edital ou banca.",
+    "Preservado o status de preparação; campos concretos permanecem sem confirmação oficial.",
+    "Revisão humana recomendada antes de publicação definitiva.",
+    "Campo edital preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo salario preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo vagas preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo cotas preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",

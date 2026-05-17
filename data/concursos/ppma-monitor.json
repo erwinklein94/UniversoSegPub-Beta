@@ -13,15 +13,15 @@
   "score_publicacao": 68,
   "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 18810,
+    "input_tokens": 13160,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 928,
+    "output_tokens": 654,
     "output_tokens_details": {
-      "reasoning_tokens": 293
+      "reasoning_tokens": 75
     },
-    "total_tokens": 19738
+    "total_tokens": 13814
   },
   "fontes_monitoradas": [
     {
@@ -40,10 +40,17 @@
     },
     {
       "url": "https://www.seap.ma.gov.br",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
+      "ok": true,
+      "status": 200,
+      "hash": "958e2a08271be5004de9986e6a8156544c9f5c8b5438489781909f7af6885ca9",
+      "tamanho_texto": 3521
+    },
+    {
+      "url": "https://www.seap.ma.gov.br/noticias/seap-abre-inscricoes-para-curso-sobre-crime-organizado-e-sistema-penitenciario",
+      "ok": true,
+      "status": 200,
+      "hash": "d2adf9f7812f2a685df70b9d22ac7bffb00de5be454ad533c0392d236d0df39d",
+      "tamanho_texto": 4591
     }
   ]
 }

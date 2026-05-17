@@ -6,7 +6,7 @@
   "tema": "concursos",
   "status": "edital 2023 encerrado; novo concurso não localizado nas fontes consultadas",
   "titulo": "BMPE: concurso de 2023 encerrado e sem novo edital localizado",
-  "resumo": "O último concurso localizado foi o de 2023, com 660 vagas para Soldado e Oficial; Não localizado nas fontes consultadas",
+  "resumo": "O último concurso localizado foi o de 2023, com vagas para Soldado e Oficial; Não localizado nas fontes consultadas",
   "edital": "Edital de 2023 para Soldado e Oficial; certame encerrado nas fontes consultadas",
   "salario": "Soldado: R$ 3.419,88; Oficial: até R$ 10.855,91",
   "vagas": "660 vagas: 600 para Praça/Soldado e 60 para Oficial",
@@ -17,14 +17,14 @@
   "banca": "Instituto AOCP",
   "inscritos": "Pesquisa inicial pendente",
   "etapas": "Prova objetiva; exames de saúde; avaliação física; avaliação psicológica; investigação social; curso de formação",
-  "cfsd": "Curso de Formação e Habilitação de Praças, com fase formativa após as etapas iniciais",
+  "cfsd": "Curso de Formação e Habilitação de Praças após as etapas iniciais do concurso",
   "estagio": "Pesquisa inicial pendente",
   "validade": "Pesquisa inicial pendente",
-  "previsao": "Sem novo edital anunciado nas fontes consultadas",
+  "previsao": "Sem novo edital anunciado",
   "site": "https://www.pe.gov.br",
   "fontes": [
     {
-      "titulo": "Governo de Pernambuco antecipa edital do concurso da PM e Bombeiros",
+      "titulo": "Governo de Pernambuco antecipa divulgação do edital do concurso da PM e Bombeiro Militar",
       "url": "https://pe.gov.br/noticias/administracao/2023/11/11/governo-do-estado-antecipa-divulgacao-do-edital-do-concurso-da-policia-militar-e-bombeiro-militar/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
@@ -56,6 +56,7 @@
     "Não foi localizado novo edital vigente nas fontes consultadas.",
     "A banca, vagas, salários, idade, altura e escolaridade foram confirmados por fonte oficial; outros campos ficaram sem localização.",
     "Fontes auxiliares foram usadas apenas como apoio para etapas e alguns requisitos; revisar se houver atualização posterior.",
+    "Qualidade calculada: alta (87/100). Campos concretos: 5/14.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario atualizado/priorizado pelo modo qualificado pago.",
     "Campo vagas atualizado/priorizado pelo modo qualificado pago.",
@@ -70,7 +71,6 @@
     "Campo estagio preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo validade preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo previsao atualizado/priorizado pelo modo qualificado pago.",
-    "Qualidade calculada: alta (87/100). Campos concretos: 5/14.",
     "Resultado do modo qualificado pago aplicado no JSON principal."
   ],
   "texto_final_limpo": true,

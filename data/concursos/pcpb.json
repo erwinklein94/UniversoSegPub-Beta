@@ -5,11 +5,11 @@
   "uf": "PB",
   "tema": "concursos",
   "status": "edital encerrado com validade prorrogada",
-  "titulo": "PCPB: concurso 2021 segue válido após prorrogação",
-  "resumo": "O concurso da Polícia Civil da Paraíba teve edital publicado em 2021, foi executado pelo Cebraspe e segue dentro do prazo de validade após prorrogação por mais dois anos",
+  "titulo": "PCPB: concurso de 2021 segue válido após prorrogação",
+  "resumo": "O concurso da Polícia Civil da Paraíba foi aberto em 2021, teve 1.400 vagas e segue com validade prorrogada",
   "edital": "Edital nº 01/2021; concurso de 1.400 vagas; validade prorrogada por mais dois anos",
   "salario": "Pesquisa inicial pendente",
-  "vagas": "1.400 vagas no total, com 1.262 de ampla concorrência e 138 reservadas a pessoas com deficiência",
+  "vagas": "1.400 vagas no total, sendo 1.262 de ampla concorrência e 138 reservadas a pessoas com deficiência",
   "cotas": "138 vagas reservadas para pessoas com deficiência",
   "idade": "Idade mínima de 18 anos na posse e na matrícula do curso de formação; para delegado, não pode ter 60 anos ou mais até o último dia de inscrição",
   "escolaridade": "Nível superior; para delegado, bacharelado em Direito",
@@ -20,19 +20,13 @@
   "cfsd": "Curso de formação policial em João Pessoa; duração mínima de 460 horas para Delegado e Peritos Oficiais, e 360 horas para as demais carreiras",
   "estagio": "Pesquisa inicial pendente",
   "validade": "2 anos, contados da homologação do resultado final, prorrogável uma única vez por igual período",
-  "previsao": "Sem novo edital anunciado; o concurso vigente permanece dentro do prazo de validade prorrogado",
+  "previsao": "Sem novo edital anunciado",
   "site": "https://www.policiacivil.pb.gov.br",
   "fontes": [
     {
       "titulo": "Concurso Público — Polícia Civil",
-      "url": "https://www.policiacivil.pb.gov.br/ingresso_e_promocao/concurso-publico",
+      "url": "https://policiacivil.pb.gov.br/ingresso_e_promocao/concurso-publico",
       "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Edital nº 01/2021 — Abertura das inscrições",
-      "url": "https://jcconcursos.com.br/media/uploads/anexos/concurso-pc-pb-edital-.pdf",
-      "tipo": "fonte auxiliar",
       "data_consulta": "2026-05-17"
     },
     {
@@ -46,15 +40,21 @@
       "url": "https://www.paraiba.pb.gov.br/noticias/governador-autoriza-prorrogacao-por-dois-anos-do-concurso-da-policia-civil",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Edital de abertura do concurso PC-PB 2021",
+      "url": "https://cdn.cebraspe.org.br/concursos/pc_pb_21/arquivos/ED_1_PCPB_21_ABERTURA.PDF",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
     }
   ],
   "ultima_pesquisa": "2026-05-17",
   "nivel_confianca": "alto",
   "precisa_revisao_humana": true,
   "alertas": [
-    "O edital localizado é o concurso de 2021; não foi identificado novo edital em fontes consultadas.",
-    "Salário, matérias, cota geral por cargo e requisitos físicos específicos não ficaram consolidados na pesquisa atual.",
-    "As informações de vagas, banca, etapas, inscritos, validade e curso de formação foram confirmadas por edital e fontes oficiais auxiliares.",
+    "O edital localizado é o concurso de 2021; não foi identificado novo edital nas fontes consultadas.",
+    "Salário, matérias e estágio probatório não ficaram consolidados nas fontes consultadas.",
+    "As informações de vagas, banca, etapas, inscritos, validade e curso de formação foram confirmadas em fontes oficiais.",
     "Há prorrogação formal do prazo de validade do concurso por mais dois anos.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
@@ -70,13 +70,13 @@
     "Campo estagio preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo validade atualizado/priorizado pelo modo qualificado pago.",
     "Campo previsao atualizado/priorizado pelo modo qualificado pago.",
-    "Qualidade calculada: alta (90/100). Campos concretos: 8/14.",
+    "Qualidade calculada: alta (97/100). Campos concretos: 8/14.",
     "Resultado do modo qualificado pago aplicado no JSON principal."
   ],
   "texto_final_limpo": true,
   "padrao_editorial": "usuario-final-sem-links-nos-campos",
   "qualidade_publicacao": "alta",
-  "score_publicacao": 90,
+  "score_publicacao": 97,
   "modo_qualidade": "qualificado",
   "bloquear_publicacao": false,
   "publicado_por_modo_qualificado": true,

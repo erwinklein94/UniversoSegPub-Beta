@@ -13,15 +13,15 @@
   "score_publicacao": 87,
   "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 28383,
+    "input_tokens": 19045,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1165,
+    "output_tokens": 783,
     "output_tokens_details": {
-      "reasoning_tokens": 254
+      "reasoning_tokens": 87
     },
-    "total_tokens": 29548
+    "total_tokens": 19828
   },
   "fontes_monitoradas": [
     {
@@ -42,14 +42,14 @@
       "url": "https://www.policiacivil.ma.gov.br/delegado-geral-augusto-barros-neto-participa-do-lancamento-do-programa-brasil-contra-o-crime-organizado-em-brasilia/",
       "ok": true,
       "status": 200,
-      "hash": "6677e629b4c72b653264ee19f4809d70e02896083190367d9f57758a6627ee2a",
+      "hash": "d04015df6b3239ce086cbe7ecdad7d2fac0fa4cfde396329fd9e4ff2dbb7f293",
       "tamanho_texto": 3492
     },
     {
       "url": "https://www.policiacivil.ma.gov.br/delegado-geral-augusto-barro-neto-participa-de-audiencia-publica-sobre-seguranca-em-caxias/",
       "ok": true,
       "status": 200,
-      "hash": "2507aece0eed220c345139e83da81de7d8ce8688a967dd7841451817f0bff66e",
+      "hash": "eaabed9411478bd8cb16659884e39a69e39432781fddddcf65f9aa4989f7b1c5",
       "tamanho_texto": 3222
     },
     {

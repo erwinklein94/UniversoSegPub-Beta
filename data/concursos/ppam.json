@@ -50,6 +50,7 @@
     "Foi possível confirmar apenas regra legal de reserva mínima de 10% das vagas para candidatas do sexo feminino.",
     "A pesquisa encontrou base legal e páginas institucionais do estado, mas não encontrou dados concretos de edital, banca, vagas, salário ou cronograma.",
     "Conteúdo deve ser revisado quando houver publicação oficial de novo concurso.",
+    "Qualidade calculada: baixa (63/100). Campos concretos: 0/14.",
     "Campo edital preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo salario preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo vagas preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
@@ -64,7 +65,6 @@
     "Campo estagio preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo validade preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo previsao atualizado/priorizado pelo modo qualificado pago.",
-    "Qualidade calculada: baixa (63/100). Campos concretos: 0/14.",
     "Publicação permitida em modo qualificado porque houve uso de OpenAI/web_search. Score 63/100, qualidade baixa. Revisão humana recomendada.",
     "Resultado pago da OpenAI priorizado no JSON principal para evitar gasto sem alteração visível no site.",
     "Resultado do modo qualificado pago aplicado no JSON principal."

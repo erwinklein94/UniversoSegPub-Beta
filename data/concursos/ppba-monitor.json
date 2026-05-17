@@ -13,23 +13,23 @@
   "score_publicacao": 75,
   "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 10473,
+    "input_tokens": 13397,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 749,
+    "output_tokens": 905,
     "output_tokens_details": {
-      "reasoning_tokens": 132
+      "reasoning_tokens": 90
     },
-    "total_tokens": 11222
+    "total_tokens": 14302
   },
   "fontes_monitoradas": [
     {
       "url": "https://www.ba.gov.br",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
+      "ok": true,
+      "status": 200,
+      "hash": "6864ae3aee7b75dc8c1ef1c3d3a6a0e627f4b87c3fcb32c1f810e0dc596b669d",
+      "tamanho_texto": 227
     },
     {
       "url": "https://www.policiapenal.ba.gov.br",
@@ -40,10 +40,31 @@
     },
     {
       "url": "https://www.seap.ba.gov.br",
+      "ok": true,
+      "status": 200,
+      "hash": "0ddd7ef8fd0e6cb471cbc6b33ed990a1366af5c2f32531445e34cb2b40d4d7b0",
+      "tamanho_texto": 6052
+    },
+    {
+      "url": "https://www.seap.ba.gov.br/seap/transparencia-resultados",
       "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
+      "status": 404,
+      "hash": "8d0c8351eb22a0b14c8388fc8732e7a9f204f5903e298ed9e90078ac21b1ff36",
+      "tamanho_texto": 4833
+    },
+    {
+      "url": "https://www.seap.ba.gov.br/seap/noticias/2026-05/3899/seap-publica-lista-de-inscritos-para-o-execucao-penal-e-estatuto",
+      "ok": false,
+      "status": 404,
+      "hash": "8d0c8351eb22a0b14c8388fc8732e7a9f204f5903e298ed9e90078ac21b1ff36",
+      "tamanho_texto": 4833
+    },
+    {
+      "url": "http://www.ba.gov.br/seap/noticias/2026-05/3899/seap-publica-lista-de-inscritos-para-o-execucao-penal-e-estatuto",
+      "ok": true,
+      "status": 200,
+      "hash": "aea63707a8849d29f3503aa697b170e87de6e3a12c28638b7f5f53f6f90363ce",
+      "tamanho_texto": 5411
     }
   ]
 }

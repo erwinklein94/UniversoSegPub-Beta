@@ -4,10 +4,10 @@
   "sigla": "BMGO",
   "uf": "GO",
   "tema": "concursos",
-  "status": "há concurso recente com nomeação e formação concluídas; não há novo edital aberto localizado",
+  "status": "há concurso recente concluído e sem novo edital aberto localizado",
   "titulo": "BMGO: concurso recente concluído e sem novo edital aberto localizado",
-  "resumo": "O CBMGO concluiu a nomeação e a formação de aprovados do concurso de 2022; no momento, Não localizado nas fontes consultadas",
-  "edital": "Edital nº 004/2022, com movimentações de nomeação e convocação registradas até 2025; não há novo edital aberto localizado",
+  "resumo": "O concurso do CBMGO regido pelo Edital nº 004/2022 teve nomeações e convocação para curso de formação em 2025, mas Não localizado nas fontes consultadas",
+  "edital": "Edital nº 004/2022; nomeações e convocação para Curso de Formação de Praças registradas em 2025",
   "salario": "Pesquisa inicial pendente",
   "vagas": "268 novos soldados formados em 2025",
   "cotas": "Pesquisa inicial pendente",
@@ -16,40 +16,40 @@
   "materias": "Pesquisa inicial pendente",
   "banca": "Pesquisa inicial pendente",
   "inscritos": "Pesquisa inicial pendente",
-  "etapas": "Prova objetiva e discursiva; teste de avaliação profissional; curso de formação de praças",
-  "cfsd": "Formação de 268 novos soldados concluída em 2025",
+  "etapas": "Prova objetiva e discursiva; testes físicos; exames médicos; avaliação psicológica",
+  "cfsd": "Curso de Formação de Praças com convocação em 2025; formação de 268 novos soldados concluída em 2025",
   "estagio": "Pesquisa inicial pendente",
   "validade": "Pesquisa inicial pendente",
-  "previsao": "Sem novo edital anunciado; a movimentação recente é de nomeação e formação de aprovados",
+  "previsao": "Sem novo edital anunciado",
   "site": "https://www.bombeiros.go.gov.br",
   "fontes": [
     {
-      "titulo": "Página oficial Concursos CBMGO",
-      "url": "https://www.bombeiros.go.gov.br/category/concursos",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Página oficial Editais em Aberto CBMGO",
-      "url": "https://www.bombeiros.go.gov.br/editais-em-aberto",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Como Ingressar no Corpo de Bombeiros Militar do Estado de Goiás?",
+      "titulo": "Perguntas Frequentes – Como Ingressar no Corpo de Bombeiros Militar do Estado de Goiás?",
       "url": "https://www.bombeiros.go.gov.br/acesso-a-informacao/perguntas-frequentes/como-ingressar-no-corpo-de-bombeiros-militar-do-estado-de-goias.html",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Comunicado Oficial da Gerência de Concursos e Processos Seletivos para Cadete/Aluno Oficial e Soldado de 2º Classe do CBMGO",
-      "url": "https://www.bombeiros.go.gov.br/noticias/comunicado-oficial-da-gerencia-de-concursos-e-processos-seletivos-para-os-cargos-de-cadete-aluno-oficial-e-soldado-de-2o-classe-do-cbmgo.html",
+      "titulo": "Concursos CBMGO",
+      "url": "https://www.bombeiros.go.gov.br/category/concursos",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Edital nº 01/2023 – Processo Seletivo de Convocação de Militares da Reserva Remunerada",
-      "url": "https://www.bombeiros.go.gov.br/wp-content/uploads/2023/11/SEI_GOVERNADORIA-53389151-Edital.pdf",
+      "titulo": "Comunicado Oficial de Nomeação dos Aprovados no Concurso Público",
+      "url": "https://www.bombeiros.go.gov.br/acesso-a-informacao/comunicado-de-nomeacao-dos-aprovados-em-concurso-publico.html",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "CBMGO divulga convocação para Curso de Formação de Praças",
+      "url": "https://www.bombeiros.go.gov.br/noticias/cbmgo-divulga-convocacao-para-curso-de-formacao-de-pracas.html",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Nota de Esclarecimento – Concurso Público CBMGO-2022",
+      "url": "https://www.bombeiros.go.gov.br/noticias/nota-de-esclarecimento-concurso-publico-cbmgo-2022.html",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     }
@@ -59,10 +59,9 @@
   "precisa_revisao_humana": true,
   "alertas": [
     "Não foi localizado edital aberto vigente nas fontes consultadas.",
-    "Campos de remuneração, banca, escolaridade, idade, cotas, inscritos, matérias, etapas, estágio probatório e validade não foram confirmados de forma suficiente nesta pesquisa.",
-    "O site institucional mostra a área de concursos e registros recentes de nomeação/convocação, mas sem um edital aberto novo claramente identificado.",
-    "A informação de idade, altura e escolaridade foi preservada da fonte oficial de perguntas frequentes do CBMGO.",
-    "A informação de formação de 268 novos soldados em 2025 foi preservada da notícia oficial já cadastrada.",
+    "Campos de remuneração, vagas, cotas, matérias, banca, inscritos, estágio probatório e validade não foram confirmados de forma suficiente nesta pesquisa.",
+    "A informação de idade, altura e escolaridade foi preservada da página oficial de perguntas frequentes do CBMGO.",
+    "A informação de conclusão da formação de 268 novos soldados em 2025 foi preservada de fonte oficial e registro anterior.",
     "Revisão humana recomendada antes de publicação final em destaque.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
@@ -73,7 +72,7 @@
     "Campo materias preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo banca preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo inscritos preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo etapas preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
+    "Campo etapas atualizado/priorizado pelo modo qualificado pago.",
     "Campo cfsd atualizado/priorizado pelo modo qualificado pago.",
     "Campo estagio preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo validade preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",

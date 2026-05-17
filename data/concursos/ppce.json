@@ -4,10 +4,10 @@
   "sigla": "PPCE",
   "uf": "CE",
   "tema": "concursos",
-  "status": "concurso em andamento com edital publicado em 2024; etapas avançadas em 2025",
-  "titulo": "PPCE: edital publicado para 600 vagas de Policial Penal",
-  "resumo": "O concurso da Polícia Penal do Ceará teve edital publicado para o cargo de Policial Penal e já avançou em etapas como prova, TAF e curso de formação",
-  "edital": "Edital de 2024 para o cargo de Policial Penal; 600 vagas imediatas e 200 de cadastro de reserva",
+  "status": "concurso em andamento com edital publicado em 2024 e etapas avançadas concluídas em 2025",
+  "titulo": "Edital publicado para 600 vagas de Policial Penal no Ceará",
+  "resumo": "Concurso da Polícia Penal do Ceará com edital publicado para o cargo de Policial Penal, 600 vagas imediatas e 200 de cadastro de reserva, já com prova e TAF realizados",
+  "edital": "Edital nº 007/2024-SAP, publicado em 10/04/2024, para o cargo de Policial Penal",
   "salario": "Pesquisa inicial pendente",
   "vagas": "600 vagas imediatas e 200 vagas para cadastro de reserva para Policial Penal",
   "cotas": "Há reserva para candidatos com deficiência e para candidatos negros",
@@ -17,14 +17,14 @@
   "banca": "IDECAN",
   "inscritos": "Pesquisa inicial pendente",
   "etapas": "Exame intelectual; avaliação biopsicossocial; teste de aptidão física; avaliação psicológica; avaliação de saúde; heteroidentificação; curso de formação profissional; investigação social",
-  "cfsd": "Curso de Formação Profissional previsto como etapa eliminatória e classificatória; duração e remuneração não localizadas nas fontes consultadas",
+  "cfsd": "Curso de formação profissional previsto como etapa eliminatória e classificatória; duração e remuneração não localizadas nas fontes consultadas",
   "estagio": "Pesquisa inicial pendente",
   "validade": "Pesquisa inicial pendente",
-  "previsao": "Acompanhamento das convocações e resultados das próximas fases do concurso",
+  "previsao": "Acompanhar convocações e resultados das próximas fases já em andamento",
   "site": "https://www.ce.gov.br",
   "fontes": [
     {
-      "titulo": "Governo do Ceará anuncia concurso com 600 vagas para polícia penal",
+      "titulo": "Governo do Ceará anuncia concurso com 600 vagas para polícia penal; Confira edital",
       "url": "https://www.sap.ce.gov.br/2024/04/11/governo-do-ceara-anuncia-concurso-com-600-vagas-para-policia-penal-confira-edital/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
@@ -37,19 +37,19 @@
     },
     {
       "titulo": "Candidatos passam por Teste de Aptidão Física no concurso da Polícia Penal do Ceará",
-      "url": "https://www.sap.ce.gov.br/2024/09/18/candidatos-passam-por-teste-de-aptidao-fisica-no-concurso-da-policia-penal-do-ceara/",
+      "url": "https://www.sap.ce.gov.br/2024/09/18/candidatos-passam-por-teste-de-aptidao-física-no-concurso-da-policia-penal-do-ceara/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Cerimônia encerra o curso de formação da segunda turma que concorre ao cargo de policial penal do Ceará",
-      "url": "https://www.ce.gov.br/2025/06/10/cerimonia-encerra-o-curso-de-formacao-da-segunda-turma-que-concorre-ao-cargo-de-policial-penal-do-ceara/",
+      "titulo": "Candidatos passam por Teste de Aptidão Física no concurso da Polícia Penal",
+      "url": "https://www.ce.gov.br/2024/09/19/candidatos-passam-por-teste-de-aptidao-física-no-concurso-da-policia-penal/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "ALECE aprova projeto que limita idade para ingresso na Polícia Penal",
-      "url": "https://www.al.ce.gov.br/noticias/alece-aprova-projeto-que-limita-idade-para-ingresso-na-policia-penal",
+      "titulo": "Governo do Ceará anuncia concurso com 600 vagas para policial penal",
+      "url": "https://www.casacivil.ce.gov.br/2024/04/10/governo-do-ceara-anuncia-concurso-com-600-vagas-para-policial-penal/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     }
@@ -59,9 +59,10 @@
   "precisa_revisao_humana": true,
   "alertas": [
     "Salário, validade, estágio probatório, altura mínima e CNH não foram localizados nas fontes consultadas.",
-    "A idade máxima foi obtida em fonte legislativa estadual; recomenda-se revisão humana se houver divergência com atualização posterior da norma.",
-    "O total de inscritos não foi localizado; somente foi confirmado que mais de 24 mil candidatos participaram da prova.",
-    "O edital PDF foi encontrado por referência em busca, mas o conteúdo extraído não ficou acessível integralmente na ferramenta; os dados principais foram confirmados por notícia oficial e trecho de busca do próprio PDF.",
+    "A idade máxima foi confirmada em fonte oficial estadual; pode haver atualização normativa posterior.",
+    "O total de inscritos não foi localizado; foi confirmado apenas que mais de 24 mil candidatos participaram da prova.",
+    "O edital PDF foi localizado por referência oficial, mas a extração integral do conteúdo não ficou acessível na ferramenta; os dados principais foram confirmados por notícias oficiais.",
+    "Há referência oficial a etapas avançadas já realizadas em 2025, mas sem consolidação completa de nomeações nas fontes consultadas.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo vagas atualizado/priorizado pelo modo qualificado pago.",

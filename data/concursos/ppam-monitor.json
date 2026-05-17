@@ -13,15 +13,15 @@
   "score_publicacao": 63,
   "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 18824,
+    "input_tokens": 18314,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 865,
+    "output_tokens": 832,
     "output_tokens_details": {
-      "reasoning_tokens": 334
+      "reasoning_tokens": 290
     },
-    "total_tokens": 19689
+    "total_tokens": 19146
   },
   "fontes_monitoradas": [
     {

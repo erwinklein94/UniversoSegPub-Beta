@@ -6,7 +6,7 @@
   "tema": "concursos",
   "status": "em andamento",
   "titulo": "CFO BM 2026 segue em andamento no CBMMA",
-  "resumo": "O concurso do CBMMA segue ativo em 2026, com publicações oficiais de divulgação e andamento do CFO BM 2026",
+  "resumo": "O concurso do CBMMA segue ativo em 2026, com publicações oficiais recentes do CFO BM 2026",
   "edital": "Edital nº 57/2025-GR/UEMA; andamento vinculado também ao Edital nº 22/2022-GR/UEMA",
   "salario": "Pesquisa inicial pendente",
   "vagas": "500 vagas anunciadas em publicação oficial de 2024",
@@ -30,27 +30,27 @@
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "CBMMA — edição 2026",
-      "url": "https://cbm.ssp.ma.gov.br/2026/",
-      "tipo": "site oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
       "titulo": "CBMMA — Edital de Divulgação nº 13/2026",
       "url": "https://cbm.ssp.ma.gov.br/2026/03/30/517-edital-de-divulgacao-no-13-2026-comissao-de-concurso-cfo-bm-2026/",
       "tipo": "site oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "CBMMA — Edital de Divulgação nº 14/2026",
-      "url": "https://cbm.ssp.ma.gov.br/2026/03/30/516-edital-de-divulgacao-no-14-2026-comissao-de-concurso-cfo-bm-2026/",
+      "titulo": "CBMMA — Edital de Divulgação nº 04/2026",
+      "url": "https://cbm.ssp.ma.gov.br/2026/03/06/500-edital-de-divulgacao-no-04-2026-comissao-de-concurso-cfo-bm-2026/",
       "tipo": "site oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "CBMMA — concurso de 500 vagas",
-      "url": "https://cbm.ssp.ma.gov.br/2024/10/02/governo-abre-500-vagas-em-concurso-publico-para-o-corpo-de-bombeiros/",
+      "titulo": "Governo anuncia 500 vagas em concurso público para o Corpo de Bombeiros",
+      "url": "https://www.ma.gov.br/noticias/governo-anuncia-500-vagas-em-concurso-publico-para-o-corpo-de-bombeiros",
       "tipo": "site oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Edital de Abertura – Concurso Público nº 01/2025",
+      "url": "https://concursos-publicacoes.s3.amazonaws.com/973/publico/973-EditaldeAbertura_Rev07final_67e14ce59fe85.pdf?idpub=501841",
+      "tipo": "fonte auxiliar",
       "data_consulta": "2026-05-17"
     }
   ],
@@ -61,7 +61,9 @@
     "As fontes oficiais consultadas confirmam movimentação recente do CFO BM 2026, mas não foi localizado o detalhamento completo de salário, cotas, idade, escolaridade, matérias, inscritos, etapas, CFSd, estágio e validade.",
     "O quantitativo de 500 vagas foi confirmado em publicação oficial de 2024, sem consolidação posterior localizada nesta pesquisa.",
     "Há referência oficial ao Edital nº 57/2025-GR/UEMA e ao Edital nº 22/2022-GR/UEMA em publicações de 2026.",
+    "A banca foi identificada como UEMA nas publicações oficiais consultadas.",
     "Revisão humana recomendada para completar campos técnicos do certame.",
+    "Campos sem localização foram preenchidos conforme regra editorial.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo vagas atualizado/priorizado pelo modo qualificado pago.",

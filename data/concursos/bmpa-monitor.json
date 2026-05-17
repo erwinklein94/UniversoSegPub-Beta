@@ -9,27 +9,27 @@
   "publicado_por_modo_qualificado": true,
   "forcar_exibicao_site": true,
   "publicacao_forcada_por_credito_openai": true,
-  "qualidade_publicacao": "baixa",
-  "score_publicacao": 75,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 87,
   "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 16306,
+    "input_tokens": 29033,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 985,
+    "output_tokens": 1293,
     "output_tokens_details": {
-      "reasoning_tokens": 152
+      "reasoning_tokens": 496
     },
-    "total_tokens": 17291
+    "total_tokens": 30326
   },
   "fontes_monitoradas": [
     {
       "url": "https://www.pa.gov.br",
       "ok": true,
       "status": 200,
-      "hash": "6af945752b089759eb970044fbbac3ac7ae05489d3ec1d78e50cdca2056693a3",
-      "tamanho_texto": 3923
+      "hash": "0d888192f6b432607bc0a8bb172a3b3d8a440b539397ddc4c827e3448bd76e4f",
+      "tamanho_texto": 3943
     },
     {
       "url": "https://www.cbm.pa.gov.br",
@@ -49,7 +49,7 @@
       "url": "https://www.bombeiros.pa.gov.br",
       "ok": false,
       "status": 403,
-      "hash": "187d38e3c1cce0230e6b001b7ef966e33b6fbbd5af4b3b9022bae900e2ef824a",
+      "hash": "3c8af589ff4ab14278b295ffede7dd4360677b8f4895846bd4ee23e4e6b7af8c",
       "tamanho_texto": 773
     }
   ]

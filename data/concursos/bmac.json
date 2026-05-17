@@ -6,8 +6,8 @@
   "tema": "concursos",
   "status": "último concurso homologado; sem novo edital oficial localizado",
   "titulo": "Último concurso homologado; sem novo edital oficial localizado",
-  "resumo": "O concurso de Soldado Combatente do CBMAC, de 2022, segue como referência oficial vigente, com convocações para matrícula e formatura de turmas em 2025",
-  "edital": "Edital nº 001 SEPLAG/CBMAC, de 07/01/2022; homologação do resultado final em 30/06/2022; convocações para matrícula publicadas em 2025",
+  "resumo": "O concurso de Soldado Combatente do CBMAC, de 2022, segue como referência oficial vigente, com convocações e homologação de matrículas em 2025",
+  "edital": "Edital nº 001 SEPLAG/CBMAC, de 07/01/2022; resultado final homologado em 29/06/2022; homologação de matrícula publicada em 22/04/2025",
   "salario": "R$ 4.344,22 durante o Curso de Formação de Aluno Soldado Combatente",
   "vagas": "153 vagas no total: 122 para masculino e 31 para feminino",
   "cotas": "Cadastro de reserva limitado a 20% das vagas existentes",
@@ -17,7 +17,7 @@
   "banca": "IBFC",
   "inscritos": "Pesquisa inicial pendente",
   "etapas": "Prova objetiva; prova de aptidão física; exame psicotécnico; exame médico e toxicológico; investigação criminal e social; curso de formação",
-  "cfsd": "Curso de Formação de Aluno Soldado Combatente; realizado sob coordenação da Diretoria de Ensino do CBMAC, em Rio Branco, no Centro Integrado de Ensino e Pesquisa em Segu…",
+  "cfsd": "Curso de Formação de Aluno Soldado Combatente; realizado em Rio Branco, no Centro Integrado de Ensino e Pesquisa em Segurança Pública, com convocações e matrículas regis…",
   "estagio": "Pesquisa inicial pendente",
   "validade": "2 anos, a contar da homologação do resultado final, prorrogável por igual período",
   "previsao": "Sem novo edital anunciado; a movimentação atual segue vinculada ao concurso de 2022",
@@ -31,25 +31,25 @@
     },
     {
       "titulo": "Portal de editais do CBMAC no Governo do Acre",
-      "url": "https://sead.ac.gov.br/cbmac-corpo-de-bombeiros-militar-do-estado-do-acre/",
+      "url": "https://estado.ac.gov.br/servicos/editais-e-concursos/cbmac-corpo-de-bombeiros-militar-do-estado-do-acre/",
       "tipo": "portal oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Edital nº 068 SEAD/CBMAC, de 22 de janeiro de 2025",
-      "url": "https://sead.ac.gov.br/wp-content/uploads/2025/02/Edital-no-068-CBMAC-Convocacao-para-a-matricula-no-curso-de-formacao-22-01-2025.pdf",
+      "titulo": "Edital nº 081 SEAD/CBMAC, de 22 de abril de 2025",
+      "url": "https://sead.ac.gov.br/wp-content/uploads/2025/04/Edital-no-081-CBMAC-Homologacao-de-matricula-22-04-2025.pdf",
       "tipo": "edital oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "IBFC – página do concurso CBMAC",
-      "url": "https://concursos.ibfc.org.br/informacoes/388/",
+      "titulo": "Governo do Acre convoca novos candidatos para Curso de Formação de Aluno-Soldado do Corpo de Bombeiros",
+      "url": "https://agencia.ac.gov.br/governo-do-acre-convoca-novos-candidatos-para-curso-de-formacao-de-aluno-soldado-do-corpo-de-bombeiros/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Governo do Acre convoca candidatos para matrícula no curso de formação de soldados do Corpo de Bombeiros",
-      "url": "https://agencia.ac.gov.br/governo-convoca-candidatos-para-matricula-no-curso-de-formacao-de-soldados-do-corpo-de-bombeiros/",
+      "titulo": "Acre reforça efetivo com a formatura de novos soldados do Corpo de Bombeiros",
+      "url": "https://agencia.ac.gov.br/acre-reforca-efetivo-com-a-formatura-de-novos-soldados-do-corpo-de-bombeiros/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     }
@@ -63,6 +63,9 @@
     "Há convocações e atos de 2024 e 2025 ligados ao concurso de 2022.",
     "Número total de inscritos não localizado nas fontes consultadas.",
     "Campo estágio probatório não localizado nas fontes consultadas.",
+    "Resultado final e homologação constam no portal oficial do Acre em 29/06/2022; a homologação de matrícula consta em 22/04/2025.",
+    "Qualidade calculada: alta.",
+    "Resultado do modo qualificado aplicado no JSON principal.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario atualizado/priorizado pelo modo qualificado pago.",
     "Campo vagas atualizado/priorizado pelo modo qualificado pago.",

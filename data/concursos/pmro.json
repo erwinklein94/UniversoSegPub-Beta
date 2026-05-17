@@ -5,9 +5,9 @@
   "uf": "RO",
   "tema": "concursos",
   "status": "com cobertura parcial atualizada",
-  "titulo": "PMRO com seleções internas em andamento e sem novo concurso geral localizado",
-  "resumo": "A PMRO mantém publicações ativas de cursos, seleções internas e chamamentos, mas Não localizado nas fontes consultadas",
-  "edital": "Foram localizados editais e seleções internas em 2026, com destaque para o Processo Seletivo 01/2026 do 4º Curso de Formação de Soldados Mirins de Buritis e outros atos na área de cursos e concursos",
+  "titulo": "PMRO sem novo concurso geral localizado; seleções internas e cursos seguem publicados",
+  "resumo": "A PMRO mantém atos ativos em cursos, seleções internas e convocações, mas Não localizado nas fontes consultadas",
+  "edital": "Localizados editais e atos de 2026 para cursos e seleções internas, como o II Curso de Policiamento Ambiental e o processo seletivo do corpo voluntário e do curso mirim",
   "salario": "Pesquisa inicial pendente",
   "vagas": "24 vagas no Processo Seletivo 001/2026 para o 4º Curso de Formação de Soldados Mirins de Buritis",
   "cotas": "Pesquisa inicial pendente",
@@ -20,30 +20,30 @@
   "cfsd": "Há curso de formação localizado: 4º Curso de Formação de Soldados Mirins de Buritis, com início previsto em 23 de março de 2026",
   "estagio": "Pesquisa inicial pendente",
   "validade": "Pesquisa inicial pendente",
-  "previsao": "Seguimento das seleções internas publicadas no portal da PMRO e novas atualizações na área de cursos e concursos",
+  "previsao": "Sem novo edital geral localizado; seguem publicações de cursos, seleções internas e convocações na área de Cursos e Concursos da PMRO",
   "site": "https://www.pm.ro.gov.br",
   "fontes": [
     {
-      "titulo": "Cursos e Concursos - PMRO",
+      "titulo": "Portal oficial da PMRO",
+      "url": "https://www.pm.ro.gov.br",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Página Cursos e Concursos da PMRO",
       "url": "https://www.pm.ro.gov.br/cursos-e-concursos-1/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Edital 01/2026 - 4º CFSD PMM de Buritis",
+      "titulo": "Processo Seletivo 001/2026 – Curso de Formação de Policiais Militares Mirins de Buritis",
+      "url": "https://www.pm.ro.gov.br/processo-seletivo-001-2026-curso-de-formacao-de-policiais-militares-mirins-de-buritis-turmas-2026-edital-para-novas-incricoes/",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Edital 2026 do 4º CFSD PMM de Buritis",
       "url": "https://www.pm.ro.gov.br/wp-content/uploads/2026/03/EDITAL-2026-1.pdf",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Concurso de Oficiais Combatentes da PMRO 2022",
-      "url": "https://www.pm.ro.gov.br/concurso-de-oficiais-combatentes-da-pmro-2022/",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Portal do Governo de Rondônia",
-      "url": "https://www.ro.gov.br",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     }
@@ -52,9 +52,13 @@
   "nivel_confianca": "médio",
   "precisa_revisao_humana": true,
   "alertas": [
-    "As fontes consultadas mostram apenas seleções internas e curso mirim, não um concurso geral PMRO aberto.",
-    "Não foi localizado edital recente de provimento para soldado/oficial com vagas, salário, banca e etapas completas.",
-    "Há evidência de publicações oficiais ativas na área de cursos e concursos da PMRO.",
+    "As fontes consultadas mostram seleções internas e curso mirim, não um concurso geral PMRO aberto para soldado ou oficial.",
+    "Não foi localizado edital recente com salário, banca, cotas, etapas completas e validade de concurso geral.",
+    "Há publicações oficiais ativas na área de Cursos e Concursos da PMRO.",
+    "Campo vagas preenchido com o processo mirim localizado; não representa concurso geral de provimento.",
+    "Campo idade preenchido com o processo mirim localizado; não representa requisito de ingresso na carreira policial militar.",
+    "Campo escolaridade preenchido com o processo mirim localizado; não representa requisito de concurso geral.",
+    "Revisão humana recomendada para eventual abertura futura de concurso geral.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo vagas atualizado/priorizado pelo modo qualificado pago.",

@@ -4,11 +4,11 @@
   "sigla": "PPGO",
   "uf": "GO",
   "tema": "concursos",
-  "status": "concurso 2024 em andamento; curso de formação em execução",
-  "titulo": "Concurso 2024 da PPGO segue em fase de formação",
-  "resumo": "O concurso de 1,6 mil vagas para policial penal em Goiás já teve provas aplicadas e está com curso de formação em andamento para parte dos aprovados",
-  "edital": "Edital nº 2/2024: concurso público para policial penal, com 1,6 mil vagas e execução pelo IBFC",
-  "salario": "R$ 5.971,42 iniciais, para jornada de 40 horas semanais",
+  "status": "concurso 2024 concluído; resultado final retificado publicado e curso de formação em andamento",
+  "titulo": "Concurso 2024 da PPGO concluído com resultado final retificado",
+  "resumo": "O concurso de 1.600 vagas para policial penal em Goiás teve inscrições, provas e fases concluídas, com resultado final retificado publicado e curso de formação em andamento para aprovados",
+  "edital": "Edital nº 002/2024 para o cargo de Policial Penal; certame conduzido pelo IBFC",
+  "salario": "R$ 5.971,42 iniciais para jornada de 40 horas semanais",
   "vagas": "1.600 vagas para o cargo de policial penal",
   "cotas": "Pesquisa inicial pendente",
   "idade": "Pesquisa inicial pendente",
@@ -16,11 +16,11 @@
   "materias": "Pesquisa inicial pendente",
   "banca": "IBFC",
   "inscritos": "Mais de 50,7 mil candidatos",
-  "etapas": "Prova objetiva; prova discursiva; avaliação médica; avaliação de aptidão física; avaliação psicológica; avaliação de vida pregressa e investigação social; avaliação de títulos; equipe multiprofissional para PcD",
-  "cfsd": "Curso de Formação de Policial Penal em andamento; carga horária estimada de aproximadamente 1",
+  "etapas": "Prova objetiva; prova discursiva; avaliação médica; avaliação de aptidão física; avaliação psicológica; avaliação de vida pregressa e investigação social; avaliação de títulos; avaliação por equipe multiprofissional para PcD",
+  "cfsd": "Curso de formação previsto para os aprovados, com lotação inicial na Gerência de Ensino da DGPP e posterior lotação em unidade da regional escolhida",
   "estagio": "Pesquisa inicial pendente",
   "validade": "Pesquisa inicial pendente",
-  "previsao": "Curso de formação em andamento e próximas convocações dos aprovados remanescentes",
+  "previsao": "Acompanhar próximas convocações dos aprovados e movimentações de nomeação/posse",
   "site": "https://www.policiapenal.go.gov.br",
   "fontes": [
     {
@@ -36,20 +36,14 @@
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Governo de Goiás homologa contratação de banca para realização do concurso para policial penal",
-      "url": "https://www.policiapenal.go.gov.br/noticias-da-dgap/governo-de-goias-homologa-contratacao-de-banca-para-realizacao-do-concurso-para-policial-penal.html",
+      "titulo": "IBFC - Concurso Público 02/2024 - Polícia Penal do Estado de Goiás",
+      "url": "https://concursos.ibfc.org.br/informacoes/465/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Caiado ministra aula magna do primeiro curso de pós-graduação em Execução de Polícia Penal",
-      "url": "https://www.policiapenal.go.gov.br/noticias-da-dgap/caiado-ministra-aula-magna-do-primeiro-curso-de-pos-graduacao-em-execucao-de-policia-penal.html",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Com foco na integração entre Judiciário e sistema penitenciário, TJGO sedia aula do Curso de Formação da PPGO",
-      "url": "https://www.policiapenal.go.gov.br/noticias-da-dgap/tjgo-sedia-aula-do-curso-de-formacao-da-policia-penal-com-foco-na-integracao-entre-judiciario-e-sistema-penitenciario.html",
+      "titulo": "Diário Oficial do Estado de Goiás - Retificação do resultado final do concurso público",
+      "url": "https://diariooficial.abc.go.gov.br/portal/edicoes/download/6991",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     }
@@ -58,9 +52,9 @@
   "nivel_confianca": "alta",
   "precisa_revisao_humana": true,
   "alertas": [
-    "Não foram localizados, nas fontes consultadas, os dados de cotas, idade, matérias, estágio probatório e validade do concurso.",
-    "As fontes oficiais consultadas confirmam o concurso de 2024 e o andamento do curso de formação, mas não trouxeram todos os detalhes do quadro original.",
-    "Como houve uso de fonte auxiliar na pesquisa geral, manter revisão humana se houver necessidade de checagem do texto final antes da publicação.",
+    "Dados de cotas, idade, matérias, inscritos, estágio probatório e validade não foram localizados nas fontes consultadas.",
+    "Fonte oficial do IBFC confirma que o concurso 02/2024 está finalizado e que houve publicação de resultado final/homologação.",
+    "Houve uso de fontes oficiais e diário oficial; manter revisão humana apenas para checagem editorial final, se necessário.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario atualizado/priorizado pelo modo qualificado pago.",
     "Campo vagas atualizado/priorizado pelo modo qualificado pago.",
@@ -69,13 +63,13 @@
     "Campo escolaridade atualizado/priorizado pelo modo qualificado pago.",
     "Campo materias preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo banca atualizado/priorizado pelo modo qualificado pago.",
-    "Campo inscritos atualizado/priorizado pelo modo qualificado pago.",
+    "Campo inscritos preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo etapas atualizado/priorizado pelo modo qualificado pago.",
     "Campo cfsd atualizado/priorizado pelo modo qualificado pago.",
     "Campo estagio preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo validade preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo previsao atualizado/priorizado pelo modo qualificado pago.",
-    "Qualidade calculada: alta (87/100). Campos concretos: 5/14.",
+    "Qualidade calculada: alta (87/100). Campos concretos: 4/14.",
     "Resultado do modo qualificado pago aplicado no JSON principal."
   ],
   "texto_final_limpo": true,

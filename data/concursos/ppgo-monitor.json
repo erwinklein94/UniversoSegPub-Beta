@@ -13,15 +13,15 @@
   "score_publicacao": 87,
   "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 23695,
+    "input_tokens": 24726,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1260,
+    "output_tokens": 1012,
     "output_tokens_details": {
-      "reasoning_tokens": 305
+      "reasoning_tokens": 242
     },
-    "total_tokens": 24955
+    "total_tokens": 25738
   },
   "fontes_monitoradas": [
     {
@@ -56,14 +56,14 @@
       "url": "https://www.policiapenal.go.gov.br/noticias-da-dgap/espp-divulga-convocacao-para-o-curso-de-nocoes-basicas-de-corregedoria-na-7a-crpp.html",
       "ok": true,
       "status": 200,
-      "hash": "7bcaeae831fb67ee1a6f8adb4fc6bda485d9301782dd82d1da6242fc8c7a813f",
+      "hash": "36753d5da289489d55e7faff5dc15fa845cd897fc7aff14aeed09bd43937a7fb",
       "tamanho_texto": 4438
     },
     {
       "url": "https://www.policiapenal.go.gov.br/noticias-da-dgap/ppgo-convoca-servidores-para-o-treinamento-aplicativo-sac24-monitorado.html",
       "ok": true,
       "status": 200,
-      "hash": "d6bf92636d73b2be4d8e55d3a822b8f7236de16854d1377ad44d8f0eb6f78832",
+      "hash": "5d311ae0e178dcb0be3a2a694ac677bd4662a9229738485e329d5a0948236370",
       "tamanho_texto": 4297
     }
   ]

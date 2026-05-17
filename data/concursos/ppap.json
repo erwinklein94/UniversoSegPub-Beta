@@ -6,7 +6,7 @@
   "tema": "concursos",
   "status": "sem edital novo localizado; nomeações e curso de formação em andamento",
   "titulo": "PPAP segue com nomeações do concurso anterior e curso de formação ativo",
-  "resumo": "A Polícia Penal do Amapá não teve edital novo localizado nas fontes consultadas; há movimentação recente de nomeações e afastamentos para curso de formação de aprovados",
+  "resumo": "A Polícia Penal do Amapá não teve edital novo localizado; há movimentação recente de nomeações e curso de formação de aprovados",
   "edital": "Pesquisa inicial pendente. Rode o workflow em modo qualificado para levantar edital, cargo, situação e cronograma",
   "salario": "Pesquisa inicial pendente",
   "vagas": "Pesquisa inicial pendente",
@@ -17,10 +17,10 @@
   "banca": "Pesquisa inicial pendente",
   "inscritos": "Pesquisa inicial pendente",
   "etapas": "Pesquisa inicial pendente",
-  "cfsd": "Curso de formação identificado para aprovados; duração e remuneração não localizadas nas fontes consultadas",
+  "cfsd": "Curso de formação identificado para aprovados, com realização presencial em Macapá; duração e remuneração não localizadas nas fontes consultadas",
   "estagio": "Pesquisa inicial pendente",
   "validade": "Pesquisa inicial pendente",
-  "previsao": "Sem novo edital anunciado nas fontes consultadas; continuidade de nomeações do cadastro anterior",
+  "previsao": "Sem novo edital anunciado nas fontes consultadas",
   "site": "https://www.ap.gov.br",
   "fontes": [
     {
@@ -30,21 +30,21 @@
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Diário Oficial do Amapá — afastamento remunerado para curso de formação de policial penal",
-      "url": "https://diofe.portal.ap.gov.br/portal/edicoes/visualizar_pdf/9887/",
+      "titulo": "Diário Oficial do Amapá — resultado de posse com policiais penais empossados",
+      "url": "https://diofe.portal.ap.gov.br/portal/edicoes/download/2430",
       "tipo": "diário oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Diário Oficial do Amapá — afastamento remunerado para curso de formação de policial penal",
-      "url": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9931",
+      "titulo": "Diário Oficial do Amapá — edital do curso de formação para policial penal",
+      "url": "https://diofe.portal.ap.gov.br/portal/edicoes/download/2366",
       "tipo": "diário oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Amapá Previdência — cadastro de 141 novos servidores do IAPEN já empossados",
-      "url": "https://amprev.ap.gov.br/noticia/amprev-realiza-cadastro-de-141-novos-servidores-publicos-do-iapen-ja-empossados-pelo-governo",
-      "tipo": "fonte auxiliar",
+      "titulo": "Diário Oficial do Amapá — convocação para etapa de exame de aptidão física",
+      "url": "https://diofe.portal.ap.gov.br/portal/edicoes/download/2428",
+      "tipo": "diário oficial",
       "data_consulta": "2026-05-17"
     }
   ],
@@ -53,8 +53,10 @@
   "precisa_revisao_humana": true,
   "alertas": [
     "Não foi localizado novo edital específico da Polícia Penal do Amapá nas fontes consultadas.",
-    "Os dados de curso de formação e nomeações foram extraídos de diário oficial e indicam continuidade do concurso anterior.",
+    "Os dados confirmados indicam continuidade do concurso anterior, com nomeações e curso de formação.",
     "Salário, vagas, cotas, idade, escolaridade, matérias, banca, inscritos, etapas, estágio e validade não foram localizados com segurança nesta pesquisa.",
+    "Campo edital mantido de forma conservadora porque não houve valor novo confiável.",
+    "Qualidade da publicação limitada pela ausência de edital novo localizado.",
     "Campo edital preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo salario preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo vagas preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",

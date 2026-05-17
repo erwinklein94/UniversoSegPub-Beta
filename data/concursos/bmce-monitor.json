@@ -10,18 +10,18 @@
   "forcar_exibicao_site": true,
   "publicacao_forcada_por_credito_openai": true,
   "qualidade_publicacao": "alta",
-  "score_publicacao": 90,
+  "score_publicacao": 97,
   "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 29397,
+    "input_tokens": 29395,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1597,
+    "output_tokens": 1458,
     "output_tokens_details": {
-      "reasoning_tokens": 387
+      "reasoning_tokens": 378
     },
-    "total_tokens": 30994
+    "total_tokens": 30853
   },
   "fontes_monitoradas": [
     {

@@ -6,21 +6,21 @@
   "tema": "concursos",
   "status": "edital publicado",
   "titulo": "Edital 001/2025 publicado para Policial Penal",
-  "resumo": "A PPES está com concurso público publicado para Policial Penal, com 600 vagas e cadastro de reserva",
-  "edital": "Edital de Abertura nº 001/2025, publicado em 26/09/2025, para provimento do cargo de Policial Penal e formação de cadastro de reserva",
+  "resumo": "Concurso público da PPES com edital publicado para o cargo de Policial Penal, com 600 vagas imediatas e cadastro de reserva",
+  "edital": "Edital de Abertura nº 001/2025, de 26/09/2025, para provimento efetivo e formação de cadastro de reserva no cargo de Policial Penal",
   "salario": "R$ 5.631,16 de subsídio inicial + R$ 800,00 de auxílio-alimentação",
   "vagas": "600 vagas imediatas para Policial Penal + cadastro de reserva",
-  "cotas": "120 vagas para negros; 60 para pessoas com deficiência; 30 para indígenas",
+  "cotas": "60 vagas para pessoas com deficiência; 120 para pessoas pretas ou pardas; 30 para indígenas",
   "idade": "Pesquisa inicial pendente",
   "escolaridade": "Ensino médio completo + CNH categoria B ou superior",
   "materias": "Língua Portuguesa; Raciocínio Lógico-Matemático; Informática; Atualidades; Ética no Serviço Público; Conhecimentos Específicos",
   "banca": "IDCAP",
   "inscritos": "Pesquisa inicial pendente",
-  "etapas": "Prova objetiva; prova discursiva/redação; avaliação biopsicossocial; exame de aptidão física; avaliação psicotécnica; exames de saúde; investigação social; curso de formação básica",
-  "cfsd": "Curso de Formação Básica executado pela PPES/ACADEPPEN, em regime semipresencial, com dedicação exclusiva; bolsa equivalente a 50% do subsídio inicial do cargo",
+  "etapas": "Prova objetiva e redação; avaliação biopsicossocial; heteroidentificação; exame de aptidão física; exame psicotécnico; exame de saúde; investigação social; curso de formação básica",
+  "cfsd": "Curso de Formação Básica em regime semipresencial, com frequência obrigatória e dedicação exclusiva; bolsa equivalente a 50% do subsídio inicial do cargo",
   "estagio": "Pesquisa inicial pendente",
   "validade": "2 anos, contados a partir do início da primeira turma do curso de formação básica, prorrogável uma única vez por igual período",
-  "previsao": "Aguardar convocações e resultados das próximas fases até a formação da primeira turma",
+  "previsao": "Aguardar convocações e resultados das próximas fases até a formação da primeira turma do curso de formação básica",
   "site": "https://www.policiapenal.es.gov.br",
   "fontes": [
     {
@@ -36,8 +36,14 @@
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Concurso da Polícia Penal do Espírito Santo tem edital publicado para 600 vagas",
-      "url": "https://jcconcursos.uol.com.br/noticia/concursos/concurso-policia-penal-espirito-santo-edital-137628",
+      "titulo": "PPES - Concurso 2025",
+      "url": "https://pp.es.gov.br/concurso-2025",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Instituto IDCAP - Concurso Público 001/2025 - Polícia Penal do Estado do Espírito Santo (PPES)",
+      "url": "https://www.idcap.org.br/informacoes/197/",
       "tipo": "fonte auxiliar",
       "data_consulta": "2026-05-17"
     }
@@ -46,11 +52,12 @@
   "nivel_confianca": "alta",
   "precisa_revisao_humana": true,
   "alertas": [
-    "Fonte oficial encontrada para edital e dados principais do certame.",
-    "Não localizados nas fontes consultadas: idade mínima/máxima, altura, inscritos e estágio probatório.",
-    "Etapas e materiais foram extraídos do edital oficial; a menção a avaliação biopsicossocial vem de fonte auxiliar, mas as demais fases constam no edital.",
-    "A validade do concurso foi registrada conforme início da primeira turma do curso de formação básica.",
-    "Site institucional da PPES não foi confirmado diretamente nesta coleta; mantido como página oficial provável do órgão.",
+    "Fontes oficiais confirmaram edital, banca, vagas, remuneração, escolaridade e etapas.",
+    "Não localizado nas fontes consultadas: idade mínima/máxima, altura mínima e estágio probatório.",
+    "O quantitativo de inscritos não foi identificado nas fontes consultadas.",
+    "Campo site mantido como página institucional provável do órgão.",
+    "Fonte auxiliar IDCAP usada apenas como apoio para localizar o certame.",
+    "Concurso ainda com movimentação ativa em 2026 conforme página oficial da PPES.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario atualizado/priorizado pelo modo qualificado pago.",
     "Campo vagas atualizado/priorizado pelo modo qualificado pago.",

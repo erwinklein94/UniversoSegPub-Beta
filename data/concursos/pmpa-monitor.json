@@ -13,23 +13,23 @@
   "score_publicacao": 97,
   "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 33968,
+    "input_tokens": 19056,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1486,
+    "output_tokens": 1236,
     "output_tokens_details": {
-      "reasoning_tokens": 451
+      "reasoning_tokens": 105
     },
-    "total_tokens": 35454
+    "total_tokens": 20292
   },
   "fontes_monitoradas": [
     {
       "url": "https://www.pm.pa.gov.br",
       "ok": true,
       "status": 200,
-      "hash": "a29660dd531e117fd33288d628153f187dca3ccf3c2b20c7eb4549fd4eeeeba2",
-      "tamanho_texto": 11243
+      "hash": "5e0e931cd0f5a981c25ac0be34b2317ea3ee299637888f95eae49e0cf04da107",
+      "tamanho_texto": 11244
     },
     {
       "url": "https://www.pm.pa.gov.br/images/PDF/ORGANOGRAMA_PMPA_1.pdf",

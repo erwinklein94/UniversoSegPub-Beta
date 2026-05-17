@@ -5,8 +5,8 @@
   "uf": "MA",
   "tema": "concursos",
   "status": "cobertura inicial qualificada parcial",
-  "titulo": "PMMA com seleções internas ativas e concurso público geral sem novo edital localizado",
-  "resumo": "A PMMA tem processos seletivos internos em andamento, mas Não localizado nas fontes consultadas",
+  "titulo": "PMMA com seletivos internos ativos e sem novo concurso público geral localizado",
+  "resumo": "A PMMA mantém seleções internas e etapas do CFO em andamento, mas Não localizado nas fontes consultadas",
   "edital": "Pesquisa inicial pendente. Rode o workflow em modo qualificado para levantar edital, cargo, situação e cronograma",
   "salario": "Pesquisa inicial pendente",
   "vagas": "Pesquisa inicial pendente",
@@ -20,18 +20,12 @@
   "cfsd": "Pesquisa inicial pendente",
   "estagio": "Pesquisa inicial pendente",
   "validade": "Pesquisa inicial pendente",
-  "previsao": "Sem novo concurso público geral localizado; há movimentação de cursos e seleções internas na PMMA",
+  "previsao": "Sem novo edital público geral localizado; há movimentações ativas de formação e seleções internas na PMMA",
   "site": "https://www.pm.ma.gov.br",
   "fontes": [
     {
       "titulo": "Portal oficial da PMMA",
       "url": "https://pm.ssp.ma.gov.br/",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Avisos e editais da PMMA",
-      "url": "https://pm.ssp.ma.gov.br/categoria/avisos-editais/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
@@ -42,19 +36,20 @@
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Portal EAD da PMMA",
-      "url": "https://ead.pm.ma.gov.br/",
+      "titulo": "Avisos e editais da PMMA",
+      "url": "https://pm.ssp.ma.gov.br/categoria/avisos-editais/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     }
   ],
   "ultima_pesquisa": "2026-05-17",
-  "nivel_confianca": "médio",
+  "nivel_confianca": "baixo",
   "precisa_revisao_humana": true,
   "alertas": [
-    "Foram localizados editais e seleções internas da PMMA, como cursos e processos seletivos da Diretoria de Ensino, mas não um concurso público geral novo para preenchimento integral dos campos.",
-    "Os campos numéricos e requisitos específicos de concurso público geral ficaram sem localização nas fontes consultadas.",
-    "Preservar e revisar manualmente antes de publicar como cobertura completa de concurso público geral.",
+    "Foram localizados seletivos internos e etapas do CFO PMMA, mas não um concurso público geral novo com dados suficientes para preencher campos objetivos.",
+    "Campos numéricos e requisitos específicos de concurso público geral não foram localizados nas fontes consultadas.",
+    "Revisão humana recomendada antes de publicar como cobertura completa.",
+    "As fontes oficiais consultadas indicam atividade recente na PMMA, porém sem consolidação de novo edital público geral.",
     "Campo edital preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo salario preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo vagas preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
@@ -69,15 +64,15 @@
     "Campo estagio preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo validade preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo previsao atualizado/priorizado pelo modo qualificado pago.",
-    "Qualidade calculada: baixa (75/100). Campos concretos: 0/14.",
-    "Publicação permitida em modo qualificado porque houve uso de OpenAI/web_search. Score 75/100, qualidade baixa. Revisão humana recomendada.",
+    "Qualidade calculada: baixa (63/100). Campos concretos: 0/14.",
+    "Publicação permitida em modo qualificado porque houve uso de OpenAI/web_search. Score 63/100, qualidade baixa. Revisão humana recomendada.",
     "Resultado pago da OpenAI priorizado no JSON principal para evitar gasto sem alteração visível no site.",
     "Resultado do modo qualificado pago aplicado no JSON principal."
   ],
   "texto_final_limpo": true,
   "padrao_editorial": "usuario-final-sem-links-nos-campos",
   "qualidade_publicacao": "baixa",
-  "score_publicacao": 75,
+  "score_publicacao": 63,
   "modo_qualidade": "qualificado",
   "bloquear_publicacao": false,
   "publicado_por_modo_qualificado": true,

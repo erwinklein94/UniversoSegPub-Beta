@@ -1,0 +1,42 @@
+name: Atualizar PMESP - Concursos
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 07h00 de Brasília, segunda/quarta/sexta. GitHub Actions usa UTC.
+    - cron: '0 10 * * 1,3,5'
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar-pmesp-concursos:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Rodar pesquisa automática da PMESP
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.5' }}
+        run: node scripts/atualizar-pmesp-concursos.mjs
+
+      - name: Salvar alteração no repositório
+        run: |
+          if git diff --quiet data/concursos/pmesp.json; then
+            echo "Nenhuma alteração detectada em data/concursos/pmesp.json."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/concursos/pmesp.json
+          git commit -m "Atualiza concursos PMESP automaticamente"
+          git push

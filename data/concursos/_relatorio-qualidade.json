@@ -79,14 +79,14 @@
       "nome": "Corpo de Bombeiros Militar de Mato Grosso do Sul",
       "uf": "MS",
       "prioridade_config": 2,
-      "score": 29,
+      "score": 43,
       "qualidade": "baixa",
       "acao": "rodar_qualificado",
       "prioridade_operacional": "media",
       "motivos": [
-        "score muito baixo (29)",
-        "campos críticos genéricos: salario, escolaridade, etapas",
-        "muitos campos genéricos: salario, cotas, idade, escolaridade, materias, etapas",
+        "score muito baixo (43)",
+        "campos críticos genéricos: salario, escolaridade",
+        "muitos campos genéricos: salario, cotas, idade, escolaridade, materias, estagio",
         "foi publicado por modo qualificado; recomenda revisão visual"
       ],
       "workflow_sugerido": {
@@ -104,7 +104,6 @@
         "idade",
         "escolaridade",
         "materias",
-        "etapas",
         "estagio",
         "validade"
       ],
@@ -113,14 +112,14 @@
         "vagas",
         "banca",
         "inscritos",
+        "etapas",
         "cfsd",
         "previsao"
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [
         "salario",
-        "escolaridade",
-        "etapas"
+        "escolaridade"
       ],
       "fonte_falhou": false,
       "tem_rascunho": false,
@@ -2113,14 +2112,14 @@
         "nome": "Corpo de Bombeiros Militar de Mato Grosso do Sul",
         "uf": "MS",
         "prioridade_config": 2,
-        "score": 29,
+        "score": 43,
         "qualidade": "baixa",
         "acao": "rodar_qualificado",
         "prioridade_operacional": "media",
         "motivos": [
-          "score muito baixo (29)",
-          "campos críticos genéricos: salario, escolaridade, etapas",
-          "muitos campos genéricos: salario, cotas, idade, escolaridade, materias, etapas",
+          "score muito baixo (43)",
+          "campos críticos genéricos: salario, escolaridade",
+          "muitos campos genéricos: salario, cotas, idade, escolaridade, materias, estagio",
           "foi publicado por modo qualificado; recomenda revisão visual"
         ],
         "workflow_sugerido": {
@@ -2138,7 +2137,6 @@
           "idade",
           "escolaridade",
           "materias",
-          "etapas",
           "estagio",
           "validade"
         ],
@@ -2147,14 +2145,14 @@
           "vagas",
           "banca",
           "inscritos",
+          "etapas",
           "cfsd",
           "previsao"
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [
           "salario",
-          "escolaridade",
-          "etapas"
+          "escolaridade"
         ],
         "fonte_falhou": false,
         "tem_rascunho": false,

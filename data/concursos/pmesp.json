@@ -4,35 +4,118 @@
   "sigla": "PMESP",
   "uf": "SP",
   "tema": "concursos",
-  "status": "rascunho",
-  "titulo": "PMESP: concursos, requisitos e etapas",
-  "resumo": "O guia de concursos da PMESP reúne informações sobre o ingresso na Polícia Militar do Estado de São Paulo, com foco em edital, requisitos, etapas, formação e fontes oficiais de conferência.",
-  "edital": "Soldado PM 2ª Classe — PMES2502 em andamento; 2º Tenente Médico PM Estagiário 2026; Aluno-Oficial PM 2025 encerrado; CFS 2026 interno",
-  "salario": "Soldado PMES2502: R$ 5.055,53. 2º Tenente Médico PM Estagiário: R$ 9.832,41. Remuneração total PMESP segue tabela SGGD/SP julho/2025 até nova tabela total; Lei 18.441/2026 atualizou vencimentos-base desde 01/04/2026.",
-  "vagas": "Soldado PMES2502: 2.200 vagas; Médico PM 2026: 36 vagas; Aluno-Oficial PM 2025: 165 vagas; CFS 2026 interno: 500 vagas.",
-  "cotas": "Reserva de vagas conforme edital e legislação aplicável; verificar regra específica de cada certame.",
-  "idade": "Soldado: 17 a 30 anos, conforme edital e exceções legais para integrantes da PMESP. Demais carreiras: seguir edital específico e LC SP 1.291/2016 atualizada.",
-  "escolaridade": "Soldado: Ensino Médio completo e CNH categoria B ou superior. Aluno-Oficial, Médico PM e concursos internos possuem requisitos próprios de escolaridade, formação, quadro e situação funcional.",
-  "materias": "Soldado: Língua Portuguesa, Matemática, Conhecimentos Gerais, Noções Básicas de Informática e Noções de Administração Pública. Demais certames: conteúdo programático próprio do edital.",
-  "banca": "Vunesp nos certames PMESP localizados; sempre confirmar no edital específico.",
-  "inscritos": "Soldado PMES2502: inscrições encerradas e certame em fases posteriores. Médico PM 2026: inscrições previstas de 16/03/2026 a 07/05/2026. Aluno-Oficial 2025 e CFS interno 2026: inscrições encerradas.",
-  "etapas": "Prova objetiva, redação quando prevista, exames de saúde, exame de aptidão física, avaliação psicológica, avaliação social/investigação social, análise documental, títulos quando aplicável e demais fases do edital.",
-  "cfsd": "Soldado: Curso de Formação de Praças/Soldados após aprovação nas fases. Aluno-Oficial: CFO. Médico PM: estágio/adaptação conforme edital. CFS 2026: curso interno de formação de sargentos.",
-  "estagio": "Estágio probatório de 3 anos, observadas regras constitucionais, legislação estadual e normas internas da PMESP.",
-  "validade": "Conforme cada edital: verificar PMES2502, Médico PM Estagiário, Aluno-Oficial e CFS interno nas páginas oficiais.",
-  "previsao": "Não publicar como novo edital aberto sem fonte oficial. O destaque atual deve ser PMES2502 em andamento e Médico PM 2026 dentro do cronograma oficial; os demais ficam como concursos recentes/histórico ou internos.",
+  "status": "publicado",
+  "titulo": "PMESP: concursos abertos, em andamento, encerrados e previstos",
+  "resumo": "Consulta realizada em 17/05/2026 nas fontes oficiais da PMESP, Vunesp, FGV, Diário Oficial/DOE-SP, Governo de SP e site institucional da Polícia Militar. O portal oficial da PMESP lista como abertos/em andamento os concursos de Soldado PM 2ª Classe DP-2/321/25, 2º Tenente Médico PM Estagiário DP-1/321/26 e 2º Tenente Músico PM Estagiário DP-3/321/25. O concurso de Aluno-Oficial PM DP-1/321/25 aparece no portal da PMESP como encerrado. Não foi localizado, em fonte oficial consultada, novo edital aberto de Soldado posterior ao DP-2/321/25 nem edital público atual de CFS interno para uso como informação final.",
+  "edital": "Concurso aberto/em andamento: 2º Tenente Médico PM Estagiário — Edital DP-1/321/26, 36 cargos, inscrições de 16/03/2026 a 07/05/2026, prova de conhecimentos prevista para 14/06/2026 em São Paulo, organização Vunesp. Concurso em andamento: Soldado PM 2ª Classe — Edital DP-2/321/25, 2.200 cargos, inscrições encerradas em 23/10/2025, prova realizada em 30/11/2025, com classificação definitiva, cronograma e convocações posteriores publicados em 12/02/2026. Concurso em andamento: 2º Tenente Músico PM Estagiário — Edital DP-3/321/25, 5 cargos, inscrições de 01/12/2025 a 12/01/2026, com resultado definitivo da prova objetiva/discursiva e convocação para prova prática. Concurso encerrado: Aluno-Oficial PM — Edital DP-1/321/25, 165 cargos, organizado pela FGV, listado como encerrado no portal oficial da PMESP. CFS 2026 interno: não encontrado em fonte oficial.",
+  "salario": "Valores informados nos editais/fontes oficiais dos certames consultados: Soldado PM 2ª Classe DP-2/321/25: R$ 5.055,53; 2º Tenente Médico PM Estagiário DP-1/321/26: R$ 9.832,41; 2º Tenente Músico PM Estagiário DP-3/321/25: R$ 9.832,41; Aluno-Oficial PM DP-1/321/25: R$ 4.833,27. A Lei Estadual nº 18.441/2026 reclassificou vencimentos da Polícia Militar com efeitos a partir de 01/04/2026; por isso, o candidato deve conferir eventual atualização remuneratória diretamente no edital, no DOE-SP e nas tabelas oficiais vigentes antes da posse.",
+  "vagas": "Soldado PM 2ª Classe DP-2/321/25: 2.200 cargos; 2º Tenente Médico PM Estagiário DP-1/321/26: 36 cargos; 2º Tenente Músico PM Estagiário DP-3/321/25: 5 cargos; Aluno-Oficial PM DP-1/321/25: 165 cargos, encerrado. CFS 2026 interno: não encontrado em fonte oficial.",
+  "cotas": "Nos editais consultados há regra de pontuação diferenciada para candidatos pretos, pardos e indígenas, com procedimento de verificação/autodeclaração quando aplicável. O edital de Soldado DP-2/321/25 informa que não há reserva de vagas para pessoas com deficiência em razão das peculiaridades das funções policiais-militares. O candidato deve conferir a regra exata no edital do cargo pretendido, pois a aplicação ocorre por certame.",
+  "idade": "Soldado PM 2ª Classe: idade mínima de 17 anos e máxima de 30 anos, conforme edital e notícia institucional da PMESP, com exceções legais para integrante da PMESP quando previstas. Aluno-Oficial PM DP-1/321/25: idade mínima de 17 anos e máxima de 30 anos, exceto para candidato pertencente aos quadros da PMESP. Para 2º Tenente Médico PM Estagiário e 2º Tenente Músico PM Estagiário, verificar o edital específico; resumo oficial consolidado de idade não encontrado em fonte oficial.",
+  "escolaridade": "Soldado PM 2ª Classe: ensino médio completo e habilitação para condução de veículo motorizado entre as categorias B e E. Aluno-Oficial PM: ensino médio completo. 2º Tenente Médico PM Estagiário: formação superior em Medicina, com especialidade/registro conforme o cargo pretendido e regras do edital. 2º Tenente Músico PM Estagiário: bacharelado em Música, conforme página da Vunesp. Demais concursos internos ou carreiras: seguir edital específico.",
+  "materias": "Soldado PM 2ª Classe DP-2/321/25: prova objetiva com Língua Portuguesa e Interpretação de Texto, Matemática, Conhecimentos Gerais, Noções Básicas de Informática e Noções de Administração Pública, além de prova dissertativa/redação. Aluno-Oficial PM DP-1/321/25: prova objetiva de 80 questões e prova dissertativa, conforme edital FGV. 2º Tenente Músico PM Estagiário: prova objetiva, prova dissertativa e prova prática de habilidades técnicas, conforme edital. 2º Tenente Médico PM Estagiário: conteúdo programático próprio do edital DP-1/321/26; resumo completo das matérias não encontrado em fonte oficial consolidada.",
+  "banca": "Vunesp nos concursos de Soldado PM 2ª Classe DP-2/321/25, 2º Tenente Médico PM Estagiário DP-1/321/26 e 2º Tenente Músico PM Estagiário DP-3/321/25. Fundação Getulio Vargas (FGV) no concurso de Aluno-Oficial PM DP-1/321/25. Sempre confirmar a banca na página oficial do edital específico.",
+  "inscritos": "Aluno-Oficial PM DP-1/321/25: 14.566 candidatos para 165 vagas, demanda de 88,28 candidatos por vaga, conforme documento oficial da FGV. Soldado PM DP-2/321/25, 2º Tenente Médico PM DP-1/321/26 e 2º Tenente Músico PM DP-3/321/25: quantitativo oficial de inscritos não encontrado em fonte oficial.",
+  "etapas": "Soldado PM 2ª Classe: prova objetiva, prova dissertativa/redação, exames de aptidão física, exames de saúde, exames psicológicos, avaliação de conduta social, reputação e idoneidade e análise de documentos. 2º Tenente Médico PM Estagiário: etapas conforme edital DP-1/321/26 e publicações posteriores no DOE-SP/Vunesp. 2º Tenente Músico PM Estagiário: exames de conhecimentos, prova dissertativa, prova prática de habilidades técnicas e demais etapas eliminatórias da PMESP previstas no edital. Aluno-Oficial PM: exames de conhecimentos, prova dissertativa, aptidão física e demais fases previstas no edital FGV/PMESP.",
+  "cfsd": "Para Soldado PM 2ª Classe, a carreira se inicia com a frequência ao curso de formação/Curso Superior de Técnico de Polícia Ostensiva e Preservação da Ordem Pública, conforme página oficial de ingresso como Soldado PM. Para Aluno-Oficial PM, o aprovado ingressa no Bacharelado em Ciências Policiais de Segurança e Ordem Pública/Curso de Formação de Oficiais na Academia de Polícia Militar do Barro Branco. Para 2º Tenente Médico e 2º Tenente Músico, observar o estágio/adaptação e formação específicos do edital. CFS 2026 interno: não encontrado em fonte oficial.",
+  "estagio": "Estágio probatório de 3 anos para provimento em cargo público, observadas Constituição, legislação estadual e normas internas da PMESP. Regras específicas de estágio, adaptação ou formação variam conforme o quadro: Soldado, Aluno-Oficial, Oficial de Saúde ou Oficial Músico.",
+  "validade": "não encontrado em fonte oficial",
+  "previsao": "Não publicar como novo edital aberto sem fonte oficial. O Governo de SP informou em 15/07/2025 autorização para dois editais de Soldado PM com 2.200 vagas cada, com aberturas previstas para agosto de 2025 e janeiro de 2026; na consulta de 17/05/2026, foi localizado no portal oficial da PMESP o edital DP-2/321/25, mas não foi localizado novo edital aberto posterior de Soldado. Portanto, a orientação editorial é destacar os concursos atualmente listados como abertos/em andamento no portal PMESP e tratar qualquer novo edital apenas após publicação oficial no portal da PMESP, DOE-SP ou Governo de SP.",
   "site": "https://concursos.policiamilitar.sp.gov.br",
   "fontes": [
     {
-      "titulo": "Portal de Concursos da Polícia Militar do Estado de São Paulo",
+      "titulo": "Portal oficial de Concursos da Polícia Militar do Estado de São Paulo",
       "url": "https://concursos.policiamilitar.sp.gov.br",
-      "tipo": "fonte oficial"
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "PMESP — Edital DP-2/321/25 — Concurso para Soldado PM 2ª Classe",
+      "url": "https://concursos.policiamilitar.sp.gov.br/concursos/edital-dp-2-321-25-concurso-para-sd-pm-2a-classe/",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Vunesp — PMES2502 — Concurso Público Soldado PM 2ª Classe",
+      "url": "https://www.vunesp.com.br/PMES2502",
+      "tipo": "banca organizadora / fonte oficial do certame",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "PMESP — Edital DP-1/321/26 — Concurso para 2º Tenente Médico PM Estagiário",
+      "url": "https://concursos.policiamilitar.sp.gov.br/concursos/edital-dp-1-321-26-concurso-para-2-ten-med-pm-estagiario/",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Vunesp — PMES2504 — 2º Tenente Médico PM Estagiário",
+      "url": "https://www.vunesp.com.br/PMES2504",
+      "tipo": "banca organizadora / fonte oficial do certame",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "PMESP — Edital DP-3/321/25 — Concurso para 2º Tenente Músico PM Estagiário",
+      "url": "https://concursos.policiamilitar.sp.gov.br/concursos/edital-dp-3-321-25-concurso-para-2o-ten-pm-musico/",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Vunesp — PMES2503 — 2º Tenente Músico PM Estagiário",
+      "url": "https://www.vunesp.com.br/PMES2503",
+      "tipo": "banca organizadora / fonte oficial do certame",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "FGV — Edital DP-1/321/25 — Aluno-Oficial PM",
+      "url": "https://conhecimento.fgv.br/sites/default/files/concursos/10.-minuta-do-edital-1.321.25-v_final-site-pmesp-e-fgv.pdf",
+      "tipo": "banca organizadora / fonte oficial do certame",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "FGV — Demanda de candidatos por vaga — Aluno-Oficial PM DP-1/321/25",
+      "url": "https://conhecimento.fgv.br/sites/default/files/concursos/327-pmsp-oficial-demanda_por_vaga.pdf",
+      "tipo": "banca organizadora / fonte oficial do certame",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Portal de Concursos Públicos do Estado de São Paulo — Aluno-Oficial PM DP-1/321/25",
+      "url": "https://www.concursopublico.sp.gov.br/PortalConcurso/noauth/PortalDeConcursos.do?acao=exibirConcurso&idConcurso=8319&tipo=concursoInscrAberta&tipoFlag=C",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Agência SP — Governo de SP autoriza edital para concurso de 4,4 mil vagas de soldados da PM",
+      "url": "https://www.agenciasp.sp.gov.br/governo-de-sp-autoriza-edital-para-concurso-de-44-mil-vagas-de-soldados-da-pm/",
+      "tipo": "fonte oficial do Governo de SP",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Polícia Militar SP — Saiu o edital de Soldado PM 2ª Classe",
+      "url": "https://www.policiamilitar.sp.gov.br/noticias/noticia-interna/2025/9/3436/saiu-o-edital-",
+      "tipo": "site oficial da PMESP",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Portal de Notícias da PMESP — Edital publicado para 2º Tenente Médico PMESP",
+      "url": "https://portaldenoticias.policiamilitar.sp.gov.br/edital-publicado-concurso-para-2o-tenente-medico-pmesp/",
+      "tipo": "site oficial da PMESP",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Assembleia Legislativa do Estado de São Paulo — Lei nº 18.441/2026",
+      "url": "https://www.al.sp.gov.br/repositorio/legislacao/lei/2026/lei-18441-02.04.2026.html",
+      "tipo": "fonte oficial legislativa",
+      "data_consulta": "2026-05-17"
     }
   ],
-  "ultima_pesquisa": null,
-  "nivel_confianca": "baixo",
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "alto",
   "precisa_revisao_humana": true,
   "alertas": [
-    "Arquivo inicial criado a partir dos dados já existentes no site. Ainda não foi atualizado por automação."
+    "O portal oficial da PMESP usa a categoria 'Abertos' também para concursos com inscrições encerradas, mas ainda em andamento; por isso o texto diferencia inscrições abertas de certame em andamento.",
+    "Não foi localizado em fonte oficial, na pesquisa de 17/05/2026, novo edital de Soldado posterior ao DP-2/321/25; não tratar autorização ou previsão como edital aberto.",
+    "Informações sobre CFS 2026 interno apareceram apenas em fontes não oficiais/comerciais e não foram usadas como fonte final.",
+    "Validade dos concursos não foi consolidada porque a informação específica não foi localizada nas fontes oficiais consultadas durante esta atualização; revisar diretamente nos editais completos antes de publicar como dado fechado.",
+    "Salários podem sofrer atualização por legislação posterior aos editais; manter alerta para conferência no DOE-SP e nas tabelas oficiais vigentes antes da posse."
   ]
 }

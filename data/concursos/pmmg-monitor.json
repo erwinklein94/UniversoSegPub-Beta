@@ -1,0 +1,23 @@
+{
+  "atualizado_em": "2026-05-17",
+  "instituicao_id": "pmmg",
+  "usou_openai": false,
+  "publicacao_bloqueada": true,
+  "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado.",
+  "fontes_monitoradas": [
+    {
+      "url": "https://www.policiamilitar.mg.gov.br/",
+      "ok": false,
+      "status": 0,
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tamanho_texto": 0
+    },
+    {
+      "url": "https://www.policiamilitar.mg.gov.br/portal-pm/crs",
+      "ok": false,
+      "status": 0,
+      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tamanho_texto": 0
+    }
+  ]
+}

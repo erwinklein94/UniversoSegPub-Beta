@@ -6472,6 +6472,25 @@ function renderizarBrasoesHistoriaDetalheEspecial(cont, inst, especial) {
     </article>
   `).join('');
   const paragrafos = (itens) => (Array.isArray(itens) ? itens : []).map(item => `<p>${escapeHtml(item)}</p>`).join('');
+  const secoesExtras = (Array.isArray(especial.secoes_extra) ? especial.secoes_extra : []).map(secao => {
+    const kicker = escapeHtml(secao.kicker || 'Detalhamento');
+    const titulo = escapeHtml(secao.titulo || 'Informações complementares');
+    const corpoPares = Array.isArray(secao.pares) ? `<div class="brasoes-resumo-grid">${pares(secao.pares)}</div>` : '';
+    const corpoParagrafos = Array.isArray(secao.paragrafos) ? paragrafos(secao.paragrafos) : '';
+    const corpoItens = Array.isArray(secao.itens) ? `<ul class="brasoes-marcos">${lista(secao.itens)}</ul>` : '';
+    return `
+      <section class="brasoes-historia-card" aria-label="${titulo}">
+        <div class="brasoes-section-title">
+          <span>${kicker}</span>
+          <h3>${titulo}</h3>
+        </div>
+        ${corpoPares}${corpoParagrafos}${corpoItens}
+      </section>
+    `;
+  }).join('');
+  const fontesConsultadas = Array.isArray(especial.fontes_consultadas) && especial.fontes_consultadas.length
+    ? `<ul class="brasoes-marcos">${lista(especial.fontes_consultadas)}</ul>`
+    : '';
 
   cont.innerHTML = `
     <section class="brasoes-hero" aria-label="Brasão e identificação da instituição">
@@ -6531,9 +6550,12 @@ function renderizarBrasoesHistoriaDetalheEspecial(cont, inst, especial) {
       </ul>
     </section>
 
+    ${secoesExtras}
+
     <section class="brasoes-historia-card brasoes-observacao" aria-label="Fontes e observações">
       <strong>Fonte-base do resumo:</strong>
       <p>${escapeHtml(especial.fonte || 'Fontes públicas e oficiais quando disponíveis.')}</p>
+      ${fontesConsultadas}
       <small>Conteúdo informativo, independente e não oficial. Dados de efetivo, chefia e datas podem mudar; confirme sempre em ato oficial, portal da transparência, diário oficial ou site institucional.</small>
     </section>
   `;

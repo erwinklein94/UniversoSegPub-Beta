@@ -5,8 +5,8 @@ Gerado em: 2026-05-17
 ## Resumo
 
 - Total: 110
-- Pendentes: 14
-- Atualização fraca: 35
+- Pendentes: 11
+- Atualização fraca: 38
 - Atualização forte: 61
 
 ## Como atualizar
@@ -42,10 +42,7 @@ modelo_openai: gpt-5.4-mini
 | Sigla | Instituição | UF | Classe | Score | Motivos |
 |---|---|---:|---|---:|---|
 | PMRR | Polícia Militar de Roraima | RR | pendente | 8 | precisa primeira atualização; campos críticos sem dado: salario, escolaridade |
-| PMRO | Polícia Militar de Rondônia | RO | pendente | 12 | precisa primeira atualização; campos críticos sem dado: salario, banca |
 | PPAM | Polícia Penal de Amazonas | AM | pendente | 12 | precisa primeira atualização; campos críticos sem dado: vagas, banca |
-| PCTO | Polícia Civil de Tocantins | TO | pendente | 16 | precisa primeira atualização; campos críticos sem dado: escolaridade, etapas |
-| PMPI | Polícia Militar de Piauí | PI | pendente | 16 | precisa primeira atualização; campos críticos sem dado: salario, escolaridade |
 | PCRN | Polícia Civil de Rio Grande do Norte | RN | pendente | 18 | precisa primeira atualização; campos críticos sem dado: salario |
 | PPMA | Polícia Penal de Maranhão | MA | pendente | 20 | precisa primeira atualização; campos críticos sem dado: salario, vagas |
 | PPRO | Polícia Penal de Rondônia | RO | pendente | 24 | precisa primeira atualização; campos críticos sem dado: salario, etapas |
@@ -60,9 +57,12 @@ modelo_openai: gpt-5.4-mini
 
 | Sigla | Instituição | UF | Classe | Score | Motivos |
 |---|---|---:|---|---:|---|
+| PMPI | Polícia Militar de Piauí | PI | fraca | 48 | conteúdo fraco ou genérico; campos críticos sem dado: salario, escolaridade |
 | PPGO | Polícia Penal de Goiás | GO | fraca | 48 | conteúdo fraco ou genérico |
 | PPPB | Polícia Penal de Paraíba | PB | fraca | 48 | conteúdo fraco ou genérico |
 | PPRN | Polícia Penal de Rio Grande do Norte | RN | fraca | 52 | conteúdo fraco ou genérico |
+| PCTO | Polícia Civil de Tocantins | TO | fraca | 54 | conteúdo fraco ou genérico; campos críticos sem dado: escolaridade |
+| PMRO | Polícia Militar de Rondônia | RO | fraca | 54 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PMCE | Polícia Militar de Ceará | CE | fraca | 56 | conteúdo fraco ou genérico |
 | PPTO | Polícia Penal de Tocantins | TO | fraca | 56 | conteúdo fraco ou genérico |
 | PPPA | Polícia Penal de Pará | PA | fraca | 60 | conteúdo fraco ou genérico |

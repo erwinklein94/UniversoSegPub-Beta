@@ -1,70 +1,27 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "pmro",
-  "modo_qualidade": "qualificado",
-  "modelo": "gpt-5.4-mini",
+  "grupo_atualizacao": "pendentes",
+  "modelo": "gpt-5.4",
   "usou_openai": true,
   "usou_web_search_openai": true,
-  "publicacao_bloqueada": false,
-  "publicado_por_modo_qualificado": true,
-  "forcar_exibicao_site": true,
-  "publicacao_forcada_por_credito_openai": true,
-  "qualidade_publicacao": "baixa",
-  "score_publicacao": 75,
-  "motivo": "Atualização forçada manualmente.",
+  "antes": {
+    "classe": "pendente",
+    "score": 12
+  },
+  "depois": {
+    "classe": "fraca",
+    "score": 54
+  },
   "usage": {
-    "input_tokens": 16659,
+    "input_tokens": 31383,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 921,
+    "output_tokens": 1844,
     "output_tokens_details": {
-      "reasoning_tokens": 100
+      "reasoning_tokens": 576
     },
-    "total_tokens": 17580
-  },
-  "fontes_monitoradas": [
-    {
-      "url": "https://www.ro.gov.br",
-      "ok": true,
-      "status": 200,
-      "hash": "e4bf1037e4b85244ca66c9de04178a364482fe278c7efb2853e48545715dd8a4",
-      "tamanho_texto": 4644
-    },
-    {
-      "url": "https://www.pm.ro.gov.br",
-      "ok": true,
-      "status": 200,
-      "hash": "a9e53479b623c6b4e5fa17e5455551acd956e13359d0f28dcfdfdaf98c66ba52",
-      "tamanho_texto": 2716
-    },
-    {
-      "url": "https://www.pmro.gov.br",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
-    },
-    {
-      "url": "https://www.pm.ro.gov.br/cursos-e-concursos-1/",
-      "ok": true,
-      "status": 200,
-      "hash": "6839f135216f3e1ef949a8670a76e57dfbb642494f2e9d4098d8b4fbd9435042",
-      "tamanho_texto": 3986
-    },
-    {
-      "url": "https://www.pm.ro.gov.br/fale-conosco-qcg/relacao-telefonica-da-pmro/",
-      "ok": true,
-      "status": 200,
-      "hash": "1c585a02d8efdb0d16323197fe1de25515e0a1f91f7d6c713eee2b06962a918b",
-      "tamanho_texto": 28572
-    },
-    {
-      "url": "https://www.pm.ro.gov.br/legislacao-pmro-3/",
-      "ok": true,
-      "status": 200,
-      "hash": "e283a29b518d597429b85a7f4bd717ee1cdfec8059906afe58a1018f3152cab2",
-      "tamanho_texto": 1583
-    }
-  ]
+    "total_tokens": 33227
+  }
 }

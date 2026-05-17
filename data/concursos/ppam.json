@@ -6,7 +6,7 @@
   "tema": "concursos",
   "status": "Pesquisa pendente",
   "titulo": "PPAM: nenhum edital novo localizado",
-  "resumo": "Não foi localizado novo edital de concurso da Polícia Penal do Amazonas nas fontes consultadas. Foi confirmada a lei estadual da carreira, com requisitos, etapas e remuneração inicial do cargo.",
+  "resumo": "Não foi localizado novo edital de concurso da Polícia Penal do Amazonas nas fontes consultadas. Foram confirmados, em lei estadual, os requisitos de ingresso, etapas, cotas e remuneração inicial do cargo de Policial Penal.",
   "edital": "Não foi localizado nas fontes consultadas.",
   "salario": "Policial Penal: R$ 6.232,92 na referência inicial A da carreira.",
   "vagas": "Não localizado nas fontes consultadas.",
@@ -24,8 +24,14 @@
   "site": "https://www.policiapenal.am.gov.br",
   "fontes": [
     {
-      "titulo": "Lei estadual da carreira da SEAP e da Polícia Penal do Amazonas no Diário Oficial",
+      "titulo": "Lei estadual da carreira da Polícia Penal e do sistema penitenciário do Amazonas no Diário Oficial",
       "url": "https://diario.imprensaoficial.am.gov.br/portal/edicoes/download/17976",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Legisla.AM - texto da lei com requisitos e etapas para Policial Penal",
+      "url": "https://legisla.imprensaoficial.am.gov.br/diario_am/12/2025/11/18154?modo=lista",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },

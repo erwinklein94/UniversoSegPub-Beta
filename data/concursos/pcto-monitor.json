@@ -7,21 +7,21 @@
   "usou_web_search_openai": true,
   "antes": {
     "classe": "pendente",
-    "score": 0
-  },
-  "depois": {
-    "classe": "pendente",
     "score": 16
   },
+  "depois": {
+    "classe": "fraca",
+    "score": 54
+  },
   "usage": {
-    "input_tokens": 30876,
+    "input_tokens": 28257,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1393,
+    "output_tokens": 1750,
     "output_tokens_details": {
-      "reasoning_tokens": 457
+      "reasoning_tokens": 579
     },
-    "total_tokens": 32269
+    "total_tokens": 30007
   }
 }

@@ -4,23 +4,23 @@
   "sigla": "PMPI",
   "uf": "PI",
   "tema": "concursos",
-  "status": "em acompanhamento",
-  "titulo": "PMPI tem novo concurso autorizado para 1.000 vagas e segue com atos do CHO/2025 e do CFSD/2025",
-  "resumo": "A PMPI está com concurso novo autorizado para soldado e capelão, enquanto mantém atos recentes do CHO PM/2025 e da formação de soldados do CFSD/2025",
-  "edital": "Edital nº 02/2021/PMPI segue como base do CFSD/2025; em 2025 foi autorizado o CHO PM/2025 com 100 vagas e, em 2025, saiu decreto autorizando novo concurso com 1.000 vagas para soldado",
-  "salario": "Pesquisa inicial pendente",
-  "vagas": "1.000 vagas autorizadas para soldado no novo concurso; 100 vagas autorizadas para o CHO PM/2025; CFSD/2025 com 654 formados e 652 aptos para classificação e lotação",
-  "cotas": "Pesquisa inicial pendente",
-  "idade": "Pesquisa inicial pendente",
-  "escolaridade": "Pesquisa inicial pendente",
-  "materias": "Direito Penal; Direito Penal Militar; Direitos Humanos e Ações Afirmativas; Legislação Organizacional; Estado, Democracia, Sociedade e Atividade Policial; Teoria Geral da Administração; Ética e Relações Humanas",
-  "banca": "Nucepe/Uespi no concurso de Oficial; banca do novo concurso de soldado não localizada nas fontes consultadas",
-  "inscritos": "Pesquisa inicial pendente",
-  "etapas": "Inscrição; homologação; inspeção de saúde; TAF; matrícula; aula inaugural; formação; classificação final",
-  "cfsd": "CFSD/2025 concluído; formação ligada ao Edital nº 02/2021/PMPI; 654 formados e 652 aptos para classificação e lotação",
-  "estagio": "Pesquisa inicial pendente",
-  "validade": "Pesquisa inicial pendente",
-  "previsao": "Aguardar novas convocações do concurso autorizado para soldado e a continuidade dos atos de formação e classificação já publicados",
+  "status": "Atualização fraca",
+  "titulo": "PMPI tem concurso autorizado com 1.000 vagas para soldado e 1 vaga para capelão; edital novo ainda não saiu",
+  "resumo": "A Polícia Militar do Piauí tem novo concurso autorizado por decreto publicado em 30 de dezembro de 2025, com 1.000 vagas para soldado, sendo 500 imediatas e 500 para cadastro de reserva, além de 1 vaga para capelão. Enquanto o novo edital não é publicado, o último concurso de soldado segue sendo o Edital nº 02/2021, organizado pelo Nucepe.",
+  "edital": "Novo concurso autorizado pelo Decreto nº 24.290, de 30 de dezembro de 2025, com 1.000 vagas para soldado e 1 vaga para capelão, mas sem edital publicado até a data da pesquisa. Último edital de soldado disponível: Edital nº 02/2021/PMPI, para Curso de Formação de Soldados.",
+  "salario": "Não localizado nas fontes consultadas.",
+  "vagas": "Novo concurso autorizado com 1.000 vagas para soldado, sendo 500 imediatas e 500 para cadastro de reserva, além de 1 vaga para capelão no posto de 1º Tenente PM. No último edital de soldado, foram 650 vagas, sendo 585 para homens e 65 para mulheres.",
+  "cotas": "No Edital nº 02/2021, 10% das vagas foram destinadas a candidatas do sexo feminino. Não houve reserva de vagas para pessoas com deficiência.",
+  "idade": "No último edital de soldado, idade mínima de 18 anos e máxima de 35 anos no período da matrícula no curso de formação; altura mínima de 1,60 m para homens e 1,55 m para mulheres; CNH ou permissão para dirigir na categoria mínima AB.",
+  "escolaridade": "Não localizado nas fontes consultadas.",
+  "materias": "Língua Portuguesa; Raciocínio Lógico e Matemática Básica; Conhecimentos Gerais; Conhecimentos Regionais do Estado do Piauí; Legislação da PMPI; Noções de Direito; redação dissertativa.",
+  "banca": "Nucepe/Uespi no último concurso de soldado. Banca do novo concurso autorizado: Não localizada nas fontes consultadas.",
+  "inscritos": "Não localizado nas fontes consultadas.",
+  "etapas": "Prova objetiva e dissertativa; exame de saúde; teste de aptidão física; avaliação psicológica; investigação social; curso de formação.",
+  "cfsd": "O CFSD 2025 foi concluído, com lotação definitiva de mais de 650 novos soldados em janeiro de 2026. O curso decorre do concurso regido pelo Edital nº 02/2021, que depois passou a admitir cadastro de reserva por termo aditivo.",
+  "estagio": "Estágio operacional de 6 meses para os soldados formados no CFSD 2025.",
+  "validade": "O Edital nº 02/2021 teve validade de 2 anos, prorrogável por igual período.",
+  "previsao": "Edital do novo concurso para soldado e capelão ainda não publicado até 17 de maio de 2026.",
   "site": "https://www.pm.pi.gov.br",
   "fontes": [
     {
@@ -30,81 +30,55 @@
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "PMPI organiza formação de policiais para 2026 com cursos de ingresso, progressão e qualificação contínua",
-      "url": "https://www.pi.gov.br/pmpi-organiza-formacao-de-policiais-para-2026-com-cursos-de-ingresso-progressao-e-qualificacao-continua/",
+      "titulo": "Diário Oficial do Estado do Piauí - Decreto nº 24.290, de 30 de dezembro de 2025",
+      "url": "https://www.pi.gov.br/wp-content/uploads/2025/12/DOEPI_251_2025.pdf",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Polícia Militar do Piauí lança processo seletivo para Servidor Auxiliar Voluntário 2026; confira o edital",
-      "url": "https://www.pi.gov.br/policia-militar-do-piaui-lanca-processo-seletivo-para-servidor-auxiliar-voluntario-2026-confira-o-edital/",
+      "titulo": "Concurso Público da Polícia Militar do Estado do Piauí – PMPI 2021",
+      "url": "https://nucepe.uespi.br/pmpi2021/",
+      "tipo": "banca organizadora",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Edital nº 02/2021 - Soldado PMPI",
+      "url": "https://nucepe.uespi.br/consultas/downloads/pmpi2021_1/edital_002_2021_soldadopmpi.pdf",
+      "tipo": "edital pdf",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Termo Aditivo nº 05 ao Edital nº 02/2021/PMPI",
+      "url": "https://www.pm.pi.gov.br/download/202212/PM26_8e69ea6ccf.pdf",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Página de concursos da PMPI",
-      "url": "https://www.pm.pi.gov.br/concursos.php",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Portaria nº 4, de 20 de janeiro de 2025",
+      "titulo": "Portaria nº 4, de 20 de janeiro de 2025 - CHO PM/2025",
       "url": "https://www.pm.pi.gov.br/download/202501/PM24_fe0f3251a8.pdf",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Portaria nº 394, de 26 de dezembro de 2025",
-      "url": "https://www.pm.pi.gov.br/download/202601/PM02_462636e74c.pdf",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Edital nº 02/2021/PMPI",
-      "url": "https://www.pm.pi.gov.br/download/202111/PM04_b0b8b57890.pdf",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Edital CHO PM/2025",
-      "url": "https://www.pm.pi.gov.br/download/202601/PM15_ba12b765a1.pdf",
+      "titulo": "Polícia Militar reforça efetivo com a lotação de mais de 650 novos soldados",
+      "url": "https://www.pi.gov.br/policia-militar-reforca-efetivo-com-a-lotacao-de-mais-de-650-novos-soldados/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     }
   ],
   "ultima_pesquisa": "2026-05-17",
-  "nivel_confianca": "médio",
+  "nivel_confianca": "alto",
   "precisa_revisao_humana": true,
   "alertas": [
-    "Há confirmação oficial do novo concurso para soldado com 1.000 vagas, mas salário, cotas, idade, escolaridade, validade e requisitos físicos não foram localizados nas fontes consultadas.",
-    "A banca do CHO PM/2025 aparece como Nucepe/Uespi; a banca do novo concurso para soldado não foi confirmada.",
-    "Foram preservados dados recentes de formação e classificação do CFSD/2025 e do CHO PM/2025, que coexistem com o novo concurso autorizado.",
-    "Há contagem de 5.585 inscritos para o CHO PM/2025 em ato oficial recente.",
-    "Revisão humana recomendada antes da publicação final para separar claramente os fluxos de CHO, CFSD e novo concurso de soldado.",
-    "Campo edital atualizado/priorizado pelo modo qualificado pago.",
-    "Campo salario preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo vagas atualizado/priorizado pelo modo qualificado pago.",
-    "Campo cotas preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo idade preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo escolaridade preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo materias atualizado/priorizado pelo modo qualificado pago.",
-    "Campo banca atualizado/priorizado pelo modo qualificado pago.",
-    "Campo inscritos preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo etapas atualizado/priorizado pelo modo qualificado pago.",
-    "Campo cfsd atualizado/priorizado pelo modo qualificado pago.",
-    "Campo estagio preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo validade preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo previsao atualizado/priorizado pelo modo qualificado pago.",
-    "Qualidade calculada: alta (97/100). Campos concretos: 6/14.",
-    "Resultado do modo qualificado pago aplicado no JSON principal."
+    "Novo concurso da PMPI está autorizado, mas o edital ainda não foi publicado.",
+    "A banca do novo concurso para soldado e capelão ainda não foi confirmada nas fontes consultadas.",
+    "Os requisitos de idade, altura, CNH, escolaridade e salário informados para soldado foram extraídos do último edital disponível, de 2021.",
+    "O cargo de capelão foi autorizado no novo decreto, mas remuneração e requisitos específicos não foram localizados nas fontes consultadas.",
+    "Classificação automática: Atualização fraca (48/100)."
   ],
-  "texto_final_limpo": true,
-  "padrao_editorial": "usuario-final-sem-links-nos-campos",
-  "qualidade_publicacao": "alta",
-  "score_publicacao": 97,
-  "modo_qualidade": "qualificado",
-  "bloquear_publicacao": false,
-  "publicado_por_modo_qualificado": true,
-  "forcar_exibicao_site": true,
-  "publicacao_forcada_por_credito_openai": true
+  "classe_atualizacao": "fraca",
+  "qualidade_publicacao": "fraca",
+  "score_publicacao": "48",
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true
 }

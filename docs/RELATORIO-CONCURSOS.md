@@ -6,8 +6,8 @@ Gerado em: 2026-05-18
 
 - Total: 110
 - Pendentes: 2
-- Atualização fraca: 42
-- Atualização forte: 66
+- Atualização fraca: 41
+- Atualização forte: 67
 
 ## Como atualizar
 
@@ -51,7 +51,6 @@ modelo_openai: gpt-5.4-mini
 | PMPI | Polícia Militar de Piauí | PI | fraca | 48 | conteúdo fraco ou genérico; campos críticos sem dado: salario, escolaridade |
 | PPPB | Polícia Penal de Paraíba | PB | fraca | 48 | conteúdo fraco ou genérico |
 | PMRO | Polícia Militar de Rondônia | RO | fraca | 54 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
-| PMCE | Polícia Militar de Ceará | CE | fraca | 56 | conteúdo fraco ou genérico |
 | PPTO | Polícia Penal de Tocantins | TO | fraca | 56 | conteúdo fraco ou genérico |
 | PPPA | Polícia Penal de Pará | PA | fraca | 60 | conteúdo fraco ou genérico |
 | PPPE | Polícia Penal de Pernambuco | PE | fraca | 60 | conteúdo fraco ou genérico |
@@ -104,6 +103,7 @@ modelo_openai: gpt-5.4-mini
 | PCRN | Polícia Civil de Rio Grande do Norte | RN | forte | 84 | conteúdo bom |
 | PCRO | Polícia Civil de Rondônia | RO | forte | 84 | conteúdo bom |
 | PCRR | Polícia Civil de Roraima | RR | forte | 84 | conteúdo bom |
+| PMCE | Polícia Militar de Ceará | CE | forte | 84 | conteúdo bom |
 | PMGO | Polícia Militar de Goiás | GO | forte | 84 | conteúdo bom |
 | PMPA | Polícia Militar de Pará | PA | forte | 84 | conteúdo bom |
 | PMRN | Polícia Militar de Rio Grande do Norte | RN | forte | 84 | conteúdo bom |

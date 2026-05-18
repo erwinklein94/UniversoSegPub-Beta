@@ -5,22 +5,22 @@
   "uf": "PI",
   "tema": "concursos",
   "status": "Atualização fraca",
-  "titulo": "PMPI tem concurso autorizado com 1.001 vagas; novo edital para soldado e capelão ainda não foi publicado",
-  "resumo": "A Polícia Militar do Piauí tem novo concurso autorizado pelo Decreto nº 24.290, de 30 de dezembro de 2025, com 1.000 vagas para soldado, sendo 500 imediatas e 500 para cadastro de reserva, além de 1 vaga para capelão no posto de 1º tenente. Até 18 de maio de 2026, o novo edital ainda não foi publicado. O último edital de soldado é o nº 02/2021, organizado pelo Nucepe.",
-  "edital": "Novo concurso autorizado pelo Decreto nº 24.290, de 30 de dezembro de 2025, com 1.000 vagas para soldado e 1 vaga para capelão, sem edital publicado até 18 de maio de 2026. Último edital de soldado disponível: Edital nº 02/2021, para Curso de Formação de Soldados.",
+  "titulo": "PMPI tem concurso autorizado com 1.001 vagas para soldado e capelão; edital novo ainda não foi publicado",
+  "resumo": "A Polícia Militar do Piauí tem novo concurso autorizado pelo Decreto nº 24.290, de 30 de dezembro de 2025, com 1.000 vagas para soldado, sendo 500 imediatas e 500 para cadastro de reserva, além de 1 vaga para capelão no posto de 1º tenente PM. Até 18 de maio de 2026, o novo edital ainda não foi publicado. O último concurso de soldado foi o Edital nº 02/2021, organizado pelo Nucepe, e formou 650 novos soldados em 2025.",
+  "edital": "Novo concurso autorizado pelo Decreto nº 24.290, de 30 de dezembro de 2025, com 1.000 vagas para soldado e 1 vaga para capelão, sem edital publicado até 18 de maio de 2026. Último edital disponível para soldado: Edital nº 02/2021 - Curso de Formação de Soldados PMPI.",
   "salario": "Não localizado nas fontes consultadas.",
-  "vagas": "Novo concurso autorizado com 1.001 vagas, sendo 1.000 para soldado, com 500 imediatas e 500 para cadastro de reserva, e 1 vaga para capelão no posto de 1º Tenente PM. No último edital de soldado, foram 650 vagas, sendo 585 para homens e 65 para mulheres.",
-  "cotas": "No edital de soldado de 2021, 10% das vagas foram destinadas a candidatas do sexo feminino. Não houve reserva de vagas para pessoas com deficiência.",
+  "vagas": "Novo concurso autorizado com 1.001 vagas, sendo 1.000 para soldado, com 500 imediatas e 500 para cadastro de reserva, e 1 vaga para capelão no posto de 1º tenente PM. No último edital de soldado, foram 650 vagas, sendo 585 para homens e 65 para mulheres.",
+  "cotas": "No último edital de soldado, 10% das vagas foram destinadas a candidatas do sexo feminino. Não houve reserva de vagas para pessoas com deficiência.",
   "idade": "No último edital de soldado: 18 a 35 anos no período de inscrição, altura mínima de 1,60 m para homens e 1,55 m para mulheres, e CNH ou permissão para dirigir na categoria mínima AB.",
   "escolaridade": "Não localizado nas fontes consultadas.",
   "materias": "Língua Portuguesa; Raciocínio Lógico e Matemática Básica; Conhecimentos Gerais; Conhecimentos Regionais do Estado do Piauí; Legislação da Polícia Militar do Estado do Piauí; Noções de Direito; redação.",
   "banca": "Nucepe/Uespi no último concurso de soldado. Banca do novo concurso autorizado: Não localizada nas fontes consultadas.",
   "inscritos": "Não localizado nas fontes consultadas.",
   "etapas": "Prova escrita objetiva e dissertativa; exame de saúde; exame de aptidão física; avaliação psicológica; investigação social; curso de formação.",
-  "cfsd": "O CFSD 2025 foi concluído com a formatura e posterior lotação definitiva de mais de 650 novos soldados em 2025 e 2026, decorrentes do concurso regido pelo Edital nº 02/2021.",
-  "estagio": "Estágio operacional de 6 meses para os soldados formados no CFSD 2025.",
-  "validade": "O decreto de autorização do novo concurso vigorará por 6 meses para publicação do edital. No edital de soldado de 2021, a validade foi de 2 anos, prorrogável por igual período.",
-  "previsao": "Edital do novo concurso autorizado em 30 de dezembro de 2025 ainda não publicado até 18 de maio de 2026.",
+  "cfsd": "O CFSD 2025 formou 650 novos soldados, com nomeação em agosto de 2025 e lotação definitiva em janeiro de 2026.",
+  "estagio": "Estágio operacional encerrado em janeiro de 2026, antes da lotação definitiva dos novos soldados.",
+  "validade": "No último edital de soldado, a validade foi de 2 anos, prorrogável por igual período. No decreto de autorização do novo concurso, foi fixado prazo de 6 meses para publicação do edital.",
+  "previsao": "Novo edital autorizado em 30 de dezembro de 2025, mas ainda não publicado até 18 de maio de 2026.",
   "site": "https://www.pm.pi.gov.br",
   "fontes": [
     {
@@ -52,6 +52,12 @@
       "url": "https://www.pi.gov.br/policia-militar-reforca-efetivo-com-a-lotacao-de-mais-de-650-novos-soldados/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Governador nomeia 650 soldados e reafirma meta de chegar a 4 mil novos agentes de segurança até 2026",
+      "url": "https://www.pi.gov.br/governador-nomeia-650-soldados-e-reafirma-meta-de-chegar-a-4-mil-novos-agentes-de-seguranca-ate-2026/",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
     }
   ],
   "ultima_pesquisa": "2026-05-18",
@@ -60,8 +66,8 @@
   "alertas": [
     "Novo concurso da PMPI está autorizado, mas o edital ainda não foi publicado.",
     "A banca do novo concurso para soldado e capelão ainda não foi confirmada nas fontes consultadas.",
-    "Os requisitos de idade, altura, CNH, escolaridade e salário de soldado foram extraídos do último edital disponível, de 2021.",
-    "A remuneração e os requisitos específicos do cargo de capelão no novo concurso não foram localizados nas fontes consultadas.",
+    "Os requisitos e a remuneração de soldado foram extraídos do último edital disponível, de 2021.",
+    "Os requisitos e a remuneração do cargo de capelão no novo concurso não foram localizados nas fontes consultadas.",
     "Classificação automática: Atualização fraca (48/100)."
   ],
   "classe_atualizacao": "fraca",

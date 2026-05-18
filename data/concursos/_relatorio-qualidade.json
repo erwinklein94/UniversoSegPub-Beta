@@ -4,8 +4,8 @@
   "resumo": {
     "total": 110,
     "pendentes": 2,
-    "fracas": 42,
-    "fortes": 66
+    "fracas": 41,
+    "fortes": 67
   },
   "grupos": {
     "pendentes": [
@@ -176,36 +176,6 @@
           "inscritos",
           "etapas",
           "cfsd"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pmce",
-        "sigla": "PMCE",
-        "nome": "Polícia Militar de Ceará",
-        "uf": "CE",
-        "score": 56,
-        "classe": "fraca",
-        "qualidade": "fraca",
-        "motivos": [
-          "conteúdo fraco ou genérico"
-        ],
-        "campos_ruins": [
-          "materias",
-          "inscritos",
-          "estagio",
-          "validade"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "escolaridade"
         ],
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
@@ -1756,6 +1726,36 @@
           "banca",
           "etapas",
           "validade",
+          "previsao"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fortes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pmce",
+        "sigla": "PMCE",
+        "nome": "Polícia Militar de Ceará",
+        "uf": "CE",
+        "score": 84,
+        "classe": "forte",
+        "qualidade": "forte",
+        "motivos": [
+          "conteúdo bom"
+        ],
+        "campos_ruins": [
+          "inscritos",
+          "estagio"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "escolaridade",
+          "materias",
           "previsao"
         ],
         "workflow_sugerido": {
@@ -3648,36 +3648,6 @@
       }
     },
     {
-      "id": "pmce",
-      "sigla": "PMCE",
-      "nome": "Polícia Militar de Ceará",
-      "uf": "CE",
-      "score": 56,
-      "classe": "fraca",
-      "qualidade": "fraca",
-      "motivos": [
-        "conteúdo fraco ou genérico"
-      ],
-      "campos_ruins": [
-        "materias",
-        "inscritos",
-        "estagio",
-        "validade"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "escolaridade"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
       "id": "ppto",
       "sigla": "PPTO",
       "nome": "Polícia Penal de Tocantins",
@@ -5191,6 +5161,36 @@
         "banca",
         "etapas",
         "validade",
+        "previsao"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fortes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pmce",
+      "sigla": "PMCE",
+      "nome": "Polícia Militar de Ceará",
+      "uf": "CE",
+      "score": 84,
+      "classe": "forte",
+      "qualidade": "forte",
+      "motivos": [
+        "conteúdo bom"
+      ],
+      "campos_ruins": [
+        "inscritos",
+        "estagio"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "escolaridade",
+        "materias",
         "previsao"
       ],
       "workflow_sugerido": {

@@ -6,19 +6,19 @@
   "tema": "concursos",
   "status": "Atualização fraca",
   "titulo": "PMMA mantém concurso em andamento para o CFO 2026 pela UEMA",
-  "resumo": "A Polícia Militar do Maranhão está com concurso em andamento para o Curso de Formação de Oficiais 2026, organizado pela UEMA no PAES 2026. São 30 vagas para Cadete do CFO PMMA e as fases complementares da seleção seguem em execução em 2026.",
-  "edital": "Edital nº 057/2025-GR/UEMA, do PAES 2026, para Cadete do Curso de Formação de Oficiais da PMMA. Situação atual: concurso em andamento, com resultado final do teste de aptidão física publicado em 30 de abril de 2026 e convocação para a avaliação psicológica em 6 e 7 de maio de 2026.",
+  "resumo": "A Polícia Militar do Maranhão está com concurso em andamento para o Curso de Formação de Oficiais 2026, organizado pela UEMA no PAES 2026. São 30 vagas para Cadete do CFO PMMA e a seleção avançou até a 4ª fase, após a publicação do resultado final do TAF com convocação para a avaliação psicológica.",
+  "edital": "Edital nº 057/2025-GR/UEMA, do PAES 2026, para ingresso no Curso de Formação de Oficiais da PMMA. Situação atual: concurso em andamento, com resultado final da 3ª fase, o teste de aptidão física, publicado em abril de 2026 e convocação dos aprovados para a 4ª fase, avaliação psicológica.",
   "salario": "Não localizado nas fontes consultadas.",
   "vagas": "30 vagas para Cadete do Curso de Formação de Oficiais da PMMA, sendo 22 para ampla concorrência, 6 para candidatos negros e 2 para pessoas com deficiência. Não localizado cadastro de reserva nas fontes consultadas.",
   "cotas": "20% das vagas para candidatos negros e 5% para pessoas com deficiência.",
-  "idade": "Idade máxima de 35 anos até o encerramento das inscrições e idade mínima de 18 anos na matrícula. Exige saber nadar e CNH no mínimo categoria A ou B. Altura mínima não localizada nas fontes consultadas.",
+  "idade": "Idade máxima de 35 anos até o encerramento das inscrições e idade mínima de 18 anos na matrícula. Exige saber nadar. Altura mínima e CNH não localizadas nas fontes consultadas.",
   "escolaridade": "Ensino médio completo para ingresso no CFO PMMA.",
-  "materias": "Prova objetiva e produção textual do PAES 2026. As disciplinas cobradas de forma isolada para o CFO PMMA não foram localizadas nas fontes consultadas.",
+  "materias": "Prova objetiva com 60 questões sobre conteúdos do ensino médio e produção textual. Entre os conteúdos expressamente destacados estão Língua Portuguesa e Literatura e redação.",
   "banca": "Universidade Estadual do Maranhão, por meio do PAES 2026.",
   "inscritos": "Não localizado nas fontes consultadas.",
-  "etapas": "Exame intelectual, exames médicos e odontológicos, teste de aptidão física, avaliação psicológica, avaliação documental, investigação social e curso de formação.",
-  "cfsd": "Não localizado novo edital público para CFSD nas fontes consultadas. As publicações oficiais recentes tratam do CFO 2026 e de nomeações de soldados de certames anteriores.",
-  "estagio": "Após concluir o curso com aproveitamento, o aprovado passa por estágio probatório como Aspirante a Oficial PM antes da promoção a 2º Tenente QOPM.",
+  "etapas": "Prova objetiva e produção textual, avaliação multiprofissional para PcD, exames biométricos, médicos e odontológicos, teste de aptidão física, avaliação psicológica, avaliação documental, verificação para vagas reservadas a negros, investigação social e curso de formação.",
+  "cfsd": "Não localizado novo edital público para CFSD nas fontes consultadas.",
+  "estagio": "Após a conclusão do curso, o ingresso ocorre no Quadro de Oficiais Combatentes da corporação. Estágio probatório não localizado de forma objetiva nas fontes consultadas.",
   "validade": "Não localizado nas fontes consultadas.",
   "previsao": "Há concurso em andamento para o CFO PMMA 2026. Não localizado novo edital público para soldado nas fontes consultadas.",
   "site": "https://www.pm.ma.gov.br",
@@ -30,26 +30,26 @@
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Resultado final da 3ª fase do CFO PMMA PAES 2026",
-      "url": "https://pm.ssp.ma.gov.br/2026/04/resultado-final-da-3a-fase-teste-de-aptidao-fisica-edital-no-057-2025-gr-uema-paes-2026-curso-de-formacao-de-oficiais-da-policia-militar-do-maranhao/",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-18"
-    },
-    {
       "titulo": "Convocação dos candidatos para a 2ª fase do CFO PMMA – PAES 2026",
       "url": "https://pm.ssp.ma.gov.br/2026/02/convocacao-dos-candidatos-para-a-2a-fase-do-cfo-pmma-paes-2026-exames-medicos-biometricos-odontologicos-e-avaliacao-multiprofissional/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Convocação dos Oficiais do Quadro de Saúde e Soldados, nomeados conforme Diário Oficial, para entrega de documentos e exames médicos",
-      "url": "https://pm.ssp.ma.gov.br/2025/01/convocacao-dos-oficiais-do-quadro-de-saude-e-soldados-nomeados-conforme-diario-oficial-para-entrega-de-documentos-e-exames-medicos/",
+      "titulo": "Resultado PAES 2026",
+      "url": "https://www.paes.uema.br/2026/02/02/resultado-paes-2026/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Uema e Polícia Militar iniciam planejamento para o Vestibular CFO PMMA 2026",
-      "url": "https://www.uema.br/2025/04/uema-e-policia-militar-iniciam-planejamento-para-o-vestibular-cfo-pmma-2026/",
+      "titulo": "CFO – PM",
+      "url": "https://www.prog.uema.br/cfo-pm/",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Resultado final da 3ª fase (Teste de Aptidão Física), Edital nº 057/2025-GR/UEMA-PAES 2026 – CFO PMMA",
+      "url": "https://pm.ssp.ma.gov.br/2026/04/resultado-final-da-3a-fase-teste-de-aptidao-fisica-edital-no-057-2025-gr-uema-paes-2026-curso-de-formacao-de-oficiais-da-policia-militar-do-maranhao/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
     }

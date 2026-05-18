@@ -169,8 +169,6 @@
           "escolaridade",
           "materias",
           "banca",
-          "cfsd",
-          "estagio",
           "previsao"
         ],
         "workflow_sugerido": {
@@ -3634,8 +3632,6 @@
         "escolaridade",
         "materias",
         "banca",
-        "cfsd",
-        "estagio",
         "previsao"
       ],
       "workflow_sugerido": {

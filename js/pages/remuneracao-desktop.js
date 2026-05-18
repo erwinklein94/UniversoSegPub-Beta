@@ -176,10 +176,19 @@
   }
 
   function loadRows(inst) {
+    if (window.REMUNERACAO_AUTOMATIZADA && window.REMUNERACAO_AUTOMATIZADA[inst]) {
+      return window.REMUNERACAO_AUTOMATIZADA[inst].linhas.slice();
+    }
+    if (typeof window.gerarRemuneracaoTabelada === 'function') {
+      try {
+        const linhas = window.gerarRemuneracaoTabelada(inst) || [];
+        if (linhas.length) return linhas;
+      } catch (err) {
+        console.warn('Não foi possível carregar remuneração automática:', err);
+      }
+    }
     if (inst === 'pmesp') return pmespRows2026.slice();
-    if (typeof window.gerarRemuneracaoTabelada !== 'function') return [];
-    try { return window.gerarRemuneracaoTabelada(inst) || []; }
-    catch (err) { console.warn('Não foi possível carregar remuneração:', err); return []; }
+    return [];
   }
 
   function updateInstitutionUi() {
@@ -330,6 +339,16 @@
     $('#remu-busca-cargo')?.addEventListener('input', event => {
       state.search = event.target.value;
       state.page = 1;
+      renderTable();
+    });
+
+    document.addEventListener('remuneracao:json-carregado', event => {
+      const id = event.detail && event.detail.instituicao_id;
+      if (!id || id !== state.inst) return;
+      state.rows = loadRows(state.inst);
+      state.page = 1;
+      updateStats();
+      updateFilterCounts();
       renderTable();
     });
 

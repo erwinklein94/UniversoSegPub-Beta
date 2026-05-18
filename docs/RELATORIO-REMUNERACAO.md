@@ -3,17 +3,13 @@
 Gerado em: 2026-05-18
 
 - Total: 110
-- Pendentes: 5
+- Pendentes: 1
 - Fracas: 30
-- Fortes: 75
+- Fortes: 79
 
 | Ação | ID | Sigla | Score | Linhas úteis | Observação |
 |---|---|---:|---:|---:|---|
 | pendentes | pprr | PPRR | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | ppse | PPSE | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | ppsp | PPSP | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | ppto | PPTO | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | prf | PRF | 0 | 0 | Rodar atualização de remuneração |
 | fracas | bmrr | BMRR | 65 | 1 | Rodar atualização de remuneração |
 | fracas | pces | PCES | 65 | 2 | Rodar atualização de remuneração |
 | fracas | pcmt | PCMT | 65 | 1 | Rodar atualização de remuneração |
@@ -47,6 +43,7 @@ Gerado em: 2026-05-18
 | fracas | pprj | PPRJ | 82 | 3 | Rodar atualização de remuneração |
 | fracas | ppro | PPRO | 82 | 4 | Rodar atualização de remuneração |
 | fracas | pprs | PPRS | 82 | 3 | Rodar atualização de remuneração |
+| fortes | ppto | PPTO | 82 | 5 | OK |
 | fortes | bmac | BMAC | 100 | 19 | OK |
 | fortes | bmal | BMAL | 100 | 31 | OK |
 | fortes | bmam | BMAM | 100 | 11 | OK |
@@ -119,3 +116,6 @@ Gerado em: 2026-05-18
 | fortes | pppr | PPPR | 100 | 12 | OK |
 | fortes | pprn | PPRN | 100 | 21 | OK |
 | fortes | ppsc | PPSC | 100 | 8 | OK |
+| fortes | ppse | PPSE | 100 | 6 | OK |
+| fortes | ppsp | PPSP | 100 | 20 | OK |
+| fortes | prf | PRF | 100 | 18 | OK |

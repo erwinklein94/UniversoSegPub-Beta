@@ -6,7 +6,7 @@
   "tema": "remuneracao",
   "status": "Pesquisa pendente",
   "titulo": "Remuneração bruta mensal da Polícia Penal de Roraima",
-  "resumo": "Não localizado nas fontes consultadas.",
+  "resumo": "Foi confirmada em fonte oficial a carreira de Policial Penal em Roraima, com ingresso na Classe A, Referência 1, e também a recomposição geral de 4,62% para servidores estaduais em 2024. Porém, não foi localizada em fonte oficial acessível a tabela consolidada com os valores nominais em reais do subsídio da carreira, o que impede montar uma tabela confiável por classe ou referência.",
   "linhas": [],
   "fonte_principal": "https://imprensaoficial.rr.gov.br/app/_edicoes/2017/07/doe-20170725.pdf",
   "fontes": [
@@ -23,9 +23,27 @@
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Governo de Roraima dá posse a novos 74 policiais penais",
-      "url": "https://portal.rr.gov.br/governo-de-roraima-da-posse-a-novos-74-policiais-penais/",
+      "titulo": "Governo reforça sistema prisional com posse de 92 novos policiais penais",
+      "url": "https://portal.rr.gov.br/governo-reforca-sistema-prisional-com-posse-de-92-novos-policiais-penais/",
       "tipo": "página governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Governador assina Projeto de Lei que autoriza recomposição de 4,62% nos salários dos servidores",
+      "url": "https://portal.rr.gov.br/governador-assina-projeto-de-lei-que-autoriza-recomposicao-de-462-nos-salarios-dos-servidores/",
+      "tipo": "página governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Portal da Transparência de Roraima - Servidores",
+      "url": "https://antigo.transparencia.rr.gov.br/servidores",
+      "tipo": "portal da transparência",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Portal da Transparência de Roraima - Folha de pagamento",
+      "url": "https://antigo.transparencia.rr.gov.br/servidores/folha-de-pagamento",
+      "tipo": "portal da transparência",
       "data_consulta": "2026-05-18"
     }
   ],
@@ -36,9 +54,10 @@
   "atualizado_pela_openai": true,
   "precisa_revisao_humana": true,
   "alertas": [
-    "Pesquisa oficial confirmou a existência da carreira e o ingresso na Classe A, Referência 1, mas não trouxe o valor numérico do subsídio em tabela oficial acessível.",
-    "Como a regra exige cargo e valor em reais, as linhas foram omitidas para evitar publicar remuneração sem confirmação oficial.",
-    "Revisão humana recomendada para busca complementar em tabela salarial consolidada, portal de transparência nominal ou norma posterior com atualização dos subsídios.",
+    "Fonte oficial confirmou a estrutura da carreira, mas a tabela com valores nominais do subsídio não foi localizada em formato acessível durante a pesquisa.",
+    "Há indício de atualização remuneratória geral de 4,62% em 2024 para servidores estaduais, porém sem tabela específica da Polícia Penal com valores por classe e referência.",
+    "Sem valor oficial em reais por cargo/classe, as linhas foram mantidas vazias para evitar publicação de remuneração não confirmada.",
+    "Revisão humana recomendada para busca direta em anexo remuneratório consolidado, lei posterior de reajuste específico da carreira ou consulta nominal validada no portal estadual.",
     "Classificação automática: Pesquisa pendente (0/100)."
   ]
 }

@@ -167,7 +167,7 @@
           "vagas",
           "idade",
           "escolaridade",
-          "cfsd",
+          "materias",
           "estagio",
           "previsao"
         ],
@@ -3630,7 +3630,7 @@
         "vagas",
         "idade",
         "escolaridade",
-        "cfsd",
+        "materias",
         "estagio",
         "previsao"
       ],

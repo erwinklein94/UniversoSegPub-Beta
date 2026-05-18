@@ -20,7 +20,7 @@
   "cfsd": "Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026.",
   "estagio": "Não localizado nas fontes consultadas.",
   "validade": "Válido apenas para o preenchimento das 8 vagas da Turma VIII/2026.",
-  "previsao": "Convocação dos aprovados dentro das 8 vagas para matrícula e início do curso em 8 de junho de 2026.",
+  "previsao": "Matrícula em 5 de maio de 2026 e início do curso em 8 de junho de 2026, em Porto Velho/RO.",
   "site": "https://www.cbm.ro.gov.br",
   "fontes": [
     {
@@ -48,20 +48,14 @@
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "CBMRO divulga resultado preliminar das inscrições para o CHQAO 2026",
-      "url": "https://www.cbm.ro.gov.br/?p=7834",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-18"
-    },
-    {
-      "titulo": "CBMRO publica termo aditivo ao edital do CHQAO 2026 com ajustes em critérios e cronograma",
-      "url": "https://www.cbm.ro.gov.br/?p=7846",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-18"
-    },
-    {
       "titulo": "Corpo de Bombeiros Militar de Rondônia divulga resultado final do TAF e convoca candidatos para avaliação médica do CHQAOBM VIII – 2026",
       "url": "https://www.cbm.ro.gov.br/?p=7890",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "CBMRO encaminha termo aditivo sobre exames médicos e avaliação psicológica do PSI CHQAO - 2026",
+      "url": "https://www.cbm.ro.gov.br/?p=7908",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
     }

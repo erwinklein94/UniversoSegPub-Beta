@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-05-17",
+  "atualizado_em": "2026-05-18",
   "instituicao_id": "pmrr",
   "grupo_atualizacao": "pendentes",
   "modelo": "gpt-5.4",
@@ -11,17 +11,17 @@
   },
   "depois": {
     "classe": "pendente",
-    "score": 8
+    "score": 70
   },
   "usage": {
-    "input_tokens": 22777,
+    "input_tokens": 31243,
     "input_tokens_details": {
-      "cached_tokens": 4736
+      "cached_tokens": 0
     },
-    "output_tokens": 1641,
+    "output_tokens": 1495,
     "output_tokens_details": {
-      "reasoning_tokens": 385
+      "reasoning_tokens": 468
     },
-    "total_tokens": 24418
+    "total_tokens": 32738
   }
 }

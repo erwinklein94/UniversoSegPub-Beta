@@ -5,9 +5,9 @@ Gerado em: 2026-05-18
 ## Resumo
 
 - Total: 110
-- Pendentes: 11
-- Atualização fraca: 38
-- Atualização forte: 61
+- Pendentes: 9
+- Atualização fraca: 39
+- Atualização forte: 62
 
 ## Como atualizar
 
@@ -41,17 +41,15 @@ modelo_openai: gpt-5.4-mini
 
 | Sigla | Instituição | UF | Classe | Score | Motivos |
 |---|---|---:|---|---:|---|
-| PMRR | Polícia Militar de Roraima | RR | pendente | 8 | precisa primeira atualização; campos críticos sem dado: salario, escolaridade |
 | PPAM | Polícia Penal de Amazonas | AM | pendente | 12 | precisa primeira atualização; campos críticos sem dado: vagas, banca |
-| PCRN | Polícia Civil de Rio Grande do Norte | RN | pendente | 18 | precisa primeira atualização; campos críticos sem dado: salario |
-| PPMA | Polícia Penal de Maranhão | MA | pendente | 20 | precisa primeira atualização; campos críticos sem dado: salario, vagas |
-| PPRO | Polícia Penal de Rondônia | RO | pendente | 24 | precisa primeira atualização; campos críticos sem dado: salario, etapas |
 | CBMMS | Corpo de Bombeiros Militar de Mato Grosso do Sul | MS | pendente | 27 | precisa primeira atualização; campos genéricos: salario, cotas, idade, escolaridade; campos críticos genéricos: salario, escolaridade |
 | BMRO | Corpo de Bombeiros Militar de Rondônia | RO | pendente | 28 | precisa primeira atualização; campos críticos sem dado: salario, banca |
 | PMDF | Polícia Militar de Distrito Federal | DF | pendente | 30 | precisa primeira atualização; campos críticos sem dado: etapas |
 | PPDF | Polícia Penal de Distrito Federal | DF | pendente | 34 | precisa primeira atualização; campos críticos sem dado: escolaridade |
 | PPCE | Polícia Penal de Ceará | CE | pendente | 42 | precisa primeira atualização; campos críticos sem dado: salario |
 | PMTO | Polícia Militar de Tocantins | TO | pendente | 43 | precisa primeira atualização; campos genéricos: etapas; campos críticos sem dado: salario; campos críticos genéricos: etapas |
+| PMRR | Polícia Militar de Roraima | RR | pendente | 70 | precisa primeira atualização; campos críticos sem dado: salario |
+| PPMA | Polícia Penal de Maranhão | MA | pendente | 76 | precisa primeira atualização |
 
 ## Instituições fracas
 
@@ -89,6 +87,7 @@ modelo_openai: gpt-5.4-mini
 | PCPE | Polícia Civil de Pernambuco | PE | fraca | 76 | conteúdo fraco ou genérico |
 | PCPI | Polícia Civil de Piauí | PI | fraca | 76 | conteúdo fraco ou genérico |
 | PCSE | Polícia Civil de Sergipe | SE | fraca | 76 | conteúdo fraco ou genérico |
+| PPRO | Polícia Penal de Rondônia | RO | fraca | 76 | conteúdo fraco ou genérico |
 | PPRS | Polícia Penal do Rio Grande do Sul | RS | fraca | 76 | conteúdo fraco ou genérico |
 | PMSC | Polícia Militar de Santa Catarina | SC | fraca | 79 | conteúdo fraco ou genérico; campos genéricos: cotas, idade, estagio |
 | CBMMT | Corpo de Bombeiros Militar do Estado de Mato Grosso | MT | fraca | 81 | conteúdo fraco ou genérico; campos genéricos: etapas; campos críticos genéricos: etapas |
@@ -106,6 +105,7 @@ modelo_openai: gpt-5.4-mini
 | BMRS | Corpo de Bombeiros Militar do Rio Grande do Sul | RS | forte | 84 | conteúdo bom |
 | PCGO | Polícia Civil de Goiás | GO | forte | 84 | conteúdo bom |
 | PCMA | Polícia Civil de Maranhão | MA | forte | 84 | conteúdo bom |
+| PCRN | Polícia Civil de Rio Grande do Norte | RN | forte | 84 | conteúdo bom |
 | PCRO | Polícia Civil de Rondônia | RO | forte | 84 | conteúdo bom |
 | PCRR | Polícia Civil de Roraima | RR | forte | 84 | conteúdo bom |
 | PMGO | Polícia Militar de Goiás | GO | forte | 84 | conteúdo bom |

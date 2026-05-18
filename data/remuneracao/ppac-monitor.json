@@ -1,6 +1,6 @@
 {
   "atualizado_em": "2026-05-18",
-  "instituicao_id": "pcmt",
+  "instituicao_id": "ppac",
   "grupo_atualizacao": "pendentes",
   "modelo": "gpt-5.4",
   "usou_openai": true,
@@ -15,14 +15,14 @@
   },
   "linhas": 1,
   "usage": {
-    "input_tokens": 29380,
+    "input_tokens": 17836,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1549,
+    "output_tokens": 953,
     "output_tokens_details": {
-      "reasoning_tokens": 665
+      "reasoning_tokens": 317
     },
-    "total_tokens": 30929
+    "total_tokens": 18789
   }
 }

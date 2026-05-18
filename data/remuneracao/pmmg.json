@@ -6,7 +6,7 @@
   "tema": "remuneracao",
   "status": "Atualização fraca",
   "titulo": "Remuneração bruta mensal por cargo da Polícia Militar de Minas Gerais",
-  "resumo": "Tabela com valores brutos mensais iniciais identificados para ingresso na PMMG, atualizados pelo reajuste geral de 5,4% vigente desde 1º de janeiro de 2026 sobre as remunerações básicas de soldado e cadete publicadas em fontes oficiais de concursos e legislação estadual.",
+  "resumo": "Tabela com valores brutos mensais iniciais identificados para ingresso na PMMG, atualizados pela revisão geral de 5,4% com efeitos a partir de 1º de janeiro de 2026 sobre as remunerações básicas iniciais confirmadas em registros oficiais.",
   "linhas": [
     {
       "cargo": "Soldado de 2ª Classe",
@@ -53,7 +53,7 @@
     },
     {
       "titulo": "Registro oficial de concurso da PMMG com remuneração básica inicial para Soldado de 2ª Classe de R$ 4.360,83",
-      "url": "https://tcnotas.tce.mg.gov.br/tcjuris/Nota/BuscarArquivo/3720960",
+      "url": "https://tcnotas.tce.mg.gov.br/tcjuris/Nota/BuscarArquivo/3161681",
       "tipo": "registro oficial",
       "data_consulta": "2026-05-18"
     },
@@ -71,9 +71,10 @@
   "atualizado_pela_openai": true,
   "precisa_revisao_humana": true,
   "alertas": [
-    "Foram confirmados em fonte oficial os valores básicos de ingresso para Soldado de 2ª Classe e Cadete do 1º Ano do CFO, com atualização pelo reajuste geral de 5,4% de 2026.",
-    "Não foi localizada, em fonte oficial aberta e acessível nesta pesquisa, uma tabela completa consolidada de 2026 com todos os postos e graduações da carreira da PMMG.",
+    "Foram confirmados em fonte oficial os valores básicos de ingresso para Soldado de 2ª Classe e Cadete do 1º Ano do CFO, com atualização pela revisão geral de 5,4% de 2026.",
+    "Não foi localizada, em fonte oficial aberta e acessível nesta pesquisa, uma tabela completa de 2026 com todos os postos e graduações da carreira da PMMG.",
     "Os valores informados são brutos mensais iniciais e não incluem verbas eventuais ou adicionais.",
+    "Classificação automática: Atualização fraca (66/100).",
     "Classificação automática: Atualização fraca (65/100)."
   ]
 }

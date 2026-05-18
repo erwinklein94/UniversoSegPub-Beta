@@ -7,11 +7,11 @@
   "status": "Atualização fraca",
   "titulo": "CHQAOBM VIII/2026 homologado no CBMRO",
   "resumo": "O Corpo de Bombeiros Militar de Rondônia homologou em 7 de maio de 2026 o resultado final do Processo de Seleção Interna do Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026. A seleção é interna e destinada a Subtenentes BM e 1º Sargentos BM da corporação.",
-  "edital": "Edital nº 5/2026/CBM-CEEI, de 6 de fevereiro de 2026, para o Processo de Seleção Interna do Curso de Habilitação ao Quadro Auxiliar de Oficial Bombeiro Militar, Turma VIII/2026, com resultado final homologado em 7 de maio de 2026.",
+  "edital": "Edital nº 5/2026/CBM-CEEI, de 6 de fevereiro de 2026, para o Processo de Seleção Interna do Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026, com resultado final homologado em 7 de maio de 2026.",
   "salario": "Não localizado nas fontes consultadas.",
   "vagas": "8 vagas para o Curso de Habilitação ao Quadro Auxiliar de Oficial Bombeiro Militar, sem cadastro de reserva.",
   "cotas": "Não localizado nas fontes consultadas.",
-  "idade": "Até 52 anos no último dia de inscrição. Seleção exclusiva para Subtenentes BM ou 1º Sargentos BM com no mínimo 2 anos na graduação e 15 anos de efetivo serviço no CBMRO. Altura mínima e CNH não localizadas nas fontes consultadas.",
+  "idade": "Não localizado limite etário nas fontes consultadas. Seleção exclusiva para Subtenentes BM ou 1º Sargentos BM, sendo exigido para 1º Sargento BM no mínimo 2 anos na graduação e 15 anos de efetivo serviço no CBMRO. Altura mínima e CNH não localizadas nas fontes consultadas.",
   "escolaridade": "Ensino Médio completo.",
   "materias": "Conhecimentos profissionais, Língua Portuguesa, raciocínio lógico-matemático, História e Geografia de Rondônia e Informática.",
   "banca": "Comissão de Provas e Exames do CBMRO.",
@@ -46,6 +46,18 @@
       "url": "https://www.cbm.ro.gov.br/?p=8115",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "CBMRO torna público editais referentes ao concurso público para o provimento de vagas de cadastro de reserva em cargos de Praças Combatentes Bombeiro Militar Temporário",
+      "url": "https://www.cbm.ro.gov.br/?p=5951",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Edital do concurso público para Soldado Bombeiro Militar Temporário",
+      "url": "https://processoseletivo.cbm.ro.gov.br/style/assets/docs/soldado-temporario/01-EDITAL.pdf",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
     }
   ],
   "ultima_pesquisa": "2026-05-18",
@@ -56,7 +68,8 @@
     "O resultado final do processo foi homologado em 07/05/2026.",
     "Há 8 vagas previstas para a Turma VIII/2026.",
     "Foram identificados 102 candidatos aptos na inscrição definitiva.",
-    "Remuneração, cotas, altura mínima e CNH não foram localizadas nas fontes oficiais consultadas.",
+    "Remuneração, cotas, idade máxima, altura mínima e CNH não foram localizadas nas fontes oficiais consultadas.",
+    "Também foram localizados editais de bombeiro temporário, mas a atualização principal mais recente do BMRO é a seleção interna do CHQAOBM VIII/2026.",
     "Classificação automática: Atualização fraca (62/100)."
   ],
   "classe_atualizacao": "fraca",

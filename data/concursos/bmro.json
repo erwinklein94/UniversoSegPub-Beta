@@ -30,21 +30,27 @@
       "data_consulta": "2026-05-18"
     },
     {
+      "titulo": "CBMRO abre inscrições para o Curso de Habilitação ao Quadro Auxiliar de Oficiais (CHQAOBM) – Turma VIII",
+      "url": "https://www.cbm.ro.gov.br/?p=7814",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "CHQAO 2026: CBMRO divulga resultado definitivo das inscrições com 102 candidatos aptos",
+      "url": "https://www.cbm.ro.gov.br/?p=7841",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
       "titulo": "CBMRO homologa resultado final do Processo de Seleção Interna para o CHQAOBM VIII – 2026",
       "url": "https://www.cbm.ro.gov.br/?p=8111",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "CBMRO abre inscrições para a XIX Turma do Curso de Formação de Sargentos Bombeiro Militar",
-      "url": "https://www.cbm.ro.gov.br/?p=8115",
+      "titulo": "CBMRO publica termo aditivo ao edital do CHQAO 2026 com ajustes em critérios e cronograma",
+      "url": "https://www.cbm.ro.gov.br/?p=7846",
       "tipo": "fonte oficial",
-      "data_consulta": "2026-05-18"
-    },
-    {
-      "titulo": "Decreto nº 31.365, de 23 de março de 2026",
-      "url": "https://diof.ro.gov.br/data/uploads/2026/03/DOE-30-03-2026-SUPLEMENTAR.pdf",
-      "tipo": "diário oficial",
       "data_consulta": "2026-05-18"
     }
   ],
@@ -57,7 +63,7 @@
     "Há 8 vagas previstas para a Turma VIII/2026.",
     "Foram identificados 102 candidatos aptos na inscrição definitiva.",
     "Remuneração, cotas, idade máxima, altura mínima e CNH não foram localizadas nas fontes oficiais consultadas.",
-    "Também há movimentação recente relacionada a bombeiros temporários, mas a atualização principal mais recente do BMRO é a seleção interna do CHQAOBM VIII/2026.",
+    "Classificação automática: Atualização fraca.",
     "Classificação automática: Atualização fraca (62/100)."
   ],
   "classe_atualizacao": "fraca",

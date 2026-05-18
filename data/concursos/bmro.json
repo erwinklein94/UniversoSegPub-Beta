@@ -7,7 +7,7 @@
   "status": "Atualização fraca",
   "titulo": "CHQAOBM VIII/2026 homologado no CBMRO",
   "resumo": "O Corpo de Bombeiros Militar de Rondônia homologou em 7 de maio de 2026 o resultado final do Processo de Seleção Interna do Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026. A seleção é interna e destinada a militares da própria corporação.",
-  "edital": "Edital nº 5/2026/CBM-CEEI, de 6 de fevereiro de 2026, para o Processo de Seleção Interna do Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026, com resultado final homologado em 07/05/2026.",
+  "edital": "Edital nº 5/2026/CBM-CEEI, de 6 de fevereiro de 2026, do Processo de Seleção Interna para o Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026, com resultado final homologado em 7 de maio de 2026.",
   "salario": "Não localizado nas fontes consultadas.",
   "vagas": "8 vagas para o Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026.",
   "cotas": "Não localizado nas fontes consultadas.",
@@ -44,6 +44,24 @@
     {
       "titulo": "CBMRO abre inscrições para o Curso de Habilitação ao Quadro Auxiliar de Oficiais (CHQAOBM) – Turma VIII",
       "url": "https://www.cbm.ro.gov.br/?p=7814",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "CBMRO divulga resultado preliminar das inscrições para o CHQAO 2026",
+      "url": "https://www.cbm.ro.gov.br/?p=7834",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "CBMRO publica termo aditivo ao edital do CHQAO 2026 com ajustes em critérios e cronograma",
+      "url": "https://www.cbm.ro.gov.br/?p=7846",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Corpo de Bombeiros Militar de Rondônia divulga resultado final do TAF e convoca candidatos para avaliação médica do CHQAOBM VIII – 2026",
+      "url": "https://www.cbm.ro.gov.br/?p=7890",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
     }

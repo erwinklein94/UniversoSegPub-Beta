@@ -49,7 +49,6 @@ modelo_openai: gpt-5.4-mini
 | Sigla | Instituição | UF | Classe | Score | Motivos |
 |---|---|---:|---|---:|---|
 | PPPB | Polícia Penal de Paraíba | PB | fraca | 48 | conteúdo fraco ou genérico |
-| PPTO | Polícia Penal de Tocantins | TO | fraca | 56 | conteúdo fraco ou genérico |
 | BMRO | Corpo de Bombeiros Militar de Rondônia | RO | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PCPB | Polícia Civil de Paraíba | PB | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PMMA | Polícia Militar de Maranhão | MA | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
@@ -81,6 +80,7 @@ modelo_openai: gpt-5.4-mini
 | PMRO | Polícia Militar de Rondônia | RO | fraca | 76 | conteúdo fraco ou genérico |
 | PPRO | Polícia Penal de Rondônia | RO | fraca | 76 | conteúdo fraco ou genérico |
 | PPRS | Polícia Penal do Rio Grande do Sul | RS | fraca | 76 | conteúdo fraco ou genérico |
+| PPTO | Polícia Penal de Tocantins | TO | fraca | 76 | conteúdo fraco ou genérico |
 | PMSC | Polícia Militar de Santa Catarina | SC | fraca | 79 | conteúdo fraco ou genérico; campos genéricos: cotas, idade, estagio |
 | CBMMT | Corpo de Bombeiros Militar do Estado de Mato Grosso | MT | fraca | 81 | conteúdo fraco ou genérico; campos genéricos: etapas; campos críticos genéricos: etapas |
 | PPMT | Polícia Penal de Mato Grosso | MT | fraca | 81 | conteúdo fraco ou genérico; campos genéricos: banca; campos críticos genéricos: banca |

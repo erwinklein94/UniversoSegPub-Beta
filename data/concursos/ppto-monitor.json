@@ -11,17 +11,17 @@
   },
   "depois": {
     "classe": "fraca",
-    "score": 56
+    "score": 76
   },
   "usage": {
-    "input_tokens": 27286,
+    "input_tokens": 23206,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1902,
+    "output_tokens": 1652,
     "output_tokens_details": {
-      "reasoning_tokens": 844
+      "reasoning_tokens": 585
     },
-    "total_tokens": 29188
+    "total_tokens": 24858
   }
 }

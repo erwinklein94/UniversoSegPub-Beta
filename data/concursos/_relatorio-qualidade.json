@@ -4,8 +4,8 @@
   "resumo": {
     "total": 110,
     "pendentes": 2,
-    "fracas": 37,
-    "fortes": 71
+    "fracas": 35,
+    "fortes": 73
   },
   "grupos": {
     "pendentes": [
@@ -109,72 +109,6 @@
           "etapas",
           "cfsd",
           "validade",
-          "previsao"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pmma",
-        "sigla": "PMMA",
-        "nome": "Polícia Militar de Maranhão",
-        "uf": "MA",
-        "score": 62,
-        "classe": "fraca",
-        "qualidade": "fraca",
-        "motivos": [
-          "conteúdo fraco ou genérico",
-          "campos críticos sem dado: salario"
-        ],
-        "campos_ruins": [
-          "salario",
-          "inscritos",
-          "validade"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "vagas",
-          "idade",
-          "escolaridade",
-          "banca",
-          "previsao"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppce",
-        "sigla": "PPCE",
-        "nome": "Polícia Penal de Ceará",
-        "uf": "CE",
-        "score": 62,
-        "classe": "fraca",
-        "qualidade": "fraca",
-        "motivos": [
-          "conteúdo fraco ou genérico",
-          "campos críticos sem dado: salario"
-        ],
-        "campos_ruins": [
-          "salario",
-          "estagio",
-          "validade"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "vagas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "cfsd",
           "previsao"
         ],
         "workflow_sugerido": {
@@ -1696,6 +1630,38 @@
         }
       },
       {
+        "id": "pmma",
+        "sigla": "PMMA",
+        "nome": "Polícia Militar de Maranhão",
+        "uf": "MA",
+        "score": 84,
+        "classe": "forte",
+        "qualidade": "forte",
+        "motivos": [
+          "conteúdo bom"
+        ],
+        "campos_ruins": [
+          "inscritos",
+          "validade"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "escolaridade",
+          "banca",
+          "estagio",
+          "previsao"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fortes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
         "id": "pmpa",
         "sigla": "PMPA",
         "nome": "Polícia Militar de Pará",
@@ -1783,6 +1749,39 @@
           "escolaridade",
           "materias",
           "cfsd"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fortes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppce",
+        "sigla": "PPCE",
+        "nome": "Polícia Penal de Ceará",
+        "uf": "CE",
+        "score": 84,
+        "classe": "forte",
+        "qualidade": "forte",
+        "motivos": [
+          "conteúdo bom"
+        ],
+        "campos_ruins": [
+          "estagio",
+          "validade"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "cfsd",
+          "previsao"
         ],
         "workflow_sugerido": {
           "grupo_atualizacao": "fortes",
@@ -3583,72 +3582,6 @@
       }
     },
     {
-      "id": "pmma",
-      "sigla": "PMMA",
-      "nome": "Polícia Militar de Maranhão",
-      "uf": "MA",
-      "score": 62,
-      "classe": "fraca",
-      "qualidade": "fraca",
-      "motivos": [
-        "conteúdo fraco ou genérico",
-        "campos críticos sem dado: salario"
-      ],
-      "campos_ruins": [
-        "salario",
-        "inscritos",
-        "validade"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "vagas",
-        "idade",
-        "escolaridade",
-        "banca",
-        "previsao"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppce",
-      "sigla": "PPCE",
-      "nome": "Polícia Penal de Ceará",
-      "uf": "CE",
-      "score": 62,
-      "classe": "fraca",
-      "qualidade": "fraca",
-      "motivos": [
-        "conteúdo fraco ou genérico",
-        "campos críticos sem dado: salario"
-      ],
-      "campos_ruins": [
-        "salario",
-        "estagio",
-        "validade"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "vagas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "cfsd",
-        "previsao"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
       "id": "ppms",
       "sigla": "PPMS",
       "nome": "Polícia Penal de Mato Grosso do Sul",
@@ -5132,6 +5065,38 @@
       }
     },
     {
+      "id": "pmma",
+      "sigla": "PMMA",
+      "nome": "Polícia Militar de Maranhão",
+      "uf": "MA",
+      "score": 84,
+      "classe": "forte",
+      "qualidade": "forte",
+      "motivos": [
+        "conteúdo bom"
+      ],
+      "campos_ruins": [
+        "inscritos",
+        "validade"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "escolaridade",
+        "banca",
+        "estagio",
+        "previsao"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fortes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
       "id": "pmpa",
       "sigla": "PMPA",
       "nome": "Polícia Militar de Pará",
@@ -5219,6 +5184,39 @@
         "escolaridade",
         "materias",
         "cfsd"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fortes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppce",
+      "sigla": "PPCE",
+      "nome": "Polícia Penal de Ceará",
+      "uf": "CE",
+      "score": 84,
+      "classe": "forte",
+      "qualidade": "forte",
+      "motivos": [
+        "conteúdo bom"
+      ],
+      "campos_ruins": [
+        "estagio",
+        "validade"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "cfsd",
+        "previsao"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "fortes",

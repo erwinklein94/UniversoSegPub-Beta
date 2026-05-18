@@ -10,18 +10,18 @@
     "score": 62
   },
   "depois": {
-    "classe": "fraca",
-    "score": 62
+    "classe": "forte",
+    "score": 84
   },
   "usage": {
-    "input_tokens": 30821,
+    "input_tokens": 27386,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1714,
+    "output_tokens": 1784,
     "output_tokens_details": {
-      "reasoning_tokens": 574
+      "reasoning_tokens": 559
     },
-    "total_tokens": 32535
+    "total_tokens": 29170
   }
 }

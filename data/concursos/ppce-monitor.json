@@ -1,27 +1,27 @@
 {
   "atualizado_em": "2026-05-18",
   "instituicao_id": "ppce",
-  "grupo_atualizacao": "pendentes",
+  "grupo_atualizacao": "fracas",
   "modelo": "gpt-5.4",
   "usou_openai": true,
   "usou_web_search_openai": true,
   "antes": {
-    "classe": "pendente",
-    "score": 42
-  },
-  "depois": {
     "classe": "fraca",
     "score": 62
   },
+  "depois": {
+    "classe": "forte",
+    "score": 84
+  },
   "usage": {
-    "input_tokens": 26921,
+    "input_tokens": 21556,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 2046,
+    "output_tokens": 1829,
     "output_tokens_details": {
-      "reasoning_tokens": 541
+      "reasoning_tokens": 470
     },
-    "total_tokens": 28967
+    "total_tokens": 23385
   }
 }

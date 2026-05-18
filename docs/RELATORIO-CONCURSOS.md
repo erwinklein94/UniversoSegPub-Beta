@@ -6,8 +6,8 @@ Gerado em: 2026-05-18
 
 - Total: 110
 - Pendentes: 2
-- Atualização fraca: 37
-- Atualização forte: 71
+- Atualização fraca: 35
+- Atualização forte: 73
 
 ## Como atualizar
 
@@ -49,8 +49,6 @@ modelo_openai: gpt-5.4-mini
 | Sigla | Instituição | UF | Classe | Score | Motivos |
 |---|---|---:|---|---:|---|
 | BMRO | Corpo de Bombeiros Militar de Rondônia | RO | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
-| PMMA | Polícia Militar de Maranhão | MA | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
-| PPCE | Polícia Penal de Ceará | CE | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PPMS | Polícia Penal de Mato Grosso do Sul | MS | fraca | 62 | conteúdo fraco ou genérico; campos genéricos: vagas, banca; campos críticos genéricos: vagas, banca |
 | BMPI | Corpo de Bombeiros Militar do Piauí | PI | fraca | 64 | conteúdo fraco ou genérico |
 | BMRN | Corpo de Bombeiros Militar do Rio Grande do Norte | RN | fraca | 64 | conteúdo fraco ou genérico |
@@ -102,9 +100,11 @@ modelo_openai: gpt-5.4-mini
 | PCRR | Polícia Civil de Roraima | RR | forte | 84 | conteúdo bom |
 | PMCE | Polícia Militar de Ceará | CE | forte | 84 | conteúdo bom |
 | PMGO | Polícia Militar de Goiás | GO | forte | 84 | conteúdo bom |
+| PMMA | Polícia Militar de Maranhão | MA | forte | 84 | conteúdo bom |
 | PMPA | Polícia Militar de Pará | PA | forte | 84 | conteúdo bom |
 | PMRN | Polícia Militar de Rio Grande do Norte | RN | forte | 84 | conteúdo bom |
 | PPAP | Polícia Penal de Amapá | AP | forte | 84 | conteúdo bom |
+| PPCE | Polícia Penal de Ceará | CE | forte | 84 | conteúdo bom |
 | PPDF | Polícia Penal de Distrito Federal | DF | forte | 84 | conteúdo bom |
 | PPMA | Polícia Penal de Maranhão | MA | forte | 84 | conteúdo bom |
 | PPRJ | Polícia Penal do Rio de Janeiro | RJ | forte | 84 | conteúdo bom |

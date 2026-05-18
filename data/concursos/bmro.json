@@ -7,37 +7,25 @@
   "status": "Atualização fraca",
   "titulo": "CHQAOBM VIII/2026 homologado no CBMRO",
   "resumo": "O Corpo de Bombeiros Militar de Rondônia homologou em 7 de maio de 2026 o resultado final do Processo de Seleção Interna do Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026. A seleção é interna e destinada a Subtenentes BM e 1º Sargentos BM da corporação.",
-  "edital": "Edital nº 5/2026/CBM-CEEI, de 6 de fevereiro de 2026, para o Processo de Seleção Interna do Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026, com resultado final homologado em 7 de maio de 2026.",
+  "edital": "Edital nº 5/2026/CBM-CEEI, de 6 de fevereiro de 2026, para o Processo de Seleção Interna do Curso de Habilitação ao Quadro Auxiliar de Oficial Bombeiro Militar, Turma VIII/2026, com resultado final homologado em 7 de maio de 2026.",
   "salario": "Não localizado nas fontes consultadas.",
-  "vagas": "8 vagas para o Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026, sem cadastro de reserva.",
+  "vagas": "8 vagas para o Curso de Habilitação ao Quadro Auxiliar de Oficial Bombeiro Militar, sem cadastro de reserva.",
   "cotas": "Não localizado nas fontes consultadas.",
   "idade": "Até 52 anos no último dia de inscrição. Seleção exclusiva para Subtenentes BM ou 1º Sargentos BM com no mínimo 2 anos na graduação e 15 anos de efetivo serviço no CBMRO. Altura mínima e CNH não localizadas nas fontes consultadas.",
   "escolaridade": "Ensino Médio completo.",
   "materias": "Conhecimentos profissionais, Língua Portuguesa, raciocínio lógico-matemático, História e Geografia de Rondônia e Informática.",
   "banca": "Comissão de Provas e Exames do CBMRO.",
   "inscritos": "102 candidatos aptos na inscrição definitiva.",
-  "etapas": "Prova objetiva, teste de aptidão física, inspeção de saúde e avaliação psicológica.",
-  "cfsd": "Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026.",
+  "etapas": "Prova objetiva, teste de aptidão física, avaliação médica e avaliação psicológica.",
+  "cfsd": "Curso de Habilitação ao Quadro Auxiliar de Oficial Bombeiro Militar, Turma VIII/2026.",
   "estagio": "Não localizado nas fontes consultadas.",
-  "validade": "Válido apenas para o preenchimento das 8 vagas da Turma VIII/2026.",
+  "validade": "Válido para o preenchimento das 8 vagas da Turma VIII/2026.",
   "previsao": "Matrícula em 5 de maio de 2026 e início do curso em 8 de junho de 2026, em Porto Velho/RO.",
   "site": "https://www.cbm.ro.gov.br",
   "fontes": [
     {
-      "titulo": "CBMRO abre inscrições para o Curso de Habilitação ao Quadro Auxiliar de Oficiais (CHQAOBM) – Turma VIII",
-      "url": "https://www.cbm.ro.gov.br/?p=7814",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-18"
-    },
-    {
       "titulo": "Edital nº 5/2026/CBM-CEEI",
       "url": "https://www.cbm.ro.gov.br/wp-content/uploads/2026/02/SEI-0004.013087_2025-10.pdf",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-18"
-    },
-    {
-      "titulo": "CBMRO homologa resultado final do Processo de Seleção Interna para o CHQAOBM VIII – 2026",
-      "url": "https://www.cbm.ro.gov.br/?p=8111",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
     },
@@ -48,14 +36,14 @@
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Corpo de Bombeiros Militar de Rondônia divulga resultado final do TAF e convoca candidatos para avaliação médica do CHQAOBM VIII – 2026",
-      "url": "https://www.cbm.ro.gov.br/?p=7890",
+      "titulo": "CBMRO homologa resultado final do Processo de Seleção Interna para o CHQAOBM VIII – 2026",
+      "url": "https://www.cbm.ro.gov.br/?p=8111",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "CBMRO encaminha termo aditivo sobre exames médicos e avaliação psicológica do PSI CHQAO - 2026",
-      "url": "https://www.cbm.ro.gov.br/?p=7908",
+      "titulo": "CBMRO abre inscrições para a XIX Turma do Curso de Formação de Sargentos Bombeiro Militar",
+      "url": "https://www.cbm.ro.gov.br/?p=8115",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
     }
@@ -68,7 +56,7 @@
     "O resultado final do processo foi homologado em 07/05/2026.",
     "Há 8 vagas previstas para a Turma VIII/2026.",
     "Foram identificados 102 candidatos aptos na inscrição definitiva.",
-    "Remuneração, cotas, altura mínima e CNH não foram localizadas nas fontes oficiais consultadas para esta seleção interna.",
+    "Remuneração, cotas, altura mínima e CNH não foram localizadas nas fontes oficiais consultadas.",
     "Classificação automática: Atualização fraca (62/100)."
   ],
   "classe_atualizacao": "fraca",

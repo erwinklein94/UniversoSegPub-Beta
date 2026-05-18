@@ -168,6 +168,8 @@
           "idade",
           "escolaridade",
           "materias",
+          "banca",
+          "cfsd",
           "estagio",
           "previsao"
         ],
@@ -3631,6 +3633,8 @@
         "idade",
         "escolaridade",
         "materias",
+        "banca",
+        "cfsd",
         "estagio",
         "previsao"
       ],

@@ -2,9 +2,9 @@
   "gerado_em": "2026-05-18",
   "resumo": {
     "total": 110,
-    "pendentes": 52,
-    "fracas": 14,
-    "fortes": 44
+    "pendentes": 43,
+    "fracas": 18,
+    "fortes": 49
   },
   "fila_acoes": [
     {
@@ -31,186 +31,6 @@
       "workflow_sugerido": {
         "grupo_atualizacao": "pendentes",
         "instituicao": "pcmt",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pmap",
-      "sigla": "PMAP",
-      "nome": "Polícia Militar do Estado do Amapá",
-      "uf": "AP",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pmap",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pmba",
-      "sigla": "PMBA",
-      "nome": "Polícia Militar da Bahia",
-      "uf": "BA",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pmba",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pmce",
-      "sigla": "PMCE",
-      "nome": "Polícia Militar de Ceará",
-      "uf": "CE",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pmce",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pmdf",
-      "sigla": "PMDF",
-      "nome": "Polícia Militar de Distrito Federal",
-      "uf": "DF",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pmdf",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pmerj",
-      "sigla": "PMERJ",
-      "nome": "Polícia Militar do Rio de Janeiro",
-      "uf": "RJ",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pmerj",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pmes",
-      "sigla": "PMES",
-      "nome": "Polícia Militar do Espírito Santo",
-      "uf": "ES",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pmes",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pmgo",
-      "sigla": "PMGO",
-      "nome": "Polícia Militar de Goiás",
-      "uf": "GO",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pmgo",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pmma",
-      "sigla": "PMMA",
-      "nome": "Polícia Militar de Maranhão",
-      "uf": "MA",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pmma",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pmmg",
-      "sigla": "PMMG",
-      "nome": "Polícia Militar de Minas Gerais",
-      "uf": "MG",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pmmg",
         "quantidade": "1",
         "modelo_openai": "gpt-5.4-mini"
       }
@@ -1112,6 +932,90 @@
       }
     },
     {
+      "id": "pmba",
+      "sigla": "PMBA",
+      "nome": "Polícia Militar da Bahia",
+      "uf": "BA",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 65,
+      "linhas_com_valor": 1,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 65
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pmba",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pmce",
+      "sigla": "PMCE",
+      "nome": "Polícia Militar de Ceará",
+      "uf": "CE",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 65,
+      "linhas_com_valor": 2,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 65
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pmce",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pmmg",
+      "sigla": "PMMG",
+      "nome": "Polícia Militar de Minas Gerais",
+      "uf": "MG",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 65,
+      "linhas_com_valor": 2,
+      "fontes": 5,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 65
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pmmg",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
       "id": "bmes",
       "sigla": "CBMES",
       "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
@@ -1489,6 +1393,34 @@
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "pmam",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pmma",
+      "sigla": "PMMA",
+      "nome": "Polícia Militar de Maranhão",
+      "uf": "MA",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pmma",
         "quantidade": "1",
         "modelo_openai": "gpt-5.4"
       }
@@ -2437,6 +2369,98 @@
       "workflow_sugerido": null
     },
     {
+      "id": "pmap",
+      "sigla": "PMAP",
+      "nome": "Polícia Militar do Estado do Amapá",
+      "uf": "AP",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 8,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmdf",
+      "sigla": "PMDF",
+      "nome": "Polícia Militar de Distrito Federal",
+      "uf": "DF",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 14,
+      "fontes": 5,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmerj",
+      "sigla": "PMERJ",
+      "nome": "Polícia Militar do Rio de Janeiro",
+      "uf": "RJ",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 12,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmes",
+      "sigla": "PMES",
+      "nome": "Polícia Militar do Espírito Santo",
+      "uf": "ES",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 8,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
       "id": "pmesp",
       "sigla": "PMESP",
       "nome": "Polícia Militar do Estado de São Paulo",
@@ -2449,6 +2473,29 @@
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-17",
       "monitor": null,
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pmgo",
+      "sigla": "PMGO",
+      "nome": "Polícia Militar de Goiás",
+      "uf": "GO",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 14,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
       "workflow_sugerido": null
     }
   ],
@@ -2535,26 +2582,6 @@
         }
       },
       {
-        "id": "pmmg",
-        "sigla": "PMMG",
-        "nome": "Polícia Militar de Minas Gerais",
-        "uf": "MG",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pmmg",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
         "id": "pmpr",
         "sigla": "PMPR",
         "nome": "Polícia Militar do Paraná",
@@ -2570,46 +2597,6 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
           "instituicao": "pmpr",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pmerj",
-        "sigla": "PMERJ",
-        "nome": "Polícia Militar do Rio de Janeiro",
-        "uf": "RJ",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pmerj",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pmba",
-        "sigla": "PMBA",
-        "nome": "Polícia Militar da Bahia",
-        "uf": "BA",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pmba",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4-mini"
         }
@@ -2650,26 +2637,6 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
           "instituicao": "pmsc",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pmes",
-        "sigla": "PMES",
-        "nome": "Polícia Militar do Espírito Santo",
-        "uf": "ES",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pmes",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4-mini"
         }
@@ -2803,26 +2770,6 @@
         }
       },
       {
-        "id": "pmap",
-        "sigla": "PMAP",
-        "nome": "Polícia Militar do Estado do Amapá",
-        "uf": "AP",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pmap",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
         "id": "ppam",
         "sigla": "PPAM",
         "nome": "Polícia Penal de Amazonas",
@@ -2863,26 +2810,6 @@
         }
       },
       {
-        "id": "pmce",
-        "sigla": "PMCE",
-        "nome": "Polícia Militar de Ceará",
-        "uf": "CE",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pmce",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
         "id": "ppce",
         "sigla": "PPCE",
         "nome": "Polícia Penal de Ceará",
@@ -2898,26 +2825,6 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
           "instituicao": "ppce",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pmdf",
-        "sigla": "PMDF",
-        "nome": "Polícia Militar de Distrito Federal",
-        "uf": "DF",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pmdf",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4-mini"
         }
@@ -2943,26 +2850,6 @@
         }
       },
       {
-        "id": "pmgo",
-        "sigla": "PMGO",
-        "nome": "Polícia Militar de Goiás",
-        "uf": "GO",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pmgo",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
         "id": "ppgo",
         "sigla": "PPGO",
         "nome": "Polícia Penal de Goiás",
@@ -2978,26 +2865,6 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
           "instituicao": "ppgo",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pmma",
-        "sigla": "PMMA",
-        "nome": "Polícia Militar de Maranhão",
-        "uf": "MA",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pmma",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4-mini"
         }
@@ -3561,6 +3428,34 @@
         }
       },
       {
+        "id": "pmmg",
+        "sigla": "PMMG",
+        "nome": "Polícia Militar de Minas Gerais",
+        "uf": "MG",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 65,
+        "linhas_com_valor": 2,
+        "fontes": 5,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 65
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pmmg",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
         "id": "pmam",
         "sigla": "PMAM",
         "nome": "Polícia Militar do Estado do Amazonas",
@@ -3612,6 +3507,34 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "bmrj",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pmba",
+        "sigla": "PMBA",
+        "nome": "Polícia Militar da Bahia",
+        "uf": "BA",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 65,
+        "linhas_com_valor": 1,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 65
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pmba",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4"
         }
@@ -3836,6 +3759,62 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "bmmt",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pmce",
+        "sigla": "PMCE",
+        "nome": "Polícia Militar de Ceará",
+        "uf": "CE",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 65,
+        "linhas_com_valor": 2,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 65
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pmce",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pmma",
+        "sigla": "PMMA",
+        "nome": "Polícia Militar de Maranhão",
+        "uf": "MA",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pmma",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4"
         }
@@ -4098,6 +4077,29 @@
         "workflow_sugerido": null
       },
       {
+        "id": "pmerj",
+        "sigla": "PMERJ",
+        "nome": "Polícia Militar do Rio de Janeiro",
+        "uf": "RJ",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 12,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
         "id": "pcerj",
         "sigla": "PCERJ",
         "nome": "Polícia Civil do Rio de Janeiro",
@@ -4106,6 +4108,29 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 22,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmes",
+        "sigla": "PMES",
+        "nome": "Polícia Militar do Espírito Santo",
+        "uf": "ES",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 8,
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
@@ -4176,6 +4201,29 @@
         "score": 100,
         "linhas_com_valor": 35,
         "fontes": 5,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmap",
+        "sigla": "PMAP",
+        "nome": "Polícia Militar do Estado do Amapá",
+        "uf": "AP",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 8,
+        "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {
@@ -4268,6 +4316,52 @@
         "score": 100,
         "linhas_com_valor": 10,
         "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmdf",
+        "sigla": "PMDF",
+        "nome": "Polícia Militar de Distrito Federal",
+        "uf": "DF",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 14,
+        "fontes": 5,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmgo",
+        "sigla": "PMGO",
+        "nome": "Polícia Militar de Goiás",
+        "uf": "GO",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 14,
+        "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {

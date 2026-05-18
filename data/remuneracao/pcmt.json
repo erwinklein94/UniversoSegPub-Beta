@@ -6,25 +6,25 @@
   "tema": "remuneracao",
   "status": "Pesquisa pendente",
   "titulo": "Remuneração bruta mensal da Polícia Judiciária Civil de Mato Grosso",
-  "resumo": "Foram confirmados, em fontes oficiais, os cargos de Delegado de Polícia, Escrivão de Polícia e Investigador de Polícia, além da estrutura por classes da carreira e a regra de que o cargo de Delegado Substituto tem remuneração 10% inferior à Classe A. Porém, na pesquisa acessível não foi localizada tabela oficial aberta e auditável com os valores nominais brutos por classe vigente em 2026 para publicação segura. Para evitar divulgar valor possivelmente desatualizado ou incompleto, a tabela foi mantida sem linhas remuneratórias.",
+  "resumo": "As fontes oficiais abertas localizadas confirmam a existência dos cargos de Delegado de Polícia, Escrivão de Polícia e Investigador de Polícia, a estrutura de classes da carreira e regras de subsídio. Porém, na pesquisa acessível não foi encontrada tabela oficial aberta, nominal e auditável com os valores brutos mensais vigentes em 2026 para publicação segura por cargo e classe. Para evitar divulgar valor possivelmente desatualizado, a tabela foi mantida sem linhas remuneratórias.",
   "linhas": [],
-  "fonte_principal": "https://www.pjc.mt.gov.br/documents/18244709/18983864/1.%20LEI%20407-2010_ESTATUTO%20PJC%20%281%29.pdf/72d97946-5cab-96b4-549c-119928f35a56",
+  "fonte_principal": "https://www.al.mt.gov.br/norma-juridica/urn%3Alex%3Abr%3Bmato.grosso%3Aestadual%3Alei.complementar%3A2015-05-13%3B565/ficha-tecnica",
   "fontes": [
     {
-      "titulo": "Estatuto da Polícia Judiciária Civil de Mato Grosso - Lei Complementar 407/2010",
-      "url": "https://www.pjc.mt.gov.br/documents/18244709/18983864/1.%20LEI%20407-2010_ESTATUTO%20PJC%20%281%29.pdf/72d97946-5cab-96b4-549c-119928f35a56",
-      "tipo": "lei complementar",
-      "data_consulta": "2026-05-18"
-    },
-    {
-      "titulo": "Lei Complementar nº 565/2015 - ficha técnica",
+      "titulo": "Lei Complementar nº 565 de 13 de maio de 2015 - ficha técnica",
       "url": "https://www.al.mt.gov.br/norma-juridica/urn%3Alex%3Abr%3Bmato.grosso%3Aestadual%3Alei.complementar%3A2015-05-13%3B565/ficha-tecnica",
       "tipo": "lei complementar",
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Lei Complementar nº 575/2016 - Diário Oficial de 12 de fevereiro de 2016",
+      "titulo": "Diário Oficial de 12 de fevereiro de 2016 - Lei Complementar nº 575/2016",
       "url": "https://storage.al.mt.gov.br/api/v1/download/default/386790",
+      "tipo": "diário oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Estatuto da Polícia Judiciária Civil de Mato Grosso",
+      "url": "https://www.al.mt.gov.br/storage/webdisco/docs_administrativos/doc_1146.pdf",
       "tipo": "lei complementar",
       "data_consulta": "2026-05-18"
     },
@@ -35,7 +35,7 @@
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Tabelas salariais do Estado de Mato Grosso",
+      "titulo": "Portal de tabelas salariais do Estado de Mato Grosso",
       "url": "https://www.transparencia.mt.gov.br/tabelas-salariais",
       "tipo": "portal governamental",
       "data_consulta": "2026-05-18"

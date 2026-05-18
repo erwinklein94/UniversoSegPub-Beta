@@ -3,22 +3,13 @@
 Gerado em: 2026-05-18
 
 - Total: 110
-- Pendentes: 52
-- Fracas: 14
-- Fortes: 44
+- Pendentes: 43
+- Fracas: 18
+- Fortes: 49
 
 | Ação | ID | Sigla | Score | Linhas úteis | Observação |
 |---|---|---:|---:|---:|---|
 | pendentes | pcmt | PCMT | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmap | PMAP | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmba | PMBA | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmce | PMCE | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmdf | PMDF | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmerj | PMERJ | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmes | PMES | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmgo | PMGO | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmma | PMMA | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmmg | PMMG | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | pmms | PMMS | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | pmmt | PMMT | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | pmpa | PMPA | 0 | 0 | Rodar atualização de remuneração |
@@ -63,6 +54,9 @@ Gerado em: 2026-05-18
 | pendentes | prf | PRF | 0 | 0 | Rodar atualização de remuneração |
 | fracas | bmrr | BMRR | 65 | 1 | Rodar atualização de remuneração |
 | fracas | pces | PCES | 65 | 2 | Rodar atualização de remuneração |
+| fracas | pmba | PMBA | 65 | 1 | Rodar atualização de remuneração |
+| fracas | pmce | PMCE | 65 | 2 | Rodar atualização de remuneração |
+| fracas | pmmg | PMMG | 65 | 2 | Rodar atualização de remuneração |
 | fracas | bmes | CBMES | 82 | 4 | Rodar atualização de remuneração |
 | fracas | bmmg | CBMMG | 82 | 3 | Rodar atualização de remuneração |
 | fracas | bmms | CBMMS | 82 | 3 | Rodar atualização de remuneração |
@@ -77,6 +71,7 @@ Gerado em: 2026-05-18
 | fracas | pcrs | PCRS | 82 | 3 | Rodar atualização de remuneração |
 | fracas | pcsc | PCSC | 82 | 4 | Rodar atualização de remuneração |
 | fracas | pmam | PMAM | 82 | 3 | Rodar atualização de remuneração |
+| fracas | pmma | PMMA | 82 | 3 | Rodar atualização de remuneração |
 | fortes | bmac | BMAC | 100 | 19 | OK |
 | fortes | bmal | BMAL | 100 | 31 | OK |
 | fortes | bmam | BMAM | 100 | 11 | OK |
@@ -118,4 +113,9 @@ Gerado em: 2026-05-18
 | fortes | pf | PF | 100 | 10 | OK |
 | fortes | pmac | PMAC | 100 | 17 | OK |
 | fortes | pmal | PMAL | 100 | 27 | OK |
+| fortes | pmap | PMAP | 100 | 8 | OK |
+| fortes | pmdf | PMDF | 100 | 14 | OK |
+| fortes | pmerj | PMERJ | 100 | 12 | OK |
+| fortes | pmes | PMES | 100 | 8 | OK |
 | fortes | pmesp | PMESP | 100 | 19 | OK |
+| fortes | pmgo | PMGO | 100 | 14 | OK |

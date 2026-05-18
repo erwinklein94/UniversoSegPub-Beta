@@ -6,23 +6,29 @@
   "tema": "concursos",
   "status": "Atualização fraca",
   "titulo": "CHQAOBM VIII/2026 homologado no CBMRO",
-  "resumo": "O Corpo de Bombeiros Militar de Rondônia homologou em 7 de maio de 2026 o resultado final do Processo de Seleção Interna do Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026. A seleção é interna e destinada a militares da própria corporação.",
-  "edital": "Edital nº 5/2026/CBM-CEEI, de 6 de fevereiro de 2026, do Processo de Seleção Interna para o Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026, com resultado final homologado em 7 de maio de 2026.",
+  "resumo": "O Corpo de Bombeiros Militar de Rondônia homologou em 7 de maio de 2026 o resultado final do Processo de Seleção Interna do Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026. A seleção é interna e destinada a Subtenentes BM e 1º Sargentos BM da corporação.",
+  "edital": "Edital nº 5/2026/CBM-CEEI, de 6 de fevereiro de 2026, para o Processo de Seleção Interna do Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026, com resultado final homologado em 7 de maio de 2026.",
   "salario": "Não localizado nas fontes consultadas.",
-  "vagas": "8 vagas para o Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026.",
+  "vagas": "8 vagas para o Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026, sem cadastro de reserva.",
   "cotas": "Não localizado nas fontes consultadas.",
-  "idade": "Até 52 anos no último dia de inscrição. Seleção destinada a Subtenentes BM e 1º Sargentos BM, com no mínimo 2 anos na graduação de 1º Sargento BM e 15 anos de efetivo serviço no CBMRO para esse posto. Altura mínima e CNH não localizadas nas fontes consultadas.",
+  "idade": "Até 52 anos no último dia de inscrição. Seleção exclusiva para Subtenentes BM ou 1º Sargentos BM com no mínimo 2 anos na graduação e 15 anos de efetivo serviço no CBMRO. Altura mínima e CNH não localizadas nas fontes consultadas.",
   "escolaridade": "Ensino Médio completo.",
   "materias": "Conhecimentos profissionais, Língua Portuguesa, raciocínio lógico-matemático, História e Geografia de Rondônia e Informática.",
   "banca": "Comissão de Provas e Exames do CBMRO.",
   "inscritos": "102 candidatos aptos na inscrição definitiva.",
-  "etapas": "Prova objetiva de conhecimentos, teste de aptidão física, avaliação médica e avaliação psicológica.",
+  "etapas": "Prova objetiva, teste de aptidão física, inspeção de saúde e avaliação psicológica.",
   "cfsd": "Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026.",
   "estagio": "Não localizado nas fontes consultadas.",
-  "validade": "Válido para o preenchimento das 8 vagas da Turma VIII/2026.",
-  "previsao": "Convocação para matrícula dos aprovados dentro das 8 vagas.",
+  "validade": "Válido apenas para o preenchimento das 8 vagas da Turma VIII/2026.",
+  "previsao": "Convocação dos aprovados dentro das 8 vagas para matrícula e início do curso em 8 de junho de 2026.",
   "site": "https://www.cbm.ro.gov.br",
   "fontes": [
+    {
+      "titulo": "CBMRO abre inscrições para o Curso de Habilitação ao Quadro Auxiliar de Oficiais (CHQAOBM) – Turma VIII",
+      "url": "https://www.cbm.ro.gov.br/?p=7814",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
+    },
     {
       "titulo": "Edital nº 5/2026/CBM-CEEI",
       "url": "https://www.cbm.ro.gov.br/wp-content/uploads/2026/02/SEI-0004.013087_2025-10.pdf",
@@ -38,12 +44,6 @@
     {
       "titulo": "CHQAO 2026: CBMRO divulga resultado definitivo das inscrições com 102 candidatos aptos",
       "url": "https://www.cbm.ro.gov.br/?p=7841",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-18"
-    },
-    {
-      "titulo": "CBMRO abre inscrições para o Curso de Habilitação ao Quadro Auxiliar de Oficiais (CHQAOBM) – Turma VIII",
-      "url": "https://www.cbm.ro.gov.br/?p=7814",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
     },
@@ -71,10 +71,10 @@
   "precisa_revisao_humana": true,
   "alertas": [
     "Trata-se de seleção interna para militares da corporação, e não de concurso externo para o público em geral.",
-    "Não foram localizados nas fontes consultadas valores objetivos de remuneração, cotas, altura mínima, CNH ou estágio.",
     "O resultado final do processo foi homologado em 07/05/2026.",
     "Há 8 vagas previstas para a Turma VIII/2026.",
     "Foram identificados 102 candidatos aptos na inscrição definitiva.",
+    "Remuneração, cotas, altura mínima e CNH não foram localizadas nas fontes oficiais consultadas para esta seleção interna.",
     "Classificação automática: Atualização fraca (62/100)."
   ],
   "classe_atualizacao": "fraca",

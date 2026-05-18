@@ -6,8 +6,8 @@ Gerado em: 2026-05-18
 
 - Total: 110
 - Pendentes: 2
-- Atualização fraca: 38
-- Atualização forte: 70
+- Atualização fraca: 37
+- Atualização forte: 71
 
 ## Como atualizar
 
@@ -50,7 +50,6 @@ modelo_openai: gpt-5.4-mini
 |---|---|---:|---|---:|---|
 | PPPB | Polícia Penal de Paraíba | PB | fraca | 48 | conteúdo fraco ou genérico |
 | BMRO | Corpo de Bombeiros Militar de Rondônia | RO | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
-| PCPB | Polícia Civil de Paraíba | PB | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PMMA | Polícia Militar de Maranhão | MA | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PPCE | Polícia Penal de Ceará | CE | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PPMS | Polícia Penal de Mato Grosso do Sul | MS | fraca | 62 | conteúdo fraco ou genérico; campos genéricos: vagas, banca; campos críticos genéricos: vagas, banca |
@@ -119,6 +118,7 @@ modelo_openai: gpt-5.4-mini
 | PCERJ | Polícia Civil do Rio de Janeiro | RJ | forte | 88 | conteúdo bom |
 | BMAL | Corpo de Bombeiros Militar de Alagoas | AL | forte | 92 | conteúdo bom |
 | BMCE | Corpo de Bombeiros Militar do Ceará | CE | forte | 92 | conteúdo bom |
+| PCPB | Polícia Civil de Paraíba | PB | forte | 92 | conteúdo bom |
 | PCSC | Polícia Civil de Santa Catarina | SC | forte | 92 | conteúdo bom |
 | PMPE | Polícia Militar de Pernambuco | PE | forte | 92 | conteúdo bom |
 | PMPI | Polícia Militar de Piauí | PI | forte | 92 | conteúdo bom |

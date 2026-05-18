@@ -4,8 +4,8 @@
   "resumo": {
     "total": 110,
     "pendentes": 2,
-    "fracas": 38,
-    "fortes": 70
+    "fracas": 37,
+    "fortes": 71
   },
   "grupos": {
     "pendentes": [
@@ -137,40 +137,6 @@
           "cfsd",
           "validade",
           "previsao"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pcpb",
-        "sigla": "PCPB",
-        "nome": "Polícia Civil de Paraíba",
-        "uf": "PB",
-        "score": 62,
-        "classe": "fraca",
-        "qualidade": "fraca",
-        "motivos": [
-          "conteúdo fraco ou genérico",
-          "campos críticos sem dado: salario"
-        ],
-        "campos_ruins": [
-          "salario",
-          "materias",
-          "estagio"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "banca",
-          "inscritos",
-          "cfsd"
         ],
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
@@ -2227,6 +2193,40 @@
         }
       },
       {
+        "id": "pcpb",
+        "sigla": "PCPB",
+        "nome": "Polícia Civil de Paraíba",
+        "uf": "PB",
+        "score": 92,
+        "classe": "forte",
+        "qualidade": "forte",
+        "motivos": [
+          "conteúdo bom"
+        ],
+        "campos_ruins": [
+          "estagio"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "inscritos",
+          "cfsd",
+          "validade"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fortes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
         "id": "pcsc",
         "sigla": "PCSC",
         "nome": "Polícia Civil de Santa Catarina",
@@ -3600,40 +3600,6 @@
         "cfsd",
         "validade",
         "previsao"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pcpb",
-      "sigla": "PCPB",
-      "nome": "Polícia Civil de Paraíba",
-      "uf": "PB",
-      "score": 62,
-      "classe": "fraca",
-      "qualidade": "fraca",
-      "motivos": [
-        "conteúdo fraco ou genérico",
-        "campos críticos sem dado: salario"
-      ],
-      "campos_ruins": [
-        "salario",
-        "materias",
-        "estagio"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "banca",
-        "inscritos",
-        "cfsd"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
@@ -5717,6 +5683,40 @@
         "escolaridade",
         "cfsd",
         "previsao"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fortes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pcpb",
+      "sigla": "PCPB",
+      "nome": "Polícia Civil de Paraíba",
+      "uf": "PB",
+      "score": 92,
+      "classe": "forte",
+      "qualidade": "forte",
+      "motivos": [
+        "conteúdo bom"
+      ],
+      "campos_ruins": [
+        "estagio"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "inscritos",
+        "cfsd",
+        "validade"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "fortes",

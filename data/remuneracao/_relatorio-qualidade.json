@@ -2,211 +2,11 @@
   "gerado_em": "2026-05-18",
   "resumo": {
     "total": 110,
-    "pendentes": 90,
-    "fracas": 5,
-    "fortes": 15
+    "pendentes": 80,
+    "fracas": 8,
+    "fortes": 22
   },
   "fila_acoes": [
-    {
-      "id": "bmrn",
-      "sigla": "BMRN",
-      "nome": "Corpo de Bombeiros Militar do Rio Grande do Norte",
-      "uf": "RN",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmrn",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmro",
-      "sigla": "BMRO",
-      "nome": "Corpo de Bombeiros Militar de Rondônia",
-      "uf": "RO",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmro",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmrr",
-      "sigla": "BMRR",
-      "nome": "Corpo de Bombeiros Militar de Roraima",
-      "uf": "RR",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmrr",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmrs",
-      "sigla": "BMRS",
-      "nome": "Corpo de Bombeiros Militar do Rio Grande do Sul",
-      "uf": "RS",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmrs",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmsc",
-      "sigla": "CBMSC",
-      "nome": "Corpo de Bombeiros Militar de Santa Catarina",
-      "uf": "SC",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmsc",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmse",
-      "sigla": "BMSE",
-      "nome": "Corpo de Bombeiros Militar de Sergipe",
-      "uf": "SE",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmse",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmsp",
-      "sigla": "CBPMESP",
-      "nome": "Corpo de Bombeiros da Polícia Militar do Estado de São Paulo",
-      "uf": "SP",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmsp",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmto",
-      "sigla": "BMTO",
-      "nome": "Corpo de Bombeiros Militar do Tocantins",
-      "uf": "TO",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmto",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pcac",
-      "sigla": "PCAC",
-      "nome": "Polícia Civil do Acre",
-      "uf": "AC",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pcac",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pcal",
-      "sigla": "PCAL",
-      "nome": "Polícia Civil do Estado de Alagoas",
-      "uf": "AL",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pcal",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
     {
       "id": "pcam",
       "sigla": "PCAM",
@@ -1808,6 +1608,34 @@
       }
     },
     {
+      "id": "bmrr",
+      "sigla": "BMRR",
+      "nome": "Corpo de Bombeiros Militar de Roraima",
+      "uf": "RR",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 65,
+      "linhas_com_valor": 1,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 65
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "bmrr",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
       "id": "bmes",
       "sigla": "CBMES",
       "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
@@ -1943,6 +1771,62 @@
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "bmrj",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "bmsc",
+      "sigla": "CBMSC",
+      "nome": "Corpo de Bombeiros Militar de Santa Catarina",
+      "uf": "SC",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 4,
+      "fontes": 5,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "bmsc",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pcal",
+      "sigla": "PCAL",
+      "nome": "Polícia Civil do Estado de Alagoas",
+      "uf": "AL",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pcal",
         "quantidade": "1",
         "modelo_openai": "gpt-5.4"
       }
@@ -2270,6 +2154,167 @@
       "workflow_sugerido": null
     },
     {
+      "id": "bmrn",
+      "sigla": "BMRN",
+      "nome": "Corpo de Bombeiros Militar do Rio Grande do Norte",
+      "uf": "RN",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 12,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmro",
+      "sigla": "BMRO",
+      "nome": "Corpo de Bombeiros Militar de Rondônia",
+      "uf": "RO",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 13,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmrs",
+      "sigla": "BMRS",
+      "nome": "Corpo de Bombeiros Militar do Rio Grande do Sul",
+      "uf": "RS",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 15,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmse",
+      "sigla": "BMSE",
+      "nome": "Corpo de Bombeiros Militar de Sergipe",
+      "uf": "SE",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 15,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmsp",
+      "sigla": "CBPMESP",
+      "nome": "Corpo de Bombeiros da Polícia Militar do Estado de São Paulo",
+      "uf": "SP",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 14,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmto",
+      "sigla": "BMTO",
+      "nome": "Corpo de Bombeiros Militar do Tocantins",
+      "uf": "TO",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 17,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcac",
+      "sigla": "PCAC",
+      "nome": "Polícia Civil do Acre",
+      "uf": "AC",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 35,
+      "fontes": 5,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
       "id": "pmesp",
       "sigla": "PMESP",
       "nome": "Polícia Militar do Estado de São Paulo",
@@ -2323,26 +2368,6 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
           "instituicao": "pcdf",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmsp",
-        "sigla": "CBPMESP",
-        "nome": "Corpo de Bombeiros da Polícia Militar do Estado de São Paulo",
-        "uf": "SP",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmsp",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4-mini"
         }
@@ -2403,26 +2428,6 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
           "instituicao": "pmal",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pcal",
-        "sigla": "PCAL",
-        "nome": "Polícia Civil do Estado de Alagoas",
-        "uf": "AL",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pcal",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4-mini"
         }
@@ -2728,26 +2733,6 @@
         }
       },
       {
-        "id": "bmsc",
-        "sigla": "CBMSC",
-        "nome": "Corpo de Bombeiros Militar de Santa Catarina",
-        "uf": "SC",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmsc",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
         "id": "pcsc",
         "sigla": "PCSC",
         "nome": "Polícia Civil de Santa Catarina",
@@ -2943,26 +2928,6 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
           "instituicao": "pmac",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pcac",
-        "sigla": "PCAC",
-        "nome": "Polícia Civil do Acre",
-        "uf": "AC",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pcac",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4-mini"
         }
@@ -3848,126 +3813,6 @@
         }
       },
       {
-        "id": "bmrn",
-        "sigla": "BMRN",
-        "nome": "Corpo de Bombeiros Militar do Rio Grande do Norte",
-        "uf": "RN",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmrn",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmro",
-        "sigla": "BMRO",
-        "nome": "Corpo de Bombeiros Militar de Rondônia",
-        "uf": "RO",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmro",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmrr",
-        "sigla": "BMRR",
-        "nome": "Corpo de Bombeiros Militar de Roraima",
-        "uf": "RR",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmrr",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmrs",
-        "sigla": "BMRS",
-        "nome": "Corpo de Bombeiros Militar do Rio Grande do Sul",
-        "uf": "RS",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmrs",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmse",
-        "sigla": "BMSE",
-        "nome": "Corpo de Bombeiros Militar de Sergipe",
-        "uf": "SE",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmse",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmto",
-        "sigla": "BMTO",
-        "nome": "Corpo de Bombeiros Militar do Tocantins",
-        "uf": "TO",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmto",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
         "id": "pprj",
         "sigla": "PPRJ",
         "nome": "Polícia Penal do Rio de Janeiro",
@@ -4090,6 +3935,34 @@
     ],
     "fracas": [
       {
+        "id": "pcal",
+        "sigla": "PCAL",
+        "nome": "Polícia Civil do Estado de Alagoas",
+        "uf": "AL",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pcal",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
         "id": "bmmg",
         "sigla": "CBMMG",
         "nome": "Corpo de Bombeiros Militar de Minas Gerais",
@@ -4141,6 +4014,34 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "bmrj",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "bmsc",
+        "sigla": "CBMSC",
+        "nome": "Corpo de Bombeiros Militar de Santa Catarina",
+        "uf": "SC",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 4,
+        "fontes": 5,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "bmsc",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4"
         }
@@ -4228,6 +4129,34 @@
           "quantidade": "1",
           "modelo_openai": "gpt-5.4"
         }
+      },
+      {
+        "id": "bmrr",
+        "sigla": "BMRR",
+        "nome": "Corpo de Bombeiros Militar de Roraima",
+        "uf": "RR",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 65,
+        "linhas_com_valor": 1,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 65
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "bmrr",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
       }
     ],
     "fortes": [
@@ -4247,6 +4176,29 @@
         "workflow_sugerido": null
       },
       {
+        "id": "bmsp",
+        "sigla": "CBPMESP",
+        "nome": "Corpo de Bombeiros da Polícia Militar do Estado de São Paulo",
+        "uf": "SP",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 14,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
         "id": "bmpr",
         "sigla": "CBMPR",
         "nome": "Corpo de Bombeiros Militar do Paraná",
@@ -4256,6 +4208,29 @@
         "score": 100,
         "linhas_com_valor": 18,
         "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcac",
+        "sigla": "PCAC",
+        "nome": "Polícia Civil do Acre",
+        "uf": "AC",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 35,
+        "fontes": 5,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {
@@ -4554,6 +4529,121 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 12,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmrn",
+        "sigla": "BMRN",
+        "nome": "Corpo de Bombeiros Militar do Rio Grande do Norte",
+        "uf": "RN",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 12,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmro",
+        "sigla": "BMRO",
+        "nome": "Corpo de Bombeiros Militar de Rondônia",
+        "uf": "RO",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 13,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmrs",
+        "sigla": "BMRS",
+        "nome": "Corpo de Bombeiros Militar do Rio Grande do Sul",
+        "uf": "RS",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 15,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmse",
+        "sigla": "BMSE",
+        "nome": "Corpo de Bombeiros Militar de Sergipe",
+        "uf": "SE",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 15,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmto",
+        "sigla": "BMTO",
+        "nome": "Corpo de Bombeiros Militar do Tocantins",
+        "uf": "TO",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 17,
         "fontes": 2,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",

@@ -3,22 +3,13 @@
 Gerado em: 2026-05-18
 
 - Total: 110
-- Pendentes: 70
-- Fracas: 10
-- Fortes: 30
+- Pendentes: 61
+- Fracas: 11
+- Fortes: 38
 
 | Ação | ID | Sigla | Score | Linhas úteis | Observação |
 |---|---|---:|---:|---:|---|
-| pendentes | pcms | PCMS | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | pcmt | PCMT | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcpa | PCPA | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcpb | PCPB | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcpe | PCPE | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcpi | PCPI | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcpr | PCPR | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcrn | PCRN | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcro | PCRO | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcrr | PCRR | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | pcrs | PCRS | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | pcsc | PCSC | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | pcse | PCSE | 0 | 0 | Rodar atualização de remuneração |
@@ -91,6 +82,7 @@ Gerado em: 2026-05-18
 | fracas | pcba | PCBA | 82 | 3 | Rodar atualização de remuneração |
 | fortes | pcce | PCCE | 82 | 5 | OK |
 | fortes | pcmg | PCMG | 82 | 5 | OK |
+| fracas | pcpe | PCPE | 82 | 3 | Rodar atualização de remuneração |
 | fortes | bmac | BMAC | 100 | 19 | OK |
 | fortes | bmal | BMAL | 100 | 31 | OK |
 | fortes | bmam | BMAM | 100 | 11 | OK |
@@ -118,4 +110,12 @@ Gerado em: 2026-05-18
 | fortes | pcerj | PCERJ | 100 | 22 | OK |
 | fortes | pcgo | PCGO | 100 | 28 | OK |
 | fortes | pcma | PCMA | 100 | 14 | OK |
+| fortes | pcms | PCMS | 100 | 6 | OK |
+| fortes | pcpa | PCPA | 100 | 20 | OK |
+| fortes | pcpb | PCPB | 100 | 7 | OK |
+| fortes | pcpi | PCPI | 100 | 17 | OK |
+| fortes | pcpr | PCPR | 100 | 8 | OK |
+| fortes | pcrn | PCRN | 100 | 21 | OK |
+| fortes | pcro | PCRO | 100 | 52 | OK |
+| fortes | pcrr | PCRR | 100 | 9 | OK |
 | fortes | pmesp | PMESP | 100 | 19 | OK |

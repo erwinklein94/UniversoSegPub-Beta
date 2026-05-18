@@ -1,0 +1,50 @@
+{
+  "instituicao_id": "pcmt",
+  "instituicao_nome": "Polícia Judiciária Civil de Mato Grosso",
+  "sigla": "PCMT",
+  "uf": "MT",
+  "tema": "remuneracao",
+  "status": "Pesquisa pendente",
+  "titulo": "Remuneração bruta mensal da Polícia Judiciária Civil de Mato Grosso",
+  "resumo": "Foram confirmados os cargos de carreira da PCMT e a estrutura por classes em fontes oficiais. Há base oficial para afirmar que investigadores e escrivães têm subsídio em parcela única e que delegados possuem classes com Delegado Substituto remunerado em 10% abaixo da Classe A. Porém, na pesquisa disponível não foi localizada uma tabela oficial aberta e atualizada com os valores nominais por classe para 2026 em ambiente acessível. Para não publicar valores sem confirmação nominal, a tabela foi deixada vazia.",
+  "linhas": [],
+  "fonte_principal": "https://www.pjc.mt.gov.br/documents/18244709/18983864/1.%20LEI%20407-2010_ESTATUTO%20PJC%20%281%29.pdf/72d97946-5cab-96b4-549c-119928f35a56",
+  "fontes": [
+    {
+      "titulo": "Estatuto da Polícia Judiciária Civil de Mato Grosso - Lei Complementar 407/2010",
+      "url": "https://www.pjc.mt.gov.br/documents/18244709/18983864/1.%20LEI%20407-2010_ESTATUTO%20PJC%20%281%29.pdf/72d97946-5cab-96b4-549c-119928f35a56",
+      "tipo": "lei complementar",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Governador sanciona lei complementar que cria o cargo de Delegado Substituto",
+      "url": "https://www.pge.mt.gov.br/web/mt/w/2953217-governador-sanciona-lei-complementar-que-cria-o-cargo-de-delegado-substituto",
+      "tipo": "página governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei Complementar nº 565/2015 - ficha técnica",
+      "url": "https://www.al.mt.gov.br/norma-juridica/urn%3Alex%3Abr%3Bmato.grosso%3Aestadual%3Alei.complementar%3A2015-05-13%3B565/ficha-tecnica",
+      "tipo": "lei complementar",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Perguntas frequentes da Polícia Judiciária Civil de Mato Grosso",
+      "url": "https://www.transparencia.mt.gov.br/web/pjc/perguntas-frequentes2",
+      "tipo": "página governamental",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "pendente",
+  "score_publicacao": 0,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Não foi localizada, em fonte oficial aberta acessível na pesquisa, tabela nominal consolidada com valores brutos mensais por classe da PCMT válida para 2026.",
+    "As fontes oficiais confirmam cargos, classes e regras de subsídio, mas não trouxeram valores numéricos completos e auditáveis para publicar com segurança.",
+    "Para evitar valor possivelmente desatualizado ou incompleto, nenhuma linha remuneratória foi preenchida nesta atualização.",
+    "Classificação automática: Pesquisa pendente (0/100)."
+  ]
+}

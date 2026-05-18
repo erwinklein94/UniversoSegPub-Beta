@@ -5,9 +5,9 @@ Gerado em: 2026-05-18
 ## Resumo
 
 - Total: 110
-- Pendentes: 9
-- Atualização fraca: 39
-- Atualização forte: 62
+- Pendentes: 5
+- Atualização fraca: 42
+- Atualização forte: 63
 
 ## Como atualizar
 
@@ -41,11 +41,7 @@ modelo_openai: gpt-5.4-mini
 
 | Sigla | Instituição | UF | Classe | Score | Motivos |
 |---|---|---:|---|---:|---|
-| PPAM | Polícia Penal de Amazonas | AM | pendente | 12 | precisa primeira atualização; campos críticos sem dado: vagas, banca |
-| CBMMS | Corpo de Bombeiros Militar de Mato Grosso do Sul | MS | pendente | 27 | precisa primeira atualização; campos genéricos: salario, cotas, idade, escolaridade; campos críticos genéricos: salario, escolaridade |
-| BMRO | Corpo de Bombeiros Militar de Rondônia | RO | pendente | 28 | precisa primeira atualização; campos críticos sem dado: salario, banca |
-| PMDF | Polícia Militar de Distrito Federal | DF | pendente | 30 | precisa primeira atualização; campos críticos sem dado: etapas |
-| PPDF | Polícia Penal de Distrito Federal | DF | pendente | 34 | precisa primeira atualização; campos críticos sem dado: escolaridade |
+| PPAM | Polícia Penal de Amazonas | AM | pendente | 20 | precisa primeira atualização; campos críticos sem dado: vagas, banca |
 | PPCE | Polícia Penal de Ceará | CE | pendente | 42 | precisa primeira atualização; campos críticos sem dado: salario |
 | PMTO | Polícia Militar de Tocantins | TO | pendente | 43 | precisa primeira atualização; campos genéricos: etapas; campos críticos sem dado: salario; campos críticos genéricos: etapas |
 | PMRR | Polícia Militar de Roraima | RR | pendente | 70 | precisa primeira atualização; campos críticos sem dado: salario |
@@ -67,6 +63,7 @@ modelo_openai: gpt-5.4-mini
 | PPPE | Polícia Penal de Pernambuco | PE | fraca | 60 | conteúdo fraco ou genérico |
 | PPRJ | Polícia Penal do Rio de Janeiro | RJ | fraca | 60 | conteúdo fraco ou genérico |
 | BMMA | Corpo de Bombeiros Militar do Maranhão | MA | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
+| BMRO | Corpo de Bombeiros Militar de Rondônia | RO | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PCPB | Polícia Civil de Paraíba | PB | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PMMA | Polícia Militar de Maranhão | MA | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PPMS | Polícia Penal de Mato Grosso do Sul | MS | fraca | 62 | conteúdo fraco ou genérico; campos genéricos: vagas, banca; campos críticos genéricos: vagas, banca |
@@ -77,11 +74,13 @@ modelo_openai: gpt-5.4-mini
 | BMSE | Corpo de Bombeiros Militar de Sergipe | SE | fraca | 68 | conteúdo fraco ou genérico |
 | BMTO | Corpo de Bombeiros Militar do Tocantins | TO | fraca | 68 | conteúdo fraco ou genérico |
 | PCPA | Polícia Civil de Pará | PA | fraca | 68 | conteúdo fraco ou genérico |
+| PMDF | Polícia Militar de Distrito Federal | DF | fraca | 68 | conteúdo fraco ou genérico |
 | PPRR | Polícia Penal de Roraima | RR | fraca | 68 | conteúdo fraco ou genérico |
 | PMPB | Polícia Militar de Paraíba | PB | fraca | 70 | conteúdo fraco ou genérico; campos críticos sem dado: banca |
 | PMESP | Polícia Militar do Estado de São Paulo | SP | fraca | 74 | conteúdo fraco ou genérico; campos genéricos: cotas, etapas; campos críticos genéricos: etapas |
 | BMDF | Corpo de Bombeiros Militar do Distrito Federal | DF | fraca | 76 | conteúdo fraco ou genérico |
 | BMGO | Corpo de Bombeiros Militar do Estado de Goiás | GO | fraca | 76 | conteúdo fraco ou genérico |
+| CBMMS | Corpo de Bombeiros Militar de Mato Grosso do Sul | MS | fraca | 76 | conteúdo fraco ou genérico |
 | BMPA | Corpo de Bombeiros Militar do Pará | PA | fraca | 76 | conteúdo fraco ou genérico |
 | BMPE | Corpo de Bombeiros Militar de Pernambuco | PE | fraca | 76 | conteúdo fraco ou genérico |
 | PCPE | Polícia Civil de Pernambuco | PE | fraca | 76 | conteúdo fraco ou genérico |
@@ -112,6 +111,7 @@ modelo_openai: gpt-5.4-mini
 | PMPA | Polícia Militar de Pará | PA | forte | 84 | conteúdo bom |
 | PMRN | Polícia Militar de Rio Grande do Norte | RN | forte | 84 | conteúdo bom |
 | PPAP | Polícia Penal de Amapá | AP | forte | 84 | conteúdo bom |
+| PPDF | Polícia Penal de Distrito Federal | DF | forte | 84 | conteúdo bom |
 | PPSC | Polícia Penal de Santa Catarina | SC | forte | 84 | conteúdo bom |
 | PPSE | Polícia Penal de Sergipe | SE | forte | 84 | conteúdo bom |
 | PCAP | Polícia Civil do Estado do Amapá | AP | forte | 86 | campos genéricos: cotas, materias |

@@ -18,7 +18,7 @@
   "inscritos": "Não localizado nas fontes consultadas.",
   "etapas": "Prova objetiva, prova de títulos, inspeção de saúde, investigação social, TAF, avaliação psicológica e curso de formação.",
   "cfsd": "Curso de Formação técnico-policial, de caráter eliminatório e classificatório.",
-  "estagio": "Não localizado nas fontes consultadas.",
+  "estagio": "Estágio probatório previsto em lei estadual.",
   "validade": "Não localizado nas fontes consultadas.",
   "previsao": "Sem novo edital anunciado nas fontes consultadas",
   "site": "https://www.policiapenal.am.gov.br",
@@ -26,6 +26,18 @@
     {
       "titulo": "Lei estadual da carreira da Polícia Penal e do sistema penitenciário do Amazonas",
       "url": "https://legisla.imprensaoficial.am.gov.br/diario_am/12/2025/11/18154?modo=lista",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Lei nº 7.943/2025 com tabela remuneratória da carreira",
+      "url": "https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/14487/7943.pdf",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Diário Oficial com tabela de remuneração da carreira",
+      "url": "https://diario.imprensaoficial.am.gov.br/portal/edicoes/download/17976",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
     },
@@ -59,14 +71,14 @@
   "precisa_revisao_humana": true,
   "alertas": [
     "Não foi localizado novo edital de concurso da Polícia Penal do Amazonas nas fontes consultadas.",
-    "Os dados objetivos confirmados nesta atualização vieram da lei estadual da carreira, não de edital de abertura.",
+    "Os dados objetivos confirmados nesta atualização vieram da lei estadual da carreira e da tabela remuneratória oficial, não de edital de abertura.",
     "Vagas, banca, disciplinas, inscritos, validade e cronograma do próximo concurso não foram localizados nas fontes consultadas.",
     "Classificação automática: Pesquisa pendente.",
-    "Classificação automática: Pesquisa pendente (12/100)."
+    "Classificação automática: Pesquisa pendente (20/100)."
   ],
   "classe_atualizacao": "pendente",
   "qualidade_publicacao": "pendente",
-  "score_publicacao": "12",
+  "score_publicacao": "20",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true
 }

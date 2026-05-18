@@ -11,17 +11,17 @@
   },
   "depois": {
     "classe": "pendente",
-    "score": 12
+    "score": 20
   },
   "usage": {
-    "input_tokens": 13471,
+    "input_tokens": 22572,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 947,
+    "output_tokens": 1169,
     "output_tokens_details": {
-      "reasoning_tokens": 204
+      "reasoning_tokens": 298
     },
-    "total_tokens": 14418
+    "total_tokens": 23741
   }
 }

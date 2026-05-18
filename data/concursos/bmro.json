@@ -5,30 +5,24 @@
   "uf": "RO",
   "tema": "concursos",
   "status": "Atualização fraca",
-  "titulo": "CHQAOBM VIII/2026 homologado e com convocação para matrícula pendente",
-  "resumo": "O CBMRO homologou em 7 de maio de 2026 o resultado final do Processo de Seleção Interna para o Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026, voltado a militares da própria corporação.",
-  "edital": "Edital nº 5/2026/CBM-CEEI, de 2026, para o Processo de Seleção Interna do Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026, com resultado final homologado em 07/05/2026.",
+  "titulo": "CHQAOBM VIII/2026 homologado no CBMRO",
+  "resumo": "O Corpo de Bombeiros Militar de Rondônia homologou em 7 de maio de 2026 o resultado final do Processo de Seleção Interna do Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026. A seleção é interna e destinada a militares da própria corporação.",
+  "edital": "Edital nº 5/2026/CBM-CEEI, de 6 de fevereiro de 2026, para o Processo de Seleção Interna do Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026, com resultado final homologado em 07/05/2026.",
   "salario": "Não localizado nas fontes consultadas.",
   "vagas": "8 vagas para o Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026.",
   "cotas": "Não localizado nas fontes consultadas.",
-  "idade": "Até 52 anos no último dia de inscrição. Destinado a Subtenentes BM e 1º Sargentos BM, com exigência de no mínimo 2 anos na graduação de 1º Sargento BM e 15 anos de efetivo serviço no CBMRO para esse posto. Altura mínima e CNH não localizadas nas fontes consultadas.",
+  "idade": "Até 52 anos no último dia de inscrição. Seleção destinada a Subtenentes BM e 1º Sargentos BM, com exigência de no mínimo 2 anos na graduação de 1º Sargento BM e 15 anos de efetivo serviço no CBMRO para esse posto. Altura mínima e CNH não localizadas nas fontes consultadas.",
   "escolaridade": "Ensino Médio completo.",
   "materias": "Conhecimentos profissionais, Língua Portuguesa, raciocínio lógico-matemático, História e Geografia de Rondônia e Informática.",
   "banca": "Comissão de Provas e Exames do CBMRO.",
   "inscritos": "102 candidatos aptos na inscrição definitiva.",
-  "etapas": "Prova objetiva, teste de aptidão física, avaliação médica e avaliação psicológica.",
+  "etapas": "Prova objetiva de conhecimentos básicos, teste de aptidão física, avaliação médica e avaliação psicológica.",
   "cfsd": "Curso de Habilitação ao Quadro Auxiliar de Oficiais Bombeiro Militar, Turma VIII/2026.",
   "estagio": "Não localizado nas fontes consultadas.",
   "validade": "Válido para o preenchimento das 8 vagas da Turma VIII/2026.",
-  "previsao": "Convocação dos aprovados dentro das 8 vagas para matrícula e início do curso.",
+  "previsao": "Convocação para matrícula dos aprovados dentro das 8 vagas.",
   "site": "https://www.cbm.ro.gov.br",
   "fontes": [
-    {
-      "titulo": "CBMRO homologa resultado final do Processo de Seleção Interna para o CHQAOBM VIII – 2026",
-      "url": "https://www.cbm.ro.gov.br/?p=8111",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-18"
-    },
     {
       "titulo": "Edital nº 5/2026/CBM-CEEI",
       "url": "https://www.cbm.ro.gov.br/wp-content/uploads/2026/02/SEI-0004.013087_2025-10.pdf",
@@ -36,15 +30,21 @@
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "CBMRO abre inscrições para a XIX Turma do Curso de Formação de Sargentos Bombeiro Militar",
-      "url": "https://www.cbm.ro.gov.br/?p=8115",
+      "titulo": "CBMRO homologa resultado final do Processo de Seleção Interna para o CHQAOBM VIII – 2026",
+      "url": "https://www.cbm.ro.gov.br/?p=8111",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "DOE de 30/03/2026 - inclusão de aprovados do processo seletivo temporário regido pelo Edital nº 10/2022/CBM-CP",
-      "url": "https://diof.ro.gov.br/data/uploads/2026/03/DOE-30-03-2026-SUPLEMENTAR.pdf",
-      "tipo": "diário oficial",
+      "titulo": "CHQAO 2026: CBMRO divulga resultado definitivo das inscrições com 102 candidatos aptos",
+      "url": "https://www.cbm.ro.gov.br/?p=7841",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "1º Termo Aditivo ao Edital 5 PSI CHQAO 2026",
+      "url": "https://www.cbm.ro.gov.br/wp-content/uploads/2026/03/SEI_69126877_Termo_Aditivo.pdf",
+      "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
     }
   ],

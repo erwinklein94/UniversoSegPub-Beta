@@ -6,17 +6,17 @@
   "tema": "concursos",
   "status": "Atualização fraca",
   "titulo": "PMMA mantém concurso em andamento para Cadete do CFO 2026 pela UEMA",
-  "resumo": "A Polícia Militar do Maranhão está com concurso em andamento para o Curso de Formação de Oficiais 2026, com 30 vagas para Cadete do QOPM. A seleção é feita pelo PAES 2026 da UEMA e já avançou até a 4ª fase, após o resultado final do Teste de Aptidão Física publicado em 30 de abril de 2026 e a convocação para a avaliação psicológica em 6 e 7 de maio de 2026.",
-  "edital": "Edital nº 057/2025-GR/UEMA, do PAES 2026, para ingresso no Curso de Formação de Oficiais da PMMA. Situação atual: concurso em andamento, com resultado final da 3ª fase, o Teste de Aptidão Física, publicado em 30 de abril de 2026, e 4ª fase, avaliação psicológica, marcada para 6 e 7 de maio de 2026.",
+  "resumo": "A Polícia Militar do Maranhão está com concurso em andamento para o Curso de Formação de Oficiais 2026. São 30 vagas para o Quadro de Oficiais Combatentes, com seleção pelo PAES 2026 da UEMA. Após o resultado final do Teste de Aptidão Física em 30 de abril de 2026, os candidatos aptos foram chamados para a avaliação psicológica nos dias 6 e 7 de maio de 2026.",
+  "edital": "Edital nº 057/2025-GR/UEMA, do PAES 2026, para ingresso no Curso de Formação de Oficiais da PMMA. Situação atual: concurso em andamento, após o resultado final da 3ª fase e convocação para a 4ª fase, avaliação psicológica, em 6 e 7 de maio de 2026.",
   "salario": "Não localizado nas fontes consultadas.",
   "vagas": "30 vagas para Cadete do Curso de Formação de Oficiais da PMMA, sendo 22 para ampla concorrência, 6 para candidatos negros e 2 para pessoas com deficiência. Não localizado cadastro de reserva nas fontes consultadas.",
   "cotas": "20% das vagas para candidatos negros e 5% para pessoas com deficiência.",
-  "idade": "Idade máxima de 35 anos até o encerramento das inscrições e idade mínima de 18 anos na matrícula. Exige saber nadar. Altura mínima e exigência de CNH não localizadas nas fontes consultadas.",
+  "idade": "Idade máxima de 35 anos até o encerramento das inscrições e idade mínima de 18 anos na matrícula. Exige saber nadar. Altura mínima não localizada nas fontes consultadas. Exige CNH na matrícula do curso.",
   "escolaridade": "Ensino médio completo.",
-  "materias": "Prova com 60 questões objetivas e produção textual. Disciplinas: Língua Portuguesa e Literatura, Língua Inglesa, Língua Espanhola, História, Geografia, Filosofia, Sociologia, Matemática, Física, Biologia e Química.",
+  "materias": "Exame intelectual do PAES 2026, com questões objetivas e produção textual. Disciplinas principais: Língua Portuguesa e Literatura, Língua Inglesa, Língua Espanhola, História, Geografia, Filosofia, Sociologia, Matemática, Física, Biologia e Química.",
   "banca": "Universidade Estadual do Maranhão, por meio do PAES 2026.",
   "inscritos": "Não localizado nas fontes consultadas.",
-  "etapas": "Exame intelectual, exames médicos, biométricos e odontológicos, teste de aptidão física, avaliação psicológica, avaliação documental, verificação para vagas reservadas a candidatos negros, investigação social e funcional e curso de formação.",
+  "etapas": "Exame intelectual, exames médicos, biométricos, odontológicos e avaliação multiprofissional, teste de aptidão física, avaliação psicológica, verificação para vagas de candidatos negros, avaliação documental, investigação social e funcional e curso de formação.",
   "cfsd": "Não localizado novo edital público para CFSD nas fontes consultadas.",
   "estagio": "Após a conclusão do curso, o ingresso ocorre no Quadro de Oficiais Combatentes da corporação. Estágio probatório não localizado de forma objetiva nas fontes consultadas.",
   "validade": "Não localizado nas fontes consultadas.",
@@ -25,7 +25,7 @@
   "fontes": [
     {
       "titulo": "Edital nº 057/2025-GR/UEMA - PAES 2026",
-      "url": "https://www.uema.br/wp-content/uploads/2025/07/Edital_57-2025-GR-UEMA_-_PAES_2026_FINAL.pdf",
+      "url": "https://dados.uema.br/wp-content/uploads/2025/07/paes-2026-edital-57-2025-gr-uema.pdf",
       "tipo": "edital oficial",
       "data_consulta": "2026-05-18"
     },
@@ -43,7 +43,7 @@
     },
     {
       "titulo": "PAES 2026",
-      "url": "https://www.paes.uema.br/paes-2026/",
+      "url": "https://www.uema.br/2025/07/abertas-as-inscricoes-para-o-paes-2026-com-novo-sistema-de-reserva-de-vagas-e-cursos-ineditos/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
     }
@@ -54,9 +54,10 @@
   "alertas": [
     "A seleção oficial localizada em andamento é do CFO PMMA 2026.",
     "O número de vagas do CFO PMMA 2026 é 30.",
-    "O concurso está na 4ª fase após o resultado final do TAF publicado em 30 de abril de 2026.",
-    "Não localizado valor objetivo de remuneração nas fontes consultadas.",
-    "Não localizado novo edital público para soldado ou CFSD nas fontes consultadas.",
+    "O concurso avançou até a 4ª fase, com avaliação psicológica marcada para 6 e 7 de maio de 2026.",
+    "Não foi localizado valor objetivo de remuneração do cadete nas fontes consultadas.",
+    "A CNH foi localizada como exigência no ato da matrícula do CFO.",
+    "Não foi localizado novo edital público para soldado ou CFSD nas fontes consultadas.",
     "Altura mínima, validade do certame e número de inscritos não foram localizados nas fontes consultadas.",
     "Classificação automática: Atualização fraca (62/100)."
   ],

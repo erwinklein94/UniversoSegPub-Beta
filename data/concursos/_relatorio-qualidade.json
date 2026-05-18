@@ -134,6 +134,10 @@
           "vagas",
           "idade",
           "escolaridade",
+          "materias",
+          "banca",
+          "inscritos",
+          "etapas",
           "cfsd",
           "validade",
           "previsao"
@@ -167,6 +171,7 @@
           "vagas",
           "idade",
           "escolaridade",
+          "materias",
           "banca",
           "previsao"
         ],
@@ -3596,6 +3601,10 @@
         "vagas",
         "idade",
         "escolaridade",
+        "materias",
+        "banca",
+        "inscritos",
+        "etapas",
         "cfsd",
         "validade",
         "previsao"
@@ -3629,6 +3638,7 @@
         "vagas",
         "idade",
         "escolaridade",
+        "materias",
         "banca",
         "previsao"
       ],

@@ -5,9 +5,9 @@ Gerado em: 2026-05-18
 ## Resumo
 
 - Total: 110
-- Pendentes: 3
+- Pendentes: 2
 - Atualização fraca: 43
-- Atualização forte: 64
+- Atualização forte: 65
 
 ## Como atualizar
 
@@ -41,7 +41,6 @@ modelo_openai: gpt-5.4-mini
 
 | Sigla | Instituição | UF | Classe | Score | Motivos |
 |---|---|---:|---|---:|---|
-| PMTO | Polícia Militar de Tocantins | TO | pendente | 40 | precisa primeira atualização; campos críticos sem dado: salario, etapas |
 | PPAM | Polícia Penal de Amazonas | AM | pendente | 42 | precisa primeira atualização; campos críticos sem dado: banca |
 | PMRR | Polícia Militar de Roraima | RR | pendente | 70 | precisa primeira atualização; campos críticos sem dado: salario |
 
@@ -125,6 +124,7 @@ modelo_openai: gpt-5.4-mini
 | PMPE | Polícia Militar de Pernambuco | PE | forte | 92 | conteúdo bom |
 | PMPR | Polícia Militar do Paraná | PR | forte | 92 | conteúdo bom |
 | PMSE | Polícia Militar de Sergipe | SE | forte | 92 | conteúdo bom |
+| PMTO | Polícia Militar de Tocantins | TO | forte | 92 | conteúdo bom |
 | PPBA | Polícia Penal da Bahia | BA | forte | 92 | conteúdo bom |
 | PPPI | Polícia Penal de Piauí | PI | forte | 92 | conteúdo bom |
 | PPPR | Polícia Penal do Paraná | PR | forte | 92 | conteúdo bom |

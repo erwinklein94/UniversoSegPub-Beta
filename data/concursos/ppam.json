@@ -8,7 +8,7 @@
   "titulo": "PPAM: sem novo edital de concurso localizado",
   "resumo": "Não foi localizado novo edital de concurso da Polícia Penal do Amazonas nas fontes consultadas. Foram confirmados, em lei estadual, requisitos de ingresso, etapas, cotas e remuneração da carreira.",
   "edital": "Não foi localizado nas fontes consultadas.",
-  "salario": "Policial Penal: R$ 6.232,92 na referência inicial A da carreira.",
+  "salario": "Policial Penal: R$ 6.232,92 na referência inicial A. Policial Penal – NM: R$ 4.577,43 na referência inicial A.",
   "vagas": "Quadro permanente previsto em lei: 136 vagas de Policial Penal e 35 vagas de Policial Penal – NM.",
   "cotas": "No mínimo 10% das vagas para candidatas do sexo feminino. Para pessoas com deficiência, no mínimo 5% das vagas nos concursos da SEAP, exceto para o cargo de Policial Penal.",
   "idade": "18 a 35 anos na inscrição. Altura mínima de 1,60 m para homens e 1,55 m para mulheres. CNH categoria B, no mínimo.",
@@ -17,20 +17,14 @@
   "banca": "Não localizado nas fontes consultadas.",
   "inscritos": "Não localizado nas fontes consultadas.",
   "etapas": "Prova objetiva, prova de títulos, inspeção de saúde, investigação social, TAF, avaliação psicológica e curso de formação.",
-  "cfsd": "Curso de Formação técnico-policial, de caráter eliminatório e classificatório.",
-  "estagio": "Estágio probatório previsto em lei estadual.",
+  "cfsd": "Curso de Formação técnico-policial, de caráter eliminatório e classificatório, com bolsa de 50% da remuneração inicial da carreira.",
+  "estagio": "Estágio probatório de 3 anos.",
   "validade": "Não localizado nas fontes consultadas.",
   "previsao": "Sem novo edital anunciado nas fontes consultadas",
   "site": "https://www.policiapenal.am.gov.br",
   "fontes": [
     {
-      "titulo": "Lei nº 7.943, de 27 de novembro de 2025, com plano de cargos, requisitos, etapas e cotas da SEAP",
-      "url": "https://legisla.imprensaoficial.am.gov.br/diario_am/12/2025/11/18154?modo=lista",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-18"
-    },
-    {
-      "titulo": "Lei nº 7.943/2025 em PDF, com quadro de cargos e tabela remuneratória",
+      "titulo": "Lei nº 7.943/2025 em PDF, com quadro de cargos, requisitos, etapas e remuneração da SEAP",
       "url": "https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/14487/7943.pdf",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
@@ -48,8 +42,8 @@
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Portal do Governo do Amazonas - SEAP",
-      "url": "https://www.amazonas.am.gov.br/orgaos_entidades/secretaria-de-estado-de-administracao-penitenciaria-seap/",
+      "titulo": "Diário Oficial do Estado do Amazonas",
+      "url": "https://diario.imprensaoficial.am.gov.br/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
     }

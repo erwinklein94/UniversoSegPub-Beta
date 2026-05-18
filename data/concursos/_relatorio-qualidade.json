@@ -3,46 +3,12 @@
   "modelo_operacional": "simples",
   "resumo": {
     "total": 110,
-    "pendentes": 3,
+    "pendentes": 2,
     "fracas": 43,
-    "fortes": 64
+    "fortes": 65
   },
   "grupos": {
     "pendentes": [
-      {
-        "id": "pmto",
-        "sigla": "PMTO",
-        "nome": "Polícia Militar de Tocantins",
-        "uf": "TO",
-        "score": 40,
-        "classe": "pendente",
-        "qualidade": "pendente",
-        "motivos": [
-          "precisa primeira atualização",
-          "campos críticos sem dado: salario, etapas"
-        ],
-        "campos_ruins": [
-          "salario",
-          "inscritos",
-          "etapas",
-          "estagio"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "vagas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "previsao"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
       {
         "id": "ppam",
         "sigla": "PPAM",
@@ -2428,6 +2394,37 @@
         }
       },
       {
+        "id": "pmto",
+        "sigla": "PMTO",
+        "nome": "Polícia Militar de Tocantins",
+        "uf": "TO",
+        "score": 92,
+        "classe": "forte",
+        "qualidade": "forte",
+        "motivos": [
+          "conteúdo bom"
+        ],
+        "campos_ruins": [
+          "estagio"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "inscritos",
+          "previsao"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fortes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
         "id": "ppba",
         "sigla": "PPBA",
         "nome": "Polícia Penal da Bahia",
@@ -3519,40 +3516,6 @@
     ]
   },
   "fila_acoes": [
-    {
-      "id": "pmto",
-      "sigla": "PMTO",
-      "nome": "Polícia Militar de Tocantins",
-      "uf": "TO",
-      "score": 40,
-      "classe": "pendente",
-      "qualidade": "pendente",
-      "motivos": [
-        "precisa primeira atualização",
-        "campos críticos sem dado: salario, etapas"
-      ],
-      "campos_ruins": [
-        "salario",
-        "inscritos",
-        "etapas",
-        "estagio"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "vagas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "previsao"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
     {
       "id": "ppam",
       "sigla": "PPAM",
@@ -5926,6 +5889,37 @@
         "escolaridade",
         "materias",
         "cfsd"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fortes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pmto",
+      "sigla": "PMTO",
+      "nome": "Polícia Militar de Tocantins",
+      "uf": "TO",
+      "score": 92,
+      "classe": "forte",
+      "qualidade": "forte",
+      "motivos": [
+        "conteúdo bom"
+      ],
+      "campos_ruins": [
+        "estagio"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "inscritos",
+        "previsao"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "fortes",

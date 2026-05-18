@@ -4,23 +4,23 @@
   "sigla": "PMTO",
   "uf": "TO",
   "tema": "concursos",
-  "status": "Pesquisa pendente",
-  "titulo": "PMTO mantém concursos de Praças, Oficiais e Especialistas em andamento",
-  "resumo": "A PMTO está com concursos em andamento para Cadete I, Aluno-Praça do QPPM e Aluno-Praça do QPE Músicos, com resultados finais publicados em maio de 2026 para CFO e QPPM.",
-  "edital": "Edital nº 001/CFO-2025/PMTO para Cadete I do QPES; Edital nº 001/CFP/QPPM-2025/PMTO para Aluno-Praça Combatente; Edital nº 001/CFP/QPE-2025/PMTO para Aluno-Praça Especialista Músico. Situação: concursos em andamento, com resultado final do CFO e do QPPM publicado em 15/05/2026.",
-  "salario": "Não localizado nas fontes consultadas.",
-  "vagas": "CFO: 60 vagas; QPPM: 580 vagas; QPE: 20 vagas",
-  "cotas": "Reserva de 10% para candidatos negros, 5% para indígenas e 5% para quilombolas nos editais localizados. Não há reserva para pessoas com deficiência.",
+  "status": "Atualização forte",
+  "titulo": "PMTO mantém concursos de Oficiais, Praças e Músicos com resultados finais publicados em 15/05/2026",
+  "resumo": "A PMTO realizou em 2025 três concursos organizados pela FGV: 60 vagas para Cadete I, 580 para Aluno-Praça do QPPM e 20 para Aluno-Praça do QPE Músicos. Os resultados finais dos três certames foram publicados em 15/05/2026.",
+  "edital": "Edital nº 001/CFO-2025/PMTO para Cadete I do QPES, com 60 vagas; Edital nº 001/CFP/QPPM-2025/PMTO para Aluno-Praça do QPPM, com 580 vagas; e Edital nº 001/CFP/QPE-2025/PMTO para Aluno-Praça do QPE Músicos, com 20 vagas. Situação: concursos em andamento, com resultado final publicado em 15/05/2026.",
+  "salario": "Cadete I: R$ 5.820,06 durante o curso de formação e R$ 10.842,13 após aprovação no CFO, na graduação de Aspirante a Oficial. Aluno-Praça do QPPM: R$ 2.881,53 durante o curso de formação. Aluno-Praça do QPE Músicos: R$ 2.881,53 durante o curso de formação.",
+  "vagas": "Cadete I: 60 vagas, sendo 30 para 2026 e 30 para 2027. Aluno-Praça do QPPM: 580 vagas. Aluno-Praça do QPE Músicos: 20 vagas. Não localizado cadastro de reserva nas fontes consultadas.",
+  "cotas": "Reserva de 10% para candidatos negros, 5% para indígenas e 5% para quilombolas. Não há reserva de vagas para pessoas com deficiência.",
   "idade": "Idade mínima de 18 anos no ingresso e máxima de 32 anos na inscrição. Altura mínima de 1,63 m para homens e 1,60 m para mulheres. Exigida CNH ou permissão para dirigir, no mínimo categoria B, ou comprovante de aprovação no DETRAN para obtenção.",
-  "escolaridade": "CFO: nível superior completo. QPPM: ensino médio completo. QPE Músicos: ensino médio completo e habilitação na especialidade musical do cargo.",
-  "materias": "Língua Portuguesa, História e Geografia do Tocantins, Raciocínio Lógico e Matemático, Noções de Informática, Direito Constitucional, Direito Administrativo, Direito Penal, Direito Processual Penal e Direito Penal Militar. No QPE há também prova prática em música.",
-  "banca": "FGV",
-  "inscritos": "Não localizado nas fontes consultadas.",
-  "etapas": "Não localizado nas fontes consultadas.",
+  "escolaridade": "Cadete I: graduação completa em nível superior. Aluno-Praça do QPPM: ensino médio completo. Aluno-Praça do QPE Músicos: ensino médio completo e habilitação na especialidade musical do cargo.",
+  "materias": "Língua Portuguesa, História e Geografia do Tocantins, Raciocínio Lógico e Matemático, Noções de Informática, Direito Constitucional, Direito Administrativo, Direito Penal, Direito Processual Penal e Direito Penal Militar. No QPE Músicos houve também prova prática de música.",
+  "banca": "Fundação Getulio Vargas",
+  "inscritos": "QPPM: 27.546 inscritos. QPE Músicos: 222 inscritos. Não localizado número oficial consolidado de inscritos para o CFO nas fontes consultadas.",
+  "etapas": "Prova objetiva, prova dissertativa, avaliação de capacidade física, avaliação psicológica, avaliação médica e odontológica e investigação social. No QPE Músicos também houve prova prática em música.",
   "cfsd": "O Curso de Formação de Praças do QPPM será realizado em Palmas ou em outro local definido pelo Comando-Geral da PMTO, após convocação.",
   "estagio": "Não localizado nas fontes consultadas.",
   "validade": "2 anos, prorrogável uma única vez por igual período.",
-  "previsao": "Para o CFO e o QPPM, o resultado final foi publicado em 15/05/2026. Para o QPE Músicos, o concurso segue em andamento com etapas publicadas em 2026.",
+  "previsao": "Resultados finais dos concursos CFO, QPPM e QPE Músicos publicados em 15/05/2026.",
   "site": "https://portal.pm.to.gov.br/",
   "fontes": [
     {
@@ -54,31 +54,48 @@
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Sistema de Investigação Social PMTO",
-      "url": "https://investig.pm.to.gov.br/",
+      "titulo": "FGV Conhecimento - Resultado final QPPM",
+      "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital-resultado-definitivo-investigacao-social-qppm-11.05.2026.pdf",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Convocação para Avaliação Médica e Odontológica - QPE",
-      "url": "https://central.to.gov.br/download/465094",
+      "titulo": "Diário Oficial do Estado do Tocantins - publicação de etapas médicas de 16/04/2026",
+      "url": "https://doe.to.gov.br/diario/5673/download",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "FGV Conhecimento - Demanda por vaga QPPM",
+      "url": "https://conhecimento.fgv.br/sites/default/files/concursos/238-pmto-cfp-qppm-demanda_por_vaga-comando-de-policiamento-1.pdf",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "FGV Conhecimento - Demanda por vaga QPE",
+      "url": "https://conhecimento.fgv.br/sites/default/files/concursos/188-pmto-cfp-qpe-demanda_por_vaga.pdf",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Sistema de Investigação Social PMTO",
+      "url": "https://investig.pm.to.gov.br/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
     }
   ],
   "ultima_pesquisa": "2026-05-18",
   "nivel_confianca": "alta",
-  "precisa_revisao_humana": true,
+  "precisa_revisao_humana": false,
   "alertas": [
-    "O concurso da PMTO reúne três editais distintos: CFO, QPPM e QPE Músicos.",
-    "O resultado final do CFO e do QPPM foi publicado em 15/05/2026.",
-    "No QPE Músicos, a remuneração durante o curso não foi localizada com clareza nas fontes consultadas.",
-    "Não foi localizado número oficial consolidado de inscritos nas fontes consultadas.",
-    "Classificação automática: Pesquisa pendente (40/100)."
+    "A PMTO reuniu três editais distintos no concurso de 2025: CFO, QPPM e QPE Músicos.",
+    "Os resultados finais dos três concursos constam com publicação em 15/05/2026 nas páginas da FGV.",
+    "Não localizado número oficial consolidado de inscritos para o CFO nas fontes consultadas.",
+    "Classificação automática: Atualização forte (92/100)."
   ],
-  "classe_atualizacao": "pendente",
-  "qualidade_publicacao": "pendente",
-  "score_publicacao": "40",
+  "classe_atualizacao": "forte",
+  "qualidade_publicacao": "forte",
+  "score_publicacao": "92",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true
 }

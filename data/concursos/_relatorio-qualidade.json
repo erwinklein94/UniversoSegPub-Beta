@@ -4,8 +4,8 @@
   "resumo": {
     "total": 110,
     "pendentes": 2,
-    "fracas": 41,
-    "fortes": 67
+    "fracas": 40,
+    "fortes": 68
   },
   "grupos": {
     "pendentes": [
@@ -80,42 +80,6 @@
       }
     ],
     "fracas": [
-      {
-        "id": "pmpi",
-        "sigla": "PMPI",
-        "nome": "Polícia Militar de Piauí",
-        "uf": "PI",
-        "score": 48,
-        "classe": "fraca",
-        "qualidade": "fraca",
-        "motivos": [
-          "conteúdo fraco ou genérico",
-          "campos críticos sem dado: salario, escolaridade"
-        ],
-        "campos_ruins": [
-          "salario",
-          "escolaridade",
-          "inscritos"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "vagas",
-          "cotas",
-          "idade",
-          "materias",
-          "banca",
-          "cfsd",
-          "estagio",
-          "validade",
-          "previsao"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
       {
         "id": "pppb",
         "sigla": "PPPB",
@@ -2327,6 +2291,42 @@
         }
       },
       {
+        "id": "pmpi",
+        "sigla": "PMPI",
+        "nome": "Polícia Militar de Piauí",
+        "uf": "PI",
+        "score": 92,
+        "classe": "forte",
+        "qualidade": "forte",
+        "motivos": [
+          "conteúdo bom"
+        ],
+        "campos_ruins": [
+          "inscritos"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "etapas",
+          "cfsd",
+          "estagio",
+          "validade",
+          "previsao"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fortes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
         "id": "pmpr",
         "sigla": "PMPR",
         "nome": "Polícia Militar do Paraná",
@@ -3539,42 +3539,6 @@
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "pendentes",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pmpi",
-      "sigla": "PMPI",
-      "nome": "Polícia Militar de Piauí",
-      "uf": "PI",
-      "score": 48,
-      "classe": "fraca",
-      "qualidade": "fraca",
-      "motivos": [
-        "conteúdo fraco ou genérico",
-        "campos críticos sem dado: salario, escolaridade"
-      ],
-      "campos_ruins": [
-        "salario",
-        "escolaridade",
-        "inscritos"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "vagas",
-        "cotas",
-        "idade",
-        "materias",
-        "banca",
-        "cfsd",
-        "estagio",
-        "validade",
-        "previsao"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
         "quantidade": "5",
         "modelo_openai": "gpt-5.4-mini"
       }
@@ -5816,6 +5780,42 @@
         "banca",
         "cfsd",
         "estagio",
+        "previsao"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fortes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pmpi",
+      "sigla": "PMPI",
+      "nome": "Polícia Militar de Piauí",
+      "uf": "PI",
+      "score": 92,
+      "classe": "forte",
+      "qualidade": "forte",
+      "motivos": [
+        "conteúdo bom"
+      ],
+      "campos_ruins": [
+        "inscritos"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "etapas",
+        "cfsd",
+        "estagio",
+        "validade",
         "previsao"
       ],
       "workflow_sugerido": {

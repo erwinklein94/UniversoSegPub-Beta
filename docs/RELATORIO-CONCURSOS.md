@@ -6,8 +6,8 @@ Gerado em: 2026-05-18
 
 - Total: 110
 - Pendentes: 2
-- Atualização fraca: 41
-- Atualização forte: 67
+- Atualização fraca: 40
+- Atualização forte: 68
 
 ## Como atualizar
 
@@ -48,7 +48,6 @@ modelo_openai: gpt-5.4-mini
 
 | Sigla | Instituição | UF | Classe | Score | Motivos |
 |---|---|---:|---|---:|---|
-| PMPI | Polícia Militar de Piauí | PI | fraca | 48 | conteúdo fraco ou genérico; campos críticos sem dado: salario, escolaridade |
 | PPPB | Polícia Penal de Paraíba | PB | fraca | 48 | conteúdo fraco ou genérico |
 | PPTO | Polícia Penal de Tocantins | TO | fraca | 56 | conteúdo fraco ou genérico |
 | PPPA | Polícia Penal de Pará | PA | fraca | 60 | conteúdo fraco ou genérico |
@@ -122,6 +121,7 @@ modelo_openai: gpt-5.4-mini
 | BMCE | Corpo de Bombeiros Militar do Ceará | CE | forte | 92 | conteúdo bom |
 | PCSC | Polícia Civil de Santa Catarina | SC | forte | 92 | conteúdo bom |
 | PMPE | Polícia Militar de Pernambuco | PE | forte | 92 | conteúdo bom |
+| PMPI | Polícia Militar de Piauí | PI | forte | 92 | conteúdo bom |
 | PMPR | Polícia Militar do Paraná | PR | forte | 92 | conteúdo bom |
 | PMSE | Polícia Militar de Sergipe | SE | forte | 92 | conteúdo bom |
 | PMTO | Polícia Militar de Tocantins | TO | forte | 92 | conteúdo bom |
